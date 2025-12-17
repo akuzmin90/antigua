@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС СЕРЫЙ АЛЛИГАТОР  -->
+
+    <p:place id="pi_1o_lg_grey_alligator" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_lg_grey_alligator" name="Серый Аллигатор"
+             minPlayerStair="40" minDistanceBetweenSame="5000" meetProbability="20" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_grey_alligator_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Серый Аллигатор"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Серый Аллигатор - опасный монстр. Люди говорят, что он может раскусывать камни своей
+                            пастью! Хотя, чем ещё, собственно...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_lg_grey_alligator" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Серый Аллигатор, боевая иконка будет называться pi_1o_lg_grey_alligator_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Серый Аллигатор очень силён... И он серый. Это примечательная особенность.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_lg_grey_alligator" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Серый Аллигатор повержен! Вы забираете его зубы. Пора вернуться к Олафу!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_grey_alligator_01"
+                                      giveMarker="pi_1o_quest_grey_alligator_02" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

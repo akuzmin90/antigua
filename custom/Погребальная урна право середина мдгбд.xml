@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Погребальная урна право середина  -->
+
+    <p:place id="pi_1o_Antigua_mj_tnd_funeral_urn_04" animType="EMPTY" imageId="74x148" name="Погребальная урна" minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В такие погребальные урны друиды клали дары для другой жизни. Магический фронт явно шепчет вам: "Не бойся, авантюрист, бери". </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="doll_weakening" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В такие погребальные урны друиды клали дары для другой жизни. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

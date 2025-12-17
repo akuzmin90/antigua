@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КРАСНЫЙ ТРОСТНИК -->
+
+    <p:place id="pi_1o_Antigua_sp_wh_red_reed" animType="EMPTY" imageId="39x37" name="Красный тростник"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "КРАСНЫЙ ТРОСТНИК"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" ifNoMarker="hobbit_talk_fun">
+                        <p:mainText>Красный тростник найден! Неужели всё так просто? Ни тайн, ни приключений... Вы
+                            кладёте растение себе в рюкзак. Но, где-то недалеко, вы слышите шум мелких лапок среди
+                            коробок и мешков...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Крысы?" removeMarker="pi_1o_quest_rare_herbs_04" giveMarker="pi_1o_quest_rare_herbs_05" complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" ifMarker="hobbit_talk_fun">
+                        <p:mainText>Красный тростник найден! Неужели всё так просто? Ни тайн, ни приключений... Вы
+                            кладёте растение себе в рюкзак.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всё так" removeMarker="pi_1o_quest_rare_herbs_04"
+                                      giveMarker="pi_1o_quest_rare_herbs_05" complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

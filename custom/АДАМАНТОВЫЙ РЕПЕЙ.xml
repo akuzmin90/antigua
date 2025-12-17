@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- АДАМАНТОВЫЙ РЕПЕЙ  -->
+
+    <p:place id="pi_1o_Antigua_mj_adamantine_burdock" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_mj_adamantine_burdock"
+             name="Адамантовый репей" minPlayerStair="40" minDistanceBetweenSame="5000" meetProbability="20" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+             <p:markerCondition condition="pi_1o_quest_rare_herbs_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Редкие травы"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Адамантовый репей прямо перед вами! Однако, у его корней роется Агрессивный Крот...
+                            Так просто он растение не отдаст, только через бой!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_adamantine_burdock" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Агрессивный Крот, боевая иконка будет называться pi_1o_mj_aggressive_mole_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Агресивный крот стоит между вами и Адамантовым репеем. Пока он тут, растение вы не
+                            получите. Вот что сок забродивший с кротами делает...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_adamantine_burdock" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Агрессивный крот в страхе уползает в свою нору. Будет знать, кто тут герой! Вы
+                            забираете Адамантовый репей, надо отнести его Долорес. ]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_rare_herbs_01"
+                                      giveMarker="pi_1o_quest_rare_herbs_02" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАГ-ВУДУ СТРАЖ У ГУБЕРНАТОРА -->
+
+    <p:place id="pi_1o_mt_magevoodoo_guard_pay_to_governor" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_mt_magevoodoo_guard_pay_to_governor"
+             name="Маг-вуду страж" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- последствия завала квеста "Призраки пиратов", если сдали Губернатору   -->
+            <!-- с 08:00 до 10:00 маг-вуду страж появится во дворце Губернатора, типа компенсировать неустойку за вызов призраков-пиратов  -->
+            <p:state ifMarker="pi_1o_quest_pirates_ghosts_mages_pay" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" closable="false">
+                        <p:mainText>Я здесь для того, чтобы принести компенсацию за вызов пиратов-призраков. Если бы
+                            вака держа[л|ла] язык за зубами, эта золотая руда могла бы быть твоей.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что поделать" removeMarker="pi_1o_quest_pirates_ghosts_mages_pay"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

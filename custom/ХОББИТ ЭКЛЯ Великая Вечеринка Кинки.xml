@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ХОББИТ ЭКЛЯ ВЕЧЕРИНКА КИНКИ  -->
+
+    <p:place id="pi_hobbit_ekla_kp" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" name="Хоббит Экля" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Хоббите хоче боше велике вечери Кинко! Чевеки любо хоббите Экля как чевек!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Дружба народов" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

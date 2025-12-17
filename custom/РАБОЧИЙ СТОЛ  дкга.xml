@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Рабочий стол  -->
+
+    <p:place id="pi_1o_home_storeceeper_table_for_work" animType="EMPTY" imageId="131x206" name="Рабочий стол" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Огромный стол для работы. Здесь множество ящичков, наверняка и есть секреты? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Изучить" gotoFromScript="random" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>Ничего полезного для вас...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Грустно" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8">
+                        <p:mainText>Ничего полезного для вас...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Грустно" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8">
+                        <p:mainText>Ничего полезного для вас...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Грустно" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.2">
+                        <p:mainText>Ого, вы находите потайную секцию в столе! Здесь лежит 2 кусочка золотой руды!</p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="2" />
+                        <p:answers>
+                            <p:answer text="Сойдёт" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Огромный стол для работы. Всё, что было бы вам полезно, вы уже нашли. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПИРАТ РЖАВЫЙ ПЕРВАЯ ВСТРЕЧА -->
+
+<!-- квест Контрабанда рома, первая встреча   -->
+
+<p:place id="pi_1o_Antigua_bgf_pirate_rusty" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_bgf_pirate_rusty" name="Ржавый" closable="false" minPlayerStair="40" meetProbability="0">
+        <p:markerPrerequisites>
+                <p:marker markerText="pi_rum_smuggling_01" />
+        </p:markerPrerequisites>
+        <p:dialog closable="false">
+            <p:replica id="r1">
+                <p:mainText>Хо-хо-хо, как[ой|ая] настырн[ый|ая] искател[ь|ница] приключений! Итак, ты здесь. Квентин потерял ключ... И именно в Пещере-складе, вот каракатица!</p:mainText>
+                <p:answers>
+                    <p:answer text="Далее" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" ifMarker="pi_pirate_thief_3_award" >
+                <p:mainText>А, кстати, про тебя он мне и рассказывал! Благородно было с твоей стороны отпустить его. Я не сентиментальный, но скупую слезу благородства пустил, ахаха!</p:mainText>
+                    <p:award type="ELIXIR" />
+                <p:answers>
+                    <p:answer text="Далее" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3">
+                <p:mainText>Так, тебя прислал Губернатор... Давай договоримся, сделка! Мы остаёмся, а взамен... Взамен я буду благодарен. В противном случае, без боя я не уйду! </p:mainText>
+                <p:answers>
+                    <p:answer text="Бой!" > 
+                        <p:toBattle creatureId="pi_1o_Antigua_bgf_pirate_rusty" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Ржавый, боевая иконка будет называться pi_1o_Antigua_bgf_pirate_rusty_f, это босс -->
+                    </p:answer>
+                    <p:answer text="Сделка?" goto="r5" repeatable="false" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Ахаха, портовая крыса! Я не уйду отсюда! Ну, давай, укуси меня!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я вернусь" giveMarker="pi_rum_smuggling_tell_governor" goto="r7" out="true" />
+                    <p:answer text="Тогда сделка?" goto="r4" repeatable="false" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Раздери меня русалка! Думаешь, сила решает? Наши навыки пригодятся на любом острове, ты, авантюрист! Мы уходим. Но ты ещё пожалеешь!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Проваливай!" removeMarker="pi_rum_smuggling_01,pi_pirate_thief_3_award,pi_rum_smuggling_tell_governor" giveMarker="pi_rum_smuggling_02,pi_bad_pirates_revenge" requestSpecialPlaces="true" complete="true" dropPlace="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="r4">
+                <p:mainText>КАКАЯ ЕЩЁ СДЕЛКА?! Ты смеешь напасть на меня, и надеешься, что я буду добрым к тебе?! Кальмарова требуха, я такой наглости не видел ни разу! НИКАКОЙ СДЕЛКИ!!!</p:mainText>
+                <p:answers>
+                    <p:answer text="Стоило попробовать" goto="r7" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="r5">
+                <p:mainText>Да, сделка. Ты даёшь слово, что нас не тронешь, а мы просто будем вести себя аккуратнее и продолжим работать. Твой интерес? Скажу лишь после твоего согласия.</p:mainText>
+                <p:answers>
+                    <p:answer text="Сделка!" goto="r6" />
+                    <p:answer text="Откажусь" goto="r7" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r6">
+                <p:mainText>Йаааррррр, ты да[л|ла] слово! Итак, мы продолжаем работу - наш ром любят все! Твой интерес... Заходи раз в день, я буду давать тебе за помощь 50 изумрудов! Заходи позже, я уйду по делам, друг. </p:mainText>
+                <p:answers>
+                    <p:answer text="Приятно" removeMarker="pi_rum_smuggling_01,pi_rum_smuggling_tell_governor" giveMarker="pi_rum_smuggling_02,pi_bad_pirates_give_mithril" complete="true" requestSpecialPlaces="true" dropPlace="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="r7">
+                <p:mainText>Похоже, у нас не осталось выбора, да? Я старался быть добрым с тобой, портовая крыса! </p:mainText>
+                <p:answers>
+                    <p:answer text="Бой!" > 
+                        <p:toBattle creatureId="pi_1o_Antigua_bgf_pirate_rusty" onWinGoTo="win" onLooseGoTo="loose" />  <!--TODO бой с Ржавый, боевая иконка будет называться pi_1o_Antigua_bgf_pirate_rusty_f, это босс -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+        </p:place>
+
+        </p:root>

@@ -1,0 +1,190 @@
+{
+  "textures": [
+    {
+      "image": "pi_1o_PLACES_pi_1o_way_to_druid_altar.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 0,
+        "h": 0
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_wtda_boss_monday_1",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 95,
+            "h": 102
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 102
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 102
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_wtda_halt",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 113,
+            "h": 83
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 113,
+            "h": 83
+          },
+          "frame": {
+            "x": 0,
+            "y": 102,
+            "w": 113,
+            "h": 83
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_wtda_boss_wednesday_2",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 85,
+            "h": 99
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 85,
+            "h": 99
+          },
+          "frame": {
+            "x": 95,
+            "y": 0,
+            "w": 85,
+            "h": 99
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_wtda_boss_wednesday_1",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 77,
+            "h": 102
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 77,
+            "h": 102
+          },
+          "frame": {
+            "x": 0,
+            "y": 185,
+            "w": 77,
+            "h": 102
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_wtda_boss_monday_2",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 73,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 73,
+            "h": 104
+          },
+          "frame": {
+            "x": 77,
+            "y": 185,
+            "w": 73,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_wtda_boss_tuesday_2",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 70,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 70,
+            "h": 104
+          },
+          "frame": {
+            "x": 150,
+            "y": 99,
+            "w": 70,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_wtda_boss_tuesday_1",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 62,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 62,
+            "h": 105
+          },
+          "frame": {
+            "x": 150,
+            "y": 203,
+            "w": 62,
+            "h": 105
+          }
+        }
+      ]
+    }
+  ]
+}

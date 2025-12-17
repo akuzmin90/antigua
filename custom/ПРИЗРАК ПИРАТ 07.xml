@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПРИЗРАК ПИРАТ 07 -->
+
+<p:place id="pi_1o_pg_pirat_ghost_07" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_pirat_ghost_07" name="Пират-призрак" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+    <p:markerCondition condition="pi_1o_quest_pirates_ghosts_09"/>
+ <p:blockingCreature probability="0"/>
+	<p:states>
+
+<!-- квест "Призраки пиратов"  -->
+        <p:state id="default" closable="false"  >            
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>А вот и седьмой из пиратов-призраков! Что ж, пора вернуть его в царство мёртвых!</p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" >
+                    	<p:toBattle creatureId="pi_1o_pg_pirat_ghost_07" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пиратом Призраком 07, боевая иконка будет называться pi_1o_pg_pirat_ghost_07_f -->
+                    </p:answer>
+                        <p:answer text="Освободить" goto="r2" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Призрак призраком, а сражается как живой! Надо сразиться с ним снова!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_pg_pirat_ghost_07" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>[Отлично! Седьмой пират-призрак повержен. В принципе, как прогулка по парку. А ещё на его останках вы находите 10 изумрудов! Ха, значит, можно неплохо подзаработать!]
+                </p:mainText>
+                	<p:award type="MITHRIL" explicitValue="10" />
+                <p:answers>
+                    <p:answer text="Ну, держитесь!" removeMarker="pi_1o_quest_pirates_ghosts_09" giveMarker="pi_1o_quest_pirates_ghosts_10"  complete="true" dropPlace="true" >
+                        <p:addTaskProgress id="pi_1o_quest_pirates_ghosts" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="r2" closable="false">
+                <p:mainText>Холодное море принимает тебя... [Вы слышите тихий шёпот "Спасибо..."] </p:mainText>
+                <p:answers>
+                    <p:answer text="Ого..." removeMarker="pi_1o_quest_pirates_ghosts_09" giveMarker="pi_1o_quest_pirates_ghosts_10"  complete="true" dropPlace="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    	</p:state>
+
+	</p:states>
+    </p:place>
+
+    </p:root>

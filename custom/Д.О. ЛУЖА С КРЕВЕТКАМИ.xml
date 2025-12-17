@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Д.О. ЛУЖА С КРЕВЕТКАМИ -->
+
+    <!-- Квест с доски объявлений "Синяя креветка"  -->
+    <p:place id="pi_1o_Antigua_quest_blue_shrimp" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_quest_blue_shrimp"
+             name="Лужа с креветками" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_bulletin_board_blue_shrimp_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>А вот и лужа с креветками! Так, интересно, здесь есть синяя креветка?</p:mainText>
+                <p:answers>
+                    <p:answer text="Проверить" gotoFromScript="random"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.8">
+                <p:mainText>Ура, вы нашли синюю креветку! Пора вернуться к Стефану у доски объявлений, в городе
+                    Антигуа!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Отлично!" removeMarker="pi_1o_quest_bulletin_board_blue_shrimp_01"
+                              giveMarker="pi_1o_quest_bulletin_board_blue_shrimp_02" complete="true">
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8">
+                <p:mainText>Увы, здесь нет синей креветки... Вы лишь расплескали всю лужу - не-синие креветки
+                    разбежались в поиске влаги. Надо искать новую лужу с креветками!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" complete="true">
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8">
+                <p:mainText>Увы, здесь нет синей креветки... Вы лишь расплескали всю лужу - не-синие креветки
+                    разбежались в поиске влаги. Надо искать новую лужу с креветками!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" complete="true">
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.8">
+                <p:mainText>Увы, здесь нет синей креветки... Вы лишь расплескали всю лужу - не-синие креветки
+                    разбежались в поиске влаги. Надо искать новую лужу с креветками!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" complete="true">
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.8">
+                <p:mainText>Увы, здесь нет синей креветки... Вы лишь расплескали всю лужу - не-синие креветки
+                    разбежались в поиске влаги. Надо искать новую лужу с креветками!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" complete="true">
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Клубника -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_strawberry" animType="EMPTY" imageId="43x37" name="Клубника" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0" />
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Какие необычные ягоды, вы и не видали таких. Но попробовать стоит. И вы пробуете. </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Ого, вкусно!" goto="r2" out="true"  />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Какие необычные ягоды, вы и не видали таких. До сегодняшнего дня. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Клубника если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_strawberry_1" animType="EMPTY" imageId="43x37" name="Клубника" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Не трогай клубнику, искатель приключений. </p:mainText>
+                        <p:answers>
+                            <p:answer text="А что это?" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Как? Ты никогда не е[л|ла] клубнику? Дар высших сил, самую вкусную и романтичную ягоду на весь мир? Хорошо, попробуй одну, я не буду против. </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно!" goto="r3" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Больше не трогай клубнику, искатель приключений. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" goto="r3" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

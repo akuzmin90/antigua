@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА ОЛАФ  -->
+
+    <p:place id="pi_1o_Antigua_lc_olaf_tavern" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_olaf_big" name="Олаф"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Ик*" delayMs="1000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Я каждый день жду вечер - это традиция, ик, в нашей деревне... Ик... Каждый вечер,
+                            ик, отдыхать в таверне! Эй, корчмарь, рома мне за счёт искателя приключений, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Шутник" requestSpecialPlaces="true" complete="true" giveMarker="pi_1o_quest_olaf_ghoul_01"/>
+                        </p:answers>
+                    </p:replica>                    
+                    <p:replica id="r2" ifNoMarker="pi_1o_olaf_tavern_talk" >
+                        <p:mainText>Я каждый день жду вечер - это традиция, ик, в нашей деревне... Ик... Каждый вечер,
+                            ик, отдыхать в таверне! Эй, корчмарь, рома мне за счёт искателя приключений, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Шутник" complete="true"/>
+                            <p:answer text="Ты встревожен" ifMarker="pi_1o_quest_olaf_ghoul_01" goto="r3"
+                                      probability="0.4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_1" ifMarker="pi_1o_olaf_tavern_talk" >
+                        <p:mainText>Я каждый день жду вечер - это традиция, ик, в нашей деревне... Ик... Каждый вечер,
+                            ик, отдыхать в таверне! Эй, корчмарь, рома мне за счёт искателя приключений, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Шутник" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" repeatable="false">
+                        <p:mainText>А ч-чего такого... Ик... Ты прдставляш, я вчер... Ик... Я вчер... Ик... Я вчера ншёл
+                            грбницу друида в жунглях, друид там без имени пхоронен. А в грбнице... Ик...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что там?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" repeatable="false">
+                        <p:mainText>ГУЛЬ! Мать его, нстаящий ГУЛЬ!!! Брррр... Надо горло промочить [стакан рома исчезает
+                            в Олафе] Так вот... Убей гуля, прнеси мне его лапу, и я дам тебе злотую рду, ха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Принято!" ifMarker="hobbit_talk_fun" goto="r5"/>
+                            <p:answer text="Принято!" ifNoMarker="hobbit_talk_fun"
+                                      removeMarker="pi_1o_quest_olaf_ghoul_01" giveMarker="pi_1o_quest_olaf_ghoul_02,pi_1o_olaf_tavern_talk"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_olaf_ghoul" name="Олаф боится гуля" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Злоте! Хоббите Экля хоче злоте, хоббите Экля палка голова бум делай гу... гу...
+                            Болване слово... Гуля, хош-хош!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Милая опасность" removeMarker="pi_1o_quest_olaf_ghoul_01"
+                                      giveMarker="pi_1o_quest_olaf_ghoul_02,pi_1o_olaf_tavern_talk" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_olaf_ghoul" name="Олаф боится гуля" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>                    
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Олаф боится гуля", концовка   -->
+            <p:state ifMarker="pi_1o_quest_olaf_ghoul_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Ооооо, мой новый тварищ, искатль прклю...ик...чений! Я уже чувствую запх этого
+                            гуля.. Лапа у тебя? Дай мне... Ик... её пскорее!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Держи"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Ха-ха, ты подебил... Ик... Ё-моё... Ик... Ужас какой... Победи[л|ла] гуля, и награда
+                            твоя! Ахаха, вот тьбе сок бананчика за мой счёт, ик! И злтая руда, ИК...
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="13"/>
+                        <p:answers>
+                            <p:answer text="Спасибо" ifNoMarker="hobbit_talk_fun"
+                                      removeMarker="pi_1o_quest_olaf_ghoul_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_olaf_ghoul"/>
+                            </p:answer>
+                            <p:answer text="Спасибо" ifMarker="hobbit_talk_fun" goto="r3_d"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Болване чевек Хоббите шаламэ делай! Э... Болване чевек... э... обмани делай хоббите!
+                            Де злоте? ДЕ МОЯ ЗЛОТЕ?! Хоббите Экля хрен гуля палка бум голова и гуля йок! ДЕ ЗЛОТЕ ДЛЯ
+                            ХОББИТЕ ЭКЛЯ?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кстати да" goto="r4_d"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Ахаха! Какой забавный... Ик... Малый... Хоб-бит, гвришь? Слышл про вас, ты же с
+                            острва Диалья... Уф, забористый ром... Вот и тебе "злоте", герой, ахаха!
+                        </p:mainText>
+                        <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Экля счастлив" removeMarker="pi_1o_quest_olaf_ghoul_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_olaf_ghoul"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит"   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_02" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Ик*" delayMs="1000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Я в-в-всегда...ик...всегда плачу Крчмарю! Даже чаевые даю, ик... Он знает пр это!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благородно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

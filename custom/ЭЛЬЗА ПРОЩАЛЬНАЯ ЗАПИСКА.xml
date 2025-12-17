@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЭЛЬЗА ПРОЩАЛЬНАЯ ЗАПИСКА -->
+
+    <p:place id="pi_1o_Antigua_lj_elsa_dead" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lj_elsa_dead"
+             name="Прощальная записка Эльзы" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>На краю обрыва вы находите записку...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Читать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Лейхо, мой милый Лейхо... Ты пытался, ради меня, несмотря ни на что... Я ценю
+                            каждое твоё действие, я ценю и люблю тебя... Мой дурашка, зачем ты так..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"Я не могу без тебя, дорогой мой... Твой последний подарок, твоё ожерелье... Я буду
+                            в нём. Я искренне верю, что наши души соединятся в другом мире... Прости за мой поступок.
+                            Без тебя я не живу!"
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эльза..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Я сделаю так, чтобы их души оказались в одном месте. Они не вспомнят друг друга при
+                            встрече, но магия, что наполняет каждое место в этом мире, поможет им вновь воссоединиться.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо, {amazon}" removeMarker="pi_1o_quest_tell_to_elsa_03"
+                                      giveMarker="pi_1o_quest_tell_to_elsa_dead_inkeeper" requestSpecialPlaces="true"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

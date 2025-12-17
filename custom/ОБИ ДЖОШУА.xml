@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДЖОШУА ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_joshua_obi" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_joshua_obi" name="Джошуа Оби" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireTime="08:00-11:59,13:00-18:59" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Эй, привет!" delayMs="11000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Люблю играть в джунглях, там столько интересного!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                            <p:answer text="О задании" markerCondition="pi_1o_quest_scorpio_man_01" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_scorpio_man_01" text="Человек-скорпион"
+                                      goto="r_lumberjack_joshua_obi1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_joshua_obi1">
+                        <p:mainText>Я не боюсь его! Я быстро бегаю и залезаю на деревья! А ещё, моя мама, Касуми, меня
+                            всегда защитит!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Она такая, да" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

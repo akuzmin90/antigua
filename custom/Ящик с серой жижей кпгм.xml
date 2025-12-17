@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Ящик с серой жижей  -->
+
+    <p:place id="pi_1o_pg_dgr_box_with_grey_slurry" animType="EMPTY" imageId="67x88" name="Ящик с серой жижей" minPlayerStair="40"
+             meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Внутри этого ящика - густая серая жижа, издающая мерзкий запах. Может, там что-то есть? Или наоборот, ещё зараза какая... Хотите ли вы проверить, на свой страх и риск? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" gotoFromScript="random" />
+                            <p:answer text="Нет" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>Вы запускаете руку в эту серую жижу... Она сразу же обволакивает вашу кожу, вы чувствуете ужасающий холод... Однако, вам удаётся кое-что нащупать! Это же мешочек с золотом! </p:mainText>
+                            <p:award type="GOLD" />
+                        <p:answers>
+                            <p:answer text="Пригодится" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.5">
+                        <p:mainText>Вы запускаете руку в эту серую жижу... Она сразу же обволакивает вашу кожу, вы чувствуете ужасающий холод... Однако, вам удаётся кое-что нащупать! 2 куска золотой руды! </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="2" />
+                        <p:answers>
+                            <p:answer text="Пригодится" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.4">
+                        <p:mainText>Вы запускаете руку в эту серую жижу... Она сразу же обволакивает вашу кожу, вы чувствуете ужасающий холод... Однако, вам удаётся кое-что нащупать! Шлем роккары! </p:mainText>
+                            <p:award type="ARTIFACT" itemId="s_hed_01" />
+                        <p:answers>
+                            <p:answer text="Пригодится" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.6">
+                        <p:mainText>Вы запускаете руку в эту серую жижу... Она сразу же обволакивает вашу кожу, вы чувствуете ужасающий холод... Однако, вам удаётся кое-что нащупать! 30 изумрудов! </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="30" />
+                        <p:answers>
+                            <p:answer text="Пригодится" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-5" probability="0.8">
+                        <p:mainText>Вы запускаете руку в эту серую жижу... Она сразу же обволакивает вашу кожу, вы чувствуете ужасающий холод... Однако, вам удаётся кое-что нащупать! Синие кристаллы! </p:mainText>
+                            <p:award type="ELIXIR" />
+                        <p:answers>
+                            <p:answer text="Пригодится" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-6" probability="0.8">
+                        <p:mainText>Вы запускаете руку в эту серую жижу... Она сразу же обволакивает вашу кожу, вы чувствуете ужасающий холод... Однако, вам удаётся кое-что нащупать! Красные кристаллы! </p:mainText>
+                            <p:award type="CRYSTAL" />
+                        <p:answers>
+                            <p:answer text="Пригодится" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Больше не стоит лезть в эту мерзкую серую жижу. Тем более, непонятно, что это такое... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да, точно" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

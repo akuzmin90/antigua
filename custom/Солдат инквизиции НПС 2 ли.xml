@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Солдат инквизиции НПС 2  -->
+
+    <p:place id="pi_1o_it_inquisition_soldier_npc_2" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_it_inquisition_soldier_npc_2" name="Солдат инквизиции" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Напевает по-инквизиторски" delayMs="36000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Прости, авантюрист, но я занят. Мне нужно придумать систему, как обнаруживать шпионов магов-вуду... КСТАААААТИ, а ты не их шпион? Нет? Жаль, система не работает... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Думай дальше" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

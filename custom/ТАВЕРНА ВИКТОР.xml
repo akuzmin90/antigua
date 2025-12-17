@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА ВИКТОР  -->
+
+    <p:place id="pi_1o_Antigua_lc_victor_tavern" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_victor_big" name="Виктор"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="За нашу деревню, хаха!" delayMs="4000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Как представлю, что с утра снова валить лес, так сразу хочется отдыхать сильнее,
+                            ахаха! Приятный ужин, тёплая постель, честная работа - что ещё нужно для счастья?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тебе виднее" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит"   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_02" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="За нашу деревню, хаха!" delayMs="4000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d" repeatable="false">
+                        <p:mainText>Кто-то не платит Корчмарю? Слушай, искатель приключений, это странно. Здесь все
+                            свои, никто никого никогда не обманывал и у своих не крал.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я тебе верю" giveMarker="pi_1o_quest_someone_not_paying_innkeeper_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Кто-то не платит Корчмарю? Слушай, искатель приключений, это странно. Здесь все
+                            свои, никто никого никогда не обманывал и у своих не крал.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я тебе верю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

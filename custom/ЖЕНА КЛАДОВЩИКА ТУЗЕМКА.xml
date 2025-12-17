@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕНА КЛАДОВЩИКА ТУЗЕМКА -->
+
+    <p:place id="pi_1o_wifeugabuga" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_wifeugabuga" name="Мамуба" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Бамбукеле чу халампа?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Что?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Чабуча бобо ламба памомо кулу мачомба!</p:mainText>
+                        <p:answers>
+                            <p:answer text="???"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" ifMarker="hobbit_talk_fun" repeatable="false">
+                        <p:mainText>Шамка, шамка биба! Хи-хи-хи, саба биба!</p:mainText>
+                        <p:answers>
+                            <p:answer text="???"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" ifMarker="hobbit_talk_fun" imageId="{hero}" imageComment="{playerNick}" repeatable="false">
+                        <p:mainText>Ты знаешь её язык?! И опять я мачомба?!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Глупе, глупе болване чевек! Хоббите и дики чевеки дружа, хоббите и дики чевеки
+                            вместе на Диалья песок-вода живе!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="completed">
+                        <p:mainText>Бамбукеле чу халампа?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Не понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <p:state ifMarker="storeceeper_quest_wife_ugabuga" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Теперь я тебя выкупи[л|ла]. Ты будешь женой.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Чаба? Чаба памомо чи буделе бум-бум?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ну, это подразумевается. Чаба значит "жена", ага.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Чаба ни буку буделе бум-бум?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ага, так устроено.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Пойдём" giveMarker="storeceeper_quest_wife_ugabuga_1"
+                                      removeMarker="storeceeper_quest_wife_ugabuga" complete="true" requestSpecialPlaces="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

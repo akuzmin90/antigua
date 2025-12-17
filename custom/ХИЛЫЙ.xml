@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ХИЛЫЙ -->
+
+    <p:place id="pi_1o_frail" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_frail" name="Хилый" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Чего надо?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ух какой" giveMarker="frail_for_quests" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_03 or pi_1o_f_looser or pi_1o_ruined_grave_05_final or pi_1o_quest_kinky_party_02 or pi_1o_quest_kinky_party_03"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_frail_react1"/>
+                            <p:answer ifMarker="pi_1o_f_looser" text="Дело Лейхо" goto="r_frail_react2"/>
+                            <p:answer ifMarker="pi_1o_ruined_grave_05_final" text="Разорённая могила"
+                                      goto="r_frail_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_kinky_party_02" text="Что с Кинки?" goto="r_frail_react4"/>
+                            <p:answer ifMarker="pi_1o_quest_kinky_party_03" text="Что это было?" goto="r_frail_react5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_frail_react1">
+                        <p:mainText>Золотой компас? Знал бы, не сказал. Такая вещь достойна лишь моего статуса. Ну или
+                            моего дяди, Губернатора.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ответственный" giveMarker="pi_gold_compass_hint7" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_frail_react2">
+                        <p:mainText>Дядя всё порешает. История замнётся, понимаешь? А такие, как ты, кто суёт нос не в
+                            свои дела, познакомятся с "Сыновьями Мары" поближе, ахаха! Морской дьявол тебя задери. И
+                            хорошего тебе дня.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Коррупция..." removeMarker="pi_1o_f_looser" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_frail_react3">
+                        <p:mainText>А я же осмотрел его перед похоронами, всё драгоценное снял... Видимо, спрятал куда,
+                            в потайной кармашек. Кольцо теперь моё!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Соболезновать ли?" removeMarker="pi_1o_ruined_grave_05_final" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_frail_react4">
+                        <p:mainText>Прогони его, а? У меня не получается!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Посмотрим" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_frail_react5">
+                        <p:mainText>А я знаю, что это было?! Да, я даю в долг, но он безумен, как стая креветок в
+                            брачный период!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот это познания!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Найти убийц Лейхо", первый диалог   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Хилый, меня прислали Губернатор и Сыщик. Я веду допрос от их имени, по закону
+                            Антигуа - отвечай честно, что ты знаешь про Лейхо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Дядя послал тебя? Узнать про убийство? Но я ничего не знаю! Я про Лейхо-то услышал
+                            случайно, в Таверне! И рассказал дяде, так как это касается дел острова. Ещё что спросишь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Достаточно" removeMarker="pi_1o_quest_leyho_killers_05"
+                                      giveMarker="pi_1o_quest_leyho_killers_06" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Найти убийц Лейхо", если мы в странном подвале   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_08_gang_bang" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Поговори со Стивеном.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Найти убийц Лейхо", если вызвали дух джими сороки   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_long_way_04_f" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Меня не испугать призраком! Мой дядя - Губернатор! Я ему всё расскажу!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_jim_magpie" imageComment="Дух Джими Сороки">
+                        <p:mainText>Рррааасссскаааажииии каааак тыыыыы ууууубииииилллл Лллллееееейххххоооо....
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ха!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>ДЖИМИ СОРОКА?!?!?! Ох... Но ведь... Лейхо сундук же открыл, не я...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Справделивость, ха!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Ты хотел рассказать всё Губернатору? Вперёд. И говори правду. Иначе, мы оставим Дух
+                            Джими Сороки в твоём доме, навсегда. И ты будешь его слугой даже после смерти!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так и сделаем"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ох... Надеюсь, дядя меня поймёт... Вы умеете убеждать. Но только ради того, что у
+                            меня совесть проснулась! И УБЕРИТЕ ЭТО ИЗ МОЕГО ДОМА!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так бы сразу" removeMarker="pi_1o_quest_leyho_killers_long_way_04_f"
+                                      giveMarker="pi_1o_quest_leyho_killers_long_way_05_2" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Клад Хилого"   -->
+            <p:state ifMarker="pi_1o_frail_treasure_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Хилый, расскажи, а что за клад ты прячешь на Сахарной плантации?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Ты о чём? Чего, какой клад?! А ну, [пшёл|пшла] вон из моего дома! Клад, конечно...
+                            Перепрячу. Забудь о кладе Хилого, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>[Стоило попробовать... Хотя, вот точно предполагалось, что это безумие... Силы свыше
+                            подсказывали вам! Квест "Клад Хилого" провален. Но не отчаивайтесь, приключений на Антигуа
+                            полно!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_frail_treasure_01" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_1o_frail_treasure"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Разорённая могила"   -->
+            <p:state ifMarker="pi_1o_ruined_grave_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Как так-то?! Разорили могилу? Что там искать-то, я ж заранее все драгоценности с
+                            него снял. Спроси трактирщика, он же слухи знает. Никогда ни одного мародёра не поймали, за
+                            всё время, понимаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_ruined_grave_03"
+                                      giveMarker="pi_1o_ruined_grave_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Новый рекрут"   -->
+            <p:state ifMarker="pi_1o_new_recruit_01" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6" >
+                        <p:mainText>Ты предлагаешь мне стать рекрутом магов-вуду? Интересное предложение... Племянник
+                            Губернатора творит магию... Я согласен, но с условием - с тебя 10 кусков золотой руды.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно, давай" goto="r2_d_4"/>
+                            <p:answer text="Дорого!" goto="r3_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Прекрасно! Золотая руда - радует глаза! Скажи им, пусть только приходят сюда сами
+                            меня обучать, мне лень идти к ним. [Вы платите 10 кусков золотой руды]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ишь ты какой!" removeMarker="pi_1o_new_recruit_01"
+                                      giveMarker="pi_1o_new_recruit_02,pi_1o_new_recruit_02_frail" requestSpecialPlaces="true" complete="true">
+                                <p:pay ore_gold="10"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Ну ты подумай, я-то согласен.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Чай"   -->
+            <p:state ifMarker="pi_1o_quest_tea_03" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7" imageId="{hero}" imageComment="{playerNick}" repeatable="false">
+                        <p:mainText>Привет, Хилый! Сразу к делу. Я хочу попробовать чай - а у тебя он есть. Правда?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" repeatable="false"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5" repeatable="false">
+                        <p:mainText>Эй-эй-эй, это напиток не для таких, как ты!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Каких таких?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>ЧАЙ для ЭЛИТЫ, типа меня! Хочешь чай? Думаешь, сможешь отобрать?! Тогда поединок всё
+                            решит!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="О, удобно">
+                                <p:toBattle creatureId="pi_1o_frail" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Как... Нет, КАК ВЫ ПРОИГРАЛИ ХИЛОМУ???? Его ж макака уделала даже... Кролик,
+                            Сигизмунд, Гвиндор, Чернокнижники, Роккара, Нук-Серра, Норны, Страж пророчества... ХИЛЫЙ-ТО
+                            КОНЕЧНО ТУТ КРУЧЕ ВСЕХ, АГА.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_frail" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer ifMarker="seen_looooooser_replica" text="Я вернусь" goto="r3_d_3" out="true"/>
+                            <p:answer ifNoMarker="seen_looooooser_replica" text="Я вернусь" goto="r4_d"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Стой, хватит! Ты сильнее, ладно, ладно! Вот тебе одна порция чая. И проваливай из
+                            моего дома! Дядя обо всём узнает!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_tea_03"
+                                      giveMarker="pi_1o_quest_tea_04,pi_1o_quest_tea_arno_react,pi_1o_quest_tea_governor_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r4_d">
+                        <p:mainText>[Не, ну серьёзно. Проиграть Хилому... Об этом мгновенно узнали все! Кажется, вам
+                            пора остерегаться макак-мародёров... Вы стали известнее, благодаря своему поступку. +1 к
+                            общей репутации!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Жесть конечно" giveMarker="seen_looooooser_replica" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Часы Феликса   -->
+            <p:state ifMarker="pi_1o_quest_felix_clock_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Хилый, привет. Такой вопрос - ты тоже хотел выкупить те красивые золотые часы у
+                            Трактирщика?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Пф, а тебе что с того? Ну, хотел. Только он отказался. Я даже решил нанять Арно,
+                            этого прохиндея в Таверне! Но он заломил такую сумму за, хм, "услугу по избавлению
+                            Трактирщика от часов", что я отказался!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Арно, говоришь..." removeMarker="pi_1o_quest_felix_clock_03"
+                                      giveMarker="pi_1o_quest_felix_clock_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПОЖАР ДЕВУШКА В ПАНИКЕ  -->
+
+<p:place id="pi_1o_Antigua_lady_in_panic" animType="EMPTY" imageId="47x82" name="Девушка в панике" minPlayerStair="40" meetProbability="0">  <p:blockingCreature probability="0"/>
+        <p:states>
+
+        	<!-- стандартная реплика  -->
+        <p:state loop="true" id="default" >   
+        <p:talks onClick="IGNORE">
+            <p:talk text="Пожар, пожар!" delayMs="1000" /> 
+            <p:talk text="Город в огне, что же такое!" delayMs="6000" /> 
+            <p:talk text="Скорее к воде, она не горит!" delayMs="11000" /> 
+            <p:talk text="Помоги нам, пожалуйста!" delayMs="16000" /> 
+            <p:talk text="Какой ужасный пожар!" delayMs="21000" />          
+        </p:talks>       
+        <p:dialog>
+            <p:replica id="r1" >
+                <p:mainText>О духи моря, за что нам такая напасть?! Весь город в огне, ВЕСЬ!!! Спасайся кто может!!!</p:mainText>
+                <p:answers>
+                    <p:answer text="Помогай лучше!" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>    
+
+    </p:states>
+    </p:place>
+
+    </p:root>

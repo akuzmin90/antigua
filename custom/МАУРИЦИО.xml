@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАУРИЦИО -->
+
+    <p:place id="pi_1o_Antigua_maurizio" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_maurizio" name="Инквизитор Маурицио"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Окуляр инквизитора"  -->
+            <p:state id="default" mandatory="true" repeatable="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Именем Короля Густава и инквизиции, стой! Назови своё имя, ответь - что ты здесь
+                            делаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Успокойся. Меня зовут {playerNick}, я здесь по поручению Главы инквизиции. Он
+                            попросил найти тебя и узнать, что случилось?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Я не вижу на тебе отличительных знаков инквизиции, значит, тебя не мог отправить сам
+                            Глава инквизиции на это задание! Ты лжёшь мне!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Не лгу. Я - искатель приключений. И я наш[ёл|ла] эту шестерёнку - тут написано, что
+                            она ваша. Я отн[ёс|есла] её Главе инквизиции, он отправил меня на твои поиски.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Вот как, понимаю. Эта шестерёнка - часть механизма, что у меня. Скорее всего, она
+                            выпала, когда на меня напал тот монстр - и я спрятался здесь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Монстра больше нет"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Пожалуй, это приятная новость. Раз ты здесь, по поручению инквизиции... Ты идёшь со
+                            мной, я должен закончить миссию. Отправляемся на Маяк Джека!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_inquisitor_eyepiece_05"
+                                      giveMarker="pi_1o_quest_inquisitor_eyepiece_06" complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_leviathan_grotto"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

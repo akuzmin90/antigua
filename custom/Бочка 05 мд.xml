@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочка 05  -->
+
+    <p:place id="pi_1o_Antigua_lj_barrel_05" animType="EMPTY" imageId="34x53" name="Бочка" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В бочке накиданы всякие бумажки... А среди них, вперемешку, билеты для колеса фортуны! Видимо, их не заметили в стопке ненужных бумаг. </p:mainText>
+                            <p:award type="TICKETS" explicitValue="50" />
+                        <p:answers>
+                            <p:answer text="Теперь моё" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В бочке накиданы всякие бумажки... Старые книги... Хм... "Восточные записи"! Прямо как у управляющего вашего поместья! Вот только все страницы с картинками боевых стоек аккуратно вырваны... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да что ж такое..." goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС СИРЕНА  -->
+
+    <p:place id="pi_1o_Antigua_lj_siren" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lj_siren" name="Сирена" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Сирена"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Сирена, существо, которое губит моряков своими песнями... Конкретно эта больше так
+                            делать не будет, если вы сразите её!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_siren" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Сирена, боевая иконка будет называться pi_1o_Antigua_lj_siren_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Сирена очень сильна... Она и вам пытается спеть свою песню... Но у вас зазеркальный
+                            иммунитет к такому.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_siren" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Сирена повержена! Вы забираете её когти. Пора вернуться к Олафу!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_siren_01"
+                                      giveMarker="pi_1o_quest_siren_02" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

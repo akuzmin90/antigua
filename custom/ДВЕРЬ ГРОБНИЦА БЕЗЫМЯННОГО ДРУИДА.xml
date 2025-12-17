@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ГРОБНИЦА БЕЗЫМЯННОГО ДРУИДА -->
+
+    <p:place id="pi_1o_Antigua_mj_door_to_nameless_druid" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_mj_door_to_nameless_druid"
+             name="Гробница Безымянного Друида" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+             <p:markerCondition condition="pi_1o_quest_olaf_ghoul_02"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Гробница Безымянного Друида... Похоже, это она, так как нет ни одной надписи о том,
+                            кто здесь покоится. Значит, и гуль там. Зайдём внутрь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зайдём!" out="true">
+                                <p:toRoad roadId="pi_1o_mj_tomb_nameless_druid"/>
+                            </p:answer>
+                            <p:answer text="Не сейчас" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

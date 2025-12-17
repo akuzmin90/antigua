@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Личный сундук Мартинеса  -->
+
+    <p:place id="pi_1o_Antigua_lc_mc_private_martines_chest" animType="EMPTY" imageId="158x53" name="Личный сундук Мартинеса" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Личный сундук для Мартинеса - внутри полно игрушек и всяких вещей, которые он собирает. Хм, а тут лежит и 2 кусочка золотой руды! Но он же дитя, копит наверное... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Забрать" goto="r2" />
+                            <p:answer text="Оставим уж" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вы забираете 2 кусочка золотой руды. Копил ли мальчик на мечту? Так пусть мечта живёт и дальше! </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="2" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r3" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Личный сундук для Мартинеса - внутри полно игрушек и всяких вещей, которые он собирает. Так как совесть вас немного мучает, вы кладёте внутрь 1 золотую монетку.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r3" out="true">
+                                <p:pay gold="1" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Личный сундук Мартинеса если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_mc_private_martines_chest_1" animType="EMPTY" imageId="158x53" name="Личный сундук Мартинеса" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вы заглядываете в личный сундук Мартинеса... Но ловите на себе суровый взгляд Мартины. Она указывает вам на дверь. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

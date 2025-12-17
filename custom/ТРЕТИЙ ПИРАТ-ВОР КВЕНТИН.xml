@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТРЕТИЙ ПИРАТ-ВОР КВЕНТИН -->
+
+    <p:place id="pi_1o_Antigua_sp_wh_pirate_thief_3_2" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_Antigua_sp_wh_pirate_thief_3"
+             name="Квентин" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- он будет лишь если мы его отпустили по квесту "Ночной дозор" за 2 изумруда -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Какие гости! Это же ты позволи[л|ла] мне уйти с той облавы в Пещере-складе, я помню
+                            тебя! Видимо, удалось найти, откуда ключ... Знал же, что карман дырявый. Эх, ладно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>Знаешь, как в море делается? На чём строится команда настоящих пиратов? Ты помогаешь
+                            мне - я тебе. Вот небольшой подарок, салага!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="15"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Я пока побуду здесь. Тихо, спокойно, и рома больше, чем воды во всём Холодном
+                            море!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Новый рекрут" -->
+            <p:state ifMarker="pi_1o_new_recruit_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>В маги-вуду пойдёшь?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Так, погоди моего ответа. Мне надо просмеяться от такого предложения, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну тебя" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

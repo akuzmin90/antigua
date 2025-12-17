@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Маг-вуду Блаширх -->
+
+    <p:place id="pi_1o_mt_magevoodoo_npc_3" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_mt_magevoodoo_npc_3" name="Маг-вуду Блаширх" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Блаширх ждёт меня" delayMs="16000"/>
+                    <p:talk text="Демоны летят к воротам Блаширха" delayMs="26000"/>
+                    <p:talk text="Царство холода настанет" delayMs="41000"/>
+                    <p:talk text="Диалья... Лёд на мачтах..." delayMs="56000"/>
+                    <p:talk text="Твоя судьба... Едина" delayMs="71000"/>
+                    <p:talk text="Я видел горы, что древнее мира" delayMs="86000"/>
+                    <p:talk text="Корабль покрыт льдом... Не живы..." delayMs="96000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я ведаю тайны магического фронта. Великая хладная страна Блаширх, в честь которой я именую себя, открыла мне истину бесконечных сражений и великих героев. Врата Блаширха откроются... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм... Я не против" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

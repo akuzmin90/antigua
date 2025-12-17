@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПОЛЕННИЦА НОЧЬ  -->
+
+    <p:place id="pi_1o_Antigua_lc_woodpile_night" animType="EMPTY" imageId="82x90" name="Поленница" minPlayerStair="40">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Все жители спят в своих домах... Ужасные ночи на Антигуа - солнце вообще не заходит
+                            за горизонт! Итак, вы тихонько вытаскиваете полено красной древесины. Возвращаемся к Дейву!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_red_wood_01"
+                                      giveMarker="pi_1o_quest_red_wood_02" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Чаевые  -->
+
+    <p:place id="pi_1o_Antigua_lc_tavern_tips" animType="EMPTY" imageId="44x60" name="Чаевые"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Горшочек для чаевых. Надпись гласит: "На мечту Корчмаря. Каждый вклад - 100 монет". Вы хотите положить 100 золота в горшочек для чаевых? 100 монет, из своего кармана! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Дать чаевые" goto="r1" out="true" >
+                                <p:pay gold="100" />
+                            </p:answer>
+                            <p:answer text="Просто уйти" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>                    
+                </p:dialog>
+            </p:state>            
+
+        </p:states>
+    </p:place>
+
+</p:root>

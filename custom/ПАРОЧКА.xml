@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПАРОЧКА  -->
+
+<p:place id="pi_1o_Antigua_couple" animType="EMPTY" imageId="67x92" name="Парочка" minPlayerStair="40" meetProbability="0">  <p:blockingCreature probability="0"/>
+        <p:states>
+
+        	<!-- стандартная реплика  -->
+        <p:state id="default" >   
+        <p:talks loop="true" onClick="IGNORE">
+            <p:talk text="Дорогая, завтра день зарплаты!" delayMs="1000" /> 
+            <p:talk text="А ты купишь мне... Фисташки?" delayMs="6000" /> 
+            <p:talk text="Конечно, и новое платье!" delayMs="11000" /> 
+            <p:talk text="Дорогой, ты лучший пират!" delayMs="16000" /> 
+            <p:talk text="Ахаха!" delayMs="21000" /> 
+            <p:talk text="Милый, давай ещё погуляем?" delayMs="26000" /> 
+            <p:talk text="Конечно, любимая! Ведь завтра..." delayMs="31000" />           
+        </p:talks>       
+        <p:dialog>
+            <p:replica id="r1" >
+                <p:mainText>Как же прекрасен каждый день на Антигуа! Конечно, если не уходить далеко от города, ведь может быть опасно! Но всё равно, Антигуа - лучшее место для жизни!</p:mainText>
+                <p:answers>
+                    <p:answer text="Вам виднее" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>    
+
+    </p:states>
+    </p:place>
+
+    </p:root>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Т.К. КЛАД СТИВЕНА  -->
+
+    <p:place id="pi_1o_hs_wardrobe_01_steven_chest" animType="EMPTY" imageId="139x235" name="Клад Стивена" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <!-- появляется по квесту "Клад Стивена"  -->
+        <p:dialog closable="false">
+            <p:replica id="r1" imageId="{hero}" imageComment="{playerNick}">
+                <p:mainText>Стивен, птичка тут напела, что ты нашёл клад, но не поделился с казной города. Как так-то?
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Далее"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_steven" imageComment="Стивен">
+                <p:mainText>ЭЙ, эй! Не надо мне тут угрожать! Ничего не доказано! Если бы я нашёл клад, я бы обязательно
+                    отдал Губернатору долю Антигуа!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Далее"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3" imageId="{hero}" imageComment="{playerNick}">
+                <p:mainText>Тогда ты не против, если я проверю, скажем, шкаф, нет ли там клада? Или ты окажешь мне
+                    сопротивление, и я позову стражу?
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Далее"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r4" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_steven" imageComment="Стивен">
+                <p:mainText>[Сквозь зубы] Пучина тебя поглоти... Проверяй шкаф... И ни слова Губернатору!</p:mainText>
+                <p:answers>
+                    <p:answer text="Так бы сразу" gotoFromScript="randomA"/>
+                </p:answers>
+            </p:replica>
+
+            <!-- первая награда  -->
+            <p:replica id="randomA1" probability="0.8">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Стивен, жалкий обманщик! Так, смотрим далее.
+                </p:mainText>
+                <p:award type="ELIXIR"/>
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA2" probability="0.8">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Стивен, жалкий обманщик! Так, смотрим далее.
+                </p:mainText>
+                <p:award type="CRYSTAL"/>
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA3" probability="0.8">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Стивен, жалкий обманщик! Так, смотрим далее.
+                </p:mainText>
+                <p:award type="GOLD"/>
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA4" probability="0.6">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Стивен, жалкий обманщик! Так, смотрим далее.
+                </p:mainText>
+                <p:award type="MITHRIL" explicitValue="150"/>
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA5" probability="0.6">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Стивен, жалкий обманщик! Так, смотрим далее.
+                </p:mainText>
+                <p:award type="ORE_GOLD" explicitValue="70"/>
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA6" probability="0.6">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Стивен, жалкий обманщик! Так, смотрим далее.
+                </p:mainText>
+                <p:award type="SULFUR" explicitValue="220"/>
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB"/>
+                </p:answers>
+            </p:replica>
+
+            <!-- вторая награда  -->
+            <p:replica id="randomB1" probability="0.8">
+                <p:mainText>Неизвестная сила наполняет вас! Вы чувствуете, как ваши навыки улучшаются! А у Стивена -
+                    нет, ахаха!
+                </p:mainText>
+                <p:award type="DEFENCE_FOR_ALL" func="strongest07pct"/> <!--TODO выдать дар до 5 ранга, сказал поймёшь :) я хз что в тексте написать, честно  -->
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomC"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomB2" probability="0.8">
+                <p:mainText>Амулет наги теперь у вас! А у Стивена -
+                    нет, ахаха!
+                </p:mainText>
+                <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/> <!--TODO выдать амулет наги  -->
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomC"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomB3" probability="0.8">
+                <p:mainText>Неизвестная сила наполняет вас, а затем переход в опыт вашего клана! А у Стивена и клана-то нет, ахаха!
+                </p:mainText>
+                <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/> <!--TODO выдать опыт клану  -->
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomC"/>
+                </p:answers>
+            </p:replica>
+
+            <!-- третья награда  -->
+            <p:replica id="randomC1" probability="0.79">
+                <p:mainText>Ого, да здесь личный опыт! Не для тебя, Стивен, ахаха! [Клад
+                    теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="ARTIFACT" itemId="s_hed_01"/> <!--TODO выдать 4.000 личного опыта  -->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC2" probability="0.73">
+                <p:mainText>Ого, да здесь слот под артефакт! Такое Стивену не надо... [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="ARTIFACT" itemId="rok_shield_01"/> <!--TODO выдать слот под артефакт  -->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC3" probability="0.8">
+                <p:mainText>Так, да здесь ещё осталось мощное и полезное зелье! Надо поскорее забрать его, чтобы Стивену
+                    не достался сей божественный нектар! [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="CONSUMABLE" itemId="p7x_koschey_3"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC4" probability="0.4">
+                <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Серебряный, между прочим! Вы замечаете, как
+                    грустен Стивен, когда вы вынимаете его. [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="CUSTOM" customScript="giveSilverChest"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC5" probability="0.53">
+                <p:mainText>Так, что это у нас здесь? Бустер "Серебряный набор"! Интересно, как он вообще оказался в
+                    кладе? Главное, что достался он вам, а не Стивену! [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="CUSTOM" customAtlas="atlas_boost" customImage="complex_big" customComment="Бустер"
+                         customScript="giveComplexSmall"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC6" probability="0.6">
+                <p:mainText>1000 билетиков в колесо фортуны! Стивен обойдётся. Как всегда, впрочем. [Клад теперь пуст.
+                    Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="TICKETS" explicitValue="1000"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC7" probability="0.1">
+                <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Лазурный, между прочим! Вы замечаете, как
+                    Стивен видит это и начинает плакать. Ничего, поплачь, вор кладов! [Клад теперь пуст. Сам иди в
+                    пучину, Стивен!]
+                </p:mainText>
+                <p:award type="CUSTOM" customScript="giveGoldChest"/> <!--TODO выдать лазурный сундучок  -->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC8" probability="0.1">
+                <p:mainText>Амулет огня! Это хорошо, такое мы одобряем. Стивену такое нельзя, он не достоин. Вообще
+                    никак. [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="ARTIFACT" itemId="s_fire_01"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC9" probability="0.23">
+                <p:mainText>Пиратская сила! Магия этого клада даёт вам бесплатный вход в портал на ваш выбор! Главное,
+                    что вам, а не Стивену! [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:awardChoice>
+                    <p:left type="CUSTOM" customAtlas="ap_19" customImage="waterWorld" customComment="Водный мир"
+                            customScript="giveFreeWaterPortal" 
+                            removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:left>
+                    <p:right type="CUSTOM" customAtlas="ap_19" customImage="tropics" customComment="Тропики"
+                             customScript="giveFreeTropicsPortal" 
+                             removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:right>
+                </p:awardChoice>
+            </p:replica>
+            <p:replica id="randomC10" probability="0.05">
+                <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! А Стивен пусть завидует! Кстати, вы
+                    видите, как он реально завидует. Приятно. [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+<!--                <p:award type="" itemId=""/> &lt;!&ndash;TODO выдать героя "Тыковка"  &ndash;&gt;-->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC11" probability="0.05">
+                <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! А Стивен пусть завидует! Кстати, вы
+                    видите, как он реально завидует. Приятно. [Клад теперь пуст. Сам иди в пучину, Стивен!]
+                </p:mainText>
+<!--                <p:award type="" itemId=""/> &lt;!&ndash;TODO выдать героя "Самовар-3000"  &ndash;&gt;-->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC12" probability="0.57">
+                <p:mainText>3500 изумрудов! Это прекрасно. Стивен в пролёте! Это приятно. [Клад теперь пуст. Сам иди в
+                    пучину, Стивен!]
+                </p:mainText>
+                <p:award type="MITHRIL" explicitValue="3500"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC13" probability="0.59">
+                <p:mainText>1000 аметистов! Это прекрасно. Стивен в пролёте! Это приятно. [Клад теперь пуст. Сам иди в
+                    пучину, Стивен!]
+                </p:mainText>
+                <p:award type="SULFUR" explicitValue="1000"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC14" probability="0.59">
+                <p:mainText>250 кусков золотой руды! Это прекрасно. Стивен в пролёте! Это приятно. [Клад теперь пуст.
+                    Сам иди в пучину, Стивен!]
+                </p:mainText>
+                <p:award type="ORE_GOLD" explicitValue="250"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC15" probability="0.16">
+                <p:mainText>Карта змейки! Великолепно! Стивен, кусай локти! [Клад теперь пуст. Сам иди в пучину,
+                    Стивен!]
+                </p:mainText>
+                <p:award type="CUSTOM" customAtlas="" customImage="card-snake-small" customComment="Змейка"
+                         customScript="giveSnake"/>
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC16" probability="0.24">
+                <p:mainText>Очки ордена Тени! Интересно, а Стивену они зачем? [Клад теперь пуст. Но, наверняка, Стивен снова будет прятать
+                    вещи!]
+                </p:mainText>
+                <p:award type="EVIL_POINTS" explicitValue="456" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC17" probability="0.24">
+                <p:mainText>Очки ордена Порядка! Интересно, а Стивену они зачем? [Клад теперь пуст. Но, наверняка, Стивен снова будет прятать
+                    вещи!]
+                </p:mainText>
+                <p:award type="GOOD_POINTS" explicitValue="456" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC18" probability="0.24">
+                <p:mainText>Кукла-вуду воскрешения! Точно пригодится, забираем! [Клад теперь пуст. Но, наверняка, Стивен снова будет прятать
+                    вещи!]
+                </p:mainText>
+                <p:award type="CONSUMABLE" itemId="doll_resurrection" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ГРОМШАМАШ УГ'ЛИШ ГУЗЯ ДЖУНГЛИ -->
+
+    <p:place id="pi_1o_Antigua_lc_gromshamash_uglish_guzya_jungle" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp"
+             imageId="pi_1o_Antigua_lc_gromshamash_uglish_guzya" name="Громшамаш Уг’лиш Гузя" minPlayerStair="40"
+             meetProbability="20" minDistanceBetweenSame="7000" requireWeekDay="MONDAY,TUESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+             <p:markerCondition condition="gromshamash_uglish_guzya_for_quests"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" mandatory="true" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Твоя подходить" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Громшамаш Уг’лиш Гузя видеть прекрасный любимый чужак. Громшамаш Уг’лиш Гузя хотеть
+                            сказать кое-что, гыыыыы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что?" gotoFromScript="random"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>Прекрасный чужак смотреть, это цветок, который Громшамаш Уг’лиш Гузя назвать в твоя
+                            честь! "Сахарок", так я его назвать. Огры любить сахар, очень любить. Ты мой сахарок,
+                            гыыыыыы
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ужас..." complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8">
+                        <p:mainText>Прекрасный чужак идти с Громшамаш Уг’лиш Гузя глубоко в джунгли. Никто не услышит
+                            прекрасный чужак там, глубоко. Прекрасный чужак идти с Громшамаш Уг’лиш Гузя?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="НЕТ" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8">
+                        <p:mainText>Прекрасный чужак хотеть, чтобы Громшамаш Уг’лиш Гузя показал фокус с волшебный
+                            палка? Ты хотеть, я доставать и показывать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="ИЗЫДИ" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя сочинить стих любви для прекрасный чужак! "Моя смотреть на
+                            тебя и смотреть, Громшамаш Уг’лиш Гузя для прекрасный чужак хочет петь" - красиво?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Больше не надо" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-5" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя всегда быть рядом. Даже когда прекрасный чужак спать.
+                            Особенно, когда прекрасный чужак спать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мне нужна охрана" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-6" probability="0.8">
+                        <p:mainText>[Громшамаш Уг’лиш Гузя просто молча смотрит на вас. Затем он многозначительно
+                            подмигивает, после чего радостно кричит "Вахамаламба!". Затем он продолжает молчать и иногда
+                            подмигивать.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="НУ ЖУТКО ЖЕ" out="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-7" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя давать этот бутылка прекрасный чужак. Прекрасный чужак пить,
+                            не бояться. Это слёзы Громшамаш Уг’лиш Гузя, когда прекрасный чужак не рядом. Твоя пить, моя
+                            смотреть.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="ФУ! ФУ! Фу-фу-фу!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-8" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя видеть утром бабочка, красивый, как прекрасный чужак. Но
+                            Громшамаш Уг’лиш Гузя раздавить бабочка, ведь нет никто прекрасный, кроме прекрасный чужак.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отойди, пожалуйста" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-9" probability="0.8">
+                        <p:mainText>В джунгли опасность, если прекрасный чужак идти без Громшамаш Уг’лиш Гузя. Громшамаш
+                            Уг’лиш Гузя идти с прекрасный чужак, Громшамаш Уг’лиш Гузя будет идти сзади. Мы идти?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Иди отсюда!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-10" probability="0.8">
+                        <p:mainText>Твоя делиться с Громшамаш Уг’лиш Гузя улыбка, и улыбка Громшамаш Уг’лиш Гузя
+                            обязательно вернётся, гыыыы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отойди, прошу" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-11" probability="0.8">
+                        <p:mainText>Прекрасный чужак отвратно выглядеть в свой доспех, прекрасный чужак немедленно снять
+                            его!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Размечтался" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-12" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя сегодня чистить зубы. Громшамаш Уг’лиш Гузя сейчас доказать
+                            это прекрасный чужак. Твоя идти ко мне, близко вставать вот тут и закрывать глаза.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="УГОМОНИСЬ" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-13" probability="0.8">
+                        <p:mainText>У прекрасный чужак прекрасный кожа. Если макак-мародёр тебя убивать, я забирать твой
+                            кожа и использовать его как одеяло.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кремируйте меня..." complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-14" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя ждать вечером прекрасный чужак за часовня. Отказ прекрасный
+                            чужак не давать. Твоя приходить.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да что пристал?!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-15" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя сейчас рассказать свой сон с прекрасный чужак. Моя и твоя идти
+                            вдоль речка, затем моя становись на колено...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="ОСТАНОВИСЬ" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-16" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя давать прекрасный чужак 10.000.000 изумрудов, если прекрасный
+                            чужак делать доброе дело для Громшамаш Уг’лиш Гузя, вон там, где густой джунгли.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Прекрати, прошу" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-17" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя нужна помощь! Громшамаш Уг’лиш Гузя укусить змея! Прекрасный
+                            чужак должен помогать, надо срочно этот яд выс...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="НЕТ!!!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-18" probability="0.6">
+                        <p:mainText>Громшамаш Уг’лиш Гузя нужна помощь! В самый глухой часть джунгли попугай попасть в
+                            капкан. Мы идти, чтобы помогать! Ради попугай! И ради Громшамаш Уг’лиш Гузя! Гыыыыыы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты прекратишь уже?" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-19" probability="0.8">
+                        <p:mainText>Моя любить каждый часть прекрасный чужак. Громшамаш Уг’лиш Гузя любить слушать когда
+                            прекрасный чужак храпеть. Для Громшамаш Уг’лиш Гузя это звучать музыка!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это ненормально, ты!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-20" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя хотеть поднять прекрасный чужак на рука и второй рука, хотеть
+                            кружить долго и яростно, как моя сердце биться если видеть прекрасный чужак!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ох ты ж..." complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-21" probability="0.8">
+                        <p:mainText>Ты моё радость, моя хотеть твоя улыбка, поэтому моя хотеть щекотать пятки прекрасный
+                            чужак своя пятками. Громшамаш Уг’лиш Гузя мочь делать?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А ну, пшёл вон!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-22" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя приглашать прекрасный чужак на свой день рождений! Там будут
+                            каждый, кто я любить - Громшамаш Уг’лиш Гузя и прекрасный чужак! Хотеть подарок - твоя
+                            обмотать себя ленточкой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты больной?" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-23" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя присоединиться будет к отряд прекрасный чужак. Моя будет с
+                            твоя каждый раз рядом! Твоя доверить моя охрана свой тыл.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Просто уйди" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-24" probability="0.8">
+                        <p:mainText>Моя хотеть звать ласково прекрасный чужак. Твоя иметь прозвище? Твоя будет иметь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="ДАЖЕ НЕ СМЕЙ" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-25" probability="0.8">
+                        <p:mainText>Если твоя быть моя рядом на моя родина, каждый огр завидовать Громшамаш Уг’лиш Гузя!
+                            Твоя уплывать с Громшамаш Уг’лиш Гузя на моя родина? Сейчас.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты ужас как надоел!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-26" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя находить полено, похожий на прекрасный чужак. Громшамаш Уг’лиш
+                            Гузя беречь этот полено и спать с полено обнимать. Громшамаш Уг’лиш Гузя радостно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я боюсь уточнять..." complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-27" probability="0.7">
+                        <p:mainText>Прекрасный чужак - самое прекрасный чужак! Твоя недоступно - моя добиваться твоя.
+                            Это для моя как пирожок из макака - хотеть больше с каждой кусь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я страдаю, хватит!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-28" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя не уметь пользовать челоческий оружие, но Громшамаш Уг’лиш
+                            Гузя хотеть показать, как моя тыкать шпагой. Громшамаш Уг’лиш Гузя показать? Прекрасный
+                            чужак стоять смирно...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отойди, я орать буду!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-29" probability="0.8">
+                        <p:mainText>Если макак-мародёра убивать прекрасный чужак, моя забирать твой каждый три глаза на
+                            память.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мотивация побеждать!" complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-30" probability="0.8">
+                        <p:mainText>Громшамаш Уг’лиш Гузя красивый? Прекрасный чужак соглашаться? Или моя плакать долго
+                            и грустно, твоя не обижать моя...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это ж не нормально..." complete="true"/>
+                            <p:answer text="Ударить палкой" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2">
+                        <p:mainText>АААААААЙЙЙЙЙ!!! За что твоя стукать Громшамаш Уг’лиш Гузя?! Моя больше не быть с
+                            прекрасный чужак рядом! Прекрасный чужак плохое! Моя уходить, твоя потом приползать и
+                            просить счастье с моя...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Наконец-то отстал..." removeMarker="gromshamash_uglish_guzya_for_quests"
+                                      giveMarker="gromshamash_uglish_guzya_go_out_orc" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПРИЗРАК ПИРАТ ДНЕВНИК -->
+
+<p:place id="pi_1o_pg_pirat_ghost_magic_page" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_pirat_ghost_magic_page" name="Дневник пирата-призрака" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+    <p:markerCondition condition="pi_1o_quest_pirates_ghosts_03"/>
+ <p:blockingCreature probability="0"/>
+	<p:states>
+
+<!-- квест "Призраки пиратов"  -->
+        <p:state ifMarker="pi_1o_quest_pirates_ghosts_03" repeatable="false" closable="false"  >            
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Что это? Дневник одного из пиратов-призраков... Почитаем!</p:mainText>
+                <p:answers>
+                    <p:answer text="Читать" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2">
+                <p:mainText>[Нас призвали из царства мёртвых... Странные маги, я таких никогда не видел... Поразительно, но я в виде призрака, но осязаем. Я даже могу делать записи, как живой...] </p:mainText>
+                <p:answers>
+                    <p:answer text="Далее" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3">
+                <p:mainText>[Их магия призыва была странной... Каждый нечётный дух нашей команды призван неправильно... Значит, каждого чётного можно освободить, сказав фразу "Холодное море принимает тебя"...] </p:mainText>
+                <p:answers>
+                    <p:answer text="Хм..." removeMarker="pi_1o_quest_pirates_ghosts_03" giveMarker="pi_1o_quest_pirates_ghosts_04" dropPlace="true" complete="true" >
+                        <p:createTask id="pi_1o_quest_pirates_ghosts_free_them" name="Освободи души пиратов-призраков" count="5" mithril="50" type="SINGLE" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    	</p:state>
+
+        <!-- квест "Освободи души пиратов-призраков" если освободили чётных пиратов  -->
+        <p:state markerCondition="pi_1o_quest_pirates_ghosts_free_1 and pi_1o_quest_pirates_ghosts_free_2 and pi_1o_quest_pirates_ghosts_free_3 and pi_1o_quest_pirates_ghosts_free_4 and pi_1o_quest_pirates_ghosts_free_5" repeatable="false" closable="false"  >            
+        <p:dialog>
+            <p:replica id="r1_d">
+                <p:mainText>Вновь дневник одного из пиратов-призраков... Почитаем!</p:mainText>
+                <p:answers>
+                    <p:answer text="Читать" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2_d">
+                <p:mainText>[Ты, искатель приключений... Вернее, Хранитель своего мира... Я благодарю тебя за то, что души моих братьев были освобождены. Позволь наградить тебя магией этого мира...] </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Спасибо..." />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3_d">
+                <p:mainText>[Ваши действия не остались незамеченными! +1 к репутации мира мёртвых!] </p:mainText>
+                     <p:award type="REPUTATION" reputationType="REPUTATION_DEADWORLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Внезапно" complete="true" dropPlace="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>
+
+	</p:states>
+    </p:place>
+
+    </p:root>

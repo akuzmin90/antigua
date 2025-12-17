@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Д.О. МУЖ ЗАГУЛЯЛ МАНГРОВЫЕ ДЖУНГЛИ -->
+
+    <!-- Квест с доски объявлений "Муж загулял", мангровые джунгли  -->
+    <p:place id="pi_1o_Antigua_quest_drunk_husband_mj" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_quest_drunk_husband"
+             name="Загулявший муж" minDistanceBetweenSame="4500" minPlayerStair="40" meetProbability="10" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+             <p:markerCondition condition="pi_1o_quest_bulletin_board_mj_drunk_husband_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Оооо, ик, какие люди! Не составшь мне ком... ИК... ком... ИК... компани... ИК... компанию?
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Тебя жена ищет"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2">
+                <p:mainText>Опппять? Ик... Ладно, ладно, уже иду домой... Но лишь птму, шо ты прсишь! Ик...</p:mainText>
+                <p:answers>
+                    <p:answer text="На автопилоте!" removeMarker="pi_1o_quest_bulletin_board_mj_drunk_husband_01"
+                              giveMarker="pi_1o_quest_bulletin_board_mj_drunk_husband_02" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

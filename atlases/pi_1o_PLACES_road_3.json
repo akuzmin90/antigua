@@ -1,0 +1,490 @@
+{
+  "textures": [
+    {
+      "image": "pi_1o_PLACES_road_3.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 0,
+        "h": 0
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_tot",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 311,
+            "h": 346
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 311,
+            "h": 346
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 311,
+            "h": 346
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_hs_embodiment_of_chthon",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 90,
+            "h": 137
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 90,
+            "h": 137
+          },
+          "frame": {
+            "x": 0,
+            "y": 346,
+            "w": 90,
+            "h": 137
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_frail",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 54,
+            "h": 113
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 54,
+            "h": 113
+          },
+          "frame": {
+            "x": 90,
+            "y": 346,
+            "w": 54,
+            "h": 113
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_quest_blue_shrimp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 95,
+            "h": 48
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 48
+          },
+          "frame": {
+            "x": 90,
+            "y": 459,
+            "w": 95,
+            "h": 48
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_quest_sons_of_mara",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 66,
+            "h": 107
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 66,
+            "h": 107
+          },
+          "frame": {
+            "x": 144,
+            "y": 346,
+            "w": 66,
+            "h": 107
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sign_way_to_city",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 58,
+            "h": 59
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 58,
+            "h": 59
+          },
+          "frame": {
+            "x": 185,
+            "y": 453,
+            "w": 58,
+            "h": 59
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_hp_nessi",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 97,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 97,
+            "h": 105
+          },
+          "frame": {
+            "x": 210,
+            "y": 346,
+            "w": 97,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sign_way_to_lumberjack_camp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 58,
+            "h": 59
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 58,
+            "h": 59
+          },
+          "frame": {
+            "x": 243,
+            "y": 451,
+            "w": 58,
+            "h": 59
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_hp_shadow",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 75,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 75,
+            "h": 105
+          },
+          "frame": {
+            "x": 307,
+            "y": 346,
+            "w": 75,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_hp_ancient_turtle",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 110,
+            "h": 78
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 110,
+            "h": 78
+          },
+          "frame": {
+            "x": 382,
+            "y": 0,
+            "w": 110,
+            "h": 78
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sp_planter",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 59,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 59,
+            "h": 105
+          },
+          "frame": {
+            "x": 311,
+            "y": 0,
+            "w": 59,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_quest_steven_rats_02",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 100,
+            "h": 103
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 100,
+            "h": 103
+          },
+          "frame": {
+            "x": 382,
+            "y": 78,
+            "w": 100,
+            "h": 103
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_treasure_map_dealer",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 58,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 58,
+            "h": 105
+          },
+          "frame": {
+            "x": 311,
+            "y": 105,
+            "w": 58,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_head_of_inquisition",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 73,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 73,
+            "h": 105
+          },
+          "frame": {
+            "x": 311,
+            "y": 210,
+            "w": 73,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_quest_steven_rats_01",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 99,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 99,
+            "h": 104
+          },
+          "frame": {
+            "x": 384,
+            "y": 181,
+            "w": 99,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_hp_man_eating_shark",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 75,
+            "h": 94
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 75,
+            "h": 94
+          },
+          "frame": {
+            "x": 384,
+            "y": 285,
+            "w": 75,
+            "h": 94
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sp_guard_npc",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 53,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 53,
+            "h": 105
+          },
+          "frame": {
+            "x": 459,
+            "y": 285,
+            "w": 53,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sp_guard_npc_2",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 54,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 54,
+            "h": 104
+          },
+          "frame": {
+            "x": 382,
+            "y": 390,
+            "w": 54,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_frail_kp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 47,
+            "h": 99
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 47,
+            "h": 99
+          },
+          "frame": {
+            "x": 436,
+            "y": 390,
+            "w": 47,
+            "h": 99
+          }
+        }
+      ]
+    }
+  ]
+}

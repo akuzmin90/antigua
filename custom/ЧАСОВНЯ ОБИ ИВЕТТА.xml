@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЧАСОВНЯ ОБИ ИВЕТТА  -->
+
+    <p:place id="pi_1o_Antigua_lc_ivetta_obi_chapel_service" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_ivetta_obi"
+             name="Иветта Оби" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Левиафанов!" delayMs="31000"/>
+                    <p:talk text="Смилостивилось!" delayMs="56000"/>
+                    <p:talk text="Прямо до Антигуа!" delayMs="81000"/>
+                    <p:talk text="Похожий на фрегат Капитана пиратов!" delayMs="146000"/>
+                    <p:talk text="Достал свой алый платок!" delayMs="191000"/>
+                    <p:talk text="Но Капитан пиратов жил честью!" delayMs="216000"/>
+                    <p:talk text="Теперь затихла вся таверна!" delayMs="236000"/>
+                    <p:talk text="Порадовать малыша!" delayMs="276000"/>
+                    <p:talk text="Малыш был счастлив!" delayMs="331000"/>
+                    <p:talk text="Видел, как из воды появилось щупальце!" delayMs="351000"/>
+                    <p:talk text="Его мечты рухнули во мгновение!" delayMs="381000"/>
+                    <p:talk text="Один на всём белом свете..." delayMs="401000"/>
+                    <p:talk text="Никто из людей не подошёл к нему" delayMs="441000"/>
+                    <p:talk text="Он не знал..." delayMs="516000"/>
+                    <p:talk text="Пиратов!" delayMs="531000"/>
+                    <p:talk text="Он умолял Капитана не уплывать!" delayMs="601000"/>
+                    <p:talk text="Совершенно внезапно!" delayMs="661000"/>
+                    <p:talk text="Сделка!" delayMs="686000"/>
+                    <p:talk text="В этот день остров Антигуа изменился!" delayMs="741000"/>
+                    <p:talk text="Они показали честь всем!" delayMs="791000"/>
+                    <p:talk text="Но нужного Левиафана не попадалось!" delayMs="846000"/>
+                    <p:talk text="Его посвятили в пираты!" delayMs="861000"/>
+                    <p:talk text="Капитан всё понял без слов!" delayMs="941000"/>
+                    <p:talk text="Все понимали, что происходит!" delayMs="966000"/>
+                    <p:talk text="Месть свершится. Сегодня. Сейчас!" delayMs="1001000"/>
+                    <p:talk text="Музыка мести заряжала его яростью!" delayMs="1031000"/>
+                    <p:talk text="Жизнь или смерть!" delayMs="1071000"/>
+                    <p:talk text="Левиафан приближался. Всего минута!" delayMs="1111000"/>
+                    <p:talk text="Левиафан! Дитя моря!" delayMs="1146000"/>
+                    <p:talk text="Это всё?" delayMs="1196000"/>
+                    <p:talk text="Клятва сильнее жизни!" delayMs="1246000"/>
+                    <p:talk text="Левиафан вопил! Левиафан злился!" delayMs="1306000"/>
+                    <p:talk text="Быть людьми!" delayMs="1376000"/>
+                    <p:talk text="Ужасное до оцепенения!" delayMs="1401000"/>
+                    <p:talk text="Но Левиафан был ещё жив!" delayMs="1456000"/>
+                    <p:talk text="Но они будут держаться!" delayMs="1501000"/>
+                    <p:talk text="Последний заряженный гарпун..." delayMs="1556000"/>
+                    <p:talk text="Долг исполнен!" delayMs="1621000"/>
+                    <p:talk text="Живой!" delayMs="1646000"/>
+                    <p:talk text="Не дай море увидеть вам..." delayMs="1731000"/>
+                    <p:talk text="Добродетель - высшая святость!" delayMs="1766000"/>
+                    <p:talk text="Капитан Оби! Восславим!" delayMs="1801000" repeatable="false"
+                            giveMarker="pi_1o_react_captain_obi"/>
+                    <p:talk text="Капитан Оби! Восславим!" delayMs="1801000" />
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>[Идёт служба. Иветта Оби читает проповедь.]</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал пока не вернули   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_03" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Молится за Айка*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Верни Айка, пожалуйста!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Занимаюсь этим" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

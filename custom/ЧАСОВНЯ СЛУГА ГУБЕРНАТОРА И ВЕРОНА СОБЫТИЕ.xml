@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЧАСОВНЯ СЛУГА ГУБЕРНАТОРА СОБЫТИЕ  -->
+
+    <p:place id="pi_1o_Antigua_gp_governor_servant_verona_chapel" atlasId="pi_1o_PLACES_road_7"
+             imageId="pi_1o_Antigua_gp_governor_servant_verona_chapel" name="Воссоединение семьи" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                                <p:talks loop="true" onClick="STOP">
+                                    <p:talk text="Мама, прости меня" delayMs="1000"/>
+                                    <p:talk text="Не извиняйся, сына" delayMs="6000"/>
+                                    <p:talk text="Мама, я плохой сын" delayMs="11000"/>
+                                    <p:talk text="Неправда! Я люблю тебя!" delayMs="16000"/>
+                                    <p:talk text="И я тебя люблю, мама!" delayMs="21000"/>
+                                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor_servant" imageComment="Слуга Губернатора">
+                        <p:mainText>Искатель приключений, спасибо тебе ещё раз большое! Я действительно понимаю, как мне
+                            не хватало мамы... Я вёл себя ужасно. Но сейчас всё изменится.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Почему вы тут?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor_servant" imageComment="Слуга Губернатора">
+                        <p:mainText>Лучше, если нас не увидят - я не хочу позорить её. Я же сбежал из деревни, я подвёл
+                            её... Я не хочу, чтобы над ней смеялись из-за меня. Я же не достоин местных жителей.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зря ты так"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_verona" imageComment="Верона">
+                        <p:mainText>Вот именно! Ты же можешь приходить когда хочешь! А кто скажет слово против или будет
+                            смеяться - поверь, я могу и топором зашибить!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это лишнее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor_servant" imageComment="Слуга Губернатора">
+                        <p:mainText>Мама, авантюрист пра[в|ва]. Давай не будем ворошить это... Я буду иногда приходить.
+                            Я буду помогать золотой рудой. И я компенсирую все годы ненужной ненависти к тебе. Прости
+                            меня, мама.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я оставлю вас"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor_servant" imageComment="Слуга Губернатора">
+                        <p:mainText>Хорошо. Я не знаю, как выразить тебе благодарность... Не хватит золотой руды всего
+                            Антигуа, чтобы сказать спасибо. Вот, это для тебя. Моя благодарность.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="40"/>
+                        <p:answers>
+                            <p:answer text="Спасибо" removeMarker="pi_1o_quest_family_values_consequences"
+                                      requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

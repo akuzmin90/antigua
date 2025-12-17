@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАНИЦА 09 -->
+
+    <p:place id="pi_1o_Antigua_lost_memories_09" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lost_memories_01" name="Страница 09"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А вот и девятая страница, вырванная из дневника! Чернила совсем свежие! Хм,
+                            прочитаем...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Я НАШЁЛ ЕГО!!! Клад Джима Сороки, вот он, передо мной! Какой огромный сундук,
+                            полный золота и сокровищ! Эльза, моя милая Эльза простит меня, когда увидит, что я сделал
+                            ради неё... Ради её счастья..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"Пока я осматривал сундук, я услышал шорохи, шёпот... проклятье Джима Сороки? Я в
+                            это не верю! Бояться надо живых, а не мёртвых. Надеюсь, это не разбойники... Нужно взять,
+                            сколько могу, и возвращаться!"
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>"Я смотрю на проход к этому месту... 3 силуэта. Они медленно приближаются... Надо
+                            спрятаться, надо спрятаться хоть с толикой сокровищ... Они уйдут с сундуком, и я вернусь к
+                            моей родной Эльзе..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>[Похоже, вам удалось найти все страницы из дневника! +1 к общей репутации!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Так-так-так. Здесь описаны недавние события! И эта страница в доме Стивена...
+                            Слишком подозрительно! Неужели Стивен... Надо узнать у него подробнее!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"
+                                      removeMarker="pi_1o_quest_lost_memories_09,pi_1o_quest_lost_memories_hermit,pi_1o_quest_lost_memories_steven,pi_1o_quest_lost_memories_storekeeper,pi_1o_quest_lost_memories_steven_1,pi_1o_quest_lost_memories_innkeeper,pi_1o_quest_lost_memories_nestor,pi_1o_quest_lost_memories_magevoodoo_guard"
+                                      giveMarker="pi_1o_quest_lost_memories_10,pi_1o_quest_lost_memories_hint_10"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

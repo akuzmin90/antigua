@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ВЕДЬМА ИЗ ДЕТСКОГО САДА  -->
+
+    <p:place id="pi_1o_mj_ki_witch" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_mj_ki_witch" name="Ведьма" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Детский сАД"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Какой настырный искатель приключений! Кто мне теперь дверь починит?! И вообще,
+                            убирайся отсюда! А хотя нет... Я лучше избавлю мир от тебя, ахаха! Познакомься с моим белым
+                            фаянсовым другом, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм... В смысле?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Да, я понимаю как это ужасно звучит... Но я сделала личного голема, прямо из фаянса,
+                            ахаха! Поэтому, мы тебя сокрушим, а из твоего черепа я сделаю кубок для молочка!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_mj_ki_witch,pi_1o_mj_ki_faience" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Ведьма и Фаянсовый голем, боевая иконка будет называться pi_1o_mj_ki_witch_f и pi_1o_mj_ki_faience_golem_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Ахаха, убирайся прочь! Айк мой, я уже специи подобрала!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_mj_ki_witch,pi_1o_mj_ki_faience" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true">
+                                <p:toRoad roadId="pi_1o_mangrove_jungle"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Ведьма и её белый фаянсовый дружок - теперь история. На её останках вы находите
+                            ключ от клетки с Айком! И пару кусков золотой руды.]
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Отлично!" removeMarker="pi_1o_quest_kindergarten_you_fool_03"
+                                      giveMarker="pi_1o_quest_kindergarten_you_fool_04" complete="true"
+                                      requestSpecialPlaces="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

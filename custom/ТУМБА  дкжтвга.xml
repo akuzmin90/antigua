@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Тумба  -->
+
+    <p:place id="pi_1o_home_storeceeper_ugabuga_tumba" animType="EMPTY" imageId="70x145" name="Тумба" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В этой тумбе хранятся украшения Мамубы, жены кладовщика. К сожалению для вас, и к счастью для Мамубы, взять тут нечего... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну вот" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <p:state ifMarker="find_sticks_ugabuga">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>О, в тумбе вы обнаруживаете ударные палочки! Теперь можно и на барабане поиграть. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Даёшь бласт-бит!" removeMarker="find_sticks_ugabuga" giveMarker="play_drum_ugabuga" postLaunchScriptId="triggerRespawn" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

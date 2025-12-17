@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДЕТЁНЫШ ЛЕВИАФАНА -->
+
+    <p:place id="pi_1o_Antigua_lg_leviathan_child" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_child_leviathan_treasure"
+             name="Детёныш Левиафана" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_inquisitor_eyepiece_03"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Окуляр инквизитора"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Детёныш Левиафана стоит перед вами. Маленький, но очень опасный. Очевидно одно - он
+                            хочет вами полакомиться! И вашей лошадью тоже. Придётся сопротивляться его голоду!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lg_leviathan_child" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Детёнышем Левиафана, боевая иконка будет называться pi_1o_Antigua_lg_child_leviathan_treasure_f, это босс -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Сейчас он сильнее...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lg_leviathan_child" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Детёныш Левиафана повержен - внезапно, он отскакивает назад и исчезает в провале,
+                            наполненном водой! Похоже, угроза миновала, и сегодня вас не съели.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_inquisitor_eyepiece_03"
+                                      giveMarker="pi_1o_quest_inquisitor_eyepiece_04" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

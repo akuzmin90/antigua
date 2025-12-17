@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- НОЧЬ БЕЛЛА ОБИ ДО ПОЛУНОЧИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_bella_obi_before_night" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_bella_obi"
+             name="Белла Оби" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Читает*" delayMs="8000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я люблю вечера - никто не отвлекает меня от чтения книги. Тётя Касуми рада тому, что
+                            я веду себя тихо - она мне очень нравится. Вот была бы она учёным...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Книга из гробницы", сдаём книгу   -->
+            <p:state ifMarker="pi_1o_quest_book_from_tomb_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Книга... Книга у тебя, правда?! Я тебе так благодарна, ты не представляешь! Новая
+                            книга, ещё и толстенная! А можно... Можно я её посмотрю?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так ты забирай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>[Белла с улыбкой берёт книгу и начинает пролистывать её] Ого, её написала
+                            женщина-учёный! И смотри, она даже, как я, пишет некоторые вещи! Я просто в восторге! Не
+                            хочешь немного почитать со мной?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>[Вы читаете книгу. В ней собраны тысячи знаний, одно вы подметили - как повысить
+                            жизненную силу! Но главное - вы видите, что Белла Оби счастлива новой книге]
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Знания - сила!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Искатель приключений... У меня есть 2 кусочка золотой руды... Я их берегла и не
+                            тратила - но я же должна отблагодарить того, кто принёс мне самое ценное - знания!
+                            Пожалуйста, возьми. А то обижусь!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="2"/>
+                        <p:answers>
+                            <p:answer text="Так и быть"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>[Ваши деяния не остались незамеченными - вы совершили добро, принеся девочке книгу
+                            со знаниями! +1 к репутации пиратов!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Отлично же"
+                                      removeMarker="pi_1o_quest_book_from_tomb_03,pi_1o_quest_book_from_tomb_kasumi_react"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_book_from_tomb"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

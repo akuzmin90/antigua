@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ОСКОЛОК МЕЧА -->
+
+<p:place id="pi_1o_pg_broken_sword" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_broken_sword" name="Осколок меча" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD" >
+    <p:markerCondition condition="pi_1o_quest_my_first_voodoo_doll_02"/>
+    <p:blockingCreature probability="0"/>
+
+	<p:states>
+
+        <p:state id="default" closable="false">   	 
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Осколок пиратской сабли. То, что нужно Нестору! Надо бы вернуться к нему.</p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="pi_1o_quest_my_first_voodoo_doll_02" giveMarker="pi_1o_quest_my_first_voodoo_doll_03" complete="true" dropPlace="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:state>
+
+    </p:states>
+    </p:place>
+
+    </p:root>

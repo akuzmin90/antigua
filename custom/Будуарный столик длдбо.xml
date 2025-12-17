@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Будуарный столик -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_boudoir_table" animType="EMPTY" imageId="33x90" name="Будуарный столик" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здесь хранится косметика девушек семьи Оби. Ничего интересного. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Будуарный столик если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_boudoir_table_1" animType="EMPTY" imageId="33x90" name="Будуарный столик" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Если что-то пропадёт из нашей косметики - я буду говорить с тобой иначе, языком стали моей катаны. Но на всякий случай, как предупреждение, покинь этот дом. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

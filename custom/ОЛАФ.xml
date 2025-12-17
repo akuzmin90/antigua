@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ОЛАФ  -->
+
+    <p:place id="pi_1o_Antigua_lc_olaf" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_olaf" name="Олаф" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Скоро на охоту" delayMs="5000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Встречался ли тебе лучший охотник? Теперь - да! Я могу макаке с 50 шагов в глаз
+                            попасть. Кстати, остерегайся макак-мародёров в мангровых джунглях. Я не шучу. Они иногда
+                            нападают ВНЕЗАПНО.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true" giveMarker="lumberjack_olaf_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_golden_parrot_01 or pi_1o_quest_blood_moth_01 or pi_1o_quest_drowned_01 or pi_1o_ancient_turtle_01 or pi_1o_quest_grey_alligator_01 or pi_1o_quest_winged_monkey_01 or pi_1o_quest_man_eating_shark_01 or pi_1o_quest_magog_01 or pi_1o_quest_nessi_01 or pi_1o_quest_basilisk_01 or pi_1o_quest_chupacabra_01 or pi_1o_quest_weaver_01 or pi_1o_quest_scorpio_man_01 or pi_1o_quest_siren_01 or pi_1o_quest_embodiment_of_chthon_01 or pi_1o_quest_hellhound_01 or pi_1o_quest_lost_criita_01 or pi_1o_quest_steel_crab_01 or pi_1o_quest_living_dead_gorilla_01 or pi_1o_quest_captain_obi_01 or pi_1o_quest_bulletin_board_steven_rats_01 or pi_1o_quest_bulletin_board_steven_rats_02"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_golden_parrot_01" text="Золотой попугай"
+                                      goto="r_lumberjack_olaf1"/>
+                            <p:answer ifMarker="pi_1o_quest_blood_moth_01" text="Кровавый мотылёк"
+                                      goto="r_lumberjack_olaf2"/>
+                            <p:answer ifMarker="pi_1o_quest_drowned_01" text="Утопец" goto="r_lumberjack_olaf3"/>
+                            <p:answer ifMarker="pi_1o_ancient_turtle_01" text="Древняя черепаха"
+                                      goto="r_lumberjack_olaf4"/>
+                            <p:answer ifMarker="pi_1o_quest_grey_alligator_01" text="Серый Аллигатор"
+                                      goto="r_lumberjack_olaf5"/>
+                            <p:answer ifMarker="pi_1o_quest_winged_monkey_01" text="Крылатая обезьяна"
+                                      goto="r_lumberjack_olaf6"/>
+                            <p:answer ifMarker="pi_1o_quest_man_eating_shark_01" text="Акула-людоед"
+                                      goto="r_lumberjack_olaf7"/>
+                            <p:answer ifMarker="pi_1o_quest_magog_01" text="Магог" goto="r_lumberjack_olaf8"/>
+                            <p:answer ifMarker="pi_1o_quest_nessi_01" text="Несси" goto="r_lumberjack_olaf9"/>
+                            <p:answer ifMarker="pi_1o_quest_basilisk_01" text="Василиск" goto="r_lumberjack_olaf10"/>
+                            <p:answer ifMarker="pi_1o_quest_chupacabra_01" text="Чупакабра" goto="r_lumberjack_olaf11"/>
+                            <p:answer ifMarker="pi_1o_quest_weaver_01" text="Ткачиха" goto="r_lumberjack_olaf12"/>
+                            <p:answer ifMarker="pi_1o_quest_scorpio_man_01" text="Человек-скорпион"
+                                      goto="r_lumberjack_olaf13"/>
+                            <p:answer ifMarker="pi_1o_quest_siren_01" text="Сирена" goto="r_lumberjack_olaf14"/>
+                            <p:answer ifMarker="pi_1o_quest_embodiment_of_chthon_01" text="Воплощение Хтони"
+                                      goto="r_lumberjack_olaf15"/>
+                            <p:answer ifMarker="pi_1o_quest_hellhound_01" text="Адская гончая"
+                                      goto="r_lumberjack_olaf16"/>
+                            <p:answer ifMarker="pi_1o_quest_lost_criita_01" text="Заблудшая Криита"
+                                      goto="r_lumberjack_olaf17"/>
+                            <p:answer ifMarker="pi_1o_quest_steel_crab_01" text="Стальной краб"
+                                      goto="r_lumberjack_olaf18"/>
+                            <p:answer ifMarker="pi_1o_quest_living_dead_gorilla_01" text="Восставшая горилла"
+                                      goto="r_lumberjack_olaf19"/>
+                            <p:answer ifMarker="pi_1o_quest_captain_obi_01" text="Капитан Пиратов"
+                                      goto="r_lumberjack_olaf20"/>
+                            <p:answer
+                                    markerCondition="pi_1o_quest_bulletin_board_steven_rats_01 or pi_1o_quest_bulletin_board_steven_rats_02"
+                                    text="крысы Стивена" goto="r_lumberjack_olaf21"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf1">
+                        <p:mainText>Ищи его в мангровых джунглях. Мне нужны золотые перья, чем больше - тем лучше!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf2">
+                        <p:mainText>Ищи его на кладбище пиратов. Мне нужна кровавая пыльца с его крыльев.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf3">
+                        <p:mainText>Ищи его в гроте Левиафана. Мне нужен его хребет.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf4">
+                        <p:mainText>Ищи её недалеко от пирата-отшельника. Мне нужен её панцирь.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf5">
+                        <p:mainText>Ищи его в гроте Левиафана. Мне нужны его зубы.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf6">
+                        <p:mainText>Ищи её в мангровых джунглях. Мне нужны её крылья!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf7">
+                        <p:mainText>Ищи её недалеко от пирата-отшельника. Мне нужен её череп.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf8">
+                        <p:mainText>Ищи его на кладбище пиратов. Мне нужны его рога.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf9">
+                        <p:mainText>Ищи её недалеко от пирата-отшельника. Мне нужны её плавники.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf10">
+                        <p:mainText>Ищи его в гроте Левиафана. Мне нужны его глаза.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf11">
+                        <p:mainText>Ищи её на кладбище пиратов. Мне нужна она целиком, не живая!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf12">
+                        <p:mainText>Ищи её в мангровых джунглях. Мне нужны её лапы!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf13">
+                        <p:mainText>Ищи его в мангровых джунглях. Мне нужен его хвост!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf14">
+                        <p:mainText>Ищи её на маяке Джека. Мне нужны её когти.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf15">
+                        <p:mainText>Ищи ЭТО в доме Стивена, в городе Антигуа. Стивен это заслужил, конечно, но ЭТОМУ в
+                            городе не место. И я сейчас про обоих.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf16">
+                        <p:mainText>Ищи её на кладбище пиратов. Мне нужна её шкура!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf17">
+                        <p:mainText>Ищи её на в мангровых джунглях. Мне нужно её ожерелье!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf18">
+                        <p:mainText>Ищи его в гроте Левиафана. Мне нужен его панцирь.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf19">
+                        <p:mainText>Ищи её в мангровых джунглях. Мне нужны её кости!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf20">
+                        <p:mainText>Ищи его на кладбище пиратов. И просто упокой его, хорошо? Никто из нас не сможет это
+                            сделать, просто из-за морали...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_olaf21" >
+                        <p:mainText>Я слышал, ты помогаешь с проблемой Стивена с крысами... Ахаха, да это я их
+                            подкидываю ему постоянно! Ну а чего, он три года назад мою невесту увёл. Пусть мучается.
+                            Никто не любит Стивена, верно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Верно!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Олаф боится гуля", концовка   -->
+            <p:state ifMarker="pi_1o_quest_olaf_ghoul_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Я уже чувствую запах этого гуля.. Лапа у тебя? Дай мне взглянуть на неё! Ух, ну и
+                            монстр...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Держи"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Ты победи[л|ла] гуля, и награда твоя!</p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="13"/>
+                        <p:answers>
+                            <p:answer text="Спасибо" ifNoMarker="hobbit_talk_fun"
+                                      removeMarker="pi_1o_quest_olaf_ghoul_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_olaf_ghoul"/>
+                            </p:answer>
+                            <p:answer text="Спасибо" ifMarker="hobbit_talk_fun" goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Болване чевек Хоббите шаламэ делай! Э... Болване чевек... э... обмани делай хоббите!
+                            Де злоте? ДЕ МОЯ ЗЛОТЕ?! Хоббите Экля хрен гуля палка бум голова и гуля йок! ДЕ ЗЛОТЕ ДЛЯ
+                            ХОББИТЕ ЭКЛЯ?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кстати да" goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Ахаха! Какой забавный малый. Хоббит, говоришь? Слышал про вас, ты же с острова
+                            Диалья... Вот и тебе "злоте", герой, ахаха!
+                        </p:mainText>
+                        <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Экля счастлив" removeMarker="pi_1o_quest_olaf_ghoul_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_olaf_ghoul"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Золотой Попугай", первый диалог   -->
+            <p:state ifMarker="lumberjack_olaf_for_quests" probabilityPercentState="35" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Искатель приключений, хочешь заработать? У меня есть работа. Как ты отосишься к
+                            охоте на редких монстров?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="С интересом"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Прекрасно! Всё просто: я даю задание, говорю где монстр обитает, а ты охотишься на
+                            него и приносишь трофей. Доход делим пополам, то есть с каждого трофея - 100 кусков золотой
+                            руды тебе. Сделка?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Великолепно! Сразу к делу - в мангровых джунглях обитает Золотой Попугай.
+                            Агрессивная тварь... Мне нужны его перья. И давай договоримся - о работе лишь в дневное
+                            время. Обед, ночь, часовня - я отдыхаю.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_1o_quest_golden_parrot_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_golden_parrot" name="Золотой Попугай" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Золотой Попугай", повержен   -->
+            <p:state ifMarker="pi_1o_quest_golden_parrot_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Ага, вот они, перья... Да ты посмотри, это же чистое золото! Так, думаю, будет
+                            честно, если я сразу буду платить тебе, так как продам я их не сегодня, это точно.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Хорошая идея">
+                                <p:addTaskProgress id="pi_1o_quest_golden_parrot"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Так, не будем тянуть кота за рога. Следующий трофей, что мне нужен - на кладбище
+                            пиратов появился Кровавый Мотылёк. Мне нужна его кровавая пыльца с крыльев.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_golden_parrot_02"
+                                      giveMarker="pi_1o_quest_blood_moth_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_blood_moth" name="Кровавый Мотылек" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кровавый Мотылёк", повержен   -->
+            <p:state ifMarker="pi_1o_quest_blood_moth_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Так, кровавая пыльца, отлично! Городские дамы любят добавлять её в румяна. А вот и
+                            твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_blood_moth"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Так, не будем тянуть коня за хвост. Следующий трофей, что мне нужен - в гроте
+                            Левиафана объявился Утопец. Мне нужен его хребет.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жестко" removeMarker="pi_1o_quest_blood_moth_02"
+                                      giveMarker="pi_1o_quest_drowned_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_drowned" name="Утопец" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Утопец", повержен   -->
+            <p:state ifMarker="pi_1o_quest_drowned_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Хребет утопца - превосходно! Из него получаются отличные пуговицы для дорогих
+                            костюмов. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_drowned"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Так, не будем тянуть оленя за рога. Следующий трофей, что мне нужен - у
+                            пирата-отшельника объявилась Древняя Черепаха. Мне нужен её панцирь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_drowned_02"
+                                      giveMarker="pi_1o_quest_ancient_turtle_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_ancient_turtle" name="Древняя Черепаха" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Утопец", повержен   -->
+            <p:state ifMarker="pi_1o_quest_ancient_turtle_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Панцирь древней черепахи! Его можно расслоить и сделать много щитов - это был,
+                            кстати, заказ от Губернатора. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_ancient_turtle"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Так, не будем тянуть макаку за лапу. Следующий трофей, что мне нужен - в гроте
+                            Левиафана объявился Серый Аллигатор. Мне нужны его зубы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_ancient_turtle_02"
+                                      giveMarker="pi_1o_quest_grey_alligator_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_grey_alligator" name="Серый Аллигатор" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Серый Аллигатор", повержен   -->
+            <p:state ifMarker="pi_1o_quest_grey_alligator_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Зубы серого аллигатора! Это был заказ от магов-вуду. Уж не знаю, зачем они им...
+                            Наверное, для ритуалов. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_grey_alligator"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>Так, не будем тянуть Губернатора за парик. Следующий трофей, что мне нужен - в
+                            мангровых джунглях объявилась Крылатая обезьяна! Мне нужны её крылья.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_grey_alligator_02"
+                                      giveMarker="pi_1o_quest_winged_monkey_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_winged_monkey" name="Крылатая обезьяна" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Крылатая обезьяна", повержен   -->
+            <p:state ifMarker="pi_1o_quest_winged_monkey_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Крылья крылатой обезьяны! Таких ни у кого больше нет... Оставлю их себе, пожалуй,
+                            хе-хе. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_winged_monkey"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>Так, не будем тянуть бородавочника за хрюндель. Следующий трофей, что мне нужен - у
+                            берегов Антигуа снова объявилась Акула-людоед! Её видели недавно у пирата-отшельника. Мне
+                            нужен её череп.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_winged_monkey_02"
+                                      giveMarker="pi_1o_quest_man_eating_shark_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_man_eating_shark" name="Акула-людоед" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Акула-людоед", повержен   -->
+            <p:state ifMarker="pi_1o_quest_man_eating_shark_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>Акула-людоед... Много горя она принесла жителям Антигуа. Её череп украсит личную
+                            комнату Губернатора! А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_man_eating_shark"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_9">
+                        <p:mainText>Так, не будем тянуть попугая за клюв. Следующий трофей, что мне нужен - хвост
+                            человека-скорпиона! Его видели наши лесорубы в мангровых джунглях. Видимо, вылез из старой
+                            гробницы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ужас какой" removeMarker="pi_1o_quest_man_eating_shark_02"
+                                      giveMarker="pi_1o_quest_scorpio_man_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_scorpio_man" name="Человек-скорпион" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Человек-скорпион", повержен   -->
+            <p:state ifMarker="pi_1o_quest_scorpio_man_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10">
+                        <p:mainText>Человек-скорпион, надеюсь, таких больше нет... А за хвост спасибо - его с руками у
+                            меня оторвут! А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_scorpio_man"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_10">
+                        <p:mainText>Так, не будем тянуть комара за носик. Следующий трофей, что мне нужен - рога Магога!
+                            Его видели на кладбище пиратов. Осторожнее, он метает огненные шары!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Острое поел?" removeMarker="pi_1o_quest_scorpio_man_02"
+                                      giveMarker="pi_1o_quest_magog_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_magog" name="Магог" count="1" mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Магог", повержен   -->
+            <p:state ifMarker="pi_1o_quest_magog_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_11">
+                        <p:mainText>Рога магога - шикарно! Говорят, что они повышают силу! Но только мужчинам. Хе-хе,
+                            да. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_magog"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_11">
+                        <p:mainText>Так, не будем тянуть корабль за парус...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Так, стоп!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Да что за шутки у тебя! Тянуть того и за это... Ну вообще каждая мимо! Ну не
+                            получается у тебя! Остановись!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Я пытаюсь разбавить атмосферу, понимаешь? Это же опасная работа. И вообще - я
+                            оплачиваю твою работу, так что терпи, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Так, не будем тянуть верёвку... Эм... За верёвку, да... Следующий трофей, что мне
+                            нужен - плавники Несси! Её видели у берегов Антигуа, у пирата-отшельника.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно" removeMarker="pi_1o_quest_magog_02" giveMarker="pi_1o_quest_nessi_01"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_nessi" name="Несси" count="1" mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Несси", повержен   -->
+            <p:state ifMarker="pi_1o_quest_nessi_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_12">
+                        <p:mainText>Плавники Несси - редчайший деликатес! Трактирщик давно просил их. А вот и твоя доля,
+                            партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_nessi"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_12">
+                        <p:mainText>Так, не будем тянуть Трактирщика за фартук. Следующий трофей, что мне нужен - глаза
+                            Василиска! Его видели гроте Левиафана.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Глаза? Ужас" removeMarker="pi_1o_quest_nessi_02"
+                                      giveMarker="pi_1o_quest_basilisk_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_basilisk" name="Василиск" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Василиск", повержен   -->
+            <p:state ifMarker="pi_1o_quest_basilisk_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_13">
+                        <p:mainText>Глаза василиска можно использовать как ночник! Они светятся в темноте, в городе
+                            такие покупают для детских комнат. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это прекрасно">
+                                <p:addTaskProgress id="pi_1o_quest_basilisk"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_13">
+                        <p:mainText>Так, не будем тянуть лосося за жабры. Следующий трофей, что мне нужен - лапы
+                            Ткачихи! Её видели в мангровых джунглях. Это женщина на половину паук, если что.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="На какую половину?" removeMarker="pi_1o_quest_basilisk_02"
+                                      giveMarker="pi_1o_quest_weaver_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_weaver" name="Ткачиха" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Ткачиха", повержен   -->
+            <p:state ifMarker="pi_1o_quest_weaver_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_14">
+                        <p:mainText>Лапы ткачихи высоко ценятся рыбаками в городе - ведь из них получаются отличные
+                            удочки! Из лап, не из рыбаков. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Шутки несмешные.">
+                                <p:addTaskProgress id="pi_1o_quest_weaver"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_14">
+                        <p:mainText>Так, не будем тянуть лысого за волосы. Следующий трофей, что мне нужен - Чупакабра!
+                            Целиком, это заказ от магов-вуду. Но чупакабра нужна НЕ живая. Ищи на кладбище пиратов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_weaver_02"
+                                      giveMarker="pi_1o_quest_chupacabra_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_chupacabra" name="Чупакабра" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Чупакабра", повержен   -->
+            <p:state ifMarker="pi_1o_quest_chupacabra_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_15">
+                        <p:mainText>Уж не знаю, зачем магам-вуду тело чупакабры. Может, хотят отужинать, я не уточнял,
+                            хе-хе. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Шутки ужас. Правда!">
+                                <p:addTaskProgress id="pi_1o_quest_chupacabra"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_15">
+                        <p:mainText>Так, не будем тянуть Касуми за катану. Следующий трофей, что мне нужен - когти
+                            Сирены! Недавно одну видели у Маяка Джека.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Касуми не трожь!" removeMarker="pi_1o_quest_chupacabra_02"
+                                      giveMarker="pi_1o_quest_siren_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_siren" name="Сирена" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Сирена", повержен   -->
+            <p:state ifMarker="pi_1o_quest_siren_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_16">
+                        <p:mainText>Когти сирены у меня заказал какой-то безумный дед из города. Говорит, они нужны для
+                            чего-то великого, вечеринки, что ли, так как хорошо царапают. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это приятно">
+                                <p:addTaskProgress id="pi_1o_quest_siren"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_16">
+                        <p:mainText>Так, не будем тянуть воду из моря. Следующий трофей... Его нет. Нужно просто
+                            избавиться от монстра. В городе Антигуа живёт Стивен, ты его наверное знаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" ifNoMarker="steven_for_quests"/>
+                            <p:answer text="Нет" ifMarker="steven_for_quests"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Неважно. Он пожаловался, а мне передали, что в его доме появилось Воплощение Хтони.
+                            И надо бы избавиться от существа. Стивен противный, но золотая руда есть золотая руда.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем" removeMarker="pi_1o_quest_siren_02"
+                                      giveMarker="pi_1o_quest_embodiment_of_chthon_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_embodiment_of_chthon" name="Воплощение Хтони" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Воплощение Хтони", повержен   -->
+            <p:state ifMarker="pi_1o_quest_embodiment_of_chthon_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_17">
+                        <p:mainText>Воплощение Хтони уничтожено? Вот и славно. Я бы, если честно, Стивену бы парочку
+                            таких ещё заслал. Да кто любит этого Стивена?! А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Стивен скотина">
+                                <p:addTaskProgress id="pi_1o_quest_embodiment_of_chthon"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_17">
+                        <p:mainText>Так, не будем тянуть чайку за язык. Следующий трофей, что мне нужен - шкура Адской
+                            гончей! На кладбище пиратов недавно одну видели.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно" removeMarker="pi_1o_quest_embodiment_of_chthon_02"
+                                      giveMarker="pi_1o_quest_hellhound_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_hellhound" name="Адская гончая" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Адская гончая", повержен   -->
+            <p:state ifMarker="pi_1o_quest_hellhound_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_18">
+                        <p:mainText>Шкура адской гончей... Самый мягкий мех из всех! Туземц на острове Диалья отдадут за
+                            неё много золотой руды, ха! А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Наслаждайся">
+                                <p:addTaskProgress id="pi_1o_quest_hellhound"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_18">
+                        <p:mainText>Так, не будем тянуть фуагра из гуся. Следующий трофей, что мне нужен - ожерелье
+                            Заблудшей Крииты! Редко, их можно встретить в мангровых джунглях. Высокие худые такие
+                            женщины. Громко орут.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не напугал" removeMarker="pi_1o_quest_hellhound_02"
+                                      giveMarker="pi_1o_quest_lost_criita_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_lost_criita" name="Заблудшая Криита" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Заблудшая Криита", повержен   -->
+            <p:state ifMarker="pi_1o_quest_lost_criita_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_19">
+                        <p:mainText>Ожерелье заблудшей крииты - лучший подарок для любой девушки! У меня как раз Амалия,
+                            из города, такой заказала. А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это приятно">
+                                <p:addTaskProgress id="pi_1o_quest_lost_criita"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_19">
+                        <p:mainText>Так, не будем тянуть дрова из костра. Следующий трофей, что мне нужен - панцирь
+                            краба! Но не простой. В гроте Левиафана видели краба, целиком покрытого стальным панцирем!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Небылица" removeMarker="pi_1o_quest_lost_criita_02"
+                                      giveMarker="pi_1o_quest_steel_crab_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_steel_crab" name="Стальной краб" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Стальной краб", повержен   -->
+            <p:state ifMarker="pi_1o_quest_steel_crab_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_20">
+                        <p:mainText>Панцирь стального краба... Идеально! Инквизиция как раз заказала его, хочет
+                            переплавить на пистоли или мушкеты, не помню... А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это приятно">
+                                <p:addTaskProgress id="pi_1o_quest_steel_crab"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_20">
+                        <p:mainText>Так, не будем тянуть косточку из вишни. Следующий трофей, что мне нужен - кости
+                            Восставшей гориллы! Я - единственный, кто видел её в мангровых джунглях. Она существует.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Пока что" removeMarker="pi_1o_quest_steel_crab_02"
+                                      giveMarker="pi_1o_quest_living_dead_gorilla_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_living_dead_gorilla" name="Восставшая горилла" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Восставшая горилла", повержен   -->
+            <p:state ifMarker="pi_1o_quest_living_dead_gorilla_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_21">
+                        <p:mainText>Кости восставшей гориллы, отлично! Я сделаю себе стрелы - потому что стрелы из
+                            костей восставших животных бьют сильнее и точнее! А вот и твоя доля, партнёр!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="100"/>
+                        <p:answers>
+                            <p:answer text="Это приятно">
+                                <p:addTaskProgress id="pi_1o_quest_living_dead_gorilla"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_21">
+                        <p:mainText>И последнее задание... Извини, я буду без шуток сейчас. На кладбище пиратов появился
+                            призрак Капитана Пиратов. И надо его... Упокоить. Это важно для нашей деревни, понимаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_living_dead_gorilla_02"
+                                      giveMarker="pi_1o_quest_captain_obi_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_captain_obi" name="Призрак Капитана пиратов" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Призрак Капитана пиратов", повержен   -->
+            <p:state ifMarker="pi_1o_quest_captain_obi_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_22">
+                        <p:mainText>Капитан пиратов... Упокоен? Спасибо тебе большое! Вот твоя награда, здесь больше,
+                            потому что добавили многие жители нашей деревни.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="250"/>
+                        <p:answers>
+                            <p:answer text="Давай говори">
+                                <p:addTaskProgress id="pi_1o_quest_captain_obi"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_22">
+                        <p:mainText>Ты хочешь знать, кто это был? Ну... Его имени никто не помнит. Лишь звание, фамилию
+                            и то, что он сделал. Это был Капитан Оби, основатель нашей деревни. Да, чуть не забыл -
+                            изумруды за помощь.
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="500"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Хочешь знать больше о нём - приходи к 7 утра на утреннюю проповедь, там услышишь
+                            полную историю про него. Потрать полчаса своего времени, ты не пожалеешь, поверь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я подумаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>У меня больше нет заданий. Может, однажды, позже. [Ваши деяния не остались
+                            незамеченными. За помощь деревне лесорубов, вы получаете +1 к общей репутации!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Даже так" removeMarker="pi_1o_quest_captain_obi_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

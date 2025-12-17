@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочка 03  -->
+
+    <p:place id="pi_1o_Antigua_lj_barrel_03" animType="EMPTY" imageId="24x39" name="Бочка" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ещё одна бочка. Интересно, откуда они, на этом утёсе? Или утёс сформировался вокруг этих бочек? Впрочем, неважно - ведь внутри лежат красные кристаллы! </p:mainText>
+                            <p:award type="CRYSTAL" />
+                        <p:answers>
+                            <p:answer text="Пригодится" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Ещё одна бочка. Интересно, откуда они, на этом утёсе? Или утёс сформировался вокруг этих бочек? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Вероятно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

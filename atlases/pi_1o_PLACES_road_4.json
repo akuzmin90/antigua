@@ -1,0 +1,565 @@
+{
+  "textures": [
+    {
+      "image": "pi_1o_PLACES_road_4.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 0,
+        "h": 0
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mj_kc_kasumi_clons",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 88,
+            "h": 146
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 88,
+            "h": 146
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 88,
+            "h": 146
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_inquisition_soldier_npc_4",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 89,
+            "h": 135
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 89,
+            "h": 135
+          },
+          "frame": {
+            "x": 0,
+            "y": 146,
+            "w": 89,
+            "h": 135
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_inquisition_soldier_npc_3",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 91,
+            "h": 131
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 91,
+            "h": 131
+          },
+          "frame": {
+            "x": 88,
+            "y": 0,
+            "w": 91,
+            "h": 131
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mj_ki_aik_in_cell",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 103,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 103,
+            "h": 104
+          },
+          "frame": {
+            "x": 0,
+            "y": 281,
+            "w": 103,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_hs_warlock",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 79,
+            "h": 127
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 79,
+            "h": 127
+          },
+          "frame": {
+            "x": 89,
+            "y": 131,
+            "w": 79,
+            "h": 127
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_lg_drowned",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 90,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 90,
+            "h": 105
+          },
+          "frame": {
+            "x": 0,
+            "y": 385,
+            "w": 90,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_lg_basilisk",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 106,
+            "h": 72
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 106,
+            "h": 72
+          },
+          "frame": {
+            "x": 90,
+            "y": 385,
+            "w": 106,
+            "h": 72
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_lg_grey_alligator",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 118,
+            "h": 44
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 118,
+            "h": 44
+          },
+          "frame": {
+            "x": 90,
+            "y": 457,
+            "w": 118,
+            "h": 44
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_inquisition_soldier_npc_2",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 70,
+            "h": 106
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 70,
+            "h": 106
+          },
+          "frame": {
+            "x": 103,
+            "y": 258,
+            "w": 70,
+            "h": 106
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_inquisition_soldier_npc_1",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 70,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 70,
+            "h": 105
+          },
+          "frame": {
+            "x": 168,
+            "y": 131,
+            "w": 70,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mt_magevoodoo_guard_pay_to_governor",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 69,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 69,
+            "h": 130
+          },
+          "frame": {
+            "x": 179,
+            "y": 0,
+            "w": 69,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_valeran",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 70,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 70,
+            "h": 105
+          },
+          "frame": {
+            "x": 173,
+            "y": 236,
+            "w": 70,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_recruit_inquisition",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 70,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 70,
+            "h": 104
+          },
+          "frame": {
+            "x": 238,
+            "y": 130,
+            "w": 70,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_dorian",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 68,
+            "h": 103
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 68,
+            "h": 103
+          },
+          "frame": {
+            "x": 248,
+            "y": 0,
+            "w": 68,
+            "h": 103
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mt_magevoodoo_mentor",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 63,
+            "h": 106
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 63,
+            "h": 106
+          },
+          "frame": {
+            "x": 196,
+            "y": 341,
+            "w": 63,
+            "h": 106
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_lg_steel_crab",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 104,
+            "h": 62
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 104,
+            "h": 62
+          },
+          "frame": {
+            "x": 208,
+            "y": 447,
+            "w": 104,
+            "h": 62
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_it_selezar",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 56,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 56,
+            "h": 105
+          },
+          "frame": {
+            "x": 243,
+            "y": 234,
+            "w": 56,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mt_magevoodoo_guard",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 56,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 56,
+            "h": 105
+          },
+          "frame": {
+            "x": 259,
+            "y": 339,
+            "w": 56,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_magevoodoo_head",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 53,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 53,
+            "h": 105
+          },
+          "frame": {
+            "x": 299,
+            "y": 234,
+            "w": 53,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mt_magevoodoo_npc_1",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 55,
+            "h": 106
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 55,
+            "h": 106
+          },
+          "frame": {
+            "x": 308,
+            "y": 103,
+            "w": 55,
+            "h": 106
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_jim_magpie",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 53,
+            "h": 103
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 53,
+            "h": 103
+          },
+          "frame": {
+            "x": 316,
+            "y": 0,
+            "w": 53,
+            "h": 103
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_kinky",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 51,
+            "h": 103
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 51,
+            "h": 103
+          },
+          "frame": {
+            "x": 315,
+            "y": 339,
+            "w": 51,
+            "h": 103
+          }
+        }
+      ]
+    }
+  ]
+}

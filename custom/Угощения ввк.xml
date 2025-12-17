@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Угощения  -->
+    <!-- Угощения  -->
+    <!-- Угощения  -->
+    <!-- Угощения  -->
+    <!-- Угощения  -->
+    <!-- Угощения  -->
+
+
+    <!-- Угощение 01  -->
+    <p:place id="pi_1o_kp_food_01" animType="EMPTY" imageId="42x38" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 02  -->
+    <p:place id="pi_1o_kp_food_02" animType="EMPTY" imageId="42x38" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 03  -->
+    <p:place id="pi_1o_kp_food_03" animType="EMPTY" imageId="42x38" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 04  -->
+    <p:place id="pi_1o_kp_food_04" animType="EMPTY" imageId="65x80" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="EXPERIENCE" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 05  -->
+    <p:place id="pi_1o_kp_food_05" animType="EMPTY" imageId="65x80" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 06  -->
+    <p:place id="pi_1o_kp_food_06" animType="EMPTY" imageId="65x80" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 07  -->
+    <p:place id="pi_1o_kp_food_07" animType="EMPTY" imageId="65x80" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 08  -->
+    <p:place id="pi_1o_kp_food_08" animType="EMPTY" imageId="65x80" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="EXPERIENCE" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Угощение 09  -->
+    <p:place id="pi_1o_kp_food_09" animType="EMPTY" imageId="65x80" name="Угощение" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Столы ломятся от еды! Тем более, вы и оплатили эту вечеринку - спрашивать не будем, просто кушаем от пуза!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    
+</p:root>

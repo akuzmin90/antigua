@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СИГИЗМУНД ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_sigizmund_obi" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_sigizmund_obi"
+             name="Сигизмунд Оби" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Рубить лес - легко!" delayMs="14000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" requireGender="female">
+                        <p:mainText>Ого, искательницы приключений могут быть такими красивыми? Меня зовут Сигизмунд.
+                            Сигизмунд Оби. Эй, эй, чего ты такими глазами на меня смотришь?! Понравился, да? [Сигизмунд
+                            подмигивает вам]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ничего так имечко" requestSpecialPlaces="true" complete="true"
+                                      giveMarker="lumberjack_sigizmund_obi_for_quests"/>
+                            <p:answer text="О задании" markerCondition="pi_1o_quest_clear_love_02" goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" requireGender="male">
+                        <p:mainText>Приветствую искателя приключений! Перед тобой - Сигизмунд Оби. Самый способный
+                            лесоруб - так про меня говорят! А вон там - и не смей даже смотреть на неё - моя будущая
+                            жена, Авила!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ничего так имечко" requestSpecialPlaces="true" complete="true"
+                                      giveMarker="lumberjack_sigizmund_obi_for_quests"/>
+                            <p:answer text="О задании" markerCondition="pi_1o_quest_clear_love_02" goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+
+
+                    <p:replica id="r3">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_clear_love_02" text="Красный мак"
+                                      goto="r_lumberjack_sigizmund_obi1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_sigizmund_obi1">
+                        <p:mainText>Цветок у тебя? Нет? Пожалуйста, поторопись - её ревность переходит все границы! Я
+                            награжу тебя, честно! Сигизмунд не обманывает!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А другой - да" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?"   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Эй, Сигизмунд! Я же бываю в разных местах этого острова... Тут тебе одна городская
+                            дама передала записку.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Городская дама? Неужели... Амалия? Ну-ка, дай сюда, да поскорее! [Сигизмунд Оби
+                            радостно хватает записку, но радость сменяется грустью]. Это же от Авилы, да?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как узнал?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Только она называет меня Сигизмундушка, Сигизмундчик, Сига-зага-бубу-киса... Опять
+                            проверяет, да? Позавчера через Айка передавала похожую записку... Эх, ревнивая моя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А Амалия?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" ifMarker="pi_1o_townAntigua_sc_pirate">
+                        <p:mainText>Да шучу я... Старая любовь. Я ей дрова носил, а потом... Ну, она не любит деньгами
+                            платить, хехе. Сейчас, я слышал, она вышла замуж за городского кладовщика. Но она бодрая, я
+                            тебе скажу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_1" ifNoMarker="pi_1o_townAntigua_sc_pirate">
+                        <p:mainText>Да шучу я... Старая любовь. Я ей дрова носил, а потом... Ну, она не любит деньгами
+                            платить, хехе. Но она бодрая, я тебе скажу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Слушай, Авила не отстанет же... Это за полгода записка такая двадцатая...
+                            Пожалуйста, помоги мне остановить это - принеси цветок "Красный мак" из джунглей, прошу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф... Хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Есть лишь момент... Этот цветок раскрывает бутон лишь с 10 до 12 утра и с 16 до 18
+                            вечера... Ну и ночью, с 2 до 5 часов. Иначе ты его просто не заметишь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как интересно" removeMarker="pi_1o_quest_clear_love_01"
+                                      giveMarker="pi_1o_quest_clear_love_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_clear_love_kill_tsetse_fly" name="Красный Мак" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" принесли красный мак   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Красный мак у тебя? Отлично! Этот цветок нечасто встретишь. За это не жалко и 20
+                            кусков золотой руды!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="20"/>
+                        <p:answers>
+                            <p:answer text="Приятно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Пожалуйста, отнеси этот цветок Авиле и просто отдай, без лишних слов. Она всё
+                            поймёт.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_clear_love_03"
+                                      giveMarker="pi_1o_quest_clear_love_04" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_clear_love_kill_tsetse_fly"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" принесли амулет из когтя обезьяы   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_08" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Это... Это мне, от неё? Амулет из когтя обезьяны... Символ мужской силы и оберег от
+                            нежити... Она что, сражалась с макакой за него?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Типа того"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Это серьёзный подарок. Назад пути нет. Ещё просьба - работа, ладно. Сходи к
+                            Губернатору и попроси разрешения на свадьбу. Нам пока рано, но пусть заранее запишет.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так и быть" removeMarker="pi_1o_quest_clear_love_08"
+                                      giveMarker="pi_1o_quest_clear_love_09" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" слуга губернатора сделал запись   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_11" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>У тебя получилось? Отлично! Скорее же обрадуй мою милую Авилу - теперь она точно
+                            убедиться, что я люблю её!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r1_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Эта чевек делай та чевек баба вместе буде? Чевеки тако болване! Делай баба чевек
+                            палка голова бум, тащи баба чевек до дома своя, там вместе буде! Хоббите умне, чевеки
+                            болване!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Весёлый народец"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Слушай, искатель приключений... Спасибо ещё раз. Я уже дал тебе награду за работу
+                            ранее, мои карманы пусты. А из тумбочки я запасы руду доставать не буду. Но искренне
+                            благодарю!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="На хлеб намажу" removeMarker="pi_1o_quest_clear_love_11"
+                                      giveMarker="pi_1o_quest_clear_love_12" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

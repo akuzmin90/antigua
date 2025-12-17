@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КИНКИ ВЕЛИКАЯ ВЕЧЕРИНКА КИНКИ  -->
+
+    <p:place id="pi_1o_kinky_kp" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_kinky" name="Кинки" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ура, ура, настоящая вечеринка Кинки! Наслаждайся, здесь все друзья! Оставь негатив
+                            снаружи - здесь правит любовь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                            <p:answer text="Хочу уйти" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Уйти?! Увере[н|на]?! Оставайся с нами, прошу тебя!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Остаюсь" goto="r1" out="true"/>
+                            <p:answer text="Хочу уйти" goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>В последний раз спрашиваю - точно хочешь уйти? Ведь больше такой вечеринки не
+                            будет!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Остаюсь!" goto="r1" out="true"/>
+                            <p:answer text="Уйти. Пожалуйста..." goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Так и быть. Жаль, что ты здесь с нами не до конца! Прямо в город Антигуа, верно? [За
+                            участие в великой вечеринке вы получаете +1 к общей репутации!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Верно" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_townAntigua"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

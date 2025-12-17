@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДАМА  -->
+
+    <p:place id="pi_1o_Antigua_lady_for_talk" animType="EMPTY" imageId="30x80" name="Дама" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="О, новые люди на Антигуа!" delayMs="1000"/>
+                    <p:talk text="Наш рынок - лучший!" delayMs="6000"/>
+                    <p:talk text="Хотела бы я выйти в море..." delayMs="11000"/>
+                    <p:talk text="Оу, да ты - настоящий воин!" delayMs="16000"/>
+                    <p:talk text="Мой муж служит в страже!" delayMs="21000"/>
+                    <p:talk text="Я не люблю спать - а зачем?" delayMs="26000"/>
+                    <p:talk text="Привет! Мы рады гостям острова!" delayMs="31000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ой, новое лицо на Антигуа! Привет, искатель приключений! Тебя ждёт море эмоций и
+                            впечатлений от нашего острова!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="И тебе привет" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

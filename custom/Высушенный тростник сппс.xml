@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Высушенный тростник -->
+
+    <p:place id="pi_1o_Antigua_sp_wh_dried_sugar_cane" animType="EMPTY" imageId="48x158" name="Высушенный тростник" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Интересно, а что делать с высушенным тростником? Может, крышу покрывать? Или декор? Или он становится приправой? Это ведь листья, зачем их сушить? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Останется тайной" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

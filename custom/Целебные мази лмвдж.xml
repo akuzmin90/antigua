@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Целебные мази -->
+
+    <p:place id="pi_1o_mt_hotreaper_medicinal_ointments" animType="EMPTY" imageId="120x194" name="Целебные мази" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами стол с целебными мазями. Вы видите, как маг-вуду Жнец одобрительно кивает и позволяет вам использовать одну из них для повышения здоровья! </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Это хорошо" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Перед вами стол с целебными мазями. Маг-вуду Жнец больше не разрешает вам трогать их. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да и не надо" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

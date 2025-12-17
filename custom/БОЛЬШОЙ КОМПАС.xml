@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОЛЬШОЙ КОМПАС  -->
+
+    <p:place id="pi_1o_navigation_big_compass" animType="EMPTY" imageId="85x84" name="Большой компас"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - Большой Компас. С его помощью вы можете отправиться за пределы города!
+                            Куда направимся?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Лагерь магов-вуду" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_magevoodoo_town"/>
+                            </p:answer>
+                            <p:answer text="Лагерь инквизиции" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_inquisition_town"/>
+                            </p:answer>
+                            <p:answer text="Кладбище пиратов" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_pirates_graveyard"/>
+                            </p:answer>
+                            <p:answer text="Сахарная плантация" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                            <p:answer text="Золотая шахта" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_golden_mine_1_lvl"/>
+                            </p:answer>
+                            <p:answer text="Пират-отшельник" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_hermit_pirate"/>
+                            </p:answer>
+                            <p:answer text="Маяк Джека" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lighthouse_jack"/>
+                            </p:answer>
+                            <p:answer text="Грот Левиафана" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_leviathan_grotto"/>
+                            </p:answer>
+                            <p:answer text="Лагерь лесорубов" goto="r1" ifMarker="pi_1o_Antigua_way_to_lumberjack_camp"
+                                      out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp"/>
+                            </p:answer>
+                            <p:answer text="Уйти" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

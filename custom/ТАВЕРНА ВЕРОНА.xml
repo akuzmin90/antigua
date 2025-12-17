@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА ВЕРОНА  -->
+
+    <p:place id="pi_1o_Antigua_lc_verona_tavern" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_verona_big" name="Верона"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!--TODO стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Активно кушает*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>[Верона кушает, не обращая на вас внимания] </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да и ладно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!--TODO квест "Кто-то не платит"   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_02" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Активно кушает*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Я всегда оплачиваю еду! Ты посмотри на меня, давай честно если - я ем столько, что
+                            приходится платить очень много... Корчмарь бы точно заметил.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так-то да" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

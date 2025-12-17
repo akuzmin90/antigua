@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СОНЯ -->
+
+    <p:place id="pi_1o_ht_sonya" animType="EMPTY" imageId="46x94" name="Соня" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Не шали тут, пусечка ;) В честь такого гостя, я сделаю подарочек - надеюсь, тебе приятно :) </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="doll_execution" />
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Не шали тут, пусечка ;) Давай просто отдохнём от суеты, насладимся приятной компанией друг друга! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

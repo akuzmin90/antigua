@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Детский обеденный стол -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_table_for_lunch_kids" animType="EMPTY" imageId="54x133" name="Детский обеденный стол" minPlayerStair="40"  meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Всё лучшее - детям! Весьма богатый стол. Так что не убудет. Тут и мясо, и сыр, и крендельки. </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Всё лучшее - детям! Весьма богатый стол. Кстати, дети чего, стоя едят?! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Больше влезет" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Детский обеденный стол если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_table_for_lunch_kids_1" animType="EMPTY" imageId="54x133" name="Детский обеденный стол" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Я могу многое понять. Но садиться за стол, без приглашения, ещё и за детский - это некрасиво и не в честь. Покинь наш дом, авантюрист, за своё неуважение. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

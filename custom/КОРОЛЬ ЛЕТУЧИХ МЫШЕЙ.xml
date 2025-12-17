@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КОРОЛЬ ЛЕТУЧИХ МЫШЕЙ -->
+
+    <p:place id="pi_1o_Antigua_wtda_boss_wednesday_2" atlasId="pi_1o_PLACES_pi_1o_way_to_druid_altar" imageId="pi_1o_Antigua_wtda_boss_wednesday_2"
+             name="Король летучих мышей" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireWeekDay="WEDNESDAY,SATURDAY" requireGenMode="PI_1O_WAY_TO_DRUID_ALTAR">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- только на локации Дорога к Древнему Алтарю Друидов  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ничего себе, перед вами - настоящий Король летучих мышей! Своим видом он вызывает
+                            вас на бой! Сразимся, проверим свои силы?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!" ifMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_wtda_boss_wednesday_2" onWinGoTo="win_1"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Королём летучих мышей, боевая иконка будет называться pi_1o_Antigua_wtda_boss_wednesday_2_f, это босс -->
+                            </p:answer>
+                            <p:answer text="В бой!" ifNoMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_wtda_boss_wednesday_2" onWinGoTo="win_0"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Королём летучих мышей, боевая иконка будет называться pi_1o_Antigua_wtda_boss_wednesday_2_f, это босс -->
+                            </p:answer>
+                            <p:answer text="Нет" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Мало того, что победил, ещё и язык показывает...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!" ifMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_wtda_boss_wednesday_2" onWinGoTo="win_1" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="В атаку!" ifNoMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_wtda_boss_wednesday_2" onWinGoTo="win_0" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win_0" ifNoMarker="hobbit_talk_fun" closable="false">
+                        <p:mainText>Король летучих мышей повержен!
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" closable="false">
+                        <p:mainText>Кроль мыша летака - боле не кроль! Хоббите знае один кроль - Велике Кроль Арибачи!
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Ха!" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2">
+                        <p:mainText>Ваши действия не остались незамеченными. +1 к общей репутации!</p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

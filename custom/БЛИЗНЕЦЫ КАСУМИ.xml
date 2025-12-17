@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БЛИЗНЕЦЫ КАСУМИ  -->
+
+    <p:place id="pi_1o_mj_kc_kasumi_clons" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_mj_kc_kasumi_clons" name="Близнецы Касуми"
+             minPlayerStair="40">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Близнецы Касуми"  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Мы никому не нужны..." delayMs="1000"/>
+                    <p:talk text="Подойди к нам..." delayMs="6000"/>
+                    <p:talk text="Касуми оставила нас..." delayMs="11000"/>
+                    <p:talk text="Хранитель, ближе..." delayMs="18000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Касуми?! Это... Это же не ты! Тебя две... Что происходит?!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Мы знаем тебя. Хранитель. Спаситель. Наша Касуми открылась тебе. Наша Касуми
+                            оставила нас, когда встретила Михаила. Мы - это инь и янь Касуми. Мы - её близнецы. И мы
+                            никому не нужны. Да! Никому не нужны.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Мы проявились, когда она появилась здесь. Когда она выживала, одна, но с нами. Не
+                            одна... Мы не были одни. Но Михаил... Она успокоила свою суть. И мы оказались не нужны. Мы
+                            брошены.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="И что делать?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Касуми забыла нас... Даже не чувствует нас... Мы должны сражаться! И всё, что
+                            копилось в ней за это время, мы выплеснем на тебя! Ощути же силу настоящего воина востока!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эй, стоп!">
+                                <p:toBattle creatureId="pi_1o_mj_kc_kasumi_clons" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Близнецы Касуми, боевая иконка будет называться pi_1o_mj_kc_kasumi_clons_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Ахаха! Мы сильны, как и прежде! Касуми бы нами гордилась... Но мы ей не нужны... А
+                            ты, Хранитель, мы снова ждём тебя, ахаха! Как же нам одиноко...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_mj_kc_kasumi_clons" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true">
+                                <p:toRoad roadId="pi_1o_mangrove_jungle"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Хранитель, стой, остановись! Мы молим тебя! Ты сильнее, мы признаём твою силу...
+                            Просим об одном - дай нам жить... Но без Касуми, как... Просим, не убивай нас!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Оставить жить" goto="good_final"/>
+                            <p:answer text="Добить" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="bad_final">
+                        <p:mainText>[Вы решаете не рисковать и добиваете блинецов Касуми. Пожалуй, не будем рассказывать
+                            ей об этом... После их гибели, вы чувствуете всплеск магии. Ваше здоровье повышается!]
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Поделом вам" removeMarker="pi_1o_quest_kasumi_twins_01" complete="true"
+                                      dropPlace="true">
+                                <p:toRoad roadId="pi_1o_mangrove_jungle"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="good_final">
+                        <p:mainText>[Вы оставляете близнецов Касуми в живых. Теперь вы можете, за определённое
+                            количество золотой руды, нанять их в свою команду! Найти их можно на рынке, в городе
+                            Антигуа.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого" removeMarker="pi_1o_quest_kasumi_twins_01"
+                                      giveMarker="pi_1o_can_buy_kasumi_twins" complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_mangrove_jungle"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

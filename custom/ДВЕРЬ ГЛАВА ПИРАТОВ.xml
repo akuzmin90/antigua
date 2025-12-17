@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ГЛАВА ПИРАТОВ -->
+
+    <p:place id="pi_1o_Antigua_gp_pirate_head_way_to_him" animType="EMPTY" imageId="214x56" name="К Главе Пиратов" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Похоже, этот коридор ведёт к Главе Пиратов. Но сейчас он слишком занят, чтобы
+                            принять вас. Точно не в этот раз. Вам сообщат, когда он освободится.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

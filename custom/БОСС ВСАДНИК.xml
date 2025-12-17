@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС ВСАДНИК  -->
+
+    <p:place id="pi_1o_Antigua_lj_rider" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lj_rider" name="Всадник" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Всадник"  -->
+            <p:state id="default" closable="false">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="А вот и ты" delayMs="3000"/>
+                    <p:talk text="Время пришло" delayMs="8000"/>
+                    <p:talk text="Я и ты. Один на один" delayMs="13000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Всадник у маяка... Он ведь на коне сюда залез, а дорога очень крутая к этому утёсу!
+                            Послушница, покажи ему!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_rider" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Всадник, боевая иконка будет называться pi_1o_Antigua_lj_rider_f === Против босса ТОЛЬКО послушница -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Всадник сильный... Но Послушница должна его победить!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_rider" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Всадник повержен! Пора вернуться к главе инквизиции!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_rider_01"
+                                      giveMarker="pi_1o_quest_rider_02" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

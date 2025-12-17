@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПЕРВЫЙ УЧЁНЫЙ  -->
+
+    <p:place id="pi_1o_mj_twb_first_scientist" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_mj_twb_first_scientist" name="Первый учёный"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Книга из гробницы"  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Уходи" delayMs="13000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Ты тревожишь меня? Зачем? Ты искатель приключений, я вижу это. Хранитель, что уже
+                            ощущаю... Позволь представиться, я - первый учёный Антигуа. И это моя гробница. Зачем ты
+                            здесь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты же мёртв"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>Ахаха! Да, физически. Но я смог подчинить эту плоть и не дать ей гнить. Я продолжаю
+                            жить и искать знания, по всем мирам и временам!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" repeatable="false">
+                        <p:mainText>Я путешествую во времени, ищу новые знания. Видишь эти свитки и книги вокруг? Я
+                            собираю знания. Я должен это делать, я - самый светлый ум Антигуа. Но недавно я нашёл
+                            книгу... Учёной, умнее меня.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот её отдай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Ты хочешь забрать книгу? КНИГУ, ЗНАНИЯ, ИЗ МОЕЙ ОБИТЕЛИ?! Что ж. Тогда я разомну эту
+                            плоть - победи меня, и книга будет твоей.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тогда в бой!">
+                                <p:toBattle creatureId="pi_1o_mj_twb_first_scientist" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Первый учёный, боевая иконка будет называться pi_1o_mj_twb_first_scientist_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Ахаха! Докажи силой, что тебе нужны эти знания! Только победа, иначе книгу я не
+                            отдам.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_mj_twb_first_scientist" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Постой, постой! Не убивай меня! Я не делаю ничего плохого, честно! Я просто собираю
+                            знания! Вот твоя книга, забирай её! Я сокрою гробницу от взора всех людей... Знания лишь
+                            мои...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_book_from_tomb_02"
+                                      giveMarker="pi_1o_quest_book_from_tomb_03,pi_1o_quest_book_from_tomb_kasumi_react"
+                                      complete="true">
+                                <p:toRoad roadId="pi_1o_mangrove_jungle"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

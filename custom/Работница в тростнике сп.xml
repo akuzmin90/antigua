@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Работница в тростнике  -->
+
+    <p:place id="pi_1o_Antigua_sp_worker_women_2" animType="EMPTY" imageId="44x76" name="Работница" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Во плантации ли, в огороде..." delayMs="9000"/>
+                    <p:talk text="Тростник сладкий даже сырой" delayMs="19000"/>
+                    <p:talk text="Завтра буду отдыхать" delayMs="26000"/>
+                    <p:talk text="Эй, Патлатый!" delayMs="34000"/>
+                    <p:talk text="В таверну идём?" delayMs="44000"/>
+                    <p:talk text="Если ты заплатишь!" delayMs="54000"/>
+                    <p:talk text="Скорее бы вечер, ахах!" delayMs="64000"/>
+                    <p:talk text="Договорились, хаха!" delayMs="74000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>ОЙ, искатель приключений! Как необычно, я видела один раз такого - пару лет назад. А ты надолго? А истории расскажешь? Ой, заговори[л|ла] ты меня, работать надо! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Молчание - золото" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАНИЦА 07 -->
+
+    <p:place id="pi_1o_Antigua_lost_memories_07" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lost_memories_01" name="Страница 07"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А вот и седьмая страница, вырванная из дневника! Хм, прочитаем...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Итак, все думают, что я уплыл на Хунганами. Конечно, я знаю, что Эльза расстроена
+                            моими действиями... Она часто говорила: "Лейхо, с милым и в шалаше рай!" - ну уж нет, я
+                            найду сокровища!"
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"Клад Джима Сороки проклят, так говорят. Я знаю лишь одно - всё это суеверия,
+                            которых боятся! Получается, сундук всё ещё закопан и не тронут. Ради моей Эльзы, я заберу
+                            всё, что там лежит."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>"Хватит бедности. Я уже представляю, как мы сидим на терассе своего дома, смотрим на
+                            солнце, уходящее в океан, а рядом бегают наши дети - Эльза всегда хотела мальчика и девочку.
+                            Моя милая Эльза..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>"Да, моя родная, дорогая Эльза не хотела меня отпускать искать клады: "Это опасно!"
+                            - говорила она. Но я не могу так больше... Последний раз, новое платье она покупала 3 года
+                            назад..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Похоже, что это лишь одна из нескольких страниц дневника некоего парня. Интересно,
+                            что же стало дальше?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_lost_memories_06"
+                                      giveMarker="pi_1o_quest_lost_memories_07,pi_1o_quest_lost_memories_hint_07,pi_1o_quest_lost_memories_innkeeper,pi_1o_quest_lost_memories_nestor,pi_1o_quest_lost_memories_magevoodoo_guard"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

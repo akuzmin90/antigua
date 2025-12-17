@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Обеденный стол  -->
+
+    <p:place id="pi_1o_it_td_table_for_food" animType="EMPTY" imageId="92x149" name="Обеденный стол" minPlayerStair="40"
+             meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Отличный импровизированный обеденный стол из старого ящика. На столе уже заранее накрыт обед - инквизитор Дориан как знал, что будут гости, ха! Откушаем-с. </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Отличный импровизированный обеденный стол из старого ящика. На столе уже заранее накрыт обед - свою порцию (а чью ещё-то?!) вы уже съели. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

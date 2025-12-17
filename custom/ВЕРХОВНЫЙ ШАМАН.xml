@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ВЕРХОВНЫЙ ШАМАН  -->
+
+    <p:place id="pi_1o_magevoodoo_head" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_magevoodoo_head" name="Верховный шаман"
+             minPlayerStair="40" meetProbability="0">  <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Маги-вуду - это тебе не другие вака, кто владеет колдовством. Мы питаем свои силы из
+                            магии, которая окружает нас, словно воздух.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="magevoodoo_head_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_fear_of_voodoo_01 or pi_fear_of_voodoo_stupido_kill_redhead_ghost or pi_big_rat_voodoo_congrats or pi_1o_quest_leyho_killers_long_way_04 or pi_1o_quest_prophet_07 or pi_1o_quest_bleeding_wood_kill_monster or pi_1o_quest_bleeding_wood_kill_monster_done_magevoodoo_head_react"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_fear_of_voodoo_01" text="Кошмары вуду" goto="r_fov_react1"/>
+                            <p:answer ifMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost" text="Красноволосая"
+                                      goto="r_fov_react2"/>
+                            <p:answer markerCondition="pi_big_rat_voodoo_congrats and not hobbit_talk_fun"
+                                      text="Огромная Крыса" goto="r_fov_react3"/>
+                            <p:answer markerCondition="pi_big_rat_voodoo_congrats and hobbit_talk_fun"
+                                      text="Огромная Крыса" goto="r_fov_react4"/>
+                            <p:answer ifMarker="pi_1o_quest_leyho_killers_long_way_04_react_fov" text="Джими Сорока"
+                                      goto="r_fov_react5"/>
+                            <p:answer ifMarker="pi_1o_quest_prophet_07" text="Пророк" goto="r_fov_react6"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_kill_monster" text="Стоглазый Дух"
+                                      goto="r_fov_react7"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_kill_monster_done_magevoodoo_head_react"
+                                      text="Стоглазый Дух" goto="r_fov_react8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react1">
+                        <p:mainText>Почему ты ещё здесь? Или ты боишься применить куклу-вуду, как самый обычный вака?
+                            Иди и вызови иллюзию!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react2">
+                        <p:mainText>И что ты здесь делаешь? Или тебе не по силам прогнать иллюзию Красноволосой? Я же
+                            ослабил её - делай, что должно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react3">
+                        <p:mainText>Страж рассказал мне о том, что тобой достойно выполнена работа. Мы уважаем тех, кто
+                            уважает нас. Поэтому, я дополнительно награжу тебя.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="8"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_big_rat_voodoo_congrats" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react4">
+                        <p:mainText>Страж рассказал мне о том, что тобой достойно выполнена работа. Мы уважаем тех, кто
+                            уважает нас. Поэтому, я дополнительно награжу тебя.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="8"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r_fov_react4_1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react4_1" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" >
+                        <p:mainText>Де злоте для храбры убивака хоббите Экля?! Моя тожи хоче злоте! Моя боша крысяка
+                            тожи голова палка убивака делай!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Какой проказник" goto="r_fov_react4_2"
+                                      removeMarker="pi_big_rat_voodoo_congrats"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react4_2">
+                        <p:mainText>Никогда не видел хоббита в бою. Но твой друг весьма интересен... Я чувствую в нём
+                            что-то выше этого мира... Понять бы, что... Вот и ему награда, береги его.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="2"/>
+                        <p:answers>
+                            <p:answer text="Хорошо!" removeMarker="pi_big_rat_voodoo_congrats" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react5">
+                        <p:mainText>Я слышал ваш разговор. Вы, вака, не близки мне. Но нужно жить по чести. Я даю тебе
+                            благословение магии - чтобы ты помни[л|ла] о чести.
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_leyho_killers_long_way_04_react_fov"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react6">
+                        <p:mainText>Вака! Узри же нашего дорогого гостя - Пророка! Он прибыл издалека, чтобы изречь нам
+                            твердыню истины. Ты нам помогаешь, тамиби Нестор хорошо отзывался о тебе. Поговори с
+                            Пророком, тебе дозволена эта честь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react7">
+                        <p:mainText>Вака, тебе нужно победить Стоглазого Духа, так ты точно излечишь древесину. Пусть
+                            магия благоволит тебе.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_fov_react8">
+                        <p:mainText>Вака, магия сказала мне, что тобой повержен Стоглазый Дух. Твоя сил достойна
+                            уважения.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"
+                                      removeMarker="pi_1o_quest_bleeding_wood_kill_monster_done_magevoodoo_head_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+<!-- квест Кошмары вуду временно отменён  
+
+            квест Кошмары вуду начало  
+            <p:state markerCondition="pi_new_guards_governor_001 or pi_new_guards_governor_002" repeatable="false"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Постой, вака... Твоё появление даровало мне видение - ты и 3 пирата в какой-то
+                            пещере... Они пируют над твоим телом, словно стервятники, насытившиеся твоим последним
+                            вздохом.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что это значит?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Наша магия и наши видения непостижимы таким, как ты. Но сама суть магии говорит о
+                            том, что твоё время не должно закончиться именно так. Я помогу тебе одолеть врагов в этой
+                            пещере, полной сахара.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Вчера я сделал куклу-вуду "Иллюзия", очень сильную. Я дам её тебе - примени её в
+                            пещеру, и твои враги сами сбегут. Ну что?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай" goto="r5"/>
+                            <p:answer text="Нет!" goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Нет - значит нет. Глуп[ый|ая] вака, упускать такую силу... Пусть магия будет с
+                            тобой, наши пути пересекутся.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Возьми же куклу-вуду иллюзии. Примени её ПЕРЕД пещерой. Не обращай внимания на звуки
+                            внутри. Как они стихнут - сперва вернись ко мне. НЕ заходи в пещеру, не вернувшись ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм, хорошо" goto="r6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>[Вы согласились на предложение Верховного шамана. Задание "Новые стражники"
+                            отменено. Однако, воры особого сахара должны быть наказаны!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"
+                                      removeMarker="pi_new_guards_governor_001,pi_new_guards_governor_002"
+                                      giveMarker="pi_fear_of_voodoo_01" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_new_guards_governor"/>
+                                <p:createTask id="pi_fear_of_voodoo" name="Кошмары вуду" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+            квест Кошмары вуду хорошая концовка  
+            <p:state ifMarker="pi_fear_of_voodoo_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Что это было? Я прогнал пиратов, и они больше не вернутся. Сила магии сотворила
+                            иллюзию Красноволосой - 500 лет назад это была самая жестокая капитан пиратов. Её имени
+                            боятся до сих пор.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А это был..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Это был её призрак. Но словно во плоти. Вака начинает понимать магию, да? Из тебя
+                            вышел бы сильный маг-вуду. Итак, я награжу тебя.
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="25"/>
+                        <p:answers>
+                            <p:answer text="Спасибо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Ваше действие не осталось незамеченным! Вы получаете +1 репутации у магов-вуду.
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_fear_of_voodoo_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            квест Красноволосая, она бессмертна 
+            <p:state ifMarker="pi_fear_of_voodoo_stupido_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Я что тебе сказал? НЕ заходить. Похоже, мудрость магии-вуду для тебя далека, как
+                            горизонт. Сила магии сотворила иллюзию Красноволосой - 500 лет назад это была самая жестокая
+                            капитан пиратов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Это был её призрак. Но словно во плоти. Вака начинает понимать магию, да? Сейчас она
+                            бессмертна. Ты не причинишь ей вреда. А тебя она может убить одним движением.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я знаю" ifMarker="pi_fear_of_voodoo_stupido_try_to_kill_door"
+                                      goto="r3_d_2"/>
+                            <p:answer text="Извините" ifNoMarker="pi_fear_of_voodoo_stupido_try_to_kill_door"
+                                      goto="r3_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Иллюзию надо прогнать. Я решил: я её ослаблю, прямо сейчас. А вот прогонять будешь
+                            ты, за свой поступок, достойный ваки. Почувствуй последствия каждого деяния.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф..."
+                                      removeMarker="pi_fear_of_voodoo_stupido_try_to_kill_door,pi_fear_of_voodoo_stupido_try_to_kill_immortal"
+                                      giveMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            квест "Красноволосая" побеждена
+            <p:state ifMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost_done" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>У тебя получилось. Ты ждёшь похвалы? За что, за то, что было нарушено указанное?
+                            Вака, одно слово... Но я похвалю тебя. Ты не сбежа[л|ла] от последствий своих деяний. Я дам
+                            тебе небольшую награду.
+                        </p:mainText>
+                        <p:award type="GOLD" explicitValue="50"/>
+                        <p:answers>
+                            <p:answer text="50 монет???"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Ахахаха, вака ничего не понимает! Это золото - иллюзия. Пусть будет тебе уроком. [Золотые монеты растворяются у вас в руках]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю..." ifMarker="hobbit_talk_fun" goto="r3_d_3">
+                                <p:pay gold="50"/>
+                            </p:answer>
+                            <p:answer text="Понимаю..." ifNoMarker="hobbit_talk_fun"
+                                      removeMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost_done" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="50"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" >
+                        <p:mainText>МАГО ЧЕВЕК ПЛОХА-ПЛОХА, БОЛВАНЕ МАГО ЧЕВЕК, УКРАДО У ХОББИТЕ ЗЛОТЕ МОНЕТЫ!!! ХОББИТЕ
+                            ДЕЛАЙ ПАЛКА ГОЛОВА МАГО ЧЕВЕК!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тише, тише"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d" ifMarker="hobbit_talk_fun">
+                        <p:mainText>Ахахаха, какой забавный твой друг. Маленький, но смелый. Даже не понимает, кому он
+                            угрожает. Мне достаточно просто сконцентрировать магический фронт силой мысли, и...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="ЭЭЭ, СТОП!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d" ifMarker="hobbit_talk_fun">
+                        <p:mainText>Не переживай, твоему другу ничего не угрожает. И его смелость я ценю - редко
+                            встретишь хоббита, готового сражаться. Я позабавлен. Так что, вот твоему другу золото.
+                            Настоящее.
+                        </p:mainText>
+                        <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Экля счастлив"
+                                      removeMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost_done" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            -->
+
+            <!-- квест Найти убийц Лейхо  -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_long_way_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Вака хочет призвать дух мёртвого? И почему я должен помочь тому, кто не тамиби?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Потому что я прошу. Этого достаточно?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Да будет так. Твоя просьба - это просьба самой магии, я не смею отказать. Дайте мне
+                            вещь мёртвого. Сейчас дух появится рядом со мной.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ждём" 
+                                      removeMarker="pi_1o_quest_leyho_killers_long_way_02"
+                                      giveMarker="pi_1o_quest_leyho_killers_long_way_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Разорённая могила  -->
+            <p:state ifMarker="pi_1o_ruined_grave_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Вака спрашивает меня за могилу? В иной ситуации я бы превратил тебя в попугая и
+                            оставил на произвол магического фронта и хищных птиц! Но ты говоришь про могилу брата
+                            Губернатора. Хм.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Хорошо, я прощаю твои гнусные мысли. Нет, мы не занимаемся разграблением могил, даже
+                            для вуду. Поверь, много скелетов разбросано непогребёнными, мы не станем грабить могилы.
+                            Особенно такие.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Какие такие?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>Вака настолько глуп, что не помнит, что говорит? Могила брата Губернатора. Отца его
+                            племянника. Мы их уважаем, несмотря на то, что они - ваки.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно, не-вака" removeMarker="pi_1o_ruined_grave_02"
+                                      giveMarker="pi_1o_ruined_grave_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Миссионер   -->
+            <p:state ifMarker="pi_1o_quest_missionary_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Был странный вака, но нам его позиция не близка. Говорил о том, что магия тамиби -
+                            не истинная! Мы его прогнали.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да что ж вы..." removeMarker="pi_1o_quest_missionary_05"
+                                      giveMarker="pi_1o_quest_missionary_06" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Друид древних   -->
+            <p:state ifMarker="pi_1o_quest_ancient_druid_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Вака спрашивает о друиде древних? Я ничего не могу сказать, тамиби Нестор не знает,
+                            что мы далеки от истины.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Вообще ничего?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>Попробуй спросить мага-вуду Стража. После недавнего праздника, он ведёт себя
+                            странно. Не спит, не ест, никуда не отходит от лагеря.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо, спрошу" removeMarker="pi_1o_quest_ancient_druid_02"
+                                      giveMarker="pi_1o_quest_ancient_druid_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Древесина кровоточит"   -->
+            <p:state ifMarker="pi_1o_quest_bleeding_wood_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>Вака, ты говоришь, что в деревне лесорубов кровоточит древесина? Понимаю, в чём
+                            дело. Мы купили у них самое дорогое дерево - для призыва Стоглазого Духа. Но дерево не
+                            прогорало.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>Стоглазый Дух обозлился и покинул нас. А бесполезное полено мы вернули. Значит,
+                            Стоглазый Дух его проклял. И, значит, он рядом с ним, и портит всё вокруг. Просто убей его.
+                            Он должен быть рядом с поленом.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_bleeding_wood_01"
+                                      giveMarker="pi_1o_quest_bleeding_wood_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Лекарство от храпа"   -->
+            <p:state ifMarker="pi_1o_quest_cure_for_snoring_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10">
+                        <p:mainText>Вака, тебе нужно лекарство от храпа? Ну так пойди в город и купи его у тамиби
+                            Нестора, он там как раз для торговли и находится.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_cure_for_snoring_01"
+                                      giveMarker="pi_1o_quest_cure_for_snoring_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

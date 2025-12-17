@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПОЖАР МАГ-ВУДУ НЕСТОР -->
+
+    <p:place id="pi_1o_Antigua_magevoodoo_nestor_fire" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_magevoodoo_nestor"
+             name="Маг-вуду Нестор" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1"
+                               markerCondition="not pi_1o_quest_antigua_town_burning_water_nestor_done and not pi_1o_quest_antigua_town_burning_water_nestor_done_for_servant">
+                        <p:mainText>Вака, скорее, мне нужна твоя помощь! Принеси мне ведро воды из колодца!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Уже бегу!" complete="true"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_nestor" requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" ifMarker="pi_1o_quest_antigua_town_burning_water_nestor_done">
+                        <p:mainText>Ты прин[ёс|есла] воду? Отлично, вака, теперь помоги другим!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот вода!" complete="true"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_nestor_done"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_nestor_done_for_servant" requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" ifMarker="pi_1o_quest_antigua_town_burning_water_nestor_done_for_servant">
+                        <p:mainText>Ты уже прин[ёс|есла] мне воду! Вака, скорее, теперь помоги другим!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Уже бегу!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

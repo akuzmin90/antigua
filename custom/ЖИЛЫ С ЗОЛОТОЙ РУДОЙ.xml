@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖИЛЫ С ЗОЛОТОЙ РУДОЙ -->
+
+    <p:place id="pi_1o_Antigua_gm_ore_gold_mine" animType="EMPTY" imageId="62x62"
+             name="Жила с золотой рудой"  minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Без разрешения губернатора нельзя добывать руду. И без кирки тоже.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Ночные стражники добываем руду  -->
+            <p:state ifMarker="pi_new_guards_governor_003"  closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - первый кусочек у вас! Добыто золотой руды 1/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - второй кусочек у вас! Добыто золотой руды 2/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - третий кусочек у вас! Добыто золотой руды 3/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - четвёртый кусочек у вас! Добыто золотой руды 4/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - пятый кусочек у вас! Добыто золотой руды 5/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - шестой кусочек у вас! Добыто золотой руды 6/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - седьмой кусочек у вас! Добыто золотой руды 7/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - восьмой кусочек у вас! Добыто золотой руды 8/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - девятый кусочек у вас! Добыто золотой руды 9/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10" repeatable="false">
+                        <p:mainText>
+                            Вы ударяете по жиле с золотой рудой - десятый, последний, кусочек у вас! Добыто золотой руды
+                            10/10
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично!" removeMarker="pi_new_guards_governor_003" giveMarker="pi_new_guards_governor_004" requestSpecialPlaces="true" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+        </p:states>
+    </p:place>
+</p:root>

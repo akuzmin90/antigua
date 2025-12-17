@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАНИЦА 03 -->
+
+    <p:place id="pi_1o_Antigua_lost_memories_03" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lost_memories_01" name="Страница 03"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А вот и третья страница, вырванная из дневника! Хм, прочитаем...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Джим Сорока - все знают, что его клад проклят. Люди боятся этого проклятья! Мне
+                            терять уже нечего. Я итак жил впроголодь, выживал... Эльза же, милая Эльза... Была продана в
+                            рабство своим дядей."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"Ни я, ни она, мы не знали, что такое деньги... Я часто видел её в городе. Красивая,
+                            милая, безропотная... И с тем толстяком-богачом, его верная рабыня, принеси-подай..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Похоже, что это лишь одна из нескольких страниц дневника некоего парня. Интересно,
+                            что же стало дальше?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_lost_memories_02"
+                                      giveMarker="pi_1o_quest_lost_memories_03,pi_1o_quest_lost_memories_hint_03,pi_1o_quest_lost_memories_hermit"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

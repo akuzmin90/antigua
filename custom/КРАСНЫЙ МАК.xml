@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КРАСНЫЙ МАК -->
+
+    <p:place id="pi_1o_Antigua_mj_red_poppy" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_mj_red_poppy" name="Красный мак" minPlayerStair="40" minDistanceBetweenSame="5000" meetProbability="10" respawnPolicy="EVERYTIME" requireTime="10:00-11:59,16:00-17:59,02:00-04:59" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+            <p:markerCondition condition="pi_1o_quest_clear_love_02"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Редкие травы"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вы видите цветок красного мака! Вот только проблема... Около него вьётся муха
+                            цеце... Откуда она вообще в джунглях-то?! Ясно одно - она будет сражатсья за этот цветок!
+                            Внезапно, да. Но не удивительно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_red_poppy" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Муха Цеце, боевая иконка будет называться pi_1o_mj_tsetse_fly_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Муха цеце сильна. Но, пока она тут, цветок не сорвать...</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_red_poppy" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Муха цеце повержена! Великая битва - интересно, о ней сложат легенды? Вы срываете
+                            красный мак, пора вернуться к Сигизмунду Оби!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_clear_love_02"
+                                      giveMarker="pi_1o_quest_clear_love_03" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

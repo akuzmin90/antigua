@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕНА КЛАДОВЩИКА МАГ-ВУДУ -->
+
+    <p:place id="pi_1o_wifemagevoodoo" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_wifemagevoodoo" name="Чака" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Не смотри так на меня, вака. Моя печаль - не твоя забота.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Что случилось?" giveMarker="wife_searching_hint_02"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>С каких пор вака интересуется, как дела у мага-вуду? Хорошо, я отвечу, но это не
+                            имеет значения - я провалила обряд Сахалити. Но тебе не понять, это наша святость.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сахалити?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" repeatable="false">
+                        <p:mainText>Ох... Лишь после него можно выходить замуж. А я не смогла пройти обряд, и теперь 5
+                            лет не имею права искать себе мужа. Такова воля магии.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Есть вариант"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3.1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Наша племя ежи жену хоче, делай палка голова хоббите баба, веди дома своя, там жену
+                            твоя буде! Хош-Хош!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Интригует"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Хм... Кладовщик... Муж? Если он достоин меня, я согласна. Магия не запрещает нам
+                            строить семью с вака. Хорошо, я поговорю с кладовщиком.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Принято!"
+                                      removeMarker="storeceeper_quest_wife_searching,storeceeper_quest_wife_800,wife_searching_hint_01,wife_searching_hint_02,wife_searching_hint_03,wife_searching_hint_04"
+                                      giveMarker="storeceeper_quest_wife_magevoodoo" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                            <p:answer text="Пока жди" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

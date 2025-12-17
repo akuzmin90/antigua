@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- НОЧЬ РУПРАХТ ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_rupracht_obi_night" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_rupracht_obi_big"
+             name="Рупрахт Оби" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Готовится к проповеди*" delayMs="1000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я бы приютил тебя на ночь, но куда тебя уложить спать? Хм... Моя добродетель видит
+                            лишь один путь - сходи в таверну в город, там Трактирщик сдаёт комнаты. Счастья тебе. Ночь
+                            на дворе, уходи.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Раз ты просишь" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Призрак в часовне" конец  -->
+            <p:state ifMarker="pi_1o_quest_ghost_in_chapel_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Призрака больше нет? Замечательные новости! Вот тебе за твою работу. Но я хочу
+                            наградить тебя не только материально!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="20"/>
+                        <p:answers>
+                            <p:answer text="Давай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Я немного знаю магию, поэтому я повышу твоё здоровье! Спасибо ещё раз, искатель
+                            приключений!
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Тебе спасибо!" removeMarker="pi_1o_quest_ghost_in_chapel_02"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_ghost_in_chapel"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЗАЗЫВАЛА В ТАВЕРНУ  -->
+
+    <p:place id="pi_1o_Antigua_barker_at_tavern" animType="EMPTY" imageId="41x80" name="Зазывала в таверну"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Заходите в таверну!" delayMs="1000"/>
+                    <p:talk text="Лучшие цены только у нас!" delayMs="6000"/>
+                    <p:talk text="Ром, чай, лимонад!" delayMs="11000"/>
+                    <p:talk text="Не проходите мимо таверны!" delayMs="16000"/>
+                    <p:talk text="4 порции рома по цене 3х!" delayMs="21000"/>
+                    <p:talk text="У нас можно со своим!" delayMs="26000"/>
+                    <p:talk text="Таверна - лучшее место для трат!" delayMs="31000"/>
+                    <p:talk text="Мы ждём именно тебя, путник!" delayMs="36000"/>
+                    <p:talk text="Гражданам Антигуа - особое меню!" delayMs="41000"/>
+                    <p:talk text="К нам ходит сам Губернатор!" delayMs="46000"/>
+                    <p:talk text="Лучшая таверна в Холодном море!" delayMs="51000"/>
+                    <p:talk text="Ну зайди в таверну, ну!" delayMs="56000"/>
+                    <p:talk text="Ах, как пахнет свежая уха!" delayMs="61000"/>
+                    <p:talk text="Купи 2 рома и третий тоже купи!" delayMs="66000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Эй, искатель приключений! Скорее заходи в нашу таверну - у нас большое меню! А ещё
+                            Трактирщик знает много слухов, и у нас можно иногда найти работу! Мы всегда рады гостям!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

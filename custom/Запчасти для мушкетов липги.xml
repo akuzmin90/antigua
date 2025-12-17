@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Запчасти для мушкетов  -->
+
+    <p:place id="pi_1o_it_thoi_spare_parts_for_muskets" animType="EMPTY" imageId="82x214" name="Запчасти для мушкетов" minPlayerStair="40"
+             meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>На этом столе лежат запчасти для мушкетов. Видимо, это оружие ещё не столь совершенно, потому что их СЛИШКОМ МНОГО. Вы пытаетесь осознать, почему нельзя обойтись стрелами...  </p:mainText>
+                            <p:award type="EXPERIENCE" />
+                        <p:answers>
+                            <p:answer text="Практичнее же?" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>На этом столе лежат запчасти для мушкетов. Видимо, это оружие ещё не столь совершенно, потмоу что их СЛИШКОМ МНОГО. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

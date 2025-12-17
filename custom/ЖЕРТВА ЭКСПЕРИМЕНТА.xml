@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕРТВА ЭКСПЕРИМЕНТА -->
+
+    <p:place id="pi_1o_Antigua_mj_victim_of_experiment" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_mj_victim_of_experiment"
+             name="Жертва эксперимента" minPlayerStair="40" meetProbability="10" minDistanceBetweenSame="6000" spawnProbability="0.4" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+             <p:markerCondition condition="lumberjack_joshua_obi_for_quests and hobbit_talk_fun and not pi_1o_Antigua_mj_victim_of_experiment_never_meet_again"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false" >
+                <p:dialog>
+                    <p:replica id="r1" imageId="{hero}" imageComment="{playerNick}" repeatable="false">
+                        <p:mainText>[Так, минуту. Неужели это тот самый мальчик-попугай, о котором на обеде рассказал
+                            вам Джошуа Оби?! Вы решаетесь заговорить с ним] Эм, здравствуй, кто бы ты ни был...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>Болване чевек! Хрен чевек болване, моя хоббите, чевек глозы слепый, чевек не виде?
+                            Каки чевеки болване, шо чевек хоче от велике хоббите Пакучи?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" imageId="{hero}" imageComment="{playerNick}" repeatable="false">
+                        <p:mainText>Ещё один хоббит?! Откуда? [Внезапно из-за вашей спины выскакивает Экля]</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Хоббите Пакучи!!! Хош-хош! Хоббите Экля не виде хоббите Пакучи када моя твоя с боше
+                            корабь бегай! Комаба бара буначи шарама да ламба!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" repeatable="false">
+                        <p:mainText>Шарама да ламба?! Бадабумба да ладина хош-хош!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" imageId="{hero}" imageComment="{playerNick}" repeatable="false">
+                        <p:mainText>Так, стоп, говорите нормально. Экля, ты его знаешь? Это тоже хоббит? И почему он с
+                            лицом попугая?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Шарама... Э... Лиц... Лицо, хош! Лицо у чевеки, у хоббите - морда! Болване чевек!
+                            Хоббите Пакучи, твоя морда птица?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8" repeatable="false">
+                        <p:mainText>Хоббите Пакучи штуки бери у чевеки - чевеки странне, руки двигай, моя морда птица
+                            будь! Потом чевеки руки двигай, моя птица дальше будь! Хоббите только штуки бери, плоха не
+                            делай!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9" imageId="{hero}" imageComment="{playerNick}" repeatable="false">
+                        <p:mainText>Понятно. Ты стащил вещи у магов-вуду, они заколдовали тебя в попугая, они это
+                            любят... Но ты хоббит, и магия пошла не по плану, теперь ты такой. Видимо, навсегда.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Хоббите нада штуки бери, хоббите живе для бери штуки! Хоббите не воровай, хоббите
+                            бери!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r11">
+                        <p:mainText>Болване чевек говори хоббите Пакучи воровай?! Чевек готовь голова, моя твоя бум
+                            голова делай! Хоббите Пакучи макак бей, твоя тожи бей!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой?">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_victim_of_experiment" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Жертва эксперимента, боевая иконка будет называться pi_1o_Antigua_mj_victim_of_experiment_f, несильный -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Кто бы мог подумать, что этот хоббит Пакучи будет сражаться, как демон...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_victim_of_experiment" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Чевек не делай бум голова хоббите Пакучи!!! Твоя боше сильне хоббите Пакучи!
+                            Хош-хош!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE" />
+                        <p:answers>
+                            <p:answer text="Далее" goto="r12"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r12">
+                        <p:mainText>Хоббите Пакучи давай штуки чевек друже хоббите Экля! Злоте штуки! Чевек не бум
+                            голова хоббите Пакучи боше! Моя живе тут, жунгля, моя радый! Хоббите Пакучи бегай макака
+                            резай, хош-хош!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Хоббиты - милашки" removeMarker="lumberjack_joshua_obi_for_quests" giveMarker="pi_1o_Antigua_mj_victim_of_experiment_never_meet_again" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

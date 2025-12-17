@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДУХ ДЖИМИ СОРОКА -->
+
+    <p:place id="pi_1o_jim_magpie" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_jim_magpie" name="Дух Джими Сороки" minPlayerStair="40"
+             meetProbability="0"> 
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ктоооо прииииизваааааллл мееееняяяяя... [Сиииирееениииияяяяя|Аааааартооооо], этоооо
+                            тыыыыы... Суууундуууук ооооткрыыыыыт...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Джими Сорока?!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Это он. Получается, Д.С. - это не "Дорогому Стивену", это означает "Джими Сорока". И
+                            как я не догадал[ась|ся]...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Еще один странне чевек плоха плоть... Хоббите не поняе, хоббите думай, это чевек -
+                            не чевек, мертвяк чевек!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да, это призрак"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>[Сиииирееениииияяяяя|Аааааартооооо], выыыпооооолнииии
+                            укааааазаааанннннноооооеееее... Наааакаааажииии воооорррррааа ссссссооокррррооовиииищщщщ...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Он мёртв, но не от моей руки. Его подло обманули. Ты можешь найти его в царстве
+                            мёртвых, по имени Лейхо.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Дааааа...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>Лееееейххххоооо... Раааассскааааззззааааллл... Трррроооееее... Ссссстивввввенннннн,
+                            Хииииилллыыыый - вооооот ииииимееееенаааа...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Джими Сорока, ты идёшь с нами. Убийцы будут наказаны. Я, твой верный охранитель,
+                            выполню указанное тобой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уходим" removeMarker="pi_1o_quest_leyho_killers_long_way_03"
+                                      giveMarker="pi_1o_quest_leyho_killers_long_way_04_s,pi_1o_quest_leyho_killers_long_way_04_f,pi_1o_quest_leyho_killers_long_way_04_hints,pi_1o_quest_leyho_killers_long_way_04_react_fov"
+                                      requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

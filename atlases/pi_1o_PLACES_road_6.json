@@ -1,0 +1,540 @@
+{
+  "textures": [
+    {
+      "image": "pi_1o_PLACES_road_6.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 0,
+        "h": 0
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mj_tnd_ghoul",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 121,
+            "h": 139
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 121,
+            "h": 139
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 121,
+            "h": 139
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mj_twb_first_scientist",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 110,
+            "h": 148
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 110,
+            "h": 148
+          },
+          "frame": {
+            "x": 0,
+            "y": 139,
+            "w": 110,
+            "h": 148
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_kindergarten",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 116,
+            "h": 122
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 116,
+            "h": 122
+          },
+          "frame": {
+            "x": 0,
+            "y": 287,
+            "w": 116,
+            "h": 122
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_door_to_tomb_with_book",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 100,
+            "h": 94
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 100,
+            "h": 94
+          },
+          "frame": {
+            "x": 0,
+            "y": 409,
+            "w": 100,
+            "h": 94
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_weaver",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 105,
+            "h": 86
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 105,
+            "h": 86
+          },
+          "frame": {
+            "x": 100,
+            "y": 409,
+            "w": 105,
+            "h": 86
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_mj_ki_witch",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 96,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 96,
+            "h": 130
+          },
+          "frame": {
+            "x": 110,
+            "y": 139,
+            "w": 96,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_bgf_pirate_rusty",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 93,
+            "h": 126
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 93,
+            "h": 126
+          },
+          "frame": {
+            "x": 121,
+            "y": 0,
+            "w": 93,
+            "h": 126
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_ghost_in_chapel",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 91,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 91,
+            "h": 105
+          },
+          "frame": {
+            "x": 116,
+            "y": 269,
+            "w": 91,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_door_to_kasumi_clons",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 98,
+            "h": 92
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 98,
+            "h": 92
+          },
+          "frame": {
+            "x": 205,
+            "y": 374,
+            "w": 98,
+            "h": 92
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_victim_of_experiment",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 83,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 83,
+            "h": 105
+          },
+          "frame": {
+            "x": 206,
+            "y": 126,
+            "w": 83,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_lm_elsa",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 78,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 78,
+            "h": 105
+          },
+          "frame": {
+            "x": 214,
+            "y": 0,
+            "w": 78,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_door_to_nameless_druid",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 93,
+            "h": 88
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 93,
+            "h": 88
+          },
+          "frame": {
+            "x": 207,
+            "y": 231,
+            "w": 93,
+            "h": 88
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_scorpio_man",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 77,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 77,
+            "h": 105
+          },
+          "frame": {
+            "x": 289,
+            "y": 105,
+            "w": 77,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_adamantine_burdock",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 81,
+            "h": 79
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 81,
+            "h": 79
+          },
+          "frame": {
+            "x": 292,
+            "y": 0,
+            "w": 81,
+            "h": 79
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_living_dead_gorilla",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 60,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 60,
+            "h": 105
+          },
+          "frame": {
+            "x": 300,
+            "y": 210,
+            "w": 60,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_lost_criita",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 54,
+            "h": 106
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 54,
+            "h": 106
+          },
+          "frame": {
+            "x": 303,
+            "y": 315,
+            "w": 54,
+            "h": 106
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_golden_parrot",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 72,
+            "h": 71
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 72,
+            "h": 71
+          },
+          "frame": {
+            "x": 303,
+            "y": 421,
+            "w": 72,
+            "h": 71
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_winged_monkey",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 63,
+            "h": 79
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 63,
+            "h": 79
+          },
+          "frame": {
+            "x": 357,
+            "y": 315,
+            "w": 63,
+            "h": 79
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_red_poppy",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 51,
+            "h": 76
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 51,
+            "h": 76
+          },
+          "frame": {
+            "x": 360,
+            "y": 210,
+            "w": 51,
+            "h": 76
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_quest_kitty",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 46,
+            "h": 81
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 46,
+            "h": 81
+          },
+          "frame": {
+            "x": 375,
+            "y": 394,
+            "w": 46,
+            "h": 81
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_mj_macaque_marauder_manual",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 51,
+            "h": 71
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 51,
+            "h": 71
+          },
+          "frame": {
+            "x": 366,
+            "y": 79,
+            "w": 51,
+            "h": 71
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПОЖАР КОЛОДЕЦ -->
+
+    <p:place id="pi_1o_Antigua_well_fire" animType="EMPTY" imageId="87x113" name="Колодец" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Колодец полон воды - она пригодится для тушения пожара!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                            <p:answer text="Вода Нестору" ifMarker="pi_1o_quest_antigua_town_burning_water_nestor"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_nestor"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_nestor_done" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Кладовщику"
+                                      ifMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_01"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_01"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_done_01" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Кладовщику"
+                                      ifMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_02"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_02"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_done_02" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Кладовщику"
+                                      ifMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_03"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_03"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_storekeeper_done_03" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Феликсу" ifMarker="pi_1o_quest_antigua_town_burning_water_felix_01"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_felix_01"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_felix_done_01" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Феликсу" ifMarker="pi_1o_quest_antigua_town_burning_water_felix_02"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_felix_02"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_felix_done_02" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Феликсу" ifMarker="pi_1o_quest_antigua_town_burning_water_felix_03"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_felix_03"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_felix_done_03" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Отшельнику"
+                                      ifMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate_done" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Виктору Оби"
+                                      ifMarker="pi_1o_quest_antigua_town_burning_water_victor_obi"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_victor_obi"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_victor_obi_done" goto="r1"
+                                      out="true"/>
+                            <p:answer text="Вода Джеку" ifMarker="pi_1o_quest_antigua_town_burning_water_jack"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_jack"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_jack_done" goto="r1"
+                                      out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

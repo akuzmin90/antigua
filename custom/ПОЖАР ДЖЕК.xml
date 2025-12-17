@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПОЖАР ДЖЕК -->
+
+    <p:place id="pi_1o_Antigua_lj_jack_fire" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lj_jack" name="Джек" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1"
+                               markerCondition="not pi_1o_quest_antigua_town_burning_water_jack_done and not pi_1o_quest_antigua_town_burning_water_jack_done_for_servant">
+                        <p:mainText>Палатки рынка сделаны из очень плотной ткани, мы ещё успеем их потушить! Принеси мне
+                            ведро воды из колодца!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уже бегу!" complete="true"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_jack" requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" ifMarker="pi_1o_quest_antigua_town_burning_water_jack_done">
+                        <p:mainText>Ты прин[ёс|есла] воду? Отлично, теперь помоги другим!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот вода!" complete="true"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_jack_done"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_jack_done_for_servant" requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" ifMarker="pi_1o_quest_antigua_town_burning_water_jack_done_for_servant">
+                        <p:mainText>Ты уже прин[ёс|есла] мне воду! Скорее, теперь помоги другим!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Уже бегу!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

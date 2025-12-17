@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАЖНИК ДЕЙВ -->
+
+    <p:place id="pi_1o_sp_guarddave" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_guarddave" name="Стражник Дэйв" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">                
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Наша сахарная плантация - лучшая во всём Холодном море! Не приставай к рабочим, и не
+                            пытайся ничего стащить. Я слежу за тобой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_night_watch_001,guarddave_for_quests" complete="true"/>
+                            <p:answer text="О задании" markerCondition="pi_new_guards_governor_001 or pi_night_watch_002 or pi_night_watch_003 or pi_night_watch_004 or pi_sugar_for_tavern_04 or pi_1o_frail_treasure_01 or pi_1o_new_recruit_01 or pi_1o_quest_red_wood_01 or pi_1o_quest_seraphim_01 or pi_big_rat_voodoo_done_guarddave or pi_sugar_for_tavern_dave_looser or pi_fear_of_voodoo_stupido_02 or pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02" goto="r2"/>
+                            <p:answer text="Странно смотришь" ifNoMarker="pi_dave_know_secret_red_wood" probability="0.3" giveMarker="pi_dave_know_secret" goto="r_secret"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_secret">
+                        <p:mainText>У меня предложение к тебе. Я заранее даю тебе 8 кусков золотой руды, а работу ты сделаешь потом. Мне так удобнее. Сделка?
+                        </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="8" />
+                        <p:answers>
+                            <p:answer text="Конечно!" giveMarker="pi_dave_know_secret_red_wood" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_new_guards_governor_001" text="Новые стражники"
+                                      goto="r_guarddave_react1"/>
+                            <p:answer markerCondition="pi_night_watch_002 or pi_night_watch_003 or pi_night_watch_004"
+                                      text="Воры сахара" goto="r_guarddave_react2"/>
+                            <p:answer ifMarker="pi_fear_of_voodoo_stupido_02" text="Призрак в пещере-складе"
+                                      goto="r_guarddave_react3"/>
+                            <p:answer markerCondition="pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02"
+                                      text="Огромная крыса" goto="r_guarddave_react4"/>
+                            <p:answer ifMarker="pi_big_rat_voodoo_done_guarddave" text="Крыса убита" goto="r_guarddave_react5"/>
+                            <p:answer ifMarker="pi_sugar_for_tavern_04" text="Гоблины и сахар"
+                                      goto="r_guarddave_react6"/>
+                            <p:answer ifMarker="pi_sugar_for_tavern_dave_looser" text="Гоблинов уже нет"
+                                      goto="r_guarddave_react7"/>
+                            <p:answer ifMarker="pi_1o_frail_treasure_01" text="Хилый заходил?"
+                                      goto="r_guarddave_react8"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_guarddave_react9_0" requireGender="female"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_guarddave_react9_1" requireGender="male"/>
+                            <p:answer ifMarker="pi_1o_quest_red_wood_01" text="Красное дерево"
+                                      goto="r_guarddave_react10"/>
+                            <p:answer ifMarker="pi_1o_quest_seraphim_01" text="Серафим" goto="r_guarddave_react11"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react1">
+                        <p:mainText>Просто сходи к Губернатору и попроси прислать новых стражников, в чём проблема? Или
+                            мне за ручку тебя отвести? Особый сахар пропадает каждый день!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react2">
+                        <p:mainText>Что ты здесь делаешь? Ты долж[ен|на] быть в засаде! Бегом обратно, тебе нужно быть в
+                            пещере-складе! Поджидай воров особого сахара!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да да да" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react3">
+                        <p:mainText>Призрак в пещере-складе? Твоих рук дело, ты и прогоняй. Мне за это не платят.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жаль" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react4">
+                        <p:mainText>Ой не-не-не-не-не! Вот когда я увижу там здоровенную крысу, тогда и пойду
+                            разбираться. Ничего не знаю, ничего не видел и не слышал. Понятно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Работящий" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react5">
+                        <p:mainText>Крыса убита? А мне что с того? Пусть вон Бонес идёт и убирает её.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно" removeMarker="pi_big_rat_voodoo_done_guarddave" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react6">
+                        <p:mainText>И ты туда же... Да не могу я гоблинов убить! Они быстрые, мелкие, а у меня доспехи
+                            жмут, копьё поломалося и вообще я два дня без сна на вахте! Давай своими силами. А я немного
+                            помогу тебе.
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Мачомба блин" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react7">
+                        <p:mainText>Ну отлично, теперь ещё и моё жалование тебе отдали! Да я бы сам их прогнал, если б
+                            знал, что так будет, голыми руками, без копья! Слушай, ну хоть монет 10 с него дай, на
+                            ремонт...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Именно на ремонт!" removeMarker="pi_sugar_for_tavern_dave_looser" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="10"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react8">
+                        <p:mainText>Чего? Хилый, сюда? С ума сходишь, что ли? Да он город не покинет никогда, ведь тут
+                            сапоги испачкать можно, а он у нас - неженка, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react9_0" requireGender="female">
+                        <p:mainText>Это самое неприятное, что ты можешь меня спросить. Лучше бы спросила, не хочу ли я с
+                            тобой пропустить бокал рома в таверне...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="НЕТ" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react9_1" requireGender="male">
+                        <p:mainText>Это самое неприятное, что ты можешь меня спросить. Я откажусь.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react10">
+                        <p:mainText>Просто принеси мне полено красной древесины. Или я расскажу Губернатору наш секрет.
+                            Всё честно. За магию вуду в общественном месте грозит три года тюрьмы!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_guarddave_react11">
+                        <p:mainText>Ну, появился этот монстр. Ну, стоит никого не трогает, агрессии не проявляет. А у
+                            меня прямой приказ - ЗАЩИЩАТЬ, а не нападать. Вот нападёт он - я тогда и уничтожу его.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот хитрец!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Ночной дозор начало квеста  -->
+            <p:state ifMarker="pi_night_watch_001" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Послушай, это ведь ты т[от|а] искатель приключений, что прибы[л|ла] недавно на
+                            Антигуа? У меня есть работа, как раз для такого авантюриста, как ты.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>У нас стали пропадать мешки с особым сахаром - его сложно делать, и он очень
+                            дорогой. Мы уже 2 недели пытаемся поймать вора, но... Но здесь всего 3 стражника, я и вон
+                            те, новенькие.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Нам нужна помощь - а ты как раз вовремя. Я предлагаю или сделать засаду прямо на
+                            складе, или сообщить губернатору о проблеме, пусть пришлёт дополнительную охрану.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Засада" goto="r4"/>
+                            <p:answer text="Губернатор" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Отлично! Так и надо, накажем этого грязного вора! Ничто не сравнится с хорошей
+                            дракой, особенно - если это всякие беззаконники! Отправляйся в пещеру-склад.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_night_watch_001" giveMarker="pi_night_watch_002"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_night_watch" name="Ночной дозор" count="1" mithril="50"
+                                              type="SINGLE"/>
+                                <p:toRoad roadId="pi_1o_sugar_plantation_warehouse"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Хорошо. Отправляйся к губернатору, сообщи ему о том, что нам нужны новые стражники.
+                            Я не могу покинуть свой пост.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_night_watch_001"
+                                      giveMarker="pi_new_guards_governor_001" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_new_guards_governor" name="Новые стражники" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Новые стражники, если отказали губернатору  -->
+            <p:state ifMarker="pi_new_guards_governor_fail" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Значит, губернатор не пришлёт подкрепление... Здесь нет твоей вины, ты нам ещё ничем
+                            не обяза[н|на]. Может, ты всё-таки поможешь с засадой на воров?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" goto="r2_d_2"/>
+                            <p:answer text="Нет" goto="r3_d"/>
+                            <p:answer text="Это будет стоить дороже" goto="r5_d"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Пора прогнать этих воров. Не будем медлить ни минуты!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот засада!" giveMarker="pi_night_watch_002"
+                                      removeMarker="pi_new_guards_governor_fail" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_night_watch" name="Ночной дозор" count="1" mithril="50"
+                                              type="SINGLE"/>
+                                <p:toRoad roadId="pi_1o_sugar_plantation_warehouse"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Прошу тебя помочь! Мы не справимся без тебя!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" goto="r2_d_2"/>
+                            <p:answer text="Таки нет" goto="r4_d"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>В таком случае, хорошего тебе дня. Не смею больше отвлекать своими проблемами,
+                            авантюрист. Так ты на Антигуа не добьёшься расположения.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" requestSpecialPlaces="true" removeMarker="pi_new_guards_governor_fail"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d">
+                        <p:mainText>Кракен тебя задери, ты ещё смеешь торговаться! [Сквозь зубы] Ну хорошо, я заплачу за
+                            эту работу больше, из своего кармана. Но ты её сделаешь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично!" giveMarker="pi_night_watch_002,pi_night_watch_more_awards"
+                                      removeMarker="pi_new_guards_governor_fail" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_night_watch" name="Ночной дозор" count="1" mithril="50"
+                                              type="SINGLE"/>
+                                <p:toRoad roadId="pi_1o_sugar_plantation_warehouse"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+            <!-- квест Ночной дозор условие если прогнали пиратов-воров сами  -->
+            <p:state ifMarker="pi_night_watch_005" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Это были пираты-воры? Тысяча чертей, Антигуа - это остров, живущий по Кодексу и
+                            законам! Воровать у своих. Ну, попадись они мне!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Работа сделана"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Да-да, я знаю. Вот тебе награда. И, знаешь что...</p:mainText>
+                        <p:award type="MITHRIL" explicitValue="25"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Сходи к губернатору, покажи ему этот ключ. У него странная форма... Таких замков я
+                            не припомню в городе. А ещё и тот факт, что ключ изъеден морской солью - странно.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2" ifMarker="pi_night_watch_more_awards">
+                        <p:mainText>[Сквозь зубы] Ах да, сделка есть сделка... Вот тебе ещё за твою работу. [Тяжело
+                            вздыхает] Знаешь, когда я был пиратом, я тоже так себя вёл. Так что зла не держу.
+                        </p:mainText>
+                        <p:award type="SULFUR" explicitValue="200"/>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_night_watch_more_awards"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_2">
+                        <p:mainText>За помощь с избавлением от пиратов-воров, вы получаете +1 к репутации пиратов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_night_watch_005" giveMarker="pi_strange_key_001"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_night_watch"/>
+                                <p:createTask id="pi_strange_key" name="Странный ключ" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Ночной дозор через квест Новые стражники условие если прогнали пиратов-воров через губернатора  -->
+            <p:state ifMarker="pi_new_guards_governor_005" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Это были пираты-воры! Тысяча чертей, Антигуа - это остров, живущий по Кодексу и
+                            законам! Воровать у своих. Ну, теперь они у нас получили!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что произошло?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Пришли 5 стражников с мушкетами, зашли внутрь, а дальше только грохот выстрелов.
+                            Воры сбежали! Но вряд ли вернутся, зная, что их снова ждут.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Чевеки-убиваки с палками бум-огонь! Ооооо, хоббите Экля страхо хош-хош! Моя видел,
+                            таки чевеки-убиваки сильне страшне врагов убивака делай!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не бойся"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_3">
+                        <p:mainText>Сходи к губернатору, покажи ему этот ключ. Его потерял один из воров. У него
+                            странная форма... Таких замков я не припомню в городе. А ещё и тот факт, что ключ изъеден
+                            морской солью - странно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_3">
+                        <p:mainText>За помощь с избавлением от пиратов-воров, вы получаете +1 к репутации пиратов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_new_guards_governor_004,pi_new_guards_governor_005"
+                                      giveMarker="pi_strange_key_001" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_strange_key" name="Странный ключ" count="1" mithril="50"
+                                              type="SINGLE"/>
+                                <p:addTaskProgress id="pi_new_guards_governor"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Красноволосая" побеждена  
+            <p:state ifMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost_done" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Давай честно - я всё видел с самого начала. Но я проявлю благородство и ничего
+                            никому не скажу про куклу-вуду. Но за тобой должок. Сделка?
+                        </p:mainText>
+                        <p:award type="ELIXIR"/>
+                        <p:answers>
+                            <p:answer text="Сделка!" giveMarker="pi_dave_know_secret" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Так что по итогу? Это были пираты-воры, их спугнул твой призрак? Тысяча чертей,
+                            Антигуа - это остров, живущий по Кодексу и законам! Воровать у своих. Ну, попадись они мне!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Работа сделана"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Да-да, я знаю. Вот тебе награда. И, знаешь что...</p:mainText>
+                        <p:award type="MITHRIL" explicitValue="25"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_4">
+                        <p:mainText>Сходи к губернатору, покажи ему этот ключ. У него странная форма... Таких замков я
+                            не припомню в городе. А ещё и тот факт, что ключ изъеден морской солью - странно.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_4">
+                        <p:mainText>За помощь с избавлением от пиратов-воров, вы получаете +1 к репутации пиратов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Хорошо" giveMarker="pi_strange_key_001" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_night_watch"/>
+                                <p:createTask id="pi_strange_key" name="Странный ключ" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state> -->
+
+            <!-- квест "Красная древесина", начало   -->
+            <p:state markerCondition="pi_dave_know_secret and lumberjack_obi_for_quests" repeatable="false"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Эй, эй! Искатель приключений, иди сюда. За тобой должок, помнишь? Я заранее заплатил тебе. Пора выполнить работу.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эх, не забыл..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Отлично! Услуга за услугу. Сходи в деревню лесорубов. Стащи из поленницы одно полено
+                            красной древесины. Почему стащи? Она редкая, её не отдадут и не продадут - и принеси полено
+                            мне. Всё просто, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Раз ты просишь" removeMarker="pi_dave_know_secret"
+                                      giveMarker="pi_1o_quest_red_wood_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_red_wood" name="Красная древесина" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Красная древесина", финал   -->
+            <p:state ifMarker="pi_1o_quest_red_wood_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Полено красного дерева у тебя? [С жадностью в газах] ДАВАЙ ЕГО СЮДА, ТСССССС! Я
+                            теперь до конца жизни обеспечен теплом, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="То есть?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>Одно такое полено прогорает за 40 лет, а тепла даёт, как куча дров! Знаешь, я даже
+                            отблагодарю тебя, хотя и не обязан. И про наш секрет я забыл, сделка есть сделка, ахаха!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Пусть так" removeMarker="pi_1o_quest_red_wood_02"
+                                      giveMarker="pi_1o_quest_red_wood_react_victor_obi" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_red_wood"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КРАСНОВОЛОСАЯ -->
+
+    <p:place id="pi_1o_redhead_ghost" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_redhead_ghost" name="Красноволосая" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Всё равно этот стейт не появится.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Посмотрим!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Красноволосая" первая встреча  -->
+            <p:state ifMarker="pi_fear_of_voodoo_stupido_01" mandatory="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Это же призрак! Вот чёрт...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вы нарушили наставление Верховного шамана! Похоже, придётся нести последствия...
+                            Квест "Кошмары вуду" отменён. Скорее, к Верховному шаману!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сматываемся!" removeMarker="pi_fear_of_voodoo_stupido_01"
+                                      giveMarker="pi_fear_of_voodoo_stupido_02" complete="true">
+                                <p:createTask id="pi_fear_of_voodoo_stupido" name="Красноволосая" count="1" mithril="50"
+                                              type="SINGLE"/>
+                                <p:failTask id="pi_fear_of_voodoo"/>
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Красноволосая" если пробуем бить бессмертную  -->
+            <p:state ifMarker="pi_fear_of_voodoo_stupido_try_to_kill" mandatory="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Перед вами иллюзия призрака Красноволосой - но готова вступить в битву она, словно
+                            живая!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ох...">
+                                <p:toBattle creatureId="pi_1o_redhead_ghost" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Красноволосой, боевая иконка будет называться pi_1o_redhead_ghost_f, Сейчас она ВООБЩЕ неуязвима и нас долбит с одного удара. -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Как такое может быть? Она вообще неуязвима! Надо сходить к Верховному шаману и
+                            выяснить, в чём дело...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я вернусь" goto="r2_d"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Какая вот вин-реплика? Она нас не по головке погладила, а именно надругалась. Причём
+                            во всех смыслах...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Побаливает"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2_d">
+                        <p:mainText>Это было безрассудно, но... Очень смело и отважно. Магический фронт почувствовал это
+                            и разнёс своим верным служителям. +1 репутация среди магов-вуду!
+                        </p:mainText>
+                         <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_fear_of_voodoo_stupido_try_to_kill"
+                                      giveMarker="pi_fear_of_voodoo_stupido_try_to_kill_door,pi_fear_of_voodoo_stupido_try_to_kill_immortal"
+                                      complete="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Красноволосая" пока не стала бессмертной  -->
+            <p:state ifMarker="pi_fear_of_voodoo_stupido_try_to_kill_immortal" mandatory="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Красноволосая бессмертна... Бесполезно с ней сражаться. Пока она здесь, дальше вам
+                            не пройти! Скорее, к Верховному шаману!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сматываемся!" complete="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Красноволосая" она смертная  -->
+            <p:state ifMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost" mandatory="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Перед вами иллюзия призрака Красноволосой - но готова вступить в битву она, словно
+                            живая!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ох...">
+                                <p:toBattle creatureId="pi_1o_redhead_ghost" onWinGoTo="win_d" onLooseGoTo="loose_d"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose_d" closable="false">
+                        <p:mainText>Она действительно ослаблена... Ну неужели нельзя было ослабить её ещё больше...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_redhead_ghost" onWinGoTo="win_d" onLooseGoTo="loose_d"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose_d" out="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win_d" closable="false">
+                        <p:mainText>Невероятно! Иллюзия Красноволосой побеждена! Неужели она была такой сильной и при
+                            жизни? Гроза Холодного моря... Теперь даже её иллюзия - это история! Скорее, к стражнику
+                            Дейву!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Это да" giveMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost_done"
+                                      removeMarker="pi_fear_of_voodoo_stupido_kill_redhead_ghost,pi_fear_of_voodoo_stupido_02"
+                                      goto="r2_d_2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Ваша победа над Красноволосой - знаковое событие для Антигуа! И не важно, что именно
+                            из-за вас и появилась иллюзия Красноволосой. Это будет секретом. +1 к общей репутаци!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                                <p:addTaskProgress id="pi_fear_of_voodoo_stupido"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

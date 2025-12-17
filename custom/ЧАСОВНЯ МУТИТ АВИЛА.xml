@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЧАСОВНЯ МУТИТ АВИЛА  -->
+
+    <p:place id="pi_1o_Antigua_lc_avila_date_chapel" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_avila" name="Авила"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Сигизмунд, любимый" delayMs="1000"/>
+                    <p:talk text="Как я ждала встречи" delayMs="9000"/>
+                    <p:talk text="Мы здесь одни..." delayMs="17000"/>
+                    <p:talk text="Поцелуй меня" delayMs="25000"/>
+                    <p:talk text="Это... Волнительно" delayMs="33000"/>
+                    <p:talk text="Скажи ещё приятное" delayMs="41000"/>
+                    <p:talk text="Эм..." delayMs="49000"/>
+                    <p:talk text="Ну вообще, да" delayMs="57000"/>
+                    <p:talk text="*Чмок*" delayMs="66000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Какая бестактность! Пожалуйста, оставь нас!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да вы продолжайте" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

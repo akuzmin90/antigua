@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- АРНО  -->
+
+    <p:place id="pi_1o_arno" atlasId="" animType="EMPTY" imageId="92x123" name="Арно" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я предпочитаю находиться в компании самого себя, прости. Здесь есть и другие
+                            столики, хорошо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="arno_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_pay_to_arno_go or pi_1o_new_recruit_01 or pi_1o_quest_tea_arno_react"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_gold_compass_pay_to_arno_go" text="Плата за компас"
+                                      goto="r_arno_react1"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?" goto="r_arno_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_tea_arno_react" text="Хилый хилый" goto="r_arno_react3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_arno_react1">
+                        <p:mainText>Спасибо за благородство - хотя и 100 монет, это слишком мало за такую работу. Ну,
+                            Трактирщик, дай-ка мне самой наваристой ухи, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно, ладно" removeMarker="pi_gold_compass_pay_to_arno_go" 
+                                      complete="true">
+                                <p:pay gold="100"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_arno_react2">
+                        <p:mainText>АХАХАХАХА! Иди прочь с такими предложениями, правда.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну и пойду"  complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_arno_react3">
+                        <p:mainText>Ахахаха, он получил по заслугам! Мечты многих в этом городе сбылись, ахахаха!
+                            [Хилого здесь конкретно не любят. Вы порадовали многих, +1 к репутации пиратов!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Весёлый город" removeMarker="pi_1o_quest_tea_arno_react" 
+                                      complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Странный ключ  -->
+            <p:state ifMarker="pi_strange_key_004" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Это ты Арно? Мутный тип?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Мутне тип болване чевек!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Точно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Чего? Какого кракена я тебе мутный тип?! Я - законопослушный гражданин Антигуа уже
+                            как 10 лет. Следи за языком, незнаком[ец|ка]!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Прости"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Ладно, на первый раз. Я всё слышал - показывай ключ.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Показать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ключ новый, сделан для чего-то специально. Но изъеден морской солью, видишь эти
+                            крапинки? Такое может быть, если он лежал в морской воде. Или грот Левиафана, или
+                            пират-отшельник.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" complete="true" requestSpecialPlaces="true" removeMarker="pi_strange_key_004"
+                                      giveMarker="pi_strange_key_005,pi_strange_key_hermit"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Сахар для таверны, перед сдачей квеста  -->
+            <p:state markerCondition="pi_sugar_for_tavern_05 and pi_sugar_for_tavern_have_ring" mandatory="true"
+                     repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Эй, эй, пссст! Подойди сюда, друг.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Чего тебе?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Я знаю, что перстень Трактирщика ещё у тебя, верно?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Допустим"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Всегда хотел его получить. Как насчёт сделки? 200 аметистов за перстень! Я их сам в
+                            Тропиках собирал! А Трактирщику скажи, допустим, что его забрал Плантатор в счёт оплаты.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" goto="r5_d"/>
+                            <p:answer text="Откажусь" goto="r4_d"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Я тебя не видел - ты меня тоже.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d">
+                        <p:mainText>Превосходно, вот твои 200 аметистов! И о нашей сделке - ни слова!</p:mainText>
+                            <p:award type="SULFUR" explicitValue="200" />
+                        <p:answers>
+                            <p:answer text="Естественно" complete="true" requestSpecialPlaces="true" removeMarker="pi_sugar_for_tavern_have_ring"
+                                      giveMarker="pi_sugar_for_tavern_ring_sold"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции  -->
+            <p:state ifMarker="pi_gold_compass_03" repeatable="false" closable="false" mandatory="true">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Эй, эй, постой. Я знаю, что тебе нужен золотой компас.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Откуда знаешь?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>У меня по всему городу уши. Хочешь добыть золотой компас, хе-хе? Я уже сам пытаюсь,
+                            но не могу сделать это в одиночку. Это ведь ценная вещичка, хе-хе. Губернатор бережёт её.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не понимаю, о чём ты" goto="r3_d_2"/>
+                            <p:answer text="Какой план?" goto="r4_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Даже так? Я думал, ты для Селезара ищешь его... Но, нет так нет. Работа останется
+                            моей, и я получу за неё награду.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Погоди!"
+                                      removeMarker="pi_gold_compass_03,pi_gold_compass_hint1,pi_gold_compass_hint2,pi_gold_compass_hint3,pi_gold_compass_hint4,pi_gold_compass_hint5,pi_gold_compass_hint6,pi_gold_compass_hint7,pi_gold_compass_hint8,pi_gold_compass_hint9"
+                                      giveMarker="pi_gold_compass_fail_1" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>Не переживай, я хоть и вор... Но благородный. Тебя ведь тоже наняла инквизиция,
+                            верно? Иначе откуда тебе знать про компас...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="План какой?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_2">
+                        <p:mainText>Наступит поздний вечер. Я уведу Губернатора из его дворца, скажу, что там лошадь
+                            бесхозная бродит. Он пойдёт со мной проверить, что за непорядок... А ты отправишься во
+                            дворец.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А потом?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Потом ты поговоришь с его слугой. Тебе ведь дали 10 кусков золотой руды? Подкупи
+                            его. Угрожай. Что угодно, но не бей его! Ну что, ждём вечера? И на дело!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ждать вечера"
+                                      removeMarker="pi_gold_compass_03,pi_gold_compass_hint1,pi_gold_compass_hint2,pi_gold_compass_hint3,pi_gold_compass_hint4,pi_gold_compass_hint5,pi_gold_compass_hint6,pi_gold_compass_hint7,pi_gold_compass_hint8,pi_gold_compass_hint9"
+                                      giveMarker="pi_gold_compass_04" requestSpecialPlaces="true" complete="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_governor_palace_compass"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции напали на слугу губернатора  -->
+            <p:state ifMarker="pi_gold_compass_fail_arno" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Ты серьёзно? Напасть на слугу губернатора, в его же дворце? Я же просил не бить
+                            его... Но, что сделано, то сделано. Компас мы, теперь, точно не добудем.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Увы"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>[Арно рассказал про ваш необдуманный поступок своим коллегам, те позабавились, даже
+                            от того, что всё-таки это было смело. О вас говорят! +1 к общей репутации.]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Такова жизнь" removeMarker="pi_gold_compass_fail_arno" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции компас в кармане у нас  -->
+            <p:state ifMarker="pi_gold_compass_inside_you"  mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Шикарно, золотой компас у тебя. Поспеши к Селезару! И не попадись Губернатору!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true">
+                                <p:toRoad roadId="pi_1o_townAntigua" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции нас обыскал губернатор и забрал компас  -->
+            <p:state ifMarker="pi_gold_compass_fail_arno_1" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Ты серьёзно? Как можно было попасться Губернатору?! Вот же растяпа...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Увы" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Чай  -->
+            <p:state ifMarker="pi_1o_quest_tea_02" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Эй, пссст. ПССССТ. Иди сюда. Я слышал, ты ищешь чай? Я знаю, где его достать! Причём
+                            бесплатно. И скажу я лишь, если ты сделаешь мне одолжение в ответ.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Ты же знаешь Хилого, верно? Племянник Губернатора, у него тут свой отдельный дом, в
+                            городе. В общем... Чай забери у него. А моя просьба... Побей его. Сделай одолжение мне и
+                            всему Антигуа.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зачем бить-то?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Он всех достал, понимаешь? И ещё обманывает. Ладно я, честный вор, а он делает
+                            некрасиво. Он хилый, не беспокойся, его макака не так давно побила, когда они дрались за
+                            банан. Без подробностей, хорошо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Весело тут у вас" removeMarker="pi_1o_quest_tea_02"
+                                      giveMarker="pi_1o_quest_tea_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Часы Феликса   -->
+            <p:state ifMarker="pi_1o_quest_felix_clock_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Арно, слушай, такой момент. Только тссс... Ты же знаешь, что у Трактирщика появились
+                            красивые часы. Они мне нужны - а ты можешь их достать, верно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Верно?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Верно. Интересно, что в этих часах такого особенного? Вначале Хилый, теперь ты...
+                            Мои услуги стоят одинаково для всех. Но ты - не Хилый, поэтому, со скидкой... 1500
+                            изумрудов. И часы будут у тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это дорого!" goto="r3_d_4"/>
+                            <p:answer text="Сделка!" goto="r4_d_3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Тогда забудем об этом, ладно? Я не навязываю свои услуги. Вопрос закрыт. Всего
+                            хорошего, искатель приключений!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_felix_clock_04"
+                                      giveMarker="pi_1o_quest_felix_clock_fail" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_3">
+                        <p:mainText>Ого, согласил[ся|ась]! Так, тссс... Что-то я громкий. Подожди меня тут, глазом
+                            моргнуть не успеешь! Смотри, как работают профессионалы... А, ну да, не заметишь, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Быстрее давай" removeMarker="pi_1o_quest_felix_clock_04"
+                                      giveMarker="pi_1o_quest_felix_clock_05" requestSpecialPlaces="true"
+                                      complete="true">
+                                <p:pay mithril="1500"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Часы Феликса, если Арно ворует часы   -->
+            <p:state ifMarker="pi_1o_quest_felix_clock_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>Итак, сделка есть сделка - вот твои часы. Советую не светить их в ближайшее время,
+                            ведь Трактирщик может и о пропаже заявить. Носи на здоровье, ахаха! Мы друг друга не видели.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_felix_clock_05"
+                                      giveMarker="pi_1o_quest_felix_clock_06" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

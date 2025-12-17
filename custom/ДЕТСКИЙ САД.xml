@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДЕТСКИЙ САД -->
+
+    <p:place id="pi_1o_Antigua_mj_kindergarten" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_mj_kindergarten" name="Детский сад"
+             minPlayerStair="40" minDistanceBetweenSame="5000" meetProbability="15" spawnProbability="0.7" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+             <p:markerCondition condition="lumberjack_aik_for_quests and lumberjack_avila_for_quests and lumberjack_kilian_for_quests and lumberjack_dolores_for_quests"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Детский сАД", начало  -->
+            <p:state markerCondition="lumberjack_aik_for_quests and lumberjack_avila_for_quests and lumberjack_kilian_for_quests and lumberjack_dolores_for_quests and not pi_1o_quest_kindergarten_you_fool_04 and not pi_1o_quest_kindergarten_never_meet_again" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>[Перед вами дом - прямо в мангровых джунглях. Интересно, что он здесь делает? Кто
+                            здесь живёт? Вы решаетесь постучать в дверь, интересно же.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тук-тук"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>[Практически сразу, дверь приоткрывает милого вида старушка. В узкую щель вы можете
+                            разглядеть только её - и ничего внутри дома.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тук-тук ещё раз"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" repeatable="false">
+                        <p:mainText>Здравствуй-здравствуй! Ты же из деревни лесорубов, да? Од[ин|на] из них?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" repeatable="false">
+                        <p:mainText>Ой как здорово! Ой, то есть, я тебя хочу о помощи попросить! Поможешь милой
+                            старушке? Смотри как красиво я говорю, как настоящая бабушка, ой ухахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Чем помочь?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" repeatable="false">
+                        <p:mainText>У меня здесь детский сад, самый лучший на острове! И уже три дня ко мне не приводят
+                            Айка, из деревни лесорубов. Приведи его, а? А я тебя отблагодарю! Приведи его и забудь обо
+                            всём, хорошо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Подозрительно... НЕТ" goto="r7"/>
+                            <p:answer text="Приведу, да" goto="r6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" repeatable="false">
+                        <p:mainText>АХАХАХА ДААААААА! Ой, прости бабушку, я так рада, что мой любимый дитятко вернётся!
+                            Приведи Айка днём, ведь ночью мы закрыты, ахаха! И чтобы никто не видел - это важно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" giveMarker="pi_1o_quest_kindergarten_01" complete="true">
+                                <p:createTask id="pi_1o_quest_kindergarten" name="Детский сАД" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                            <p:mainText>Надпись на двери гласит: "У нас лучший детский сад на всём острове!"</p:mainText>
+                            <p:answers>
+                                <p:answer text="Понимаю" complete="true"/>
+                            </p:answers>
+                        </p:replica>
+                    <p:replica id="r7" repeatable="false">
+                        <p:mainText>Ой, ну и проваливай! Попросила помочь старушке, ужас какой! Или уже образом старушки
+                            никого не удивить... Вот люди-то пошли! Прощай навсегда!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="О как..." giveMarker="pi_1o_quest_kindergarten_never_meet_again" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>                        
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" привели Айка   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>[Старушки снова еле приоткрыла дверь] Ой, матушки-жратушки, Айк, это ты!
+                            Давай-давай, заходи скорее! У нас тут игра новая - просто огонь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>[За доли секунды старушка приоткрыла дверь, втянула Айка и мгновенно захлопнула
+                            дверь. Ничего не понимая, вы пожимаете плечами и уходите]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну ладно" giveMarker="pi_1o_quest_kindergarten_you_fool_02" removeMarker="pi_1o_quest_kindergarten_you_fool_01"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал пока не вернули   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_03" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>[Перед вами тот самый детский сад. Вы пытаетесь зайти, но дверь закрыта на
+                            магический замок! Придётся выбивать. Но магия, особая магия... Хм. Вы замечаете, как магия
+                            колеблется рядом с Послушницей...]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Выбить дверь!">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_kindergarten" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Дверь, боевая иконка будет называться pi_1o_Antigua_mj_kindergarten_door_f Наносить ей урон может лишь послушница, больше никто. Дверь НЕ атакует, НЕ отвечает, просто жирная конкретно по хп, защите и кощею.-->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Вы не смогли выбить дверь. Очевидно, что её магия подвластна только Послушнице!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_kindergarten" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Вы выбили дверь в детский сад!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ура!" goto="r2_d_2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2_d_2">
+                        <p:mainText>[Зайти внутрь?]</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да!" complete="true">
+                                <p:toRoad roadId="pi_1o_mj_kindergarten_inside"/>
+                            </p:answer>
+                            <p:answer text="Нет" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+            <!--TODO квест "Детский сАД" после спасения Айка   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>[Вы подходите к "Детскому саду". Внезапно, он просто растворяется прямо перед вами в
+                            воздухе!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="И отлично!" removeMarker="pi_1o_quest_kindergarten_you_fool_05"
+                                      requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

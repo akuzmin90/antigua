@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДОРИАН -->
+
+    <p:place id="pi_1o_it_dorian" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_it_dorian" name="Дориан" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Иногда у меня есть работа для искателей приключений - таких, как ты.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="dorian_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_new_recruit_01 or pi_1o_quest_gold_goblet_02 or pi_1o_quest_inquisitor_eyepiece_01 or pi_1o_quest_missing_recruit_inquisition_go_to_skeleton"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_dorian_react1"/>
+                            <p:answer ifMarker="pi_1o_quest_gold_goblet_02" text="Кубок отшельника"
+                                      goto="r_dorian_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_inquisitor_eyepiece_01" text="Шестерёнка"
+                                      goto="r_dorian_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_missing_recruit_inquisition_go_to_skeleton"
+                                      text="Ваш рекрут..." goto="r_dorian_react4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_dorian_react1">
+                        <p:mainText>Сказать тебе честно? Я раньше был магом-вуду. Позорный период моей жизни... Туда я
+                            больше не вернусь. Инквизиция показала мне свет истины.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну ладно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_dorian_react2">
+                        <p:mainText>Пират-отшельник... По-моему, он бывал тут. Вполне возможно, что он и мог обменяться
+                            с нами. Но это было давно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_dorian_react3">
+                        <p:mainText>Она не из составной части мушкетов - значит, я не знаю, откуда она. Может, Селезар
+                            знает?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_dorian_react4">
+                        <p:mainText>Говоришь, пришлось сразиться с Ненасытем... Что ж. Теперь придётся убить его. В
+                            сражении, ваши астральные тела получили связь, и только ты можешь её разорвать. Удачи в бою.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Миссионер   -->
+            <p:state
+                    markerCondition="head_of_inquisition_for_quests and governor_for_quests and selezar_for_quests and felix_for_quests and dorian_for_quests"
+                    repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Искатель приключений, постой. У меня есть для тебя работа - ты же хочешь заработать
+                            несколько кусков золотой руды?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Выкладывай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>С нашей экспедицией приплыл на Антигуа миссионер. Однако, мы ничего не слышали о нём
+                            последние пять дней - кто знает, что с ним случилось? В общем, он пропал. Помоги отыскать
+                            его.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="С чего начать?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Я бы начал с Таверны - Трактирщик знает много слухов.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Принято!" giveMarker="pi_1o_quest_missionary_01" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:createTask id="pi_1o_quest_missionary" name="Миссионер" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Миссионер, после Губернатора   -->
+            <p:state ifMarker="pi_1o_quest_missionary_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Хм, с пиратами у миссионера не получилось... Я боюсь, что вера и задание Короля
+                            Густава затмили ему глаза, и он направился в лагерь магов-вуду... Проверь, был ли он там?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_missionary_04"
+                                      giveMarker="pi_1o_quest_missionary_05" postLaunchScriptId="triggerRespawn" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Миссионер, после Верховного шамана   -->
+            <p:state ifMarker="pi_1o_quest_missionary_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Так, маги-вуду отпадают... Миссионер мог отправиться ещё в два места - лагерь
+                            лесорубов и к пирату-отшельнику.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Лагерь лесорубов?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Да, они добывают древесину в мангровых джунглях. Но к ним очень трудно попасть -
+                            надо знать конкретную дорогу. Тем более, там люди суровые. Поэтому, проверь вначале
+                            пирата-отшельника.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_missionary_06"
+                                      giveMarker="pi_1o_quest_missionary_07" postLaunchScriptId="triggerRespawn" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Миссионер, после миссионера   -->
+            <p:state ifMarker="pi_1o_quest_missionary_08" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>То есть, ты хочешь сказать, что миссионер, почти достигший высшего звания в церкви
+                            Богов-Близнецов, поддался искушениям Антигуа? Что ж, пусть так. Наша вера испытывала его.
+                            Впрочем, вот твоя награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Ещё вопрос..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Догадываюсь. Что за лагерь лесорубов? Хорошо, я покажу тебе дорогу к ним. Но помни -
+                            это суровые работяги, со своим укладом. [Теперь вам доступно направление "Лагерь лесорубов"
+                            на Большом Компасе в городе!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_missionary_08"
+                                      giveMarker="pi_1o_Antigua_way_to_lumberjack_camp,pi_1o_quest_danger_road_01,pi_1o_Antigua_way_to_lumberjack_camp_react_guard"
+                                      postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_missionary"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Опасная дорога   -->
+            <p:state ifMarker="pi_1o_quest_danger_road_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>У меня есть ещё одна работа для тебя. На этот раз - опасная. Возьмёшься? Оплата
+                            будет достойной.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Интересно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>В гроте Левиафана появился монстр Малыш. Настоящее чудовище, которое нападает на
+                            наши поставки снабжения извне! Наши мушкеты бессильны против него. А магией мы не особо
+                            владеем. Избавься от Малыша!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Запросто" removeMarker="pi_1o_quest_danger_road_01"
+                                      giveMarker="pi_1o_quest_danger_road_02" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:createTask id="pi_1o_quest_danger_road" name="Опасная дорога" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Опасная дорога, после убийства Малыша   -->
+            <p:state ifMarker="pi_1o_quest_danger_road_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>С Малышом покончено? Отлично! Вот твоя награда, достойная оплата за достойную
+                            работу.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="11"/>
+                        <p:answers>
+                            <p:answer text="Ещё вопрос..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Почему "Малыш"? Так он умом как ребёнок, всё просто.</p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Логичные какие" removeMarker="pi_1o_quest_danger_road_03"
+                                      giveMarker="pi_1o_quest_this_is_magik_01"
+                                      postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_danger_road"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Это точно магия!, начало   -->
+            <p:state ifMarker="pi_1o_quest_this_is_magik_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Искатель приключений, у меня есть очень простая работа для тебя. Монстр Малыш... Он
+                            появился не просто так. Мы уверены, что здесь замешаны маги-вуду - они не настроены к нам
+                            дружелюбно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Уверен, что они это специально. Надо узнать у них, почему они так сделали. Лучше
+                            всего спросить у Нестора - он всегда в городе, и менее подозрителен к "вака".
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем" removeMarker="pi_1o_quest_this_is_magik_01"
+                                      giveMarker="pi_1o_quest_this_is_magik_02" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:createTask id="pi_1o_quest_this_is_magik" name="Это точно магия!" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Это точно магия!, конец   -->
+            <p:state ifMarker="pi_1o_quest_this_is_magik_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Так вот в чём дело... А мы были уверены, что маги-вуду сделали это специально...
+                            Впрочем, так им и надо. Пусть знают, кто имеет больше силы! А вот и твоя награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_this_is_magik_04"
+                                      giveMarker="pi_1o_quest_missing_recruit_inquisition_01" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_this_is_magik"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пропавший рекрут инквизиции, начало   -->
+            <p:state ifMarker="pi_1o_quest_missing_recruit_inquisition_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>У меня снова есть для тебя работа. Недавно пропал один из наших рекрутов. У него
+                            была... Проблема. Он лунатик, и ночами бродил по лагерю. Позавчера он вышел за его пределы -
+                            больше его не видели.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Куда он пошёл?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>В сторону кладбища пиратов. Ты ведь постоянно бродишь по всему острову, можешь
+                            поискать его? Я заплачу за эту работу. Найди его, и, если он жив - приведи обратно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем" removeMarker="pi_1o_quest_missing_recruit_inquisition_01"
+                                      giveMarker="pi_1o_quest_missing_recruit_inquisition_02,pi_1o_quest_missing_recruit_inquisition_hints" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:createTask id="pi_1o_quest_missing_recruit_inquisition"
+                                              name="Пропавший рекрут инквизиции" count="1" mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пропавший рекрут инквизиции, если нашли труп рекрута НО НЕ кликнули на Ненасытя   -->
+            <p:state ifMarker="pi_1o_quest_missing_recruit_inquisition_just_dead" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ваш пропавший рекрут найден. Видимо, ходя во сне, он упал в весьма глубокую могилу,
+                            и гравитация сделала своё дело. Увы, он мёртв.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>Ясно. Он подавал большие надежды... Пожалуй, мы не будем его доставать - иначе будут
+                            вопросы, что инквизиция делает на кладбище с могилами... Могилу закопаем. Спасибо за работу,
+                            вот твоя награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"
+                                      removeMarker="pi_1o_quest_missing_recruit_inquisition_just_dead,pi_1o_quest_missing_recruit_inquisition_02,pi_1o_quest_missing_recruit_inquisition_hints"
+                                      giveMarker="pi_1o_quest_felix_salary_01" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_missing_recruit_inquisition"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пропавший рекрут инквизиции, если нашли труп рекрута, кликнули на Ненасытя, но не сражались с ним.   -->
+            <p:state ifMarker="pi_1o_quest_missing_recruit_inquisition_tell_no_fight" repeatable="false"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_11" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ваш пропавший рекрут найден. Видимо, ходя во сне, он упал в весьма глубокую могилу,
+                            и гравитация сделала своё дело. Увы, он мёртв. А ещё там странный монстр, Ненасыть,
+                            падальщик загробного мира...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_9">
+                        <p:mainText>Ясно. Он подавал большие надежды... Жаль. И, говоришь, Ненасыть? Слышал про этих
+                            существ. Мы разберёмся. Спасибо за работу, вот твоя награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="6"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>[Вы не стали убивать Ненасытя. Высшие силы оценили ваш поступок... +1 к репутации
+                            мира мёртвых!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_DEADWORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Ого!" removeMarker="pi_1o_quest_missing_recruit_inquisition_tell_no_fight,pi_1o_quest_missing_recruit_inquisition_hints"
+                                      giveMarker="pi_1o_quest_felix_salary_01" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_missing_recruit_inquisition"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пропавший рекрут инквизиции, если нашли труп рекрута и убили Ненасытя   -->
+            <p:state ifMarker="pi_1o_quest_missing_recruit_inquisition_was_fight" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_12" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ваш пропавший рекрут найден. Видимо, ходя во сне, он упал в весьма глубокую могилу,
+                            и гравитация сделала своё дело. Увы, он мёртв. И ещё, я уби[л|ла] Ненасытя...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_10">
+                        <p:mainText>Ясно. Он подавал большие надежды... Победить Ненасытя - это непросто, но тебе
+                            удалось. Спасибо за работу, вот твоя награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="18"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"
+                                      removeMarker="pi_1o_quest_missing_recruit_inquisition_just_dead,pi_1o_quest_missing_recruit_inquisition_02,pi_1o_quest_missing_recruit_inquisition_hints"
+                                      giveMarker="pi_1o_quest_felix_salary_01" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_missing_recruit_inquisition"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса, начало   -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_13">
+                        <p:mainText>Слушай, похоже, тебе действительно можно доверять - а это честь для тебя, услышать
+                            такое от инквизиции. У меня есть ещё одно задание - думаю, для тебя это будет не проблема.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что за работа?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_11">
+                        <p:mainText>Ты уже знаешь Феликса, нашего представителя в городе. Работа простая - отнеси ему
+                            его зарплату, 500 золотых. Всё просто.
+                        </p:mainText>
+                        <p:award type="GOLD" explicitValue="500"/>
+                        <p:answers>
+                            <p:answer text="Сделаем" removeMarker="pi_1o_quest_felix_salary_01"
+                                      giveMarker="pi_1o_quest_felix_salary_02" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:createTask id="pi_1o_quest_felix_salary" name="Зарплата Феликса" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса, окончание   -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_13" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_14">
+                        <p:mainText>Как там с Феликсом? Серьёзно, ему НЕ хватает жалованья? Но мы ограничены в ресурсах!
+                            Но то, что ему пришлось заложить часы, подарок Короля Густава, за успехи в разведке...
+                            Так-так-так...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_12">
+                        <p:mainText>Слушай, мне надо подумать один момент. Дай мне немного времени и возвращайся. А пока
+                            что, вот твоя награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Благодарю" removeMarker="pi_1o_quest_felix_salary_13"
+                                      giveMarker="pi_1o_quest_felix_clock_01" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_felix_salary"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Часы Феликса, начало   -->
+            <p:state ifMarker="pi_1o_quest_felix_clock_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_15">
+                        <p:mainText>Что я тут подумал... Феликс, конечно, тот ещё обжора, поэтому и отправили его в
+                            город, чтобы склад наш не опустошал. Ну, и разведчик он отличный. Что я подумал - нехорошо
+                            бросать своих, верно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Верно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_13">
+                        <p:mainText>Сделаем всё тихо, порадуем героя разведки. Сходи к Трактирщику, постарайся выкупить
+                            часы Феликса. Как сделаешь - принеси их мне, я их лично вручу. Как тут говорят, сделка?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" removeMarker="pi_1o_quest_felix_clock_01"
+                                      giveMarker="pi_1o_quest_felix_clock_02" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:createTask id="pi_1o_quest_felix_clock" name="Часы Феликса" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Часы Феликса, если отказались от услуг Арно   -->
+            <p:state ifMarker="pi_1o_quest_felix_clock_fail" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_16">
+                        <p:mainText>Часы у тебя? Хм, возникли сложности... 1500 изумрудов - огромная сумма! Думаю, что
+                            Феликс переживёт это, всё равно он не знал про затею.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А награда?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_14">
+                        <p:mainText>Ты просишь награду, но работа не сделана! Мы заключили "сделку" - и я ждал успешный
+                            результат. Прости, но оплаты не будет. Заходи попозже, возможно, ещё будет работа для тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Справедливо" removeMarker="pi_1o_quest_felix_clock_fail"
+                                      giveMarker="pi_1o_quest_jack_for_inquisition_01" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:failTask id="pi_1o_quest_felix_clock"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Часы Феликса, если часы у нас   -->
+            <p:state ifMarker="pi_1o_quest_felix_clock_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_17">
+                        <p:mainText>Часы у тебя? Хм, возникли сложности... 1500 изумрудов - огромная сумма! И ты
+                            потрати[л|ла] их со своего кармана... Конечно, это слишком дорого... Но я компенсирую траты.
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="1500"/>
+                        <p:answers>
+                            <p:answer text="Неожиданно и приятно!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_15">
+                        <p:mainText>Знаешь, я думаю, что эта работа была очень важной. Феликс не падёт духом, и все, кто
+                            в курсе, убедятся - что инквизиция лишь для достойных. Вот изумруды лично для тебя.
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="200"/>
+                        <p:answers>
+                            <p:answer text="Ещё приятнее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>И стандартная оплата, золотая руда. Заходи попозже, возможно, ещё будет работа для
+                            тебя.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="5"/>
+                        <p:answers>
+                            <p:answer text="Обязательно!" removeMarker="pi_1o_quest_felix_clock_06"
+                                      giveMarker="pi_1o_quest_felix_clock_react_innkeaper,pi_1o_quest_felix_clock_react_felix,pi_1o_quest_jack_for_inquisition_01"
+                                       postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_felix_clock"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Джек-осведомитель, начало   -->
+            <p:state ifMarker="pi_1o_quest_jack_for_inquisition_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_18">
+                        <p:mainText>У меня есть для тебя работа, особой важности. Я вижу, что инквизиция может доверять
+                            тебе. Итак, в чём суть: нужно узнать, за сколько Джек, смотритель маяка, станет нашим
+                            осведомителем.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="То есть шпионом?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_16">
+                        <p:mainText>Да. Нам нужно знать о передвижениях пиратов. Узнай, сколько стоят такие услуги у
+                            Джека, и возвращайся ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_jack_for_inquisition_01"
+                                      giveMarker="pi_1o_quest_jack_for_inquisition_02" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:createTask id="pi_1o_quest_jack_for_inquisition" name="Джек-осведомитель" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Джек-осведомитель, если не уговорили Джека   -->
+            <p:state ifMarker="pi_1o_quest_jack_for_inquisition_fail" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_19">
+                        <p:mainText>Значит, Джек отказался работать на нас... Интересно, почему? Возможно, старый уже
+                            умом поехал. Неважно, работа сделана, вот твоя оплата. Если у меня ещё появятся задания -
+                            тебя найдут. Спасибо за помощь!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="5"/>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_jack_for_inquisition_fail"
+                                      postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:failTask id="pi_1o_quest_jack_for_inquisition"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Джек-осведомитель, если не уговорили Джека   -->
+            <p:state ifMarker="pi_1o_quest_jack_for_inquisition_07" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_20">
+                        <p:mainText>Значит, Джек согласился работать на нас? Прекрасные новости, искатель приключений! Я
+                            знал, что на тебя можно положиться!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да, конечно" goto="r2_d_17"/>
+                            <p:answer text="Джек - шпион пиратов" goto="r3_d_3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_17">
+                        <p:mainText>Пока что у меня нет новой работы. Если у меня ещё появятся задания - тебя найдут.
+                            Спасибо за помощь! [Вы значительно помогли инквизиции. Они ценят это! +3 репутации
+                            инквизиции!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_INQUISITION" explicitValue="3"/>
+                        <p:answers>
+                            <p:answer text="Приятно" removeMarker="pi_1o_quest_jack_for_inquisition_07" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_jack_for_inquisition"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Вот как? То есть, Джек следит и за нашими кораблями тоже? Это же прекрасные новости!
+                            Значит, мы можем изменить свои маршруты, и пираты не получат сведений! Спасибо за честность!
+                            Честность вознаграждается.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="5"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Пока что у меня нет новой работы. Если у меня ещё появятся задания - тебя найдут.
+                            Спасибо за помощь! [Вы значительно помогли инквизиции. Они ценят это! +3 репутации
+                            инквизиции!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_INQUISITION" explicitValue="3"/>
+                        <p:answers>
+                            <p:answer text="Приятно" removeMarker="pi_1o_quest_jack_for_inquisition_07" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_jack_for_inquisition"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- НЕНАСЫТЬ -->
+
+    <p:place id="pi_1o_pg_insatiable" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_insatiable" name="Ненасыть" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я - всего лишь падальщик загробного мира! Оставь меня в покое, пожалуйста.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Пропавший рекрут инквизиции"   -->
+            <p:state ifMarker="pi_1o_quest_missing_recruit_inquisition_02" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Человек, не убивай меня! Я не трогал этого, который тут. Он сам упал! Честно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А ты кто?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" ifNoMarker="pi_1o_quest_missing_recruit_inquisition_go_to_skeleton">
+                        <p:mainText>Я падальщик, что ли… Падальщик загробного мира… Уйди, оставь его мне, прошу! Я лишь
+                            поужинаю… И больше ты меня не увидишь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как скажешь"
+                                      removeMarker="pi_1o_quest_missing_recruit_inquisition_02,pi_1o_quest_missing_recruit_inquisition_just_dead"
+                                      giveMarker="pi_1o_quest_missing_recruit_inquisition_tell_no_fight"
+                                      repeatable="false" complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_pirates_graveyard"/>
+                            </p:answer>
+                            <p:answer text="Нет уж... В бой!">
+                                <p:toBattle creatureId="pi_1o_pg_insatiable" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Ненасыть, боевая иконка будет называться pi_1o_pg_insatiable_f, это босс -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" ifMarker="pi_1o_quest_missing_recruit_inquisition_go_to_skeleton">
+                        <p:mainText>Прости, я не удержался. Он такой вкусный... Свежий... Как я люблю!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Скотина... В бой!">
+                                <p:toBattle creatureId="pi_1o_pg_insatiable" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Ненасыть, боевая иконка будет называться pi_1o_pg_insatiable_f, это босс -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Похоже, Ненасыть слишком силён в настоящий момент...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_pg_insatiable" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь"
+                                      giveMarker="pi_1o_quest_missing_recruit_inquisition_go_to_skeleton" goto="r2"
+                                      out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Ненасыть повержен! [Похоже, вы преисполнились победой над существом из загробного
+                            мира, и впитали часть его силы! Нужно доложиться Дориану.]
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Ха!"
+                                      removeMarker="pi_1o_quest_missing_recruit_inquisition_02,pi_1o_quest_missing_recruit_inquisition_just_dead,pi_1o_quest_missing_recruit_inquisition_go_to_skeleton"
+                                      giveMarker="pi_1o_quest_missing_recruit_inquisition_was_fight" complete="true"
+                                      dropPlace="true">
+                                <p:toRoad roadId="pi_1o_pirates_graveyard"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

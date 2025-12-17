@@ -1,0 +1,490 @@
+{
+  "textures": [
+    {
+      "image": "pi_1o_PLACES_pi_1o_townAntigua_my_room.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 0,
+        "h": 0
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_decor_03",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 264,
+            "h": 211
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 264,
+            "h": 211
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 264,
+            "h": 211
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_bed",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 186,
+            "h": 279
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 186,
+            "h": 279
+          },
+          "frame": {
+            "x": 264,
+            "y": 0,
+            "w": 186,
+            "h": 279
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_wardrobe_01",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 166,
+            "h": 239
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 166,
+            "h": 239
+          },
+          "frame": {
+            "x": 0,
+            "y": 211,
+            "w": 166,
+            "h": 239
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_chair_02",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 95,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 118
+          },
+          "frame": {
+            "x": 166,
+            "y": 211,
+            "w": 95,
+            "h": 118
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_wardrobe_02",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 159,
+            "h": 239
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 159,
+            "h": 239
+          },
+          "frame": {
+            "x": 261,
+            "y": 279,
+            "w": 159,
+            "h": 239
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_chair_04",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 95,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 118
+          },
+          "frame": {
+            "x": 166,
+            "y": 329,
+            "w": 95,
+            "h": 118
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_chair_01",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 95,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 118
+          },
+          "frame": {
+            "x": 166,
+            "y": 447,
+            "w": 95,
+            "h": 118
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_chest_02",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 122,
+            "h": 189
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 122,
+            "h": 189
+          },
+          "frame": {
+            "x": 0,
+            "y": 450,
+            "w": 122,
+            "h": 189
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_lights_02",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 41,
+            "h": 115
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 41,
+            "h": 115
+          },
+          "frame": {
+            "x": 122,
+            "y": 450,
+            "w": 41,
+            "h": 115
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_table",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 143,
+            "h": 153
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 143,
+            "h": 153
+          },
+          "frame": {
+            "x": 261,
+            "y": 518,
+            "w": 143,
+            "h": 153
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_chest_01",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 118,
+            "h": 152
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 118,
+            "h": 152
+          },
+          "frame": {
+            "x": 122,
+            "y": 565,
+            "w": 118,
+            "h": 152
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_armchair_01",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 116,
+            "h": 139
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 116,
+            "h": 139
+          },
+          "frame": {
+            "x": 0,
+            "y": 639,
+            "w": 116,
+            "h": 139
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "столик-журнальный",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 128,
+            "h": 122
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 128,
+            "h": 122
+          },
+          "frame": {
+            "x": 0,
+            "y": 778,
+            "w": 128,
+            "h": 122
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_decor_01",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 130,
+            "h": 95
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 130,
+            "h": 95
+          },
+          "frame": {
+            "x": 0,
+            "y": 900,
+            "w": 130,
+            "h": 95
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_armchair_02",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 111,
+            "h": 137
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 111,
+            "h": 137
+          },
+          "frame": {
+            "x": 128,
+            "y": 717,
+            "w": 111,
+            "h": 137
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_chair_03",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 95,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 118
+          },
+          "frame": {
+            "x": 130,
+            "y": 854,
+            "w": 95,
+            "h": 118
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_decor_02",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 88,
+            "h": 81
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 88,
+            "h": 81
+          },
+          "frame": {
+            "x": 225,
+            "y": 854,
+            "w": 88,
+            "h": 81
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_lights_03",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 45,
+            "h": 126
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 45,
+            "h": 126
+          },
+          "frame": {
+            "x": 239,
+            "y": 717,
+            "w": 45,
+            "h": 126
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_my_room_interior_lights_01",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 49,
+            "h": 142
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 49,
+            "h": 142
+          },
+          "frame": {
+            "x": 284,
+            "y": 671,
+            "w": 49,
+            "h": 142
+          }
+        }
+      ]
+    }
+  ]
+}

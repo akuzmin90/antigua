@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА ИНКВИЗИТОР В ТАВЕРНЕ -->
+
+    <p:place id="pi_1o_tat_inquisitor_in_tavern" animType="EMPTY" imageId="79x99" name="Инквизитор в таверне"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">                
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Как всё достало" delayMs="4000"/>
+                    <p:talk text="Скорее бы домой" delayMs="11000"/>
+                    <p:talk text="Макаки везде, ВЕЗДЕ!" delayMs="18000"/>
+                    <p:talk text="Хочу темноты ночью" delayMs="26000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Не смотри на меня так. Даже если я из лагеря инквизиции, разве не могу я провести
+                            свой клятый отпуск в таверне? Отправляйся в экспедицию, будет здорово, заработаешь...
+                            Ненавижу этот остров.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Почему же?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>А ты посмотри вокруг! Одни пираты! Ни чести, ни законов Короля Густава... Отрепье,
+                            одно слово! А ещё это вечное солнце... Как спать ночью, если оно не заходит за горизонт
+                            вообще, а?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Успокойся"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Да какой успокойся! Ладно пираты и солнце, но макаки-мародёры!!! Бешеные создания,
+                            они атакуют, стоит лишь зайти в мангровые джунгли! Нас побила стая макак, понимаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Не мешай мне. Я просто отдыхаю, и хочу поскорее вернуться в гарнизон на материк! А
+                            будешь доставать меня - достану пистоль.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всё, всё, молчу" goto="r4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

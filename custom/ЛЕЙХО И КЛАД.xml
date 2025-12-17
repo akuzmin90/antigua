@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЛЕЙХО И КЛАД -->
+
+    <p:place id="pi_1o_Antigua_da_leyho_dead" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_da_leyho_dead" name="Лейхо"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Потерянные воспоминания"  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - Лейхо... Он действительно нашёл клад. В его спине вы замечаете
+                            кинжал... Бедняга. Он старался ради своей Эльзы, его любимой... Надо осмотреть место
+                            внимательнее.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Осмотреть"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Позволь мне, Амазонцы - прекрасные следопыты: судя по следам, Лейхо был лицом к
+                            сундуку. К нему подкрались трое, нанесли удар кинжалом в спину. Подло. Так, дальше...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Посмотри сюда - здесь волокли два тяжёлых мешка. Получается, они забрали сокровища.
+                            А юноше оставили небольшое ожерелье, оно в его руке, приглядись. Сжато вместе с запиской.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Прочитать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>[Как же так... Они... Друзья... Удар в спину, во всех смыслах... Я хотел счастья
+                            своей дорогой Эльзе... Но корысть и алчность важнее судьбы двух любящих сердец...]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>[Смеясь над тем, как я истекаю кровью, они забрали все сокровища Джима Сороки... В
+                            насмешку, оставили мне ожерелье... Прошу, передайте его Эльзе... Скажите, что я её очень
+                            сильно люб...]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ох..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Вот почему я здесь. Сундук открыт, магия призвала меня. Я не сержусь на Лейхо - я
+                            знаю, что такое любить. Но убийцы должны быть наказаны - иначе я не смогу жить свободно, не
+                            подчиняясь магии проклятья.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Тогда мы найдём их! Тем более, убит гражданин острова, Губернатор так просто это не
+                            оставит! И Лейхо... Мне его искренне жаль. Итак, вот что мы сделаем:
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Наш план"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Нужно отчитаться Эльзе, она должна знать правду. Нужно отчитаться Губернатору, чтобы
+                            найти убийц. И нужно освободить тебя от проклятья, [Сирения|Арто]!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Бедне, бедне чевек! Хоббите хоче злоте, но хоббите не убивака за злоте! Хоббите
+                            грустне, еже этот чевек йок...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да, грустно..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>[Как бы ни было грустно, вы всё-таки нашли клад Джими Сороки... И место
+                            преступления. +5 к общей репутации.]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="5"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Хороший план. Позволь я помогу, ведь нам отсюда не выбраться тем путём, что вошли. Я перенесу нас в лагерь магов-вуду, так как наша магия связана.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Действуем!" removeMarker="pi_1o_quest_lost_memories_14"
+                                      giveMarker="pi_1o_quest_tell_to_elsa_01,pi_1o_quest_leyho_killers_01,pi_1o_quest_amazon_cursed_01,pi_1o_quest_lost_memories_copper_vase"
+                                      complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_lost_memories"/>
+                                <p:createTask id="pi_1o_quest_tell_to_elsa" name="Рассказать Эльзе правду" count="1"
+                                              mithril="50" type="SINGLE"/>
+                                <p:createTask id="pi_1o_quest_leyho_killers" name="Найти убийц Лейхо" count="1"
+                                              mithril="50" type="SINGLE"/>
+                                <p:createTask id="pi_1o_quest_amazon_cursed" name="Снять проклятие с [Сирении|Арто] "
+                                              count="2" mithril="50" type="SINGLE"/>
+                                <p:toRoad roadId="pi_1o_magevoodoo_town"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ОЛЬГА -->
+
+    <p:place id="pi_1o_ht_olga" animType="EMPTY" imageId="64x51" name="Ольга" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я могу записать тебя как цифровую последовательность :) Вот такая работа, в отделе разработки :) Кстати, вот и мой подарочек, специально для тебя!</p:mainText>
+                            <p:award type="SULFUR" explicitValue="2500" />
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Я могу записать тебя как цифровую последовательность :) Но сегодня и мы, и ты - отдыхаем! Я не ожидала, что нас так быстро найдут :)</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

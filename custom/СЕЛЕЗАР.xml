@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СЕЛЕЗАР -->
+
+    <p:place id="pi_1o_it_selezar" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_it_selezar" name="Селезар" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Меня зовут Селезар, я занимаюсь материальным обеспечением нашего отряда.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" ifNoMarker="selezar_for_quests" giveMarker="selezar_for_quests,pi_1o_quest_payment_for_provisions_selezar_quest" requestSpecialPlaces="true" complete="true"/>
+                            <p:answer text="Понимаю" ifMarker="selezar_for_quests" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_03 or pi_1o_new_recruit_01 or pi_1o_quest_gold_goblet_02 or pi_1o_quest_inquisitor_eyepiece_01 or pi_1o_quest_bulletin_board_love_letter_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_selezar_react1"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_selezar_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_gold_goblet_02" text="Кубок отшельника"
+                                      goto="r_selezar_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_inquisitor_eyepiece_01" text="Шестерёнка"
+                                      goto="r_selezar_react4"/>
+                            <p:answer ifMarker="pi_1o_quest_bulletin_board_love_letter_01" text="Тебе письмо"
+                                      goto="r_selezar_react5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_selezar_react1">
+                        <p:mainText>Я уже сказал всё, что знаю. Поищи помощи в городе!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно, ладно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_selezar_react2">
+                        <p:mainText>Я поражаюсь твоей смелости предлагать мне такое. Маги-вуду... Это просто пыль, не
+                            достойная моего внимания. Кроме торговли - тут они мне нравятся.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да что ж такое..." complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_selezar_react3">
+                        <p:mainText>Золотой кубок Пирата-отшельника? Он что, особенный? Я же недавно отдал тебе какой-то
+                            золотой кубок. У меня нет времени на такие бредни!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_selezar_react4">
+                        <p:mainText>Шестерёнка? Это просто деталь от какого-то механизма. Возможно, выпала откуда-то. У
+                            меня нет ни одной вещи на складе, где бы её не хватало.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_selezar_react5">
+                        <p:mainText>Письмо? Мне? А, ну да. Спасибо. И оставь меня - нужно его немедленно прочитать.
+                            Наедине с собой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_bulletin_board_love_letter_01"
+                                      giveMarker="pi_1o_quest_bulletin_board_love_letter_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции начало  -->
+            <p:state
+                    markerCondition="selezar_for_quests and arno_for_quests and head_of_inquisition_for_quests and governor_for_quests and felix_for_quests"
+                    repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>У меня есть для тебя задание. Нужно вернуть наш золотой компас, который находится у
+                            Губернатора этого острова. Золотой компас - символ силы Короля Густава!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Он у Губернатора?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Так получилось. Аааай, раз берёшься за работу, расскажу. Мы обменяли этот компас на
+                            этот клочок земли, чтобы встать лагерем. Мы же не знали, что здесь в ходу золотая руда,
+                            золото не так ценно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так выкупите его"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Пытались, нам он его не продаёт и не возвращает. Попробуй ты? Новое лицо, никаких
+                            подозрений. Только не говори, что это я тебя послал! Вот тебе 10 золотой руды, выкупи компас
+                            и возвращайся. За Короля Густава!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" giveMarker="pi_gold_compass_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_gold_compass" name="Компас инквизиции" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции завалили после диалога с губернатором  -->
+            <p:state ifMarker="pi_gold_compass_fail" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Золотой компас у тебя?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Тут такое дело..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Ясно. Я же просил не говорить, что тебя послала инквизиция. Что ж, видимо, не стоит
+                            доверять такие дела искателям приключений.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понять и простить"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>[Вы провалили квест "Компас инквизиции" - но не отчаивайтесь, инквизиция на вас не в
+                            обиде! Впереди ещё много приключений!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_gold_compass_fail" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_gold_compass"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции губернатор запросил 100 кусков золотой руды  -->
+            <p:state ifMarker="pi_gold_compass_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Золотой компас у тебя?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Тут такое дело..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>100 кусков золотой руды?! Это же наш бюджет на 3 месяца. Похоже, морской воздух
+                            мутит рассудок этого человека.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что делать?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Не знаю. Сходи в город, поспрашивай кого. Хоть вора найми, мне без разницы - компас
+                            должен быть у нас. Насколько я знаю, наш глава Инквизиции уже нанимал кого-то...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="hobbit_talk_fun" text="Понимаю" goto="r4"/>
+                            <p:answer ifNoMarker="hobbit_talk_fun" text="Понимаю" removeMarker="pi_gold_compass_02"
+                                      giveMarker="pi_gold_compass_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Ста злоте камень, хоббите хоче ста злоте камень... Моя тада дело не делай ничто,
+                            сиди доме и рыбку кушай!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всем бы так..." removeMarker="pi_gold_compass_02"
+                                      giveMarker="pi_gold_compass_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции Арно отказался помогать  -->
+            <p:state ifMarker="pi_gold_compass_fail_1" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Золотой компас у тебя?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Тут такое дело..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Ясно. Значит, до тебя был нанят Арно... И тебе не удалось с ним договориться.
+                            Значит, пусть он и выполняет эту работу. Видимо, не стоит доверять такие дела искателям
+                            приключений.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понять и простить"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>[Вы провалили квест "Компас инквизиции" - но не отчаивайтесь, инквизиция на вас не в
+                            обиде! Впереди ещё много приключений!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_gold_compass_fail_1" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_gold_compass"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции напали на слугу губернатора  -->
+            <p:state ifMarker="pi_gold_compass_fail_2" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Золотой компас у тебя?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Тут такое дело..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Серьёзно? Напасть на слугу губернатора? Мда, мы здесь тоже недавно, но и то знаем
+                            законы острова... Видимо, не стоит доверять такие дела искателям приключений.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понять и простить"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>[Вы провалили квест "Компас инквизиции" - но не отчаивайтесь, инквизиция на вас не в
+                            обиде! Впереди ещё много приключений!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_gold_compass_fail_2" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_gold_compass"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции если украли, но не сдали его Селезару, а заговорили до этого с губернатором  -->
+            <p:state ifMarker="pi_gold_compass_fail_3" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Золотой компас у тебя?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Тут такое дело..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Серьёзно? Компас был у тебя в кармане, но захотелось поговорить с Губернатором?
+                            Логично, что он обыскал тебя. Видимо, не стоит доверять такие дела искателям приключений.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понять и простить"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>[Вы провалили квест "Компас инквизиции" - но не отчаивайтесь, инквизиция на вас не в
+                            обиде! Впереди ещё много приключений!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_gold_compass_fail_3" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_gold_compass"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции принесли компас  -->
+            <p:state ifMarker="pi_gold_compass_inside_you" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Золотой компас у тебя?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>Прекрасно. Инквизиция благодарит тебя! Твоя помощь неоценима. Пожалуй, я вознагражу
+                            тебя нашими боевыми знаниями.
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Полезно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_6">
+                        <p:mainText>[Ваши действия не остались незамеченными. +1 к репутации инквизиции!]</p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_INQUISITION" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_gold_compass_inside_you"
+                                      giveMarker="pi_gold_compass_pay_to_arno" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_gold_compass"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Оплата за провиант  -->
+            <p:state ifMarker="pi_1o_quest_payment_for_provisions_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Трактирщик просит оплату за провиант? Прошу прощения, я совсем забыл, у нас
+                            инвентаризация... Послушай, у меня нет времени отсчитывать 10.000 монет. Давай сделаем
+                            проще?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>У нас есть золотой кубок, нам он без необходимости. Я отдаю его тебе, а ты заплатишь
+                            10.000 золотых Трактирщику из своих. Как тут говорят, сделка?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" goto="r4_d"/>
+                            <p:answer text="Нет, отсчитывай!" goto="r3_d_7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_7">
+                        <p:mainText>Чёрт, тогда помоги считать монеты, у меня уйдёт на это целая вечность! И ты спокойно
+                            отнесёшь их Трактирщику.
+                        </p:mainText>
+                        <p:award type="GOLD" explicitValue="10000"/>
+                        <p:answers>
+                            <p:answer text="Ладно" removeMarker="pi_1o_quest_payment_for_provisions_01"
+                                      giveMarker="pi_1o_quest_payment_for_provisions_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Прекрасно, искатель приключений! Вот золотой кубок. Помни, ты заключи[л|ла] сделку.
+                            На Антигуа это нерушимо.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_payment_for_provisions_01"
+                                      giveMarker="pi_1o_quest_payment_for_provisions_02,pi_1o_quest_gold_goblet_01"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Моя первая кукла-вуду   -->
+            <p:state ifMarker="pi_1o_quest_my_first_voodoo_doll_04" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Селезар, мне сказали, что ты торгуешь особыми зельями. Мне нужно зелье силы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_9">
+                        <p:mainText>Да, я торгую зельями, чтобы местные жители могли познать силу инквизиции. Так, зелье
+                            силы... Вот оно. 100 золотых!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" removeMarker="pi_1o_quest_my_first_voodoo_doll_04"
+                                      giveMarker="pi_1o_quest_my_first_voodoo_doll_05" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="100"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Семейные ценности", если решили помочь слуге губернатора   -->
+            <p:state ifMarker="pi_1o_quest_family_values_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Сентябрь горит.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_10">
+                        <p:mainText>О, ты от Слуги Губернатора? Так, а что он хочет получить за услугу?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Фисташки"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_8">
+                        <p:mainText>Фисташки? На всю сумму, 600 золотой руды? Хорошо, сейчас отвешу. Куда ему
+                            столько...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Забрать и уйти" removeMarker="pi_1o_quest_family_values_03"
+                                      giveMarker="pi_1o_quest_family_values_04" complete="true"/>
+                            <p:answer text="Спросить" goto="r4_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>Что это была за услуга? Хм... Раз ты здесь, от него... В сентябре нас ограбила стая
+                            макак-мародёров. Утащили всю провизию. А он помог нам - без задержек и недорого оформил
+                            огромные поставки провизии.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благородно" removeMarker="pi_1o_quest_family_values_03"
+                                      giveMarker="pi_1o_quest_family_values_04" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

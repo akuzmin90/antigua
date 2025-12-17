@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТОРГОВЕЦ КАРТАМИ  -->
+
+    <p:place id="pi_1o_Antigua_treasure_map_dealer" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_treasure_map_dealer"
+             name="Торговец картами" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Привет! Я - официальный торговец картами сокровищ, от лица Губернатора! Одна карта -
+                            185 кусков золотой руды! Карты, не сомневайся! Продаю 1 карту за раз, иначе ты тут весь
+                            остров перекопаешь, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Посмотрим!" giveMarker="treasure_map_dealer_for_quests" goto="r2"
+                                      markerCondition="not pi_1o_quest_tmd_lighthouse_chest_01 and not pi_1o_quest_tmd_inquisition_chest_01 and not pi_1o_quest_tmd_magevoodoo_chest_01 and not pi_1o_quest_tmd_liar_chest_01 and not pi_1o_quest_tmd_noble_lady_chest_01 and not pi_1o_quest_tmd_frail_chest_01 and not pi_1o_quest_tmd_dead_man_chest_01 and not pi_1o_quest_tmd_steven_chest_01"/>
+                            <p:answer text="Уйти"  complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_lost_memories_11 or pi_1o_new_recruit_01 or pi_1o_quest_lost_memories_copper_vase"
+                                      goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2">
+                        <p:mainText>185 кусков золотой руды - и я продам тебе карту сокровищ! Что там - я не знаю, но
+                            сокровища ещё закопаны!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Купить" gotoFromScript="random">
+                                <p:pay ore_gold="185"/>
+                            </p:answer>
+                            <p:answer text="Откажусь" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- покупка карт сокровищ  -->
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>Прекрасно! Держи карту. Клад неизвестного пирата, у маяка Джека. Напомню, я не знаю,
+                            что внутри клада! Место отмечено на карте - и в твоём дневнике заданий!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_lighthouse_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_lighthouse_chest" name="Клад неизвестного пирата"
+                                              count="1" mithril="20" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-2" probability="0.8">
+                        <p:mainText>Прекрасно! Держи карту. Клад инквизиции, в гроте Левиафана. Даже они зарывают клады,
+                            ха!
+                            Напомню, я не знаю, что внутри клада! Место отмечено на карте - и в твоём дневнике заданий!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_inquisition_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_inquisition_chest" name="Клад инквизиции" count="1"
+                                              mithril="20" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-3" probability="0.8">
+                        <p:mainText>Прекрасно! Держи карту. Клад магов-вуду, на кладбище пиратов. Даже они зарывают
+                            клады, ха!
+                            Напомню, я не знаю, что внутри клада! Место отмечено на карте - и в твоём дневнике заданий!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_magevoodoo_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_magevoodoo_chest" name="Клад магов-вуду" count="1"
+                                              mithril="20" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-4" probability="0.8">
+                        <p:mainText>Прекрасно! Держи карту. Клад мошенника, что обманывал людей, на кладбище пиратов.
+                            Даже они
+                            зарывают клады, ха! Напомню, я не знаю, что внутри клада! Место отмечено на карте - и в
+                            твоём дневнике
+                            заданий!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_liar_chest" name="Клад мошенника" count="1"
+                                              mithril="20"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-5" probability="0.8">
+                        <p:mainText>Прекрасно! Держи карту. Клад знатной дамы, у пирата-отшельника. Даже дамы зарывают
+                            клады, ха!
+                            Напомню, я не знаю, что внутри клада! Место отмечено на карте - и в твоём дневнике заданий!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_noble_lady_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_noble_lady_chest" name="Клад знатной дамы" count="1"
+                                              mithril="20"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-6" probability="0.8">
+                        <p:mainText>Прекрасно! Держи карту. Клад Хилого, в золотой шахте на 1 уровне. Думал, я не узнаю,
+                            ха! Напомню, я не знаю,
+                            что внутри клада! Место отмечено на карте - и в твоём дневнике заданий!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_frail_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_frail_chest" name="Клад Хилого" count="1" mithril="20"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-7" probability="0.8">
+                        <p:mainText>Прекрасно! Держи карту. Клад мертвеца, в мангровых джунглях. Говорят, его охраняет
+                            сам хозяин клада!
+                            Напомню, я не знаю, что внутри клада! Место отмечено на карте - и в твоём дневнике заданий!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_dead_man_chest" name="Клад мертвеца" count="1"
+                                              mithril="20" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-8" probability="0.8">
+                        <p:mainText>Прекрасно! Это как бы не твой клад... Клад Стивена, он нашёл его недавно, но не
+                            сказал Губернатору! А это
+                            значит, что ты можешь просто пойти и забрать его, в шкафу он лежит. Никто не любит Стивена!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Пойду заберу" giveMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tmd_steven_chest" name="Клад Стивена" count="1"
+                                              mithril="20" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r3">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_lost_memories_11" text="Лейхо и клад"
+                                      goto="r_treasure_map_dealer_react1" repeatable="false"/>
+                            <p:answer
+                                    markerCondition="pi_1o_quest_lost_memories_copper_vase and not pi_1o_quest_lost_memories_copper_vase_we_have"
+                                    text="Лейхо найден..." goto="r_treasure_map_dealer_react2"/>
+                            <p:answer
+                                    markerCondition="pi_1o_quest_lost_memories_copper_vase and pi_1o_quest_lost_memories_copper_vase_we_have"
+                                    text="Лейхо найден..." goto="r_treasure_map_dealer_react3"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_treasure_map_dealer_react4"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r_treasure_map_dealer_react1">
+                        <p:mainText>А, помню, помню. 300 монет отдал, всё, что было... Джим Сорока, проклятый клад.
+                            Интересно, нашёл ли он его?
+                            Какое там проклятье, армия скелетов, или чума, или чего похуже?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Где зарыт клад?" goto="r_treasure_map_dealer_react1_1"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r_treasure_map_dealer_react1_1">
+                        <p:mainText>ЭЙ, эй! Я на этом зарабатываю, я просто так не скажу! И вообще, почему тебя это так
+                            волнует? Какой-то бедняк
+                            и авантюрист тебя так волнует?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказать" goto="r_treasure_map_dealer_react1_2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r_treasure_map_dealer_react1_2">
+                        <p:mainText>Вот как... Послушай. Я всё понимаю. Но мне нужно кормить семью... Но здесь вопрос
+                            чести... Давай так. Я
+                            расскажу, что знаю. И после всего, хотя бы компенсируй информацию... Ведь ты можешь найти
+                            клад!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" goto="r_treasure_map_dealer_react1_3"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r_treasure_map_dealer_react1_3">
+                        <p:mainText>Сделка! О сумме поговорим потом, я не жадный, не бойся. Клад Джими Сороки находится
+                            в месте под названием
+                            "Древний алтарь друидов". Попасть туда можно через тайную пещеру в гроте Левиафана.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо, это важно" removeMarker="pi_1o_quest_lost_memories_11"
+                                      giveMarker="pi_1o_quest_lost_memories_12,pi_1o_quest_lost_memories_hint_12"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r_treasure_map_dealer_react2">
+                        <p:mainText>Лейхо нашёл клад Джими Сороки, и... Бедолага. Как бы ни было, он такого не заслужил.
+                            Спасибо, что
+                            рассказа[л|ла] мне. Знаешь, это прискорбное событие. Я не возьму с тебя ничего за информацию
+                            о кладе.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Благодарю тебя" removeMarker="pi_1o_quest_lost_memories_copper_vase"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r_treasure_map_dealer_react3">
+                        <p:mainText>Лейхо, бедолага. Как бы ни было, он такого не заслужил. И ты прин[ёс|есла] мне эту
+                            медную вазу... Знаешь, я
+                            не могу просто принять её, даже за свои услуги ранее. Вот моя благодарность тебе.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="20"/>
+                        <p:answers>
+                            <p:answer text="Благодарю тебя"
+                                      removeMarker="pi_1o_quest_lost_memories_copper_vase,pi_1o_quest_lost_memories_copper_vase_we_have"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r_treasure_map_dealer_react4">
+                        <p:mainText>
+                            Не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не-не!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Чётко обозначил" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

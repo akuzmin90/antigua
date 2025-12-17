@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Взрослый обеденный стол -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_table_for_lunch_adult" animType="EMPTY" imageId="112x47" name="Взрослый обеденный стол" minPlayerStair="40"  meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вкусно пахнет. Вкусно выглядит. Сложно устоять... Поэтому вы присаживаетесь за стол, не стоя же есть. </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вкусно пахнет. Вкусно выглядит. Сложно устоять... Но вы сдерживаетесь. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Взрослый обеденный стол если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_table_for_lunch_adult_1" animType="EMPTY" imageId="188x47" name="Взрослый обеденный стол" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Извини, искатель приключений, но тебя за стол не приглашали. Отойди. Хочешь есть - сходи в таверну. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эх" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

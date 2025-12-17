@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <p:place id="cave_3_v2_xxxxx" name="Пещера" imageId="cave_3" meetProbability="300001">
+        <p:blockingCreature probability="0" />
+        <p:dialog>
+            <p:replica id="r1" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" >
+                <p:mainText>Эй, ЭЙ, чевек! Ежи не хрен болване, дожи пщеру ходи до Антигуа, хош-хош! Велике боше путешестви ждае те, чевек! ШАЛАМЕ! Ежи те галамаэ... э... тес-ти...ро...вать, йок слове, ходи до скоре! </p:mainText>
+                <p:answers>
+                    <p:answer text="Войти XX" giveMarker="FIRST_TIME_TO_DLC" >
+                        <p:toRoad roadId="pi_1o_townAntigua" defaultRelativeCoord="150" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

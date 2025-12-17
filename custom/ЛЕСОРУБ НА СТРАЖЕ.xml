@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЛЕСОРУБ НА СТРАЖЕ -->
+
+    <p:place id="pi_1o_Antigua_lc_lumberjack_guard" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_lumberjack_guard"
+             name="Лесоруб на страже" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>У нас тихо и спокойно. Не нарушай наш уклад жизни, и мы, может быть, будем тебе
+                            рады. Может быть - это значит, может быть. Наверное. Вполне возможно. А вдруг. Кто знает. Не
+                            отрицаемо. Ой всё, иди куда идёшь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- первый диалог   -->
+            <p:state ifMarker="pi_1o_Antigua_way_to_lumberjack_camp_react_guard" mandatory="true" repeatable="false"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>СТОЙ! Кто ты? Я тебя здесь раньше не видел. И мы вообще чужаков не жалуем! Отвечай,
+                            кто так[ов|ая], пока я добрый! Что нужно от нас? Зачем ты здесь вообще?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica> 
+                    <p:replica id="r2_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Сколько вопросов-то... Я - {playerNick}, я здесь впервые. Я - искатель приключений,
+                            так меня все почему-то зовут, хотя я - Хранитель из самого Зазеркалья! Что от вас нужно? Не
+                            знаю...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Зазеркалье... Что это за страна такая? Не слышал, не вракай мне тут! Хм. Искатель
+                            приключений, говоришь. Вот в это верю. Ладно, можешь остаться, раз сюда дорогу знаешь. НО!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что за НО?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Мы тут обособленно живём. Губернатору подчиняемся, дрова ему даём сотнями - на то и
+                            живём. НО здесь закон - мы. Чужое брать не велено, хотя всегда рады гостям. Вот ещё что...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что за что?" ifMarker="hobbit_talk_fun" goto="r6"/>
+                            <p:answer text="Что за что?" ifNoMarker="hobbit_talk_fun" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>У нас тяжёлая работа, так что не тревожь жителей по ночам в их домах. Зато всегда
+                            можешь посетить таверну и часовню. Тропинка вон та ведёт в мангровые джунгли, как раз для
+                            искателей приключений.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_Antigua_way_to_lumberjack_camp_react_guard"
+                                      giveMarker="lumberjack_guard_for_quests" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Чевеки древя палами шо делай? Как древя ломать делай ежи пала тожи древя?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" ifMarker="hobbit_talk_fun">
+                        <p:mainText>Это что за крыса, или что это? Мелкий, говор не наш... Следи за ним! Вот клянусь
+                            женой священника, у него наверняка лапы, или что это, загребущие! Так, перебили меня. Вот
+                            ещё что...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>У нас тяжёлая работа, так что не тревожь жителей по ночам в их домах. Зато всегда
+                            можешь посетить таверну и часовню. Тропинка вон та ведёт в мангровые джунгли, как раз для
+                            искателей приключений.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_Antigua_way_to_lumberjack_camp_react_guard"
+                                      giveMarker="lumberjack_guard_for_quests" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Древесина кровоточит"   -->
+            <p:state ifMarker="pi_1o_quest_bleeding_wood_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Виктор Оби хочет знать, что происходит ночью? Всё спокойно. Правда, пару раз я видел
+                            тень, или силуэт, не разобрать было, у склада древесины. Но только я подходил - всё
+                            исчезало.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Исчезало?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Да, растворялось словно в воздухе. Я и подумал, что ночь, темно, ещё и спать тоже
+                            хочется порой - глаза меня просто обманывали.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В какое время было?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Да вот знаешь... Вроде как с полуночи, появлялось... А после пяти утра я не видел
+                            точно эту тень или силуэт. А что, кто это?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не сейчас" removeMarker="pi_1o_quest_bleeding_wood_03"
+                                      giveMarker="pi_1o_quest_bleeding_wood_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

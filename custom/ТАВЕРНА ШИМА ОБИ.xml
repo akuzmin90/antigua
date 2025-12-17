@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА ШИМА ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_shima_obi_tavern" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_shima_obi" name="Шима Оби_big"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Эта чарка за нас, девочки!" delayMs="14000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Если я рублю дрова, как настоящий мужчина, то и отдыхать могу так же! Или что,
+                            женщины в твоей стране все сидят по домам, варят каши да за дитями бегают? Ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Свобода выбора" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит"   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_02" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Эта чарка за нас, девочки!" delayMs="14000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Поверь, я не стану обманывать Корчмаря. Мой муж, Рупрахт, следит за моей
+                            духовностью. А красть, тем более у своих, грешно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Верно сказала" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕНА КЛАДОВЩИКА ПИРАТЫ СТАЛА ЖЕНОЙ -->
+
+    <p:place id="pi_1o_wifeAntigua_wife" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_wifeAntigua" name="Амалия" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ой, привет, {playerNick}! Как здорово, что у нас такой гость в доме! Скажу честно -
+                            Йоси ещё предстоит много работать. У меня запросы не как у портовой девки! Но он
+                            справляется. Правда, дома почти не появляется.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Счастья вам"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Конечно, конечно! И побольше золота. Не хочу есть вяленую рыбу, как вчера. Хочу
+                            сегодня фуагра в демиглясе! И Йоси уже мне обещал это дорогое, но вкусное блюдо.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_1o_townAntigua_storeceeper_husband_1"
+                                      goto="completed" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="completed">
+                        <p:mainText>Заказала ещё 7 платьев у портного - чтобы каждый день недели быть в новом!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

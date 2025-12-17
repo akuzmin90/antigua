@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../xsd/customPlaces.xsd">
+
+    <!-- СИРЕНИЯ или АРТО ПЕРВАЯ ВСТРЕЧА -->
+    <p:place id="pi_1o_amazon_sirenia_arto" atlasId="" imageId="{amazon}" name="{amazon}" minPlayerStair="40"
+             meetProbability="0" displayType="DIALOG">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+            <!-- Квест "Потерянные воспоминания", после 7 страницы -->
+            <p:state id="default" closable="false">
+                <p:dialog imageId="{amazon}" imageComment="{amazon}">
+                    <p:replica id="r1">
+                        <p:mainText>[Перед вами - последний представитель племени Амазония! Невероятно... 300 лет их
+                            считали исчезнувшими, частью истории... Их племена вымерли... Или нет?]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>И ты тоже смотришь на меня, как на реликт времени. Неужели каждый раз, все вы будете
+                            напоминать мне о том, что я - последний представитель своего племени?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я без зла..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Хорошо, я слышу тебя. Ты не хочешь меня обидеть. Я вижу это по твоим глазам. Я буду
+                            говорить с тобой прямо и открыто.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но ты... Откуда?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Магический фронт пошатнулся. Моя душа реинкарнировала в моё тело, которое магия
+                            создала вновь... Я не знаю, почему так произошло. Но я здесь. И этому есть причина.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Чевек старче, но чевек младе? Хош-хош, как хоббите, мы и старче и младе сразом!
+                            {playerNick}, хоббите Экля любо это чевек!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты мой славный"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Эти маги дали мне крышу над головой, взамен на информацию о древней магии друидов, с
+                            которыми наши племена были в союзе. Но они даже не спросили, как я себя ощущаю, что
+                            чувствую... Им нужно лишь одно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А если..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ты говоришь, магический фронт... Его могло изменить проклятье, например? Или
+                            появление нового героя? Или это сделали маги-вуду специально?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>Маги-вуду не понимают всю суть магии, они не могут призвать живого человека. Но
+                            проклятье... Это могло повернуть магию вспять. Я бы[ла|л] причаст[на|ен] к одному проклятью...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Джим Сорока?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>Да, я помню это имя... Я бы[ла|л] его охранителем. Однажды он закопал клад, защитив
+                            его проклятьем - и мне было велено защищать его, даже после смерти. Значит ли это, что...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Клад нашли"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10">
+                        <p:mainText>Раз ты в курсе истории... Помоги мне, я прошу тебя! Я снова здесь, я снова живу. Я
+                            пойду с тобой, буду твоим охранителем. Помоги снять проклятье, чтобы я снова мо[гла|г] жить
+                            свободно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="С радостью!" requireGender="male" launchScriptId="pi_1o_amazon_sirenia"
+                                      removeMarker="pi_1o_quest_lost_memories_07,pi_1o_quest_lost_memories_magevoodoo_guard"
+                                      giveMarker="pi_1o_quest_lost_memories_08,pi_1o_quest_lost_memories_hint_08"
+                                      complete="true" dropPlace="true"/>
+                            <p:answer text="С радостью!" requireGender="female" launchScriptId="pi_1o_amazon_arto"
+                                      removeMarker="pi_1o_quest_lost_memories_07,pi_1o_quest_lost_memories_magevoodoo_guard"
+                                      giveMarker="pi_1o_quest_lost_memories_08,pi_1o_quest_lost_memories_hint_08"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+        </p:states>
+    </p:place>
+</p:root>

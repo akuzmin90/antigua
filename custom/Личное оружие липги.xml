@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Личное оружие  -->
+
+    <p:place id="pi_1o_it_thoi_personal_weapons" animType="EMPTY" imageId="93x148" name="Личное оружие" minPlayerStair="40"
+             meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Личное оружие Главы Инквизиции. Отделано золотом, камнями, какими-то знаками отличия... Красивое. Но это не столь важно, ведь рядом валяется мешочек с золотом!  </p:mainText>
+                            <p:award type="GOLD" />
+                        <p:answers>
+                            <p:answer text="Вот это хорошо" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Личное оружие Главы Инквизиции. Отделано золотом, камнями, какими-то знаками отличия... Красивое. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

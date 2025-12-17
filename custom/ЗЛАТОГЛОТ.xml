@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЗЛАТОГЛОТ -->
+
+    <p:place id="pi_1o_Antigua_gm_goldeater" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gm_goldeater" name="Златоглот"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- только на локации Золотая шахта, 2 уровень  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Златоглот, величайший пожиратель золотой руды, бич Золотых шахт по всему Холодному
+                            морю... Эти слова сами закрутились у вас в голове, почему-то.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!" ifNoMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_gm_goldeater" onWinGoTo="win_0"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Златоглот, боевая иконка будет называться pi_1o_Antigua_gm_goldeater_f, это босс -->
+                            </p:answer>
+                            <p:answer text="В бой!" ifMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_gm_goldeater" onWinGoTo="win_1"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Златоглот, боевая иконка будет называться pi_1o_Antigua_gm_goldeater_f, это босс -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Златоглот оказался сильнее вас... Пока что. Сейчас. Временно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!" ifNoMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_gm_goldeater" onWinGoTo="win_0" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="В бой!" ifMarker="hobbit_talk_fun">
+                                <p:toBattle creatureId="pi_1o_Antigua_gm_goldeater" onWinGoTo="win_1" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win_0" closable="false">
+                        <p:mainText>Златоглот повержен! Пора сообщить об этом Главному рудокопу.
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Точно" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win_1" closable="false" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Плоха, плоха жвотне болване! Кто злоте любе, тот его не кушать! Болване хрен жвотне!
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Такой милашка же" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2">
+                        <p:mainText>Ваши действия не остались незамеченными. +1 к общей репутации!</p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_hermit_miner_02"
+                                      giveMarker="pi_1o_hermit_miner_03" requestSpecialPlaces="true" complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_golden_mine_1_lvl"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Диван 1 -->
+
+    <p:place id="pi_1o_home_frail_sofa_1" animType="EMPTY" imageId="74x144" name="Диван" minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вы садитесь на диван, но чувствуете лёгкий дискомфорт...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Встать с дивана" goto="r1" out="true" />
+                            <p:answer text="Поёрзать" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вы ёрзаете на диване влево, вправо, вниз, вверх, по диагонали... Так вот в чём дело, каким то пятым чувством вы ощущаете, что в диване спрятан кусок золотой руды!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Обыскать диван" gotoFromScript="random" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>Вы начинаете осматривать диван, как вдруг ощущаете на себе суровый взгляд Хилого. Вам немного стыдно, но лишь в данный момент, и вы решаете прекратить обыск.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Наблюдательный..." goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8">
+                        <p:mainText>Вы начинаете осматривать диван, как вдруг ощущаете на себе недоумённый взгляд Хилого. "А ну, брысь отсюдова!" - Кричит он, и вы решаете прекратить обыск.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Наблюдательный..." goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8">
+                        <p:mainText>Вы начинаете осматривать диван, как вдруг сзади подходит Хилый. "Ничего, что это МОЙ диван?!" -  вы решаете прекратить обыск, потому что иначе он не отходит.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Наблюдательный..." goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.2">
+                        <p:mainText>Вы начинаете осматривать диван и находите завалившийся кусок золотой руды! Хилый вас не заметил, поэтому, можно честно забрать находку себе.</p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="1" />
+                        <p:answers>
+                            <p:answer text="Моё" goto="r3" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Вы снова ёрзаете по дивану... Но не ощущаете внутри ничего. Диван пуст, как сердце Бездны.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Метко сказано" goto="r3" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

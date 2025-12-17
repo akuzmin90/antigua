@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Репа  -->
+
+    <p:place id="pi_1o_Antigua_lc_mc_turnip" animType="EMPTY" imageId="58x74" name="Репа" minPlayerStair="40"  meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>О, а тут запасы репы. Свежая, хрустящая, бодрящая. Надо угоститься! </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Вкусно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>О, а тут запасы репы. Свежая, хрустящая, бодрящая. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Репа если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_mc_turnip_1" animType="EMPTY" imageId="58x74" name="Репа" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_martina"> 
+                        <p:mainText>ЭТО НАША РЕПА!!! Не трогай ничего здесь! Искатель приключений, иди ищи их в другом месте! А ну, живенько! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

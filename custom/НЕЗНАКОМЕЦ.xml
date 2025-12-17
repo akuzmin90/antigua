@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- НЕЗНАКОМЕЦ  -->
+
+    <p:place id="pi_1o_stranger" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_stranger" name="Незнакомец" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Найти убийц Лейхо", после трактирщика   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_08" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Привет, друг! Меня послал Сыщик... Расследование набирает обороты! Он нашёл новые
+                            зацепки по Хилому - но говорить во дворце опасно, ведь Губернатор - его дядя. Сыщик попросил
+                            проводить тебя к нему.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Хм... Сыщик нашёл новые зацепки? А когда он успел? И кто ты?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Я работаю на него. А новые сведения он нашёл после твоего ухода к Трактирщику! Сыщик
+                            сам загорелся этим расследованием, у него сил - хоть отбавляй!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>[Губернатор говорил, что Сыщик только вернулся с другого острова, и ему нужен
+                            отдых... Откуда же силы взялись? Но, Сыщик ведь тоже может себя вести так, как ему удобно.
+                            Надо решить, что делать...]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо, веди" removeMarker="pi_1o_quest_leyho_killers_08"
+                                      giveMarker="pi_1o_quest_leyho_killers_08_gang_bang" complete="true"
+                                      dropPlace="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_strange_basement"/>
+                            </p:answer>
+                            <p:answer text="Ты не от Сыщика!" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ну ладно, что я, уговаривать буду, что ли?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_leyho_killers_08"
+                                      giveMarker="pi_1o_quest_leyho_killers_long_way_01" requestSpecialPlaces="true"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Найти убийц Лейхо", если мы в странном подвале   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_08_gang_bang" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Ха, сработало! Так-так-так, поговори со Стивеном.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." goto="r1_d" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

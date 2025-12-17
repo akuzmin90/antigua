@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА КОРЧМАРЬ  -->
+
+    <p:place id="pi_1o_Antigua_lc_tavern_innkeeper" animType="EMPTY" imageId="105x91" name="Корчмарь"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Чего хочешь? Ром? Лимонад?" delayMs="1000"/>
+                    <p:talk text="Комнаты не сдаём!" delayMs="6000"/>
+                    <p:talk text="Не забудь оставить чаевые" delayMs="12000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Редко увидишь новые лица в моей таверне! Заходи, угощайся - ром я делаю сам! Не так,
+                            конечно, как в городской таверне... Но лесорубы довольны. Главное, чтобы глотку драло!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true"
+                                      giveMarker="lumberjack_tavern_innkeeper_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_reed_for_innkeeper_01 or pi_1o_quest_bleeding_wood_coward"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_reed_for_innkeeper_01" text="Поставка тростника"
+                                      goto="r_lumberjack_tavern_innkeeper1"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_coward" text="Спасибо за ночь"
+                                      goto="r_lumberjack_tavern_innkeeper2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_tavern_innkeeper1">
+                        <p:mainText>Я жду партию моего сахарного тростника! Она оплачена давно, просто принеси, хорошо?
+                            Проблем не должно возникнуть.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_tavern_innkeeper2">
+                        <p:mainText>Как спалось? Надеюсь, всё понравилось? Это была большая честь от Виктора Оби, обычно
+                            мы не пускаем чужаков переночевать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Тростник для корчмаря", первый диалог   -->
+            <p:state ifMarker="lumberjack_tavern_innkeeper_for_quests" repeatable="false" closable="false" mandatory="true"
+                     probabilityPercentState="40">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Искатель приключений, у меня есть для тебя работа. Нужно сходить к Плантатору на
+                            Сахарную плантацию и принести мне партию сахарного тростника. Всё уже оплачено, просто
+                            принеси. Сделка?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" giveMarker="pi_1o_quest_reed_for_innkeeper_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_reed_for_innkeeper" name="Тростник для корчмаря" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Тростник для корчмаря", финал   -->
+            <p:state ifMarker="pi_1o_quest_reed_for_innkeeper_02" repeatable="false" closable="false"
+                     probabilityPercentState="40">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Ооооо, а вот и мой сахарный тростник! Ты говоришь, что в следующий раз будет
+                            скидка... Хм... Обычно он даёт скидку в четверть стоимости... Знаешь, я на это не
+                            рассчитывал. Пусть разница будет оплатой, ха!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="11"/>
+                        <p:answers>
+                            <p:answer text="Приятно и просто" removeMarker="pi_1o_quest_reed_for_innkeeper_02"
+                                      giveMarker="pi_1o_quest_someone_not_paying_01" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_reed_for_innkeeper"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит", первый диалог   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_01" repeatable="false" closable="false" probabilityPercentState="40" mandatory="true">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Слушай, я тут подумал... Раз тростник был доставлен, я могу доверять тебе. Кто-то
+                            из тех, кто отдыхает по вечерам, не платит за себя. У меня недостача в золотой руде!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>И не смотри на меня так, прошу. По вечерам тут дел по горло, конечно я могу упустить
+                            что-то из виду! Приходи вечером, поспрашивай, кто обманывает меня. Я отблагодарю, ты же
+                            знаешь. Сделка?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" removeMarker="pi_1o_quest_someone_not_paying_01"
+                                      giveMarker="pi_1o_quest_someone_not_paying_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_someone_not_paying" name="Кто-то не платит" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит" реакция на Виктора   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_innkeeper_react" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Чего хочешь? Ром? Лимонад?" delayMs="1000"/>
+                    <p:talk text="Комнаты не сдаём!" delayMs="6000"/>
+                    <p:talk text="Не забудь оставить чаевые" delayMs="12000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Виктор говорит, что не верит, что кто-то может украсть у своих? Согласен. Последний
+                            раз кража у нас была 10 лет назад - преступника наказали, и всё, был пример другим. Свои у
+                            своих не крадут, давно уже.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Значит, не свой..." complete="true"/>
+                            <p:answer text="А как наказали?" goto="r2_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Ой, да очень просто! Отрубили кисти и ступни и отпустили, ЖИВОГО, между прочим, в
+                            джунгли! Мы же не варвары, убивать за воровство, ахаха! Может, бедолага там ещё и ползает,
+                            ахах!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Милосердно" removeMarker="pi_1o_quest_someone_not_paying_innkeeper_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит" реакция на Мартинеса   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_innkeeper_react_1" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Чего хочешь? Ром? Лимонад?" delayMs="1000"/>
+                    <p:talk text="Комнаты не сдаём!" delayMs="6000"/>
+                    <p:talk text="Не забудь оставить чаевые" delayMs="12000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Ты думаешь, Мартинес мог бы что-то втихую красть? Вряд ли, я контролирую своих
+                            работников! И я же помогаю им, даю работу. Вот даже Громшамаш Уг’лиш Гузя - несколько раз
+                            нанимал его мыть посуду по утрам.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Громшамаш Уг’лиш Гузя?"
+                                      removeMarker="pi_1o_quest_someone_not_paying_innkeeper_react_1"
+                                      giveMarker="pi_1o_quest_someone_not_paying_go_to_ogr" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит" финал   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Получается, Гузя Булочка воровал у меня золотую руду, чтобы... Есть её?! Ужас какой.
+                            А я ещё на добрых людей подумал... Интересно, он всё съел, или что-то осталось?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всё съел" goto="r2_d_3"/>
+                            <p:answer text="Осталось, вот" goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Прожорливый... 70 кусков за раз... Так, значит, надо запирать шкаф с золотой рудой.
+                            А ты - работа сделана. Пусть не очень и выгодно, но сделка есть сделка. Вот твоя оплата,
+                            спасибо тебе!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="15"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_someone_not_paying_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_someone_not_paying"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Всего 32 куска золотой руды осталось? Ужас какой. А ты - работа сделана. Пусть не очень и выгодно, но сделка есть сделка. Вот твоя оплата, спасибо тебе! [Вы честно отдали 32 куска золотой руды] </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="15"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_someone_not_paying_03" requestSpecialPlaces="true" complete="true">
+                                <p:pay ore_gold="32"/>
+                                <p:addTaskProgress id="pi_1o_quest_someone_not_paying"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочка 03  -->
+
+    <p:place id="pi_1o_Antigua_bgf_barrel_03" animType="EMPTY" imageId="54x48" name="Бочка" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В этой бочке находится запас зелий - одно из них вам знакомо, оно повышает защиту! </p:mainText>
+                            <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                        <p:answers>
+                            <p:answer text="Выпьем!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В этой бочке находится запас зелий. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

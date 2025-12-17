@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДОЛОРЕС -->
+
+    <p:place id="pi_1o_Antigua_lc_dolores" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_dolores" name="Долорес"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Нужны ещё травы..." delayMs="3000"/>
+                    <p:talk text="Так, связать бинты..." delayMs="11000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Мой муж, Килиан, держится молодцом, после такой-то травмы... Я выхаживаю его, как и
+                            других - я местный лекарь. А если ты ищешь приключений... Иногда у меня бывает работа,
+                            правда! В джунглях опасно, а травы нужны.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"  complete="true" giveMarker="lumberjack_dolores_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_rare_herbs_01 or pi_1o_quest_rare_herbs_03 or pi_1o_quest_rare_herbs_04"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_rare_herbs_01" text="Адамантовый репей"
+                                      goto="r_lumberjack_dolores1"/>
+                            <p:answer markerCondition="pi_1o_quest_rare_herbs_03 or pi_1o_quest_rare_herbs_04"
+                                      text="Красный тростник" goto="r_lumberjack_dolores2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_dolores1">
+                        <p:mainText>Мне нужен Адамантовый Репей... Растение редкое, но очень важное. Одного экземпляра
+                            мне хватает на два-три месяца!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_dolores2">
+                        <p:mainText>Мне нужен Красный тростник... Уверена, получить его будет легко, просто спроси
+                            Плантатора, хорошо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Редкие травы", первый диалог   -->
+            <p:state markerCondition="lumberjack_dolores_for_quests and lumberjack_kilian_for_quests" repeatable="false"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Искатель приключений, постой... У меня есть к тебе просьба. Ну, работа, я заплачу за
+                            неё! Я ведь травница, местный лекарь, и у меня всегда все травы должны быть под рукой. Но
+                            тут беда...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что такое?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Килиан, мой муж, получил травму, и пока что не работает. И я истратила на него
+                            редкие травы... Ты сможешь их найти, в джунглях? Там опасно, и сейчас некого больше
+                            просить...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я помогу"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Спасибо, огромное спасибо! Хотя заранее нельзя говорить... Так, смотри - первое
+                            растение, "Адамантовый репей". Достаточно одного экземпляра! Оно... репей, цвета адаманта. Я
+                            буду ждать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" giveMarker="pi_1o_quest_rare_herbs_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_rare_herbs" name="Редкие травы" count="3" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Редкие травы", начало поиска второго растения   -->
+            <p:state ifMarker="pi_1o_quest_rare_herbs_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Адамантовый репей, восхитительно! Прости, я не предупредила, что кроты любят его
+                            сок... Но ведь тебе наверняка повстречался Михаил Оби, наш следопыт, который рассказал об
+                            этом?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Второе растение?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Сразу к делу, понимаю. Сейчас всё должно быть проще - мне нужен Красный Тростник.
+                            Раньше я покупала его у Плантатора, на Сахарной Плантации, пока он не поругался с моим
+                            мужем.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я схожу" removeMarker="pi_1o_quest_rare_herbs_02"
+                                      giveMarker="pi_1o_quest_rare_herbs_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_rare_herbs"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Редкие травы", начало поиска третьего растения   -->
+            <p:state ifMarker="pi_1o_quest_rare_herbs_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Красный тростник, превосходно! Просто так его отдал Плантатор? Ну, не зря же я его
+                            дочь... Ахаха, да, вот так вот. А теперь последнее растение - Борщевик!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Чего-чего?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Ну, я с ним не сталкивалась... Но слышала, что если выпить его сок, или натереться
+                            им, то можно получить уникальные силы!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты серьёзно?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>А что не так? Или тебе, искателю приключений, борщевик уже встречался?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж расскажу"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>[Вы рассказали про борщевик. Долорес молча громко хлопает выпученными глазами.] Вот
+                            как... А... Так жестоко... Я же хотела, мужа... Так, понятно. Пожалуй, хватит растений. Вот
+                            твоя награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="15"/>
+                        <p:answers>
+                            <p:answer text="Век живи, век учись" removeMarker="pi_1o_quest_rare_herbs_05"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_rare_herbs" count="5"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_02" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Искатель приключений, не виде[л|ла] ли ты моего сына, Айка?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет" goto="r2_d_4"/>
+                            <p:answer text="Да" goto="r3_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Жаль... Я очень беспокоюсь. Он всегда был на виду, а сейчас просто пропал... Айк,
+                            сын мой, где же ты...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф..." complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>А где он? ГДЕ?! Ох... *Долорес еле сдерживает равновесие и хватается за сердце*
+                            Искатель приключений, ты... КАК можно быть так[им|ой] недалёк[им|ой]... Скажи честно, ты же
+                            шутишь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не шучу"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>*Долорес меняется в лице и начинает кричать на всю деревню* ДЕТСКИЙ САД?! В
+                            ДЖУНГЛЯХ?! СЕРЬЁЗНО?! ДА ТЫ ХОТЬ ЗНАЕШЬ, ЧТО ТЫ НАТВОРИ[Л|ЛА]????
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не знаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>*Долорес замолкает, выдыхает* Нет там никакого детского сада. А вот ведьма есть.
+                            Говорят, она ест детей. Ты понимаешь, где мой Айк сейчас! А ну быстро, иди и верни его!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Упс... Хорошо" removeMarker="pi_1o_quest_kindergarten_you_fool_02"
+                                      giveMarker="pi_1o_quest_kindergarten_you_fool_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал пока не вернули   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_03" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Верни моего сына!" delayMs="2000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Иди и верни моего сына! Целым и невредимым! Как можно было так обмануться... Да тебя
+                            и макака обведёт вокруг пальца! Верни сына, или пожалуюсь Губернатору!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо-хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк вернулся   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_03" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Айк вернулся! ТЫ!!!! Ты... Как бы ни было, ты спа[с|сла] моего сына... Я ведь мать,
+                            я не могу не быть благодарна, даже если вина твоя... Давай так. Мы все забыли, что
+                            случилось. Никто не вспомнит. НО!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Больше никогда не верь ведьмам из джунглей. И никуда не уводи моего сына без моего
+                            ведома! Так, всё, никто не вспомнит про это. Будто не было. Вот тебе за спасение Айка...
+                            Спасибо...
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_kindergarten_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_kindergarten"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

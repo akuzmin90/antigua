@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Повар инквизиции  -->
+
+    <p:place id="pi_1o_it_inquisition_cook" animType="EMPTY" imageId="99x79" name="Повар инквизиции" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Сегодня порося на вертеле" delayMs="1000"/>
+                    <p:talk text="Вкусно пахнет, да?" delayMs="11000"/>
+                    <p:talk text="Так, добавить соли..." delayMs="21000"/>
+                    <p:talk text="Пум-пум-пум..." delayMs="31000"/>
+                    <p:talk text="Жар такой, что кости плавятся" delayMs="41000"/>
+                    <p:talk text="Инквизиторы могут быть и поварами" delayMs="56000"/>
+                    <p:talk text="Не меньжуйся, подходи" delayMs="71000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здравствуй, искатель приключений. Я смотрю, запах порося тебя привлёк? Что ж... Держи кусочек, как дар от инквизиции и Короля Густава. </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Пафосно! Но вкусно." goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Слушай, искатель приключений... Я хоть и служу в инквизиции, но я не солдат, я повар. Смекаешь? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Повар Воробей?!" goto="r3" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Ага, Жонни Снегирь, поговори ещё тут! Так, ладно. Хочешь ещё кусочек? Могу предложить, всего за 1 кусок золотой руды. Тебе - мелочь, а мне - семье отправлю. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Коррупция?" goto="r4" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Так, смотри. Ты даёшь 1 кусок золотой руды. Я тебе - самый сочный окорок. У меня дома 8 детей, их надо кормить. Ты - мне, я - тебе, договорились? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай" goto="r5" >
+                                <p:pay ore_gold="1" />
+                            </p:answer>
+                            <p:answer text="Дорого" goto="r6" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Отлично! Наслаждайся, мой фирменный рецепт! [Вы отдали 1 кусок золотой руды, но сочный окорок того стоил!] </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="С пылу с жару" goto="r7" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Ну и ладно. Больше такого не предложу. Иди своей дорогой приключений. [Повар готовит порося, не обращая на вас внимания] </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно" goto="r6" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Повар готовит порося, не обращая на вас внимания. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r7" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

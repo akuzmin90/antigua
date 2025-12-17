@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ВИКТОР ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_victor_obi" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_victor_obi" name="Виктор Оби"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Занят расчётами*" delayMs="12000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Так, не отвлекай меня... Учёт поленьев - важная работа, мы на этом зарабатываем. И
+                            да, я - Виктор Оби. Наша фамилия - это династия лесорубов. И деревня, считай, основана нашим
+                            предком!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true"
+                                      giveMarker="lumberjack_victor_obi_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_red_wood_01 or pi_1o_quest_red_wood_react_victor_obi or pi_1o_quest_bleeding_wood_01 or pi_1o_quest_bleeding_wood_03 or pi_1o_quest_bleeding_wood_kill_monster or pi_1o_quest_bulletin_board_firewood_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_red_wood_01" text="Красное дерево"
+                                      goto="r_lumberjack_victor_obi1"/>
+                            <p:answer ifMarker="pi_1o_quest_red_wood_react_victor_obi" text="Ты встревожен"
+                                      goto="r_lumberjack_victor_obi2"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_01" text="Дерево и кровь"
+                                      goto="r_lumberjack_victor_obi3"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_03" text="Спросить стража"
+                                      goto="r_lumberjack_victor_obi4"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_kill_monster" text="Стоглазый Дух"
+                                      goto="r_lumberjack_victor_obi5"/>
+                            <p:answer ifMarker="pi_1o_quest_bulletin_board_firewood_01" text="Дрова для Хилого"
+                                      goto="r_lumberjack_victor_obi6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_victor_obi1">
+                        <p:mainText>Красная древесина? Ты просишь одно полешко? Ты хоть знаешь, сколько она стоит?! 3000
+                            золотой руды за полено! Это цена для Губернатора. Для частной покупки - 4000. Берёшь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слишком много!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_victor_obi2">
+                        <p:mainText>Да, я встревожен. Пропало полено красной древесины! Это очень редкая порода дерева,
+                            каждое полено стоит по 3000 золотой руды! Вообще, не мешай мне искать его. Так, семь,
+                            восемь... Да где девятое?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мистика, хе-хе" removeMarker="pi_1o_quest_red_wood_react_victor_obi"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_victor_obi3">
+                        <p:mainText>Не тяни с этой работой. Периодически, кровоточить начинают новые поленья!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_victor_obi4">
+                        <p:mainText>Что сказал лесоруб на страже? А, ты ещё не спроси[л|ла]? И чего ты тянешь? Хочешь,
+                            чтобы вся древесина покрылась кровью?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я в процессе" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_victor_obi5">
+                        <p:mainText>Нужно убить этого Стоглазого Духа! Пожалуйста, не тяни с этим.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Я в процессе" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_victor_obi6">
+                        <p:mainText>Так, вязанка дров Хилому? Да, всё оплачено. Вон она лежит, может забирать и
+                            относить.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_bulletin_board_firewood_01"
+                                      giveMarker="pi_1o_quest_bulletin_board_firewood_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Древесина кровоточит", первый диалог   -->
+            <p:state ifMarker="lumberjack_victor_obi_for_quests" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Искатель приключений, уверен, тебе нужна работа. Хочу тебе предложить поработать на
+                            меня - в долгу не останусь. Интересно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Интересно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>В общем... С недавнего времени, вся наша древесина стала кровоточить! Ты же
+                            понимаешь, такую никто не купит. Надо разобраться, в чём дело, пока ещё не всё дерево стало
+                            таким на складе.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Есть мысли?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Да, есть. Недавно маги-вуду купили у нас красную древесину, потом вернули, так как
+                            не устроило их, что одно полено прогорает 40 лет! С того момента всё и началось. Это они, я
+                            уверен!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спрошу у них" giveMarker="pi_1o_quest_bleeding_wood_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bleeding_wood" name="Древесина кровоточит" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Древесина кровоточит", узнали про Стоглазого Духа   -->
+            <p:state ifMarker="pi_1o_quest_bleeding_wood_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Ты бы[л|ла] у магов-вуду? Что они сказали?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Вот оно что... Своим невежством они "случайно" прокляли нас, это очень плохо! И что,
+                            теперь надо победить этого Стоглазого Духа? Мы же не воины... Ну, Только Касуми Оби... И где
+                            этот дух вообще?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Рассуждаем логично. Я что-то да знаю. Призванный дух не может быть постоянно
+                            невидимым. Но мы его не видели. Значит, он появляется ночью. Иди спроси нашего лесоруба на
+                            страже, видел ли он чего.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_bleeding_wood_02"
+                                      giveMarker="pi_1o_quest_bleeding_wood_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Древесина кровоточит", после лесоруба на страже   -->
+            <p:state ifMarker="pi_1o_quest_bleeding_wood_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Итак, лесорубу на страже "показалось"... Стоглазый Дух здесь. И появляется он с
+                            полуночи до пяти утра... Искатель приключений, я могу предложить тебе заработать больше на
+                            этом задании.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Убей Стоглазого Духа. И я заплачу больше. Либо, его убьёт Касуми Оби, она нас
+                            защищает. Но ей тоже нужен отдых, ей нужно спать. Что ты выберешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я убью!" goto="r3_d_2"/>
+                            <p:answer text="Лучше Касуми" goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Я рад, что ты согласил[ся|ась]. Подстереги его ночью и убей! Главное, снять
+                            проклятье. И да, ты же уже знаешь, что солнце не заходит на Антигуа. Не смущайся, что
+                            светло.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_bleeding_wood_04"
+                                      giveMarker="pi_1o_quest_bleeding_wood_kill_monster" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Понимаю тебя. Как бы ни было, изначально о таком договора не было. Причину ты
+                            выясни[л|ла], это главное. Приходи завтра днём, я заплачу за работу после того, как Касуми
+                            убьёт Стоглазого Духа.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>В благодарность, ты можешь переночевать в нашей таверне - чужакам такое мы, обычно,
+                            не позволяем. Иди и отдохни, увидимся завтра.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо" removeMarker="pi_1o_quest_bleeding_wood_04"
+                                      giveMarker="pi_1o_quest_bleeding_wood_coward" requestSpecialPlaces="true"
+                                      complete="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp_tavern"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Древесина кровоточит", если победили Стоглазого Духа   -->
+            <p:state ifMarker="pi_1o_quest_bleeding_wood_kill_monster_done" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Стоглазый Дух повержен, я вижу это. Я слышал ночью, как вы сражались... И главное -
+                            древесина внезапно перестала кровоточить! Это достойно хорошей оплаты.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="30"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Это не всё. Мне сказали, что ты ценишь изумруды. Вот немного от меня, в
+                            благодарность за работу.
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="200"/>
+                        <p:answers>
+                            <p:answer text="Приятно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Я благодарю тебя, искатель приключений. Я расскажу всем, что ты сдела[л|ла] и как
+                            помо[г|гла] нам. [Вы получаете +1 к общей репутации!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Отлично" removeMarker="pi_1o_quest_bleeding_wood_kill_monster_done"
+                                      giveMarker="pi_1o_quest_bleeding_wood_kill_monster_done_magevoodoo_head_react"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_bleeding_wood"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Древесина кровоточит", если Касуми победила за кадром Стоглазого Духа   -->
+            <p:state ifMarker="pi_1o_quest_bleeding_wood_coward" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Стоглазый Дух повержен, я вижу это. Я слышал ночью, как сражались он и Касуми Оби...
+                            И главное - древесина внезапно перестала кровоточить! Вот твоя оплата.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Это не всё. Мне сказали, что ты ценишь изумруды. Вот немного от меня, в
+                            благодарность за работу.
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="60"/>
+                        <p:answers>
+                            <p:answer text="Приятно" removeMarker="pi_1o_quest_bleeding_wood_coward"
+                                      giveMarker="pi_1o_quest_bleeding_wood_coward_kasumi_react" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_bleeding_wood"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ДОРОГА К КОНТРАБАНДИСТАМ -->
+
+    <p:place id="pi_1o_Antigua_hp_secret_door" animType="EMPTY" imageId="53x115" name="Скрытый проход" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- если тыкнуть в дверь ДО выполнения квеста "Странный ключ", а именно - ДО маркера pi_strange_key_006  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Невероятно! Среди зарослей вы находите дверь, еле заметную! Для чего она?! Вы
+                            замечаете маленькую замочную скважину, но ключа у вас, естественно, нет.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Чудеса"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>Ваша наблюдательность не знает границ! Ничто и никто не утаится от вас! Заметить
+                            дверь в густых зарослях - это похвально! +1 к общей репутации.
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_1o_Antigua_hp_secret_door_closed" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- типа default если тыкнули в дверь ДО выполнения квеста "Странный ключ", а именно - ДО маркера pi_strange_key_006  -->
+            <p:state markerCondition="pi_1o_Antigua_hp_secret_door_closed and not pi_strange_key_006">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Невероятно! Среди зарослей вы находите дверь, еле заметную! Для чего она?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- нашли дверь ВО ВРЕМЯ маркера pi_strange_key_006  -->
+            <p:state markerCondition="pi_strange_key_006">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Ого, вот она, дверь в тайный завод, про который говорил пират-берсеркер! НО, вначале
+                            нужно рассказать об этом губернатору - кто знает, что вас ожидает там.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_1o_Antigua_hp_secret_door_closed_tell_governor"
+                                      postLaunchScriptId="triggerRespawn" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- дверь всегда открыта, маркер дал губернатор в стейте ifMarker="pi_strange_key_006,pi_1o_Antigua_hp_secret_door_closed_tell_governor"  -->
+            <p:state ifMarker="pi_1o_Antigua_hp_secret_door_open_forever">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Дверь в тайный проход контрабандистов теперь открыта! Впереди вы видите длинную
+                            пещеру.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Войти" postLaunchScriptId="triggerRespawn" out="true">
+                                <p:toRoad roadId="pi_1o_bad_guys_road"/>
+                            </p:answer>
+                            <p:answer text="Уйти" goto="r1_d_3" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

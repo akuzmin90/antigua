@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДОЛГОНОСИК -->
+
+    <p:place id="pi_1o_sp_weevill" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_sp_weevill" name="Долгоносик" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Джек-осведомитель"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Долгоносик. Типичный для своего вида, ЕСЛИ БЫ не был таким огромным! Такой что
+                            угодно пожрёт. Даже Плантатора.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_sp_weevill" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с ДОЛГОНОСИК, боевая иконка будет называться pi_1o_sp_weevill_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Долгоносик слишком силён... Пока что.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_sp_weevill" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Долгоносика больше нет! Прекрасная победа! Нужно отчитаться Плантатору.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Это да" giveMarker="pi_1o_quest_jack_for_inquisition_weevill_01"
+                                      removeMarker="pi_1o_quest_jack_for_inquisition_weevill" complete="true"
+                                      dropPlace="true">
+                                <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

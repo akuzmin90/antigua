@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Ящик -->
+
+    <p:place id="pi_1o_Antigua_lc_obh_box" animType="EMPTY" imageId="88x47" name="Ящик" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Внутри ящика лежат 10 кусков золотой руды! Но брать все разом подозрительно... Лучше взять 2 куска золотой руды. Как поступим? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Взять 10" goto="r2"  />
+                            <p:answer text="Взять 2" goto="r3"  />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Всё-таки вы решаете, что брать 10 кусков золотой руды - подозрительно. Поэтому берёте 2. </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="2" />
+                        <p:answers>
+                            <p:answer text="Ладно, ладно..." goto="r4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Отличное решение! Пропажу 2 кусков золотой руды, возможно, и не заметят. Если будут подозревать, скажем, что это был Сигизмунд. Любой. </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="2" />
+                        <p:answers>
+                            <p:answer text="Вот да" goto="r4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Внутри ящика лежит 8 кусков золотой руды. Искушают. Придётся терпеть. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Моя прелесть..." goto="r4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Ящик если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_obh_box_1" animType="EMPTY" imageId="88x47" name="Ящик" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Не смей трогать наши вещи. Я предупреждаю тебя. Моя катана меня ещё не подводила. И я прошу тебя, в знак понимания, покинуть мой дом. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

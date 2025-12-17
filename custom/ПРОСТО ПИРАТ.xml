@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПРОСТО ПИРАТ -->
+
+<p:place id="pi_1o_Antigua_lg_just_pirate" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_just_pirate" name="Просто Пират" minPlayerStair="40" minDistanceBetweenSame="2000" meetProbability="9999999999999999" mandatory="true" requireGenMode="PI_1O_LEVIATHAN_GROTTO">  
+    <p:markerCondition condition="pi_1o_quest_inquisitor_eyepiece_02"/>
+    <p:blockingCreature probability="0"/>
+        <p:states>
+
+        <!-- появляется по квесту "Окуляр инквизитора"  -->
+        <p:state id="default" closable="false" >        	 
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Эй, авантюрист! Сейчас грот Левиафана опасен, поворачивай назад! Объявился Детёныш Левиафана - опасный, как тысяча акул! Не советую идти дальше - только на свой страх и риск!</p:mainText>
+                <p:answers>
+                    <p:answer text="Тогда я дальше иду" removeMarker="pi_1o_quest_inquisitor_eyepiece_02" giveMarker="pi_1o_quest_inquisitor_eyepiece_03" complete="true" dropPlace="true" requestSpecialPlaces="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    	</p:state>
+
+    </p:states>
+    </p:place>
+
+    </p:root>

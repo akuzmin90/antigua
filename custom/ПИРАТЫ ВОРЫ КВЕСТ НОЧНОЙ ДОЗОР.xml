@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПИРАТЫ ВОРЫ КВЕСТ НОЧНОЙ ДОЗОР -->
+
+<p:place id="pi_1o_Antigua_sp_wh_pirate_thief_1" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_Antigua_sp_wh_pirate_thief_1" name="Пират-вор" closable="false" minPlayerStair="40" meetProbability="0">
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Эй, ты! А ну-ка, быстро свали со склада, мы друг друга не видели!</p:mainText>
+                <p:answers>
+                    <p:answer text="Ага, конечно" /> 
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2">
+                <p:mainText>Ха, тогда посмотрим, кто кого сильнее!</p:mainText>
+                <p:answers>
+                    <p:answer text="Давай" > 
+                    	<p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_1" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с пиратом-вором 1, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_1_f  -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Апхахаха! Как тащил особый сахар, так и буду тащить!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_1" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Стой, стой! Не убивай, я же простой парень, морской дьявол тебя побери! Я просто выживаю как могу, работы нет, корабли в море не выходят!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Проваливай!" giveMarker="pi_night_watch_003" removeMarker="pi_night_watch_002" postLaunchScriptId="triggerRespawn" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <p:place id="pi_1o_Antigua_sp_wh_pirate_thief_2" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_Antigua_sp_wh_pirate_thief_2"
+             name="Пират-вор"  minPlayerStair="40" meetProbability="0">
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Ну вот, друга моего прогна[л|ла]... Пф, думаешь, он в одиночку всё делал? Мы просто заберём
+                    немного особого сахара, хорошо?
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Нет"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2">
+                <p:mainText>Йаррррр, посмотрим, кто кого сильнее!</p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_2" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с пиратом-вором 2, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_2_f  -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Йаррррр! Моя сабля делает меня страшнее любого шторма, ты, сухопутная крыса!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_2" onWinGoTo="win" onLooseGoTo="loose"/>
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Я это запомню... Нет уважения к честным ворам, так, значит? Однажды мы встретимся!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Проваливай!" giveMarker="pi_night_watch_004" removeMarker="pi_night_watch_003" postLaunchScriptId="triggerRespawn" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <p:place id="pi_1o_Antigua_sp_wh_pirate_thief_3" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_Antigua_sp_wh_pirate_thief_3" name="Пират-вор" minPlayerStair="40" meetProbability="0">
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Так, смотри какой расклад. Мы благородно продолжаем забирать лишь немного особого сахара. Нам нужно. А ты нас отпускаешь. И я дам тебе 2 изумруда! </p:mainText>
+                <p:answers>
+                    <p:answer text="Серьёзно?" /> 
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2">
+                <p:mainText>Д В А. И З У М Р У Д А. Или что, для тебя это мелочь?! Да я три дня могу в таверне в городе кутить на них! Ну, так меня ещё не оскорбляли!</p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" > 
+                    	<p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_3" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с пиратом-вором 3, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_3_f  -->
+                    </p:answer>
+                    <p:answer text="Давай изюм" goto="r3" /> 
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Я ходил в Океан Льда под началом Хруста Чернобородого, ты мне не ровня! 
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_3" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                    <p:answer text="Давай изюм" goto="r3"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Я это запомню... Нет уважения к честным ворам, так, значит? Однажды мы встретимся!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Проваливай!" goto="r4" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="r3">
+                <p:mainText>Разумный выбор! Так, как мы сделаем. На время мы исчезнем, не будем привлекать внимание. Так что можешь сказать Дейву, что мы ушли, ахаха! [Пират-вор ушёл, но обронил странный ключ] </p:mainText>
+                <p:award type="MITHRIL" explicitValue="2" />
+                <p:answers>
+                    <p:answer text="Пусть так" giveMarker="pi_night_watch_005,pi_pirate_thief_3_award" removeMarker="pi_night_watch_004" complete="true" dropPlace="true" requestSpecialPlaces="true" > 
+                        <p:toRoad roadId="pi_1o_sugar_plantation" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r4">
+                <p:mainText> [Последний пират-вор убежал слишком быстро, не заметив, что обронил странный ключ, изъеденный морской солью. Надо бы показать его стражнику Дэйву] </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" giveMarker="pi_night_watch_005" removeMarker="pi_night_watch_004" complete="true" dropPlace="true" requestSpecialPlaces="true" > 
+                    	<p:toRoad roadId="pi_1o_sugar_plantation" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    </p:root>

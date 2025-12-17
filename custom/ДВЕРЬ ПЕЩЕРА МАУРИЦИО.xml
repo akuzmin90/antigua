@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ПЕЩЕРА МАУРИЦИО -->
+
+    <p:place id="pi_1o_Antigua_lg_door_to_maurizio" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_door_to_maurizio"
+             name="Провал в пещеру" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_inquisitor_eyepiece_04"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Окуляр инквизитора"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Какой-то странный провал в земле - похоже, он ведёт в пещеру! Вы даже видите
+                            отблески света в её глубине... Там кто-то есть!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Проверим!" removeMarker="pi_1o_quest_inquisitor_eyepiece_04"
+                                      giveMarker="pi_1o_quest_inquisitor_eyepiece_05" complete="true">
+                                <p:toRoad roadId="pi_1o_lg_maurizio_place"/>
+                            </p:answer>
+                            <p:answer text="Не сейчас" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

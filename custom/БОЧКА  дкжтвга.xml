@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочка  -->
+
+    <p:place id="pi_1o_home_storeceeper_ugabuga_barrel" animType="EMPTY" imageId="57x78" name="Бочка" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Внутри бочки лежит всякая всячина, которой пользуется Мамуба. Среди прочего, вы видите странную коробочку с какой-то бежевой пылью... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Попробовать" goto="r2" ifGender="male" />
+                            <p:answer text="Попробовать" goto="r3" ifGender="female" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вы пытаетесь попробовать на вкус странный порошок... Фу, горько! Мамуба смеётся и показывает на своё лицо: "Пу-дра, пу-дра, мачомба, хи-хи!". В любом случае, это опыт. И неловкость. </p:mainText>
+                            <p:award type="EXPERIENCE" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r4" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Вы пытаетесь попробовать на вкус странный порошок... Мамуба смеётся и показывает на своё лицо: "Пу-дра, пу-дра, мачомба, хи-хи!". Вы наносите её на лицо - и магия пудры очаровывает вас. </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r4" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Внутри бочки лежит всякая всячина, которой пользуется Мамуба. И пудра. А ещё тут сложены синие кристаллы - если брать их по одному, никто и не заметит пропажи. </p:mainText>
+                            <p:award type="ELIXIR" explicitValue="1" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r4" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

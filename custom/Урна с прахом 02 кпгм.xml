@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Урна с прахом 02  -->
+
+    <p:place id="pi_1o_pg_dgr_full_urn_02" animType="EMPTY" imageId="64x82" name="Урна с прахом" minPlayerStair="40"
+             meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>По обычаям Антигуа, к праху пирата нужно положить что-то ценное. Здесь лежит 2 куска золотой руды. Возьмём? Или неловко? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Возьмём" goto="r2" />
+                            <p:answer text="Оставим" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вы забираете золотую руду. В принципе, она же уже ни к чему этому пирату. </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="2" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r3" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>По обычаям Антигуа, к праху пирата нужно положить что-то ценное. Но вы уже взяли всё, что можно. Прах оставим. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r3" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

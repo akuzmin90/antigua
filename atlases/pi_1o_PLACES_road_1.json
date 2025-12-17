@@ -1,0 +1,565 @@
+{
+  "textures": [
+    {
+      "image": "pi_1o_PLACES_road_1.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 0,
+        "h": 0
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gm_goldeater",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 127,
+            "h": 133
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 127,
+            "h": 133
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 127,
+            "h": 133
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_da_leyho_dead",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 141,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 141,
+            "h": 104
+          },
+          "frame": {
+            "x": 0,
+            "y": 133,
+            "w": 141,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gm_titan",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 105,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 105,
+            "h": 130
+          },
+          "frame": {
+            "x": 127,
+            "y": 0,
+            "w": 105,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gm_dead_miner",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 112,
+            "h": 106
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 112,
+            "h": 106
+          },
+          "frame": {
+            "x": 0,
+            "y": 237,
+            "w": 112,
+            "h": 106
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gm_main_miner",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 82,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 82,
+            "h": 130
+          },
+          "frame": {
+            "x": 0,
+            "y": 343,
+            "w": 82,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_eo_ore_python",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 106,
+            "h": 99
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 106,
+            "h": 99
+          },
+          "frame": {
+            "x": 82,
+            "y": 343,
+            "w": 106,
+            "h": 99
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_eo_ore_warlike_shrimp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 105,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 105,
+            "h": 64
+          },
+          "frame": {
+            "x": 82,
+            "y": 442,
+            "w": 105,
+            "h": 64
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_bgr_door_inside_factory",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 72,
+            "h": 65
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 72,
+            "h": 65
+          },
+          "frame": {
+            "x": 187,
+            "y": 442,
+            "w": 72,
+            "h": 65
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_eo_ore_termite",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 106,
+            "h": 72
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 106,
+            "h": 72
+          },
+          "frame": {
+            "x": 112,
+            "y": 237,
+            "w": 106,
+            "h": 72
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_hp_hermit_pirate_kp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 66,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 66,
+            "h": 104
+          },
+          "frame": {
+            "x": 141,
+            "y": 130,
+            "w": 66,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_hp_hermit_pirate",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 66,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 66,
+            "h": 104
+          },
+          "frame": {
+            "x": 207,
+            "y": 130,
+            "w": 66,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_palace_manager",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 70,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 70,
+            "h": 130
+          },
+          "frame": {
+            "x": 232,
+            "y": 0,
+            "w": 70,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_governor",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 70,
+            "h": 129
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 70,
+            "h": 129
+          },
+          "frame": {
+            "x": 188,
+            "y": 309,
+            "w": 70,
+            "h": 129
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_detective",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 69,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 69,
+            "h": 130
+          },
+          "frame": {
+            "x": 258,
+            "y": 234,
+            "w": 69,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_eo_ore_lawless_pirate",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 62,
+            "h": 104
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 62,
+            "h": 104
+          },
+          "frame": {
+            "x": 273,
+            "y": 130,
+            "w": 62,
+            "h": 104
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_governor_servant",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 69,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 69,
+            "h": 130
+          },
+          "frame": {
+            "x": 302,
+            "y": 0,
+            "w": 69,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_eo_ore_newt_with_trident",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 64,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 64,
+            "h": 105
+          },
+          "frame": {
+            "x": 259,
+            "y": 364,
+            "w": 64,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_governor_servant_kp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 57,
+            "h": 108
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 57,
+            "h": 108
+          },
+          "frame": {
+            "x": 323,
+            "y": 364,
+            "w": 57,
+            "h": 108
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_detective_kp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 57,
+            "h": 107
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 57,
+            "h": 107
+          },
+          "frame": {
+            "x": 327,
+            "y": 234,
+            "w": 57,
+            "h": 107
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_palace_manager_kp",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 54,
+            "h": 100
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 54,
+            "h": 100
+          },
+          "frame": {
+            "x": 335,
+            "y": 130,
+            "w": 54,
+            "h": 100
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_hp_missionary_man",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 57,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 57,
+            "h": 105
+          },
+          "frame": {
+            "x": 371,
+            "y": 0,
+            "w": 57,
+            "h": 105
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_gp_governor_mg",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 57,
+            "h": 105
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 57,
+            "h": 105
+          },
+          "frame": {
+            "x": 380,
+            "y": 341,
+            "w": 57,
+            "h": 105
+          }
+        }
+      ]
+    }
+  ]
+}

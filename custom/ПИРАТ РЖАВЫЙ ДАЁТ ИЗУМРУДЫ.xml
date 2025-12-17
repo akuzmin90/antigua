@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПИРАТ РЖАВЫЙ ДАЁТ ИЗУМРУДЫ -->
+
+<p:place id="pi_1o_Antigua_bgf_pirate_rusty_giver" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_bgf_pirate_rusty" name="Ржавый" closable="false" minPlayerStair="40" meetProbability="0">
+
+    <p:states>
+
+<!-- стандартный диалог respawnPolicy="EVERYDAY"  -->
+        <p:state id="default" closable="false" >        	 
+        <p:dialog closable="false">
+            <p:replica id="r1">
+                <p:mainText>А вот и мой дорогой друг! Благодарю тебя за решение - каждый день я буду давать тебе часть дохода. Как договаривались - 50 изумрудов!</p:mainText>
+                	<p:award type="MITHRIL" explicitValue="50" />
+                <p:answers>
+                    <p:answer text="Спасибо!" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2">
+                <p:mainText>А ещё за беспокойство - вот тебе 3 куска золотой руды, друг!</p:mainText>
+                	<p:award type="ORE_GOLD" explicitValue="3" />
+                <p:answers>
+                    <p:answer text="Спасибо!" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false" >
+                <p:mainText>Друже чевек хоббите Экля тожи злоте давай! Прате чевек и хоббите Экля друже?</p:mainText>
+                <p:answers>
+                    <p:answer text="Далее" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r4" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false" >
+                <p:mainText>Забавный малый, ха! Видел таких на острове Диалья. Говоришь так, словно чайку на крюк поймали и заставили джигу танцевать, ахаха! Лично тебе, на "злоте", ахаха!</p:mainText>
+                	<p:award type="GOLD" />
+                <p:answers>
+                    <p:answer text="Экля счастлив" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r5" ifMarker="pi_1o_new_recruit_01" imageId="{hero}" imageComment="{playerNick}" repeatable="false" >
+                <p:mainText>Магом-вуду не хочешь стать?</p:mainText>
+                <p:answers>
+                    <p:answer text="Далее" goto="r6" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r6" ifMarker="pi_1o_new_recruit_01" repeatable="false" >
+                <p:mainText>Пхахахахахахаха! Нет, спасибо, ахахаха! Так меня ещё никто не смешил за последние пару дней! На за это 2 золотой руды, ахаха!</p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="2" />
+                <p:answers>
+                    <p:answer text="Эм, спасибо" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+
+    	</p:state>
+
+        </p:states>
+    	</p:place>
+
+        </p:root>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС ВОПЛОЩЕНИЕ ХТОНИ  -->
+
+    <p:place id="pi_1o_hs_embodiment_of_chthon" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_hs_embodiment_of_chthon"
+             name="Воплощение Хтони" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Воплощение Хтони"  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Я есть Хтонь" delayMs="5000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Воплощение Хтони безысходно и хтонически смотрит на вас. Очевидно, что Стивену так и
+                            надо. Правда, ему не место среди людей. И Стивену, и Воплощению Хтони.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_hs_embodiment_of_chthon" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Воплощение Хтони, боевая иконка будет называться pi_1o_hs_embodiment_of_chthon_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Воплощение Хтони очень сильно... Оставить бы его... Так Стивену и надо!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_hs_embodiment_of_chthon" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Воплощение Хтони повержено! Пора вернуться к Олафу!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_embodiment_of_chthon_01"
+                                      giveMarker="pi_1o_quest_embodiment_of_chthon_02" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

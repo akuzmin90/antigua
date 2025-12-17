@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Рудокоп право низ  -->
+
+    <p:place id="pi_1o_Antigua_gm_miner_01" animType="EMPTY" imageId="63x109" name="Рудокоп" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Настоящая работа для мужчин" delayMs="6000"/>
+                    <p:talk text="Мой труд важен!" delayMs="13000"/>
+                    <p:talk text="Не стой, бери кирку и вперёд!" delayMs="20000"/>
+                    <p:talk text="Усталость - это награда!" delayMs="27000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Мы добываем золотую руду, обеспечивая ею весь остров. Вся руда на острове добыта вот этими руками и этой киркой! И моими товарищами. Вот это - настоящий труд! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не спорю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

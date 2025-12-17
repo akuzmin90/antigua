@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ РЫНОК -->
+
+    <p:place id="pi_1o_marketplace" animType="EMPTY" imageId="118x276" name="Рынок Антигуа" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Самые выгодные цены!" delayMs="11000"/>
+                    <p:talk text="Кокос за 100?! ГРАБЁЖ!!!" delayMs="31000"/>
+                    <p:talk text="Дайте скидку, вы же люди!" delayMs="51000"/>
+                    <p:talk text="Дайте жалобную книгу!" delayMs="61000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - рынок Антигуа! Хотите посмотреть товары?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" specialFrontCommand="openMarketShop"/>
+                            <p:answer text="Нет" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

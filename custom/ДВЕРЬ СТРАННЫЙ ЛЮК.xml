@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАННЫЙ ЛЮК -->
+
+
+    <p:place id="pi_1o_Antigua_bgr_door_inside_factory" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_bgr_door_inside_factory"
+             name="Странный люк" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireGenMode="PI_1O_BAD_GUYS_ROAD">
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Перед вами очень странный люк... И открывается он тем же ключом, что и проход в эту пещеру.
+                    Залезем?
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Залезем" out="true">
+                        <p:toRoad roadId="pi_1o_bad_guys_factory"/>
+                    </p:answer>
+                    <p:answer text="Уйти" goto="r1" out="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

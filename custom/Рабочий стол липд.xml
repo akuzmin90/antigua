@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Рабочий стол  -->
+
+    <p:place id="pi_1o_it_td_table_for_work" animType="EMPTY" imageId="209x138" name="Рабочий стол" minPlayerStair="40"
+             meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здесь у нас рабочие вопросы решает инквизитор Дориан. Посмотрим... Хм, по бумагам, у него должно быть официально 8 кусков золотой руды. А тут лежит 9. Излишки - нехорошо, поможем ему. </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="1" />
+                        <p:answers>
+                            <p:answer text="Забираем" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Здесь у нас рабочие вопрос решает инквизитор Дориан. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

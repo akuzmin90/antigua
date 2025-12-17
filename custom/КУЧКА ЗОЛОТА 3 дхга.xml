@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Кучка золота 3  -->
+
+    <p:place id="pi_1o_home_frail_gold_3" animType="EMPTY" imageId="71x98" name="Кучка золота" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Похоже, разбросанное золото - это норма. Попробуем обыскать эту кучку монет?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" gotoFromScript="random"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-1" probability="0.9">
+                        <p:mainText>Тут только монеты самого мелкого достоинства...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Жаль" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.9">
+                        <p:mainText>Тут только монеты самого мелкого достоинства...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Жаль" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.1">
+                        <p:mainText>О, а вот и монета крупного достоинства! Надо бы забрать её.</p:mainText>
+                            <p:award type="GOLD" />
+                        <p:answers>
+                            <p:answer text="Приятно" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Складная кровать -->
+
+    <p:place id="pi_1o_mt_hotb_folding_bed" animType="EMPTY" imageId="97x151" name="Складная кровать" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Интересный предмет мебели, эта складная кровать! Не нужна - сложил, и она меньше места занимает. Удобно... Хотя дом и так почти пустой, зачем это здесь? </p:mainText>
+                        <p:answers>
+                            <p:answer text="У меня такой нет..." goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

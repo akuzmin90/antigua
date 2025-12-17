@@ -1,0 +1,1784 @@
+{
+	"textures": [
+		{
+			"image": "pi_1o_heroes_fight_art",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1194,
+				"h": 1015
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "pi_1o_pg_cfp_1_boss_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_cfp_2_boss_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 1,
+						"y": 146,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_cfp_3_boss_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 1,
+						"y": 291,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_insatiable_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 1,
+						"y": 436,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_02_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 1,
+						"y": 581,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_03_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 1,
+						"y": 726,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_04_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 1,
+						"y": 871,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_05_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 103,
+						"y": 1,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_06_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 103,
+						"y": 146,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_07_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 103,
+						"y": 291,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_08_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 103,
+						"y": 436,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_09_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 103,
+						"y": 581,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_moss_of_the_soul_10_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 100,
+						"h": 143
+					},
+					"frame": {
+						"x": 103,
+						"y": 726,
+						"w": 100,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_berserker_pirate_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 103,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_bgf_pirate_rusty_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 202,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_eo_ore_jaguar_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 205,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_eo_ore_lawless_pirate_f1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 205,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_eo_ore_python_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 205,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_eo_ore_skeleton_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 205,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_eo_ore_termite_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 205,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_eo_ore_warlike_shrimp_f1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 205,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_eo_ore_zombie_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 301,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_gm_titan_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 304,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_lc_kasumi_obi_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 304,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_lc_night_fury_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 304,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_lj_cyclops_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 304,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_lj_giant_creep_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 304,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_lj_phoenix_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 304,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_lj_rider_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 400,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_lj_siren_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 403,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_golden_parrot_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 403,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_kindergarten_door_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 403,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_macaque_marauder_f1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 403,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_macaque_marauder_f2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 403,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_macaque_marauder_f3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 403,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_macaque_marauder_f6",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 403,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_macaque_marauder_f4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 499,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_macaque_marauder_f5",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 502,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_victim_of_experiment_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 502,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_mj_winged_monkey_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 502,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_quest_bad_chiken_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 502,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_quest_sons_of_mara_f1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 502,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_quest_sons_of_mara_f2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 502,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_quest_sons_of_mara_f3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 598,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_quest_steven_rats_01_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 601,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_quest_steven_rats_02_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 601,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_sp_wh_pirate_thief_1_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 601,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_sp_wh_pirate_thief_2_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 601,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_sp_wh_pirate_thief_3_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 601,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_wtda_boss_monday_1_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 601,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_wtda_boss_tuesday_2_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 697,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_wtda_boss_wednesday_1_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 700,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_wtda_boss_wednesday_2_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 700,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_frail_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 700,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_hp_man_eating_shark_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 700,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_hp_shadow_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 700,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_hs_warlock_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 700,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_lg_basilisk_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 796,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_lg_drowned_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 799,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_lg_grey_alligator_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 799,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_lg_steel_crab_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 799,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_mj_aggressive_mole_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 799,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_mj_ki_faience_golem_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 799,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_mj_ki_witch_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 799,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_mj_tsetse_fly_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 895,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_blood_moth_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 898,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_hellhound_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 898,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_magog_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 898,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_01_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 898,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_02_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 898,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_03_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 898,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_04_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 994,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_05_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 997,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_06_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 997,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_07_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 997,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_08_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 997,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_09_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 997,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_pg_pirat_ghost_10_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 997,
+						"y": 726,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_sp_big_rat_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 1093,
+						"y": 871,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_sp_seraphim_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 1096,
+						"y": 1,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_sp_sugar_goblins_1_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 1096,
+						"y": 146,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_sp_sugar_goblins_2_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 1096,
+						"y": 291,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_sp_sugar_goblins_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 1096,
+						"y": 436,
+						"w": 97,
+						"h": 143
+					}
+				},
+				{
+					"filename": "pi_1o_sp_weevill_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 149
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 97,
+						"h": 143
+					},
+					"frame": {
+						"x": 1096,
+						"y": 581,
+						"w": 97,
+						"h": 143
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:11e64ebc90eabcbbc580cb6eeed7a1d7:2558bbe5c227ffb9b20e16dbdd479a88:6a0c82f7b8db4b0c9f6f5cf62fd2b6ec$"
+	}
+}

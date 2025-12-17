@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТРЁХПАЛЫЙ БИЛЛИ -->
+
+    <p:place id="pi_1o_sp_threefingered_billy" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_threefingered_billy" name="Трёхпалый Билли"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Говорила матушка, иди в школу, не будешь спину горбатить, как проклятый... Ахаха, да
+                            многое она понимает!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Больше тебя" complete="true"
+                                      giveMarker="threefingered_billy_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02 or pi_big_rat_voodoo_done_threefingered_billy or pi_1o_new_recruit_01 or pi_1o_quest_seraphim_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer markerCondition="pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02"
+                                      text="Огромная крыса" goto="r_threefingered_billy_react1"/>
+                            <p:answer ifMarker="pi_big_rat_voodoo_done_threefingered_billy" text="Крыса убита"
+                                      goto="r_threefingered_billy_react2"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_threefingered_billy_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_seraphim_01" text="Серафим"
+                                      goto="r_threefingered_billy_react4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_threefingered_billy_react1">
+                        <p:mainText>Так, спасибо за предупреждение. Пока эта тварь там - меня внутрь не затащишь даже
+                            под мушкетом инквизиции!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_threefingered_billy_react2">
+                        <p:mainText>С крысой покончено? Поделом ей, сухопутному отродью, йаааааррррр! Надеюсь, Бонес
+                            сделает своё фирменное рагу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Бррррр" removeMarker="pi_big_rat_voodoo_done_threefingered_billy" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_threefingered_billy_react3">
+                        <p:mainText>Не хочу, честно. Магия у них интересная, но они всё время медитируют, колдуют... И
+                            ром можно пить лишь по четвергам! Хотя все знают, что логичнее пить ром в пятницу.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Логичный какой" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_threefingered_billy_react4">
+                        <p:mainText>Ну ты виде[а|ла], виде[а|ла]?! Это появилось здесь буквально пару часов назад и
+                            пугает своим видом! Один плюс - я как раз в той части работать должен был. Так что пока
+                            отдыхаю, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Лучший работник" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Клад Хилого" первый диалог  -->
+            <p:state ifMarker="pi_1o_frail_treasure_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Так-так-так, ищешь нычку Хилого? А что, если я скажу, где она? Я видел его здесь
+                            ночами, всё время ходит к одному и тому же месту.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сам чего не взял?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>А всё просто - ночью нам запрещено ходить по плантации. А днём... Около этого места
+                            вечно стоит Дейв! Если я выкопаю то, что прячет Хилый, при нём - всё отберут, ещё и скажут,
+                            что я вор.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Где именно зарыто?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Хы-хы-хы, я ж говорю, рядом с Дейвом. Аккуратно там пошарься, где-то точно найдёшь. И
+                            сразу - половина моя! Это условие сделки.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Без проблем" removeMarker="pi_1o_frail_treasure_01"
+                                      giveMarker="pi_1o_frail_treasure_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Клад Хилого" выкопали клад  -->
+            <p:state ifMarker="pi_1o_frail_treasure_03" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Постой, куда спешишь? Мы заключили сделку - половина моя! Итак?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот половина" goto="r2_d_2"/>
+                            <p:answer text="Сделка отменяется!" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Так, что тут у нас... Изумруды? Здесь они не в ходу, но всегда пригодятся! Половина от 400 - 200 мне! [Вы отдаёте 200 изумрудов]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r3_d">
+                                <p:pay mithril="200"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Оооооо, золотая руда! И чего, всего 22 куска?! Хилый такой жадина, ахаха! Итак, 11 мне! [Вы отдаёте 11 кусков золотйо руды]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r4">
+                                <p:pay ore_gold="11"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>С тобой приятно иметь дело, искатель приключений! [Вам удалось найти нычку Хилого -
+                            многие на острове будут злорадствовать этому поводу! +1 репутации пиратов!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Взаимно" removeMarker="pi_1o_frail_treasure_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_frail_treasure"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Чего? Какой-такой сделка отменяется?! СДЕЛКА ЕСТЬ СДЕЛКА!!! Ну ладно, искатель
+                            приключений... Эй, Дейв, иди-ка сюда! Тут правонарушение!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_guarddave" imageComment="Стражник Дэйв">
+                        <p:mainText>Правонарушение? О, это мы мигом. За каждое найденное правонарушение мне дают премию!
+                            Что случилось?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>{playerNick} клад наш[ёл|ла]! И хоте[л|ла] скрытно с ним уйти. А по закону, половина
+                            клада должна идти в казну!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_guarddave" imageComment="Стражник Дэйв">
+                        <p:mainText>Верно! Однако, это при условии, что человек сам пришёл к Губернатору. А не крадёт
+                            клад, как сейчас! Я забираю всё. По закону острова! Итак, золотая руда, 22 куска.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r9">
+                                <p:pay ore_gold="22"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_guarddave" imageComment="Стражник Дэйв">
+                        <p:mainText>Изумруды, 400 штук. Так, записал, забрал, упаковал, осталось передать Губернатору. А
+                            ты... Эх ты. Либо, в будущем, неси половину клада Губернатору - либо никому не говори,
+                            ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жадность сгубила..." goto="r10">
+                                <p:pay mithril="400"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10">
+                        <p:mainText>[Квест "Клад Хилого" провален. Но не отчаивайтесь, приключений на Антигуа полно!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_frail_treasure_03" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_1o_frail_treasure"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Чай" начало  -->
+            <p:state markerCondition="threefingered_billy_for_quests and arno_for_quests and frail_for_quests"
+                     repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Эй, эй! Слушай, у меня к тебе есть дело первостепенной важности! Хочешь простую
+                            работу, плачу 5 кусков золотой руды!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>По мне не скажешь, но я эстет! Такое ведь слово, да? В общем, в таверне новое пойло
+                            появилось - какой-то там "чай". Дорогой, морской дьявол!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Принести тебе?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>А ты понимаешь, к чему я клоню, ахаха! Да, принеси одну порцию - я хоть узнаю, что
+                            за напиток такой у богачей! Прям в таверне продают, спроси Трактирщика.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Без проблем" giveMarker="pi_1o_quest_tea_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_tea" name="Чай" count="1" mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Чай" конец  -->
+            <p:state ifMarker="pi_1o_quest_tea_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Чай, он у тебя, да? Чайчайчайчайчай, йаааааарррррр, напиток для элиты, прямо сейчас
+                            в руках у Билли, ахаха! Итак, я же благородный. Момент дегустации... [Трёхпалый Билли делает
+                            пару глотков]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="И как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>[Сделав пару глотков, Трёхпалый Билли начинает плеваться и морщиться] Фууууу, тьфу,
+                            тьфу, уф! ЭТО ЧТО? Я думал, будет как ром, глотку драть... Фффффууууу! Будешь допивать?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="После тебя нет"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Тогда вылью. Мерзость, вообще вода горькая и всё! Зажралась элита Антигуа, скажу
+                            тебе... Чай - ужасный напиток! Аааааай, держи 5 кусков золотой руды, я слово держу, сделка
+                            есть сделка!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="5"/>
+                        <p:answers> 
+                            <p:answer text="Чай - вкусно!" removeMarker="pi_1o_quest_tea_04" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_tea"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пророк   -->
+            <p:state ifMarker="pi_1o_quest_prophet_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Билли, послушай, у меня мало времени - и много проблем. Вот тебе цветы - сплети мне
+                            венок. А чтобы помочь тебе и простимулировать - Нестор, помнишь его, наверное, при отказе в
+                            попугая превратит тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>ЭЭЭЭэээээ! Остановись, эй! ЭЙ!!!!! Деловой подход, блин... НЕ НАДО в попугая. Давай
+                            свои цветы. Возвращайся через пару минут.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" requestSpecialPlaces="true" removeMarker="pi_1o_quest_prophet_04"
+                                      giveMarker="pi_1o_quest_prophet_05" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пророк, венок сделан   -->
+            <p:state ifMarker="pi_1o_quest_prophet_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Вот твой венок. Радости полное седло? Послушай меня... Эти маги-вуду... Не водись с
+                            ними! Никто из наших их не любит.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Наших?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Ага. Наших жителей острова. Тебе доводилось быть попугаем? А мне да. За что? Я
+                            помочился на "магию", она же везде. Даже у меня в гальюне!!! Но я им отомстил - ихнему
+                            шаману прямо в темечко прямой наводкой, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ухожу. Сейчас." requestSpecialPlaces="true" 
+                                      removeMarker="pi_1o_quest_prophet_05" giveMarker="pi_1o_quest_prophet_06"
+                                      complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОЧКА С ПРИПАСАМИ  -->
+
+    <p:place id="pi_1o_Antigua_barrel_of_supplies" animType="EMPTY" imageId="19x25" name="Бочка с припасами"
+             minPlayerStair="40" meetProbability="0">  <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В этой бочке лежат разные припасы. И рыба, и одежда, и чернила, и книги... Но по
+                            аромату, здесь будто одна рыба! Среди припасов вы замечаете 1 кусок золотой руды!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Он пахнет рыбой..." goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В этой бочке лежат разные припасы. И рыба, и одежда, и чернила, и книги... Но по
+                            аромату, здесь будто одна рыба!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ужас какой" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

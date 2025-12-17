@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Любимый стол Виктора -->
+
+    <p:place id="pi_1o_Antigua_lc_kh_favorite_table_victor" animType="EMPTY" imageId="43x105" name="Любимый стол Виктора" minPlayerStair="40"  meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Стол, заставленный ромом. И, внезапно, чаем - заморским дорогим напитком. Записка на столе гласит: "2 порции рома, 1 порция чая, бадьян, тмин, лайм - такая чушь получается!" </p:mainText>
+                            <p:award type="EXPERIENCE" />
+                        <p:answers>
+                            <p:answer text="Дилетант" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Стол, заставленный ромом. И, внезапно, чаем - заморским дорогим напитком. Записка на столе гласит: "2 порции рома, 1 порция чая, бадьян, тмин, лайм - такая чушь получается!" </p:mainText>
+                        <p:answers>
+                            <p:answer text="Дилетант" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Любимый стол Виктора если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_kh_favorite_table_victor_1" animType="EMPTY" imageId="43x105" name="Любимый стол Виктора" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1"> 
+                        <p:mainText>Вы постепенно приближаетесь к этому столу. Хозяева начинают напрягаться. С каждым вашим шагом к столу вы ощущаете, что лучше уже не будет - а если выйти и зайти, перестанут сердиться? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

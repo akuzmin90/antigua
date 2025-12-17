@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕНА КЛАДОВЩИКА ПРИЗРАК НА КЛАДБИЩЕ -->
+
+    <p:place id="pi_1o_wifeghost" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_wifeghost" name="Моргана" minPlayerStair="40"
+             meetProbability="20" minDistanceBetweenSame="4000" respawnPolicy="EVERYTIME" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+             <p:markerCondition condition="storeceeper_quest_wife_searching"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Ты не представляешь, что значит быть призраком... Уже 200 лет, между мирами...
+                            Загубила себя, теперь страдаю здесь, одна, никому не нужная...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказывай" giveMarker="wife_searching_hint_04"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>200 лет назад... Все говорили, что я была самой красивой девушкой на весь Архипелаг
+                            Песка... За мной бегали толпы пиратов, а я... Любила лишь его... Сделала первый шаг...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А потом?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" repeatable="false">
+                        <p:mainText>Он мне отказал, сказал, что такая красота - это дар морского дьявола... И я не
+                            выдержала... Ушла в царство того самого морского дьявола...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ох..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля" repeatable="false">
+                        <p:mainText>Эта странне чевек баба, хоббите виде чрез чевек баба что за чевек баба хоже. Вы таке
+                            странны, чевеки... Пачму чевек баба воздух ходи? Пачму виде плоха она плоть? Хоббите устать
+                            голова...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Такой милашка"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" repeatable="false">
+                        <p:mainText>Меня не принимает ни один из миров - мне вечно быть призраком в своём обличии...
+                            Красота, которая напугает в таком виде... Мне одиноко, до тебя никто даже не говорил со
+                            мной...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А если... Хм."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Что ты предлагаешь? Выйти... Замуж?! Да, да, ДА! Я согласна! Быть рядом с тем, кто
+                            тебя будет любить, дарить свои любовь и тепло... Хотя тепла я не подарю, я холодна, как
+                            Океан Льда...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Принято!"
+                                      removeMarker="storeceeper_quest_wife_searching,storeceeper_quest_wife_800,wife_searching_hint_01,wife_searching_hint_02,wife_searching_hint_03,wife_searching_hint_04"
+                                      giveMarker="storeceeper_quest_wife_ghost" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                            <p:answer text="Пока жди" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

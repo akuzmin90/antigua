@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАЛЫШ -->
+
+    <p:place id="pi_1o_Antigua_tot" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_tot" name="Малыш" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Опасная дорога"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Это МАЛЫШ?! Ничего себе... Кажется, инквизиция имеет проблемы с метрическими
+                            системами... И как ЭТО пролезло сюда?! Впрочем, нужно прогнать чудище!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_tot" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Малышом, боевая иконка будет называться pi_1o_Antigua_tot_f, это босс -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Малыш неиситов в бою...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_tot" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_leviathan_grotto"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Малыш повержен - пора вернуться к Дориану за наградой. И уточнить, а почему чудище
+                            так прозвали? [Ваши действия не остались незамеченными! +1 к репутации инквизиции за
+                            убийство монстра Малыша!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_INQUISITION" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="В путь!" removeMarker="pi_1o_quest_danger_road_02"
+                                      giveMarker="pi_1o_quest_danger_road_03" complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_leviathan_grotto"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

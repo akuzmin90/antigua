@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочка 04 -->
+
+    <p:place id="pi_1o_ht_barrel_04" animType="EMPTY" imageId="43x56" name="Бочка" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Бочка так и ждёт, чтобы вы в неё заглянули! А тут сюрприз! </p:mainText>
+                            <p:award type="CUSTOM" customAtlas="atlas_boost" customImage="complex_big" customComment="Бустер" customScript="giveComplexSmall" />
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Бочка пуста, но тут ещё всякого полно ;) </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

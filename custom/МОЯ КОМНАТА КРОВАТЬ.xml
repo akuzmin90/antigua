@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МОЯ КОМНАТА КРОВАТЬ -->
+
+    <p:place id="pi_1o_my_room_interior_bed" atlasId="pi_1o_PLACES_pi_1o_townAntigua_my_room" imageId="pi_1o_my_room_interior_bed" name="Кровать"
+             minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ваша личная кровать, такой кровати позавидует сам Губернатор! Как приятно полежать
+                            на мягкой перине, не думать ни о чём... Время летит незаметно.
+                        </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="1" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Ваша личная кровать, такой кровати позавидует сам Губернатор! Как приятно полежать
+                            на мягкой перине, не думать ни о чём... Время летит незаметно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

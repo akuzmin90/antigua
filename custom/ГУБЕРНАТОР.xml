@@ -1,0 +1,841 @@
+<?xml version='1.0' encoding='utf-8'?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ГУБЕРНАТОР -->
+
+    <p:place id="pi_1o_Antigua_gp_governor" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor" name="Губернатор"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Добро пожаловать на Антигуа. Законы простые - веди себя прилично. Если совершишь
+                            проступок - приходи ко мне, заплатишь штраф и твоя совесть будет чиста.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="governor_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_new_guards_governor_002 or pi_new_guards_governor_003 or (pi_new_guards_go_buy_pickaxe and pi_new_guards_governor_002) or pi_new_guards_governor_005 or pi_rum_smuggling_tell_governor or pi_1o_governor_present_bad or pi_1o_ruined_grave_01 or pi_1o_ruined_grave_02 or pi_1o_ruined_grave_03 or pi_1o_ruined_grave_04 or pi_1o_new_recruit_01 or pi_gold_compass_03"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer markerCondition="pi_new_guards_go_buy_pickaxe and pi_new_guards_governor_002"
+                                      text="Надо кирку" goto="r_governor_react1"/>
+                            <p:answer markerCondition="pi_new_guards_governor_002 or pi_new_guards_governor_003"
+                                      text="Ночные стражники" goto="r_governor_react2"/>
+                            <p:answer ifMarker="pi_new_guards_governor_005" text="Золотой руды хватит?"
+                                      goto="r_governor_react3"/>
+                            <p:answer ifMarker="pi_rum_smuggling_tell_governor" text="Пират Ржавый силён..."
+                                      goto="r_governor_react4"/>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_governor_react5"/>
+                            <p:answer ifMarker="pi_1o_governor_present_bad" text="Что такое?" goto="r_governor_react6"/>
+                            <p:answer
+                                    markerCondition="pi_1o_ruined_grave_01 or pi_1o_ruined_grave_02 or pi_1o_ruined_grave_03 or pi_1o_ruined_grave_04"
+                                    text="Разорённая могила" goto="r_governor_react7"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_governor_react8" repeatable="false"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react1" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Мне нужна кирка, вы можете мне помочь? Например, выдать?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r_governor_react1_1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react1_1">
+                        <p:mainText>Кирка? Ну так пойди и купи, её на рынке продают. У меня нет кирки. Я ей и
+                            пользоваться-то не умею.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react2">
+                        <p:mainText>Напоминаю - мне нужно ровно 10 кусков золотой руды. Я жду их. Добудь их в золотой
+                            шахте - чем свежее руда, тем она ценнее для стражников.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react3">
+                        <p:mainText>Ты всё ещё здесь? Да, золотой руды хватит - иди проверь, как там дела на сахарной
+                            плантации, поймали ли воров? Каждая мнута на счету!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react4">
+                        <p:mainText>Тебе удалось найти их логово? Пират Ржавый - главный, и он сильный? Я не могу
+                            отправить туда стражу - они не пролезут в этот люк. Слишком жирные у них пайки и жесткие
+                            доспехи. Разобраться с контрабандистами - твоя задача!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react5">
+                        <p:mainText>А ну, [пшёл|пшла] вон!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_gold_compass_hint3" requestSpecialPlaces="true" complete="true">
+                                <p:toRoad roadId="pi_1o_townAntigua"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react6">
+                        <p:mainText>Каждый день Трактирщик посылает мне блюда из каждого вида ореха... Я не могу
+                            отказать, но это же ужас! Хоть слуга объедается, доволен [Слуга скромно орёт от счастья:
+                            "ДАААА! ДЕЛИКАТЕСЫ!!!"]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Гы-гы-гы" removeMarker="pi_1o_governor_present_bad" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react7">
+                        <p:mainText>Да, кто-то разорил могилу моего брата! Это непостижимо! Мародёрство - жесткое
+                            нарушение закона, а тут ещё и в сторону уважаемого человека! Найдёшь мародёра - сообщи мне,
+                            без промедления!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_react8">
+                        <p:mainText>Хм. Ты в курсе, кто я? И кому ты это предлагаешь? Не будь я голосом закона, приказал
+                            бы высечь за такие речи! Не смей мне предлагать такое, никогда!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну почему..." complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- если у нас есть хоббит в команде   -->
+            <p:state ifMarker="hobbit_talk_fun" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>ХОББИТ?! Ты приве[л|ла] хоббита на Антигуа?! Ему здесь не место!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Он свой"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Это чевек важны болване, хош?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да, очень"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Хоббит, следи за языком! И тебе здесь не рады. Очень надеюсь, что у меня не пропадут
+                            вещи после вашего визита.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да нееее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Чевек знатне болване бяка не гвори! Хоббите не воры! Хоббиты хроши. Хош, хош!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Да конечно, не воры. Все знают, что вы тащите всё, что не прибито гвоздями. А если
+                            прибито - стащите вначале гвоздь, а потом то, что им было прибито.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Старательные" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Новые стражники  -->
+            <p:state ifMarker="pi_new_guards_governor_001" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Тебя прислал Дейв? Что случилось? Почему он не явился сам?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Объяснить"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Вот как. Особый сахар - гордость Антигуа, и я не позволю никому красть его и
+                            нарушать закон! Весь особый сахар - собственность Антигуа!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Надо стражу"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Послушай, я не могу выделить даже двух дополнительных стражей - бюджет города
+                            рассчитан на год вперёд, я не могу нанять новых рекрутов. Впрочем... Ты можешь помочь. Нужно
+                            золото. Без награды не останешься.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я помогу" goto="r4_d"/>
+                            <p:answer text="Ну уж нет" goto="r5_d"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Великолепно. Мне не нужно твоё золото, скажу сразу. На Антигуа больше ценятся
+                            золотая руда - иди в Золотую шахту, я дам письмо, тебя пропустят. Принеси 10 кусочков
+                            золотой руды.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_new_guards_governor_001"
+                                      giveMarker="pi_new_guards_governor_002" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d">
+                        <p:mainText>Хм. Твой выбор, я не могу тебя заставить, ведь ты даже НЕ ГРАЖДАНИН на Антигуа.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>[Вы отказались от выполнения квеста "Новые стражники" - не переживайте, впереди ещё
+                            много заданий! Кстати, хорошо бы сообщить стражнику Дейву о произошедшем]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_new_guards_governor_001"
+                                      giveMarker="pi_new_guards_governor_fail" requestSpecialPlaces="true" complete="true">
+                                <p:failTask id="pi_new_guards_governor"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест НОЧНЫЕ СТРАЖНИКИ принесли 10 кусков золотой руды   -->
+            <p:state ifMarker="pi_new_guards_governor_004" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Итак, у тебя есть 10 кусков золотой руды. Отлично. Новые стражники скоро отправятся
+                            на сахарную плантацию. А вот и твоя награда.
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="35"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Это, кстати, не всё, вот ещё золото.</p:mainText>
+                        <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Отлично!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>А теперь возвращайся к Дейву, проверь, что там и как.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true" requestSpecialPlaces="true" giveMarker="pi_new_guards_governor_005"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Странный ключ начало   -->
+            <p:state ifMarker="pi_strange_key_001" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Тебя направил ко мне Дейв? Зачем?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Показать ключ"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Говоришь, его обронил один из воров сахара? Странно... По моему закону, уже как 20
+                            лет все ключи делают из серебра. А этот - видно, что сделан не так давно, причём из железа.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Единственный, кто до сих пор использует железные ключи на Антигуа - старина Джек,
+                            смотритель маяка. Видимо, он единственный, кто сможет что-то подсказать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="К Джеку!" complete="true" requestSpecialPlaces="true" removeMarker="pi_strange_key_001"
+                                      giveMarker="pi_strange_key_002"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Странный ключ сообщаем про тайную дверь, если не нашли заранее   -->
+            <p:state markerCondition="pi_strange_key_006 and not pi_1o_Antigua_hp_secret_door_closed_tell_governor"
+                     repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Ну, как успехи с поиском хозяина странного ключа?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Что ты говоришь? Это очень похоже на то, что они занимаются контрабандой! Ох, какой
+                            удар по бюджету острова! Учитывая твои слова и то, что тобой повержен сам пират-берсеркер...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Я даю тебе полную свободу действий. Вряд ли там будет кто сильнее этого морского
+                            дьявола, что был унижен твоим клинком! Найди тайный проход - и неси слово закона!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично!" complete="true" requestSpecialPlaces="true" removeMarker="pi_strange_key_006,pi_1o_Antigua_hp_secret_door_closed"
+                                      giveMarker="pi_rum_smuggling_01,pi_1o_Antigua_hp_secret_door_open_forever">
+                                <p:addTaskProgress id="pi_strange_key"/>
+                                <p:createTask id="pi_rum_smuggling" name="Контрабанда рома" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Странный ключ сообщаем про тайную дверь, если нашли заранее   -->
+            <p:state markerCondition="pi_strange_key_006 and pi_1o_Antigua_hp_secret_door_closed_tell_governor"
+                     repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Ну, как успехи с поиском хозяина странного ключа?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Что ты говоришь? Это очень похоже на то, что они занимаются контрабандой! И тебе уже
+                            удалось найти, где эта дверь? Учитывая твои слова...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>...И то, что тобой повержен сам пират-берсеркер... Я даю тебе полную свободу
+                            действий. Вряд ли там будет кто сильнее этого морского дьявола, что был унижен твоим
+                            клинком!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично!" complete="true" requestSpecialPlaces="true"
+                                      removeMarker="pi_strange_key_006,pi_1o_Antigua_hp_secret_door_closed_tell_governor,pi_1o_Antigua_hp_secret_door_closed"
+                                      giveMarker="pi_rum_smuggling_01,pi_1o_Antigua_hp_secret_door_open_forever">
+                                <p:addTaskProgress id="pi_strange_key"/>
+                                <p:createTask id="pi_rum_smuggling" name="Контрабанда рома" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Контрабанда рома, концовка   -->
+            <p:state ifMarker="pi_rum_smuggling_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>С контрабандистами покончено? Отлично! Лишь наш трактир имеет монополию на сей
+                            божественный нектар. Всё прошло хорошо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Конечно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>Рад слышать. Вот награда за твою работу - всё на благо Антигуа! Благодарю тебя за
+                            помощь, всегда рад сотрудничать с хорошим человеком.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="14"/>
+                        <p:answers>
+                            <p:answer text="Понимаю">
+                                <p:addTaskProgress id="pi_rum_smuggling"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_6">
+                        <p:mainText>Ваши действия не остались незамеченными. Вы получаете +1 к репутации пиратов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции   -->
+            <p:state ifMarker="pi_gold_compass_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Губернатор, я хочу выкупить у вас золотой компас! Он бы мне очень пригодился - на
+                            моём фрегате, конечно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>Вот как, сразу к делу? Есть у меня такой компас. Но! Откуда тебе о нём известно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Инквизиция сказала" goto="r3_d_7"/>
+                            <p:answer text="Слухи в таверне" goto="r4_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_7">
+                        <p:mainText>Чего? Это они теперь тебя послали?! Я уже сказал - золотой компас мой! Они получили
+                            землю, всё по закону! Сделка есть сделка. Иди прочь отсюда!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кракен тебя задери..." removeMarker="pi_gold_compass_01"
+                                      giveMarker="pi_gold_compass_fail" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>Хм... В этом городе как-будто все всё знают... Хорошо, я продам его. 100 кусков
+                            золотой руды! Дешевле он не стоит.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но Селезар сказал 10!" goto="r3_d_7"/>
+                            <p:answer text="Я подумаю" goto="r5_d_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_2">
+                        <p:mainText>[Губернатор просит слишком много за этот компас... Хм. Что же делать? Надо вернуться
+                            к Селезару и сообщить об этом!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кракен тебя задери..." removeMarker="pi_gold_compass_01"
+                                      giveMarker="pi_gold_compass_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции, если провалили через битьё слуги губернатора   -->
+            <p:state ifMarker="pi_gold_compass_fail_governor" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>ТЫ! ТЫЫЫЫЫЫ! Ты смеешь нападать на моего верного слугу, на ГРАЖДАНИНА Антигуа, да
+                            ещё и в моём дворце?! Ах ты... ТЫ...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не со зла же"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_9">
+                        <p:mainText>Знаешь, мы - остров закона. И понимания. Ты не отсюда, и мы тебя простим. Плати
+                            штраф, 1000 золота, и больше так не делай.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уговорили" removeMarker="pi_gold_compass_fail_governor" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="1000"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции, если украли, но не сдали его Селезару, а заговорили до этого с губернатором   -->
+            <p:state markerCondition="pi_gold_compass_05 and pi_gold_compass_inside_you" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10">
+                        <p:mainText>Так, стой. У меня пропал золотой компас. Боюсь, что я мог его положить куда-то и
+                            забыть... Но ты недавно спрашива[л|ла] за него... Так, стража, обыскать авантюриста!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ох ё-моё..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_10">
+                        <p:mainText>Золотой компас!!! Вот кто его стащил! Отдавай. Знаешь, мы - остров закона. И
+                            понимания. Ты не отсюда, и мы тебя простим. Плати штраф, 1000 золота, и больше так не делай.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уговорили" removeMarker="pi_gold_compass_05,pi_gold_compass_inside_you"
+                                      giveMarker="pi_gold_compass_fail_3,pi_gold_compass_fail_arno_1" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="1000"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Компас инквизиции, если украли, уже сдали его Селезару, и заговорили с губернатором   -->
+            <p:state markerCondition="pi_gold_compass_05 and not pi_gold_compass_inside_you" repeatable="false"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_11">
+                        <p:mainText>Так, стой. У меня пропал золотой компас. Боюсь, что я мог его положить куда-то и
+                            забыть... Но ты недавно спрашива[л|ла] за него... Так, стража, обыскать авантюриста!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_11">
+                        <p:mainText>Так, у тебя его нет... Извини, я слишком подозрителен. Видимо, положил в другое
+                            место... Пожалуй, я компенсирую твоё неудобство.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="2"/>
+                        <p:answers>
+                            <p:answer text="Приятно" removeMarker="pi_gold_compass_05" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_12">
+                        <p:mainText>Я слышал о Лейхо - мне рассказывал мой племянник, Хилый. Ты говоришь, это было
+                            убийство? Есть доказательства твоих слов, здесь и сейчас?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отдать все записи"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_12">
+                        <p:mainText>Вот как. Закон острова Антигуа гласит - убийство должо быть наказано должным
+                            образом! Нужно найти тех, кто это сделал, и придать честному суду.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как найти?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_8">
+                        <p:mainText>Зацепок слишком мало, я понимаю. Я выделю тебе помощь. Мой человек только вернулся с
+                            острова Диальи, ему нужен отдых - но он поможет советами. Кстати, вот и он.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сыщик?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_3">
+                        <p:mainText>Да, сыщик. И слушай, авантюрист... Если ты поможешь с раскрытием убийства Лейхо, я
+                            достойно награжу тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_leyho_killers_01"
+                                      giveMarker="pi_1o_quest_leyho_killers_02" requestSpecialPlaces="true" postLaunchScriptId="triggerRespawn" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+            <p:state ifMarker="pi_1o_quest_leyho_killers_done_good" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_13">
+                        <p:mainText>Итак, всё встало на свои места. Убийцы найдены - кроме одного, но это вопрос
+                            времени. Я благодарен тебе за то, что справедливость на Антигуа торжествует.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_13">
+                        <p:mainText>Пожалуй, я подумаю над изменением закона о свадьбах - вот к чему это привело,
+                            убийство и... И то, что Эльза сделала. Я сожалею об её поступке.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А убийцы?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_9">
+                        <p:mainText>Будет суд. Сейчас Стивен не имеет права покидать дом. Хилый же... Я с ним сам
+                            разберусь. Пойми, он мой племянник, и у него есть привилегии. В любом случае, вот часть
+                            награды.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="27"/>
+                        <p:answers>
+                            <p:answer text="Ну да, ну да..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_4">
+                        <p:mainText>Я накажу его по всей строгости закона! И... Особая награда. Видишь тот коридор, справа от входа? Там находится большая комната, она пустовала, до сего времени. Теперь она твоя!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_3">
+                        <p:mainText>Там почти нет мебели, увы. Но я позову управляющего дворцом - ты сможешь обставить
+                            комнату так, как захочешь. Не бесплатно, конечно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_leyho_killers_done_good"
+                                      giveMarker="pi_1o_my_room_my_home_door,pi_1o_my_room_my_home_palace_manager,pi_1o_s_looser,pi_1o_f_looser" requestSpecialPlaces="true" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_leyho_killers"/>
+                                <p:addTaskProgress id="pi_1o_quest_amazon_cursed"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо если НЕ сдали убийц -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_done_bad" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_14">
+                        <p:mainText>Итак, всё встало на свои места. Лейхо обманом получил клад, не отдав часть в казну,
+                            и сбежал. Я благодарен тебе за то, что справедливость на Антигуа торжествует.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_14">
+                        <p:mainText>Жаль девушку - Эльза сделала это в порыве эмоций, не зная, что всё - неправда. Я
+                            сожалею об её поступке.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_10">
+                        <p:mainText>Лейхо будет объявлен в розыск. Его поступок - нарушение закона и кодекса. И он
+                            признаётся виновным в смерти Эльзы! Что до тебя... Вот часть награды.
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_5">
+                        <p:mainText>И... Особая награда. Видишь тот коридор, справа от входа? Там находится большая комната, она пустовала, до сего времени. Теперь она твоя!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_4">
+                        <p:mainText>Там почти нет мебели, увы. Но я позову управляющего дворцом - ты сможешь обставить
+                            комнату так, как захочешь. Не бесплатно, конечно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_leyho_killers_done_bad"
+                                      giveMarker="pi_1o_my_room_my_home" requestSpecialPlaces="true" postLaunchScriptId="triggerRespawn" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_leyho_killers"/>
+                                <p:addTaskProgress id="pi_1o_quest_amazon_cursed"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Подарок Губернатору   -->
+            <p:state ifMarker="pi_1o_governor_present_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_15" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Губернатор, с днём рождения вас! Трактирщик просил передать вам вкусный подарок!
+                            Эм... Это от нас обоих!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_15" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Важне чевек! Важне дни! Штука эти трое приноси тьбе, чевек вода огнена, чевек мастер
+                            моя и хоббите Экля! Хош-хош!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Именно так!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_11">
+                        <p:mainText>От имени своего и Антигуа благодарю за подарок! Так, стоп, там орехи? Я же вижу
+                            орехи! Я их по запаху учую! Морской орех отдаёт тиной за милю!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Орехи плохо?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_6">
+                        <p:mainText>Да! У меня аллергия. Но не принять подарок, тем более от Трактирщика, не могу...
+                            Скажи ему, что моё сиятельство подарок приняло и выражает благодарность.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Куда еду девать?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_5">
+                        <p:mainText>Точно... Тебе не по статусу такое блюдо. А вот мой слуга... Эй, хочешь морской орех?
+                            [Слуга счастлив и скромно орёт во всё горло: "ДАААААА!!!"] Вот и хорошо. Все довольны.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Такие нравы, да" removeMarker="pi_1o_governor_present_02"
+                                      giveMarker="pi_1o_governor_present_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Разорённая могила   -->
+            <p:state ifMarker="pi_1o_ruined_grave_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_16" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Губернатор, у меня для вас важная информация! Я наш[ёл|ла] мародёра, который ограбил
+                            могилу вашего брата!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_16">
+                        <p:mainText>Это великолепные новости! Наконец-то пойман хоть один мародёр за все эти годы! Кто
+                            он, ГДЕ ОН?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хватала, в таверне"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_12">
+                        <p:mainText>Я сейчас же пошлю за ним! Искатель приключений, я благодарю тебя от имени всего
+                            острова Антигуа! И от себя лично, всё-таки могила моего брата... Вот твоя награда. Хваталу
+                            ждёт тюрьма!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="50"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_7">
+                        <p:mainText>[Ваши действия не остались незамеченными. Вы нашли мародёра, который ограбил могилу
+                            брата Губернатора! +1 к репутации пиратов!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_ruined_grave_05"
+                                      giveMarker="pi_1o_ruined_grave_05_final" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_ruined_grave"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Призраки пиратов, если решили сдать магов-вуду   -->
+            <p:state
+                    markerCondition="pi_1o_quest_pirates_ghosts_02 or pi_1o_quest_pirates_ghosts_03 or pi_1o_quest_pirates_ghosts_04 or pi_1o_quest_pirates_ghosts_05 or pi_1o_quest_pirates_ghosts_06 or pi_1o_quest_pirates_ghosts_07 or pi_1o_quest_pirates_ghosts_08 or pi_1o_quest_pirates_ghosts_09 or pi_1o_quest_pirates_ghosts_10 or pi_1o_quest_pirates_ghosts_11 or pi_1o_quest_pirates_ghosts_12"
+                    repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_17" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Я хочу кое-что рассказать, Губернатор.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Маги-вуду, призраки..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_17">
+                        <p:mainText>Маги-вуду призвали 10 призраков-пиратов? Они же знают, что я запретил трогать наше
+                            кладбище! Пожалуй, я вскоре нанесу визит магам-вуду, это нельзя так оставлять! Ты же...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_13">
+                        <p:mainText>Твоя честность заслуживает уважения. На кладбище я отправлю отряд стражи с
+                            экзорцистом. А ты - вот небольшая награда за полезную информацию.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="3"/>
+                        <p:answers>
+                            <p:answer text="Приятно"
+                                      removeMarker="pi_1o_quest_pirates_ghosts_02,pi_1o_quest_pirates_ghosts_03,pi_1o_quest_pirates_ghosts_04,pi_1o_quest_pirates_ghosts_05,pi_1o_quest_pirates_ghosts_06,pi_1o_quest_pirates_ghosts_07,pi_1o_quest_pirates_ghosts_08,pi_1o_quest_pirates_ghosts_09,pi_1o_quest_pirates_ghosts_10,pi_1o_quest_pirates_ghosts_11,pi_1o_quest_pirates_ghosts_12"
+                                      giveMarker="pi_1o_quest_pirates_ghosts_fail" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- Если побили Хилого по квесту "Чай"   -->
+            <p:state ifMarker="pi_1o_quest_tea_governor_react" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_18">
+                        <p:mainText>Я ждал, когда ты придёшь. Явиться добровольно и понести наказание за своё
+                            правонарушение - это достойно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В смысле?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_18">
+                        <p:mainText>Так, погоди... Ты случайно здесь? Кхм... Ты поби[л|ла] моего племянника Хилого?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так вышло"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_14">
+                        <p:mainText>Слушай, я прекрасно понимаю, что он наглый и бесцеремонный. Чтобы проще понимать...
+                            Есть статья закона, "За избиение Хилого". Штраф 100 золотых монет. Плати и уходи. Оставьте
+                            парня в покое, ладно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ахахаха" removeMarker="pi_1o_quest_tea_governor_react" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="100"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Миссионер, после Феликса   -->
+            <p:state ifMarker="pi_1o_quest_missionary_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_19">
+                        <p:mainText>Миссионер? Да, был странный человек. Говорил, что надо жить по закону
+                            Богов-Близнецов. А у нас свой закон, Кодекс называется. Выгнал я его.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Логично" removeMarker="pi_1o_quest_missionary_03"
+                                      giveMarker="pi_1o_quest_missionary_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" просим расписать Сигизмунда Оби и Авилу   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_09" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_20" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Губернатор, тут такое дело... В общем, надо записать на свадьбу Сигизмунда Оби и
+                            Авилу - они из деревни лесорубов. Пока что им рано жениться, но они хотят заранее
+                            записаться.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_19">
+                        <p:mainText>Слушай, у меня много дел. Обратись к моему слуге, он всё сделает.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Бюрократы" removeMarker="pi_1o_quest_clear_love_09"
+                                      giveMarker="pi_1o_quest_clear_love_10" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СЫЩИК -->
+
+    <p:place id="pi_1o_Antigua_gp_detective" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_detective" name="Сыщик"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Расследование преступлений требует большой внимательности. И беспристрастия. Ведь
+                            правосудие, совершённое с пристрастием, рискует не быть правосудием.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Верно" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_leyho_killers_03 or pi_1o_quest_leyho_killers_05 or pi_1o_new_recruit_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_leyho_killers_03" text="Стивен" goto="r_detective_react1"/>
+                            <p:answer ifMarker="pi_1o_quest_leyho_killers_05" text="Хилый" goto="r_detective_react2"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_detective_react3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_detective_react1">
+                        <p:mainText>Так, ясно. Дело пока не продвинулось. Иди и узнай у Стивена всё, что можно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_detective_react2">
+                        <p:mainText>Так, ясно. Дело пока не продвинулось. Иди и узнай у Хилого всё, что можно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_detective_react3">
+                        <p:mainText>Так, ясно. Ты сош[ёл|ла] с ума. Тебе правда нужен мой ответ? Нет, не стану.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Принципиальный" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, первый диалог, если НЕ закрыли квест "Рассказать правду Эльзе"  -->
+            <p:state
+                    markerCondition="pi_1o_quest_leyho_killers_02 and (pi_1o_quest_tell_to_elsa_01 or pi_1o_quest_tell_to_elsa_03) "
+                    closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" markerCondition="pi_1o_quest_leyho_killers_02 and pi_1o_quest_tell_to_elsa_01">
+                        <p:mainText>Так, ясно. Нужно расследование. Но вначале - расскажи Эльзе, что случилось. Она
+                            обязана знать правду.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d" markerCondition="pi_1o_quest_leyho_killers_02 and pi_1o_quest_tell_to_elsa_03">
+                        <p:mainText>Так, ясно. Эльза пропала... Узнай вначале, что с ней, как она перенесла это событие.
+                            Недавно её видели у Маяка Джека.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, первый диалог, если закрыли квест "Рассказать правду Эльзе"  -->
+            <p:state
+                    ifMarker="pi_1o_quest_leyho_killers_02 and not (pi_1o_quest_tell_to_elsa_01 and pi_1o_quest_tell_to_elsa_03)"
+                    repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Так, ясно, что мы имеем? 3 убийцы, но неизвестно кто. Оружие убийства, кинжал, самый
+                            стандартный - таких на рынке полно. За Лейхо следили с самого начала... Мотив - сокровища...
+                            А почему карту просто не отобрали?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Проклятье клада"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Так, ясно. И да, я сожалею об Эльзе. Но эмоции мешают работе. Убийцы хотели, чтобы
+                            он открыл клад, проклятье его коснулось, а они спокойно забрали денежки. Хитро, хитро... Ещё
+                            есть информация?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Стивен"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Так, ясно. Иди и поговори со Стивеном. Вряд ли он скажет что-то прямо. Но есть много
+                            способов вытянуть информацию. Используй находчивость! А потом расскажи мне, что получилось
+                            узнать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Непременно" removeMarker="pi_1o_quest_leyho_killers_02"
+                                      giveMarker="pi_1o_quest_leyho_killers_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, после диалога со Стивеном после находки кольца Д.С.  -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Так, ясно. Стивен говорит, что возлюбленная друга изменяла ему с ним. "Д.С." - да,
+                            это вполне означает "Дорогому Стивену". Ты веришь в то, что Эльза могла такое сделать?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Так, ясно. Но у нас нет никаких улик против Стивена. Странно, что кольцо было между
+                            половиц... Но это звучит правдиво. Нужны ещё зацепки.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Какие?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Так, ясно. Губернатор упоминал, что про Лейхо ему говорил Хилый, его племянник. Это
+                            так? Что он говорил?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor" imageComment="Губернатор">
+                        <p:mainText>Да, я говорил про это. Хилый сказал, что есть некий Лейхо, и он отправляется искать
+                            проклятый клад, больше ничего.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Так, ясно. Хилый и Лейхо не были друзьями, иначе бы Губернатор знал его раньше. А
+                            вот откуда знает Хилый про поиск клада - вопрос. Нужно допросить его.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor" imageComment="Губернатор">
+                        <p:mainText>ДОПРОСИТЬ?! Моего племянника?!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Так, ясно. Губернатор, это расследование, и вам придётся принять этот факт. Тем
+                            более, пока что {playerNick} действует аккуратно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Конечно" removeMarker="pi_1o_quest_leyho_killers_04"
+                                      giveMarker="pi_1o_quest_leyho_killers_05" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, после разговора с Хилым  -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Так, ясно. [Переходя на шёпот] Тебя не смутило, что Хилый знает про факт убийства?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Точно ведь!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Так, ясно. Опять упоминается таверна. Нужно расспросить Трактирщика, что к чему.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф... Хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Так, ясно. Это расследование, никто не обещал, что ты узнаешь всё сразу. Но помни -
+                            на кону честь Антигуа.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Непременно" removeMarker="pi_1o_quest_leyho_killers_06"
+                                      giveMarker="pi_1o_quest_leyho_killers_07" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, приняли сделку от убийц  -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_09_gang_bang" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Так, ясно. Лейхо устроил всё это, чтобы безнаказанно уплыть на Хунганами - ведь там
+                            наша власть не распространяется. Я уже видел учётную запись, что он вчера сел на шлюп,
+                            следующий до острова магов-вуду.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Так, ясно. Выглядит логично - по закону острова, половина клада должна быть
+                            направлена в казну. А он обманул закон и кодекс. Пусть Холодное море решает его судьбу. Ты
+                            отлично справил[ся|ась]!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну... Да"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Поговори с Губернатором, дело раскрыто. [Ваши деяния не остались незамеченными. +1 к
+                            репутации пиратов-беззаконников!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_BADPIRATES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Даже так..." removeMarker="pi_1o_quest_leyho_killers_09_gang_bang"
+                                      giveMarker="pi_1o_quest_leyho_killers_done_bad" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, НЕ приняли сделку от убийц  -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_09" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Так, ясно. К Стивену уже отправлен отряд стражи. Хилый... С ним разберётся
+                            Губернатор лично. Что до незнакомца... Я не знаю, кто это. Если встретишь его, постарайся
+                            выдать его страже.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Так, ясно. Справедливость восторжествовала! Одно непонятно - "Сыновья Мары", это
+                            что, ячейка сопротивления? Буду разбираться. Спасибо за твою помощь!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Ну... Да"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Поговори с Губернатором, дело раскрыто. [Ваши деяния не остались незамеченными. +1 к
+                            репутации пиратов!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Даже так..." removeMarker="pi_1o_quest_leyho_killers_09"
+                                      giveMarker="pi_1o_quest_leyho_killers_done_good" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, после разговора с Трактирщиком и отказу Незнакомцу  -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_long_way_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Так, ясно. Много несостыковок. Но мы же не можем, без прямых доказательств, обвинить
+                            людей. Что же делать, хм...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Я думаю, есть самый простой вариант. У нас есть кольцо "Дорогому Стивену". А на
+                            кольце - магический след того, кто его подарил. Мы можем вызвать дух Эльзы и узнать правду.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А это мысль!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>Так, ясно. Есть лишь нюанс - слова призрака не принимаются при обвинении. Её
+                            показания не будут приняты во внимание.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Непременно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Странные у вас порядки. Дух - это тот же человек, но без плоти. Хорошо, если её
+                            слова не учтут, мы хотя бы узнаем правду и сможем принять решение о том, что делать дальше.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Именно!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d">
+                        <p:mainText>Так, ясно. Так и сделаем. Пожалуй, надо сходить к магам-вуду, они помогут.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Непременно" removeMarker="pi_1o_quest_leyho_killers_long_way_01"
+                                      giveMarker="pi_1o_quest_leyho_killers_long_way_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Найти убийц Лейхо, после диалогов со Стивеном и Хилым при наличии Духа Джими Сороки  -->
+            <p:state
+                    markerCondition="pi_1o_quest_leyho_killers_long_way_05_1 and pi_1o_quest_leyho_killers_long_way_05_2"
+                    repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Так, ясно. Убийцы сами пришли и признались, рассказав всё в подробностях. Лишь
+                            третьего найти не получится - оба клялись, что он уже покинул остров.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мда..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>Так, ясно. В любом случае, дело раскрыто! Я благодарю тебя - возможно, ты станешь
+                            великим сыщиком, как я.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Ну... Да"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_6">
+                        <p:mainText>Поговори с Губернатором, дело раскрыто. [Ваши деяния не остались незамеченными. +1 к
+                            репутации пиратов!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Даже так..."
+                                      removeMarker="pi_1o_quest_leyho_killers_long_way_05_1,pi_1o_quest_leyho_killers_long_way_05_2,pi_1o_quest_leyho_killers_long_way_04_react_fov,pi_1o_quest_leyho_killers_long_way_04_hints"
+                                      giveMarker="pi_1o_quest_leyho_killers_done_good" requestSpecialPlaces="true"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

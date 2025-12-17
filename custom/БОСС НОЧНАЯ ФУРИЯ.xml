@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС НОЧНАЯ ФУРИЯ  -->
+
+    <p:place id="pi_1o_Antigua_lc_night_fury" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_night_fury" name="Ночная фурия"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Ночная фурия"  -->
+            <p:state id="default" closable="false">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Ахаха!" delayMs="3000"/>
+                    <p:talk text="Чума вернётся!" delayMs="8000"/>
+                    <p:talk text="А вот и ты" delayMs="13000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я ждала тебя, Хранитель... Эта встреча была предопределена самой судьбой. Норны
+                            сплели нашу нить ещё до того, как пали от твоей же руки...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кто ты?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>А разве это имеет значение? Столько существ пало от твоей руки, и тебя не волновало,
+                            кем они были ранее, до своих деяний... Я не скажу, кто я. Но я знаю тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Откуда же?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Я наблюдала, с момента твоего появления на свет. Я выжидала, когда ты бы[л|ла] в
+                            заточении в Небытии... Я ждала, когда Послушница проявит себя, а ты станешь её наставником.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Для чего?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Вопросы, вопросы... Нехорошо ей погибать в неведении. Она слишком сильна, ты же
+                            знаешь. Мои слуги не смогли победить её... Сейчас я сделаю всё сама. Один на один. Итог боя
+                            норны доплести не успели...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="О как..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Послушница, покажи ей!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lc_night_fury" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Ночная фурия, боевая иконка будет называться pi_1o_Antigua_lc_night_fury_f === Против босса ТОЛЬКО послушница -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Ночная фурия сильна... Но Послушница должна её победить!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lc_night_fury" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Ночная фурия повержена! Пора вернуться к главе инквизиции!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_night_fury_01"
+                                      giveMarker="pi_1o_quest_night_fury_02" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

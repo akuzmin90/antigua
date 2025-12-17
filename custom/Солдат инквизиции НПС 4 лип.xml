@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Солдат инквизиции НПС 4  -->
+
+    <p:place id="pi_1o_it_inquisition_soldier_npc_4" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_it_inquisition_soldier_npc_4" name="Солдат инквизиции" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" mandatory="true" closable="false" >
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Покинь пушечную" delayMs="11000"/>
+                    <p:talk text="Выйди из палатки, пожалуйста" delayMs="21000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Искатель приключений, покинь эту палатку. Здесь располагается пушечная - и посторонним сюда нельзя. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ухожу" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_inquisition_town"/>
+                            </p:answer>
+                            <p:answer text="Я останусь!" goto="r2" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Авантюрист, не заставляй меня применять силу. Именем Короля Густава, покинь пушечную. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ухожу" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_inquisition_town"/>
+                            </p:answer>
+                            <p:answer text="Давай, укуси меня!" goto="r3" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>[Солдат инквизиции ошалел от ваших слов... Но, в итоге, палатку вы покинули. Вас убедил мушкет, направленный в вашу сторону.] </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зараза..." goto="r4" out="true">
+                                <p:toRoad roadId="pi_1o_inquisition_town"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Ты серьёзно? Искатель приключений, опять нарываешься? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ухожу" goto="r4" out="true">
+                                <p:toRoad roadId="pi_1o_inquisition_town"/>
+                            </p:answer>
+                            <p:answer text="Один на один!" goto="r5" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>[Солдат инквизиции засмеялся во весь голос, а затем засвител в маленький свисток... Палатку вы снова покинули. Вас убедила толпа инквизиторов с мушкетами, которые вошли в пушечную.] </p:mainText>
+                        <p:answers>
+                            <p:answer text="Будьте людьми, э!" giveMarker="pi_1o_it_road_tent_cannon_room_closed_forever" out="true">
+                                <p:toRoad roadId="pi_1o_inquisition_town"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

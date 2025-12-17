@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАНИЦА 08 -->
+
+    <p:place id="pi_1o_Antigua_lost_memories_08" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lost_memories_01" name="Страница 08"
+             minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="5"  requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_lost_memories_08"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А вот и восьмая страница, вырванная из дневника! Судя по бумаге и чернилам, эти
+                            записи сделаны недавно... Хм, прочитаем...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Мне кажется, что за мной следят. С того самого момента, как я покинул город и
+                            отправился искать клад Джими Сороки. Три тени, я вижу их в далёких отблесках костра..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"Я не позволю никому помешать моей цели! Я делаю это ради Эльзы, моей любимой Эльзы!
+                            Никто не помешает нашему счастью, нашей новой жизни в достатке! Я и моя жена Эльза... Это
+                            звучит прекрасно!"
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Похоже, что это лишь одна из нескольких страниц дневника некоего парня. Интересно,
+                            что же стало дальше?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_lost_memories_08"
+                                      giveMarker="pi_1o_quest_lost_memories_09,pi_1o_quest_lost_memories_hint_09"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

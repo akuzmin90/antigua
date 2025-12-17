@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Магия знаний 3 -->
+
+    <p:place id="pi_1o_mj_twb_magik_knowledge_3" animType="EMPTY" imageId="61x65" name="Магия знаний" minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - одна из страниц книги знаний друидов - прочитав её, вы усилите свои навыки! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Прочитать" gotoFromScript="random"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-1" probability="0.8" >
+                        <p:mainText>Ваше здоровье растёт! </p:mainText>
+                            <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                        <p:answers>
+                            <p:answer text="Отлично!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8" >
+                        <p:mainText>Ваша атака растёт! </p:mainText>
+                            <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                        <p:answers>
+                            <p:answer text="Отлично!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8" >
+                        <p:mainText>Ваша защита растёт! </p:mainText>
+                            <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                        <p:answers>
+                            <p:answer text="Отлично!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Перед вами - одна из страниц книги знаний друидов - но она уже потеряла свою магию. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

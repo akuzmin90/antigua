@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Д.О. СБЕЖАВШИЙ МАРОДЁР -->
+
+    <!-- Квест с доски объявлений "Сбежавший мародёр"  -->
+    <p:place id="pi_1o_Antigua_quest_tomb_raider" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_quest_tomb_raider"
+             name="Лар, расхититель гробниц" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+        <p:markerCondition condition="pi_1o_quest_bulletin_board_tomb_raider_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Эй, эй, ты из города, да? Сразу видно... Ищешь меня? Ха, я уже много раз сбегал из тюрьмы,
+                    так что давай, догони меня, ахаха!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я ж догоню" gotoFromScript="random"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.8">
+                <p:mainText>Как... Как тебе удалось поймать меня?! [Вы связываете удивлённого мародёра и сообщаете
+                    страже Губернатора, где его оставили. Задание выполнено! Возвращаемся к доске объявлений.]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я быстрее быстроты!" removeMarker="pi_1o_quest_bulletin_board_tomb_raider_01"
+                              giveMarker="pi_1o_quest_bulletin_board_tomb_raider_02" complete="true"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8">
+                <p:mainText>Ахаха, не догонишь! [Вы хватаете мародёра за шкирку, но он изворачивается и шустро убегает
+                    вдаль!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я тебя догоню!" complete="true"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8">
+                <p:mainText>Ахаха, не догонишь! [Вы хватаете мародёра за шкирку, но он изворачивается и шустро убегает
+                    вдаль!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я тебя догоню!" complete="true"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.8">
+                <p:mainText>Ахаха, не догонишь! [Вы хватаете мародёра за шкирку, но он изворачивается и шустро убегает
+                    вдаль!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я тебя догоню!" complete="true"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.8">
+                <p:mainText>Ахаха, не догонишь! [Вы хватаете мародёра за шкирку, но он изворачивается и шустро убегает
+                    вдаль!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я тебя догоню!" complete="true"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-6" probability="0.8">
+                <p:mainText>Ахаха, не догонишь! [Вы хватаете мародёра за шкирку, но он изворачивается и шустро убегает
+                    вдаль!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я тебя догоню!" complete="true"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-7" probability="0.8">
+                <p:mainText>Ахаха, не догонишь! [Вы хватаете мародёра за шкирку, но он изворачивается и шустро убегает
+                    вдаль!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я тебя догоню!" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

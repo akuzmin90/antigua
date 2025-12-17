@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КИНКИ У ХИЛОГО -->
+
+    <p:place id="pi_1o_kinky_frail" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_kinky" name="Кинки" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!--TODO квест "Дед опять забыл выпить таблетки" у Хилого дома  -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Кинки пришёл к Хилому, Кинки хочет деньги взять у Хилого!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_frail" imageComment="Хилый">
+                        <p:mainText>Зачем тебе деньги, зачем???</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Кинки сделает великую вечеринку Кинки! Все придут и будут ещё слагать легенды о
+                            вечеринке Кинке на острове Антигуа!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_frail" imageComment="Хилый">
+                        <p:mainText>Тогда оставь залог.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>У Кинки нет залога, у Кинки есть план вечеринки!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Кинки, смотри, волшебные таблетки! Тебе надо съесть их.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Кинки не ест таблетки! Никаких таблеток на вечеринке Кинки! Кинки найдёт другого
+                            спонсора!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что это было?" removeMarker="pi_1o_quest_kinky_party_02"
+                                      giveMarker="pi_1o_quest_kinky_party_03" complete="true" dropPlace="true"
+                                      requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

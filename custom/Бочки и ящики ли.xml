@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочки и ящики  -->
+
+    <p:place id="pi_1o_it_inquisition_barrels_and_boxes" animType="EMPTY" imageId="149x193" name="Бочки и ящики" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вы видите нагромождение ящиков и бочек. Осторожно вы осматриваете их - вдруг что завалялось? И точно, немного аметистов! Раз бесхозные, надо забрать. </p:mainText>
+                            <p:award type="SULFUR" explicitValue="198" />
+                        <p:answers>
+                            <p:answer text="Именно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вы видите нагромождение ящиков и бочек. Всё запаковано и опечатано - лучше не вскрывать, особенно тут, где полно солдатов инквизиции... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

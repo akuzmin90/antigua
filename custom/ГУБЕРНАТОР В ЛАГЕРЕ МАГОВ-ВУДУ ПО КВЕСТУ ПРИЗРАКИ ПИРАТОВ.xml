@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ГУБЕРНАТОР В ЛАГЕРЕ МАГОВ-ВУДУ ПО КВЕСТУ ПРИЗРАКИ ПИРАТОВ -->
+
+    <p:place id="pi_1o_Antigua_gp_governor_mg" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor_mg" name="Губернатор"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Как это понимать?!" delayMs="1000"/>
+                    <p:talk text="Вы призвали призраков!!!" delayMs="9000"/>
+                    <p:talk text="Вы на особом контроле!" delayMs="17000"/>
+                    <p:talk text="*Ругаются по-антигунянски" delayMs="22000"/>
+                </p:talks> 
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_road_4" imageComment="Маг-вуду страж" imageId="pi_1o_mt_magevoodoo_guard">
+                        <p:mainText>Вака, я чётко просил тебя ничего не говорить Губернатору.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Вака" делает всё правильно! Я запретил вам приближаться к Кладбищу Пиратов! И ладно
+                            бы одного, двух... Куда вам 10 призраков?! Разводить будете?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" atlasId="pi_1o_PLACES_road_4" imageComment="Маг-вуду страж" imageId="pi_1o_mt_magevoodoo_guard">
+                        <p:mainText>Мы приносим извинения от имени магии. Утром мы принесём компенсацию. Вака, ты... Не
+                            могу тебя винить. [Вы провалили квест "Призраки пиратов" - не переживайте, впереди ещё
+                            столько интересного!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эээээх..." removeMarker="pi_1o_quest_pirates_ghosts_fail"
+                                      giveMarker="pi_1o_quest_pirates_ghosts_mages_pay" complete="true"
+                                      dropPlace="true">
+                                <p:failTask id="pi_1o_quest_pirates_ghosts"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

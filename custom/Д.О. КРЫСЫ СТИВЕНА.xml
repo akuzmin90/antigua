@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Д.О. КРЫСЫ СТИВЕНА  -->
+
+    <!-- Квест с доски объявлений "Крысы Стивена"  -->
+    <p:place id="pi_1o_Antigua_quest_steven_rats_01" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_quest_steven_rats_01" name="Крыса"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Ещё одна крыса в доме Стивена, не считая его самого... Что ж, работу надо выполнять!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_quest_steven_rats_01" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с Крыса, боевая иконка будет называться pi_1o_Antigua_quest_steven_rats_01_f -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Крыса сильна... Но разве это вас остановит?</p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_quest_steven_rats_01" onWinGoTo="win" onLooseGoTo="loose"/>
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>[Крыса повержена!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="pi_1o_quest_bulletin_board_steven_rats_01"
+                              giveMarker="pi_1o_quest_bulletin_board_steven_rats_03" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <p:place id="pi_1o_Antigua_quest_steven_rats_02" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_quest_steven_rats_02" name="Крыса"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Ещё одна крыса в доме Стивена, не считая его самого... Что ж, работу надо выполнять!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_quest_steven_rats_02" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с Крыса, боевая иконка будет называться pi_1o_Antigua_quest_steven_rats_02_f -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Крыса сильна... Но разве это вас остановит?</p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_quest_steven_rats_02" onWinGoTo="win" onLooseGoTo="loose"/>
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>[Крыса повержена!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="pi_1o_quest_bulletin_board_steven_rats_02"
+                              giveMarker="pi_1o_quest_bulletin_board_steven_rats_04" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

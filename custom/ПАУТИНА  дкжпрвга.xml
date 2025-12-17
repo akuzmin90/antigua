@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Паутина  -->
+
+    <p:place id="pi_1o_home_storeceeper_ghost_web" animType="EMPTY" imageId="105x114" name="Паутина" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вы замечаете странный зеленоватый отблеск в паутине... Ха, да это изумруды! Надо бы забрать себе. </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="81" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Интересно, что за паук смог так быстро сплести так много паутины? Кладовщик женился же на Моргане всего пару часов назад... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жутковато" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

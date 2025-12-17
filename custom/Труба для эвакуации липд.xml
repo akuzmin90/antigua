@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Труба для эвакуации  -->
+
+    <p:place id="pi_1o_it_td_pipe_for_evacuation" animType="EMPTY" imageId="89x128" name="Труба для эвакуации" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Тут есть инструкция: "1. Пробить дно судна при опасности. 2. Опустить трубу в воду. 3. Члены экипажа по трубе спускаются незаметно в воду." </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хитро" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

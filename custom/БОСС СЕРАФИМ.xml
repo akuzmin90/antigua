@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС СЕРАФИМ  -->
+
+    <p:place id="pi_1o_sp_seraphim" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_seraphim" name="Серафим" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Серафим"  -->
+            <p:state id="default" loop="true" closable="false">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Я ждал тебя..." delayMs="11000"/>
+                    <p:talk text="Скверна дала мне силу" delayMs="17000"/>
+                    <p:talk text="Я ждал тебя..." delayMs="24000"/>
+                    <p:talk text="Подойди ближе..." delayMs="31000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Серафим, один из легиона армии Тора... Но Небытие добралось до него и совратило его
+                            душу. Нужно освободить её от прокажённой плоти... Послушница, покажи ему!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_sp_seraphim" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Серафим, боевая иконка будет называться pi_1o_sp_seraphim_f === Против босса ТОЛЬКО послушница -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Серафим сохранил силу ангела, несмотря на то, что вся его плоть поражена скверной...
+                            Надо освободить его душу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_sp_seraphim" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Серафим повержен! Его душа обязательно вернётся в царство Тора... Пора вернуться к
+                            главе инквизиции!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_seraphim_01"
+                                      giveMarker="pi_1o_quest_seraphim_02,pi_1o_quest_seraphim_planter_award" requestSpecialPlaces="true"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

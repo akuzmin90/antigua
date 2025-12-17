@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ХВАТАЛА -->
+
+    <p:place id="pi_1o_tat_grabber" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_tat_grabber" name="Хватала" minPlayerStair="40"
+             meetProbability="0">
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" mandatory="true" repeatable="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Эй, искатель приключений, пссссссст! Иди сюда. Интересует редкий артефакт? Всего 200
+                            кусков золотой руды!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Конечно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Прекрасно! Смотри, это уникальное кольцо. Оно даёт неуязвимость в бою! Тебя не
+                            возьмёт ни сабля, ни рапира, ни дробь, ни картечь! Даже гонорея не возьмёт, кхм. Не пристала
+                            же - значит, не берёт.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Дай посмотреть"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>[Кольцо как кольцо... Так, стоп. На нём символ, очень похожий на герб
+                            Губернаторского дома... Ах ты Хватала, хитрый морской угорь!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Кольцо интересует. Но я не ношу с собой 200 кусков золотой руды, сам понимаешь, это
+                            опасно. Я схожу за ними и вернусь. Жди меня здесь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ахаха, да-да-да, вот и славно! Простофи... Эм... Просто филигранная сделка, я хотел
+                            сказать! Давай скорее, я долго ждать не буду, я деловой человек! Жду тут. Сам подойду. Чтобы
+                            никто не видел нас!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уйти" removeMarker="pi_1o_ruined_grave_04"
+                                      giveMarker="pi_1o_ruined_grave_05" complete="true" dropPlace="true"
+                                      requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

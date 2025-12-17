@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС ДРЕВНЯЯ ЧЕРЕПАХА  -->
+
+    <p:place id="pi_1o_hp_ancient_turtle" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_hp_ancient_turtle" name="Древняя Черепаха"
+             minPlayerStair="40" minDistanceBetweenSame="5000" meetProbability="20">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Древняя Черепаха"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Древняя Черепаха не обращает на вас внимания. Но, когда вы начали незаметно срезать
+                            с неё панцирь, она, внезапно, почему-то, стала агрессивной!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_hp_ancient_turtle" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Древняя Черепаха, боевая иконка будет называться pi_1o_hp_ancient_turtle_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Древняя Черепаха очень сильна... Она же должна быть медлительной! И кусается
+                            больно...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_hp_ancient_turtle" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Древняя Черепаха повержена! Вы забираете её панцирь. Пора вернуться к Олафу!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_ancient_turtle_01"
+                                      giveMarker="pi_1o_quest_ancient_turtle_02" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

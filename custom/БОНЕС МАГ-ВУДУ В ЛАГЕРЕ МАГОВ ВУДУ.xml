@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОНЕС МАГ-ВУДУ  -->
+
+    <p:place id="pi_1o_sp_bones_magevoodoo" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_bones" name="Бонес"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>А ты бы[л|ла] пра[в|ва], здесь не так и плохо, ха! Меня учат магии, меня кормят, ко
+                            мне относятся не как к рабочей скотине! Знаешь, я должен отблагодарить тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>Я уже знаю первое заклинание! Оно повышает здоровье - так, ну-ка... Рукой сюда,
+                            очистить мысли... Со.. Соср... Морской чёрт, как там... СО-СРЕ-ДО-ТО-ЧИТЬ-СЯ... Во, готово!
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Я тут каждую ночь, если что. Ещё раз спасибо, искатель приключений!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Пожалуйста" goto="r3" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

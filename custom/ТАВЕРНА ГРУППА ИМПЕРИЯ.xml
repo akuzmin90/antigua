@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА ГРУППА ИМПЕРИЯ -->
+
+    <p:place id="pi_1o_tat_empire_band" animType="EMPTY" imageId="91x256" name="Группа Империя" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Я взывал к небесам..." delayMs="1000"/>
+                    <p:talk text="Боги, дайте мне силы..." delayMs="6000"/>
+                    <p:talk text="Я свой меч окроплял..." delayMs="11000"/>
+                    <p:talk text="Кровью жалких врагов..." delayMs="16000"/>
+                    <p:talk text="Будет памятник моей могиле..." delayMs="21000"/>
+                    <p:talk text="Стяг Междуречья, вот мой исход!" delayMs="26000"/>
+                    <p:talk text="Средь белых полей..." delayMs="31000"/>
+                    <p:talk text="И высоких сугробов..." delayMs="36000"/>
+                    <p:talk text="Высится замок пустой и холодный" delayMs="41000"/>
+                    <p:talk text="Слепо глядит он провалами бойниц" delayMs="46000"/>
+                    <p:talk text="В колючую бездну снежных ветров!" delayMs="51000"/>
+                    <p:talk text="И ваша любимая - За Междуречье!" delayMs="56000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - группа "Империя", покорившая многие миры! Сегодня в репертуаре - песни
+                            "За Междуречье", "Сердце зимы" и "Стражи северных морей"! [Вы с удовольствием слушаете
+                            отличные песни]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Они - лучшие!" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

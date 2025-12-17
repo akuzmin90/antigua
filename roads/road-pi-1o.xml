@@ -1,0 +1,1868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.hitmakers.com/aof/roads"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.hitmakers.com/aof/roads ../xsd/roads.xsd">
+
+    <!-- город Антигуа готово -->
+
+    <branch id="pi_1o_townAntigua" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900"
+            controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER" maxCoordinate="1507" forceGenerateBackPlace="true" backOnlyToMain="true"
+            knightOffsetBottom="130" knightOffsetTop="383" > 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+        <spawnPlaces>
+            <place id="pi_1o_storekeeper" in="242" xPos="409"/>  <!-- кладовщик Йоси  -->
+            <place id="pi_1o_Antigua_door_scoreceeper" in="431" xPos="506"/> <!-- дверь в дом кладовщика  -->
+            <place id="pi_1o_Antigua_door_frail" in="1082" xPos="539"/> <!-- дверь в дом Хилого  -->
+            <place id="pi_1o_Antigua_door_steven" in="805" xPos="93"/> <!-- дверь в дом Стивена  -->
+            <place id="pi_1o_Antigua_door_tavern" in="1178" xPos="63"/> <!-- дверь в Таверна  -->
+            <place id="pi_1o_Antigua_door_governor_palace" in="1310" xPos="305"/> <!-- дверь в Дворец губернатора  -->
+            <place id="pi_1o_Antigua_barker_at_tavern" in="1036" xPos="167"/> <!-- Зазывала в таверну  -->
+            <place id="pi_1o_Antigua_lady_for_talk" in="181" xPos="205"/> <!-- Дама  -->
+            <place id="pi_1o_Antigua_couple" in="534" xPos="408"/> <!-- Парочка  -->
+            <place id="pi_1o_Antigua_tavern_tables" in="1148" xPos="189"/> <!-- Столики у таверны  -->
+            <place id="pi_1o_Antigua_lonely_barrel" in="935" xPos="590" respawnPolicy="EVERYDAY"/> <!-- Одинокая бочка  -->
+            <place id="pi_1o_Antigua_barrel_of_supplies" in="673" xPos="54"/> <!-- Бочка с припасами  -->
+            <place id="pi_1o_Antigua_wood_garbage" in="878" xPos="499"/> <!-- Всякая древесина  -->
+            <place id="pi_1o_Antigua_warehouse_city" in="265" xPos="538"/> <!-- Склад  -->
+            <place id="pi_1o_Antigua_magevoodoo_nestor" in="645" xPos="233"/> <!-- маг-вуду Нестор  -->
+            <place id="pi_1o_Antigua_inquisitor_felix" in="664" xPos="410"/> <!-- инквизитор Феликс  -->
+            <place id="pi_1o_Antigua_well" in="784" xPos="459"/> <!-- колодец  -->
+            <place id="pi_1o_navigation_big_compass" in="1071"
+                   xPos="397"/>  <!-- Большой Компас, навигация для игрока  -->
+            <place id="pi_1o_marketplace" in="326" xPos="60"/>  <!-- Рынок  -->
+            <place id="pi_1o_bulletin_board" in="496" xPos="214"/>  <!-- Доска объявлений  -->
+            <place id="pi_1o_Antigua_treasure_map_dealer" in="903" xPos="234"
+                   ifMarker="pi_1o_shovel_done" respawnPolicy="EVERYTIME"/> <!-- Торговец Картами  -->
+            <place id="pi_1o_stranger" in="922" xPos="413"
+                   ifMarker="pi_1o_quest_leyho_killers_08" respawnPolicy="EVERYTIME"/>  <!-- Незнакомец для квеста "Найти убийц Лейхо", стоит в середине локации, непроходимый  -->
+            <place id="pi_1o_Antigua_lost_memories_06" in="300" xPos="447" respawnPolicy="EVERYTIME" ifMarker="pi_1o_quest_lost_memories_05" 
+                   spawnProbability="0.15"/> <!-- 6ая страница по квесту “Потерянные воспоминания”  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа горит готово -->
+    <!--TODO вставить фоновую музыку горящего костра или дерева там -->
+    <branch id="pi_1o_townAntigua_town_burning" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" 
+            maxLength="2900" maxCoordinate="1507" knightOffsetBottom="130" knightOffsetTop="360" controlType="BW_FW"
+            recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_town_burning"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+        <spawnPlaces>
+            <place id="pi_1o_storekeeper_fire" in="230" xPos="395"/>  <!-- кладовщик Йоси, около склада  -->
+            <place id="pi_1o_Antigua_gp_governor_servant_fire_leader" in="614"
+                   xPos="395"/>  <!-- Слуга Губернатора, в центре города  -->
+            <place id="pi_1o_Antigua_magevoodoo_nestor_fire" in="1025"
+                   xPos="470"/>  <!-- маг-вуду Нестор, у дома Хилого  -->
+            <place id="pi_1o_Antigua_inquisitor_felix_fire" in="1069"
+                   xPos="178"/>  <!-- Инквизитор Феликс, у таверны  -->
+            <place id="pi_1o_Antigua_hp_hermit_pirate_fire" in="372"
+                   xPos="431"/>  <!-- Пират-отшельник, у дома кладовщика  -->
+            <place id="pi_1o_Antigua_lc_victor_obi_fire" in="786" xPos="247"/>  <!-- Виктор Оби, у дома Стивена  -->
+            <place id="pi_1o_Antigua_lj_jack_fire" in="230" xPos="221"/>  <!-- Джек, у рынка  -->
+            <place id="pi_1o_Antigua_well_fire" in="783" xPos="460"/>  <!-- Колодец, эмпти блок  -->
+            <place id="pi_1o_Antigua_lady_in_panic" in="129" xPos="228"/>  <!-- Девушка в панике, эмпти блок  -->
+            <place id="pi_1o_Antigua_lame_pirate" in="1169" xPos="395"/>  <!-- Хромой пират, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_governor_palace_no_way" in="1314"
+                   xPos="310"/>  <!-- Дворец губернатора, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_marketplace_no_way" in="309" xPos="58"/>  <!-- Рынок, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_scoreceeper_no_way" in="476"
+                   xPos="533"/>  <!-- Дом кладовщика, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_bulletin_board_no_way" in="509"
+                   xPos="202"/>  <!-- Доска объявлений, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_steven_no_way" in="830" xPos="96"/>  <!-- Дом Стивена, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_frail_no_way" in="1116" xPos="547"/>  <!-- Дом Хилого, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_big_compass_no_way" in="1069"
+                   xPos="395"/>  <!-- Большой компас, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_tavern_no_way" in="1213" xPos="62"/>  <!-- Таверна, эмпти блок  -->
+            <place id="pi_1o_Antigua_fire_warehouse_no_way" in="255" xPos="535"/>  <!-- Склад, эмпти блок  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, дворец губернатора после пожара готово -->
+
+    <branch id="pi_1o_townAntigua_governor_palace_town_burning" genMode="DEFAULT" probability="0" scenario="true" forceGenerateBackPlace="true" backOnlyToMain="true"
+            minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="625" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_governor_palace_town_burning"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_gp_governor_fire" in="1024" xPos="309"/> <!-- губернатор после тушения пожара -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Таверна готово -->
+
+    <branch id="pi_1o_townAntigua_tavern" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900"
+            controlType="BW_FW"
+            maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="430" defaultRelativeCoord="150" recreationPolicy="PERSISTENT_FOREVER"  >
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment="" />
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_tavern" />
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge" />
+        </endingTiles>
+        <spawnPlaces>
+            <place id="pi_1o_wifeAntigua" in="773" xPos="453" respawnPolicy="EVERYTIME" ifMarker="storeceeper_quest_wife_searching" /> <!-- жена Амалия по квесту "Дела амурные"  -->
+            <place id="pi_1o_innkeeper" in="1239" xPos="307" /> <!-- трактирщик  -->
+            <place id="pi_1o_arno" in="363" xPos="151" /> <!-- Арно, мутный тип  -->
+            <place id="pi_1o_tat_acoustic_bass" in="545" xPos="570" /> <!-- Акустический бас  -->
+            <place id="pi_1o_tat_empire_band" in="744" xPos="552" /> <!-- Группа Империя  -->
+            <place id="pi_1o_tat_waitress_01" in="888" xPos="470" /> <!-- Официантка 01  -->
+            <place id="pi_1o_tat_waitress_02" in="686" xPos="149" /> <!-- Официантка 02  -->
+            <place id="pi_1o_tat_free_table" in="830" xPos="100" /> <!-- Свободный столик  -->
+            <place id="pi_1o_tat_plant_in_barrel" in="976" xPos="107" /> <!-- Растение в бочке  -->
+            <place id="pi_1o_tat_pirates_in_deal" in="1010" xPos="469" /> <!-- Пираты за сделкой  -->
+            <place id="pi_1o_tat_hungry_pirate" in="575" xPos="107" /> <!-- Пират-обжора  -->
+            <place id="pi_1o_tat_inquisitor_in_tavern" in="381" xPos="559" /> <!-- Инквизитор в таверне  -->
+            <place id="pi_1o_tat_barrel_with_coconuts" in="437" xPos="29" respawnPolicy="EVERYDAY" /> <!-- Бочка с кокосами  -->
+            <place id="pi_1o_tat_skull_leviathan" in="1425" xPos="309" /> <!-- Череп Левиафана  -->
+            <place id="pi_1o_tat_just_barrel" in="263" xPos="153" /> <!-- Просто бочка  -->
+            <place id="pi_1o_tat_barrel_with_fish" in="694" xPos="61" /> <!-- Бочка с рыбой  -->
+            <place id="pi_1o_tat_grabber" in="258" xPos="469" ifMarker="pi_1o_ruined_grave_04" respawnPolicy="EVERYTIME" /> <!-- Хватала по квесту "Разорённая могила", ставить в упор ко входу  -->
+            <place id="pi_1o_lm_elsa" in="1102" xPos="185" ifMarker="pi_1o_quest_tell_to_elsa_02" respawnPolicy="EVERYTIME" /> <!-- Эльза по квесту “Рассказать Эльзе правду”  -->
+        </spawnPlaces>
+    </branch>
+
+
+    <!-- город Антигуа, Странный подвал готово -->
+
+    <branch id="pi_1o_townAntigua_strange_basement" genMode="DEFAULT" probability="0" scenario="true" minLength="2900"
+            maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="470" controlType="BW_FW"
+            recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_strange_basement"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_frail" in="1013" xPos="405"/>  <!-- Хилый  -->
+            <place id="pi_1o_steven" in="1127" xPos="301"/>  <!-- Стивен  -->
+            <place id="pi_1o_stranger" in="893" xPos="185"
+                   ifMarker="pi_1o_quest_leyho_killers_08_gang_bang"/>  <!-- Незнакомец -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Дом Хилого готово -->
+
+    <branch id="pi_1o_townAntigua_home_frail" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" controlType="BW_FW" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="440" forceGenerateBackPlace="true" backOnlyToMain="false"  recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_home_frail"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_frail" in="1227" xPos="309"/>  <!-- Хилый, нужна также боевая карточка. статы 1/1/1, класс человек 1 ранга и дары всадника и тени, оба 10 ранга  -->
+            <place id="pi_1o_kinky_frail" in="1049" xPos="445" ifMarker="pi_1o_quest_kinky_party_02" respawnPolicy="EVERYTIME"/>  <!-- Кинки по квесту "Дед опять забыл выпить таблетки"  -->
+            <place id="pi_1o_home_frail_gold_1" in="914" xPos="479" respawnPolicy="EVERYDAY" />  <!-- Кучка золота 1  -->
+            <place id="pi_1o_home_frail_gold_2" in="789" xPos="141" />  <!-- Кучка золота 2  -->
+            <place id="pi_1o_home_frail_gold_3" in="335" xPos="443" respawnPolicy="EVERYDAY" />  <!-- Кучка золота 3  -->
+            <place id="pi_1o_home_frail_gold_4" in="334" xPos="129" />  <!-- Кучка золота 4  --> 
+            <place id="pi_1o_home_frail_lunch_place" in="841" xPos="566" />  <!-- Обеденная тумба  -->
+            <place id="pi_1o_home_frail_beauty_flowers" in="1086" xPos="86" respawnPolicy="EVERYDAY" />  <!-- Красивые цветы  -->
+            <place id="pi_1o_home_frail_beauty_flowers_2" in="542" xPos="490" respawnPolicy="EVERYDAY" />  <!-- Красивые цветы 2 -->
+            <place id="pi_1o_home_frail_sofa_1" in="498" xPos="45" />  <!-- Диван 1 -->
+            <place id="pi_1o_home_frail_sofa_2" in="588" xPos="559" />  <!-- Диван 2 -->
+            <place id="pi_1o_home_frail_coin" in="1054" xPos="170" />  <!-- Монета  -->
+            <place id="pi_1o_home_frail_coin" in="553" xPos="161" />  <!-- Монета  -->
+            <place id="pi_1o_home_frail_coin" in="481" xPos="111" />  <!-- Монета  -->
+            <place id="pi_1o_home_frail_box" in="934" xPos="48" />  <!-- Ящики  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Дом Стивена готово  -->
+
+    <branch id="pi_1o_townAntigua_home_steven" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507"
+            knightOffsetBottom="150" knightOffsetTop="568" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_home_steven"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_steven" in="1043" xPos="312"/>  <!-- Стивен  -->
+            <place id="pi_1o_hs_embodiment_of_chthon" in="867" xPos="428" ifMarker="pi_1o_quest_embodiment_of_chthon_01" respawnPolicy="EVERYTIME"/>  <!-- Воплощение Хтони  -->
+            <place id="pi_1o_hs_warlock" in="861" xPos="162" ifMarker="pi_1o_quest_warlock_01" respawnPolicy="EVERYTIME"/>  <!-- Чернокнижник, босс  -->
+            <place id="pi_1o_hs_wardrobe_01" in="1126" xPos="94" ifNoMarker="pi_1o_quest_tmd_steven_chest_01" respawnPolicy="EVERYTIME"/>  <!-- Шкаф, в котором БУДЕТ Клад Стивена  -->
+            <place id="pi_1o_hs_wardrobe_01_steven_chest" in="1126" xPos="94" ifMarker="pi_1o_quest_tmd_steven_chest_01" respawnPolicy="EVERYTIME"/>  <!-- Шкаф, в котором  Клад Стивена  -->
+            <place id="pi_1o_Antigua_quest_steven_rats_01" in="285" xPos="151" ifMarker="pi_1o_quest_bulletin_board_steven_rats_01" respawnPolicy="EVERYTIME"/>  <!-- Крыса №1, босс  -->
+            <place id="pi_1o_Antigua_quest_steven_rats_02" in="682" xPos="473" ifMarker="pi_1o_quest_bulletin_board_steven_rats_02" respawnPolicy="EVERYTIME"/>  <!-- Крыса №2, босс  -->
+            <place id="pi_1o_Antigua_lost_memories_02" in="610" xPos="542" respawnPolicy="EVERYTIME" ifMarker="pi_1o_quest_lost_memories_01"  spawnProbability="0.2"/> <!-- 2ая страница по квесту “Потерянные воспоминания”  -->
+            <place id="pi_1o_Antigua_lost_memories_09" in="639" xPos="24"  ifMarker="pi_1o_quest_lost_memories_09" respawnPolicy="EVERYTIME" spawnProbability="0.2"/> <!-- 9ая страница по квесту “Потерянные воспоминания”  -->
+            <place id="pi_1o_hs_ring_jim_magpie" in="580" xPos="127" ifMarker="pi_1o_quest_leyho_killers_ring_steven_house" respawnPolicy="EVERYTIME"/> <!-- здесь заспавнится кольцо по квесту “Найти убийц Лейхо”. прям запрятать жестко  -->
+            <place id="pi_1o_home_steven_map" in="1338" xPos="312"/>  <!-- Карта  -->
+            <place id="pi_1o_home_steven_bad" in="469" xPos="556"/>  <!-- Кровать  -->
+            <place id="pi_1o_home_steven_box" in="443" xPos="46" respawnPolicy="EVERYDAY"/>  <!-- Ящик  -->
+            <place id="pi_1o_home_steven_table" in="735" xPos="38"/>  <!-- Письменный стол  -->
+            <place id="pi_1o_home_steven_tumba" in="556" xPos="36" respawnPolicy="EVERYDAY"/>  <!-- Тумба  -->
+            <place id="pi_1o_home_steven_tumba_2" in="930" xPos="557"/>  <!-- Тумба 2  -->
+            <place id="pi_1o_home_steven_table_2" in="1283" xPos="324"/>  <!-- Письменный стол 2 -->
+            <place id="pi_1o_home_steven_plant" in="961" xPos="35"/>  <!-- Растение  -->
+            <place id="pi_1o_home_steven_tumba_3" in="1157" xPos="460"/>  <!-- Тумба 3  -->
+            <place id="pi_1o_home_steven_box_2" in="832" xPos="38"/>  <!-- Ящик 2 -->
+
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Дом кладовщика стандарт готово  -->
+
+    <branch id="pi_1o_townAntigua_sc_default" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507"
+            knightOffsetBottom="150" knightOffsetTop="430" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_sc_default"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_home_storeceeper_bed" in="795" xPos="550"/> <!-- Кровать  -->
+            <place id="pi_1o_home_storeceeper_barrel_with_apples" in="622" xPos="75" respawnPolicy="EVERYDAY"/> <!-- Бочка с яблоками  -->
+            <place id="pi_1o_home_storeceeper_wardrobe" in="1341" xPos="322"/> <!-- Шкаф  -->
+            <place id="pi_1o_home_storeceeper_basket" in="1113" xPos="114"/> <!-- Корзина  -->
+            <place id="pi_1o_home_storeceeper_table" in="1074" xPos="555"/> <!-- Обеденный стол  -->
+            <place id="pi_1o_home_storeceeper_table_for_work" in="423" xPos="68" respawnPolicy="EVERYDAY"/> <!-- Рабочий стол  -->
+            <place id="pi_1o_home_storeceeper_tumba" in="464" xPos="574"/> <!-- Тумба  -->
+            <place id="pi_1o_home_storeceeper_plant" in="655" xPos="554" respawnPolicy="EVERYDAY"/> <!-- Растение  -->
+            <place id="pi_1o_home_storeceeper_tumba_2" in="1343" xPos="469" respawnPolicy="EVERYDAY"/> <!-- Тумба 2 -->
+            <place id="pi_1o_home_storeceeper_curtain" in="1391" xPos="185"/> <!-- Занавеска -->
+            <place id="pi_1o_home_storeceeper_barrel" in="792" xPos="94"/> <!-- Бочка -->
+            <place id="pi_1o_home_storeceeper_tumba_3" in="1141" xPos="52" respawnPolicy="EVERYDAY"/> <!-- Тумба 3 -->
+            <place id="pi_1o_home_storeceeper_sideboard" in="954" xPos="43"/> <!-- Сервант -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Дом кладовщика жена пират готово  -->
+
+    <branch id="pi_1o_townAntigua_sc_pirate" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507"
+            knightOffsetBottom="150" knightOffsetTop="440" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_sc_pirate"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_wifeAntigua_wife" in="1179" xPos="301" ifMarker="pi_1o_townAntigua_sc_pirate"/> <!-- жена Амалия по квесту "Дела амурные"  -->
+            <place id="pi_1o_home_storeceeper_pirate_bed" in="961" xPos="95" /> <!-- Кровать  -->
+            <place id="pi_1o_home_storeceeper_pirate_wardrobe" in="897" xPos="544" /> <!-- Шкаф  -->
+            <place id="pi_1o_home_storeceeper_pirate_armchair" in="1160" xPos="178" respawnPolicy="EVERYDAY" /> <!-- Кресло  -->
+            <place id="pi_1o_home_storeceeper_pirate_palm_tree" in="1287" xPos="526" /> <!-- Пальма  -->
+            <place id="pi_1o_home_storeceeper_pirate_palm_tree" in="1287" xPos="62" /> <!-- Пальма  -->
+            <place id="pi_1o_home_storeceeper_pirate_tumba" in="650" xPos="557" /> <!-- Тумба  -->
+            <place id="pi_1o_home_storeceeper_pirate_tumba_for_bed" in="817" xPos="63" respawnPolicy="EVERYDAY" /> <!-- Прикроватная тумба  -->
+            <place id="pi_1o_home_storeceeper_pirate_table_for_work" in="254" xPos="570" /> <!-- Рабочий стол  -->
+            <place id="pi_1o_home_storeceeper_pirate_books_for_work" in="275" xPos="30" /> <!-- Рабочие книги  -->
+            <place id="pi_1o_home_storeceeper_pirate_bookcase" in="513" xPos="41" /> <!-- Книжный шкаф  -->
+            <place id="pi_1o_home_storeceeper_pirate_tumba_2" in="420" xPos="576" /> <!-- Тумба 2 -->
+            <place id="pi_1o_home_storeceeper_pirate_flowers" in="1159" xPos="434" /> <!-- Цветы -->
+            <place id="pi_1o_home_storeceeper_pirate_window" in="1393" xPos="306" /> <!-- Окно -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Дом кладовщика жена маг вуду готово -->
+
+    <branch id="pi_1o_townAntigua_sc_magevoodoo_home" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900"
+            maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_sc_magevoodoo_home"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_wifemagevoodoo_wife" in="1167" xPos="312" ifMarker="pi_1o_townAntigua_sc_magevoodoo"/> <!-- жена Чака по квесту "Дела амурные"  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_bed" in="550" xPos="62" /> <!-- Кровать  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_barrel_with_components" in="361" xPos="43" respawnPolicy="EVERYDAY" /> <!-- Бочка с компонентами  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_tumba" in="745" xPos="39" /> <!-- Тумба  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_table_for_rituals" in="999" xPos="49" respawnPolicy="EVERYDAY" /> <!-- Ритуальный стол  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_wc" in="1161" xPos="56" /> <!-- Уборная  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_wardrobe" in="1262" xPos="142" /> <!-- Шкаф  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_wardrobe" in="1262" xPos="440" /> <!-- Шкаф  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_altar" in="1324" xPos="291" /> <!-- Алтарь вуду  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_big_box" in="1146" xPos="554" /> <!-- Большой ящик  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_chaka_bag" in="1101" xPos="475" /> <!-- Сумка Чаки  -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_table_for_rituals_2" in="927" xPos="565" /> <!-- Ритуальный стол 2 -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_barrel_for_food" in="717" xPos="569" respawnPolicy="EVERYDAY" /> <!-- Бочка с едой -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_tumba_2" in="551" xPos="575" /> <!-- Тумба 2 -->
+            <place id="pi_1o_home_storeceeper_magevoodoo_pot" in="1018" xPos="121" /> <!-- Горшок -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Дом кладовщика жена туземка готово -->
+
+    <branch id="pi_1o_townAntigua_sc_ugabuga_home" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="440" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false"
+            recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_sc_ugabuga_home"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_wifeugabuga_wife" in="1196" xPos="319" ifMarker="pi_1o_townAntigua_sc_ugabuga"/> <!-- жена Мамуба по квесту "Дела амурные"  -->
+            <place id="pi_1o_home_storeceeper_ugabuga_bread" in="649" xPos="74" respawnPolicy="EVERYDAY" /> <!-- Запасы хлеба -->
+            <place id="pi_1o_home_storeceeper_ugabuga_table_for_lunch" in="934" xPos="91" respawnPolicy="EVERYDAY" /> <!-- Обеденный стол -->
+            <place id="pi_1o_home_storeceeper_ugabuga_tumba" in="1076" xPos="75" /> <!-- Тумба -->
+            <place id="pi_1o_home_storeceeper_ugabuga_wardrobe" in="1274" xPos="147" /> <!-- Шкаф -->
+            <place id="pi_1o_home_storeceeper_ugabuga_bed" in="1346" xPos="311" /> <!-- Кровать -->
+            <place id="pi_1o_home_storeceeper_ugabuga_barrel" in="1232" xPos="440" /> <!-- Бочка -->
+            <place id="pi_1o_home_storeceeper_ugabuga_drum" in="1127" xPos="486" /> <!-- Барабан -->
+            <place id="pi_1o_home_storeceeper_ugabuga_bags" in="1014" xPos="518" /> <!-- Сумки -->
+            <place id="pi_1o_home_storeceeper_ugabuga_barrel_2" in="869" xPos="538" respawnPolicy="EVERYDAY" /> <!-- Бочка 2 -->
+            <place id="pi_1o_home_storeceeper_ugabuga_table_for_work" in="729" xPos="531" /> <!-- Рабочий стол -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, Дом кладовщика жена призрак готово -->
+
+    <branch id="pi_1o_townAntigua_sc_ghost_home" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507"
+            knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_sc_ghost_home"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_wifeghost_wife" in="1157" xPos="338" ifMarker="pi_1o_townAntigua_sc_ghost"/> <!-- жена Моргана по квесту "Дела амурные"  -->
+            <place id="pi_1o_home_storeceeper_ghost_web" in="388" xPos="54" /> <!-- Паутина -->
+            <place id="pi_1o_home_storeceeper_ghost_box" in="642" xPos="54" /> <!-- Ящик -->
+            <place id="pi_1o_home_storeceeper_ghost_sofa" in="922" xPos="81" /> <!-- Диван -->
+            <place id="pi_1o_home_storeceeper_ghost_candle" in="1179" xPos="84" /> <!-- Свеча -->
+            <place id="pi_1o_home_storeceeper_ghost_candle" in="1304" xPos="137" /> <!-- Свеча -->
+            <place id="pi_1o_home_storeceeper_ghost_candle" in="1238" xPos="513" /> <!-- Свеча -->
+            <place id="pi_1o_home_storeceeper_ghost_gravestone" in="1363" xPos="298" /> <!-- Надгробие Морганы -->
+            <place id="pi_1o_home_storeceeper_ghost_barrel" in="1049" xPos="529" respawnPolicy="EVERYDAY" /> <!-- Бочка -->
+            <place id="pi_1o_home_storeceeper_ghost_bed" in="912" xPos="538" /> <!-- Эм... Кровать?! -->
+            <place id="pi_1o_home_storeceeper_ghost_light" in="380" xPos="570" /> <!-- Лампа -->
+
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, дворец губернатора готово -->
+    <branch id="pi_1o_townAntigua_governor_palace" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="490" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_governor_palace"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_gp_governor_servant" in="866" xPos="141"/> <!-- слуга губернатора  -->
+            <place id="pi_1o_Antigua_gp_governor" in="1174" xPos="344"/> <!-- губернатор  -->
+            <place id="pi_1o_mt_magevoodoo_guard_pay_to_governor" in="1175" xPos="246" ifMarker="pi_1o_quest_pirates_ghosts_mages_pay" requireTimeFrom="08:00"
+                   requireTimeTo="10:00" respawnPolicy="EVERYTIME"/> <!-- маг-вуду страж принёс компенсацию по проваленному квесту "Призраки пиратов"  -->
+            <place id="pi_1o_Antigua_gp_detective" in="660" xPos="449" ifMarker="pi_1o_quest_leyho_killers_02" respawnPolicy="EVERYTIME"/> <!-- сыщик  -->
+            <place id="pi_1o_Antigua_gp_pirate_head_way_to_him" in="1001" xPos="108"/> <!-- поворот на подлокацию с главой пиратов, слева  -->
+            <place id="pi_1o_Antigua_gp_my_room" in="1001" xPos="493" ifMarker="pi_1o_my_room_my_home_door" respawnPolicy="EVERYTIME"/> <!-- поворот на подлокацию "Моя комната", справа  -->
+            <place id="pi_1o_Antigua_gp_palace_manager" in="1111" xPos="449" ifMarker="pi_1o_my_room_my_home_palace_manager" respawnPolicy="EVERYTIME"/> <!-- Управляющий дворцом, обставляет нам комнату  -->
+            <place id="pi_1o_Antigua_gp_sofa" in="416" xPos="47"/> <!-- Диван  -->
+            <place id="pi_1o_Antigua_gp_boxes_with_books" in="766" xPos="98" respawnPolicy="EVERYDAY"/> <!-- Коробки с книгами  -->
+            <place id="pi_1o_Antigua_gp_bookshelves" in="876" xPos="30"/> <!-- Книжные полки  -->
+            <place id="pi_1o_Antigua_gp_table_for_work" in="1311" xPos="303"/> <!-- Рабочий стол  -->
+            <place id="pi_1o_Antigua_gp_box" in="1226" xPos="137"/> <!-- Ящик  -->
+            <place id="pi_1o_Antigua_gp_tumba" in="1251" xPos="419"/> <!-- Тумба  -->
+            <place id="pi_1o_Antigua_gp_armchair" in="1090" xPos="106"/> <!-- Кресло  -->
+            <place id="pi_1o_Antigua_gp_table_for_work_servant" in="659" xPos="559" respawnPolicy="EVERYDAY"/> <!-- Рабочее место слуги  -->
+            <place id="pi_1o_Antigua_gp_table_for_quests" in="423" xPos="563" respawnPolicy="EVERYDAY"/> <!-- Учётный стол  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, моя комната готово -->
+    <branch id="pi_1o_townAntigua_my_room" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="280" knightOffsetTop="440" controlType="BW_FW"  recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_my_room"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <!--<place id="pi_1o_my_room_way_out" in="137" xPos="304"/> &lt;!&ndash; выход из моя комната  &ndash;&gt;-->
+            <place id="pi_1o_my_room_interior_bed" ifMarker="pi_1o_my_room_interior_bed_buy_it" in="1135" xPos="130" respawnPolicy="EVERYTIME"/> <!-- кровать  -->
+            <place id="pi_1o_my_room_interior_table" ifMarker="pi_1o_my_room_interior_table_buy_it" in="558" xPos="507" respawnPolicy="EVERYTIME"/> <!-- стол  -->
+            <place id="pi_1o_my_room_interior_chair_01" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="498" xPos="557" respawnPolicy="EVERYTIME"/> <!-- стул №1  -->
+            <place id="pi_1o_my_room_interior_chair_02" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="550" xPos="437" respawnPolicy="EVERYTIME"/> <!-- стул №2  -->
+            <place id="pi_1o_my_room_interior_chair_03" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="1123" xPos="542" respawnPolicy="EVERYTIME"/> <!-- стул №3  -->
+            <place id="pi_1o_my_room_interior_chair_04" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="439" xPos="140" respawnPolicy="EVERYTIME"/> <!-- стул №4  -->
+            <place id="pi_1o_my_room_interior_wardrobe_01" ifMarker="pi_1o_my_room_interior_wardrobe_01_buy_it"  in="849" xPos="493" respawnPolicy="EVERYTIME"/> <!-- Шкаф 01 -->
+            <place id="pi_1o_my_room_interior_wardrobe_02" ifMarker="pi_1o_my_room_interior_wardrobe_02_buy_it"  in="498" xPos="83" respawnPolicy="EVERYTIME"/> <!-- Шкаф 02  -->
+            <place id="pi_1o_my_room_interior_lights_01" ifMarker="pi_1o_my_room_interior_lights_buy_it" in="1211" xPos="219" respawnPolicy="EVERYTIME"/> <!-- освещение №1 у кровати  -->
+            <place id="pi_1o_my_room_interior_lights_02" ifMarker="pi_1o_my_room_interior_lights_buy_it" in="658" xPos="461" respawnPolicy="EVERYTIME"/> <!-- освещение №2 у стола -->
+            <place id="pi_1o_my_room_interior_lights_03" ifMarker="pi_1o_my_room_interior_lights_buy_it" in="792" xPos="146" respawnPolicy="EVERYTIME"/> <!-- освещение №3 у кресел -->
+            <place id="pi_1o_my_room_interior_chest_01" ifMarker="pi_1o_my_room_interior_chest_01_buy_it" in="1192" xPos="495" respawnPolicy="EVERYTIME"/> <!-- комод 01 -->
+            <place id="pi_1o_my_room_interior_chest_02" ifMarker="pi_1o_my_room_interior_chest_02_buy_it" in="1029" xPos="83" respawnPolicy="EVERYTIME"/> <!-- комод 02 -->
+            <place id="pi_1o_my_room_interior_armchair_01" ifMarker="pi_1o_my_room_interior_armchair_buy_it" in="723" xPos="88" respawnPolicy="EVERYTIME"/> <!-- кресло 01 -->
+            <place id="pi_1o_my_room_interior_armchair_02" ifMarker="pi_1o_my_room_interior_armchair_buy_it" in="730" xPos="201" respawnPolicy="EVERYTIME"/> <!-- кресло 02 -->
+            <place id="pi_1o_my_room_interior_decor_01" ifMarker="pi_1o_my_room_interior_decor_buy_it" in="1380" xPos="493" respawnPolicy="EVERYTIME"/> <!-- картина 01 с видами Антигуа -->
+            <place id="pi_1o_my_room_interior_decor_02" ifMarker="pi_1o_my_room_interior_decor_buy_it" in="1387" xPos="112" respawnPolicy="EVERYTIME"/> <!-- картина 02 с видами Антигуа -->
+            <place id="pi_1o_my_room_interior_decor_03" ifMarker="pi_1o_my_room_interior_decor_buy_it" in="1374" xPos="296" respawnPolicy="EVERYTIME"/> <!-- пиратский флаг -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- город Антигуа, дворец губернатора КВЕСТ "Компас инквизиции" готово -->
+
+    <branch id="pi_1o_townAntigua_governor_palace_compass" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" controlType="BW_FW" maxCoordinate="1507"
+            knightOffsetBottom="150" knightOffsetTop="490" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_townAntigua_governor_palace_compass"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_gp_governor_servant_compass" in="684" xPos="499" ifMarker="pi_gold_compass_04" respawnPolicy="EVERYTIME"/> <!-- слуга губернатора  -->
+            <place id="pi_1o_Antigua_gp_table_for_work_compass" in="1285" xPos="301"/> <!-- Рабочий стол квест Золотой компас  -->
+        </spawnPlaces>
+    </branch>
+
+
+    <!-- Лагерь магов-вуду готово -->
+
+    <branch id="pi_1o_magevoodoo_town" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507"
+            knightOffsetBottom="150" knightOffsetTop="405" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_magevoodoo_town"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <!--<place id="pi_1o_Antigua_sign_way_to_city" in="276" xPos="415" /> &lt;!&ndash; Путевой знак  &ndash;&gt;-->
+            <place id="pi_1o_wifemagevoodoo" in="952" xPos="108" respawnPolicy="EVERYTIME" ifMarker="storeceeper_quest_wife_searching"/> <!-- жена Чака по квесту "Дела амурные"  -->
+            <place id="pi_1o_jim_magpie" in="1252" xPos="257" ifMarker="pi_1o_quest_leyho_killers_long_way_03" respawnPolicy="EVERYTIME"/> <!-- Дух Джими Сорока по квесту "Найти убийц Лейхо", ставить рядом с Верховным Шаманом  -->
+            <place id="pi_1o_magevoodoo_head" in="1262" xPos="356"/> <!-- верховный шаман магов вуду  -->
+            <place id="pi_1o_mt_magevoodoo_guard" in="200" xPos="193"/> <!-- маг-вуду страж  -->
+            <place id="pi_1o_mt_magevoodoo_mentor" in="889" xPos="447"/> <!-- Маг-вуду Наставник  -->
+            <place id="pi_1o_mt_shorr_kan" in="1227" xPos="206" ifMarker="pi_1o_quest_prophet_07" respawnPolicy="EVERYTIME"/> <!-- Шорр-Кан  -->
+            <place id="pi_1o_Antigua_gp_governor_mg" in="153" xPos="123" ifMarker="pi_1o_quest_pirates_ghosts_fail" respawnPolicy="EVERYTIME"/> <!-- Губернатор по квесту "Призраки пиратов", поставить рядом с магом-вуду Стражем, у них диалог  -->
+            <place id="pi_1o_sp_bones_magevoodoo" in="1009" xPos="398" ifMarker="bones_magevoodoo" requireTimeFrom="00:00" requireTimeTo="07:00" respawnPolicy="EVERYTIME" /> <!-- Бонес Маг-вуду, появляется в указанное время по мск  -->
+            <place id="pi_1o_amazon_sirenia_arto" in="620" xPos="151" ifMarker="pi_1o_quest_lost_memories_07" respawnPolicy="EVERYTIME" spawnProbability="0.3"/> <!-- Амазонцы Сирения или Арто, в зависимости от пола игрока  --> 
+            <place id="pi_1o_mt_magevoodoo_npc_1" in="731" xPos="451"/> <!-- Маг-вуду Жнец  -->
+            <place id="pi_1o_mt_magevoodoo_door_to_house_reaper" in="776" xPos="545"/> <!-- Дверь в дом Жнеца  -->
+            <place id="pi_1o_mt_magevoodoo_npc_2" in="385" xPos="416"/> <!-- Маг-вуду Ворон  -->
+            <place id="pi_1o_mt_magevoodoo_door_to_house_raven" in="351" xPos="543"/> <!-- Дверь в дом Ворона  -->
+            <place id="pi_1o_mt_magevoodoo_npc_3" in="793" xPos="153"/> <!-- Маг-вуду Блаширх  -->
+            <place id="pi_1o_mt_magevoodoo_door_to_house_blashyrkh" in="1192" xPos="79"/> <!-- Дверь в дом Блаширха  -->
+            <place id="pi_1o_mt_magevoodoo_npc_4" in="446" xPos="219"/> <!-- Маг-вуду Джамала  -->
+            <place id="pi_1o_mt_magevoodoo_door_to_house_mentor" in="1122" xPos="533"/> <!-- Дверь в дом Наставника  -->
+            <place id="pi_1o_mt_magevoodoo_mvh_house" in="1425" xPos="305"/> <!-- Хижина Верховного Шамана  -->
+            <place id="pi_1o_mt_magevoodoo_mt_broken_clock" in="860" xPos="54" respawnPolicy="EVERYDAY"/> <!-- Сломанные часы  -->
+            <place id="pi_1o_mt_magevoodoo_mt_idol" in="697" xPos="64"/> <!-- Идол  -->
+            <place id="pi_1o_mt_magevoodoo_mt_torch" in="612" xPos="213"/> <!-- Факел  -->
+            <place id="pi_1o_mt_magevoodoo_mt_house_without_doors" in="475" xPos="107"/> <!-- Хижина без дверей  -->
+            <place id="pi_1o_mt_magevoodoo_mt_statue_for_druids_warriors" in="600" xPos="476"/> <!-- Статуя воинам друидов  -->
+            <place id="pi_1o_mt_magevoodoo_mt_guarantad" in="1304" xPos="484"/> <!-- Гуарантад  -->
+            <place id="pi_1o_mt_magevoodoo_mt_empty_house" in="219" xPos="40"/> <!-- Пустой дом  -->
+            <place id="pi_1o_mt_magevoodoo_mt_idol_2" in="147" xPos="427"/> <!-- Идол 2 -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь магов-вуду, дом Жнеца готово -->
+
+    <branch id="pi_1o_mt_road_house_of_the_reaper" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="430" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mt_road_house_of_the_reaper"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mt_magevoodoo_npc_1_inside_house" in="333" xPos="174"/> <!-- Маг-вуду Жнец дома  -->
+            <place id="pi_1o_mt_hotreaper_barrel_with_plants" in="807" xPos="102"/> <!-- Бочка с травами  -->
+            <place id="pi_1o_mt_hotreaper_potions" in="1127" xPos="151"/> <!-- Зелья  -->
+            <place id="pi_1o_mt_hotreaper_idol" in="1268" xPos="97"/> <!-- Идол  -->
+            <place id="pi_1o_mt_hotreaper_taxidermy_experience" in="1250" xPos="201"/> <!-- Таксидермический опыт  -->
+            <place id="pi_1o_mt_hotreaper_wardrobe" in="1318" xPos="310" respawnPolicy="EVERYDAY"/> <!-- Шкаф  -->
+            <place id="pi_1o_mt_hotreaper_medicinal_ointments" in="1243" xPos="472" respawnPolicy="EVERYDAY"/> <!-- Целебные мази  -->
+            <place id="pi_1o_mt_hotreaper_stone" in="1056" xPos="441"/> <!-- Камень  -->
+            <place id="pi_1o_mt_hotreaper_garbage" in="221" xPos="507"/> <!-- Мусор  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь магов-вуду, дом Ворона готово -->
+
+    <branch id="pi_1o_mt_road_house_of_the_raven" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="430" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mt_road_house_of_the_raven"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mt_magevoodoo_npc_2_inside_house" in="533" xPos="77"/> <!-- Маг-вуду Ворон дома  -->
+            <place id="pi_1o_mt_hotraven_crushed_blueberries" in="390" xPos="26"/> <!-- Раздавленная черника  -->
+            <place id="pi_1o_mt_hotraven_tumba" in="1013" xPos="69"/> <!-- Комод  -->
+            <place id="pi_1o_mt_hotraven_basket_with_stones" in="1067" xPos="154"/> <!-- Корзина с камнями  -->
+            <place id="pi_1o_mt_hotraven_barrel_of_mussels" in="1174" xPos="165"/> <!-- Бочка с мидиями  -->
+            <place id="pi_1o_mt_hotraven_idols" in="1282" xPos="311"/> <!-- Идолы  -->
+            <place id="pi_1o_mt_hotraven_magma" in="1169" xPos="474"/> <!-- Лава  -->
+            <place id="pi_1o_mt_hotraven_big_chair" in="1035" xPos="515"/> <!-- ОГРОМНАЯ табуретка  -->
+            <place id="pi_1o_mt_hotraven_crystal" in="711" xPos="559"/> <!-- Кристалл  -->
+            <place id="pi_1o_mt_hotraven_barrel" in="324" xPos="565"/> <!-- Бочка  -->
+            <place id="pi_1o_mt_hotraven_pot_with_gold" in="480" xPos="572"/> <!-- Горшочек с золотом  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь магов-вуду, дом Блаширха готово -->
+
+    <branch id="pi_1o_mt_road_house_of_the_blashyrkh" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mt_road_house_of_the_blashyrkh"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mt_magevoodoo_npc_3_inside_house" in="348" xPos="152"/> <!-- Маг-вуду Блаширх дома  -->
+            <place id="pi_1o_mt_hotb_table_for_food" in="687" xPos="43" respawnPolicy="EVERYDAY"/> <!-- Стол для еды  -->
+            <place id="pi_1o_mt_hotb_rotten_tumba" in="844" xPos="36"/> <!-- Гнилая тумба  -->
+            <place id="pi_1o_mt_hotb_ore_gold" in="1130" xPos="107"/> <!-- Золотая руда  -->
+            <place id="pi_1o_mt_hotb_strange_skull" in="1235" xPos="180"/> <!-- Странный череп  -->
+            <place id="pi_1o_mt_hotb_bath" in="1127" xPos="542"/> <!-- Ванная  -->
+            <place id="pi_1o_mt_hotb_plant" in="1161" xPos="454" respawnPolicy="EVERYDAY"/> <!-- Растение  -->
+            <place id="pi_1o_mt_hotb_folding_bed" in="926" xPos="528"/> <!-- Складная кровать  -->
+            <place id="pi_1o_mt_hotb_jewel_pot" in="605" xPos="564"/> <!-- Горшок с драгоценностями  -->
+            <place id="pi_1o_mt_hotb_mycelium" in="493" xPos="532"/> <!-- Грибница  -->
+            <place id="pi_1o_mt_hotb_distillation_apparatus" in="356" xPos="546"/> <!-- Перегонный аппарат  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь магов-вуду, дом Наставника готово -->
+
+    <branch id="pi_1o_mt_road_house_of_the_mentor" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="370" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mt_road_house_of_the_mentor"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mt_hotm_hornets_nest" in="547" xPos="32"/> <!-- Осиное гнездо  --> 
+            <place id="pi_1o_mt_hotm_jug" in="655" xPos="67"/> <!-- Кувшин  -->
+            <place id="pi_1o_mt_hotm_table_for_work" in="1095" xPos="94" respawnPolicy="EVERYDAY"/> <!-- Рабочий стол  -->
+            <place id="pi_1o_mt_hotm_barrel" in="1174" xPos="28"/> <!-- Бочка  -->
+            <place id="pi_1o_mt_hotm_butter" in="1231" xPos="27"/> <!-- Сливочное масло  -->
+            <place id="pi_1o_mt_hotm_table_for_jamala_work" in="1270" xPos="114" respawnPolicy="EVERYDAY"/> <!-- Рабочий стол Джамалы -->
+            <place id="pi_1o_mt_hotm_pea" in="1186" xPos="182"/> <!-- Бобы  -->
+            <place id="pi_1o_mt_hotm_skull" in="1280" xPos="349"/> <!-- Череп  -->
+            <place id="pi_1o_mt_hotm_pot" in="1192" xPos="398"/> <!-- Горшок  -->
+            <place id="pi_1o_mt_hotm_coal" in="1236" xPos="479" respawnPolicy="EVERYDAY"/> <!-- Угли  -->
+            <place id="pi_1o_mt_hotm_jug_2" in="964" xPos="531" respawnPolicy="EVERYDAY"/> <!-- Кувшин 2 -->
+            <place id="pi_1o_mt_hotm_table_for_jamala_private" in="726" xPos="533"/> <!-- Личный стол Джамалы -->
+            <place id="pi_1o_mt_hotm_barrel_with_gold" in="733" xPos="109"/> <!-- Бочка с золотом  -->
+        </spawnPlaces>
+    </branch>
+
+
+    <!-- Лагерь инквизиции готово -->
+
+    <branch id="pi_1o_inquisition_town" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="390" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_inquisition_town"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sign_way_to_city" in="172" xPos="426" /> <!-- Путевой знак  -->
+            <place id="pi_1o_head_of_inquisition" in="1272" xPos="278"/> <!-- глава отряда инквизиции  -->
+            <place id="pi_1o_wifeugabuga" in="1302" xPos="408" respawnPolicy="EVERYTIME" ifMarker="storeceeper_quest_wife_searching"/> <!-- жена Мамуба по квесту "Дела амурные"  -->
+            <place id="pi_1o_it_selezar" in="183" xPos="188"/> <!-- Селезар, кладовщик инквизиции -->
+            <place id="pi_1o_it_dorian" in="850" xPos="169"/> <!-- Дориан, квестодатель -->
+            <place id="pi_1o_it_recruit_inquisition" in="316" xPos="433" ifMarker="pi_1o_new_recruit_01" respawnPolicy="EVERYTIME"/> <!-- Рекрут инквизиции, по квесту "Новый рекрут" -->
+            <place id="pi_1o_it_valeran" in="1070" xPos="398" respawnPolicy="EVERYTIME" spawnProbability="0.05"/> <!-- Валеран, по квесту "Дед опять забыл выпить таблетки", вероятность появления 5% -->
+            <place id="pi_1o_it_inquisition_soldier" in="480" xPos="196"/> <!-- Солдат инквизиции -->
+            <place id="pi_1o_it_inquisition_cook" in="817" xPos="457"/> <!-- Повар инквизиции -->
+            <place id="pi_1o_it_inquisition_warehouse" in="315" xPos="59"/> <!-- Склад инквизиции -->
+            <place id="pi_1o_it_inquisition_cannon" in="172" xPos="121"/> <!-- Пушка -->
+            <place id="pi_1o_it_inquisition_cannon" in="1426" xPos="267"/> <!-- Пушка -->
+            <place id="pi_1o_it_inquisition_fireplace" in="309" xPos="184"/> <!-- Костёр -->
+            <place id="pi_1o_it_inquisition_barrels_and_boxes" in="1179" xPos="524"/> <!-- Бочки и ящики -->
+            <place id="pi_1o_it_inquisition_barrels_in_fire" in="618" xPos="438"/> <!-- Горящие бочки -->
+            <place id="pi_1o_it_inquisition_barrels" in="363" xPos="548"/> <!-- Бочки -->
+            <place id="pi_1o_it_inquisition_fire" in="757" xPos="562"/> <!-- Огонь -->
+            <place id="pi_1o_it_inquisition_soldier_npc_1" in="1052" xPos="207"/> <!-- Солдат инквизиции НПС 1 -->
+            <place id="pi_1o_it_inquisition_soldier_npc_2" in="475" xPos="408"/> <!-- Солдат инквизиции НПС 2 -->
+            <place id="pi_1o_it_door_to_tent_head_of_inquisition" in="1323" xPos="104"/> <!-- Дверь в палатку Главы Инквизиции -->
+            <place id="pi_1o_it_door_to_tent_dorian" in="961" xPos="62"/> <!-- Дверь в палатку Дориана -->
+            <place id="pi_1o_it_door_to_tent_armory" in="587" xPos="81"/> <!-- Дверь в палатку Оружейная -->
+            <place id="pi_1o_it_door_to_tent_cannon_room" in="501" xPos="543"/> <!-- Дверь в палатку Пушечная -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь инквизиции, Палатка Главы Инквизиции готово -->
+
+    <branch id="pi_1o_it_road_tent_head_of_inquisition" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="370" controlType="BW_FW" backOnlyToMain="false" forceGenerateBackPlace="true" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_it_road_tent_head_of_inquisition"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_it_inquisition_soldier_npc_3" in="779" xPos="143"/> <!-- Солдат инквизиции НПС 3 --> 
+            <place id="pi_1o_it_thoi_bfg" in="93" xPos="527"/> <!-- ПРОСТО. ОГРОМНАЯ. ПУШКА. --> 
+            <place id="pi_1o_it_thoi_table_for_guns" in="358" xPos="553"/> <!-- Стол с ружьями -->
+            <place id="pi_1o_it_thoi_culverins" in="698" xPos="545"/> <!-- Кулеврины -->
+            <place id="pi_1o_it_thoi_spare_parts_for_muskets" in="1029" xPos="556" respawnPolicy="EVERYDAY"/> <!-- Запчасти для мушкетов -->
+            <place id="pi_1o_it_thoi_table_for_works" in="1378" xPos="302"/> <!-- Рабочий стол -->
+            <place id="pi_1o_it_thoi_travel_suitcase" in="1155" xPos="129"/> <!-- Походный чемодан -->
+            <place id="pi_1o_it_thoi_personal_weapons" in="992" xPos="46" respawnPolicy="EVERYDAY"/> <!-- Личное оружие -->
+            <place id="pi_1o_it_thoi_food_supplies" in="741" xPos="34"/> <!-- Запасы еды -->
+            <place id="pi_1o_it_thoi_food_supplies" in="451" xPos="46"/> <!-- Запасы еды -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь инквизиции, Палатка Дориана готово -->
+
+    <branch id="pi_1o_it_road_tent_dorian" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="370" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_it_road_tent_dorian"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_it_td_camping_box" in="273" xPos="65" respawnPolicy="EVERYDAY"/> <!-- Походный короб -->
+            <place id="pi_1o_it_td_barrel_with_sea_water" in="777" xPos="58"/> <!-- Бочка с морской водой -->
+            <place id="pi_1o_it_td_harpoon_gun" in="942" xPos="90"/> <!-- Гарпуномёт -->
+            <place id="pi_1o_it_td_pipe_for_evacuation" in="1103" xPos="111"/> <!-- Труба для эвакуации -->
+            <place id="pi_1o_it_td_table_for_food" in="1258" xPos="48" respawnPolicy="EVERYDAY"/> <!-- Обеденный стол -->
+            <place id="pi_1o_it_td_table_for_work" in="1373" xPos="303" respawnPolicy="EVERYDAY"/> <!-- Рабочий стол -->
+            <place id="pi_1o_it_td_harpoons" in="1064" xPos="559"/> <!-- Гарпуны -->
+            <place id="pi_1o_it_td_workshop" in="709" xPos="569"/> <!-- Мастерская -->
+            <place id="pi_1o_it_td_flagpoles" in="505" xPos="560"/> <!-- Флагштоки -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь инквизиции, Оружейная готово -->
+
+    <branch id="pi_1o_it_road_tent_armory" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="380" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_it_road_tent_armory"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_it_ta_barrels_with_oil" in="326" xPos="56"/> <!-- Бочки с маслом -->
+            <place id="pi_1o_it_ta_box_with_bullets" in="613" xPos="124"/> <!-- Ящик с патронами -->
+            <place id="pi_1o_it_ta_guns_in_oil" in="892" xPos="59"/> <!-- Стволы в масле -->
+            <place id="pi_1o_it_ta_barrels_with_spare_parts" in="1196" xPos="127"/> <!-- Бочки с запчастями -->
+            <place id="pi_1o_it_ta_gunpowder" in="1349" xPos="407"/> <!-- Порох -->
+            <place id="pi_1o_it_ta_gunpowder" in="1334" xPos="467"/> <!-- Порох -->
+            <place id="pi_1o_it_ta_gunpowder" in="1330" xPos="174"/> <!-- Порох -->
+            <place id="pi_1o_it_ta_gunpowder" in="1218" xPos="573"/> <!-- Порох -->
+            <place id="pi_1o_it_ta_piece_of_steel" in="1108" xPos="545"/> <!-- Кусок стали -->
+            <place id="pi_1o_it_ta_blanks_for_culverins" in="949" xPos="543"/> <!-- Заготовки для кулеврин -->
+            <place id="pi_1o_it_ta_gunpowder" in="664" xPos="546"/> <!-- Порох -->
+            <place id="pi_1o_it_ta_gunpowder" in="359" xPos="521"/> <!-- Порох -->
+            <place id="pi_1o_it_ta_box_with_bullets" in="155" xPos="481"/> <!-- Ящик с патронами -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь инквизиции, Пушечная готово -->
+
+    <branch id="pi_1o_it_road_tent_cannon_room" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="900" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_it_road_tent_cannon_room"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_it_inquisition_soldier_npc_4" in="651" xPos="307"/> <!-- Солдат инквизиции НПС 4 -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Кладбище пиратов готово -->
+
+    <branch id="pi_1o_pirates_graveyard" genMode="PI_1O_PIRATES_GRAVEYARD" probability="0" scenario="true" minLength="999999999"
+            maxLength="999999999" recreationPolicy="RECREATE_EVERYTIME">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" pin="true" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_pirates_graveyard"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+        </spawnPlaces>
+    </branch>
+
+    <!-- Кладбище пиратов, Глубокая могила готово -->
+
+    <branch id="pi_1o_pg_deep_grave_road" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="455" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_pg_deep_grave_road"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_pg_insatiable" in="1174" xPos="362" ifMarker="pi_1o_quest_missing_recruit_inquisition_02" respawnPolicy="EVERYTIME"/> <!-- Ненасыть, возможно босс, по квесту "Пропавший рекрут инквизиции", нужны арты дорога бой  -->
+            <place id="pi_1o_pg_dead_recruit" in="609" xPos="427" markerCondition="pi_1o_quest_missing_recruit_inquisition_02 and not pi_1o_quest_missing_recruit_inquisition_go_to_skeleton" respawnPolicy="EVERYTIME"/> <!-- мёртвый рекрут, по квесту "Пропавший рекрут инквизиции", арт дорога   -->
+            <place id="pi_1o_pg_dead_recruit_skeleton" in="609" xPos="427" markerCondition="pi_1o_quest_missing_recruit_inquisition_02 and pi_1o_quest_missing_recruit_inquisition_go_to_skeleton" respawnPolicy="EVERYTIME"/> <!-- мёртвый рекрут в виде скелета, по квесту "Пропавший рекрут инквизиции", сделать ту же позу, что и pi_1o_pg_dead_recruit, арт дорога   -->
+            <place id="pi_1o_pg_dgr_empty_urn" in="439" xPos="115"/> <!-- Пустая урна  -->
+            <place id="pi_1o_pg_dgr_full_urn_01" in="568" xPos="117"/> <!-- Урна с прахом 01  -->
+            <place id="pi_1o_pg_dgr_full_urn_02" in="752" xPos="113"/> <!-- Урна с прахом 02  -->
+            <place id="pi_1o_pg_dgr_full_urn_03" in="522" xPos="504"/> <!-- Урна с прахом 03  -->
+            <place id="pi_1o_pg_dgr_full_urn_04" in="278" xPos="508"/> <!-- Урна с прахом 04  -->
+            <place id="pi_1o_pg_dgr_empty_urns" in="808" xPos="476"/> <!-- Пустые урны  -->
+            <place id="pi_1o_pg_dgr_box_with_grey_slurry" in="1083" xPos="161"/> <!-- Ящик с серой жижей  -->
+            <place id="pi_1o_pg_dgr_broken_urn" in="1234" xPos="173"/> <!-- Разбитая урна  -->
+            <place id="pi_1o_pg_dgr_pirat_stan_good" in="1363" xPos="307"/> <!-- Пират Стэн Добрый  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Кладбище пиратов, 1ый склеп для посещения готово -->
+
+    <branch id="pi_1o_pg_crypt_for_player_1" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false"  maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="516" recreationPolicy="RECREATE_EVERYDAY"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_pg_crypt_for_player_1"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_pg_cfp_1_boss" in="1176" xPos="307" requireWeekDay="MONDAY,WEDNESDAY"/> <!-- Восставшая Нежить босс, появляется по понедельникам и средам  -->
+            <place id="pi_1o_Antigua_lost_memories_07" in="805" xPos="72" respawnPolicy="EVERYTIME" ifMarker="pi_1o_quest_lost_memories_06" spawnProbability="0.2"/> <!-- 7ая страница по квесту “Потерянные воспоминания”  -->
+            <place id="pi_1o_pg_cfp_1_sarcophagus_01" in="160" xPos="103" respawnPolicy="PERSISTENT_FOREVER" /> <!-- Саркофаг 01  -->
+            <place id="pi_1o_pg_cfp_1_sarcophagus_02" in="153" xPos="511" respawnPolicy="PERSISTENT_FOREVER" /> <!-- Саркофаг 02  -->
+            <place id="pi_1o_pg_cfp_1_sarcophagus_03" in="373" xPos="521" respawnPolicy="PERSISTENT_FOREVER" /> <!-- Саркофаг 03  -->
+            <place id="pi_1o_pg_cfp_1_sarcophagus_04" in="603" xPos="102" respawnPolicy="PERSISTENT_FOREVER" /> <!-- Саркофаг 04  -->
+            <place id="pi_1o_pg_cfp_1_chest" in="935" xPos="522" respawnPolicy="PERSISTENT_FOREVER" /> <!-- Сундук  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Кладбище пиратов, 2ой склеп для посещения готово -->
+
+    <branch id="pi_1o_pg_crypt_for_player_2" genMode="DEFAULT" probability="0" scenario="true" minLength="2900"
+            maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="489" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="RECREATE_EVERYDAY">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_pg_crypt_for_player_2"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_pg_cfp_2_boss" in="1169" xPos="289" requireWeekDay="TUESDAY,THURSDAY,SATURDAY"/> <!-- Восставшая Нежить босс, появляется по вторникам, четвергам и субботам  -->
+            <place id="pi_1o_Antigua_lost_memories_07" in="909" xPos="496" respawnPolicy="EVERYTIME" ifMarker="pi_1o_quest_lost_memories_06" spawnProbability="0.2"/> <!-- 7ая страница по квесту “Потерянные воспоминания”  -->
+            <place id="pi_1o_pg_cfp_2_skeleton_in_cell" in="720" xPos="503" /> <!-- Скелет в клетке  -->
+            <place id="pi_1o_pg_cfp_2_barrel" in="569" xPos="101" respawnPolicy="PERSISTENT_FOREVER" /> <!-- Бочка  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Кладбище пиратов, 3ий склеп для посещения готово -->
+
+    <branch id="pi_1o_pg_crypt_for_player_3" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="580" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="RECREATE_EVERYDAY">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_pg_crypt_for_player_3"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_pg_cfp_3_boss" in="1088" xPos="185" requireWeekDay="WEDNESDAY,FRIDAY,SUNDAY"/> <!-- Восставшая Нежить босс, появляется по средам, пятницам и воскресеньям  -->
+            <place id="pi_1o_Antigua_lost_memories_07" in="354" xPos="506" respawnPolicy="EVERYTIME" ifMarker="pi_1o_quest_lost_memories_06" spawnProbability="0.2"/> <!-- 7ая страница по квесту “Потерянные воспоминания”  -->
+            <place id="pi_1o_pg_cfp_3_bench" in="611" xPos="126" /> <!-- Скамья 1  -->
+            <place id="pi_1o_pg_cfp_3_bench" in="853" xPos="126" /> <!-- Скамья 1  -->
+            <place id="pi_1o_pg_cfp_3_bench_2" in="820" xPos="465" /> <!-- Скамья 2  -->
+            <place id="pi_1o_pg_cfp_3_bench_2" in="660" xPos="487" /> <!-- Скамья 2  -->
+            <place id="pi_1o_pg_cfp_3_bench_2" in="467" xPos="487" /> <!-- Скамья 2  -->
+            <place id="pi_1o_pg_cfp_3_rum_bottle" in="492" xPos="116" /> <!-- Бутыль из-под рома  -->
+            <place id="pi_1o_pg_cfp_3_rum_bottle" in="963" xPos="477" /> <!-- Бутыль из-под рома  -->
+            <place id="pi_1o_pg_cfp_3_sarcophagus" in="1341" xPos="296" /> <!-- Саркофаг  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Сахарная плантация готово -->
+
+    <branch id="pi_1o_sugar_plantation" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="390" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_sugar_plantation"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sign_way_to_city" in="221" xPos="404" /> <!-- Путевой знак  -->
+            <place id="pi_1o_Antigua_sp_warehouse" in="1387" xPos="294"/> <!-- дверь в пещеру-склад  -->
+            <place id="pi_1o_Antigua_sp_planter" in="1230" xPos="173"/> <!-- плантатор  -->
+            <place id="pi_1o_sp_guarddave" in="1055" xPos="181"/> <!-- стражник Дейв  -->
+            <place id="pi_1o_sp_seraphim" in="1216" xPos="530" ifMarker="pi_1o_quest_seraphim_01" respawnPolicy="EVERYTIME"/> <!-- Серафим, босс, ангел покрытый скверной  -->
+            <place id="pi_1o_sp_bones" in="795" xPos="554" ifNoMarker="bones_magevoodoo" respawnPolicy="EVERYTIME"/> <!-- работник Бонес НЕ маг-вуду  -->
+            <place id="pi_1o_sp_bones" in="795" xPos="554" ifMarker="bones_magevoodoo" requireTimeFrom="07:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- работник Бонес маг-вуду  -->
+            <place id="pi_1o_sp_threefingered_billy" in="583" xPos="416"/> <!-- работник Трёхпалый Билли  -->
+            <place id="pi_1o_Antigua_sp_frail_chest" in="1215" xPos="379" ifMarker="pi_1o_frail_treasure_02" respawnPolicy="EVERYTIME"/> <!-- клад Хилого, ставить выше Трёхпалого Билли! Рядом со стражником Дейвом  -->
+            <place id="pi_1o_Antigua_lost_memories_04" in="191" xPos="135" respawnPolicy="EVERYTIME" ifMarker="pi_1o_quest_lost_memories_03" spawnProbability="0.15"/> <!-- 4ая страница по квесту “Потерянные воспоминания”  -->
+            <place id="pi_1o_Antigua_old_pirate_treasure" in="635" xPos="122" respawnPolicy="EVERYTIME" ifMarker="pi_1o_hermit_treasure_02" spawnProbability="0.6"/> <!-- клад старого пирата, квест одноимёный, в виде крестика красного клад   -->
+            <place id="pi_1o_Antigua_sp_worker_women_1" in="357" xPos="468"/> <!-- Работница низ  -->
+            <place id="pi_1o_Antigua_sp_worker_women_2" in="582" xPos="550"/> <!-- Работница в тростнике  -->
+            <place id="pi_1o_Antigua_sp_worker_man_1" in="669" xPos="193"/> <!-- Работник слева Патлатый  -->
+            <place id="pi_1o_Antigua_sp_worker_man_2" in="947" xPos="432"/> <!-- Работник вверху справа  -->
+            <place id="pi_1o_Antigua_sp_guard_npc" in="272" xPos="166"/> <!-- Стражник низ -->
+            <place id="pi_1o_Antigua_sp_guard_npc_2" in="879" xPos="203"/> <!-- Стражник верх под дейвом -->
+            <place id="pi_1o_Antigua_sp_bags_of_sugar_cane" in="363" xPos="150"/> <!-- Мешки с тростником -->
+            <place id="pi_1o_Antigua_sp_bags_of_sugar_cane" in="86" xPos="121"/> <!-- Мешки с тростником -->
+            <place id="pi_1o_Antigua_sp_bags_of_sugar_cane" in="699" xPos="54"/> <!-- Мешки с тростником -->
+            <place id="pi_1o_Antigua_sp_bags_of_sugar_cane" in="851" xPos="485"/> <!-- Мешки с тростником -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Сахарная плантация, пещера-склад готово -->
+
+    <branch id="pi_1o_sugar_plantation_warehouse" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="460" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_sugar_plantation_warehouse"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sp_wh_pirate_thief_1" in="1062" xPos="190" ifMarker="pi_night_watch_002" respawnPolicy="EVERYTIME" /> <!-- Пират-Вор 1 босс средний  -->
+            <place id="pi_1o_Antigua_sp_wh_pirate_thief_2" in="472" xPos="410" ifMarker="pi_night_watch_003" respawnPolicy="EVERYTIME"/> <!-- Пират-Вор 2 босс средний -->
+            <place id="pi_1o_Antigua_sp_wh_pirate_thief_3" in="1061" xPos="155" ifMarker="pi_night_watch_004" respawnPolicy="EVERYTIME"/> <!-- Пират-Вор 3 босс средний -->
+            <place id="pi_hobbit_ekla" in="907" xPos="98" /> <!-- впихнуть в маленький блок на карте  --> <!-- TODO -->
+            <place id="pi_1o_Antigua_sp_wh_red_reed" in="729" xPos="562" ifMarker="pi_1o_quest_rare_herbs_04" respawnPolicy="EVERYTIME"/> <!-- Красный тростник, впихнуть в маленький блок на карте  -->
+            <place id="pi_1o_redhead_ghost" in="248" xPos="168" markerCondition="pi_fear_of_voodoo_stupido_01 or pi_fear_of_voodoo_stupido_try_to_kill or pi_fear_of_voodoo_stupido_try_to_kill_immortal or pi_fear_of_voodoo_stupido_kill_redhead_ghost" respawnPolicy="EVERYTIME"/> <!-- Красноволосая босс - поставить очень близко ко входу  --> 
+            <place id="pi_1o_sp_big_rat" in="709" xPos="400" ifMarker="pi_big_rat_voodoo_02" respawnPolicy="EVERYTIME"/> <!-- Огромная Крыса босс, поставить высоко  --> 
+            <place id="pi_1o_sp_sugar_goblins" in="709" xPos="168" ifMarker="pi_sugar_for_tavern_04" respawnPolicy="EVERYTIME" /> <!-- босс в 3 волны Сахарные гоблины, поставить высоко. Сделать 3 боевые иконки гоблинов, обожравшихся сахара  --> <!-- TODO -->
+            <place id="pi_1o_sp_weevill" in="907" xPos="247" ifMarker="pi_1o_quest_jack_for_inquisition_weevill" respawnPolicy="EVERYTIME"/> <!-- Долгоносик босс -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_01" in="158" xPos="437" respawnPolicy="EVERYDAY"/> <!-- Бочка 01  -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_02" in="244" xPos="433"/> <!-- Бочка 02  -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_03" in="328" xPos="555" respawnPolicy="EVERYDAY"/> <!-- Бочка 03  -->
+            <place id="pi_1o_Antigua_sp_wh_bags" in="162" xPos="565" respawnPolicy="EVERYDAY"/> <!-- Мешки  -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_04" in="505" xPos="506" respawnPolicy="EVERYDAY"/> <!-- Бочка 04  -->
+            <place id="pi_1o_Antigua_sp_wh_box" in="591" xPos="540"/> <!-- Ящик  -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_05" in="671" xPos="470" respawnPolicy="EVERYDAY"/> <!-- Бочка 05  -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_06" in="565" xPos="437" respawnPolicy="EVERYDAY"/> <!-- Бочка 06  -->
+            <place id="pi_1o_Antigua_sp_wh_sugar_cane" in="820" xPos="448"/> <!-- Сахарный тростник  -->
+            <place id="pi_1o_Antigua_sp_wh_sugar_cane" in="420" xPos="111"/> <!-- Сахарный тростник  -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_07" in="703" xPos="39" respawnPolicy="EVERYDAY"/> <!-- Бочка 07  -->
+            <place id="pi_1o_Antigua_sp_wh_dried_sugar_cane" in="1412" xPos="318"/> <!-- Высушенный тростник  -->
+            <place id="pi_1o_Antigua_sp_wh_dried_sugar_cane" in="1402" xPos="410"/> <!-- Высушенный тростник  -->
+            <place id="pi_1o_Antigua_sp_wh_barrel_08" in="1247" xPos="417"/> <!-- Бочка 08  -->
+            <place id="pi_1o_Antigua_sp_wh_box_2" in="576" xPos="27"/> <!-- Ящик 2 -->
+            <place id="pi_1o_Antigua_sp_wh_box" in="945" xPos="532"/> <!-- Ящик  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Золотая шахта, 1 уровень готово -->
+
+    <branch id="pi_1o_golden_mine_1_lvl" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="480" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_golden_mine_1_lvl"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sign_way_to_city" in="145" xPos="192" /> <!-- Путевой знак  -->
+            <place id="pi_1o_Antigua_gm_main_miner" in="308" xPos="496"/> <!-- главный рудокоп  -->
+            <place id="pi_1o_Antigua_lj_tmd_frail_chest" in="614" xPos="213" ifMarker="pi_1o_quest_tmd_frail_chest_01" respawnPolicy="EVERYTIME"/> <!-- Т.К. Клад Хилого  -->
+            <place id="pi_1o_Antigua_gm_titan" in="1018" xPos="411" ifMarker="pi_1o_quest_titan_01" respawnPolicy="EVERYTIME"/> <!-- Титан, босс  -->
+            <place id="pi_1o_Antigua_quest_bad_chiken" in="801" xPos="81" ifMarker="pi_1o_quest_bulletin_board_bad_chiken_01" respawnPolicy="EVERYTIME"/> <!-- Агрессивная курица, босс слабый -->
+            <place id="pi_1o_Antigua_gm_way_down" in="1297" xPos="302"/> <!-- проход на 2 уровень золотой шахты  -->
+            <place id="pi_1o_Antigua_gm_ore_gold_mine" in="737" xPos="506"/> <!-- жилы с золотой рудой  -->
+            <place id="pi_1o_Antigua_gm_ore_gold_mine" in="864" xPos="156"/> <!-- жилы с золотой рудой  -->
+            <place id="pi_1o_Antigua_gm_ore_gold_mine" in="998" xPos="156"/> <!-- жилы с золотой рудой  -->
+            <place id="pi_1o_Antigua_gm_ore_gold_mine" in="508" xPos="486"/> <!-- жилы с золотой рудой  -->
+            <place id="pi_1o_Antigua_gm_ore_gold_mine" in="373" xPos="187"/> <!-- жилы с золотой рудой  -->
+            <place id="pi_1o_Antigua_gm_ore_gold_mine" in="351" xPos="75"/> <!-- жилы с золотой рудой  -->
+            <place id="pi_1o_Antigua_gm_ore_gold_mine" in="627" xPos="131"/> <!-- жилы с золотой рудой  -->
+            <place id="pi_1o_Antigua_gm_miners_cart_01" in="281" xPos="158" respawnPolicy="EVERYDAY"/> <!-- Тележка рудокопов 01  -->
+            <place id="pi_1o_Antigua_gm_miners_cart_02" in="156" xPos="415" respawnPolicy="EVERYDAY"/> <!-- Тележка рудокопов 02  -->
+            <place id="pi_1o_Antigua_gm_barrel_01" in="719" xPos="140"/> <!-- Бочка 01  -->
+            <place id="pi_1o_Antigua_gm_barrel_02" in="414" xPos="503"/> <!-- Бочка 02  -->
+            <place id="pi_1o_Antigua_gm_miner_01" in="394" xPos="407"/> <!-- Рудокоп право низ  -->
+            <place id="pi_1o_Antigua_gm_miner_02" in="671" xPos="399"/> <!-- Рудокоп право верх  -->
+            <place id="pi_1o_Antigua_gm_miner_03" in="673" xPos="213"/> <!-- Рудокоп лево  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Золотая шахта, 2 уровень готово -->
+    <!--TODO Всегда расставлять сильных монстров, при наличии маркера pi_new_guards_go_buy_pickaxe  -->
+
+    <branch id="pi_1o_golden_mine_2_lvl" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_golden_mine_2_lvl"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_gm_dead_miner"  in="1142" xPos="341" ifMarker="pi_new_guards_go_buy_pickaxe" respawnPolicy="EVERYTIME"/> <!-- мёртвый рудокоп с киркой  -->
+            <place id="pi_1o_Antigua_gm_goldeater" in="1195" xPos="239" ifMarker="pi_1o_hermit_miner_02" respawnPolicy="EVERYTIME"/> <!-- босс Златоглот  -->
+            <place id="pi_1o_Antigua_gm_2_ore_gold_mine" in="821" xPos="565" /> <!-- Жила золотой руды  -->
+            <place id="pi_1o_Antigua_gm_2_ore_gold_mine" in="355" xPos="557" /> <!-- Жила золотой руды  -->
+            <place id="pi_1o_Antigua_gm_2_ore_gold_mine" in="125" xPos="95" /> <!-- Жила золотой руды  -->
+            <place id="pi_1o_Antigua_gm_2_ore_gold_mine" in="482" xPos="44" /> <!-- Жила золотой руды  -->
+            <place id="pi_1o_Antigua_gm_2_ore_gold_mine" in="758" xPos="58" /> <!-- Жила золотой руды  -->
+            <place id="pi_1o_Antigua_gm_2_ore_gold_mine" in="990" xPos="129" /> <!-- Жила золотой руды  -->
+            <place id="pi_1o_Antigua_gm_2_ore_gold_mine" in="904" xPos="457" /> <!-- Жила золотой руды  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Пират-отшельник готово -->
+
+    <branch id="pi_1o_hermit_pirate" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" controlType="BW_FW" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="460" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_hermit_pirate"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sign_way_to_city" in="209" xPos="206" /> <!-- Путевой знак  -->
+            <place id="pi_1o_Antigua_hp_hermit_pirate" in="1182" xPos="247"/> <!-- пират-отшельник  -->
+            <place id="pi_1o_Antigua_hp_hermit_pirate_home" in="1326" xPos="365"/> <!-- Хижина пирата-отшельника  -->
+            <place id="pi_1o_Antigua_lj_tmd_noble_lady_chest" in="904" xPos="435" ifMarker="pi_1o_quest_tmd_noble_lady_chest_01" respawnPolicy="EVERYTIME"/> <!-- Т.К. Клад знатной дамы  --> 
+            <place id="pi_1o_Antigua_hp_missionary_man" in="1183" xPos="167" ifMarker="pi_1o_quest_missionary_07" respawnPolicy="EVERYTIME"/> <!-- Миссионер по квесту "Миссионер"  -->
+            <place id="pi_1o_hp_ancient_turtle" in="638" xPos="388" ifMarker="pi_1o_quest_ancient_turtle_01" respawnPolicy="EVERYTIME"/> <!-- Древняя Черепаха, босс  -->
+            <place id="pi_1o_hp_man_eating_shark" in="450" xPos="60" ifMarker="pi_1o_quest_man_eating_shark_01" respawnPolicy="EVERYTIME"/> <!-- Акула-людоед, босс  -->
+            <place id="pi_1o_hp_nessi" in="761" xPos="129" ifMarker="pi_1o_quest_nessi_01" respawnPolicy="EVERYTIME"/> <!-- Несси, босс  -->
+            <place id="pi_1o_hp_shadow" in="1051" xPos="359" ifMarker="pi_1o_quest_shadow_01" respawnPolicy="EVERYTIME"/> <!-- Тень, босс  -->
+            <place id="pi_1o_kinky_hermit" in="1166" xPos="296" ifMarker="pi_1o_quest_kinky_party_06" respawnPolicy="EVERYTIME"/>  <!-- Кинки по квесту "Дед опять забыл выпить таблетки"  -->
+            <place id="pi_1o_Antigua_hp_secret_door" in="785" xPos="552"/> <!-- проход в логово контрабандистов в зарослях  -->
+            <place id="pi_1o_Antigua_lost_memories_03" in="639" xPos="246" respawnPolicy="EVERYTIME" ifMarker="pi_1o_quest_lost_memories_02" spawnProbability="0.15"/> <!-- 3ья страница по квесту “Потерянные воспоминания”  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Маяк Джека готов -->
+
+    <branch id="pi_1o_lighthouse_jack" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="400" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lighthouse_jack"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sign_way_to_city" in="274" xPos="186" /> <!-- Путевой знак  -->
+            <place id="pi_1o_Antigua_lj_jack" in="1272" xPos="422"/> <!-- Джек, смотритель маяка  -->
+            <place id="pi_1o_Antigua_lj_tmd_lighthouse_chest" in="673" xPos="185" ifMarker="pi_1o_quest_tmd_lighthouse_chest_01" respawnPolicy="EVERYTIME"/> <!-- Т.К. Клад неизвестного пирата  -->
+            <place id="pi_1o_Antigua_gp_governor_servant_fire" in="505" xPos="223" ifMarker="lumberjack_obi_for_quests" spawnProbability="0.2" respawnPolicy="EVERYTIME"/> <!-- Слуга Губернатора даёт квест "Город горит!"  -->
+            <place id="pi_1o_Antigua_lj_giant_creep" in="627" xPos="432" ifMarker="pi_1o_quest_try_voodoo_doll_02" respawnPolicy="EVERYTIME"/> <!-- Гигантский Ползоног, босс  -->
+            <place id="pi_1o_Antigua_lj_siren" in="1124" xPos="528" ifMarker="pi_1o_quest_siren_01" respawnPolicy="EVERYTIME"/> <!-- Сирена, босс  -->
+            <place id="pi_1o_Antigua_lj_gorgon" in="1365" xPos="211" ifMarker="pi_1o_quest_gorgons_in_antigua_01" respawnPolicy="EVERYTIME"/> <!-- Горгона, босс  -->
+            <place id="pi_1o_Antigua_lj_phoenix" in="1022" xPos="102" ifMarker="pi_1o_quest_phoenix_01" respawnPolicy="EVERYTIME"/> <!-- Феникс, босс  -->
+            <place id="pi_1o_Antigua_lj_rider" in="1187" xPos="222" ifMarker="pi_1o_quest_rider_01" respawnPolicy="EVERYTIME"/> <!-- Всадник, босс  -->
+            <place id="pi_1o_Antigua_lj_cyclops" in="872" xPos="422" ifMarker="pi_1o_quest_cyclops_01" respawnPolicy="EVERYTIME"/> <!-- Циклоп, босс  -->
+            <place id="pi_1o_Antigua_lj_elsa_dead" in="1390" xPos="432" ifMarker="pi_1o_quest_tell_to_elsa_03" respawnPolicy="EVERYTIME"/> <!-- прощальная записка Эльзы, у самого обрыва  -->
+            <place id="pi_1o_Antigua_lj_barrel_01" in="166" xPos="435"/> <!-- Бочка 01  -->
+            <place id="pi_1o_Antigua_lj_barrel_02" in="400" xPos="477" respawnPolicy="EVERYDAY"/> <!-- Бочка 02  -->
+            <place id="pi_1o_Antigua_lj_barrel_03" in="738" xPos="512" respawnPolicy="EVERYDAY"/> <!-- Бочка 03  -->
+            <place id="pi_1o_Antigua_lj_barrel_04" in="905" xPos="189" respawnPolicy="EVERYDAY"/> <!-- Бочка 04  -->
+            <place id="pi_1o_Antigua_lj_barrel_05" in="289" xPos="90"/> <!-- Бочка 05  -->
+            <place id="pi_1o_Antigua_lj_barrel_06" in="1242" xPos="172" respawnPolicy="EVERYDAY"/> <!-- Бочка 06  -->
+            <place id="pi_1o_Antigua_lj_barrel_06" in="1229" xPos="134"/> <!-- Бочка 07  -->
+            <place id="pi_1o_Antigua_lj_garbage" in="977" xPos="464"/> <!-- Хлам  -->
+            <place id="pi_1o_Antigua_lj_garbage" in="899" xPos="139"/> <!-- Хлам  -->
+            <place id="pi_1o_Antigua_lj_garbage" in="820" xPos="158"/> <!-- Хлам  -->
+        </spawnPlaces>
+    </branch>
+
+    <!--грот Левиафана готово -->
+
+    <branch id="pi_1o_leviathan_grotto" genMode="PI_1O_LEVIATHAN_GROTTO" probability="0" scenario="true" minLength="999999999" maxLength="999999999" recreationPolicy="RECREATE_EVERYTIME">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" pin="true" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_leviathan_grotto"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+        <spawnPlaces> 
+        </spawnPlaces>
+    </branch>
+
+    <!-- грот Левиафана, Пещера Маурицио готово -->
+
+    <branch id="pi_1o_lg_maurizio_place" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="352" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lg_maurizio_place"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_maurizio" in="1299" xPos="392" ifMarker="pi_1o_quest_inquisitor_eyepiece_05" respawnPolicy="EVERYTIME"/> <!-- инквизитор Маурицио, по квесту "Окуляр инквизитора"  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- грот Левиафана, Пещера Малыша готово --> 
+
+    <branch id="pi_1o_lg_tot_place" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="485" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lg_tot_place"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_tot" in="1282" xPos="308" ifMarker="pi_1o_quest_danger_road_02" respawnPolicy="EVERYTIME"/> <!-- босс Малыш, по квесту "Опасная дорога"  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Дорога к Древнему Алтарю Друидов готово -->
+
+    <branch id="pi_1o_way_to_druid_altar" genMode="PI_1O_WAY_TO_DRUID_ALTAR" probability="0" scenario="true" minLength="999999999" maxLength="999999999" recreationPolicy="RECREATE_EVERYTIME">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_way_to_druid_altar"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+        </spawnPlaces>
+    </branch>
+
+    <!-- Древний Алтарь Друидов готово -->
+
+    <branch id="pi_1o_druid_altar" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_druid_altar"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_da_leyho_dead" in="1180" xPos="296" ifMarker="pi_1o_quest_lost_memories_14" respawnPolicy="EVERYTIME"/> <!-- Лейхо, мёртвый, с кинжалом в спине, около сундука  -->
+            <place id="pi_1o_Antigua_da_secret_place_1" in="1317" xPos="174"/> <!-- Секретной место 01 с картой змейки, реакция хоббита   -->
+            <place id="pi_1o_Antigua_da_secret_place_2" in="787" xPos="97"/> <!-- Секретной место 02 с 300 изумрудов, реакция хоббита   -->
+            <place id="pi_1o_Antigua_da_secret_place_3" in="471" xPos="510"/> <!-- Секретной место 03 с 20 золотой руды, реакция хоббита   -->
+            <place id="pi_1o_Antigua_da_secret_place_4" in="128" xPos="470"/> <!-- Секретной место 04 с 300 аметистами, реакция хоббита   -->
+            <place id="pi_1o_Antigua_da_secret_place_5" in="788" xPos="510"/> <!-- Секретной место 05 с медной вазой (для торговца картами, чтобы наградил нас), реакция хоббита   -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Дорога на завод контрабандистов готово -->
+
+    <branch id="pi_1o_bad_guys_road" genMode="PI_1O_BAD_GUYS_ROAD" probability="0" scenario="true" minLength="999999999" maxLength="999999999" recreationPolicy="RECREATE_EVERYTIME">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_bad_guys_road"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+        </spawnPlaces>
+    </branch>
+
+    <!-- Завод контрабандистов готово -->
+
+    <branch id="pi_1o_bad_guys_factory" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="750" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_bad_guys_factory"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_bgf_pirate_rusty" in="905" xPos="304"/> <!-- пират Ржавый встреча первая, возможно босс, если отказать ему  --> 
+            <place id="pi_1o_Antigua_bgf_pirate_rusty_giver" in="905" xPos="304" ifMarker="pi_bad_pirates_give_mithril" respawnPolicy="EVERYDAY"/> <!-- пират Ржавый если оставили и он изумруды даёт ежедневно  --> 
+            <place id="pi_1o_Antigua_sp_wh_pirate_thief_3_2" in="718" xPos="218" ifMarker="pi_pirate_thief_3_award" respawnPolicy="EVERYTIME"/> <!-- третий пират-вор из квеста "Ночной дозор", если отпустили за 2 изумруда, зовут Квентин  -->
+            <place id="pi_1o_Antigua_bgf_hell_machine" in="1166" xPos="304"/> <!-- Инфернальная машина  -->
+            <place id="pi_1o_Antigua_bgf_drawings" in="125" xPos="183"/> <!-- Чертежи  -->
+            <place id="pi_1o_Antigua_bgf_barrel_01" in="210" xPos="90" respawnPolicy="EVERYDAY"/> <!-- Бочка 01  -->
+            <place id="pi_1o_Antigua_bgf_barrel_02" in="267" xPos="525" respawnPolicy="EVERYDAY"/> <!-- Бочка 02  -->
+            <place id="pi_1o_Antigua_bgf_barrel_03" in="325" xPos="521" respawnPolicy="EVERYDAY"/> <!-- Бочка 03  -->
+            <place id="pi_1o_Antigua_bgf_barrel_04" in="394" xPos="513" respawnPolicy="EVERYDAY"/> <!-- Бочка 04  -->
+            <place id="pi_1o_Antigua_bgf_barrel_05" in="272" xPos="439"/> <!-- Бочка 05  -->
+            <place id="pi_1o_Antigua_bgf_barrel_06" in="466" xPos="519" respawnPolicy="EVERYDAY"/> <!-- Бочка 06  -->
+            <place id="pi_1o_Antigua_bgf_barrel_07" in="481" xPos="449"/> <!-- Бочка 07  -->
+            <place id="pi_1o_Antigua_bgf_barrel_with_fire" in="548" xPos="505"/> <!-- Бочка для прожигания  -->
+            <place id="pi_1o_Antigua_bgf_barrel_with_fire" in="812" xPos="149"/> <!-- Бочка для прожигания  -->
+            <place id="pi_1o_Antigua_bgf_barrel_with_fire" in="614" xPos="194"/> <!-- Бочка для прожигания  -->
+            <place id="pi_1o_Antigua_bgf_barrel_with_fire" in="561" xPos="443"/> <!-- Бочка для прожигания  -->
+            <place id="pi_1o_Antigua_bgf_rum" in="923" xPos="446"/> <!-- Ром  -->
+            <place id="pi_1o_Antigua_bgf_spice_vessels" in="948" xPos="166"/> <!-- Сосуды со специями  -->
+            <place id="pi_1o_Antigua_bgf_empty_bottles" in="519" xPos="139"/> <!-- Пустые бутылки  -->
+            <place id="pi_1o_Antigua_bgf_boxes" in="669" xPos="131"/> <!-- Ящики  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Великая Вечеринка Кинки готово -->
+    <!-- выход с карты через Кинки внизу локации   -->
+    <branch id="pi_1o_kinky_party" genMode="DEFAULT" probability="0" scenario="true" minLength="3500" maxLength="3500" maxCoordinate="3014" knightOffsetBottom="739" knightOffsetTop="420" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_kinky_party"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_arno_kp" in="2459" xPos="445"/> <!-- Арно  -->
+            <place id="pi_1o_sp_bones_kp" in="1601" xPos="116"/> <!-- Бонес  -->
+            <place id="pi_1o_it_valeran_kp" in="748" xPos="456"/> <!-- Валеран  -->
+            <place id="pi_1o_magevoodoo_head_kp" in="1927" xPos="441"/> <!-- Верховный шаман  -->
+            <place id="pi_1o_head_of_inquisition_kp" in="1469" xPos="451"/> <!-- Глава отряда инквизиции  -->
+            <place id="pi_1o_Antigua_gm_main_miner_kp" in="975" xPos="158"/> <!-- Главный рудокоп  -->
+            <place id="pi_1o_Antigua_gp_governor_kp" in="2158" xPos="179"/> <!-- Губернатор  -->
+            <place id="pi_1o_Antigua_lj_jack_kp" in="1775" xPos="421"/> <!-- Джек  -->
+            <place id="pi_1o_it_dorian_kp" in="1346" xPos="165"/> <!-- Дориан  -->
+            <place id="pi_1o_kinky_kp" in="534" xPos="173"/> <!-- Кинки, ставить внизу, он же телепорт в город Антигуа pi_1o_townAntigua  -->
+            <place id="pi_1o_storekeeper_kp" in="2571" xPos="211"/> <!-- Кладовщик  -->
+            <place id="pi_1o_mt_magevoodoo_mentor_kp" in="1198" xPos="424"/> <!-- Маг-вуду Наставник  -->
+            <place id="pi_1o_Antigua_magevoodoo_nestor_kp" in="1903" xPos="195"/> <!-- Маг-вуду Нестор  -->
+            <place id="pi_1o_mt_magevoodoo_guard_kp" in="2263" xPos="413"/> <!-- Маг-вуду страж  -->
+            <place id="pi_1o_Antigua_maurizio_kp" in="2566" xPos="357"/> <!-- Инквизитор Маурицио  -->
+            <place id="pi_1o_Antigua_hp_hermit_pirate_kp" in="1742" xPos="181"/> <!-- Пират-отшельник  -->
+            <place id="pi_1o_Antigua_sp_planter_kp" in="1134" xPos="177"/> <!-- Плантатор  -->
+            <place id="pi_1o_it_selezar_kp" in="2106" xPos="453"/> <!-- Селезар  -->
+            <place id="pi_1o_Antigua_gp_governor_servant_kp" in="1637" xPos="449"/> <!-- Слуга Губернатора  -->
+            <place id="pi_1o_steven_kp" in="789" xPos="168"/> <!-- Стивен  -->
+            <place id="pi_1o_sp_guarddave_kp" in="910" xPos="425"/> <!-- Стражник Дэйв  -->
+            <place id="pi_1o_Antigua_gp_detective_kp" in="1508" xPos="187" /> <!-- Сыщик  -->
+            <place id="pi_1o_Antigua_treasure_map_dealer_kp" in="482" xPos="533"/> <!-- Торговец картами  -->
+            <place id="pi_1o_sp_threefingered_billy_kp" in="2407" xPos="100"/> <!-- Трёхпалый Билли  -->
+            <place id="pi_1o_Antigua_gp_palace_manager_kp" in="1434" xPos="65"/> <!-- Управляющий дворцом  -->
+            <place id="pi_1o_Antigua_inquisitor_felix_kp" in="507" xPos="58"/> <!-- Инквизитор Феликс  -->
+            <place id="pi_1o_frail_kp" in="2161" xPos="69"/> <!-- Хилый  -->
+            <place id="pi_hobbit_ekla_kp" in="430" xPos="419"/> <!-- Хоббит Экля  --> 
+            <place id="pi_1o_kp_hot_waitress_01" in="425" xPos="143"/> <!-- Официантка слева снизу 1  -->
+            <place id="pi_1o_kp_hot_waitress_02" in="803" xPos="105"/> <!-- Официантка слева снизу 2  -->
+            <place id="pi_1o_kp_hot_waitress_03" in="1249" xPos="121"/> <!-- Официантка слева снизу 3  -->
+            <place id="pi_1o_kp_hot_waitress_04" in="2038" xPos="162"/> <!-- Официантка слева снизу 4  -->
+            <place id="pi_1o_kp_hot_waitress_05" in="2421" xPos="202"/> <!-- Официантка слева снизу 5  -->
+            <place id="pi_1o_kp_hot_waitress_06" in="612" xPos="433"/> <!-- Официантка справа снизу 1  -->
+            <place id="pi_1o_kp_hot_waitress_07" in="1052" xPos="433"/> <!-- Официантка справа снизу 2  -->
+            <place id="pi_1o_kp_hot_waitress_08" in="1460" xPos="523"/> <!-- Официантка справа снизу 3  -->
+            <place id="pi_1o_kp_hot_waitress_09" in="1750" xPos="504"/> <!-- Официантка справа снизу 4  -->
+            <place id="pi_1o_kp_hot_waitress_10" in="1920" xPos="509"/> <!-- Официантка справа снизу 5  -->
+            <place id="pi_1o_kp_hot_waitress_11" in="2577" xPos="413"/> <!-- Официантка справа снизу 6  -->
+            <place id="pi_1o_kp_bear" in="985" xPos="63"/> <!-- Потапыч  -->
+            <place id="pi_1o_kp_empire_band" in="2221" xPos="559"/> <!-- Группа "Империя"  -->
+            <place id="pi_1o_kp_dancers" in="2712" xPos="297"/> <!-- Танцовщицы  -->
+            <place id="pi_1o_kp_guest_01" in="850" xPos="512"/> <!-- Гость справа низ 1  -->
+            <place id="pi_1o_kp_guest_02" in="1783" xPos="116"/> <!-- Гость слева низ 1  -->
+            <place id="pi_1o_kp_guest_03" in="1861" xPos="556"/> <!-- Гость справа низ 2  -->
+            <place id="pi_1o_kp_sofa" in="1561" xPos="40"/> <!-- Диван  -->
+            <place id="pi_1o_kp_balloon" in="2872" xPos="268"/> <!-- Шарик с чем-то  -->
+            <place id="pi_1o_kp_food_01" in="515" xPos="462"/> <!-- Угощение 01 -->
+            <place id="pi_1o_kp_food_02" in="1145" xPos="96"/> <!-- Угощение 02 -->
+            <place id="pi_1o_kp_food_03" in="1436" xPos="126"/> <!-- Угощение 03 -->
+            <place id="pi_1o_kp_food_04" in="2047" xPos="87"/> <!-- Угощение 04 -->
+            <place id="pi_1o_kp_food_05" in="2269" xPos="116"/> <!-- Угощение 05 -->
+            <place id="pi_1o_kp_food_06" in="1321" xPos="494"/> <!-- Угощение 06 -->
+            <place id="pi_1o_kp_food_07" in="1093" xPos="558"/> <!-- Угощение 07 -->
+            <place id="pi_1o_kp_food_08" in="630" xPos="562"/> <!-- Угощение 08 -->
+            <place id="pi_1o_kp_food_09" in="640" xPos="39"/> <!-- Угощение 09 -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Скрытая локация с разработчиками готово -->
+    <branch id="pi_1o_hitmakers_team" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_hitmakers_team"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sign_way_to_city_from_hm" in="188" xPos="188"/> <!-- Путевой знак, возвращает в город Антигуа  -->
+            <place id="pi_1o_ht_alex" in="896" xPos="396"/> <!-- Алекс  -->
+            <place id="pi_1o_ht_serg" in="966" xPos="72"/> <!-- Серж  -->
+            <place id="pi_1o_ht_demetrio" in="758" xPos="416"/> <!-- Demetrio  -->
+            <place id="pi_1o_ht_dubrovskiy" in="1173" xPos="213"/> <!-- Дубровский, рядом с ним стоят Хельга, Послушница  -->
+            <place id="pi_1o_ht_alina" in="230" xPos="415"/> <!-- Алина  -->
+            <place id="pi_1o_ht_natasha" in="878" xPos="514"/> <!-- Наташа  -->
+            <place id="pi_1o_ht_sasha" in="1181" xPos="488"/> <!-- Саша  -->
+            <place id="pi_1o_ht_pavel" in="1192" xPos="386"/> <!-- Павел  -->
+            <place id="pi_1o_ht_olga" in="750" xPos="103"/> <!-- Ольга  -->
+            <place id="pi_1o_ht_kseniya" in="441" xPos="190"/> <!-- Ксения  -->
+            <place id="pi_1o_ht_sonya" in="607" xPos="177"/> <!-- Соня  -->
+            <place id="pi_1o_ht_nataly" in="475" xPos="427"/> <!-- Натали  -->
+            <place id="pi_1o_ht_barrel_01" in="317" xPos="159"/> <!-- Бочка 01  -->
+            <place id="pi_1o_ht_barrel_02" in="104" xPos="411"/> <!-- Бочка 02  -->
+            <place id="pi_1o_ht_barrel_03" in="1284" xPos="345"/> <!-- Бочка 03  -->
+            <place id="pi_1o_ht_barrel_04" in="578" xPos="440"/> <!-- Бочка 04  -->
+            <place id="pi_1o_ht_table_01" in="650" xPos="458"/> <!-- Стол 01  -->
+            <place id="pi_1o_ht_table_02" in="725" xPos="520"/> <!-- Стол 02  -->
+            <place id="pi_1o_ht_table_03" in="804" xPos="506"/> <!-- Стол 03  -->
+            <place id="pi_1o_ht_table_stats" in="1076" xPos="445"/> <!-- Столы со статами   -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Деревня лесорубов готово -->
+
+    <branch id="pi_1o_lumberjack_camp" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="305" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lumberjack_camp"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_sign_way_to_city" in="256" xPos="215" /> <!-- Путевой знак  --> 
+            <place id="pi_1o_Antigua_lc_way_to_mangrove_jungle" in="1077" xPos="494"/> <!-- дорога в мангровые джунгли  --> 
+            <place id="pi_1o_Antigua_lc_door_to_tavern" in="751" xPos="70" requireTime="00:00-06:59" respawnPolicy="EVERYTIME"/> <!-- Дверь таверна днём --> 
+            <place id="pi_1o_Antigua_lc_door_to_tavern_open" in="751" xPos="70" requireTime="07:00-23:59" respawnPolicy="EVERYTIME"/> <!-- Дверь таверна вечером --> 
+            <place id="pi_1o_Antigua_lc_door_to_martin_house" in="311" xPos="64"/> <!-- Дверь дом Мартина  --> 
+            <place id="pi_1o_Antigua_lc_door_to_olaf_house" in="394" xPos="539"/> <!-- Дверь дом Олафа  --> 
+            <place id="pi_1o_Antigua_lc_door_to_kilian_house" in="1106" xPos="69"/> <!-- Дверь дом Килиана  --> 
+            <place id="pi_1o_Antigua_lc_door_to_obi_house" in="911" xPos="539"/> <!-- Дверь дом братьев Оби  --> 
+            <place id="pi_1o_Antigua_lc_woodpile_night" in="1249" xPos="187" requireTimeFrom="00:00" requireTimeTo="06:59" ifMarker="pi_1o_quest_red_wood_01" respawnPolicy="EVERYTIME"/> <!-- Поленница ночь  --> 
+            <place id="pi_1o_Antigua_lc_woodpile_day" in="1249" xPos="187" requireTimeFrom="07:00" requireTimeTo="23:59" ifMarker="pi_1o_quest_red_wood_01" respawnPolicy="EVERYTIME"/> <!-- Поленница день --> 
+            <place id="pi_1o_Antigua_lc_door_to_chapel" in="1359" xPos="341"/> <!-- Дверь Часовня  --> 
+            <place id="pi_1o_Antigua_lc_award_for_chapel_service" in="1203" xPos="588" ifMarker="pi_1o_react_captain_obi" respawnPolicy="EVERYTIME"/> <!-- Эмпти блок нагарада если прослушать всю службу, ставить ВЫСОКО, прям в упор у часовни  --> 
+            <place id="pi_1o_Antigua_lc_lumberjack_guard" in="174" xPos="369"/> <!-- Лесоруб на страже, всегда внизу локации  --> 
+            <place id="pi_1o_Antigua_lc_hundred_eyed_spirit" in="1159" xPos="205" ifMarker="pi_1o_quest_bleeding_wood_kill_monster" respawnPolicy="EVERYTIME" requireTimeFrom="00:00" requireTimeTo="04:59"/> <!-- Стоглазый Дух, босс, около склада древесины  --> 
+            <place id="pi_1o_Antigua_lc_night_fury" in="1178" xPos="405" ifMarker="pi_1o_quest_night_fury_01" respawnPolicy="EVERYTIME" requireTimeFrom="01:00" requireTimeTo="02:59"/> <!-- Ночная фурия, босс  --> 
+            <place id="pi_1o_Antigua_lc_gromshamash_uglish_guzya" in="874" xPos="194" requireWeekDay="MONDAY,TUESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY"/> <!-- орк Громшамаш Уг’лиш Гузя в деревне лесорубов, похотливый  --> 
+            <place id="pi_1o_Antigua_lc_gromshamash_uglish_guzya_wednesday" in="874" xPos="194" requireWeekDay="WEDNESDAY"/> <!-- орк Громшамаш Уг’лиш Гузя в деревне лесорубов, адекватный  --> 
+            <place id="pi_1o_Antigua_lc_martin" in="693" xPos="441" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Мартин, у места рубки дров  --> 
+            <place id="pi_1o_Antigua_lc_martin" in="693" xPos="441" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Мартин, у места рубки дров  --> 
+            <place id="pi_1o_Antigua_lc_martina" in="386" xPos="227" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Мартина, жена Мартина, около тряпок что сушатся, прачка  --> 
+            <place id="pi_1o_Antigua_lc_martina" in="386" xPos="227" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Мартина, жена Мартина, около тряпок что сушатся, прачка  --> 
+            <place id="pi_1o_Antigua_lc_martines" in="476" xPos="197" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- ребёнок Мартинес, сын Мартина и Мартины, лет 10, в руках сачок для ловли бабочек  --> 
+            <place id="pi_1o_Antigua_lc_martines" in="476" xPos="197" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- ребёнок Мартинес, сын Мартина и Мартины, лет 10, в руках сачок для ловли бабочек  --> 
+            <place id="pi_1o_Antigua_lc_olaf" in="247" xPos="442" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Олаф, охотник, с луком и стрелами, в шкуры зверей одет  --> 
+            <place id="pi_1o_Antigua_lc_olaf" in="247" xPos="442" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Олаф, охотник, с луком и стрелами, в шкуры зверей одет  --> 
+            <place id="pi_1o_Antigua_lc_kilian" in="926" xPos="113" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Килиан, лесоруб без топора (типа получил травму и восстанавливается), стоит у своего дома  -->
+            <place id="pi_1o_Antigua_lc_dolores" in="997" xPos="220" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Долорес, жена Килиана, типа лекарь. В руках корзинка с травами, стоит у своего дома  --> 
+            <place id="pi_1o_Antigua_lc_dolores" in="997" xPos="220" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Долорес, жена Килиана, типа лекарь. В руках корзинка с травами, стоит у своего дома  --> 
+            <place id="pi_1o_Antigua_lc_aik" in="946" xPos="390" requireTimeFrom="08:00" requireTimeTo="11:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк, сын Килиана и Долорес, лет 5-7 ему  --> 
+            <place id="pi_1o_Antigua_lc_aik" in="946" xPos="390" requireTimeFrom="13:00" requireTimeTo="18:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк, сын Килиана и Долорес, лет 5-7 ему  --> 
+            <place id="pi_1o_Antigua_lc_avila" in="445" xPos="370" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Авила, дочь Килиана и Долорес, ей 16, девушка Сигизмунда Оби  --> 
+            <place id="pi_1o_Antigua_lc_avila" in="445" xPos="370" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Авила, дочь Килиана и Долорес, ей 16, девушка Сигизмунда Оби  --> 
+            <place id="pi_1o_Antigua_lc_victor_obi" in="1141" xPos="227" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби, у склада древесины стоит, в руках учётная книга, тоже лесоруб, его дочь - Белла Оби и жена - Иветта Оби  --> 
+            <place id="pi_1o_Antigua_lc_victor_obi" in="1141" xPos="227" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби, у склада древесины стоит, в руках учётная книга, тоже лесоруб, его дочь - Белла Оби и жена - Иветта Оби  --> 
+            <place id="pi_1o_Antigua_lc_bella_obi" in="719" xPos="213" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби, дочь Виктора Оби и Иветты Оби, лет 13, с книгой в руках  -->
+            <place id="pi_1o_Antigua_lc_bella_obi" in="719" xPos="213" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби, дочь Виктора Оби и Иветты Оби, лет 13, с книгой в руках  -->
+            <place id="pi_1o_Antigua_lc_sigizmund_obi" in="603" xPos="382" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби, сын Рупрахта Оби и Шимы Оби, 16 лет, у места для рубки дров, парень Авилы  -->
+            <place id="pi_1o_Antigua_lc_sigizmund_obi" in="603" xPos="382" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби, сын Рупрахта Оби и Шимы Оби, 16 лет, у места для рубки дров, парень Авилы  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь лесорубов, таверна готово -->
+
+    <branch id="pi_1o_lumberjack_camp_tavern" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="395" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lumberjack_camp_tavern"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_lc_tavern_innkeeper" in="1367" xPos="332"/> <!-- Корчмарь  --> 
+            <place id="pi_1o_Antigua_lc_tavern_tips" in="1321" xPos="196"/> <!-- Чаевые  --> 
+            <place id="pi_1o_Antigua_lc_martin_tavern" in="1148" xPos="180" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Мартин  -->
+            <place id="pi_1o_Antigua_lc_martines_tavern" in="538" xPos="462" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Мартинес  -->
+            <place id="pi_1o_Antigua_lc_olaf_tavern" in="396" xPos="161" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Олаф  -->
+            <place id="pi_1o_Antigua_lc_kilian_tavern" in="562" xPos="76" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Килиан  -->
+            <place id="pi_1o_Antigua_lc_dolores_tavern" in="538" xPos="142" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Долорес  -->
+            <place id="pi_1o_Antigua_lc_victor_obi_tavern" in="821" xPos="438" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби  -->
+            <place id="pi_1o_Antigua_lc_ivetta_obi_tavern" in="370" xPos="486" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Иветта Оби  -->
+            <place id="pi_1o_Antigua_lc_rupracht_obi_tavern" in="949" xPos="142" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Рупрахт Оби  -->
+            <place id="pi_1o_Antigua_lc_shima_obi_tavern" in="797" xPos="180" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Шима Оби  -->
+            <place id="pi_1o_Antigua_lc_michael_obi_tavern" in="1078" xPos="433" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Михаил Оби  -->
+            <place id="pi_1o_Antigua_lc_kasumi_obi_tavern" in="669" xPos="438" requireTimeFrom="19:00" requireTimeTo="21:59" respawnPolicy="EVERYTIME"/> <!-- Касуми Оби  -->
+            <place id="pi_1o_Antigua_lc_sigizmund_obi_tavern" in="949" xPos="401" requireTimeFrom="19:00" requireTimeTo="22:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби  -->
+            <place id="pi_1o_Antigua_lc_victor_tavern" in="653" xPos="204" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Виктор  -->
+            <place id="pi_1o_Antigua_lc_verona_tavern" in="266" xPos="217" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Верона  -->
+            <place id="pi_1o_Antigua_lc_tavern_table_left" in="435" xPos="67" requireTime="00:00-18:59" respawnPolicy="EVERYTIME" /> <!-- Стол слева  -->
+            <place id="pi_1o_Antigua_lc_tavern_table_left_1" in="435" xPos="67" requireTime="19:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Стол слева вечер -->
+            <place id="pi_1o_Antigua_lc_tavern_table_right" in="442" xPos="558" requireTime="00:00-18:59" respawnPolicy="EVERYTIME" /> <!-- Стол справа  -->
+            <place id="pi_1o_Antigua_lc_tavern_table_right_1" in="442" xPos="558" requireTime="19:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Стол справа вечер -->
+            <place id="pi_1o_Antigua_lc_tavern_potato" in="662" xPos="56" /> <!-- Картошка  -->
+            <place id="pi_1o_Antigua_lc_tavern_big_barrel_01" in="853" xPos="536" /> <!-- Большая бочка право центр -->
+            <place id="pi_1o_Antigua_lc_tavern_big_barrel_02" in="1144" xPos="536" /> <!-- Большая бочка право верх -->
+            <place id="pi_1o_Antigua_lc_tavern_big_barrel_03" in="256" xPos="539" /> <!-- Большая бочка право низ -->
+            <place id="pi_1o_Antigua_lc_tavern_big_barrel_04" in="207" xPos="63" /> <!-- Большая бочка слева -->
+            <place id="pi_1o_Antigua_lc_tavern_chair_barrel" in="298" xPos="121" /> <!-- Бочка-стул -->
+            <place id="pi_1o_Antigua_lc_tavern_chair_barrel" in="676" xPos="532" /> <!-- Бочка-стул -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь лесорубов, дом Мартина готово -->
+
+    <branch id="pi_1o_lumberjack_camp_martin_house" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="460" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lumberjack_camp_martin_house"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_lc_martin_night" in="1027" xPos="472" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Мартин ночью  --> 
+            <place id="pi_1o_Antigua_lc_martina_before_night" in="476" xPos="466" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Мартина до полуночи  --> 
+            <place id="pi_1o_Antigua_lc_martina_night" in="476" xPos="466" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Мартина ночь  --> 
+            <place id="pi_1o_Antigua_lc_martines_night" in="1030" xPos="134" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- ребёнок Мартинес ночь  --> 
+            <place id="pi_1o_Antigua_lc_martin_lunch" in="1027" xPos="472" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Мартин обед  --> 
+            <place id="pi_1o_Antigua_lc_martina_lunch" in="476" xPos="466" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Мартина обед --> 
+            <place id="pi_1o_Antigua_lc_martines_lunch" in="1030" xPos="134" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- ребёнок Мартинес обед  --> 
+            <place id="pi_1o_Antigua_lc_mc_bed_martines" in="910" xPos="125" /> <!-- Кровать Мартинеса  -->
+            <place id="pi_1o_Antigua_lc_mc_bed" in="1245" xPos="500" /> <!-- Кровать  -->
+            <place id="pi_1o_Antigua_lc_mc_apples" in="1347" xPos="384" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYDAY" /> <!-- Яблочки  -->
+            <place id="pi_1o_Antigua_lc_mc_apples_1" in="1347" xPos="384" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Яблочки если люди дома -->
+            <place id="pi_1o_Antigua_lc_mc_table" in="1318" xPos="265" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYDAY" /> <!-- Стол  -->
+            <place id="pi_1o_Antigua_lc_mc_table_1" in="1318" xPos="265" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Стол если люди дома -->
+            <place id="pi_1o_Antigua_lc_mc_books" in="1237" xPos="397" respawnPolicy="EVERYDAY" /> <!-- Книги  -->
+            <place id="pi_1o_Antigua_lc_mc_private_martines_chest" in="1024" xPos="55" requireTime="07:00-11:59,13:00-18:59"  /> <!-- Личный сундук Мартинеса  -->
+            <place id="pi_1o_Antigua_lc_mc_private_martines_chest_1" in="1024" xPos="55" requireTime="00:00-06:59,12:00-12:59,19:00-23:59"  /> <!-- Личный сундук Мартинеса если люди дома  -->
+            <place id="pi_1o_Antigua_lc_mc_cheese" in="649" xPos="119" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYDAY" /> <!-- Сыр  -->
+            <place id="pi_1o_Antigua_lc_mc_cheese_1" in="649" xPos="119" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Сыр если люди дома  -->
+            <place id="pi_1o_Antigua_lc_mc_sofa" in="356" xPos="73" /> <!-- Диван  -->
+            <place id="pi_1o_Antigua_lc_mc_empty_table" in="313" xPos="543" /> <!-- Пустой стол  -->
+            <place id="pi_1o_Antigua_lc_mc_turnip" in="608" xPos="551" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME" /> <!-- Репа  -->
+            <place id="pi_1o_Antigua_lc_mc_turnip_1" in="608" xPos="551" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Репа если люди дома -->
+            <place id="pi_1o_Antigua_lc_mc_tools" in="608" xPos="551" requireTime="07:00-11:59,13:00-18:59"  respawnPolicy="EVERYTIME" /> <!-- Инструменты  -->
+            <place id="pi_1o_Antigua_lc_mc_tools_1" in="608" xPos="551" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Инструменты если люди дома -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь лесорубов, дом Олафа готово -->
+
+    <branch id="pi_1o_lumberjack_camp_olaf_house" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="616" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lumberjack_camp_olaf_house"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_lc_olaf_night" in="1010" xPos="296" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Олаф ночь  --> 
+            <place id="pi_1o_Antigua_lc_olaf_lunch" in="1010" xPos="296" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Олаф обед --> 
+            <place id="pi_1o_Antigua_lc_oh_sofa" in="104" xPos="84" /> <!-- Диван -->
+            <place id="pi_1o_Antigua_lc_oh_scarecrow_tiger" in="405" xPos="119" /> <!-- Чучело тигра -->
+            <place id="pi_1o_Antigua_lc_oh_scarecrow_monkey" in="737" xPos="165" /> <!-- Чучело обезьяны -->
+            <place id="pi_1o_Antigua_lc_oh_scarecrow_bear" in="895" xPos="159" /> <!-- Чучело медведя -->
+            <place id="pi_1o_Antigua_lc_oh_bookshelf_01" in="802" xPos="58"  respawnPolicy="EVERYDAY" /> <!-- Книжная полка слева -->
+            <place id="pi_1o_Antigua_lc_oh_bookshelf_02" in="1101" xPos="476" respawnPolicy="EVERYDAY" /> <!-- Книжная полка справа верх -->
+            <place id="pi_1o_Antigua_lc_oh_bookshelf_03" in="641" xPos="553" respawnPolicy="EVERYDAY" /> <!-- Книжная полка справа низ -->
+            <place id="pi_1o_Antigua_lc_oh_scarecrow_crab" in="1107" xPos="386" /> <!-- Чучело краба -->
+            <place id="pi_1o_Antigua_lc_oh_shield" in="1141" xPos="231" /> <!-- Щит -->
+            <place id="pi_1o_Antigua_lc_oh_spear" in="1231" xPos="294" /> <!-- Копьё -->
+            <place id="pi_1o_Antigua_lc_oh_decorated_skull" in="1231" xPos="294" /> <!-- Украшенный череп -->
+            <place id="pi_1o_Antigua_lc_oh_crossbow" in="1247" xPos="515" /> <!-- Лук -->
+            <place id="pi_1o_Antigua_lc_oh_cheetah_head" in="1333" xPos="482" /> <!-- Голова гепарда -->
+            <place id="pi_1o_Antigua_lc_oh_chair" in="992" xPos="400" requireTime="07:00-11:59,13:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Стул -->
+            <place id="pi_1o_Antigua_lc_oh_chair_1" in="992" xPos="400" requireTime="00:00-06:59,12:00-12:59" respawnPolicy="EVERYTIME" /> <!-- Стул если люди дома -->
+            <place id="pi_1o_Antigua_lc_oh_scarecrow_parrot" in="792" xPos="465" /> <!-- Чучело попугая -->
+            <place id="pi_1o_Antigua_lc_oh_box_1" in="875" xPos="438" requireTime="07:00-11:59,13:00-23:59"  /> <!-- Коробка верх -->
+            <place id="pi_1o_Antigua_lc_oh_box_1_1" in="875" xPos="438" requireTime="00:00-06:59,12:00-12:59"  /> <!-- Коробка верх если люди дома -->
+            <place id="pi_1o_Antigua_lc_oh_box_2" in="479" xPos="478" requireTime="07:00-11:59,13:00-23:59" /> <!-- Коробка низ -->
+            <place id="pi_1o_Antigua_lc_oh_box_2_1" in="479" xPos="478" requireTime="00:00-06:59,12:00-12:59" /> <!-- Коробка низ если люди дома -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь лесорубов, дом Килиана готово -->
+
+    <branch id="pi_1o_lumberjack_camp_kilian_house" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="550" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lumberjack_camp_kilian_house"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_lc_kilian_night" in="1030" xPos="197" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Килиан ночь  --> 
+            <place id="pi_1o_Antigua_lc_kilian_lunch" in="355" xPos="81" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Килиан обед  --> 
+            <place id="pi_1o_Antigua_lc_dolores_night" in="1104" xPos="423" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Долорес ночь  --> 
+            <place id="pi_1o_Antigua_lc_dolores_lunch" in="303" xPos="232" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Долорес обед  --> 
+            <place id="pi_1o_Antigua_lc_aik_night" in="642" xPos="502" requireTimeFrom="00:00" requireTimeTo="06:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк ночь  -->
+            <place id="pi_1o_Antigua_lc_aik_before_night" in="536" xPos="152" requireTimeFrom="19:00" requireTimeTo="23:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк до полуночи  --> 
+            <place id="pi_1o_Antigua_lc_aik_lunch" in="133" xPos="112" requireTimeFrom="12:00" requireTimeTo="12:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк обед  -->
+            <place id="pi_1o_Antigua_lc_avila_night" in="948" xPos="150" requireTimeFrom="00:00" requireTimeTo="06:59"  respawnPolicy="EVERYTIME"/> <!-- Авила ночь  --> 
+            <place id="pi_1o_Antigua_lc_avila_before_night" in="692" xPos="426" requireTimeFrom="19:00" requireTimeTo="22:59"  respawnPolicy="EVERYTIME"/> <!-- Авила до 22:59  --> 
+            <place id="pi_1o_Antigua_lc_avila_lunch" in="163" xPos="234" requireTimeFrom="12:00" requireTimeTo="12:59"  respawnPolicy="EVERYTIME"/> <!-- Авила обед  --> 
+            <place id="pi_1o_Antigua_lc_victor_night" in="820" xPos="426" requireTimeFrom="00:00" requireTimeTo="06:59"  respawnPolicy="EVERYTIME"/> <!-- Виктор ночь  --> 
+            <place id="pi_1o_Antigua_lc_victor_lunch" in="271" xPos="496" requireTimeFrom="12:00" requireTimeTo="12:59"  respawnPolicy="EVERYTIME"/> <!-- Виктор обед  --> 
+            <place id="pi_1o_Antigua_lc_verona_night" in="720" xPos="210" requireTimeFrom="00:00" requireTimeTo="06:59"  respawnPolicy="EVERYTIME"/> <!-- Верона ночь  --> 
+            <place id="pi_1o_Antigua_lc_verona_lunch" in="416" xPos="169" requireTimeFrom="12:00" requireTimeTo="12:59"  respawnPolicy="EVERYTIME"/> <!-- Верона обед  --> 
+            <place id="pi_1o_Antigua_lc_kh_bed_aik" in="671" xPos="562" /> <!-- Кровать Айка -->
+            <place id="pi_1o_Antigua_lc_kh_bed_kilian_dolores" in="1116" xPos="323" /> <!-- Кровать Килиана и Долорес -->
+            <place id="pi_1o_Antigua_lc_kh_bed_avila" in="985" xPos="58" /> <!-- Кровать Авилы -->
+            <place id="pi_1o_Antigua_lc_kh_bed_verona" in="800" xPos="84" /> <!-- Кровать Вероны -->
+            <place id="pi_1o_Antigua_lc_kh_bed_victor" in="809" xPos="532" /> <!-- Кровать Виктора -->
+            <place id="pi_1o_Antigua_lc_kh_table_for_lunch" in="231" xPos="165" requireTime="07:00-11:59,13:00-18:59,23:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Обеденный стол -->
+            <place id="pi_1o_Antigua_lc_kh_table_for_lunch_1" in="231" xPos="165" requireTime="00:00-06:59,12:00-12:59,19:00-22:59" respawnPolicy="EVERYTIME" /> <!-- Обеденный стол если люди дома -->
+            <place id="pi_1o_Antigua_lc_kh_tumba" in="293" xPos="23" requireTime="07:00-11:59,13:00-18:59,23:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Тумба -->
+            <place id="pi_1o_Antigua_lc_kh_tumba_1" in="293" xPos="23" requireTime="00:00-06:59,12:00-12:59,19:00-22:59" respawnPolicy="EVERYTIME" /> <!-- Тумба если люди дома -->
+            <place id="pi_1o_Antigua_lc_kh_wardrobe" in="480" xPos="24" requireTime="07:00-11:59,13:00-18:59,23:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Шкаф -->
+            <place id="pi_1o_Antigua_lc_kh_wardrobe_1" in="480" xPos="24" requireTime="00:00-06:59,12:00-12:59,19:00-22:59" respawnPolicy="EVERYTIME" /> <!-- Шкаф если люди дома -->
+            <place id="pi_1o_Antigua_lc_kh_table_for_read" in="628" xPos="29" /> <!-- Стол для чтения -->
+            <place id="pi_1o_Antigua_lc_kh_belongings_verona" in="704" xPos="74" /> <!-- Вещи Вероны -->
+            <place id="pi_1o_Antigua_lc_kh_toys_aik" in="509" xPos="110" /> <!-- Игрушки Айка -->
+            <place id="pi_1o_Antigua_lc_kh_toys_aik" in="534" xPos="455" /> <!-- Игрушки Айка -->
+            <place id="pi_1o_Antigua_lc_kh_toys_aik" in="706" xPos="483" /> <!-- Игрушки Айка -->
+            <place id="pi_1o_Antigua_lc_kh_ball" in="600" xPos="151" /> <!-- Мячик -->
+            <place id="pi_1o_Antigua_lc_kh_ball" in="896" xPos="533" /> <!-- Мячик -->
+            <place id="pi_1o_Antigua_lc_horse_toy" in="907" xPos="477" /> <!-- Коняшка -->
+            <place id="pi_1o_Antigua_lc_car_toy" in="877" xPos="212" /> <!-- Диковинная игрушка -->
+            <place id="pi_1o_Antigua_lc_kh_favorite_table_victor" in="283" xPos="576" requireTime="07:00-11:59,13:00-18:59,23:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Любимый стол Виктора -->
+            <place id="pi_1o_Antigua_lc_kh_favorite_table_victor_1" in="283" xPos="576" requireTime="00:00-06:59,12:00-12:59,19:00-22:59" respawnPolicy="EVERYTIME" /> <!-- Любимый стол Виктора если люди дома -->
+            <place id="pi_1o_Antigua_lc_sticky_barrel" in="365" xPos="527" /> <!-- Липкая бочка -->
+            <place id="pi_1o_Antigua_lc_kh_table_with_maps" in="510" xPos="563" /> <!-- Стол с картами -->
+            <place id="pi_1o_Antigua_lc_kh_box" in="965" xPos="555" requireTime="07:00-11:59,13:00-18:59,23:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Ящик -->
+            <place id="pi_1o_Antigua_lc_kh_box_1" in="965" xPos="555" requireTime="00:00-06:59,12:00-12:59,19:00-22:59" respawnPolicy="EVERYTIME" /> <!-- Ящик если люди дома -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь лесорубов, дом братьев Оби готово -->
+
+    <branch id="pi_1o_lumberjack_camp_obi_house" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="444" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lumberjack_camp_obi_house"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_lc_victor_obi_night" in="405" xPos="154" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_victor_obi_lunch" in="931" xPos="125" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_ivetta_obi_night" in="963" xPos="431" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Иветта Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_ivetta_obi_lunch" in="930" xPos="198" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Иветта Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_rupracht_obi_night" in="648" xPos="90" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Рупрахт Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_rupracht_obi_lunch" in="1115" xPos="211" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Рупрахт Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_shima_obi_night" in="583" xPos="158" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Шима Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_shima_obi_lunch" in="1148" xPos="136" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Шима Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_michael_obi_night" in="492" xPos="431" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Михаил Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_michael_obi_lunch" in="1136" xPos="57" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Михаил Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_kasumi_obi_night" in="666" xPos="442" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Касуми Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_kasumi_obi_before_night" in="375" xPos="124" requireTimeFrom="22:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Касуми Оби до 23:59  --> 
+            <place id="pi_1o_Antigua_lc_kasumi_obi_lunch" in="970" xPos="48" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Касуми Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_bella_obi_night" in="1212" xPos="143" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_bella_obi_before_night" in="814" xPos="444" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби до 23:59  --> 
+            <place id="pi_1o_Antigua_lc_bella_obi_lunch" in="756" xPos="105" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_sigizmund_obi_night" in="1114" xPos="306" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_sigizmund_obi_lunch" in="729" xPos="178" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_joshua_obi_night" in="1205" xPos="473" requireTimeFrom="00:00" requireTimeTo="06:59" respawnPolicy="EVERYTIME"/> <!-- Джошуа Оби ночь  --> 
+            <place id="pi_1o_Antigua_lc_joshua_obi_before_night" in="324" xPos="457" requireTimeFrom="19:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Джошуа Оби до 23:59  --> 
+            <place id="pi_1o_Antigua_lc_joshua_obi_lunch" in="324" xPos="457" requireTimeFrom="12:00" requireTimeTo="12:59" respawnPolicy="EVERYTIME"/> <!-- Джошуа Оби обед  --> 
+            <place id="pi_1o_Antigua_lc_oh_bed_bella_obi" in="1226" xPos="203" /> <!-- Кровать Беллы Оби -->
+            <place id="pi_1o_Antigua_lc_oh_bed_sigizmund_obi" in="1226" xPos="302" /> <!-- Кровать Сигизмунда Оби -->
+            <place id="pi_1o_Antigua_lc_oh_bed_joshua_obi" in="1226" xPos="399" /> <!-- Кровать Джошуа Оби -->
+            <place id="pi_1o_Antigua_lc_oh_chronicles_zalesye" in="779" xPos="518" /> <!-- Хроники Залесья -->
+            <place id="pi_1o_Antigua_lc_oh_bed_victor_obi_ivetta_obi" in="963" xPos="530" /> <!-- Кровать Виктора и Иветты Оби -->
+            <place id="pi_1o_Antigua_lc_oh_bed_rupracht_obi_shima_obi" in="533" xPos="61" /> <!-- Кровать Рупрахта и Шимы Оби -->
+            <place id="pi_1o_Antigua_lc_oh_bed_michael_obi_kasumi_obi" in="541" xPos="536" /> <!-- Кровать Михаила и Касуми Оби -->
+            <place id="pi_1o_Antigua_lc_obh_box" in="1083" xPos="512" requireTime="07:00-11:59,13:00-18:59"  /> <!-- Ящик -->
+            <place id="pi_1o_Antigua_lc_obh_box_1" in="1083" xPos="512" requireTime="00:00-06:59,12:00-12:59,19:00-23:59"  /> <!-- Ящик если люди дома -->
+            <place id="pi_1o_Antigua_lc_oh_table_for_lunch_adult" in="1027" xPos="155" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYDAY" /> <!-- Взрослый обеденный стол -->
+            <place id="pi_1o_Antigua_lc_oh_table_for_lunch_adult_1" in="1027" xPos="155" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Взрослый обеденный стол если люди дома -->
+            <place id="pi_1o_Antigua_lc_oh_table_for_lunch_kids" in="831" xPos="54" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYDAY" /> <!-- Детский обеденный стол -->
+            <place id="pi_1o_Antigua_lc_oh_table_for_lunch_kids_1" in="831" xPos="54" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Детский обеденный стол если люди дома -->
+            <place id="pi_1o_Antigua_lc_oh_strawberry" in="622" xPos="23" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYDAY" /> <!-- Клубника -->
+            <place id="pi_1o_Antigua_lc_oh_strawberry_1" in="622" xPos="23" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Клубника если люди дома -->
+            <place id="pi_1o_Antigua_lc_oh_boudoir_table" in="266" xPos="582" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME" /> <!-- Будуарный столик -->
+            <place id="pi_1o_Antigua_lc_oh_boudoir_table_1" in="266" xPos="582" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYTIME" /> <!-- Будуарный столик если люди дома -->
+            <place id="pi_1o_Antigua_lc_oh_box_another" in="700" xPos="536" requireTime="07:00-11:59,13:00-18:59" respawnPolicy="EVERYDAY" /> <!-- Ящик другой -->
+            <place id="pi_1o_Antigua_lc_oh_box_another_1" in="700" xPos="536" requireTime="00:00-06:59,12:00-12:59,19:00-23:59" respawnPolicy="EVERYDAY" /> <!-- Ящик другой если люди дома -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Лагерь лесорубов, часовня готово -->
+
+    <branch id="pi_1o_lumberjack_camp_chapel" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="583" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_lumberjack_camp_chapel"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_Antigua_lc_ivetta_obi_chapel_service" in="978" xPos="169" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Иветта Оби служба в часовне  -->  
+            <place id="pi_1o_Antigua_lc_rupracht_obi_chapel_service" in="1082" xPos="295" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Рупрахт Оби служба в часовне  --> 
+            <place id="pi_1o_Antigua_gp_governor_servant_verona_chapel" in="554" xPos="166" requireTimeFrom="02:00" requireTimeTo="03:59" ifMarker="pi_1o_quest_family_values_consequences" respawnPolicy="EVERYTIME" /> <!-- Слуга Губернатора и Верона, сделать одной картинкой  --> 
+            <place id="pi_1o_Antigua_gp_ghost_in_chapel" in="542" xPos="445" requireTimeFrom="05:00" requireTimeTo="05:59" ifMarker="pi_1o_quest_ghost_in_chapel_01" respawnPolicy="EVERYTIME"/> <!-- Призрак в часовне, босс  -->  
+            <place id="pi_1o_Antigua_lc_ivetta_obi" in="978" xPos="169" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Иветта Оби --> 
+            <place id="pi_1o_Antigua_lc_ivetta_obi" in="978" xPos="169" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Иветта Оби --> 
+            <place id="pi_1o_Antigua_lc_rupracht_obi" in="1082" xPos="295" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Рупрахт Оби --> 
+            <place id="pi_1o_Antigua_lc_rupracht_obi" in="1082" xPos="295" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Рупрахт Оби --> 
+            <place id="pi_1o_Antigua_lc_sigizmund_obi_date_chapel" in="966" xPos="458" requireTimeFrom="23:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби свидание часовня  --> 
+            <place id="pi_1o_Antigua_lc_avila_date_chapel" in="967" xPos="399" requireTimeFrom="23:00" requireTimeTo="23:59" respawnPolicy="EVERYTIME"/> <!-- Авила свидание часовня  --> 
+            <place id="pi_1o_Antigua_lc_martin_chapel" in="864" xPos="397" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Мартин служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_martina_chapel" in="846" xPos="458" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Мартина служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_martines_chapel" in="775" xPos="414" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Мартинес служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_olaf_chapel" in="743" xPos="139" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Олаф служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_kilian_chapel" in="847" xPos="204" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Килиан служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_dolores_chapel" in="863" xPos="141" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Долорес служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_aik_chapel" in="221" xPos="169" requireTimeFrom="07:00" requireTimeTo="07:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_avila_chapel" in="221" xPos="114" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Авила служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_victor_chapel" in="605" xPos="414" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Виктор служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_verona_chapel" in="419" xPos="436" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Верона служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_victor_obi_chapel" in="738" xPos="466" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_shima_obi_chapel" in="606" xPos="150" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Шима Оби служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_michael_obi_chapel" in="472" xPos="122" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Михаил Оби служба в часовне  -->
+            <place id="pi_1o_Antigua_lc_kasumi_obi_chapel" in="345" xPos="149" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Касуми Оби служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_bella_obi_chapel" in="188" xPos="407" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_sigizmund_obi_chapel" in="754" xPos="198" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_joshua_obi_chapel" in="293" xPos="455" requireTimeFrom="07:00" requireTimeTo="07:59" respawnPolicy="EVERYTIME"/> <!-- Джошуа Оби служба в часовне  --> 
+            <place id="pi_1o_Antigua_lc_c_donation_box" in="1063" xPos="361" /> <!-- Ящик для пожертвований -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Мангровые джунгли готово -->
+
+    <branch id="pi_1o_mangrove_jungle" genMode="PI_1O_MANGROVE_JUNGLE" probability="0" scenario="true" minLength="999999999" maxLength="999999999" recreationPolicy="RECREATE_EVERYTIME">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mangrove_jungle"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+        </spawnPlaces>
+    </branch>
+
+    <!-- Мангровые джунгли, Гробница Безымянного Друида готово -->
+
+    <branch id="pi_1o_mj_tomb_nameless_druid" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="461" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mj_tomb_nameless_druid"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mj_tnd_ghoul" in="1203" xPos="316" /> <!-- Гуль, босс, описан он в хмл этого плейса, надо сделать арт дорога (в идеале - как гуль из Risen 1) и бой pi_1o_mj_tnd_ghoul_f  -->  
+            <place id="pi_1o_Antigua_mj_tnd_sarcophagus" in="759" xPos="135" /> <!-- Саркофаг -->
+            <place id="pi_1o_Antigua_mj_tnd_funeral_urn_01" in="281" xPos="131" /> <!-- Погребальная урна лево низ -->
+            <place id="pi_1o_Antigua_mj_tnd_funeral_urn_02" in="1060" xPos="88" /> <!-- Погребальная урна лево верх -->
+            <place id="pi_1o_Antigua_mj_tnd_funeral_urn_03" in="381" xPos="508" /> <!-- Погребальная урна право низ -->
+            <place id="pi_1o_Antigua_mj_tnd_funeral_urn_04" in="622" xPos="482" /> <!-- Погребальная урна право середина -->
+            <place id="pi_1o_Antigua_mj_tnd_funeral_urn_05" in="876" xPos="482" /> <!-- Погребальная урна право верх -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Мангровые джунгли, Подозрительная гробница с клонами Касуми готово -->
+
+    <branch id="pi_1o_mj_tomb_kasumi_clons" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="445" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mj_tomb_kasumi_clons"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mj_kc_kasumi_clons" in="1291" xPos="393" ifMarker="pi_1o_quest_kasumi_twins_01" respawnPolicy="EVERYTIME"/> <!-- Близнецы Касуми, босс  -->
+            <place id="pi_1o_Antigua_mj_kc_funeral_urn_01" in="212" xPos="43" /> <!-- Погребальная урна лево низ -->
+            <place id="pi_1o_Antigua_mj_kc_funeral_urn_02" in="108" xPos="568" /> <!-- Погребальная урна право низ -->
+            <place id="pi_1o_Antigua_mj_kc_funeral_urn_03" in="440" xPos="568" /> <!-- Погребальная урна право низ 2 -->
+            <place id="pi_1o_Antigua_mj_kc_funeral_urn_04" in="591" xPos="478" /> <!-- Погребальная урна право низ 3 -->
+            <place id="pi_1o_Antigua_mj_kc_funeral_urn_05" in="994" xPos="478" /> <!-- Погребальная урна право низ 4 -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Мангровые джунгли, Детский сад изнутри готово  -->
+
+    <branch id="pi_1o_mj_kindergarten_inside" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="530" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mj_kindergarten_inside"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mj_ki_aik_in_cell" in="1011" xPos="154"/> <!-- Айк в клетке  -->
+            <place id="pi_1o_mj_ki_witch" in="1094" xPos="299"/> <!-- Ведьма, босс, описан он в хмл этого плейса, надо сделать арт дорога и бой  --> 
+            <place id="pi_1o_mj_ki_skull" in="198" xPos="76"/> <!-- Череп лево низ  -->
+            <place id="pi_1o_mj_ki_skull" in="790" xPos="483"/> <!-- Череп право низ  -->
+            <place id="pi_1o_mj_ki_skull" in="1116" xPos="424"/> <!-- Череп право верх  -->
+            <place id="pi_1o_mj_ki_skulls" in="1161" xPos="209"/> <!-- Черепа  -->
+            <place id="pi_1o_mj_ki_skeleton" in="521" xPos="529"/> <!-- Скелет  -->
+            <place id="pi_1o_mj_ki_horse_toy_1" in="421" xPos="52"/> <!-- Лошадка лево  -->
+            <place id="pi_1o_mj_ki_horse_toy_2" in="854" xPos="421"/> <!-- Лошадка право  -->
+            <place id="pi_1o_mj_ki_globe" in="749" xPos="44"/> <!-- Глобус  -->
+            <place id="pi_1o_mj_ki_table_for_food" in="595" xPos="60"/> <!-- Обеденный стол  -->
+            <place id="pi_1o_mj_ki_bone" in="390" xPos="139"/> <!-- Кости  -->
+            <place id="pi_1o_mj_ki_bear_toy" in="830" xPos="79"/> <!-- Мишка  -->
+            <place id="pi_1o_mj_ki_strange_toy" in="1120" xPos="148"/> <!-- Странная игрушка  -->
+            <place id="pi_1o_mj_ki_kettle" in="1299" xPos="302"/> <!-- Котёл  -->
+            <place id="pi_1o_mj_ki_toys" in="907" xPos="508"/> <!-- Игрушки  -->
+            <place id="pi_1o_mj_ki_toys" in="927" xPos="110"/> <!-- Игрушки  -->
+            <place id="pi_1o_mj_ki_broken_bottle" in="725" xPos="537"/> <!-- Разбитая бутылка  -->
+            <place id="pi_1o_mj_ki_green_heart" in="643" xPos="502"/> <!-- Зелёное сердце  -->
+        </spawnPlaces>
+    </branch>
+
+    <!-- Мангровые джунгли, Гробница с книгой готово -->
+
+    <branch id="pi_1o_mj_tomb_with_book" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="616" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
+        <turns>
+            <road turnType="" pointerImage="" pointerComment=""/>
+        </turns>
+        <mainTiles>
+            <road id="pi_1o_mj_tomb_with_book"/>
+        </mainTiles>
+        <endingTiles>
+            <road id="bridge"/>
+        </endingTiles>
+
+        <spawnPlaces>
+            <place id="pi_1o_mj_twb_first_scientist" in="1035" xPos="311"/> <!-- Первый учёный, босс, описан он в хмл этого плейса, надо сделать арт дорога и бой  -->  
+            <place id="pi_1o_mj_twb_old_page" in="234" xPos="54"/> <!-- Старые записи  -->
+            <place id="pi_1o_mj_twb_old_page" in="995" xPos="423"/> <!-- Старые записи  -->
+            <place id="pi_1o_mj_twb_old_page" in="851" xPos="561"/> <!-- Старые записи  -->
+            <place id="pi_1o_mj_twb_old_page" in="495" xPos="432"/> <!-- Старые записи  -->
+            <place id="pi_1o_mj_twb_magik_knowledge_1" in="389" xPos="92"/> <!-- Магия знаний 1 -->
+            <place id="pi_1o_mj_twb_magik_knowledge_2" in="678" xPos="414"/> <!-- Магия знаний 2 -->
+            <place id="pi_1o_mj_twb_magik_knowledge_3" in="884" xPos="440"/> <!-- Магия знаний 3 -->
+            <place id="pi_1o_mj_twb_magik_knowledge_4" in="665" xPos="84"/> <!-- Магия знаний 4 -->
+            <place id="pi_1o_mj_twb_torn_pages" in="477" xPos="113"/> <!-- Вырванные страницы  -->
+            <place id="pi_1o_mj_twb_torn_pages" in="268" xPos="471"/> <!-- Вырванные страницы  -->
+            <place id="pi_1o_mj_twb_torn_pages" in="1128" xPos="191"/> <!-- Вырванные страницы  -->
+            <place id="pi_1o_mj_twb_book_knowledge_1" in="841" xPos="115"/> <!-- Книга навыков 1 -->
+            <place id="pi_1o_mj_twb_book_knowledge_2" in="535" xPos="516"/> <!-- Книга навыков 2 -->
+            <place id="pi_1o_mj_twb_book_knowledge_3" in="233" xPos="571"/> <!-- Книга навыков 3 -->
+            <place id="pi_1o_mj_twb_book_knowledge_4" in="120" xPos="532"/> <!-- Книга навыков 4 -->
+            <place id="pi_1o_mj_twb_book_knowledge_5" in="150" xPos="71"/> <!-- Книга навыков 5 -->
+            <place id="pi_1o_mj_twb_recipe" in="148" xPos="159"/> <!-- Старый рецепт  -->
+            <place id="pi_1o_mj_twb_recipe" in="1017" xPos="167"/> <!-- Старый рецепт  -->
+            <place id="pi_1o_mj_twb_recipe" in="755" xPos="437"/> <!-- Старый рецепт  -->
+            <place id="pi_1o_mj_twb_recipe" in="397" xPos="414"/> <!-- Старый рецепт  -->
+            <place id="pi_1o_mj_twb_recipe" in="738" xPos="176"/> <!-- Старый рецепт  -->
+        </spawnPlaces>
+    </branch>
+
+</root>

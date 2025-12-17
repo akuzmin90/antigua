@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДЖЕК -->
+
+    <p:place id="pi_1o_Antigua_lj_jack" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lj_jack" name="Джек" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Красиво здесь, да? Видно Холодное море до самого горизонта! Можешь оставаться
+                            сколько захочешь - я не против компании, особенно с такими видами
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="jack_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_new_recruit_01 or pi_1o_quest_inquisitor_eyepiece_jack_react or pi_1o_quest_try_voodoo_doll_02 or pi_1o_quest_buy_voodoo_doll_award_from_jack or pi_1o_quest_siren_01 or pi_1o_quest_gorgons_in_antigua_01 or pi_1o_quest_phoenix_01 or pi_1o_quest_rider_01 or pi_1o_quest_cyclops_01 or pi_1o_quest_bulletin_board_rum_for_jack_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- квест реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?" goto="r_jack_react1"/>
+                            <p:answer ifMarker="pi_1o_quest_inquisitor_eyepiece_jack_react" text="Свет маяка"
+                                      goto="r_jack_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_try_voodoo_doll_02" text="Тут монстр!"
+                                      goto="r_jack_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_buy_voodoo_doll_award_from_jack" text="Ползоног повержен"
+                                      goto="r_jack_react4"/>
+                            <p:answer ifMarker="pi_1o_quest_siren_01" text="Сирена" goto="r_jack_react5"/>
+                            <p:answer ifMarker="pi_1o_quest_gorgons_in_antigua_01" text="Горгона" goto="r_jack_react6"/>
+                            <p:answer ifMarker="pi_1o_quest_phoenix_01" text="Феникс" goto="r_jack_react7"/>
+                            <p:answer ifMarker="pi_1o_quest_rider_01" text="Всадник" goto="r_jack_react8"/>
+                            <p:answer ifMarker="pi_1o_quest_cyclops_01" text="Циклоп" goto="r_jack_react9"/>
+                            <p:answer ifMarker="pi_1o_quest_bulletin_board_rum_for_jack_01" text="Доставка рома"
+                                      goto="r_jack_react10"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react1">
+                        <p:mainText>Маги-вуду? Уф... По молодости, я бы и пошёл... Но сейчас я слишком стар.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Супер стар?" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react2">
+                        <p:mainText>Спасибо за то, что уговори[л|ла] старика поставить эту коробочку со светом! Я теперь
+                            раз в неделю поднимаюсь наверх, окуляры протереть, и всё! Знаешь, я тут на дровах теперь
+                            экономлю... Это тебе!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_inquisitor_eyepiece_jack_react" requestSpecialPlaces="true"
+                                      complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react3">
+                        <p:mainText>Тише, тише... Он пока спокойный... Стоит, на меня смотрит и не шевелится... Жутко
+                            же... Я моргнул, а тут ЭТО из ниоткуда... Верно, сам морской дьявол за мной пришёл...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не бойся" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react4">
+                        <p:mainText>Уф... Я уже думал, мне теперь с ЭТИМ тут вечно жить, раздери меня русалка... Думаю,
+                            я могу выразить свою благодарность - спокойствие дороже!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="6"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_buy_voodoo_doll_award_from_jack"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react5">
+                        <p:mainText>Эй, эй! Прогони эту сирену, а лучше, убей её! Сколько душ она погубила, пусть
+                            отправляется к морскому дьяволу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Обязательно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react6">
+                        <p:mainText>Это... Это что за исчадье морской пучины?! Даже море такое не породит... Я видел,
+                            как чудище кролика одним взглядом в камень превратило... Изгони его, прошу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Обязательно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react7">
+                        <p:mainText>Я ещё издали, раздери меня креветка, видел, как эта птица летела со стороны Южных
+                            островов! Теперь она здесь, зачем?! Главное, чтобы маяк не подожгла...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зато ярко будет" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react8">
+                        <p:mainText>Вот скажи мне, искатель приключений... ПОЧЕМУ ЭТИ ТВАРИ ЛЕЗУТ КО МНЕ НА МАЯК
+                            ПОСТОЯННО?! Жутко же!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="На свет идут" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react9">
+                        <p:mainText>КЛЯНУСЬ ВЕЧНЫМ ШТИЛЕМ, КАК МНЕ НАДОЕЛИ ВСЕ ЭТИ ПОЯВЛЯЮЩИЕСЯ МОНСТРЫ!!! СКОРО Я САМ
+                            НА НИХ НАПАДАТЬ БУДУ, АААААААААА!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тише, тише" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_jack_react10">
+                        <p:mainText>О, а вот и мой ром! Спасибо, искатель приключений!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Пожалуйста" removeMarker="pi_1o_quest_bulletin_board_rum_for_jack_01"
+                                      giveMarker="pi_1o_quest_bulletin_board_rum_for_jack_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Странный ключ  -->
+            <p:state ifMarker="pi_strange_key_002" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Чем может помочь старина Джек искателю приключений?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ключ"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Не, это не мой. Я, конечно, старовер - пользоваться такими ключами - но этого у меня
+                            точно не было. Посмотри, он немного солью изъеден морской! А я к морю не спускаюсь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тупик..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Знаешь, что делать в таких случаях, когда не знаешь, чего делать? Старина Джек
+                            подскажет - иди в таверну!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зачем??"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Да не за этим, дурная твоя голова! Хотя и за этим тоже можно, ром знатный у
+                            трактирщика... Эм, заговариваешь зубы ромом своим! Спроси трактирщика, он многое знает, вот.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" complete="true" requestSpecialPlaces="true" removeMarker="pi_strange_key_002"
+                                      giveMarker="pi_strange_key_003"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Клад контрабандистов  -->
+            <p:state ifMarker="pi_1o_smuggler_treasure_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Клад контрабандистов? Ох... Язык мой - враг мой!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>И руки мой, перед едой, знаем, знаем. Расскажи про клад подробнее.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Ты же не отстанешь от старика, верно? Эх, молодёжь... Сам был таким. В твои годы, я
+                            был правой рукой главаря самой опасной банды на всём Антигуа и Острове Беззакония!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Даже так?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Но ты не истории слушать приш[ёл|ла], понимаю... Да, мы спрятали тут клад, в гроте
+                            Левиафана... Ищи красный камень, обычно там таких нет.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" complete="true" requestSpecialPlaces="true" removeMarker="pi_1o_smuggler_treasure_01"
+                                      giveMarker="pi_1o_smuggler_treasure_02"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Клад контрабандистов концовка  -->
+            <p:state ifMarker="pi_1o_smuggler_treasure_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Тебе удалось найти его, наш старый клад? А, да, я забыл сказать, что там была
+                            спрятана и икринка Левиафана... Самое ценное. Где она?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Она выросла"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Карамба... Но, раз ты здесь, чудище уже в прошлом... Так, я понимаю, я подверг тебя
+                            опасности... Забирай всё, что было в кладе, ничего не прошу. Только про детёныша Левиафана
+                            молчок, хорошо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Твой амулет?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Чего? Аму...лет? Да-да-да, мой! Неужели, он был в кладе? Наверное, случайно...
+                            Спасибо, что верну[л|ла] мне его! Я даже заплачу за него - всё честно!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="4"/>
+                        <p:answers>
+                            <p:answer text="Я не против" complete="true" requestSpecialPlaces="true" removeMarker="pi_1o_smuggler_treasure_03">
+                                <p:addTaskProgress id="pi_1o_smuggler_treasure"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Окуляр инквизитора"  -->
+            <p:state ifMarker="pi_1o_quest_inquisitor_eyepiece_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_maurizio" imageComment="Инквизитор Маурицио">
+                        <p:mainText>Здравствуй, смотритель маяка. Я пришёл к тебе с подарком от Короля Густава и
+                            инквизиции!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Чего? Ой ненененене! Ещё подачек от инквизиции мне не хватало!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_maurizio" imageComment="Инквизитор Маурицио">
+                        <p:mainText>Подожди, вначале выслушай. Твой маяк великолепен. Но я предлагаю сделать его ещё
+                            лучше. Тебе не придётся всю ночь подкидывать дрова для костра - он будет не нужен.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>При всём неуважении к вам, инквизитор, это невозможно. Как же тогда маяк будет
+                            светить? Мне что, притащить туда угрей и ждать, пока они пустят свои светящиеся пуки?! Что я
+                            несу, пукают лишь селёдки... Тьфу на тебя!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Информативно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_maurizio" imageComment="Инквизитор Маурицио">
+                        <p:mainText>Вот специальная коробочка. В ней находится кристалл вечного сияния - он никогда не
+                            потухнет. Окуляры по бокам коробочки усилят его свет, а шестерёнка позволит коробочке
+                            крутиться на месте.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Весьма разумно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Весьма разумно? Искатель приключений, ты же не из клятой инквизиции... Скажи мне, им
+                            можно доверять? Что может быть лучше старого доброго костра?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Поверь им"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>[Вы убедили Джека попробовать новое изобретение инквизиции. Через пару часов
+                            коробочка стояла на вершине маяка, испуская сильные зеленоватые лучи на многие мили вперёд!
+                            Даже Джек доволен. Пора вернуться к Главе инквизиции.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Прогресс не остановить" removeMarker="pi_1o_quest_inquisitor_eyepiece_06"
+                                      giveMarker="pi_1o_quest_inquisitor_eyepiece_07" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Джек-осведомитель диалог 1  -->
+            <p:state ifMarker="pi_1o_quest_jack_for_inquisition_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Привет смотрителю маяка! Как море сегодня, спокойное? Как суставы, ревматизм не
+                            беспокоит? Как чайки, пролетают без сюрпризов?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Ишь как складно чешешь, ха! Я ж понимаю, что ты по делу - сюда редко кто приходит
+                            просто так. Иногда парочки, на закате, иногда просто гуляет кто... И никто ничего не
+                            спрашивает. Чего надо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Шпион инквизиции"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Чего? И этим ещё осведомитель нужен? Ну так я это, меня уже пираты наняли так-то,
+                            следить за кораблями инквизиции...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Забудь" goto="r4_d_3"/>
+                            <p:answer text="Уговорить" goto="r5_d"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_3">
+                        <p:mainText>Вот и я о чём! Мне пираты хорошо платят, за любые сведения об инквизиции! Так что
+                            да, старый Джек забудет твоё предложение. Но ты заходи, заходи почаще! Тут закаты и
+                            рассветы, уууууух, красотища!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Обязательно" removeMarker="pi_1o_quest_jack_for_inquisition_02"
+                                      giveMarker="pi_1o_quest_jack_for_inquisition_fail" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d">
+                        <p:mainText>Ты хочешь уговорить старину Джека? Ну что ж... Попробуй сделать мне предложение.
+                            Например, мне нужно 15 СВЕЖИХ кусков золотой руды. Свежие - значит только из шахты,
+                            понимаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_jack_for_inquisition_02"
+                                      giveMarker="pi_1o_quest_jack_for_inquisition_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Джек-осведомитель диалог 2  -->
+            <p:state ifMarker="pi_1o_quest_jack_for_inquisition_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Как там моя свежая золотая руда? 15 кусков, ни больше ни меньше! Она же у тебя,
+                            да?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отдать руду"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Отлично! Пополню заначку и в таверне погуляю, йааааарррр! Скажи инквизиции, что я
+                            тоже буду шпионить в их пользу! Потому как и пираты мне платят - а, значит, это в два раза
+                            больше золотой руды!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Ах ты шельмец!" removeMarker="pi_1o_quest_jack_for_inquisition_06"
+                                      giveMarker="pi_1o_quest_jack_for_inquisition_07" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

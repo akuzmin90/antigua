@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Стол  -->
+
+    <p:place id="pi_1o_Antigua_lc_mc_table" animType="EMPTY" imageId="158x53" name="Стол" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Так, а что тут у нас? Стол. На нём лежат различные записи, ничего интересного. Кроме одного ящика - там вы находите немного изумрудов! </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="15" />
+                        <p:answers>
+                            <p:answer text="Приятно" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Так, а что тут у нас? Стол. На нём лежат различные записи, ничего интересного. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Стол если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_mc_table_1" animType="EMPTY" imageId="158x53" name="Стол" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вы подходите к столу, пытаетесь незаметно посмотреть, что есть интересного... Но ловите на себе суровый взгляд Мартины. Она указывает вам на дверь. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

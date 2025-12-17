@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТИВЕН -->
+
+    <p:place id="pi_1o_steven" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_steven" name="Стивен" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" ifNoMarker="pi_1o_s_looser">
+                        <p:mainText>Привет! Я - Стивен! Однажды я стану или настоящим морским пиратом, или губернатором
+                            Антигуа!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Амбициозно" giveMarker="steven_for_quests" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_03 or pi_1o_quest_lost_memories_steven or pi_1o_quest_lost_memories_steven_1 or pi_1o_quest_leyho_killers_ring_steven_house or pi_1o_new_recruit_01 or pi_1o_quest_embodiment_of_chthon_01 or pi_1o_quest_warlock_01 or pi_1o_quest_bulletin_board_steven_rats_01 or pi_1o_quest_bulletin_board_steven_rats_02"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r1_1" ifMarker="pi_1o_s_looser">
+                        <p:mainText>Я теперь под домашним арестом! Замечательно. Огромное тебе спасибо, искатель
+                            приключений! "Сыновья Мары" ещё дадут о себе знать, попомни мои слова...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сам виноват" giveMarker="steven_for_quests" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_03 or pi_1o_quest_lost_memories_steven or pi_1o_quest_lost_memories_steven_1 or pi_1o_quest_leyho_killers_ring_steven_house or pi_1o_new_recruit_01 or pi_1o_quest_embodiment_of_chthon_01  or pi_1o_quest_warlock_01 or pi_1o_quest_bulletin_board_steven_rats_01 or pi_1o_quest_bulletin_board_steven_rats_02"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_steven_react1"/>
+                            <p:answer
+                                    markerCondition="pi_1o_quest_bulletin_board_steven_rats_01 or pi_1o_quest_bulletin_board_steven_rats_02"
+                                    text="Крысы" goto="r_steven_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_lost_memories_steven" text="Страница дневника"
+                                      goto="r_steven_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_lost_memories_steven_1" text="Снова страница"
+                                      goto="r_steven_react4"/>
+                            <p:answer ifMarker="pi_1o_quest_leyho_killers_ring_steven_house" text="Обыск дома"
+                                      goto="r_steven_react5"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_steven_react6"/>
+                            <p:answer ifMarker="pi_1o_quest_embodiment_of_chthon_01" text="Воплощение Хтони"
+                                      goto="r_steven_react7"/>
+                            <p:answer ifMarker="pi_1o_quest_warlock_01" text="Чернокнижник" goto="r_steven_react8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react1">
+                        <p:mainText>Посмотри на мой дом. Был бы у меня золотой компас, или знал бы я, где его найти -
+                            жил бы я здесь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_gold_compass_hint8" ifNoMarker="pi_1o_s_looser"
+                                      requestSpecialPlaces="true" complete="true"/>
+                            <p:answer text="Понимаю" giveMarker="pi_gold_compass_hint8" ifMarker="pi_1o_s_looser"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react2">
+                        <p:mainText>Эти крысы снова здесь! Их постоянно прогоняют, но они возвращаются! Помоги мне!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Друзья твои?" ifNoMarker="pi_1o_s_looser" complete="true"/>
+                            <p:answer text="Друзья твои?" ifMarker="pi_1o_s_looser" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react3">
+                        <p:mainText>Что? Страница из дневника? Понятия не имею... И что, что здесь написано моё имя?
+                            Знаешь, скольким людям я должен, сколько людей меня могут подставить? И вообще, это не твоё
+                            дело, оставь меня!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_lost_memories_steven"
+                                      ifNoMarker="pi_1o_s_looser" requestSpecialPlaces="true" complete="true"/>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_lost_memories_steven"
+                                      ifMarker="pi_1o_s_looser" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react4">
+                        <p:mainText>Эх, ну что ты приста[л|ла]... Я не знаю, где Лейхо. Он на Антигуа, это точно. Клад
+                            Джима Сороки тоже на острове. Но клад проклят! Я отговаривал Лейхо, но он был слишком
+                            решителен!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_lost_memories_steven_1"
+                                      ifNoMarker="pi_1o_s_looser" requestSpecialPlaces="true" complete="true"/>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_lost_memories_steven_1"
+                                      ifMarker="pi_1o_s_looser" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react5">
+                        <p:mainText>Я ж говорю, ничего здесь нет! Если бы я сделал всё, в чём ты меня обвиняешь, здесь
+                            бы точно были сокровища!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Поищем" ifNoMarker="pi_1o_s_looser" complete="true"/>
+                            <p:answer text="Поищем" ifMarker="pi_1o_s_looser" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react6">
+                        <p:mainText>Эй, эй, ты чего?! Ни за что! Они же мозги промывают! Впервые вижу, чтобы уже по
+                            домам ходили, такое предлагать... Ты ещё в дверь постучись и предложи косметику купить,
+                            ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж не консультант из..." ifNoMarker="pi_1o_s_looser" complete="true"/>
+                            <p:answer text="Я ж не консультант из..." ifMarker="pi_1o_s_looser" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react7">
+                        <p:mainText>Пожалуйста, помоги прогнать это! Я не заслуживаю такого к себе! ЭТО каждую секунду
+                            погружает меня в хтонь и безысходность!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Поделом тебе" ifNoMarker="pi_1o_s_looser" complete="true"/>
+                            <p:answer text="Поделом тебе" ifMarker="pi_1o_s_looser" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_steven_react8">
+                        <p:mainText>Он сказал, что ждёт какую-то Послушницу!!! Но я не знаю такой! И сказал, что будет
+                            ждать именно здесь столько, сколько понадобиться! Бедный я, бедный... Во всех смыслах...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты этого достоин" ifNoMarker="pi_1o_s_looser" complete="true"/>
+                            <p:answer text="Ты этого достоин" ifMarker="pi_1o_s_looser" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Потерянные воспоминания"   -->
+            <p:state ifMarker="pi_1o_quest_lost_memories_10" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Стивен, нам нужно поговорить. Об этих записях и о твоём "друге" Лейхо.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Ничего не знаю. Там же всё написано, Лейхо вёл дневник! И он мой ДРУГ, понятно?! Да,
+                            я был в курсе всего. Но что я сделаю, если он горел своей любовью к этой девке!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как заговорил-то..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Он гореЛ любовью к ДЕВКЕ? Ты, как я вижу, многое не договариваешь. Где Лейхо? Куда
+                            он отправился? Если он просил у тебя лопату, значит, наверняка хвастался и картой. Говори,
+                            куда идти!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Не смей обвинять меня! Где он - спроси торговца картами! Может, Лейхо вообще хотел
+                            найти сокровище и уплыть куда подальше! Эльза, тьфу! Романтики, тоже мне... 3 года жили у
+                            меня, до таверны... Одни неудобства!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всё понятно" removeMarker="pi_1o_quest_lost_memories_10"
+                                      giveMarker="pi_1o_quest_lost_memories_11,pi_1o_quest_lost_memories_hint_11"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!--TODO квест "Найти убийц Лейхо", первый диалог   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Стивен, давай рассказывай правду. Что случмлось с Лейхо? Откуда у тебя страницы его
+                            дневника? Почему ты так относился к нему и к Эльзе? Зачем ты убил его?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Ч-ч-чего?! Это же бред! Я не убивал Лейхо, он мой друг! Я лишь помогал ему, между
+                            прочим! Дал лопату, распустил слух, прятал у себя!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А взамен?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Ты о чём? Я делал это только по дружбе, и не более! Тебе такое не понять, да? Мы с
+                            ним с детства на улице, мы дружбу кровью скрепили! Я его бы не предал! И деньги здесь ни при
+                            чём.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я тебе не верю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Да? Серьёзно? Я что, убил бы лучшего и единственного друга, ради проклятого клада?!
+                            Ха, раз такое дело, ты же от Губернатора... Так обыщи мой дом! Давай, найди хоть что-то, ха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так и сделаем" giveMarker="pi_1o_quest_leyho_killers_ring_steven_house"
+                                    requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!--TODO квест "Найти убийц Лейхо", нашли кольцо Д.С.   -->
+            <p:state markerCondition="pi_1o_quest_leyho_killers_03 and pi_1o_quest_leyho_killers_ring_steven_house_done"
+                     repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Похоже, у тебя действительно нет никаких сокровищ в доме. Но, что это за кольцо? Тут
+                            инициалы Д.С. - как ты это объяснишь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Эм... Кольцо... Аааааааааа! Спасибо, спасибо что наш[ёл|ла] его! Это же подарок, для
+                            меня! Д.С. - это "Дорогому Стивену!" А я думал, что потерял его... Отдай же мне его скорее!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да? А кто подарил?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Как кто? Эльза, эта дряная девка, точно тебе говорю! Год назад, она же жила у меня!
+                            Ну и закрутилось... Понимаешь, это странная история...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказывай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>Да ты хуже рыбы-прилипалы... Коротко - год назад был ремонт в таверне. Лейхо
+                            отправился на Остров Беззакония, заработать. А Эльза временно жила у меня, мы же друзья!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="И ты с девушкой друга..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Так получилось! Она сама начала! А у меня ни разу отношений даже не было... 3 месяца
+                            это продолжалось. Но я нашёл в себе силы прекратить это безобразие!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="ЧЕРЕЗ 3 месяца?!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Как говорят боги-близнецы, не суди - и тебя не осудят. Только таверна заработала -
+                            выгнал обратно жить туда. А она на память кольцо подарила это. Понятно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мда..."
+                                      removeMarker="pi_1o_quest_leyho_killers_03,pi_1o_quest_leyho_killers_ring_steven_house_done"
+                                      giveMarker="pi_1o_quest_leyho_killers_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!--TODO квест "Найти убийц Лейхо", если мы в странном подвале   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_08_gang_bang" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Слушай, {playerNick}, ты заш[ёл|ла] слишком далеко. Хочешь правды? Будет тебе
+                            правда. Жизнь слишком сурова, прими её реальность! И нашу сторону.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что происходит?!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Наверное, ты уже слышал, что я хочу стать губернатором этого острова. Да, так и
+                            есть! Но для этого нужно золото, много золота! И меня ничего не остановит!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Лейхо был простаком. Это всё мы - узнали про проклятый клад, про то, что проклятье
+                            настигнет того, кто откроет сундук... Вот мы и подвели Лейхо к тому, чтобы он сделал это.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Нелюди!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_3">
+                        <p:mainText>Совсем не так, ха! Мы догадывались, что Эльза начнёт его искать, рано или поздно.
+                            Но, из-за тебя, об этой истории стало известно слишком рано...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d">
+                        <p:mainText>Мы организовали всё так, чтобы никто нас не заподозрил... И, не ищи ты тот треклятый
+                            дневник, никто бы не узнал правды! Эльзу бы считали неверной, Лейхо - бросившим её, уплывшим
+                            на Хунганами!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6_d" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_stranger" imageComment="Незнакомец">
+                        <p:mainText>Предлагаем сделку - ты скажешь, что всё расследование - ложь. Тебе удалось найти
+                            Лейхо, живого. Мы добавим запись в учётную книгу кладовщика, что Лейхо действителньо уплыл
+                            на Хунганами.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_stranger" imageComment="Незнакомец">
+                        <p:mainText>И у него с собой был огромный звенящий мешок. А его "убийство" - подстроено им,
+                            чтобы без шума и пыли сбежать и с острова, и от Эльзы, которая ему надоела своим нытьём о
+                            свадьбе. Сделка?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" goto="r8"/>
+                            <p:answer text="Ни за что!" goto="r9"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>Отлично! Это мудрое решение. Когда я стану губернатором острова, я не забуду твоего
+                            поступка! А вот тебе небольшая награда от Хилого - он спонсирует наше тайное общество
+                            "Сыновья Мары"!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="20"/>
+                        <p:answers>
+                            <p:answer text="О как" removeMarker="pi_1o_quest_leyho_killers_08_gang_bang"
+                                      giveMarker="pi_1o_quest_leyho_killers_09_gang_bang" requestSpecialPlaces="true" complete="true">
+                                <p:toRoad roadId="pi_1o_townAntigua"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>Ну что ж... Мы предлагали тебе дружбу. Наше тайное общество "Сыновья Мары" не
+                            забудет твоей дерзости!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="О как" removeMarker="pi_1o_quest_leyho_killers_08_gang_bang"
+                                      giveMarker="pi_1o_quest_leyho_killers_09,pi_1o_sons_of_mara" requestSpecialPlaces="true" complete="true">
+                                <p:toRoad roadId="pi_1o_townAntigua"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!--TODO квест "Найти убийц Лейхо", если вызвали дух джими сороки   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_long_way_04_s" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>ЭТО ЧТО, ПРИЗРАК???? УБЕРИ ЕГО НЕМЕДЛЕННО, ЭЙ ТЫ!!! УБЕРИ ЭТОГО ПРИЗРАКА!!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_jim_magpie" imageComment="Дух Джими Сороки">
+                        <p:mainText>Сссстиииивввеееннннн... Ууууубииииийцааааа... Воооооррррр коооольцааааа....
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ха!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>МОРСКОЙ ДЬЯВОЛ ВАС ПОБЕРИ, ЭТО ЖЕ ДЖИМИ СОРОКА!!!! Но ведь сундук открыл Лейхо,
+                            почему я???!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Справделивость, ха!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_4" imageId="{amazon}" imageComment="{amazon}">
+                        <p:mainText>Сознайся Губернатору, что ты сделал. Иначе, мы оставим Дух Джими Сороки в твоём
+                            доме, навсегда.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так и сделаем"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_2">
+                        <p:mainText>Тысяча чертей... ТОЛЬКО НЕ ЭТО!!! Я всё расскажу Губернатору, только не делайте
+                            этого, ПОЖАЛУЙСТА!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так бы сразу" removeMarker="pi_1o_quest_leyho_killers_long_way_04_s"
+                                      giveMarker="pi_1o_quest_leyho_killers_long_way_05_1" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!--TODO квест "Воплощение Хтони"   -->
+            <p:state ifMarker="pi_1o_quest_embodiment_of_chthon_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Стивен, а кто этот твой маленький приятный друг, который стоит рядом?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Ты издеваешься?! ЭТО не мой друг, и тем более НЕ приятный! Это Воплощение Хтони, так
+                            меня наказала... бывшая.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Подробнее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>Я встречался, пару раз, с одной из этих, магов-вуду... Ну, она новенькая, только
+                            прибыла на остров... И мы с ней, ну ты понимаешь... И я её бросил. Наверное, жестко бросил.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказывай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_5">
+                        <p:mainText>Кракен тебя задери, я рассказываю, в надежде, что ты поможешь! Ну, после "того" с
+                            ней, я ж получил, что хотел... Экзотика, с такой-то девушкой... Я решил бросить её.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_3">
+                        <p:mainText>Сказал, что мне надо подумать и заняться собой, привести мысли в порядок... А она
+                            обиделась. И наколдовала мне тут ЭТО. И знаешь, что она сказала?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_4">
+                        <p:mainText>"Стивен, ты поступаешь некрасиво. Как обычный вака. В моём сердце печаль и боль.
+                            Испытывай и ты их теперь постоянно." - И теперь ЭТО здесь! Я чувствую хтонь в сердце...
+                            Помоги!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот ты скотина..." complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

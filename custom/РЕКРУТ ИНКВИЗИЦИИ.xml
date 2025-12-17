@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- РЕКРУТ ИНКВИЗИЦИИ -->
+
+<p:place id="pi_1o_it_recruit_inquisition" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_it_recruit_inquisition" name="Рекрут инквизиции" minPlayerStair="40" meetProbability="0">
+ <p:blockingCreature probability="0"/>
+	<p:states>
+
+		<!-- стандартная реплика  -->
+        <p:state id="default" closable="false" >            
+        <p:dialog>
+            <p:replica id="r1" repeatable="false">
+                <p:mainText>Что, тоже будешь смеяться надо мной? Безымянный рекрут инквизиции, которого прислали сюда, но уже третий день никому нет до меня дела... Тьфу! Это всё просто ужасно...</p:mainText>
+                <p:answers>
+                    <p:answer text="Расскажи" />
+                </p:answers>
+            </p:replica> 
+            <p:replica id="r2" repeatable="false">
+                <p:mainText>Да уже рассказал... Меня до сих пор не учли как рекрута! Я тут слоняюсь, и всё... И, так как я не учтён, меня и не кормят даже... Хорошо, что матушка с собой еды дала, но она почти закончилась...</p:mainText>
+                <p:answers>
+                    <p:answer text="Так уйди отсюда?" />
+                </p:answers>
+            </p:replica> 
+            <p:replica id="r3" repeatable="false">
+                <p:mainText>Куда?! К пиратам? Я дал присягу Королю Густаву. А даже если и дезертировать... Я не учтён, у меня нет не то, что мушкета, даже сабли... Я погибну за пределами лагеря, в этих джунглях! </p:mainText>
+                <p:answers>
+                    <p:answer text="А маги-вуду?" />
+                </p:answers>
+            </p:replica> 
+            <p:replica id="r4">
+                <p:mainText>У них тоже есть лагерь? Ну... Мне терять нечего, я тут никому не нужен, никто меня не замечает. А я уже отчаялся, не так я представлял службу в инквизиции... Говоришь, маги-вуду?</p:mainText>
+                <p:answers>
+                    <p:answer text="Идём к ним!" removeMarker="pi_1o_new_recruit_01" giveMarker="pi_1o_new_recruit_02,pi_1o_new_recruit_02_recruit_inquisition" complete="true" dropPlace="true" />
+                    <p:answer text="Подожди" goto="r4" out="true" />
+                </p:answers>
+            </p:replica> 
+        </p:dialog>
+        </p:state>
+
+	</p:states>
+    </p:place>
+
+    </p:root>

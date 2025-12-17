@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ШЕСТЕРЁНКА -->
+
+    <p:place id="pi_1o_Antigua_lg_inquisitor_eyepiece" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_inquisitor_eyepiece"
+             name="Шестерёнка" minPlayerStair="40" spawnProbability="0.2" minDistanceBetweenSame="4000" meetProbability="8" oneTimeMeet="true" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="head_of_inquisition_for_quests and dorian_for_quests and selezar_for_quests"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Окуляр инквизитора"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Хм... Интересно, откуда в гроте Левиафана взялась эта Шестерёнка? Посмотрим
+                            внимательнее... "Собственность инквизиции"! Надо бы вернуть, что ли...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="За дело!" giveMarker="pi_1o_quest_inquisitor_eyepiece_01"
+                                      requestSpecialPlaces="true" complete="true" dropPlace="true">
+                                <p:createTask id="pi_1o_quest_inquisitor_eyepiece" name="Окуляр инквизитора" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

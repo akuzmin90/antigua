@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Хижина Верховного Шамана -->
+
+    <p:place id="pi_1o_mt_magevoodoo_mvh_house" animType="EMPTY" imageId="268x164" name="Хижина Верховного Шамана" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - хижина Верховного Шамана. Очевидно, вас туда просто не пустят. Но можно посмотреть на неё снаружи. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Логично" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

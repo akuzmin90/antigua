@@ -1,0 +1,190 @@
+{
+  "textures": [
+    {
+      "image": "pi_1o_PLACES_pi_1o_sugar_plantation_warehouse.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 0,
+        "h": 0
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_redhead_ghost",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 135,
+            "h": 137
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 135,
+            "h": 137
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 135,
+            "h": 137
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sp_wh_pirate_thief_3",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 77,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 77,
+            "h": 130
+          },
+          "frame": {
+            "x": 0,
+            "y": 137,
+            "w": 77,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sp_wh_pirate_thief_2",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 76,
+            "h": 130
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 76,
+            "h": 130
+          },
+          "frame": {
+            "x": 0,
+            "y": 267,
+            "w": 76,
+            "h": 130
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_sp_sugar_goblins",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 83,
+            "h": 96
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 83,
+            "h": 96
+          },
+          "frame": {
+            "x": 0,
+            "y": 397,
+            "w": 83,
+            "h": 96
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_Antigua_sp_wh_pirate_thief_1",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 74,
+            "h": 129
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 74,
+            "h": 129
+          },
+          "frame": {
+            "x": 76,
+            "y": 267,
+            "w": 74,
+            "h": 129
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_sp_big_rat",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 95,
+            "h": 76
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 95,
+            "h": 76
+          },
+          "frame": {
+            "x": 83,
+            "y": 396,
+            "w": 95,
+            "h": 76
+          }
+        },
+        {
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "filename": "pi_1o_sp_weevill",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 106,
+            "h": 73
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 106,
+            "h": 73
+          },
+          "frame": {
+            "x": 77,
+            "y": 137,
+            "w": 106,
+            "h": 73
+          }
+        }
+      ]
+    }
+  ]
+}

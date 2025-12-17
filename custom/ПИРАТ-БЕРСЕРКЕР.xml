@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<p:place id="pi_1o_Antigua_lg_berserker_pirate" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_Antigua_berserker_pirate" name="Пират-берсеркер" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+    <p:markerCondition condition="pi_strange_key_005"/>
+ <p:blockingCreature probability="0"/>
+	<p:states>
+
+    	<!--TODO квест Странный ключ, пришли в грот левиафана  -->
+        <p:state id="default" closable="false" >        	 
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Так, а вот и ты. Давай без церемоний - бесят ваши кодексы и законы! Сейчас я тебе дам понять, что НЕ НАДО лезть в это дело с ключом. Понятно? </p:mainText>
+                <p:answers>
+                    <p:answer text="Будет драка" removeMarker="pi_strange_key_hermit" giveMarker="pi_strange_key_005_hint" > 
+                    	<p:toBattle creatureId="pi_1o_Antigua_berserker_pirate" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пиратом-берсеркером, боевая иконка будет называться pi_1o_Antigua_berserker_pirate_f, это босс -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Забудем об этом, ладно? Зачем тебе этот ключ, иди лучше в таверну и выпей "Храбрости", ахаха!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Я вернусь" goto="r1" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Ладно, ладно, ты победи[л|ла]! Ну удачи тебе найти наш тайный завод, путь в который лежит через тайный проход около Пирата-отшельника, который открывает этот ключ, ахаха! 
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Ты очень умный" goto="r2" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="r2">
+                <p:mainText>Вами был побит пират-берсеркер, который доставлял немало проблем инквизиции. +1 репутация среди инквизиции! Внезапно.</p:mainText>
+                    <p:award type="REPUTATION" reputationType="REPUTATION_INQUISITION" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="pi_strange_key_005,pi_1o_Antigua_hp_secret_door_closed,pi_strange_key_hermit_hint,pi_strange_key_005_hint" giveMarker="pi_strange_key_006" complete="true" dropPlace="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    	</p:state>
+
+	</p:states>
+    </p:place>
+
+    </p:root>

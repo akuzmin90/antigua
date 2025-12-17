@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Официантки  -->
+    <!-- Официантки  -->
+    <!-- Официантки  -->
+    <!-- Официантки  -->
+    <!-- Официантки  -->
+    <!-- Официантки  -->
+
+
+    <!-- Официантка слева снизу 1  -->
+    <p:place id="pi_1o_kp_hot_waitress_01" animType="EMPTY" imageId="37x74" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="О, а вот и ты!" delayMs="1000"/>
+                    <p:talk text="О, а вот и ты!" delayMs="16000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Проходи, не стесняйся! Здесь все свои - вечеринка удалась на славу! Я могу лично обслуживать только тебя, ахах!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Я осмотрюсь" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Официантка слева снизу 2  -->
+    <p:place id="pi_1o_kp_hot_waitress_02" animType="EMPTY" imageId="35x67" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Миром правит любовь!" delayMs="4000"/>
+                    <p:talk text="Миром правит любовь!" delayMs="12000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ой, сегодня все такие красивые! Как много статных мужчин, и все такие разные! У меня уже появилось несколько новых друзей. А я всего лишь их обслужила!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да что ты" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Официантка слева снизу 3  -->
+    <p:place id="pi_1o_kp_hot_waitress_03" animType="EMPTY" imageId="33x65" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Самые сочные персики!" delayMs="3000"/>
+                    <p:talk text="Самые сочные персики!" delayMs="14000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Просто садись за стол, и мы всё сделаем сами! Расслабься, ты это заслужи[л|ла]! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ещё не время" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Официантка слева снизу 4  -->
+    <p:place id="pi_1o_kp_hot_waitress_04" animType="EMPTY" imageId="36x72" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="3 чайных пакетика Стивену!" delayMs="1000"/>
+                    <p:talk text="3 чайных пакетика Стивену!" delayMs="7000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я руковожу работой официанток. Жалоб не поступало. Хотя какие жалобы, все довольны, мы лучше всех выполняем свою работу! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Работящие" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Официантка слева снизу 5  -->
+    <p:place id="pi_1o_kp_hot_waitress_05" animType="EMPTY" imageId="51x67" name="Официантки" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Мы такие неловкие" delayMs="6000"/>
+                    <p:talk text="Мы такие неловкие" delayMs="14000"/>
+                    <p:talk text="А в шарике слон!" delayMs="22000" repeatable="false"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Да-да, мы близняшки! И такие неловкие, постоянно путаем, кто из нас кто, хаха! Все находят это милым, хи-хи. Мы даже играем с гостями в "Найди отличия" - вон на том диване. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Там обивка аж одубела..." goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Официантка справа снизу 1  -->
+    <p:place id="pi_1o_kp_hot_waitress_06" animType="EMPTY" imageId="45x73" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Фыр-фыр-фыр, хихи!" delayMs="5000"/>
+                    <p:talk text="Фыр-фыр-фыр, хихи!" delayMs="10000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ты можешь ко мне подкрадываться - я не против, ахаха! Только не дергай резко и изо всех сил за хвостик, хорошо? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Возможно" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Официантка справа снизу 2  -->
+    <p:place id="pi_1o_kp_hot_waitress_07" animType="EMPTY" imageId="46x69" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Поиграй со мной, хихи!" delayMs="2000"/>
+                    <p:talk text="Поиграй со мной, хихи!" delayMs="9000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А ты знаешь, что почти все гости - без жён? Пришли уж точно без них, хаха! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ещё бы" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+            </p:states>
+    </p:place>
+
+            <!-- Официантка справа снизу 3  -->
+    <p:place id="pi_1o_kp_hot_waitress_08" animType="EMPTY" imageId="39x77" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Глава Инквизиции щекотный" delayMs="3000"/>
+                    <p:talk text="Глава Инквизиции щекотный" delayMs="12000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Это невероятно, что такая вечеринка получилось! Я так рада, здесь столько знакомых и друзей! Каждый хочет сегодня дружить! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ещё бы" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+            </p:states>
+    </p:place>
+
+            <!-- Официантка справа снизу 4  -->
+    <p:place id="pi_1o_kp_hot_waitress_09" animType="EMPTY" imageId="30x75" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Не смущай меня" delayMs="1000"/>
+                    <p:talk text="Не смущай меня" delayMs="16000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ой! Ты так внезапно подкрадываешься... Я первый раз обслуживаю такую вечеринку, я смущаюсь... Но все такие доброжелательные... Кроме Стивена, не люблю его... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Единомышленница!" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+            </p:states>
+    </p:place>
+
+            <!-- Официантка справа снизу 5  -->
+    <p:place id="pi_1o_kp_hot_waitress_10" animType="EMPTY" imageId="33x64" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Ня" delayMs="3000"/>
+                    <p:talk text="Ня" delayMs="10000"/>
+                    <p:talk text="А в шарике слон!" delayMs="26000" repeatable="false"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Смотри, я могу вилять своим хвостиком! [Показывает] </p:mainText>
+                        <p:answers>
+                            <p:answer text="НЕПЛОХО" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+            </p:states>
+    </p:place>
+
+            <!-- Официантка справа снизу 6  -->
+    <p:place id="pi_1o_kp_hot_waitress_11" animType="EMPTY" imageId="23x72" name="Официантка" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Я не кусаюсь!" delayMs="4000"/>
+                    <p:talk text="Но если надо..." delayMs="15000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Стивен пролил ром прямо на мою белую рубашку! Но вроде симпатично... Но так неловко... Ещё и хвостик кто-то незаметно утащил... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм... Незаметно?!" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

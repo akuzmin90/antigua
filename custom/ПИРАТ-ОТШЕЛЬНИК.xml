@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПИРАТ-ОТШЕЛЬНИК -->
+
+<p:place id="pi_1o_Antigua_hp_hermit_pirate" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_hp_hermit_pirate" name="Пират-отшельник" minPlayerStair="40" meetProbability="0">
+ <p:blockingCreature probability="0"/>
+	<p:states>
+
+		<!-- стандартная фраза  -->
+        <p:state id="default" closable="false" >        	 
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Да, я живу отшельником. Не люблю шумные города и толпы людей. А здесь... Тихо, спокойно, море, ветер... Словно я снова на палубе своей "Эсмиральды". </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" giveMarker="hermit_pirate_for_quests" complete="true" />
+                    <p:answer text="О задании" markerCondition="pi_1o_quest_lost_memories_hermit or pi_1o_hermit_miner_02 or pi_1o_new_recruit_01 or pi_1o_quest_missionary_07 or pi_1o_ancient_turtle_01 or pi_1o_quest_man_eating_shark_01 or pi_1o_quest_nessi_01 or pi_1o_quest_shadow_01" goto="r2"  />
+                </p:answers>
+            </p:replica>
+
+            <!-- квест реакции  -->
+            <p:replica id="r2">
+                <p:mainText>Что вы хотите уточнить?</p:mainText>
+                <p:answers>
+                    <p:answer ifMarker="pi_1o_quest_lost_memories_hermit" text="Страница дневника" goto="r_hermit_pirate_react1" />
+                    <p:answer ifMarker="pi_1o_hermit_miner_02" text="Лицензия и Златоглот" goto="r_hermit_pirate_react2" />
+                    <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?" goto="r_hermit_pirate_react3" />
+                    <p:answer ifMarker="pi_1o_quest_missionary_07" text="Это миссионер?" goto="r_hermit_pirate_react4" />
+                    <p:answer ifMarker="pi_1o_ancient_turtle_01" text="Древняя черепаха" goto="r_hermit_pirate_react5" />
+                    <p:answer ifMarker="pi_1o_quest_man_eating_shark_01" text="Акула-людоед" goto="r_hermit_pirate_react6" />
+                    <p:answer ifMarker="pi_1o_quest_nessi_01" text="Несси" goto="r_hermit_pirate_react7" />
+                    <p:answer ifMarker="pi_1o_quest_shadow_01" text="Тень" goto="r_hermit_pirate_react8" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r_hermit_pirate_react1" >
+                <p:mainText>А я откуда знаю, что это за страница? Наверное, её принес ветер. Никогда её здесь раньше не видел, честно!</p:mainText>
+                <p:answers>
+                    <p:answer text="Хм..." removeMarker="pi_1o_quest_lost_memories_hermit" requestSpecialPlaces="true" complete="true" />
+                </p:answers>
+            </p:replica> 
+            <p:replica id="r_hermit_pirate_react2" >
+                <p:mainText>Понимаю тебя, но я не могу помочь - я уже не тот боевой пират, как раньше, йаааррррр! Я верю в тебя.</p:mainText>
+                <p:answers>
+                    <p:answer text="Хм..." complete="true" />
+                </p:answers>
+            </p:replica> 
+            <p:replica id="r_hermit_pirate_react3" >
+                <p:mainText>Да пусть меня чайки загадят, чем я пойду к этим... Этим... Этим, в общем! Они страшные! Они ром с раками пьют вообще!</p:mainText>
+                <p:answers>
+                    <p:answer text="Это лица вообще-то" complete="true" />
+                </p:answers>
+            </p:replica> 
+            <p:replica id="r_hermit_pirate_react4" >
+                <p:mainText>Месси... ик... ой, простите... Миссиссио... ик... он, короче!</p:mainText>
+                <p:answers>
+                    <p:answer text="Не налегай" complete="true" />
+                </p:answers>
+            </p:replica> 
+            <p:replica id="r_hermit_pirate_react5" >
+                <p:mainText>Я вышел сегодня утром - а тут это! Этой черепахе не менее двухсот лет, поверь мне! Интересно, когда она уйдёт?</p:mainText>
+                <p:answers>
+                    <p:answer text="Она твой гость" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r_hermit_pirate_react6" >
+                <p:mainText>Это же акула-людоед!!! Прямо у моего берега! Пожалуйста, поскорее избавься от неё!!! Как же я буду купаться, плескаться, пока она там?!</p:mainText>
+                <p:answers>
+                    <p:answer text="Я здесь за этим" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r_hermit_pirate_react7" >
+                <p:mainText>Да почему все эти монстры именно на мой берег лезут?! Каракатицу Губернатору в стул... Я просто хочу спокойствия!</p:mainText>
+                <p:answers>
+                    <p:answer text="Хоти" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r_hermit_pirate_react8" >
+                <p:mainText>Это человек?! ЧЕГОООО?! Морского ежа мне в сапог, это злое воплощение человека?! Прошу, прогони ЭТО!!!</p:mainText>
+                <p:answers>
+                    <p:answer text="Раз ты просишь" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    	</p:state>
+
+    	<!-- квест Странный ключ если пришли проверить, знает ли он что о ключе -->
+        <p:state ifMarker="pi_strange_key_hermit" repeatable="false" closable="false" >        	 
+        <p:dialog>
+            <p:replica id="r1_d">
+                <p:mainText>Что ты мне ключом в лицо тычешь? Это ключ от хижины, где деньги лежат? </p:mainText>
+                <p:answers>
+                    <p:answer text="Объяснить" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2_d" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                <p:mainText>Де доме де злоте?! Хоббите хоче злоте многа-многа! Де этот доме, чевек?! ДЕ ?!?! </p:mainText>
+                <p:answers>
+                    <p:answer text="Тише, тише"  />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3">
+                <p:mainText>Ты где у меня вообще замок-то видишь? Я - отшельник, у меня ничего не запирается. Да и я что, туп как селёдка, был бы ключ - хранить в морской воде? Ничего не знаю, пусть меня медуза ужалит! </p:mainText>
+                <p:answers>
+                    <p:answer text="Ясно" complete="true" removeMarker="pi_strange_key_hermit" giveMarker="pi_strange_key_hermit_hint" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    	</p:state>
+
+        <!-- квест Клад старого пирата -->
+        <p:state ifMarker="pi_1o_hermit_treasure_01" repeatable="false" closable="false" >            
+        <p:dialog>
+            <p:replica id="r1_d_2">
+                <p:mainText>Матросы в Таверне говорят о моём кладе? Каком?.. Ооо, а ведь точно, был у меня клад когда-то! Слушай, я и забыл уже...</p:mainText>
+                <p:answers>
+                    <p:answer text="Подробнее?" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2_d_2" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                <p:mainText>Болване чевек, штуки закапывай и забывай... Хоббите умне чем чевек прате! </p:mainText>
+                <p:answers>
+                    <p:answer text="Похоже, да" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3_d">
+                <p:mainText>Я уже и забыл, сапог мне в палубу... Или... Ээээ... грот Левиафана... Или на Кладбище пиратов зарыл... Или... Ээээ... На сахарной плантации. Точно в одном из мест! </p:mainText>
+                <p:answers>
+                    <p:answer text="Проверим всё!" complete="true" removeMarker="pi_1o_hermit_treasure_01" giveMarker="pi_1o_hermit_treasure_02" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>
+
+        <!-- квест Клад старого пирата, концовка -->
+        <p:state ifMarker="pi_1o_hermit_treasure_03" repeatable="false" closable="false" >            
+        <p:dialog>
+            <p:replica id="r1_d_3">
+                <p:mainText>Клад у тебя? Попугая мне на плечо... Точно, там я его и закопал! Ну, что было внутри? Я уже и не помню...</p:mainText>
+                <p:answers>
+                    <p:answer text="Показать" goto="r2_d_3" />
+                    <p:answer text="Ничего не было" goto="r4" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2_d_3">
+                <p:mainText>Ооооо, заначка получилась! Изумруды мне не нужны, я ими и пользоваться-то не умею. А вот половину от золотой руды я заберу! [Вы отдаёте 14 кусков золотой руды] </p:mainText>
+                <p:answers>
+                    <p:answer text="Честно" goto="r3_d_2">
+                        <p:pay ore_gold="14" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3_d_2">
+                <p:mainText>[Ваша честность не осталась незамеченной! Старого Пирата-отшельника любят на Антигуа, и вы не обманули старика! +1 к репутации пиратов.] </p:mainText>
+                    <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Прекрасно!" complete="true" removeMarker="pi_1o_hermit_treasure_03" requestSpecialPlaces="true">
+                        <p:addTaskProgress id="pi_1o_hermit_treasure" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r4">
+                <p:mainText>Как так?! Ничего... Хм... Или ты меня обманываешь... Или клад нашёл кто-то другой... Столько времени прошло, карамба! Не жили красиво, и нечего начинать, морского ежа мне в подушку! </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" complete="true" removeMarker="pi_1o_hermit_treasure_03" requestSpecialPlaces="true">
+                        <p:addTaskProgress id="pi_1o_hermit_treasure" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>
+
+        <!-- квест Лицензия в золотую шахту -->
+        <p:state ifMarker="main_miner_for_quests" repeatable="false" closable="false" >            
+        <p:dialog>
+            <p:replica id="r1_d_4">
+                <p:mainText>Послушай, искатель приключений... У меня есть для тебя работа! Да-да, я заплачу золотой рудой, купишь себе новые сапоги или чего там ещё! Помоги старику, креветку мне в суп! </p:mainText>
+                <p:answers>
+                    <p:answer text="Слушаю" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2_d_4">
+                <p:mainText>Сходи до Главного рудокопа в Золотой шахте! Мне уже 72 года - и, по закону Антигуа, я имею право получить лицензию на добычу руды! Во мне столько сил, крошить руду! Но я старик... Принеси лицензию, а? </p:mainText>
+                <p:answers>
+                    <p:answer text="Эм, ладно" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3_d_3">
+                <p:mainText>Если Главный рудокоп засомневается, что я тебя послал, скажи ему фразу "Летучая рыба съела Бронислава Гжиждека!" </p:mainText>
+                <p:answers>
+                    <p:answer text="Ужас какой" complete="true" giveMarker="pi_1o_hermit_miner_01">
+                        <p:createTask id="pi_1o_hermit_miner" name="Лицензия в Золотую Шахту" count="1" mithril="50" type="SINGLE" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>
+
+        <!-- квест Лицензия в золотую шахту, концовка -->
+        <p:state ifMarker="pi_1o_hermit_miner_04" repeatable="false" closable="false" >            
+        <p:dialog>
+            <p:replica id="r1_d_5">
+                <p:mainText>Лицензия у тебя? Правда? Давай же мне её поскорее, не помни! Йааааррр, мидии мне под устричный соус, прости старика, эмоции... Так-так, а вот и награда! Я ещё накопаю всё равно. </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="11" />
+                <p:answers>
+                    <p:answer text="Спасибо!" removeMarker="pi_1o_hermit_miner_04" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_hermit_miner" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>
+
+        <!-- квест Кубок инквизитора -->
+        <p:state ifMarker="pi_1o_quest_gold_goblet_02" repeatable="false" closable="false" >            
+        <p:dialog>
+            <p:replica id="r1_d_6" imageId="{hero}" imageComment="{playerNick}">
+                <p:mainText>Я слыша[л|ла] в Таверне, что твой золотой кубок в Лагере инквизиции? Расскажи подробнее. </p:mainText>
+                <p:answers>
+                    <p:answer text="Далее" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2_d_5">
+                <p:mainText>А что рассказывать, осьминога мне в сапог... Однажды гулял по острову, вижу - инквизиция лагерем встала... Зашёл познакомиться, а у них, представляешь... ХАЛВА! </p:mainText>
+                <p:answers>
+                    <p:answer text="Халва?" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3_d_4">
+                <p:mainText>Она самая, под килем меня пропусти! Мы ж давно, когда я по морям ходил, с нашим капитаном захватили бриг с заморскими товарами... И там была она. Халва. Самое вкусное, что я ел! </p:mainText>
+                <p:answers>
+                    <p:answer text="Далее" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r4_d">
+                <p:mainText>В общем, и вот увидел я снова халву... А слюнки то текут! Живот урчит как у голодной русалки! В общем, договорился о сделке - я свой золотой кубок, а они мне три килограмма халвы. Ох, объелся я тогда! </p:mainText>
+                <p:answers>
+                    <p:answer text="Далее" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r5">
+                <p:mainText>Так вот, рыбу-прилипалу мне на лоб, время прошло... Скучаю я по кубку. Это же кубок инквизитора! После абордажа королевской галеры забрал себе. Мой кубок, эх... </p:mainText>
+                <p:answers>
+                    <p:answer text="Этот кубок?" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r6">
+                <p:mainText>Это... ЭТО Ж ОН!!! Халву мне в глотку, прошу, уважь старика! 13 кусков золотой руды, больше нет... </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="13" />
+                <p:answers>
+                    <p:answer text="Забирай!" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r7">
+                <p:mainText>[Пират-отшельник радуется своему кубку. Ваши действия не остались незамеченными! +1 репутации пиратов!] </p:mainText>
+                    <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Твори добро..." removeMarker="pi_1o_quest_gold_goblet_02" requestSpecialPlaces="true" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>
+
+	</p:states>
+    </p:place>
+
+    </p:root>

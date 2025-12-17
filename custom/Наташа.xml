@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- НАТАША -->
+
+    <p:place id="pi_1o_ht_natasha" animType="EMPTY" imageId="61x66" name="Наташа" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!--TODO стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А я в тесте! Ну, ты понимаешь, ха! Как здорово, что ты здесь, с нами - и я приготовила тебе подарок!</p:mainText>
+                            <p:award type="ARTIFACT" itemId="s_koschey_attack_01" />
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>А я в тесте! Ну, ты понимаешь, ха! Как здорово, что ты здесь, с нами - оставайся сколько захочешь :) </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

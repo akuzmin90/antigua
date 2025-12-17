@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Мастерская  -->
+
+    <p:place id="pi_1o_it_td_workshop" animType="EMPTY" imageId="61x183" name="Мастерская" minPlayerStair="40"
+             meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В этой мастерской инквизитор Дориан работает над улучшением пистолей. Видимо, он пытается полировать ствол аметистами - а ведь камешки портятся... Спасём аметисты! </p:mainText>
+                            <p:award type="SULFUR" explicitValue="52" />
+                        <p:answers>
+                            <p:answer text="Да-да, именно спасём!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В этой мастерской инквизитор Дориан работает над улучшением пистолей. Флаг ему в руки. </p:mainText>
+                        <p:answers>
+                            <p:answer text="В руки, в руки" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

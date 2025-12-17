@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕНА КЛАДОВЩИКА ПИРАТЫ -->
+
+    <p:place id="pi_1o_wifeAntigua" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_wifeAntigua" name="Амалия" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Привет! Меня зовут Амалия! Как приятно увидеть новое лицо в городе - знаешь, здесь
+                            редко появляются новые люди...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кладовщик" giveMarker="wife_searching_hint_01"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>Йоси? Ну да, он интересный парень. Говоришь, что он ищет жену? Нууууу... А он меня
+                            потянет? Я люблю новые платья, украшения, вкусно покушать, выйти в свет... Он же кладовщик,
+                            прислуга...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Он потянет"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Раз ты так считаешь и ручаешься за него... Хорошо, я согласна выйти замуж за кладовщика! Но предупреди его - я себя не на лиане нашла, мне нужен комфорт!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Принято!"
+                                      removeMarker="storeceeper_quest_wife_searching,storeceeper_quest_wife_800,wife_searching_hint_01,wife_searching_hint_02,wife_searching_hint_03,wife_searching_hint_04"
+                                      giveMarker="storeceeper_quest_wife_pirate" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                            <p:answer text="Пока жди" goto="r3" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>
+
+    

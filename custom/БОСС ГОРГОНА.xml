@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС ГОРГОНА  -->
+
+    <p:place id="pi_1o_Antigua_lj_gorgon" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lj_gorgon" name="Горгона"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Горгоны на Антигуа?!"  -->
+            <p:state id="default" closable="false">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="*Агрессивно шипит*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Горгона, откуда она здесь?! Но она странная... Словно дикая. Не разговаривает, лишь
+                            шипит. В любом случае, ей здесь не место! Послушница, покажи ей!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_gorgon" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Горгона, боевая иконка будет называться pi_1o_Antigua_lj_gorgon_f === Против босса ТОЛЬКО послушница -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Горгона сильна... Но Послушница должна её победить!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_gorgon" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Горгона повержена! Пора вернуться к главе инквизиции!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_gorgons_in_antigua_01"
+                                      giveMarker="pi_1o_quest_gorgons_in_antigua_02" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

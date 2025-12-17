@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ОДИНОКАЯ БОЧКА  -->
+
+<p:place id="pi_1o_Antigua_lonely_barrel" animType="EMPTY" imageId="17x39" name="Одинокая бочка" minPlayerStair="40" meetProbability="0">  <p:blockingCreature probability="0" />
+        <p:states>
+
+        	<!-- стандартная реплика  -->
+        <p:state id="default" >       
+        <p:dialog>
+            <p:replica id="r1" >
+                <p:mainText>Эта бочка стоит в отдалении от остальных... Возможно, это чей-то тайник? И действительно, внутри вы находите 1 кусок золотой руды! Это отдельная валюта здесь, на Антигуа.</p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Пригодится" goto="r2" out="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" >
+                <p:mainText>Эта бочка стоит в отдалении от остальных... Это был чей-то тайник. Теперь он пуст. Ну и ладно.</p:mainText>
+                <p:answers>
+                    <p:answer text="Жаль, что пуст" goto="r2" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>    
+
+    </p:states>
+    </p:place>
+
+    </p:root>

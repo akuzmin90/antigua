@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ПРИВАЛ -->
+
+    <p:place id="pi_1o_Antigua_wtda_halt" atlasId="pi_1o_PLACES_pi_1o_way_to_druid_altar" imageId="pi_1o_Antigua_wtda_halt" name="Привал" minPlayerStair="40"
+             meetProbability="20" minDistanceBetweenSame="4500" requireGenMode="PI_1O_WAY_TO_DRUID_ALTAR">
+             <p:markerCondition condition="pi_1o_quest_lost_memories_13"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Потерянные воспоминания"  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Так, привал... Всё будто оставлено недавно... Но это не привал Лейхо, вы видите 3 набора посуды! В джунгли ведут следы... Проверим? Но сюда вы уже не вернётесь...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Проверим!" removeMarker="pi_1o_quest_lost_memories_13"
+                                      giveMarker="pi_1o_quest_lost_memories_14">
+                                <p:toRoad roadId="pi_1o_druid_altar"/>
+                            </p:answer>
+                            <p:answer text="Не сейчас" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

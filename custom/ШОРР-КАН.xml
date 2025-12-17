@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ШОРР-КАН -->
+
+    <p:place id="pi_1o_mt_shorr_kan" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_mt_shorr_kan" name="Шорр-Кан" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Шорр-Кан? ТЫ тут откуда? И Пророка, случаем, не видел?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>{playerNick}, и ты здесь? Я слышал, что ты отправил[ся|ась] на Антигуа... Но не
+                            ожидал встречи! Вообще, Пророк - это я. Да, не удивляйся. Это скучная история.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай говори"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Да всё просто. Я экспериметировал с телепортацией - и попал сюда. Видимо, они тогда
+                            корректировали магический фронт. Я с ними познакомился и показал пару наших фирменных
+                            Зазеркальных штучек.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Штуки? Штуки ото Зазер... За-з-ер... Зазеркалья? Злоте блестячи штуки? Хоббите
+                            хотеть злоте блестячи штуки ото Зазеркалье!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну милаха же"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Они ж не понимают, что моя магия - более сильная, потому маги-вуду слишком гордые.
+                            Поэтому, они назвали меня Пророком. Я тут иногда бываю, дарю пару заклинаний, меня вкусно
+                            откормят... Кстати, держи кусочек стейка!
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="О, спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Я бы больше рассказал, но Верховный Шаман уже странно поглядывает на то, как мы
+                            шушукаемся. Поэтому... Рад встрече на этом Тором забытом острове, Хранитель!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Взаимно" removeMarker="pi_1o_quest_prophet_07"
+                                      giveMarker="pi_1o_quest_prophet_08" complete="true" dropPlace="true"
+                                      requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАНИЦА 06 -->
+
+    <p:place id="pi_1o_Antigua_lost_memories_06" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lost_memories_01" name="Страница 06"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А вот и шестая страница, вырванная из дневника! Хм, прочитаем...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Эльза сказала мне "Да"!!! Я так счастлив, она будет моей женой! Если бы не этот
+                            ужасный закон Антигуа... Свадьба - значит, праздник на весь город, иначе не будет
+                            церемонии... Нужно много золота..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"К счастью, Стивен познакомил меня с торговцем картами - тот согласился продать мне
+                            карту клада Джима Сороки, за 300 монет. Это все мои сбережения... Но я решился, ради моей
+                            милой Эльзы!"
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Похоже, что это лишь одна из нескольких страниц дневника некоего парня. Интересно,
+                            что же стало дальше?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_lost_memories_05"
+                                      giveMarker="pi_1o_quest_lost_memories_06,pi_1o_quest_lost_memories_hint_06,pi_1o_quest_lost_memories_storekeeper,pi_1o_quest_lost_memories_steven_1"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

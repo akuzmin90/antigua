@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ХОББИТ ЭКЛЯ -->
+
+    <p:place id="pi_hobbit_ekla" animType="EMPTY" imageId="24x20" name="Хоббит Экля" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" closable="false">
+                <p:mainText>Чевек, чевек видэ хоббите! Чевек не говори хоббите хрен, чевек хоббите голова не стукай!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Чего?"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" closable="false">
+                <p:mainText>Хош-Хош, чевек хоббите не звай болване и голова не стукай! Я - велике хоббите Экля! Моя не
+                    край чужое, моя просто забирай. Я хожай с твоя теперь долго-долго!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Вот как"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" closable="false">
+                <p:mainText>[Ничего себе! В пещере-складе вы нашли хоббита, который почему-то прятался...
+                    Теперь он ваш спутник навсегда. Серьёзно. НАВСЕГДА. + 1 к репутации хоббитов!]
+                </p:mainText>
+                <p:award type="REPUTATION" reputationType="REPUTATION_HOBBITS" explicitValue="1"/>
+                <p:answers>
+                    <p:answer text="Понимаю" giveMarker="hobbit_talk_fun" requestSpecialPlaces="true" launchScriptId="pi_1o_hobbit_ekla_for_player" complete="true"
+                              dropPlace="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

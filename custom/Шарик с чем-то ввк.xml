@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Шарик с чем-то  -->
+
+    <p:place id="pi_1o_kp_balloon" animType="EMPTY" imageId="30x38" name="Шарик с чем-то" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="" imageId="card-elephant-small" imageComment="Боевой слон">
+                        <p:mainText>Хм, а в этом шарике что-то есть... И вы аккуратно это достаёте. Да это же карта слона! </p:mainText>
+                            <p:award type="CUSTOM" customAtlas="" customImage="card-elephant-small" customComment="Боевой слон" customScript="giveElephant" />
+                        <p:answers>
+                            <p:answer text="А... Как? В шарике?" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

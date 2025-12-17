@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ОГРОМНАЯ КРЫСА -->
+
+<p:place id="pi_1o_sp_big_rat" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_sp_big_rat" name="Огромная крыса" minPlayerStair="40" meetProbability="0">
+ <p:blockingCreature probability="0"/>
+	<p:states>
+
+<!-- квест "Огромная крыса"  -->
+        <p:state id="default" closable="false"  >            
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Это не просто Огромная Крыса. Это - ОГРОМНАЯ КРЫСА! Интересно, а зачем вообще такую призывать? Впрочем, работа есть работа.</p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" >
+                    	<p:toBattle creatureId="pi_1o_sp_big_rat" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Огромной Крысой, боевая иконка будет называться pi_1o_sp_big_rat_f -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Ну и сила... Надо бы подготовиться к следующей битве...
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_sp_big_rat" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Огромная Крыса повержена! Это прекрасно. Пора отчитаться магу-вуду Стражу!
+                </p:mainText>
+                	<p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Это да" giveMarker="pi_big_rat_voodoo_03,pi_big_rat_voodoo_done_guarddave,pi_big_rat_voodoo_done_bones,pi_big_rat_voodoo_done_planter,pi_big_rat_voodoo_done_threefingered_billy" removeMarker="pi_big_rat_voodoo_02,pi_big_rat_voodoo_door_open" complete="true" dropPlace="true"  >
+                    	<p:toRoad roadId="pi_1o_sugar_plantation" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    	</p:state>
+
+	</p:states>
+    </p:place>
+
+    </p:root>

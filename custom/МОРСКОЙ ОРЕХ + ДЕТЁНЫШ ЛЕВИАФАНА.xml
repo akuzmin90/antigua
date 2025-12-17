@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МОРСКОЙ ОРЕХ + ДЕТЁНЫШ ЛЕВИАФАНА -->
+
+    <p:place id="pi_1o_Antigua_lg_sea_nut" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_sea_nut" name="Морской орех"
+             minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_sea_nut_02"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- только на локации Грот Левиафана  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вот и морской орех, о котором говорил Трактирщик. Получается, и в море растут
+                            орехи... И их любят чудища, фу! [Перед вами появляется детёныш Левиафана и нападает на вас!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lg_sea_nut" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Детёнышем Левиафана, боевая иконка будет называться pi_1o_Antigua_lg_child_leviathan_treasure_f, это босс -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Видимо, это чудовище слишком любит морской орех... Без боя он его не отдаст!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lg_sea_nut" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Детёныш Левиафана повержен - внезапно, он отскакивает назад и исчезает в провале,
+                            наполненном водой! Итак, пора забрать морской орех!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2">
+                        <p:mainText>[Ваши действия не остались незамеченными. Вы прогнали детёныша Левиафана! Это
+                            обезопасит данный грот для путешествий. +1 к общей репутации!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_sea_nut_02" giveMarker="pi_1o_sea_nut_03"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

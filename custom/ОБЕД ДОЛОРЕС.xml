@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ОБЕД ДОЛОРЕС  -->
+
+    <p:place id="pi_1o_Antigua_lc_dolores_lunch" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_dolores_big" name="Долорес"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Кормить не буду тебя" delayMs="2000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Прости, но мы не занимаемся благотворительностью - кормить тебя я не собираюсь. Не
+                            сочти за грубость, но мне важнее накормить мужа, брата, сестру и детей.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это правильно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_02" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Искатель приключений, не виде[л|ла] ли ты моего сына, Айка?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет" goto="r2"/>
+                            <p:answer text="Да" goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Жаль... Я очень беспокоюсь. Он всегда был на виду, а сейчас просто пропал... Айк,
+                            сын мой, где же ты...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уф..." complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>А где он? ГДЕ?! Ох... [Долорес еле сдерживает равновесие и хватается за сердце]
+                            Искатель приключений, ты... КАК можно быть так[им|ой] недалёк[им|ой]... Скажи честно, ты же
+                            шутишь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не шучу"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>[Долорес меняется в лице и начинает кричать на всю деревню] ДЕТСКИЙ САД?! В
+                            ДЖУНГЛЯХ?! СЕРЬЁЗНО?! ДА ТЫ ХОТЬ ЗНАЕШЬ, ЧТО ТЫ НАТВОРИ[Л|ЛА]????
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не знаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>[Долорес замолкает, выдыхает] Нет там никакого детского сада. А вот ведьма есть.
+                            Говорят, она ест детей. Ты понимаешь, где мой Айк сейчас! А ну быстро, иди и верни его!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Упс... Хорошо" removeMarker="pi_1o_quest_kindergarten_you_fool_02"
+                                      giveMarker="pi_1o_quest_kindergarten_you_fool_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал пока не вернули   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_03" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="СЫНА ВЕРНИ, ТЫ !!!!" delayMs="1000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Иди и верни моего сына! Целым и невредимым! Как можно было так обмануться... Да тебя
+                            и макака обведёт вокруг пальца! Верни сына, или пожалуюсь Губернатору!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо-хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк вернулся   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_03" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Айк вернулся! ТЫ!!!! Ты... Как бы ни было, ты спа[с|сла] моего сына... Я ведь мать,
+                            я не могу не быть благодарна, даже если вина твоя... Давай так. Мы все забыли, что
+                            случилось. Никто не вспомнит. НО!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Больше никогда не верь ведьмам из джунглей. И никуда не уводи моего сына без моего
+                            ведома! Так, всё, никто не вспомнит про это. Будто не было. Вот тебе за спасение Айка...
+                            Спасибо...
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_kindergarten_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_kindergarten"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

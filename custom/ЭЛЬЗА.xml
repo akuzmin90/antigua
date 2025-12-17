@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЭЛЬЗА -->
+
+    <p:place id="pi_1o_lm_elsa" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_lm_elsa" name="Эльза" minPlayerStair="40" meetProbability="0"> 
+        <p:blockingCreature probability="0"/>
+        <p:states>
+            <!-- стандартная реплика  -->
+            <p:state id="default" repeatable="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Привет, меня зовут Эльза... Трактирщик сказал, что ты хочешь поговорить со мной?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да. Лейхо..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Лейхо?! Ах, мой любимый... Скажи мне, ты знаешь, где он?! Что с ним?! Лейхо... Как
+                            его дела на Хунганами?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всё не так..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Лейхо не уплывал на Хунганами... Он отправился искать клад здесь, на Антигуа. Он
+                            хотел найти сокровища, чтобы сыграть с тобой самую роскошную свадьбу на всём Антигуа.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Он решил выкопать клад, который точно никто не искал, из-за проклятья, наложенного
+                            на сундук. И он нашёл клад...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Тогда где же он, мой любимый Лейхо? Он скоро вернётся, правда?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Прости..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Лейхо был убит, сразу как выкопал клад. Вот все его записи из дневника, вот его
+                            прощальная записка... И ожерелье, для тебя. Его последний подарок. [Эльза посмотрела на
+                            записи и вернула их вам.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>*Эльза резко поменялась в лице. Никаких эмоций, ровный спокойный голос* Мой Лейхо...
+                            Спасибо тебе, искатель приключений. Я приму всё, что ты мне прин[ёс|есла]. Спасибо тебе, за
+                            правду, какой бы она ни была.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сочувствую..." removeMarker="pi_1o_quest_tell_to_elsa_02"
+                                      giveMarker="pi_1o_quest_tell_to_elsa_03" requestSpecialPlaces="true"
+                                      complete="true" dropPlace="true">
+                                <p:addTaskProgress id="pi_1o_quest_tell_to_elsa"/>
+                                <p:addTaskProgress id="pi_1o_quest_amazon_cursed"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

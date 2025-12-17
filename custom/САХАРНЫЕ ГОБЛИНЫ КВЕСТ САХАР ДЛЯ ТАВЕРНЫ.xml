@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- САХАРНЫЕ ГОБЛИНЫ КВЕСТ САХАР ДЛЯ ТАВЕРНЫ -->
+
+    <!--TODO босс в 3 волны, по 1 гоблину в волне, каждый последующий жестче  -->
+
+    <p:place id="pi_1o_sp_sugar_goblins" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_sp_sugar_goblins" name="Сахарные гоблины"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>А вот и гоблины! Ты посмотри, сахар они полюбили! Пора вам отправляться в гоблинскую
+                    преисподнюю, вот так вот, да!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 1 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_f  -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Похоже, под сахаром эти гоблины стали сильнее собратьев, которых можно дубинкой побить...
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 1 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_f  -->
+                    </p:answer>
+                    <p:answer text="Я вернусь" giveMarker="pi_sugar_for_tavern_goblins_heavy" goto="r1" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Только вы победили одного гоблина, как тут же выскочил второй!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="И ты получишь!">
+                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win1"
+                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 2 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_1_f  -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win1" closable="false">
+                <p:mainText>Третий гоблин?! Да сколько вас тут?!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Сейчас получишь!">
+                        <p:toBattle creatureId="1-beast-1" onWinGoTo="r2"
+                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 3 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_2_f  -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="r2" closable="false">
+                <p:mainText>Ну что, новых гоблинов поблизости вы не видите - значит, победа за вами! [Вы забираете
+                    партию сахара для таверны]
+                </p:mainText>
+                <p:award type="EXPERIENCE"/>
+                <p:answers>
+                    <p:answer text="Отлично!" goto="r3"/>
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3" closable="false">
+                <p:mainText>[Вы помогаете этому миру и становитесь известнее! +1 к общей репутации!]</p:mainText>
+                <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                <p:answers>
+                    <p:answer text="Отлично!"
+                              removeMarker="pi_sugar_for_tavern_04,pi_sugar_for_tavern_door_open,pi_sugar_for_tavern_inn_react,pi_sugar_for_tavern_goblins_heavy"
+                              giveMarker="pi_sugar_for_tavern_05" complete="true" dropPlace="true">
+                        <p:toRoad roadId="pi_1o_sugar_plantation"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+</p:root>

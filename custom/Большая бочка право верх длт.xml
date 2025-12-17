@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Большая бочка право верх -->
+
+    <p:place id="pi_1o_Antigua_lc_tavern_big_barrel_02" animType="EMPTY" imageId="76x147" name="Большая бочка" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" ifGender="female">
+                        <p:mainText>Вы заглядываете в бочку. Внезапно корчмарь говорит вам: "Девушка, вот что вы делаете? Там лежат тряпки и средства для уборки. Хотите помочь и убраться здесь? Нет? Тогда прошу закрыть бочку." </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>  
+                    <p:replica id="r1_1" ifGender="male">
+                        <p:mainText>Вы заглядываете в бочку. Внезапно корчмарь говорит вам: "Парень, вот что ты делаешь? Там лежат тряпки и средства для уборки. Хочешь помочь и убраться здесь? Нет? Тогда прошу закрыть бочку." </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1_1" out="true"/>
+                        </p:answers>
+                    </p:replica>                 
+                </p:dialog>
+            </p:state>            
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАГ-ВУДУ НЕСТОР -->
+
+    <p:place id="pi_1o_Antigua_magevoodoo_nestor" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_magevoodoo_nestor"
+             name="Маг-вуду Нестор" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здравствуй, вака! Так мы зовём всех, кто не маг-вуду, ведь вы не пропитаны магией,
+                            как мы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="nestor_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_03 or pi_1o_quest_lost_memories_nestor or pi_1o_quest_leyho_killers_long_way_02 or pi_1o_new_recruit_01 or pi_1o_quest_my_first_voodoo_doll_02 or pi_1o_quest_my_first_voodoo_doll_03 or pi_1o_quest_my_first_voodoo_doll_04 or pi_1o_quest_my_first_voodoo_doll_05 or pi_1o_quest_my_first_voodoo_doll_06 or pi_1o_quest_moss_of_the_soul_01 or pi_1o_quest_cure_for_snoring_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer
+                                    markerCondition="pi_1o_quest_my_first_voodoo_doll_02 or pi_1o_quest_my_first_voodoo_doll_03 or pi_1o_quest_my_first_voodoo_doll_04 or pi_1o_quest_my_first_voodoo_doll_05 or pi_1o_quest_my_first_voodoo_doll_06"
+                                    text="Кукла-вуду" goto="r_nestor_react1"/>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_nestor_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_lost_memories_nestor" text="Что случилось?"
+                                      goto="r_nestor_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_leyho_killers_long_way_02" text="Вызвать дух"
+                                      goto="r_nestor_react4"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Рекрут для вас" goto="r_nestor_react5"/>
+                            <p:answer ifMarker="pi_1o_quest_moss_of_the_soul_01" text="Мох Души"
+                                      goto="r_nestor_react6"/>
+                            <p:answer ifMarker="pi_1o_quest_cure_for_snoring_01" text="Лекарство от храпа"
+                                      goto="r_nestor_react7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_nestor_react1">
+                        <p:mainText>Я дал тебе простое задание - принести компоненты для куклы-вуду. Неужели это так
+                            трудно для ваки вроде тебя?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Такие вот мы" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_nestor_react2">
+                        <p:mainText>Золотой компас? Такой существует? Вам, вакам, лишь бы всё из золота сделать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Такие вот мы" giveMarker="pi_gold_compass_hint2" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_nestor_react3">
+                        <p:mainText>Сегодня - великий день! Я предлагаю тебе убедиться в истинности магии-вуду.
+                            Последний представитель Амазонии сейчас в нашем лагере! Возможно, ты сможешь увидеть
+                            [её|его],если досто[ин|йна]!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого..." removeMarker="pi_1o_quest_lost_memories_nestor" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_nestor_react4">
+                        <p:mainText>Ты хочешь вызвать дух? Тогда почему вака спрашивает меня? Если я сделаю это в
+                            городе, я понесу наказание от Губернатора. Иди в наш лагерь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Логично" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_nestor_react5">
+                        <p:mainText>Тебя отправил наставник? Непростая работа... Я здесь уже неделю, и никого не смог
+                            найти. Может, у тебя получится?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я пытаюсь" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_nestor_react6">
+                        <p:mainText>Неужели это так сложно, победить растение? 10 цветков, вака. Десять. Это как девять,
+                            но на один больше.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Логичный ты наш" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_nestor_react7">
+                        <p:mainText>Лекарство от храпа? Так, я поищу его. Возвращайся через минуту.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" removeMarker="pi_1o_quest_cure_for_snoring_01"
+                                      giveMarker="pi_1o_quest_cure_for_snoring_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест История магов-вуду   -->
+            <p:state ifMarker="nestor_for_quests" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Послушай, вака. Я хочу рассказать тебе о магах-вуду - почему-то, нас боятся. Нами
+                            пугают непослушных детей. Но мы не такие. Я хочу поведать тебе о нас - избавить тебя от
+                            невежества. Как рассказать нашу историю?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кратко" goto="story_short"/>
+                            <p:answer text="Подробно" goto="story_long"/>
+                            <p:answer text="Отстань" goto="no_story"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="story_short">
+                        <p:mainText>Мы - Тамиби, что означает "человек, познавший магию и вуду". Все, кто не тамиби -
+                            Вака, то есть "непосвящённый в магию и вуду". Это не оскорбление, это наше понимание мира.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_short1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_short1">
+                        <p:mainText>Наша родина - остров Хунганами. Там живёт основное племя, там и находится наш
+                            главный источник сил - суть магического фронта. В первую очередь, мы - маги. И лишь потом
+                            вуду.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_short2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_short2">
+                        <p:mainText>Вначале в нас не было вуду. Про это искусство мы узнали от одного из
+                            путешественников-магов. То вуду, что он показал, слишком тёмное и жестокое. Но оно способно
+                            развить нашу силу. Поэтому...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_short3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_short3">
+                        <p:mainText>Поэтому мы изучили его знания, отвергли из них тьму - и оставили лишь то, что
+                            способно развивать магический фронт и нас. Нет, мы никого не проклинаем, не наводим порчу.
+                            Вуду - это наше благо. Благо тамиби.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_short4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_short4">
+                        <p:mainText>Наша магия-вуду не даёт причинять вред вакам, так как даже прикосновение к нашей
+                            силе, пусть и в виде повреждений - осквернение магии. Нас не надо бояться. Но и стоит
+                            уважать. История окончена.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Кратко и ёмко" giveMarker="pi_1o_quest_my_first_voodoo_doll_01"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="story_long">
+                        <p:mainText>Мы - Тамиби, что означает "человек, познавший магию и вуду". Все, кто не тамиби -
+                            Вака, то есть "непосвящённый в магию и вуду". Это не оскорбление, это наше понимание мира.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long1">
+                        <p:mainText>Мы живём на острове Хунганами, а здесь располагается наш лагерь. Это нужно и для
+                            распространения магического фронта, и для торговли, и для союзных целей. Да, мы не считаем
+                            пиратов врагами.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long2">
+                        <p:mainText>На Хунганами строгая иерархия - после посвящения в служители магии, девушки в
+                            возрасте с 18 до 35 лет живут отдельной деревней, чтобы отречься от искушений обыденности.
+                            Однако, есть исключения.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long3">
+                        <p:mainText>Если магия отметит девушку особым знаком - она становится полноценным тамиби и может
+                            жить в главной общине. Это, кстати, не редкость - даже на Антигуа есть несколько молодых
+                            девушек-тамиби.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long4">
+                        <p:mainText>Изначально, мы не использовали вуду. Мы были магами, но наша сила огромна - ведь
+                            наша община находится прямо на сосредоточении магического фронта всего мира. Даже твоя
+                            странная магия - идёт отсюда.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long5">
+                        <p:mainText>Однажды к нам прибыл странствующий маг и показал свою магию - вуду. Она была
+                            жестока, но могущественна. Он научил первого из нас - и Тамиби-Гуру передал знания нам. И мы
+                            были разумны.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long6">
+                        <p:mainText>Вуду учило власти, но через зло. Мы не хотим испортить свои души, испортить магию -
+                            поэтому из вуду мы взяли лишь основу и то немногое добро, что в ней, безусловно, было. Мы
+                            объединили магии.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long7">
+                        <p:mainText>Мы не несём зло. Догма тамиби - не вредить вакам, так как вы недостойны нашей магии,
+                            даже её прикосновения в виде атакующего заклинания. Однако, мы можем превратить тебя в
+                            попугая - временно, за неуважение к нам.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="story_long8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="story_long8">
+                        <p:mainText>Не бойся нас. Познав магию-вуду... Возможно, ты станешь тамиби. Мы рады новым
+                            рекрутам. Но ты ещё не гото[в|ва]. История окончена. [Ваша тяга к знаниям не осталась
+                            незамеченной! +1 к репутации магов-вуду!]
+                        </p:mainText>
+                         <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Познавательно" giveMarker="pi_1o_quest_my_first_voodoo_doll_01"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="no_story">
+                        <p:mainText>Грубость... Вака не понимает, что не стоит грубить каждому встречному. Впрочем,
+                            здесь все такие же невежи. Но я дам тебе шанс познать магию-вуду, если захочешь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Посмотрим" giveMarker="pi_1o_quest_my_first_voodoo_doll_01"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Моя первая кукла-вуду, начало   -->
+            <p:state ifMarker="pi_1o_quest_my_first_voodoo_doll_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Итак, вака, ты снова здесь. Быть может, тебя настигло просветление, и ты хочешь
+                            стать магом-вуду?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Разве?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Я вижу сомнение и недоверие... Давай попробуем. Ты познаешь основу магии-вуду,
+                            увидишь могущество. Для начала, сделаем тебе куклу-вуду. Принеси осколок пиратского меча.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Подробнее хоть?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Нетерпеливые многословные ваки... Кукла-вуду поможет тебе в бою. Но её надо создать.
+                            Нужны ингридиенты. Первый - осколок меча пиратов, ведь в нём заключены ярость и отвага. Ищи
+                            на Кладбище пиратов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_my_first_voodoo_doll_01"
+                                      giveMarker="pi_1o_quest_my_first_voodoo_doll_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_my_first_voodoo_doll" name="Моя первая кукла-вуду"
+                                              count="1" mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Моя первая кукла-вуду, после осколка меча   -->
+            <p:state ifMarker="pi_1o_quest_my_first_voodoo_doll_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Осколок пиратского меча... Сила и ярость, что дадут тебе отвагу в бою. Следующий
+                            компонент - зелье силы. Я точно знаю, что Селезар в лагере инквизиции продаёт такое. Иди,
+                            купи и принеси мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_my_first_voodoo_doll_03"
+                                      giveMarker="pi_1o_quest_my_first_voodoo_doll_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Моя первая кукла-вуду, после покупки зелья силы   -->
+            <p:state ifMarker="pi_1o_quest_my_first_voodoo_doll_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Зелье силы у тебя? Отлично. Последний компонент - ром. Можешь купить в Таверне. Ром
+                            усилит магический след пиратской сабли, ведь пираты и ром - едины, особенно изнутри.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_my_first_voodoo_doll_05"
+                                      giveMarker="pi_1o_quest_my_first_voodoo_doll_06" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Моя первая кукла-вуду, после покупки рома   -->
+            <p:state ifMarker="pi_1o_quest_my_first_voodoo_doll_07" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Ром у тебя? Отлично. Теперь я совмещу компоненты вместе... [На мгновение вас
+                            ослепляет вспышка. Внезапно, в руке мага-вуду Нестора оказывается Кукла-Вуду Ярости!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Колдунство"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Да, это магия. И теперь у тебя есть первая кукла-вуду. Она поможет в бою.
+                            Надо её испытать - возвращайся ко мне, когда будешь гото[в|ва].
+                        </p:mainText>
+                        <p:award type="CONSUMABLE" itemId="doll_carnage"/>
+                        <p:answers>
+                            <p:answer text="Ладно, ладно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Кстати, подожди. Здешние ваки говорят, что любое задание - это работа. Так требует
+                            местный закон. Хотя, наверное, ваки просто любят золотую руду. В любом случае, вот твоя
+                            награда.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="6"/>
+                        <p:answers>
+                            <p:answer text="Можно и больше..." removeMarker="pi_1o_quest_my_first_voodoo_doll_07"
+                                      giveMarker="pi_1o_quest_try_voodoo_doll_01" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_my_first_voodoo_doll"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Испытание куклы-вуду, начало   -->
+            <p:state ifMarker="pi_1o_quest_try_voodoo_doll_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Вака готов испытать всю мощь и силу магии вуду? Иди к маяку Джека, там тебя ждёт
+                            Гигантский Ползоног - я призвал его специально для тебя. Но есть нюанс.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Какой?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Гигантский Ползоног будет неуязвим для твоих ударов, пока ты не используешь
+                            Куклу-вуду ярости. Задание простое. Иди, примени куклу-вуду ярости, убей его и вернись.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А если..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>А если он окажется сильнее, приходи ко мне. Я дам тебе новую куклу-вуду ярости. А если
+                            ты уже использова[л|ла] ту куклу-вуду... То можешь купить точно такую же здесь, на рынке.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_try_voodoo_doll_01"
+                                      giveMarker="pi_1o_quest_try_voodoo_doll_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_try_voodoo_doll" name="Испытание куклы-вуду" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Испытание куклы-вуду, если применили куклу-вуду ярости и проиграли   -->
+            <p:state markerCondition="voodoo_magic_doll_power_used_giant_creep and not pi_1o_quest_try_voodoo_doll_04"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7" imageId="{hero}">
+                        <p:mainText>Я примени[л|ла] куклу-вуду ярости, но Гигантский Ползоног оказался сильнее...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Ясно. Вака не подготовил[ся|ась] к битве. Вот новая кукла-вуду ярости. Иди и срази
+                            монстра.
+                        </p:mainText>
+                        <p:award type="CONSUMABLE" itemId="doll_carnage"/>
+                        <p:answers>
+                            <p:answer text="Сделаем" removeMarker="voodoo_magic_doll_power_used_giant_creep"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Испытание куклы-вуду, если применили куклу-вуду ярости и выиграли   -->
+            <p:state markerCondition="voodoo_magic_doll_power_used_giant_creep and pi_1o_quest_try_voodoo_doll_04"
+                     closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Я ощущаю, что Гигантский Ползоног покинул материю этого мира. Ну что, вака, как тебе
+                            наша магия? Я не забыл и про традицию Антигуа - вот тебе за "работу".
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="8"/>
+                        <p:answers>
+                            <p:answer text="Неуязвимость..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Да, наша магия способна давать полную неуязвимость. Но лишь для тамиби, и лишь при
+                            определённых условиях. Этой магии вака недостойны. Возвращайся, у меня есть ещё "работа" -
+                            познать истинную магию.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"
+                                      removeMarker="voodoo_magic_doll_power_used_giant_creep,pi_1o_quest_try_voodoo_doll_03,pi_1o_quest_try_voodoo_doll_04"
+                                      giveMarker="pi_1o_quest_buy_voodoo_doll_01,pi_1o_quest_buy_voodoo_doll_award_from_jack"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_try_voodoo_doll"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Купить куклу-вуду, начало   -->
+            <p:state ifMarker="pi_1o_quest_buy_voodoo_doll_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>"Работа" будет простой. Даже если вака уже это дела[л|ла]. Иди на местный рынок -
+                            там продают наши куклы-вуду. Купи любую из них.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А смысл?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Ваку снова посетила неразумность... Этим я показываю тебе, что ты всегда можешь
+                            прикоснуться к нашей магии, попробовать её.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_buy_voodoo_doll_01"
+                                      giveMarker="pi_1o_quest_buy_voodoo_doll_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_buy_voodoo_doll" name="Купить куклу-вуду" count="1"
+                                              mithril="50"
+                                              type="SINGLE"/> <!--TODO надо купить любую куклу-вуду на рынке pi_1o_marketplace в городе, при покупке выдать маркер  giveMarker="voodoo_magic_doll_buy_for_quest"  -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Купить куклу-вуду, конец   -->
+            <p:state ifMarker="voodoo_magic_doll_buy_for_quest" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10">
+                        <p:mainText>Я ощущаю нашу магию. Вака, согласись, это очень удобно - всегда иметь доступ к самой
+                            сильной магии на острове.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Есть такое"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>Вот твоя награда. Возвращайся снова, я покажу тебе новую грань нашей магии.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Хорошо"
+                                      removeMarker="voodoo_magic_doll_buy_for_quest"
+                                      giveMarker="pi_1o_quest_ancient_druid_01" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_buy_voodoo_doll"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Друид древних, начало   -->
+            <p:state ifMarker="pi_1o_quest_ancient_druid_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_11">
+                        <p:mainText>Вака, ты много путешествуешь. Похоже, тамиби нужна твоя помощь. Сама магия дала
+                            знак, что эта работа - для тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>900 лет назад на островах Архипелага Песка жили друиды. На Антигуа они исчезли в
+                            последнюю очередь. Недавно мы нашли их записи и пытаемся изучить. Исходя из них, мы считаем,
+                            что здесь остался друид. Живой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Он оставлен как страж или хранитель, но он до сих пор должен владеть истинной
+                            магией. Помоги найти его, и я щедро вознагражу тебя от имени тамиби. Узнай у Верховного
+                            шамана все подробности.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_ancient_druid_01"
+                                      giveMarker="pi_1o_quest_ancient_druid_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_ancient_druid" name="Друид древних" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Друид древних, конец   -->
+            <p:state ifMarker="pi_1o_quest_ancient_druid_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_12">
+                        <p:mainText>Получается, что тот гиббон - это действие рома на разум мага-вуду Стража... Мы все
+                            так и думали. Но... Совпадение, что друиды принимали вид гиббонов?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Совпадение!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_9">
+                        <p:mainText>Возможно, это так. Найденные записи могут наводить на ложный след. Друиды не были
+                            глупы, они - дети истинной магии. Если бы мы только могли познать её истоки...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да не надо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Возможно, вака говорит мудро. Итак, работа сделана, вот твоя награда. У меня есть
+                            ещё работа для тебя - возвращайся, если интересно.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="9"/>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_ancient_druid_05"
+                                      giveMarker="pi_1o_quest_prophet_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_prophet" name="Пророк" count="1" mithril="50"
+                                              type="SINGLE"/>
+                                <p:addTaskProgress id="pi_1o_quest_ancient_druid"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пророк, начало   -->
+            <p:state ifMarker="pi_1o_quest_prophet_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_13">
+                        <p:mainText>Вака, великое событие свершилось в эту фазу чёрной луны! Нас посетил Пророк! Ты
+                            помогаешь тамиби, и я позволю тебе встретиться с нашим наставником из другого мира.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_10">
+                        <p:mainText>Чтобы встретиться с Пророком, нужен подарок. Самое ценное, что может принести вака -
+                            это цветок Мох Души. Нужно собрать 10 цветков и сделать венок - как знак почитания и
+                            уважения.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>Вака ведь знает, что Мох Души - плотоядное разумное растение? Оно даст цветок лишь
+                            после того, как ты победишь его. Ищи Мох Души на Кладбище Пиратов, затем возвращайся ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_prophet_01"
+                                      giveMarker="pi_1o_quest_prophet_02,pi_1o_quest_moss_of_the_soul_01,pi_1o_quest_moss_of_the_soul_hint"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_moss_of_the_soul" name="Собрать Мох Души" count="10"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пророк, собрали цветки   -->
+            <p:state ifMarker="pi_1o_quest_prophet_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_14">
+                        <p:mainText>10 цветков Мох Души у тебя, отлично. Венок плести умеешь? Нет? А что ты тогда умеешь
+                            вообще? Вака, одно слово.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не груби мне"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_11">
+                        <p:mainText>Я не начинал. Ладно, иди к Трёхпалому Билли на Сахарную Плантацию. Он плетёт корзины
+                            - может, и венок сплетёт. Если что, пригрози ему, что при отказе я превращу его в попугая.
+                            Как в тот раз.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм... В тот раз?" removeMarker="pi_1o_quest_prophet_03"
+                                      giveMarker="pi_1o_quest_prophet_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пророк, пришли с венком   -->
+            <p:state ifMarker="pi_1o_quest_prophet_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_15">
+                        <p:mainText>Венок у тебя? Отлично. Ты, вака, можешь показать себя. Нам бы пригодился такой
+                            новобранец.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_12">
+                        <p:mainText>Молчание - тоже ответ. Итак, чтобы не терять времени - вот тебе ещё магия. Сейчас я
+                            мгновенно перенесу тебя в наш лагерь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Удивил, ага" removeMarker="pi_1o_quest_prophet_06"
+                                      giveMarker="pi_1o_quest_prophet_07" requestSpecialPlaces="true" complete="true">
+                                <p:toRoad roadId="pi_1o_magevoodoo_town"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Пророк, с пророком пообщались   -->
+            <p:state ifMarker="pi_1o_quest_prophet_08" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_16">
+                        <p:mainText>Пророк... Это великая честь для любого тамиби. А для ваки - это высшая награда! Но я
+                            не оставлю тебя без золотой руды - я доволен, как ты выполняешь работу.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="14"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_13">
+                        <p:mainText>Возможно, в будущем мне понадобится твоя помощь. Сейчас - нет. Свобод[ен|на]. [За
+                            выполнение работ для магов-вуду, вы получаете +3 репутации магов-вуду!]
+                        </p:mainText>
+                         <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="3"/>
+                        <p:answers>
+                            <p:answer text="Приятно" removeMarker="pi_1o_quest_prophet_08" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_prophet"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Это точно магия!   -->
+            <p:state ifMarker="pi_1o_quest_this_is_magik_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_17" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Маг-вуду? У меня есть один вопрос. Я - искатель приключений, и недавно, в гроте
+                            Левиафана, мне встретился огромный монстр! Мне такие не встречались... В общем, он мной
+                            повержен.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_14">
+                        <p:mainText>Зачем мне эта история, вака? О, подожди... Огромный монстр, в гроте Левиафана? Очень
+                            похоже на испытание Наставника... Монстр повержен? Тобой? Хорошо, сообщи Наставнику.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем" removeMarker="pi_1o_quest_this_is_magik_02"
+                                      giveMarker="pi_1o_quest_this_is_magik_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" хотим получить коготь обезьяны   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_18" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Нестор, у меня к тебе дело - мне нужен коготь обезьяны. У вас, магов-вуду, их полно,
+                            дай один?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_15">
+                        <p:mainText>Вака, последний коготь обезьяны пару часов назад у меня выкупил другой вака, весь в
+                            стальном облачении и с котёнком на руках. Странный наряд. Он хотел применить его как защиту
+                            от нежити.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_clear_love_05"
+                                      giveMarker="pi_1o_quest_clear_love_06" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Лекарство от храпа"   -->
+            <p:state ifMarker="pi_1o_quest_cure_for_snoring_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_19">
+                        <p:mainText>Вака, у меня есть нужное тебе лекарство. Но их осталось всего два, цена будет выше.
+                            500 золотых монет. Покупаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Конечно" goto="r2_d_16"/>
+                            <p:answer text="Очень дорого!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_16">
+                        <p:mainText>Отлично, вака. Давай золото - и вот твоё лекарство. Нужно выпить всю бутылочку
+                            залпом, достаточно одного раза. Храп вернётся только через шесть лет, проверено.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю" removeMarker="pi_1o_quest_cure_for_snoring_02"
+                                      giveMarker="pi_1o_quest_cure_for_snoring_03" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="500"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

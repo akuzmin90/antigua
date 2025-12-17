@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- НАГРАДА ЗА ЧАСОВНЮ СЛУЖБУ -->
+
+    <p:place id="pi_1o_Antigua_lc_award_for_chapel_service" animType="EMPTY" imageId="2x2" name="Местные жители"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" repeatable="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Внезапно вас останавливают местные жители. Они поражены, с каким интересом вы
+                            выслушали утреннюю службу. Ведь вы чужак... Для них. Но вас не оставят без внимания.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Местные жители дают вам 60 кусков золотой руды!</p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="60"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Местные жители дают вам 200 изумрудов!</p:mainText>
+                        <p:award type="MITHRIL" explicitValue="800"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_default">
+                        <p:mainText>О вас говорят! +5 к общей репутации!</p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="5"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Да, вы здесь ещё чужак. Но впечатление вы произвели, как и уважение. А лесорубы
+                            ценят уважение.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_react_captain_obi" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

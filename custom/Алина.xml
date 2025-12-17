@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- АЛИНА -->
+
+    <p:place id="pi_1o_ht_alina" animType="EMPTY" imageId="57x123" name="Алина" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ты даже не задумываешься, а ведь я помогла тебе попасть сюда! Иначе как бы работала та кнопка с невероятно низкой вероятностью появления? И прими мой подарок, специально для тебя!</p:mainText>
+                            <p:award type="CONSUMABLE" itemId="doll_resurrection" />
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Ты даже не задумываешься, а ведь я помогла тебе попасть сюда! Иначе как бы работала та кнопка с невероятно низкой вероятностью появления? Оставайся с нами, отдохни ;) </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

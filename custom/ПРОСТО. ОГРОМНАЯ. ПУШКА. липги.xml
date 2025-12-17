@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПРОСТО. ОГРОМНАЯ. ПУШКА.  -->
+
+    <p:place id="pi_1o_it_thoi_bfg" animType="EMPTY" imageId="147x189" name="ПРОСТО. ОГРОМНАЯ. ПУШКА." minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>ЭТО. ПРОСТО. ОГРОМНАЯ. ПУШКА. Вы спокойно можете залезть в дуло и сидеть там с комфортом. Скорее всего, такое орудие нужно для осады крепостных стен. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Она огромная" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

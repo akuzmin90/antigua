@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- РАЗОРЁННАЯ МОГИЛА -->
+
+<p:place id="pi_1o_Antigua_pg_ruined_grave" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_pg_ruined_grave" name="Разорённая могила" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="25" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+    <p:markerCondition condition="pi_1o_ruined_grave_01"/>
+ <p:blockingCreature probability="0"/>
+	<p:states>
+
+    	<!-- только на локации Кладбище Пиратов  -->
+        <p:state id="default" closable="false" >        	 
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Вот и та самая разорённая могила брата Губернатора. Надо бы внимательнее осмотреть. </p:mainText>
+                <p:answers>
+                    <p:answer text="Осмотреть" /> 
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                <p:mainText>Хоббите найти злоте! Один злоте штуки в ям с чевек мертвяк! </p:mainText>
+                <p:answers>
+                    <p:answer text="Положи обратно" /> 
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3">
+                <p:mainText>[Стражники рассказывают вам всё, что знают - то есть, ничего вообще. Что же делать? А если... Если это был акт мародёрства, ради магии вуду? Надо бы спросить в их лагере!] </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" out="true" goto="r4" removeMarker="pi_1o_ruined_grave_01" giveMarker="pi_1o_ruined_grave_02" /> 
+                </p:answers>
+            </p:replica>
+            <p:replica id="r4">
+                <p:mainText>[Стражники рассказывают вам всё, что знают - то есть, ничего вообще. Что же делать? А если... Если это был акт мародёрства, ради магии вуду? Надо бы спросить в их лагере!] </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" out="true" goto="r4" /> 
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    	</p:state>
+
+	</p:states>
+    </p:place>
+
+    </p:root>

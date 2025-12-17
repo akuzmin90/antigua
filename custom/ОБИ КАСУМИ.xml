@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КАСУМИ ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_kasumi_obi" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi" name="Касуми Оби" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireTime="08:00-11:59,13:00-18:59" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Сражайся с честью" delayMs="7000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Я охраняю лесорубов. Также я осматриваю джунгли на предмет опасностей. И сейчас ты
+                            меня отвлекаешь, мешаешь мне концентрироваться.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"  requestSpecialPlaces="true" complete="true"
+                                      giveMarker="lumberjack_kasumi_obi_for_quests,lumberjack_kasumi_obi_tell_about_herself" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r1_1">
+                        <p:mainText>Я охраняю лесорубов. Также я осматриваю джунгли на предмет опасностей. И сейчас ты
+                            меня отвлекаешь, мешаешь мне концентрироваться.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_scorpio_man_01 or pi_1o_quest_bleeding_wood_coward_kasumi_react or pi_1o_quest_book_from_tomb_02"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_scorpio_man_01" text="Человек-скорпион"
+                                      goto="r_lumberjack_kasumi_obi1"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_coward_kasumi_react" text="Стоглазый дух"
+                                      goto="r_lumberjack_kasumi_obi2"/>
+                            <p:answer ifMarker="pi_1o_quest_book_from_tomb_02" text="Книга"
+                                      goto="r_lumberjack_kasumi_obi3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_kasumi_obi1">
+                        <p:mainText>Я его не встречала. Но моя катана готова к встрече с ним.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_kasumi_obi2">
+                        <p:mainText>Мы не говорим о нём в деревне, чтобы не пугать жителей. Да, моя катана оказалась
+                            сильнее. Хочешь узнать, как я его победила? [Из её рассказа вы подчерпнули новые знания об
+                            атаке!]
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_bleeding_wood_coward_kasumi_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_kasumi_obi3">
+                        <p:mainText>Я ценю, что ты помогаешь маленькой Белле с этой книгой. Она достойна того, чтобы
+                            вырваться из этой деревни и стать известным учёным. Я верю, что она покорит этот мир своими
+                            знаниями.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Она молодец!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- рассказ о себе  -->
+            <p:state ifMarker="lumberjack_kasumi_obi_tell_about_herself" probabilityPercentState="20" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Послушай... Я чувствую в тебе магию. Знакомую силу. То, что я не чувствовала уже
+                            долгое время. Магия, которая родная для меня. Я не люблю говорить много. Но сейчас мне это
+                            нужно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я выслушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Твоя магия... Ты ведь из Зазеркалья, верно?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Как ты поняла?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Нас питает одна сила... Я жила в Мирограде. В его предместьях была моя деревня - да,
+                            внешне заметно, что я немного отличаюсь от других людей. Наши предки прибыли из восточных
+                            земель.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Знаю твою деревню"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Значит, ты бы[л|ла] там... Я тебя никогда не видела. Значит, твой визит был после
+                            прихода Великой Тьмы... Которая уничтожала всё. Деревня была пустой?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну, почти..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Почти? Я поняла, о чём ты. Люди в страхе бежали. Великая Тьма убивала их уже за
+                            пределами деревни. В деревне осталась лишь Синь Мин Пао. Она там родилась. Там и хотела
+                            умереть.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жутко..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Но то, что она говорила с тобой... Но как... Я видела, как Великая Тьма растворила
+                            её прямо в воздухе. Скажи мне, осталось ли что от моей деревни?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Здания целы"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Я вижу по твоим глазам. И чувствую, воин Великой Тьмы был повержен тобой. И души
+                            жителей спасены молитвами у пагод. Я склоняю голову перед тобой, Хранитель.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как ты выжила?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>Я хотела сражаться с воином Великой Тьмы. Но Синь Мин Пао наказала мне спасти символ
+                            деревни - наш святой герб. Я не могла не подчиниться самой мудрой и старой из нас.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>Я ушла самой первой. Великая Тьма была занята уничтожением людей в деревне. У меня
+                            было время. Я бежала без остановки два дня и две ночи, я сражалась с её порождениями без
+                            устали.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10">
+                        <p:mainText>Но Великая Тьма коварна. Её исчадья окружили меня. После долгой битвы, без сил, я
+                            упала на колени. Святой герб - я должна была защитить его. Но вдруг он засветился, даровал
+                            тепло.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r11">
+                        <p:mainText>Я услышала шёпот Синь Мин Пао, чего не могло быть. Она ласково сказала, что деревня
+                            спасена, воин Великой Тьмы повержен. Я не верила в этот голос, ведь это мог быть обман
+                            Великой Тьмы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r12">
+                        <p:mainText>Внезапно, мир озарился ярким слепящим светом, всего на мгновение. И я оказалась
+                            здесь. Голос Синь Мин Пао поблагодарил меня за спасение святого герба. Теперь я понимаю...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что именно?"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r13">
+                        <p:mainText>Воин Великой Тьмы побеждён тобой. Тобой отмолены души жителей деревни. И Синь Мин
+                            Пао смогла в последний раз применить магию - и перенести меня на Антигуа. Теперь я вижу. Ты
+                            спа[с|сла] мою жизнь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого..."/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r14">
+                        <p:mainText>Здесь я была чужая. Здесь другая жизнь, другие люди. Я пряталась в джунглях, вместе
+                            с тем изучая их. Я выживала и сражалась за свою жизнь. Но я хотела уйти в забвение.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Почему?!"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r15">
+                        <p:mainText>Моего дома больше нет. Я осталась одна. Никому не нужна. Не с кем поговорить. Без
+                            будущего. Те люди, что я встретила, когда пришла в город, были... Ужасными.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="То есть?"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r16">
+                        <p:mainText>Мужчины приставали ко мне, отпускали грязные шутки. Женщины смотрели как на дикарку.
+                            Лишь Трактирщик проявил добродетель - в отчаянии, я рассказала ему свою историю. И он помог
+                            мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как?"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r17">
+                        <p:mainText>За работу на кухне, дал мне еду и крышу над головой. Затем, поняв, что я - воин,
+                            указал путь в деревню лесорубов, так как я уже знала джунгли, и могла бы им пригодиться.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r18">
+                        <p:mainText>Я три дня наблюдала за деревней лесорубов. Пока меня не встретил Михаил - следопыт.
+                            На моё удивление, он с большим почтением отнёсся ко мне. Уважительнее, чем все, кого я
+                            встречала здесь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r19">
+                        <p:mainText>Я не хотела идти в деревню. И он сделал мне шалаш. Несколько дней он приходил ко
+                            мне, приносил еду и воду. Он проявил сочувствие, без намёка на грязные мысли.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r20">
+                        <p:mainText>Я чувствовала тепло и искренность. И это стало взаимно. Мы сблизились с ним... После
+                            этого он продолжил трепетно ко мне относиться. Он полюбил меня, а я - его. И я пошла за ним.
+                            Мы поженились.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r21">
+                        <p:mainText>На удивление, меня приняли в деревне. Я стала полезной - я охраняю лесорубов в
+                            джунглях, и они это ценят. Меня также полюбил и Джошуа - сын Михаила и его погибшей жены,
+                            Джошуа принял меня как мать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                            <p:answer text="Хватит историй!" goto="bad_final"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r22">
+                        <p:mainText>Такова моя история. Спасибо, что выслуша[л|ла]. Мне это важно. Позволь мне остаться
+                            сейчас одной. И спасибо ещё раз за то, что я жива. Благодаря тебе.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я в шоке, честно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r23">
+                        <p:mainText>[Сами того не понимая, вы спасли жизнь этой девушке. Великая Тьма... Касуми... Мир
+                            непредсказуем! За то, что вы выслушали историю Касуми, за её спасение, души её односельчан
+                            даруют +1 к репутации мира мёртвых!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_DEADWORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Я в шоке, честно" removeMarker="lumberjack_kasumi_obi_tell_about_herself"
+                                      giveMarker="pi_1o_quest_kasumi_twins_01" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="bad_final">
+                        <p:mainText>Я открылась тебе. Но моя история не важна, я понимаю. Позволь мне остаться сейчас
+                            одной.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Прости" removeMarker="lumberjack_kasumi_obi_tell_about_herself"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- если в команде есть герой Близнецы Касуми   -->
+            <p:state ifMarker="pi_1o_kasumi_twins_in_our_team" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Это... Это мои инь и янь... Моя сущность, моя часть... Они сейчас с тобой. И я
+                            чувствую, что они не ощущают опасности и готовы сражаться за тебя.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Твоя история... Уже во второй раз я лично благодарю тебя за твои деяния. Спасибо
+                            тебе, Хранитель. Береги их, прошу. И позволь мне хоть как-то отблагодарить тебя.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="200"/>
+                        <p:answers>
+                            <p:answer text="Сберегу их" removeMarker="pi_1o_kasumi_twins_in_our_team" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Книга из гробницы"   -->
+            <p:state ifMarker="pi_1o_quest_book_from_tomb_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Ты хочешь принести книгу для Беллы? Это опасно. Даже я не рискнула спуститься в ту
+                            гробницу. Я видела там монстра, похожего на человека.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Где гробница?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>В мангровых джунглях. Её непросто найти. Но ты узнаешь её легко - там указано, что
+                            внутри покоится "Самый светлый ум Антигуа".
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_book_from_tomb_01"
+                                      giveMarker="pi_1o_quest_book_from_tomb_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_book_from_tomb" name="Книга из гробницы" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Книга из гробницы", получили книгу и ещё не сдали   -->
+            <p:state ifMarker="pi_1o_quest_book_from_tomb_kasumi_react" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Книга у тебя? Из той самой гробницы? Позволь мне взглянуть. [Касуми внимательно
+                            листает страницы] Ты говоришь, что это первый учёный, путешествует по времени и мирам. И
+                            книгу написала женщина. Верно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Он так сказал"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Посмотри внимательно. Автор - "Б.О.", и очень знакомая манера речи. Книга из другого
+                            времени... Которую написала Белла. Её инициалы. Её слова. Её манера речи. Она станет
+                            известным учёным.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Не говори ей. Это её судьба, пусть идёт к этому. Но я рада, что она добьётся своей
+                            цели. И ещё одно. Тобой сделана работа. У девочки нет денег, но я тебя отблагодарю за такой
+                            поступок.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="14"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_book_from_tomb_kasumi_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

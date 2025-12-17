@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Пустой дом  -->
+
+    <p:place id="pi_1o_mt_magevoodoo_mt_empty_house" animType="EMPTY" imageId="84x185" name="Пустой дом" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Этот дом абсолютно пуст. Но ваше чутьё подсказывает, что там что-то может быть! Незаметно для магов-вуду, вы заходите внутрь. У дальней стены что-то точно спрятано! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Осмотреть" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Да тут небольшой сундучок! Итак, внутри вы находите... Немного золотой руды! </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="4" />
+                        <p:answers>
+                            <p:answer text="Пригодится"  />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Итак, внутри вы находите... Немного изумрудов! </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="113" />
+                        <p:answers>
+                            <p:answer text="Ещё, ещё!" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Итак, внутри вы находите... Билеты в колесо фортуны! </p:mainText>
+                            <p:award type="TICKETS" explicitValue="300" />
+                        <p:answers>
+                            <p:answer text="Ещё, ещё!" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Итак, внутри вы находите... Куклу-вуду камня! Больше ничего нет. </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="doll_stone" />
+                        <p:answers>
+                            <p:answer text="И всё?" goto="r6" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Этот дом абсолютно пуст. Благодаря вам - уже точно без сомнений. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что поделать..." goto="r6" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

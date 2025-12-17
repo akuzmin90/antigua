@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОСС АДСКАЯ ГОНЧАЯ  -->
+
+    <p:place id="pi_1o_pg_hellhound" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_hellhound" name="Адская гончая" minPlayerStair="40"
+             minDistanceBetweenSame="5000" meetProbability="20" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+        <p:markerCondition condition="pi_1o_quest_hellhound_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Адская гончая"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Адская гончая - интересно, как она тут оказалась? В любом случае, нужно вернуть её
+                            обратно в преисподнюю!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_pg_hellhound" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Адская гончая, боевая иконка будет называться pi_1o_pg_hellhound_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Адская гончая очень сильна... Ещё бы, её питает сила преисподней!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_pg_hellhound" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Адская гончая повержена! Вы забираете её шкуру. Пора вернуться к Олафу!]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_hellhound_01"
+                                      giveMarker="pi_1o_quest_hellhound_02" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

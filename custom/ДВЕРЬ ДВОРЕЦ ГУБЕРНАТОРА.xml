@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ДВОРЕЦ ГУБЕРНАТОРА -->
+
+    <p:place id="pi_1o_Antigua_door_governor_palace" animType="EMPTY" imageId="145x191" name="Дворец Губернатора"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - Дворец Губернатора. Хотите зайти внутрь?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да">
+                                <p:toRoad roadId="pi_1o_townAntigua_governor_palace"/>
+                            </p:answer>
+                            <p:answer text="Нет" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

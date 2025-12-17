@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Ящик другой -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_box_another" animType="EMPTY" imageId="91x70" name="Ящик" minPlayerStair="40"  meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В этом ящике есть лишь одно, что вас заинтересует - зелье наги! Ну и, собственно, вы его и забираете. </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="p7x_naga_3" />
+                        <p:answers>
+                            <p:answer text="Отлично" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В этом ящике уже нет ничего, что вас заинтересует </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Ящик другой если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_box_another_1" animType="EMPTY" imageId="91x70" name="Ящик" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi"> 
+                        <p:mainText>Аватюрист, не пытайся ничего выкрасть - сделаешь себе дороже. Так что или уходи, или увидишь, как я обращаюсь с катаной. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

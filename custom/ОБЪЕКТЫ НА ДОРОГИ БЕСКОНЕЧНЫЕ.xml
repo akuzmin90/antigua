@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ОБЪЕКТЫ НА ДОРОГИ БЕСКОНЕЧНЫЕ -->
+
+        <!-- кучки с золотой рудой  -->
+<p:place id="pi_1o_Antigua_eo_ore_gold_bunch" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_gold_bunch" name="Кучка золотой руды" minDistanceBetweenSame="5500" minPlayerStair="40" meetProbability="14" requireGenMode="PI_1O_MANGROVE_JUNGLE,PI_1O_LEVIATHAN_GROTTO,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Перед вами кучка с золотой рудой! Похоже, её оставили специально - слишком много здесь камней другой породы. Но вы решаете проверить, а вдруг! </p:mainText>
+                <p:answers>
+                    <p:answer text="Что тут у нас?" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! Пусть и немного, зато теперь - вся ваша! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="С миру по нитке" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.7" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! Пусть и немного, зато теперь - вся ваша! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="С миру по нитке" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.6" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! Пусть и немного, зато теперь - вся ваша! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="С миру по нитке" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.5" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! Пусть и немного, зато теперь - вся ваша! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Неплохо" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.3" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! 2 куска золотой руды - забираем себе! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="2" />
+                <p:answers>
+                    <p:answer text="Приятно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-6" probability="0.2" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! Да почти вся руда здесь - настоящее золото! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="3" />
+                <p:answers>
+                    <p:answer text="Теперь моё" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-7" probability="0.1" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! Да почти вся руда здесь - настоящее золото! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="4" />
+                <p:answers>
+                    <p:answer text="Теперь моё" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-8" probability="0.1" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! И она практически вся - золотая! Похоже, тот, кто её оставил, совершил ошибку. Пусть учится, а вы аккуратно складываете её в карманы! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="6" />
+                <p:answers>
+                    <p:answer text="Точно моё будет" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-9" probability="0.05" repeatable="false" closable="false">
+                <p:mainText>Ого, кто-то не заметил, что здесь есть настоящая золотая руда! Она вообще вся - золотая! Неплохо, неплохо. </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="9" />
+                <p:answers>
+                    <p:answer text="Радостно" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Потерянный кошель  -->
+<p:place id="pi_1o_Antigua_eo_ore_lost_purse" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_lost_purse" name="Потерянный кошель" minDistanceBetweenSame="4500" minPlayerStair="40" meetProbability="15" requireGenMode="PI_1O_MANGROVE_JUNGLE,PI_1O_LEVIATHAN_GROTTO,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Потерянный кошель. Кто нашёл - тот и взял! Проверим, что внутри. </p:mainText>
+                <p:answers>
+                    <p:answer text="Что тут у нас?" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Синие кристаллы! Отлично, пригодятся! </p:mainText>
+                    <p:award type="ELIXIR" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Красные кристаллы! Отлично, пригодятся! </p:mainText>
+                    <p:award type="CRYSTAL" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Золото! Отлично, пригодится! </p:mainText>
+                   <p:award type="GOLD" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.6" closable="false">
+                <p:mainText>Золотая руда! На Антигуа - всегда к месту! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.4" closable="false">
+                <p:mainText>Изумруды! Странно, на Антигуа они не особо в ходу между местными жителями... Но вам они пригодятся точно! </p:mainText>
+                    <p:award type="MITHRIL" explicitValue="45" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-6" probability="0.3" closable="false">
+                <p:mainText>Золотая руда! На Антигуа - всегда к месту! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-7" probability="0.6" closable="false">
+                <p:mainText>Внутри - пусто... Ещё бы, кошелёк дырявый, вот и выкинули. Но вы обретаете бесценный поисковый опыт.</p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Знания - сила!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-8" probability="0.1" closable="false">
+                <p:mainText>Золотая руда! На Антигуа - всегда к месту! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="2" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-9" probability="0.05" closable="false">
+                <p:mainText>Золотая руда! На Антигуа - всегда к месту! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="3" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-10" probability="0.02" closable="false">
+                <p:mainText>Ого! Да здесь же кукла-вуду ярости! Такое точно пригодится! </p:mainText>
+                    <p:award type="CONSUMABLE" itemId="doll_carnage" />
+                <p:answers>
+                    <p:answer text="Беру" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Мартышка  -->
+<p:place id="pi_1o_Antigua_eo_ore_monkey" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_monkey" name="Мартышка" minDistanceBetweenSame="5500" minPlayerStair="40" meetProbability="11" requireGenMode="PI_1O_MANGROVE_JUNGLE,PI_1O_LEVIATHAN_GROTTO,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Маленькая мартышка. Вы угощаете её бананом, а взамен она протягивает вам 1 кусочек золотой руды! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Добро за добро" complete="true" />
+                    <p:answer text="Экля? Ты чего?" ifMarker="hobbit_talk_fun" goto="r2" probability="0.1" repeatable="false" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" closable="false">
+                <p:mainText>[Внезапно, хоббит Экля начинает гнаться за ней! Вскоре он возвращается и приносит ещё 14 золотой руды!] </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="14" />
+                <p:answers>
+                    <p:answer text="Такой милаха" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Шум в кустах, ТОЛЬКО мангровые джунгли  -->
+<p:place id="pi_1o_Antigua_eo_ore_noise_in_bushes" animType="EMPTY" imageId="2x2" name="Шум в кустах" mandatory="true" minDistanceBetweenSame="3500" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_MANGROVE_JUNGLE"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Вы останавливаетесь, заслышав шум в кустах! Интересно, что там? Проверим, или не будем рисковать? Кто знает, что скрывают джунгли... </p:mainText>
+                <p:answers>
+                    <p:answer text="Проверить" gotoFromScript="random" />
+                    <p:answer text="Уйти" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Оказывается, тут несколько мартышек затеяли драку из-за кусочков золотой руды! Вы прогоняете их - и золотую руду забираете, конечно. </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.15" closable="false">
+                <p:mainText>Упс... Похоже, вы помешали молодым! Но и они испытали конфуз... За то, что вы сохраните эту неловкость в тайне, вам дают золотую руду! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Постараюсь молчать" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Так, что тут у нас... Попугай попал в капкан на бородавочника?! То есть он шёл, гулял, и наступил? Размышляя об этом, вы освобождаете птицу. За что и получаете бесценный опыт за время в раздумьях! </p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Птичкам - летать!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.6" closable="false">
+                <p:mainText>Оу, да тут следопыт из деревни лесорубов - Михаил Оби! Он нашёл чей-то клад, в котором спрятаны красные кристаллы. Ему они не нужны - а вы вовремя оказались рядом! </p:mainText>
+                    <p:award type="CRYSTAL" />
+                <p:answers>
+                    <p:answer text="Мне нужно, давай" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.6" closable="false">
+                <p:mainText>Оу, да тут охотник из деревни лесорубов - Олаф! Он охотится... Вы наблюдаете и запоминаете, что он делает, как двигается, как стреляет из лука - это пригодится! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Полезно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-6" probability="0.7" closable="false">
+                <p:mainText>Вы замечаете, как из кустов поспешно уходит Верона, лесоруб из деревни лесорубов. Там, где она была, вы находите спрятанную еду! Видимо, она делает запасы на перекусы. Вы немного съедаете - на всякий случай. </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Вкусно же" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-7" probability="0.6" closable="false">
+                <p:mainText>Вы в предвкушении заглядываете в кусты! Оу. Тут была горилла. Это очевидно, даже по запаху. Оставим эти кусты, пожалуй. </p:mainText>
+                <p:answers>
+                    <p:answer text="Фууууу..." complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-8" probability="0.6">
+                <p:mainText>Вы в предвкушении заглядываете в кусты! Оу. А макаки организованнее, чем вы думали. У них тут уборная, вот и шумели. </p:mainText>
+                <p:answers>
+                    <p:answer text="Фууууу..." complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-9" probability="0.6">
+                <p:mainText>Вы в предвкушении заглядываете в кусты! Оу. Тут был тигр, это очевидно, даже по запаху. Стоп, тигр?! Тут ещё и тигры есть?! </p:mainText>
+                <p:answers>
+                    <p:answer text="Фууууу... Ну и страшно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-10" probability="0.3" closable="false">
+                <p:mainText>Вы видите дорожку из кусков золотой руды! Вы идёте по ней... Пока не замечаете, что она ведёт к кустам, где сидит Громшамаш Уг’лиш Гузя и улыбается, глядя на вас. Дальше не пойдём! Но руды собрали немного. </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="2" />
+                <p:answers>
+                    <p:answer text="Вот же... Огр" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-11" probability="0.6" closable="false">
+                <p:mainText>Оказывается, шум издал плод мангрового дерева, который взорвался! Видимо, перележал на солнце. Но вы собираете его семечки - ведь они могут пригодиться Долорес. Она точно купит их! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Точно купит" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-12" probability="0.5" closable="false">
+                <p:mainText>Шум из кустов издавала мама-ягуар, у которой котёнок упал в яму... Она смотрит на вас без агрессии, с тревогой о котёнке... Вы достаёте его. Ягуар ласково касается вас лапой... Это же благословение! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Добро за добро" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-13" probability="0.1" closable="false">
+                <p:mainText>Вы подходите к кустам. Внезапно, из них раздаётся громогласный крик Вероны: "А НУ ИДИ ОТСЮДА! ЗАНЯТО!!!"</p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Простите" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-14" probability="0.2" closable="false">
+                <p:mainText>Здесь кто-то кричал. Определённо, это был человек. Но никого нет... Жутко. </p:mainText>
+                <p:answers>
+                    <p:answer text="Жутко" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-15" probability="0.5" closable="false">
+                <p:mainText>Забавно... Тут стоит чучело животного. Вы подходите ближе... Ой, а в траве был спрятан капкан! Вы поранили ногу... Придётся заплатить за лечение, чтобы не было проблем! -2 куска золотой руды... </p:mainText>
+                <p:answers>
+                    <p:answer text="Неприятно" complete="true" >
+                        <p:pay ore_gold="2" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-16" probability="0.5" closable="false">
+                <p:mainText>Ой, да тут мартышка! Завидев вас, она начинает танцевать и кривляться. Вы с упоением смотрите на это всё... Пока не осознаёте, что её друзья-мартышки утащили у вас 1 кусок золотой руды! </p:mainText>
+                <p:answers>
+                    <p:answer text="Вы просто звери!" complete="true" >
+                        <p:pay ore_gold="1" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-17" probability="0.07" repeatable="false">
+                <p:mainText>Вы идёте на шум. Стая молодых макак-мародёров ворошит чью-то сумку! Видимо, добыча. Вы пугаете их, они убегают! Что же внутри сумки... Невероятная удача! 10 кусков золотой руды! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="10" />
+                <p:answers>
+                    <p:answer text="Хороший день!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-18" probability="0.6" closable="false">
+                <p:mainText>Эй, да тут самец гориллы хочет подраться! Вы соглашаетесь на лёгкий поединок. Эта забава даёт вам понимание, как лучше нападать на крупных противников!</p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Полезно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-18_d" probability="0.6" closable="false">
+                <p:mainText>Эй, да тут самец гориллы хочет подраться! Вы соглашаетесь на лёгкий поединок. Эта забава даёт вам понимание, как лучше защищаться от нападения крупных противников!</p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Полезно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-19" probability="0.7" closable="false">
+                <p:mainText>Тут творится такое мракобесие, что сложно описать словами... Глядя на мракобесие, вы получаете бесценный опыт в этой жизни... Да как так-то... Как так можно-то...</p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Полезно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-20" probability="0.6" closable="false">
+                <p:mainText>Вы видите коробочку, на которой написано: "Положи один кусок золотой руды и станет два!" Вы с радостью так и делаете. Но двух кусков руды нет. И не будет. Коробочка исчезает! С вашим 1 куском золотой руды. </p:mainText>
+                <p:answers>
+                    <p:answer text="Да как так-то?" complete="true" >
+                        <p:pay ore_gold="1" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Мученик  -->
+<p:place id="pi_1o_Antigua_eo_ore_martyr" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_martyr" name="Мученик" minDistanceBetweenSame="4500" minPlayerStair="40" meetProbability="15" requireGenMode="PI_1O_MANGROVE_JUNGLE,PI_1O_LEVIATHAN_GROTTO,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>А вот и ты!!! ТЫЫЫЫЫЫЫЫ!!! Я же сказал, что не отстану от тебя! Мне хватает сил, чтобы найти тебя в любом из миров! Готовься к битве!!! </p:mainText>
+                <p:answers>
+                    <p:answer text="Мученик?! В бой!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_martyr" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Мученик, уже есть его боевая карточка -->
+                    </p:answer>
+                    <p:answer text="Да не, я пойду" goto="r1" out="true" />                    
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Ахахаха, я буду наслаждаться этой победой вечно!!! Давай ещё, Хранитель, я жажду мести!</p:mainText>
+                <p:answers>
+                    <p:answer text="Снова в бой!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_martyr" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Мученик, уже есть его боевая карточка -->
+                    </p:answer>
+                    <p:answer text="Давай потом" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Мученик повержен. Интересно, как ОН оказался ЗДЕСЬ? Мистика... В любом случае, на том месте, где он был, вы находите мешочек. Что же внутри?
+                </p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Проверим!" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.4" closable="false">
+                <p:mainText>1 кусочек золотой руды! Неплохо! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Пригодится" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.2" closable="false">
+                <p:mainText>2 кусочка золотой руды! Неплохо! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="2" />
+                <p:answers>
+                    <p:answer text="Пригодится" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.9" closable="false">
+                <p:mainText>Красные кристаллы! Неплохо! </p:mainText>
+                    <p:award type="CRYSTAL" />
+                <p:answers>
+                    <p:answer text="Пригодится" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.9" closable="false">
+                <p:mainText>Синие кристаллы! Неплохо! </p:mainText>
+                    <p:award type="ELIXIR" />
+                <p:answers>
+                    <p:answer text="Пригодится" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.9" closable="false">
+                <p:mainText>Золото! Неплохо! </p:mainText>
+                    <p:award type="GOLD" />
+                <p:answers>
+                    <p:answer text="Пригодится" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-6" probability="0.5" closable="false">
+                <p:mainText>Свиток защиты! Неплохо! </p:mainText>
+                    <p:award type="CONSUMABLE" itemId="p6_d_s_2" />
+                <p:answers>
+                    <p:answer text="Пригодится" complete="true" />
+                </p:answers>
+            </p:replica>
+            </p:dialog>
+    </p:place>
+
+    <!-- Вязанка дров  -->
+<p:place id="pi_1o_Antigua_eo_ore_bundle_of_firewood" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_bundle_of_firewood" name="Вязанка дров" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_MANGROVE_JUNGLE"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Вы видите вязанку дров. Похоже, её оставили лесорубы, чтобы вечером унести в деревню. Вы решаете проверить свою силу и несколько раз поднимаете её над головой. Ваша сила растёт! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Надо подкачаться" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" closable="false">
+                <p:mainText>Вы видите вязанку дров. Похоже, её оставили лесорубы, чтобы вечером унести в деревню. </p:mainText>
+                <p:answers>
+                    <p:answer text="Пусть лежит" goto="r2" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Ягуар  -->
+<p:place id="pi_1o_Antigua_eo_ore_jaguar" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_jaguar" name="Ягуар" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_MANGROVE_JUNGLE,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Похоже, вы слишком близко подошли к ягуару! Он встаёт в боевую позу. Но вы ещё можете отойти назад и избежать его нападения! </p:mainText>
+                <p:answers>
+                    <p:answer text="Пусть нападает!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_jaguar" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Ягуар, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_jaguar_f -->
+                    </p:answer>
+                    <p:answer text="Отойти назад" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Ягуар слишком силён! Такая сила, отвага... Однажды, и это факт, в честь него назовут благородный напиток! </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_jaguar" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Ягуар повержен! Он покидает территорию. Вы получаете новые силы, сразив грациозную кошку!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Пантера  -->
+<p:place id="pi_1o_Antigua_eo_ore_panther" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_panther" name="Пантера" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_MANGROVE_JUNGLE,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Пантера смотрит на вас, а вы на неё. Похоже, такой зрительный контакт не нравится большой кошке! Ещё немного, и она набросится на вас! </p:mainText>
+                <p:answers>
+                    <p:answer text="Пусть нападает!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_panther" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пантера, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_panther_f -->
+                    </p:answer>
+                    <p:answer text="Отойти назад" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Пантера слишком сильна и полна агресии. Однажды, найдутся барды, что объединятся играть музыку, и назовутся в честь пантеры! </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_panther" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Пантера повержена! Приняв поражение, она уходит. Вы получаете новые силы, сразив грациозную кошку!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.6" closable="false">
+                <p:mainText>На месте, где стояла пантера, вы находите 5 аметистов! </p:mainText>
+                    <p:award type="SULFUR" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Зомби  -->
+<p:place id="pi_1o_Antigua_eo_ore_zombie" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_zombie" name="Зомби" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Зомби на кладбище - вы не удивлены. Но разве должны зомби бродить по земле?! Давайте упокоим его? </p:mainText>
+                <p:answers>
+                    <p:answer text="Упокоим!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_zombie" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Зомби, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_zombie_f -->
+                    </p:answer> 
+                    <p:answer text="Пусть бродит" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Зомби слишком силён. Попытаемся упокоить его ещё раз? </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_zombie" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Позже" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Зомби повержен! Его бренная плоть буквально просачивается сквозь землю - там ему и место! Вы получаете новые силы, сразив нежить!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.3" closable="false">
+                <p:mainText>На месте, где стоял зомби, вы находите 5 изумрудов! </p:mainText>
+                    <p:award type="MITHRIL" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.2" closable="false">
+                <p:mainText>За устранение зомби, высшие силы даруют вам своё благословение... Внезапно и приятно! </p:mainText>
+                    <p:award type="GOOD_POINTS" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Скелет  -->
+<p:place id="pi_1o_Antigua_eo_ore_skeleton" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_skeleton" name="Скелет" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Скелет восстал из своего ложа, чтобы бродить по кладбищу пиратов. Давайте упокоим его? </p:mainText>
+                <p:answers>
+                    <p:answer text="Упокоим!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_skeleton" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Скелет, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_skeleton_f -->
+                    </p:answer>
+                    <p:answer text="Пусть бродит" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Скелет слишком силён. Попытаемся упокоить его ещё раз? </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_skeleton" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Позже" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Скелет повержен! Его кости рассыпаются в пыль, а вы получаете новые силы, сразив нежить!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.3" closable="false">
+                <p:mainText>На месте, где стоял зомби, вы находите 1 кусочек золотой руды! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.2" closable="false">
+                <p:mainText>За устранение скелета, высшие силы даруют вам своё благословение... Внезапно и приятно! </p:mainText>
+                    <p:award type="GOOD_POINTS" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+    
+
+    <!-- Воинственная креветка  -->
+<p:place id="pi_1o_Antigua_eo_ore_warlike_shrimp" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_eo_ore_warlike_shrimp" name="Воинственная креветка" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Ого, какая огромная креветка! И она жаждет битвы! </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_warlike_shrimp" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Воинственная креветка, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_warlike_shrimp_f1 -->
+                    </p:answer>
+                    <p:answer text="Не в этот раз" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Воинственная креветка слишком сильна. Но она хочет сразиться с вами снова! </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_warlike_shrimp" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Позже" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Воинственная креветка повержена! Надо бы найти гриль поблизости... Вы получаете новые силы, сразив отважное существо!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.2" closable="false">
+                <p:mainText>За устранение воинственной креветки, высшие силы даруют вам своё благословение... Внезапно и приятно! </p:mainText>
+                    <p:award type="EVIL_POINTS" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Тритон с трезубцем  -->
+<p:place id="pi_1o_Antigua_eo_ore_newt_with_trident" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_eo_ore_newt_with_trident" name="Тритон с трезубцем" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Тритон с трезубцем показывает вам неприличные жесты! Что будем делать? </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_newt_with_trident" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Тритон с трезубцем, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_newt_with_trident_f -->
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Тритон с трезубцем слишком силён. И он продолжает показывать вам неприличные жесты! </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_newt_with_trident" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Тритон с трезубцем повержен! С чувством полного удовлетворения, теперь и вы показываете ему всякие жесты. А ещё вы получаете новые силы, сразив это существо!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.6" closable="false">
+                <p:mainText>На месте, где стоял тритон с трезубцем, вы находите 5 аметистов! </p:mainText>
+                    <p:award type="SULFUR" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.2" closable="false">
+                <p:mainText>За устранение воинственной креветки, высшие силы даруют вам своё благословение... Внезапно и приятно! </p:mainText>
+                    <p:award type="EVIL_POINTS" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Термитус  -->
+<p:place id="pi_1o_Antigua_eo_ore_termite" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_eo_ore_termite" name="Термитус" minDistanceBetweenSame="4500" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Огромный термитус вылез прямо из-под земли и готовится напасть на вас!  </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_termite" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Термитус, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_termite_f1...pi_1o_Antigua_eo_ore_termite_f3 -->
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Термитус слишком силён. Можно попробовать сразить его снова! </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_termite" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Термитус повержен! Но, наверняка, под землёй их целая колония... Вы получаете новые силы, сразив это существо!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.3" closable="false">
+                <p:mainText>На месте, где стоял термитус, вы находите 1 кусочек золотой руды! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Питон  -->
+<p:place id="pi_1o_Antigua_eo_ore_python" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_eo_ore_python" name="Питон" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Питон ждёт добычу. И тут появляетесь вы! Проверим свои силы против змеи?  </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_python" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Питон, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_python_f1...pi_1o_Antigua_eo_ore_python_f3 -->
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Питон слишком силён. Можно попробовать сразить его снова! </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_python" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Питон повержен! Вы получаете новые силы, сразив это существо!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.4" closable="false">
+                <p:mainText>На месте, где находился питон, вы находите 5 изумрудов! </p:mainText>
+                    <p:award type="MITHRIL" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Пират-беззаконник  -->
+<p:place id="pi_1o_Antigua_eo_ore_lawless_pirate" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_eo_ore_lawless_pirate" name="Пират-беззаконник" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Ахаха, мы приплыли на Антигуа с острова Беззаконния, чтобы грабить всех и вся! Итак, ты не пройдёшь дальше, пока не заплатишь мне! Кошелёк или жизнь, искатель приключений, а?  </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!" >
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_lawless_pirate" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пират-беззаконник, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_lawless_pirate_f1 -->
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="r1" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Пират-беззаконник слишком силён. Странно, но вы можете спокойно пройти дальше. Но он ведь не останет... Или они, сколько бы их ни было. </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_lawless_pirate" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Просто уйти" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Пират-беззаконник повержен! Он убегает, сверкая пятками! Вы получаете новые силы, сразив его!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Посмотрим" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Ваша атака повышается! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Ваша защита повышается! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Ваше здоровье повышается! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.5" closable="false">
+                <p:mainText>На месте, где находился пират-беззаконник, вы находите мешочек с золотом! </p:mainText>
+                    <p:award type="GOLD" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.2" closable="false">
+                <p:mainText>Похоже, сама магия острова одобряет то, что вы защищаете справедливость на Антигуа... </p:mainText>
+                    <p:award type="GOOD_POINTS" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="Отлично!" complete="true" />
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+    <!-- Шум за надгробием, ТОЛЬКО кладбище пиратов  -->
+<p:place id="pi_1o_Antigua_eo_ore_noise_behind_tombstone" animType="EMPTY" imageId="2x2" name="Шум за надгробием" mandatory="true" minDistanceBetweenSame="3500" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_PIRATES_GRAVEYARD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Вы останавливаетесь, заслышав шум за надгробием! Интересно, что там? Проверим, или не будем рисковать? Кто знает, что скрывает кладбище пиратов... </p:mainText>
+                <p:answers>
+                    <p:answer text="Проверить" gotoFromScript="random" />
+                    <p:answer text="Уйти" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Вы заглядываете за надгробие. Перед вами стоит скелет, который машет вам рукой! А затем он рассыпается в пыль. Что это было?! Но вы собираете его прах, ведь его могут купить маги-вуду! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Что это было?" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.15" closable="false">
+                <p:mainText>Упс... Похоже, вы помешали молодым! Но и они испытали конфуз... За то, что вы сохраните эту неловкость в тайне, вам дают золотую руду! На кладбище, ужас... Не боятся ли они атаки куриных зомби, например?! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Постараюсь молчать" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.6" closable="false">
+                <p:mainText>Оу, да тут рекруты магов-вуду проводят свои ритуалы... Вы просто стоите и смотрите, молча, без движения, двадцать минут. Их это напрягает, и они откупаются от вас, лишь бы вы ушли!  </p:mainText>
+                    <p:award type="MITHRIL" explicitValue="50" />
+                <p:answers>
+                    <p:answer text="Можно и побольше..." complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.8" closable="false">
+                <p:mainText>За надгробием висит в воздухе сгусток энергии. Эй, да это же магия проявляет себя! Магический фронт наделяет вас опытом!</p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Знания - сила!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.6" closable="false">
+                <p:mainText>Понятно, кто тут шумел... Мартышка пытается вынуть из надгробия блестящий камешек! она грустно смотрит на вас... Вы помогаете ей, и она счастлива! Внезапно, она протягивает вам в благодарность аметисты! </p:mainText>
+                    <p:award type="SULFUR" explicitValue="5" />
+                <p:answers>
+                    <p:answer text="И правда внезапно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-6" probability="0.5" closable="false">
+                <p:mainText>За надгробием вы видите печального призрака, он стоит над землёй и плачет. Оказывается, ему нет покоя, так как он был непрощён при жизни! Вы прощаете его. В благодарность, исчезая, он повышает ваше здоровье! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Ты прощён" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-7" probability="0.5" closable="false">
+                <p:mainText>Хэй, да тут мародёр пытается раскопать могилу! Вы прогоняете его. Внезапно, из-под земли вылезает рука скелета и протягивает вам 3 изумруда, в благодарность! </p:mainText>
+                    <p:award type="MITHRIL" explicitValue="3" />
+                <p:answers>
+                    <p:answer text="И правда внезапно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-8" probability="0.7" closable="false">
+                <p:mainText>Увы, ничего интересного... </p:mainText>
+                <p:answers>
+                    <p:answer text="Ну вот" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-9" probability="0.8" closable="false">
+                <p:mainText>Перед вами Криита, дух взросления девушек из деревни лесорубов... Она игриво смотрит на вас, а затем внезапно буквально пролетает сквозь ваше тело! Странно, но это повышает ваши силы! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="О как..." complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-10" probability="0.5" closable="false">
+                <p:mainText>Мимо вас проплывает призрак пирата, медленно, размеренно... Не глядя на вас, он делает жест рукой - в ваших карманах появился кусочек золотой руды! Призрак исчезает... </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Появись снова..." complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-11" probability="0.8" closable="false">
+                <p:mainText>Вы видите странное свечение, идущее из земли. Внезапно, из него начинают сыпаться красные кристаллы! </p:mainText>
+                    <p:award type="CRYSTAL" />
+                <p:answers>
+                    <p:answer text="Собираем" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-12" probability="0.8" closable="false">
+                <p:mainText>Вы видите странное свечение, идущее из земли. Внезапно, из него начинают сыпаться синие кристаллы! </p:mainText>
+                    <p:award type="ELIXIR" />
+                <p:answers>
+                    <p:answer text="Собираем" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-13" probability="0.8" closable="false">
+                <p:mainText>Вы видите странное свечение, идущее из земли. Внезапно, из него начинают сыпаться золото! </p:mainText>
+                    <p:award type="GOLD" />
+                <p:answers>
+                    <p:answer text="Собираем" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-14" probability="0.4" closable="false">
+                <p:mainText>Вы видите раненого стражника из города, а вокруг него - убитых зомби! Вы помогаете залечить его раны, а также даёте 1000 золотых на доктора. В благодарность, он рассказывает вам, как улучшить атаку! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Поправляйся" complete="true" >
+                        <p:pay gold="1000" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-15" probability="0.3" closable="false">
+                <p:mainText>Ой, какой милый попугай! Он изображает танец, и вы умиляетесь. Но его друзья, хитрые пернатые, окружают вас всей стаей! Вназепно они улетают. Заразы, они утащили 1 кусок золотой руды! </p:mainText>
+                <p:answers>
+                    <p:answer text="Хуже макак-мародёров!" complete="true" >
+                        <p:pay ore_gold="1" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-16" probability="0.3" closable="false">
+                <p:mainText>Перед вами - Дух Скорби. Вы увидели его - а он вас. Вы начинаете ощущать прилив грусти и безысходности... Почему-то, вы решаете откупиться, и бросаете ему 500 золота - вам становится легче! </p:mainText>
+                <p:answers>
+                    <p:answer text="Вымогатель!" complete="true" >
+                        <p:pay gold="500" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-17" probability="0.5" closable="false">
+                <p:mainText>Хм, звуки издавал крот... Он вылезает из норки, подмигивает вам, машет лапкой и исчезает в недрах земли!</p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Колдунство!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-18" probability="0.65" closable="false">
+                <p:mainText>Шум издавали страницы раскрытой книги, которые листал ветер... Вы решаетесь прочесть книгу - да это же руководство по атакующему стилю борьбы!</p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Полезно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-19" probability="0.65" closable="false">
+                <p:mainText>Шум издавали страницы раскрытой книги, которые листал ветер... Вы решаетесь прочесть книгу - да это же руководство по здоровому образу жизни!</p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Полезно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-20" probability="0.65" closable="false">
+                <p:mainText>Шум издавали страницы раскрытой книги, которые листал ветер... Вы решаетесь прочесть книгу - да это же руководство по защитному стилю борьбы!</p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Полезно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-21" probability="0.1" closable="false">
+                <p:mainText>Источник шума, внезапно - кукла-вуду, которая еле слышно гудит... Кукла-вуду ослабления - точно пригодится! </p:mainText>
+                    <p:award type="CONSUMABLE" itemId="doll_weakening" />
+                <p:answers>
+                    <p:answer text="И правда внезапно" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Подозрительный шум, ТОЛЬКО Грот Левиафана  -->
+<p:place id="pi_1o_Antigua_eo_ore_strange_noise" animType="EMPTY" imageId="2x2" name="Подозрительный шум" mandatory="true" minDistanceBetweenSame="3500" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_LEVIATHAN_GROTTO"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Вы останавливаетесь, заслышав подозрительный шум! Интересно, что это? Оглядимся, или не будем рисковать? Грот Левиафана - опасное место... </p:mainText>
+                <p:answers>
+                    <p:answer text="Проверить" gotoFromScript="random" />
+                    <p:answer text="Уйти" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.7" closable="false">
+                <p:mainText>Хэээй, да это хлюпает раскрытая устрица! Внутри вы находите жемчужину - её можно продать на рынке в городе Антигуа! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Обязательно" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.15" closable="false">
+                <p:mainText>Упс... Похоже, вы помешали молодым! Но и они испытали конфуз... За то, что вы сохраните эту неловкость в тайне, вам дают золотую руду! И чего они тут... Сыро, холодно... Своя романтика! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Постараюсь молчать" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.8" closable="false">
+                <p:mainText>Вы находите пирата, который застрял в трещине в скале! По его словам, он искал устриц с жемчугом... Вы вытаскиваете его. В благодарность, он рассказывает об искусстве обороны! </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Добро за добро" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-4" probability="0.8" closable="false">
+                <p:mainText>Вы находите пирата, который застрял в трещине в скале! По его словам, он искал устриц с жемчугом... Вы вытаскиваете его. В благодарность, он рассказывает об искусстве нападения! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Добро за добро" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-5" probability="0.8" closable="false">
+                <p:mainText>Вы находите пирата, который застрял в трещине в скале! По его словам, он искал устриц с жемчугом... Вы вытаскиваете его. В благодарность, он рассказывает о важности здорового образа жизни! </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Добро за добро" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-6" probability="0.6" closable="false">
+                <p:mainText>Шум издал лопнувший морской огурец! Вы собираете его семена, чтобы продать на рынке в городе. </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Заработаем!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-7" probability="0.4" closable="false">
+                <p:mainText>Вы идёте на шум... Да это засада! Макаки-мародёры?! Откуда они здесь, в гроте Левиафана?! Но их слишком много. Приходится откупаться, иначе побьют! Вы отдаёте им 1 кусок золотой руды... </p:mainText>
+                <p:answers>
+                    <p:answer text="Вот звери!" complete="true" >
+                        <p:pay ore_gold="1" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-8" probability="0.6" closable="false">
+                <p:mainText>Вы находите рекрута инквизиции, который выполняет важное задание. Он просит его не тревожить, но разве это вас остановит? Вы стоите рядом с ним. Молча. Недвижимо. Ему жутко, а вам весело.</p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Вот так, да" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-9" probability="0.6" closable="false">
+                <p:mainText>Похоже, вам показалось.</p:mainText>
+                <p:answers>
+                    <p:answer text="Допустимо" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-10" probability="0.5" closable="false">
+                <p:mainText>Оказывается, шум, который вас привлёк - это звук ручейка. Это мартышка.</p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Мда" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-11" probability="0.8" closable="false">
+                <p:mainText>Вы нашли тайник! Кучка красных кристаллов была прикрыта тонкой пластиной из камня, но она продавилась и громко сломалась - видимо, пробежал краб.</p:mainText>
+                    <p:award type="CRYSTAL" />
+                <p:answers>
+                    <p:answer text="Забираем" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-12" probability="0.8" closable="false">
+                <p:mainText>Вы нашли тайник! Кучка синих кристаллов была прикрыта тонкой пластиной из камня, но она продавилась и громко сломалась - видимо, пробежал краб.</p:mainText>
+                    <p:award type="ELIXIR" />
+                <p:answers>
+                    <p:answer text="Забираем" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-13" probability="0.8" closable="false">
+                <p:mainText>Вы нашли тайник! Кучка золота была прикрыта тонкой пластиной из камня, но она продавилась и громко сломалась - видимо, пробежал краб.</p:mainText>
+                    <p:award type="GOLD" />
+                <p:answers>
+                    <p:answer text="Забираем" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-14" probability="0.4" closable="false">
+                <p:mainText>Вы нашли тайник! Кучка изумрудов была прикрыта тонкой пластиной из камня, но она продавилась и громко сломалась - видимо, пробежал краб.</p:mainText>
+                    <p:award type="MITHRIL" explicitValue="6" />
+                <p:answers>
+                    <p:answer text="Забираем" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-15" probability="0.5" closable="false">
+                <p:mainText>Мммммм, да здесь вкусняшка! Ну, это не по вкусу вкусно, а по сути вкусно. </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Знать бы, что это" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-16" probability="0.55" closable="false">
+                <p:mainText>Шум издавал кусочек золотой руды, который сдвинуло сквозняком. Нельзя его здесь оставлять, верно? </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="1" />
+                <p:answers>
+                    <p:answer text="Верно!" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-17" probability="0.5" closable="false">
+                <p:mainText>Вы видите табличку: "Оставь кусок золотой руды, приходи завтра - их будет пять!" Вы понимаете, что это обман. Но вдруг нет... [Да, вы оставляете 1 кусок золотой руды. Это неизбежно.] </p:mainText>
+                <p:answers>
+                    <p:answer text="Оставим" complete="true" >
+                        <p:pay ore_gold="1" ignoreIfNotEnough="true" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-18" probability="0.6" closable="false">
+                <p:mainText>Множество мелких крабиков устроили королевскую битву! Вы с интересом наблюдаете. И запоминаете пару хитростей и приёмов! </p:mainText>
+                    <p:award type="ATTACK_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Век учись" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-19" probability="0.5" closable="false">
+                <p:mainText>Вы видите следы странного неизвестного существа. Вы уверенно предполагате, что это наполовину человек, наполовину медведь, наполовину краб. Лучше держаться от этого места подальше! </p:mainText>
+                <p:answers>
+                    <p:answer text="Жуть какая" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-20" probability="0.4" closable="false">
+                <p:mainText>Из расщелины в потолке выпало 20 изумрудов - вот и источник шума!</p:mainText>
+                    <p:award type="MITHRIL" explicitValue="20" />
+                <p:answers>
+                    <p:answer text="И изумрудов" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-21" probability="0.1" closable="false">
+                <p:mainText>Источник шума, внезапно - кукла-вуду, которая еле слышно гудит... Кукла-вуду огня - точно пригодится! </p:mainText>
+                    <p:award type="CONSUMABLE" itemId="doll_fire" />
+                <p:answers>
+                    <p:answer text="И правда внезапно" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Инквизитор  -->
+<p:place id="pi_1o_Antigua_eo_ore_inquisitor" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_inquisitor" name="Инквизитор" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Искатель приключений, я на задании. Но ты ведь не отстанешь, да... А если я покажу тебе пару приёмов по защите в бою, ты оставишь меня? </p:mainText>
+                    <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" />
+                <p:answers>
+                    <p:answer text="Показывай" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" closable="false">
+                <p:mainText>Эй, ты обеща[л|ла] оставить меня в покое! </p:mainText>
+                <p:answers>
+                    <p:answer text="Возможно." goto="r2" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Маг-вуду  -->
+<p:place id="pi_1o_Antigua_eo_ore_magevoodoo" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_magevoodoo" name="Маг-вуду" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Вака, у меня здесь дела. И я не хочу, чтобы мне мешали. Но я ощущаю, что ты не отстанешь. Что ж... Вот тебе подарок от меня. Теперь иди. </p:mainText>
+                    <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" />
+                <p:answers>
+                    <p:answer text="Приятно" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" closable="false">
+                <p:mainText>Вака, оставь меня. </p:mainText>
+                <p:answers>
+                    <p:answer text="В этот раз" goto="r2" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Странное растение  -->
+<p:place id="pi_1o_Antigua_eo_ore_strange_plant" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_strange_plant" name="Странное растение" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD,PI_1O_WAY_TO_DRUID_ALTAR"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Вы видите странное растение - оно приветливо раскрыло свои цветки перед вами. Вы наклоняетесь понюхать аромат... Но едва успеваете убрать лицо, так как внутри цветков сидит лицехват! </p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Реакция!" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" closable="false">
+                <p:mainText>Пожалуй, пусть попадаются другие. </p:mainText>
+                <p:answers>
+                    <p:answer text="Но интересно же" goto="r2" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Объявление  -->
+<p:place id="pi_1o_Antigua_eo_ore_announcement" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_announcement" name="Объявление" minDistanceBetweenSame="2500" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Вы находите объявление: "Акция в таверне! Купи миску ухи и порцию рома, и ещё раз купи! Ждём всех! Предъявителю - барабулька в подарок! Акция не распространяется на искателей приключений." </p:mainText>
+                    <p:award type="EXPERIENCE" />
+                <p:answers>
+                    <p:answer text="Да что ж вы..." />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" closable="false">
+                <p:mainText>Вы находите объявление: "Акция в таверне! Купи миску ухи и порцию рома, и ещё раз купи! Ждём всех! Предъявителю - барабулька в подарок! Акция не распространяется на искателей приключений." </p:mainText>
+                <p:answers>
+                    <p:answer text="Да что ж вы..." goto="r2" out="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <!-- Пират-игрок  -->
+<p:place id="pi_1o_Antigua_eo_ore_pirate_gamer" atlasId="pi_1o_PLACES_road_7" imageId="pi_1o_Antigua_eo_ore_pirate_gamer" name="Пират-игрок" minDistanceBetweenSame="4500" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD"> <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1" closable="false">
+                <p:mainText>Эй, эй, авантюрист, постой! Хочешь сыграть? Я загадываю цифру, от 1 до 3. Ты пытаешься с одной попытки угадать! Ставишь 1 кусок золотой руды, выиграешь - получаешь 3! </p:mainText>
+                <p:answers>
+                    <p:answer text="Давай! Вот 1 руда" goto="r2" >
+                        <p:pay ore_gold="1" />
+                    </p:answer>
+                    <p:answer text="Нет!" goto="r3" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" closable="false">
+                <p:mainText>Итак, ты да[л|ла] мне 1 кусок золотой руды! А теперь я загадываю цифру. Что я загадал? </p:mainText>
+                <p:answers>
+                    <p:answer text="Один" gotoFromScript="random" />
+                    <p:answer text="Два" gotoFromScript="random" />
+                    <p:answer text="Три" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-1" probability="0.8" closable="false">
+                <p:mainText>Оу... Я загадал другую цифру! Твоя золотая руда - теперь моя! Увидимся снова позже! </p:mainText>
+                <p:answers>
+                    <p:answer text="Это точно честно?" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-2" probability="0.8" closable="false">
+                <p:mainText>Оу... Я загадал другую цифру! Твоя золотая руда - теперь моя! Увидимся снова позже! </p:mainText>
+                <p:answers>
+                    <p:answer text="Это точно честно?" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="rand-3" probability="0.7" closable="false">
+                <p:mainText>Ого, это та самая цифра, что я загадал! Всё по-честному. Вот твои 3 куска золотой руды! </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="3" />
+                <p:answers>
+                    <p:answer text="Давай сюда" complete="true" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3" closable="false">
+                <p:mainText>Тогда увидимся в другой раз! </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" complete="true" />
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    </p:root>

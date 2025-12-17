@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПОЖАР ПИРАТ-ОТШЕЛЬНИК -->
+
+    <p:place id="pi_1o_Antigua_hp_hermit_pirate_fire" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_hp_hermit_pirate"
+             name="Пират-отшельник" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1"
+                               markerCondition="not pi_1o_quest_antigua_town_burning_water_hermit_pirate_done and not pi_1o_quest_antigua_town_burning_water_hermit_pirate_done_for_servant">
+                        <p:mainText>Не стой столбом, осьминога мне на ужин, мне нужна твоя помощь! Принеси мне ведро
+                            воды из колодца!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уже бегу!" complete="true"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate" requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" ifMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate_done">
+                        <p:mainText>Ты прин[ёс|есла] воду? Мурену мне в панталоны, теперь помоги другим!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вот вода!" complete="true"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate_done"
+                                      giveMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate_done_for_servant" requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" ifMarker="pi_1o_quest_antigua_town_burning_water_hermit_pirate_done_for_servant">
+                        <p:mainText>Ты уже прин[ёс|есла] мне воду! Давай, нужно потушить пожар как можно скорее, устрицу
+                            тебе в яичницу, помоги остальным!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уже бегу!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

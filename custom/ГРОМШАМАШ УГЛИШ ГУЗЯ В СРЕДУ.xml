@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ГРОМШАМАШ УГЛИШ ГУЗЯ В СРЕДУ -->
+
+    <p:place id="pi_1o_Antigua_lc_gromshamash_uglish_guzya_wednesday" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp"
+             imageId="pi_1o_Antigua_lc_gromshamash_uglish_guzya" name="Громшамаш Уг’лиш Гузя" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Сопит по-огрски*" delayMs="5000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Громшамаш Уг’лиш Гузя хотеть сегодня быть спокойствие. Что ты хотеть от Громшамаш
+                            Уг’лиш Гузя? Моя отдыхать и спать этот день, твоя уходить.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит"   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_go_to_ogr" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Громшамша... Грошмара... Громыш... Да как тебя... Эй, огр! У меня есть к тебе
+                            вопрос!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Что хотеть ты от Громшамаш Уг’лиш Гузя? Вопрос к Громшамаш Уг’лиш Гузя?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Скажи мне, ты работал у Корчмаря, мыл посуду, правильно? И он тебе платил?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Да, я работать на сир Корчмарь, Громшамаш Уг’лиш Гузя мыть посуда, сир Корчмарь
+                            платить Громшамаш Уг’лиш Гузя 3 камешки из золота!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Громшамаш Уг’лиш Гузя не знать, что такое камешки из золота! Громшамаш Уг’лиш Гузя
+                            их пробовать. Вкусно, хрустит! Няма-няма делать Громшамаш Уг’лиш Гузя!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Боше зелены болване кушай злоте штуки???!!! Хоббите Экля буде палка голова йок боше
+                            зелены болване! Злоте штуки - иппо для хоббите! Болване, хош боше хрен болване!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Именно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Как там тебя... Гузя Булочка, да. И ты начал воровать золотую руду у Корчмаря,
+                            верно? Чтобы... Эм... Есть её?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>БОШЕ ХРЕН БОЛВАНЕ!!! БОЛВАНЕ БУДЕ ЙОК ЕЖИ КУШАЙ ЗЛОТЕ ШТУКИ ЕЩЁ РАЗ!!!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Тише, тише. Милаха же"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>Громшамаш Уг’лиш Гузя брать камешки из золота, Громшамаш Уг’лиш Гузя никто не
+                            говорить что нельзя брать. Громшамаш Уг’лиш Гузя больше не делать так... Вот остатки
+                            камешков из золота, твоя отдать их сир Корчмарь.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="32"/>
+                        <p:answers>
+                            <p:answer text="Огр, что скажешь"
+                                      removeMarker="pi_1o_quest_someone_not_paying_02,pi_1o_quest_someone_not_paying_go_to_ogr"
+                                      giveMarker="pi_1o_quest_someone_not_paying_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

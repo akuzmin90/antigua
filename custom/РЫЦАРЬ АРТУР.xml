@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- РЫЦАРЬ АРТУР  -->
+
+    <p:place id="pi_1o_pg_knight_artur" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_knight_artur" name="Рыцарь Артур"
+             minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+             <p:markerCondition condition="pi_1o_quest_clear_love_06"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Коготь обезьяны"  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Надо подготовиться к битве" delayMs="9000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Это ты тот человек в стальном облачении и с котёнком на руках?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Милый котя"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Странно ты говоришь, искатель приключений. Как эти маги-вуду... Но да, это я. Скажи
+                            мне, что может сделать Рыцарь Чёрной Луны для тебя?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Коготь макаки"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Понимаю тебя, но он мне нужен. Я должен уничтожить Духа Скорби, такова моя миссия. А
+                            коготь даёт защиту. Но постой, может, ты мне поможешь его одолеть? И после я отдам коготь!
+                            Слово Чёрной Луны!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Заберу силой" goto="r4"/>
+                            <p:answer text="Я помогу тебе" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- Бой против рыцаря и кота  -->
+                    <p:replica id="r4">
+                        <p:mainText>Таково твоё решение? Что ж, не смею отказать, потому как без боя я не отдам коготь
+                            обезьяны!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_pg_knight_artur,pi_1o_pg_knight_artur_kitty" onWinGoTo="win1"
+                                            onLooseGoTo="loose1"/> <!--TODO бой с Рыцарем Артуром и Котейкой, боевая иконка будет называться pi_1o_pg_knight_artur_f и pi_1o_pg_knight_artur_kitty_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose1" closable="false">
+                        <p:mainText>Похоже, благородство тебе не знакомо... Коготь мой. И без боя я его не отдам.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_pg_knight_artur,pi_1o_pg_knight_artur_kitty" onWinGoTo="win1" onLooseGoTo="loose1"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win1" closable="false">
+                        <p:mainText>Что?! КАК?! Забирай этот проклятый коготь... Моя честь посрамлена... [Вы силой
+                            забираете коготь обезьяны! Можно возвращаться к Авиле. Интересно, что за Рыцари Чёрной
+                            Луны?]
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Сам напросился!" removeMarker="pi_1o_quest_clear_love_06"
+                                      giveMarker="pi_1o_quest_clear_love_07" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- Бой с рыцарем и котом против Духа Скорби, бой тройной, наших союзников бить нельзя, закрыты от ударов  -->
+                    <p:replica id="r5">
+                        <p:mainText>Спасибо за желание помочь! Сейчас я призову Духа скорби... Приготовься к бою, будем
+                            сражаться плечом к плечу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="1-beast-1" onWinGoTo="win2"
+                                            onLooseGoTo="loose2"/> <!--TODO бой с Рыцарем Артуром и Котейкой, боевая иконка будет называться pi_1o_pg_knight_artur_f и pi_1o_pg_knight_artur_kitty_f. Это наши союзники, они закрыты от наших ударов. Бой тройной. Против нас Дух скорби, боевая иконка будет называться pi_1o_pg_spirit_of_sorrow_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose2" closable="false">
+                        <p:mainText>Дух Скорби силён... Наберись сил, мы справимся! Мы должны победить его в бою!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="1-beast-1" onWinGoTo="win2" onLooseGoTo="loose2"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win2" closable="false">
+                        <p:mainText>Благодарю, искатель приключений. Коготь теперь твой. И моя благодарность в виде
+                            золотой руды. [Коготь обезьяны у вас! Можно возвращаться к Авиле. Интересно, что за Рыцари
+                            Чёрной Луны?]
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="19"/>
+                        <p:answers>
+                            <p:answer text="Ну, держитесь!" removeMarker="pi_1o_quest_clear_love_06"
+                                      giveMarker="pi_1o_quest_clear_love_07" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- todo-->
+                    <p:replica id="loose">
+                        <p:mainText>...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вернуться позже" complete="true" />
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

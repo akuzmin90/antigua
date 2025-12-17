@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАГ-ВУДУ НАСТАВНИК -->
+
+    <p:place id="pi_1o_mt_magevoodoo_mentor" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_mt_magevoodoo_mentor" name="Маг-вуду Наставник"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я - наставник каждого мага-вуду. Лишь мои испытания делают из ваки настоящего
+                            тамиби!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="mentor_mv_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_new_recruit_01 or pi_1o_quest_missionary_05 or pi_1o_quest_bleeding_wood_01 or pi_1o_quest_cure_for_snoring_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Поиск рекрута" goto="r_mentor_react1"/>
+                            <p:answer ifMarker="pi_1o_quest_missionary_05" text="Миссионера видел?"
+                                      goto="r_mentor_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_01" text="Дерево кровоточит"
+                                      goto="r_mentor_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_cure_for_snoring_01" text="Лекарство от храпа"
+                                      goto="r_mentor_react4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_mentor_react1">
+                        <p:mainText>Мы постоянно этим занимаемся. Но успеха почти не достигаем - нас боятся неразумные и
+                            глупые ваки. Поэтому найди рекрута ты. Опроси всех. Кто-то точно согласится.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_mentor_react2">
+                        <p:mainText>Видел. Вы, ваки, теряете рассудок, раз приходите к нам и заставляете нас отказаться
+                            от магии. Твой миссионер говорил с Верховным шаманом.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_mentor_react3">
+                        <p:mainText>Дерево не может кровоточить. Если бы мы такое знали, вака - поверь, тамиби уже бы
+                            изучили это.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_mentor_react4">
+                        <p:mainText>Я не занимаюсь зельями, вака. Я - Наставник. Или ты этого не видишь? Спроси кого-нибудь
+                            другого.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Новый рекрут   -->
+            <p:state ifMarker="mentor_mv_for_quests" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Послушай, вака, как ты смотришь на то, чтобы пополнить наши ряды? Я как раз в поиске
+                            нового рекрута!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет, спасибо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Жаль, я чувствую в тебе потоки магии. Впрочем, ты ведь - искатель приключений? Тогда
+                            у меня есть работа. Честное задание и честная оплата.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Найди мне нового рекрута. Ваки с этого острова относятся к нам настороженно... Ты не
+                            из нас, тебе будет проще.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кого искать?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Не знаю. Опроси всех, кого встретишь.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" giveMarker="pi_1o_new_recruit_01" complete="true">
+                                <p:createTask id="pi_1o_new_recruit" name="Новый рекрут" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Новый рекрут выбрали Хилого  -->
+            <p:state ifMarker="pi_1o_new_recruit_02_frail" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Тебе удалось найти нового рекрута? Эм... Кого? Хилый, племянник Губернатора острова?
+                            Толку от него ноль, я это вижу... Но...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Он - племянник Губернатора. Мы сможем приблизиться к своей цели, возможно. Вака, за
+                            твою помощь я повышу твои жизненные силы. Магия благодарит тебя.
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Спасибо" removeMarker="pi_1o_new_recruit_02,pi_1o_new_recruit_02_frail" complete="true">
+                                <p:addTaskProgress id="pi_1o_new_recruit"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Новый рекрут выбрали Бонеса  -->
+            <p:state ifMarker="pi_1o_new_recruit_02_bones" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Тебе удалось найти нового рекрута? Бонес, я знаю его. Ленивый вака, живущий одним
+                            днём, не признающий ничего, кроме себя... Это даже хорошо. Вот оплата за работу.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Почему хорошо?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Его эгоизм позволит держать концентрацию, ему не на что отвлекаться. Я вижу в нём
+                            потенциал. Это неплохой выбор рекрута. [+1 к репутации магов-вуду!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Спасибо" removeMarker="pi_1o_new_recruit_02,pi_1o_new_recruit_02_bones" complete="true">
+                                <p:addTaskProgress id="pi_1o_new_recruit"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Новый рекрут выбрали рекрута инквизиции  -->
+            <p:state ifMarker="pi_1o_new_recruit_02_recruit_inquisition" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Тебе удалось найти нового рекрута? Что? Глаза не обманывают меня? Тебе удалось найти
+                            рекрута прямо из стана инквизиции? Это отличные новости, вака. Я награжу тебя достойно за
+                            работу.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="11"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>У него есть боевая подготовка. Он рвётся в бой и жаждет знаний и учений. Идеальный
+                            кандидат. [+1 к репутации магов-вуду!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Спасибо" removeMarker="pi_1o_new_recruit_02,pi_1o_new_recruit_02_recruit_inquisition"
+                                      complete="true">
+                                <p:addTaskProgress id="pi_1o_new_recruit"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Это точно магия!   -->
+            <p:state ifMarker="pi_1o_quest_this_is_magik_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Маг-вуду Наставник, у меня вопрос. Я путешествую по острову, и в гроте Левиафана на
+                            меня напал огромный монстр. Мной он уже повержен, но...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5" >
+                        <p:mainText>Останови свои речи, вака! Я знаю, что чудище мертво, магия сказала мне... Но это...
+                            Твоих рук дело? Невероятно... Говоришь, монстр напал на тебя? Он должен был быть в пещере, и
+                            только.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А вот так"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Ты недоговариваешь! Возможно. То было испытние нашим молодым тамиби. Ну спасибо,
+                            полгода подготовки - вызов, поиск места, наделение монстра силами... Теперь всё заново.
+                            Уходи, вака.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="С радостью" removeMarker="pi_1o_quest_this_is_magik_03"
+                                      giveMarker="pi_1o_quest_this_is_magik_04" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

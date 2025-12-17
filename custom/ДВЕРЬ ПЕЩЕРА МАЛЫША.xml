@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ПЕЩЕРА МАЛЫША -->
+
+    <p:place id="pi_1o_Antigua_lg_door_to_tot" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_door_to_tot" name="Пещера Малыша"
+             minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_danger_road_02"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Опасная дорога"  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Так, судя по следам маленьких когтей, в эту пещеру вполне мог заползти монстр по
+                            прозвищу "Малыш". Спустимся, проверим?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Проверим!" out="true">
+                                <p:toRoad roadId="pi_1o_lg_tot_place"/>
+                            </p:answer>
+                            <p:answer text="Не сейчас" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

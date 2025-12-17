@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Д.О. МОГИЛЬНАЯ ЗЕМЛЯ -->
+
+    <!-- Квест с доски объявлений "Могильная земля"  -->
+    <p:place id="pi_1o_Antigua_quest_burial_ground_01" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_quest_burial_ground"
+             name="Могильная земля" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+        <p:markerCondition condition="pi_1o_quest_bulletin_board_burial_ground_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Вы берёте немного могильной земли. Осталось ещё 4 кучки!</p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="pi_1o_quest_bulletin_board_burial_ground_01" giveMarker="quest_burial_ground_go_to_next_01,pi_1o_quest_bulletin_board_burial_ground_01_01" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <p:place id="pi_1o_Antigua_quest_burial_ground_02" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_quest_burial_ground"
+             name="Могильная земля" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+        <p:blockingCreature probability="0"/>
+        <p:markerPrerequisites>
+            <p:marker markerText="quest_burial_ground_go_to_next_01"/>
+        </p:markerPrerequisites>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Вы берёте немного могильной земли. Осталось ещё 3 кучки!</p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="quest_burial_ground_go_to_next_01"
+                              giveMarker="quest_burial_ground_go_to_next_02" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <p:place id="pi_1o_Antigua_quest_burial_ground_03" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_quest_burial_ground"
+             name="Могильная земля" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+        <p:blockingCreature probability="0"/>
+        <p:markerPrerequisites>
+            <p:marker markerText="quest_burial_ground_go_to_next_02"/>
+        </p:markerPrerequisites>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Вы берёте немного могильной земли. Осталось ещё 2 кучки!</p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="quest_burial_ground_go_to_next_02"
+                              giveMarker="quest_burial_ground_go_to_next_03" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <p:place id="pi_1o_Antigua_quest_burial_ground_04" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_quest_burial_ground"
+             name="Могильная земля" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+        <p:blockingCreature probability="0"/>
+        <p:markerPrerequisites>
+            <p:marker markerText="quest_burial_ground_go_to_next_03"/>
+        </p:markerPrerequisites>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Вы берёте немного могильной земли. Осталось ещё 1 кучка!</p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="quest_burial_ground_go_to_next_03"
+                              giveMarker="quest_burial_ground_go_to_next_04" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+    <p:place id="pi_1o_Antigua_quest_burial_ground_05" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_Antigua_quest_burial_ground"
+             name="Могильная земля" minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="20" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+        <p:blockingCreature probability="0"/>
+        <p:markerPrerequisites>
+            <p:marker markerText="quest_burial_ground_go_to_next_04"/>
+        </p:markerPrerequisites>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>Вы собрали нужное количество могильной земли - пора возвращаться к Стефану у доски
+                    объявлений в городе Антигуа!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю"
+                              removeMarker="quest_burial_ground_go_to_next_04,pi_1o_quest_bulletin_board_burial_ground_01_01"
+                              giveMarker="pi_1o_quest_bulletin_board_burial_ground_02" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Рабочий стол  -->
+
+    <p:place id="pi_1o_home_storeceeper_pirate_table_for_work" animType="EMPTY" imageId="59x145" name="Рабочий стол" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А раньше у кладовщика был огромный рабочий стол... Но Амалии нужно много места. А у бедолаги его стало меньше... Беда не приходит одна. Вы замечаете кусок золотой руды в столе. </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="1" />
+                        <p:answers>
+                            <p:answer text="Йоси, прости..." goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Пусть кладовщик наслаждается тем, что имеет. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

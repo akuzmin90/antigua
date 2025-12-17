@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='utf-8'?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    
+
+    <p:place id="pi_1o_Antigua_lj_tmd_dead_man_chest" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_tmd_treasure_picture_cross" name="Клад мертвеца" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="10" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+        <p:markerCondition condition="pi_1o_quest_tmd_dead_man_chest_01"/>
+        <p:blockingCreature probability="0" />
+        
+        <p:dialog closable="false">
+            <p:replica id="r1">
+                <p:mainText>А вот и Клад мертвеца! Только вы выкапываете и открываете сундук, как из него выпрыгивает
+                    скелет и нападает на вас!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win" onLooseGoTo="loose" /> 
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Похоже, так просто свой клад этот скелет пирата не отдаст! Надо сразиться с ним снова!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win" onLooseGoTo="loose" />
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Отлично! Пират-скелет повержен. Настало время проверить, что в сундуке, который он охранял!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Проверим!" gotoFromScript="randomA">
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            
+            <p:replica id="randomA1" probability="0.8">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Так, смотрим далее.</p:mainText>
+                <p:award type="ELIXIR" />
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA2" probability="0.8">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Так, смотрим далее.</p:mainText>
+                <p:award type="CRYSTAL" />
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA3" probability="0.8">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Так, смотрим далее.</p:mainText>
+                <p:award type="GOLD" />
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA4" probability="0.6">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Так, смотрим далее.</p:mainText>
+                <p:award type="MITHRIL" explicitValue="150" />
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA5" probability="0.6">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Так, смотрим далее.</p:mainText>
+                <p:award type="ORE_GOLD" explicitValue="70" />
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomA6" probability="0.6">
+                <p:mainText>Так, здесь у нас ресурсы! Неплохо, неплохо. Так, смотрим далее.</p:mainText>
+                <p:award type="SULFUR" explicitValue="220" />
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomB" />
+                </p:answers>
+            </p:replica>
+
+            
+            <p:replica id="randomB1" probability="0.8">
+                <p:mainText>Неизвестная сила наполняет вас! Вы чувствуете, как ваши навыки улучшаются!</p:mainText>
+                <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" /> <!--TODO выдать дар до 5 ранга, сказал поймёшь :) я хз что в тексте написать, честно  -->
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomC" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomB2" probability="0.8">
+                <p:mainText>Амулет наги теперь у вас!</p:mainText>
+                <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" /> <!--TODO выдать амулет наги  -->
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomC" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomB3" probability="0.8">
+                <p:mainText>Неизвестная сила наполняет вас, а затем переход в опыт вашего клана!</p:mainText>
+                <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5" /> <!--TODO выдать опыт клану  -->
+                <p:answers>
+                    <p:answer text="Далее" gotoFromScript="randomC" />
+                </p:answers>
+            </p:replica>
+
+            
+            <p:replica id="randomC1" probability="0.79">
+                <p:mainText>Ого, да здесь личный опыт! Пригодится! [Клад теперь пуст. Но,
+                    наверняка, Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="ARTIFACT" itemId="s_hed_01" /> <!--TODO выдать 4.000 личного опыта  -->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC2" probability="0.73">
+                <p:mainText>Ого, да здесь ещё слот под артефакт! Пригодится! [Клад теперь пуст. Но, наверняка,
+                    Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="ARTIFACT" itemId="rok_shield_01" /> <!--TODO выдать слот под артефакт  -->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC3" probability="0.8">
+                <p:mainText>Так, да здесь ещё осталось мощное и полезное зелье! Надо поскорее забрать его. [Клад теперь
+                    пуст. Но, наверняка, Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="CONSUMABLE" itemId="p7x_koschey_3" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC4" probability="0.4">
+                <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Серебряный, между прочим! [Клад теперь пуст.
+                    Но, наверняка, Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="CUSTOM" customScript="giveSilverChest" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC5" probability="0.53">
+                <p:mainText>Так, что это у нас здесь? Бустер "Серебряный набор"! Интересно, как он вообще оказался в
+                    кладе? [Клад теперь пуст. Но, наверняка, Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="CUSTOM" customAtlas="atlas_boost" customImage="complex_big" customComment="Бустер" customScript="giveComplexSmall" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC6" probability="0.6">
+                <p:mainText>1000 билетиков в колесо фортуны! Интересно, а Пират-скелет любит его покрутить? [Клад теперь
+                    пуст. Но, наверняка, Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="TICKETS" explicitValue="1000" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC7" probability="0.1">
+                <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Лазурный, между прочим! [Клад теперь пуст.
+                    Но, наверняка, Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="CUSTOM" customScript="giveGoldChest" /> <!--TODO выдать лазурный сундучок  -->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC8" probability="0.1">
+                <p:mainText>Амулет огня! Это хорошо, такое мы одобряем. [Клад теперь пуст. Но, наверняка, Пират-скелет
+                    снова будет прятать вещи!]
+                </p:mainText>
+                <p:award type="ARTIFACT" itemId="s_fire_01" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC9" probability="0.23">
+                <p:mainText>Пиратская сила! Магия этого клада даёт вам бесплатный вход в портал на ваш выбор! [Клад
+                    теперь пуст. Но, наверняка, Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+                <p:awardChoice>
+                    <p:left type="CUSTOM" customAtlas="ap_19" customImage="waterWorld" customComment="Водный мир" customScript="giveFreeWaterPortal"  removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:left>
+                    <p:right type="CUSTOM" customAtlas="ap_19" customImage="tropics" customComment="Тропики" customScript="giveFreeTropicsPortal" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:right>
+                </p:awardChoice>
+            </p:replica>
+            <p:replica id="randomC10" probability="0.05">
+                <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! [Клад теперь пуст. Но, наверняка,
+                    Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+<!--    TODO            <p:award type="" itemId=""/> &lt;!&ndash;TODO выдать героя "Тыковка"  &ndash;&gt;-->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC11" probability="0.05">
+                <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! [Клад теперь пуст. Но, наверняка,
+                    Пират-скелет снова будет прятать вещи!]
+                </p:mainText>
+<!--    TODO            <p:award type="" itemId=""/> &lt;!&ndash;TODO выдать героя "Самовар-3000"  &ndash;&gt;-->
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC12" probability="0.57">
+                <p:mainText>3500 изумрудов! Это прекрасно. [Клад теперь пуст. Но, наверняка, Пират-скелет снова будет
+                    прятать вещи!]
+                </p:mainText>
+                <p:award type="MITHRIL" explicitValue="3500" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC13" probability="0.59">
+                <p:mainText>1000 аметистов! Это прекрасно. [Клад теперь пуст. Но, наверняка, Пират-скелет снова будет
+                    прятать вещи!]
+                </p:mainText>
+                <p:award type="SULFUR" explicitValue="1000" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC14" probability="0.59">
+                <p:mainText>250 кусков золотой руды! Это прекрасно. [Клад теперь пуст. Но, наверняка, Пират-скелет снова
+                    будет прятать вещи!]
+                </p:mainText>
+                <p:award type="ORE_GOLD" explicitValue="250" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC15" probability="0.16">
+                <p:mainText>Карта змейки! Великолепно! [Клад теперь пуст. Но, наверняка, Пират-скелет снова будет
+                    прятать вещи!]
+                </p:mainText>
+                <p:award type="CUSTOM" customAtlas="" customImage="card-snake-small" customComment="Змейка" customScript="giveSnake" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC16" probability="0.24">
+                <p:mainText>Очки ордена Тени! Интересно, а Пирату-скелету они зачем? [Клад теперь пуст. Но, наверняка, Пират-скелет снова будет прятать
+                    вещи!]
+                </p:mainText>
+                <p:award type="EVIL_POINTS" explicitValue="456" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC17" probability="0.24">
+                <p:mainText>Очки ордена Порядка! Интересно, а Пирату-скелету они зачем? [Клад теперь пуст. Но, наверняка, Пират-скелет снова будет прятать
+                    вещи!]
+                </p:mainText>
+                <p:award type="GOOD_POINTS" explicitValue="456" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+            <p:replica id="randomC18" probability="0.24">
+                <p:mainText>Кукла-вуду воскрешения! Точно пригодится, забираем! [Клад теперь пуст. Но, наверняка, Пират-скелет снова будет прятать
+                    вещи!]
+                </p:mainText>
+                <p:award type="CONSUMABLE" itemId="doll_resurrection" />
+                <p:answers>
+                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_dead_man_chest_01" requestSpecialPlaces="true" complete="true">
+                        <p:addTaskProgress id="pi_1o_quest_tmd_dead_man_chest"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+        </p:dialog>
+    </p:place>
+
+</p:root>

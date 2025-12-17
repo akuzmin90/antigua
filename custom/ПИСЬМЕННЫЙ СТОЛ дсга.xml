@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Письменный стол  -->
+
+    <p:place id="pi_1o_home_steven_table" animType="EMPTY" imageId="74x108" name="Письменный стол" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>На столе куча записей. "Мои доходы" - ха, чистый листок! "Поиск жены" - список дам и их отказов. "Сыновья Мары" - какой-то шифр... Само ваше естество предлагает совершить шалость... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Шалость!" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Вы берёте перо и максимально изрисовываете каждый лист бумаги рожицами и образами Скульд. Стивен грустно смотрит на вас, но ничего не может сделать... Ибо вы сильнее. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так получилось" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

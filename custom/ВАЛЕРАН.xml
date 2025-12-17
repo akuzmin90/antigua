@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ВАЛЕРАН  -->
+
+    <p:place id="pi_1o_it_valeran" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_it_valeran" name="Валеран" minPlayerStair="40"
+             meetProbability="0">  <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я редко бываю в лагере, моя задача - разведка местности.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="quest_pi_1o_it_valeran"/>
+                            <p:answer text="О задании" markerCondition="pi_1o_new_recruit_01" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer markerCondition="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_valeran_react1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_valeran_react1">
+                        <p:mainText>Ты же в курсе, что мы - не друзья магам-вуду? Твоё предложение оскорбительно. Больше
+                            такого не спрашивай.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Дед опять забыл выпить таблетки"   -->
+            <p:state id="quest_pi_1o_it_valeran" probabilityPercentState="15" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_quest_pi_1o_it_valeran">
+                        <p:mainText>Послушай, у меня есть работа. И мне пригодится помощь искателя приключений, чтобы не
+                            привлекать лишнего внимания.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_quest_pi_1o_it_valeran">
+                        <p:mainText>У нас есть агент в городе, Кинки. Ветеран инквизиции, ему уже под 70 лет... И у него
+                            помутнился рассудок. Если не дать ему таблетки - он сходит с ума.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Носится по городу и лагерям, орёт про свои подвиги. В общем, стандартный безумный
+                            дед. Но нам нужен осведомитель в городе! Найди его и передай таблетки, я заплачу за эту
+                            работу.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм, хорошо" giveMarker="pi_1o_quest_kinky_party_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_kinky_party" name="Дед опять забыл выпить таблетки"
+                                              count="1" mithril="150" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Дед опять забыл выпить таблетки", Кинки убежал в лагерь инквизиции   -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Кинки был здесь! Он просил денег на какую-то вечеринку! Мы пытались его скрутить, но
+                            он же ветеран, жилистый, сильный... В общем, убежал он. Куда - не знаю. Поищи по острову.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_kinky_party_05"
+                                      giveMarker="pi_1o_quest_kinky_party_06" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Дед опять забыл выпить таблетки", Кинки выпил таблетки   -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_bad" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>У тебя получилось! Кинки снова в городе, работает на нас. Феликс будет следить,
+                            чтобы он не забывал о таблетках. Думаю, это достойная награда за работу?
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="50"/>
+                        <p:answers>
+                            <p:answer text="Шикарно!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>[Инквизиция ценит вашу работу. +1 к репутации инквизиции!]</p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_INQUISITION" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Шикарно!" removeMarker="pi_1o_quest_kinky_party_bad" requestSpecialPlaces="true" complete="true" dropPlace="true">
+                                <p:addTaskProgress id="pi_1o_quest_kinky_party"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Дед опять забыл выпить таблетки", дали Кинки 1.000 золотых   -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_good" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Что ты говоришь? Кинки... Да, возможно мы его используем чересчур. Пусть он
+                            останется безумным дедом, будет нянчить внуков... А, у него нет внуков. Ладно, вот твоя
+                            награда за честную работу.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="50"/>
+                        <p:answers>
+                            <p:answer text="Шикарно!">
+                                <p:addTaskProgress id="pi_1o_quest_kinky_party"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>[Инквизиция ценит вашу работу. +1 к репутации инквизиции!]</p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_INQUISITION" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Шикарно!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Так, подожди! Совсем забыл! Кинки действительно устроил вечеринку! Невероятную
+                            вечеринку, и мы все приглашены - и ты тоже! Пойдём, как думаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Идём!" goto="r4"/>
+                            <p:answer text="Не пойду!" removeMarker="pi_1o_quest_kinky_party_good" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Эта вечеринка - странное место. Многие приличные люди, из приглашённых, уже
+                            отказались. Никто не знает, что там будет. Посещение этого места - хм... Я сам сомневаюсь,
+                            если честно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Иду!" goto="r5"/>
+                            <p:answer text="Не пойду!" removeMarker="pi_1o_quest_kinky_party_good" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ну смотри, я всё-таки предостерегу тебя. Кинки итак уже безумен в силу возраста и
+                            своей жизни... Он мог придумать ужасные вещи!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мой выбор!" removeMarker="pi_1o_quest_kinky_party_good" complete="true"
+                                      dropPlace="true">
+                                <p:toRoad roadId="pi_1o_kinky_party"/>
+                            </p:answer>
+                            <p:answer text="Не пойду!" removeMarker="pi_1o_quest_kinky_party_good" requestSpecialPlaces="true" complete="true"
+                                      dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

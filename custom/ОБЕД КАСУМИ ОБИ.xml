@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ОБЕД КАСУМИ ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_kasumi_obi_lunch" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi" name="Касуми Оби"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Живи по чести" delayMs="4000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Пожалуйста, не надо меня тревожить. Я концентрируюсь на защите лесорубов и
+                            деревни.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Книга из гробницы"   -->
+            <p:state ifMarker="pi_1o_quest_book_from_tomb_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Ты хочешь принести книгу для Беллы? Это опасно. Даже я не рискнула спуститься в ту
+                            гробницу. Я видела там монстра, похожего на человека.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Где гробница?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В мангровых джунглях. Её непросто найти. Но ты узнаешь её легко - там указано, что
+                            внутри покоится "Самый светлый ум Антигуа".
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_book_from_tomb_01"
+                                      giveMarker="pi_1o_quest_book_from_tomb_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_book_from_tomb" name="Книга из гробницы" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Книга из гробницы", получили книгу и ещё не сдали   -->
+            <p:state ifMarker="pi_1o_quest_book_from_tomb_kasumi_react" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Книга у тебя? Из той самой гробницы? Позволь мне взглянуть. [Касуми внимательно
+                            листает страницы] Ты говоришь, что это первый учёный, путешествует по времени и мирам. И
+                            книгу написала женщина. Верно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Он так сказал"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Посмотри внимательно. Автор - "Б.О.", и очень знакомая манера речи. Книга из другого
+                            времени... Которую написала Белла. Её инициалы. Её слова. Её манера речи. Она станет
+                            известным учёным.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Не говори ей. Это её судьба, пусть идёт к этому. Но я рада, что она добьётся своей
+                            цели. И ещё одно. Тобой сделана работа. У девочки нет денег, но я тебя отблагодарю за такой
+                            поступок.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="14"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_book_from_tomb_kasumi_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

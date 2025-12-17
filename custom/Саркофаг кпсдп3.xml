@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Саркофаг  -->
+
+    <p:place id="pi_1o_pg_cfp_3_sarcophagus" animType="EMPTY" imageId="256x326" name="Саркофаг" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>[Здесь покоится величайшая капитан пиратов - Красноволосая! Не гневайте её дух, иногда приходите всей командой и вспоминайте её подвиги за чаркой рома.] </p:mainText>
+                        <p:answers>
+                            <p:answer text="О как" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

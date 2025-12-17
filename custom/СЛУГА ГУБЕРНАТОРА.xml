@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СЛУГА ГУБЕРНАТОРА -->
+
+    <p:place id="pi_1o_Antigua_gp_governor_servant" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor_servant"
+             name="Слуга Губернатора" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здравствуйте, добро пожаловать на Антигуа! Если у вас есть вопросы - обратитесь к
+                            Губернатору напрямую, пожалуйста.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" giveMarker="governor_servant_for_quests" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_new_recruit_01 or pi_1o_quest_missionary_03 or pi_1o_quest_missionary_04 or pi_1o_quest_family_values_03 or pi_1o_quest_family_values_05"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_governor_servant_react1"/>
+                            <p:answer markerCondition="pi_1o_quest_missionary_03 or pi_1o_quest_missionary_04"
+                                      text="Миссионер" goto="r_governor_servant_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_family_values_03" text="Фисташки"
+                                      goto="r_governor_servant_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_family_values_05" text="Подарок маме"
+                                      goto="r_governor_servant_react4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_servant_react1">
+                        <p:mainText>Где ж ты бы[л|ла] совсем недавно, когда я искал работу... Лет шесть назад. Сейчас я
+                            работаю на Губернатора, я отсюда не уйду по доброй воле, извини.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_servant_react2">
+                        <p:mainText>Странный этот миссионер... Не записался на приём, а сразу с порога требовал
+                            аудиенции Губернатора! Мы тут таких не любим. Пусть, вон, макак в свою веру склоняет, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_servant_react3">
+                        <p:mainText>Да, фисташки. Пожалуйста, принеси их, и я всё объясню.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_governor_servant_react4">
+                        <p:mainText>Спасибо тебе, я был слепым эгоистом... Ужасный сын. Пожалуйста, передай маме мой
+                            подарок и мои слова.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Обязательно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" просим расписать Сигизмунда Оби и Авилу после диалога с губернатором   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_10" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Я всё слышал - конечно, я сделаю запись, что через 2 года у них свадьба. Пока что им
+                            по 16 лет, ещё рано. Молодые вечно торопятся.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты их знаешь?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Авилу и Сигиза? Конечно знаю, я ведь тоже... Эх, ладно, не важно. Можешь передать
+                            им, что запись сделана.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_clear_love_10"
+                                      giveMarker="pi_1o_quest_clear_love_11,pi_1o_quest_family_values_01"
+                                      requestSpecialPlaces="true"
+                                      complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Семейные ценности"  -->
+            <p:state ifMarker="pi_1o_quest_family_values_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Здравствуй, я к тебе по делу. В общем, твоя мама просила тебе передать эту корзину с
+                            провиантом. А ещё она скучает.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>ЧЕГО?! Нет-нет-нет! Никакого упоминания этой деревни и Вероны! Ни за что! Знаешь,
+                            можешь оставить эту корзину себе - устроишь прекрасный ужин. Я не хочу иметь никакого
+                            отношения к тому месту!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что случилось?" goto="r3"/>
+                            <p:answer text="Уйти и забыть" removeMarker="pi_1o_quest_family_values_02"
+                                      giveMarker="pi_1o_quest_family_values_fail" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Ты не отстанешь, да? Ох... Хорошо. Вот тебе история. Да, я родился в деревне
+                            лесорубов. Сплошные мужланы, вбившие себе в голову, что только их "работа" важна. Ты или
+                            лесоруб, или охотник, или изгой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>А я не мог работать физически! Я родился слабым, постоянно болел, я боюсь джунглей!
+                            Надо мной смеялись. И не только поэтому!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Почему ещё?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Верона. Моя мать. Нет, ну ты виде[л|ла] её??? Она бесконтрольно ест, она сильно
+                            располнела, она вечно за мной слюни утирала, даже когда я взрослый стал! Даже книги перед
+                            сном читала после того, как я вырос!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>"Сыночка-корзиночка" и "Малыш" - вот как меня дразнили. Всю жизнь! Лесорубом мне
+                            было не стать. Тогда я начал работать на складе древесины, но и там меня не считали за
+                            человека!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Почему?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Потому как любая умственная работа - это только для "элиты", семьи Оби, потомков
+                            основателя деревни. Меня с грязью мешали! Вот я и ушёл оттуда, и Губерантор оценил мой ум -
+                            вот я и здесь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но Верона..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>А что Верона?! Я стыжусь её! Даже папаша сбежал от неё на остров Эфира! И Верона как сорвалась - ест и ест, опекает меня как
+                            маленького!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А теперь послушай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Твоя мама - чудесная женщина. Да, может грубовата, как и все в той деревне. Но она
+                            любит тебя, очень сильно. Ты её ненавидишь? За что? За то, что она одна тебя растила?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ей было тяжело. Да, она нашла отдушину в еде, потому что стресс! Она усердно
+                            работала, чтобы ты был в комфорте. Она, получается, не заставляла тебя стать лесорубом или
+                            охотником! Она уважала твой выбор.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r11" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Как и уважает сейчас. Даже твои слова - читала книги перед сном даже взрослому...
+                            Чтобы ты умнее стал, а не дураком был! И ты здесь, служишь у Губернатора. Умнее всех, кто
+                            там.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r12">
+                        <p:mainText>Морской дьявол... Я об этом не думал... То есть, я презирал и избегал её, а она всё
+                            это время старалась для меня... И я не видел, как ей тяжело. Я ужасный сын.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всё исправимо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r13">
+                        <p:mainText>Да, верно, исправимо! Я возьму корзину с провиантом! Передай ей, что я тоже
+                            скучаю... Я это понял. Или постой! А могу ли я попросить тебя об услуге? Для моей мамы...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я помогу" goto="r14"/>
+                            <p:answer text="Давай сам" removeMarker="pi_1o_quest_family_values_02"
+                                      giveMarker="pi_1o_quest_family_values_almost_fail" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r14">
+                        <p:mainText>Я хочу сделать ей приятно. Да, она заложница аппетита... Но я осознал, что скучаю и
+                            люблю её. Сходи, пожалуйста, к Селезару, в лагерь инквизиции, и возьми у него фисташки.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Фисташки?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r15">
+                        <p:mainText>Да. Здесь, на Антигуа, они очень дорогие, мешочек стоит 300 кусков золотой руды! И
+                            Селезар мне должен, за услугу. Скажи ему "Сентябрь горит" - он поймёт. Возьми фисташки и
+                            вернись ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_family_values_02"
+                                      giveMarker="pi_1o_quest_family_values_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Семейные ценности" вернулись с фисташками   -->
+            <p:state ifMarker="pi_1o_quest_family_values_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Фисташки у тебя? Два мешочка? Прекрасно! Дело вот в чём... Моя мама больше всего
+                            любит фисташки... Но они очень дорогие, и ей не по карману. А я могу её порадовать - и
+                            сделаю это!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А ты молодец!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Спасибо тебе, искатель приключений, что мои глаза открылись... Передай ей фисташки
+                            от меня. Скажи ей, что я люблю её, и уважаю как маму. И я тоже скучаю. И это тебе, от меня.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="7"/>
+                        <p:answers>
+                            <p:answer text="Приятно слышать" removeMarker="pi_1o_quest_family_values_04"
+                                      giveMarker="pi_1o_quest_family_values_05" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

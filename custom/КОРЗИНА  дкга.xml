@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Корзина  -->
+
+    <p:place id="pi_1o_home_storeceeper_basket" animType="EMPTY" imageId="50x52" name="Корзина" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Пустая корзина. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не поспоришь" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- скрытая аграда реплика  -->
+            <p:state ifMarker="p1_1o_hscw_quest_inside" >
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Пустая корзина... Набить для вида... Видимо, тут тайник? Именно, под корзиной есть ниша в полу - и вы находите изумруды! </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="55" />
+                        <p:answers>
+                            <p:answer text="Приятно" complete="true" removeMarker="p1_1o_hscw_quest_inside" requestSpecialPlaces="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

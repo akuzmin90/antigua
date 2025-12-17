@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ОБЕД КИЛИАН  -->
+
+    <p:place id="pi_1o_Antigua_lc_kilian_lunch" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_kilian_big" name="Килиан"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Долорес, рука ноет..." delayMs="4000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я не против гостей, но не в обеденное время. Пожалуйста, дай нам спокойно поесть.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В этот раз" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал пока не вернули   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_03" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Верни моего сына!!!" delayMs="4000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Если бы не моя травма, я бы показал тебе, как воровать чужих детей! Верни моего
+                            сына, ты, "искатель приключений"!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Обязательно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

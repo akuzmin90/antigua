@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МОХ ДУШИ 01 -->
+
+    <p:place id="pi_1o_pg_moss_of_the_soul_01" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_moss_of_the_soul_01" name="Мох Души"
+             minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="30" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+             <p:markerCondition condition="pi_1o_quest_moss_of_the_soul_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Собрать Мох Души"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Мох Души, вот он какой... Растение действительно разумно? Битва покажет! Иначе
+                            цветок не собрать...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_pg_moss_of_the_soul_01" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Мох Души 01, боевая иконка будет называться pi_1o_pg_moss_of_the_soul_01_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Вас победило растение. Нельзя это так оставлять! По крайней мере, пока что никто про
+                            это не узнал. Может, взять палку и потренироваться на крапиве?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_pg_moss_of_the_soul_01" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Отлично! Первый Мох Души повержен. Растение позволяет вам сорвать цветок. А ещё,
+                            почему-то, протягивает вам 10 изумрудов. Из уважения, вы решаете не отказываться. ]
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Ну, держитесь!" removeMarker="pi_1o_quest_moss_of_the_soul_01" giveMarker="pi_1o_quest_moss_of_the_soul_02" complete="true"
+                                      dropPlace="true">
+                                <p:addTaskProgress id="pi_1o_quest_moss_of_the_soul"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

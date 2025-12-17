@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СИРЕНИЯ или АРТО В МОЕЙ КОМНАТЕ -->
+
+    <!--TODO Этот персонаж - полная аналогия с Лиамом или Фаиной, то есть, в указанном примере мы используем imageId="{marko}" name="{marko}, а игроку, исходя из пола его героя, выдаётся или Лиам, или Фаина. То есть, в нашем случае, с Сиренией (для мужского героя, pi_1o_amazon_sirenia) и Арто (для женского героя, pi_1o_amazon_arto), мы используем imageId="{amazon}" name="{amazon} -->
+
+    <p:place id="pi_1o_amazon_sirenia_arto_housewife" atlasId="" imageId="{amazon}" name="{amazon}" minPlayerStair="40"
+             meetProbability="0">
+
+        <p:states>
+
+            <!-- стандартный диалог -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ну что, вот и собственный дом на Антигуа... После всего, что произошло - я чувствую,
+                            как проклятье отступило. Но я - здесь, я - живу. 300 лет быть духом, чтобы снова ощутить
+                            жизнь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Теперь я свобод[на|ен] от Джими Сороки. И я буду с тобой, если ты, {playerNick}, не
+                            против. Я буду твоим личным охранителем. буду следить за комнатой, и...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="И?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Пока не важно, забудь. Время всё расставит. Лейхо и Эльза... Интересно ощутить то,
+                            что ощутили они, как думаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Попробуем" giveMarker="amazon_flirt_1" goto="r4"/> <!-- флирт -->
+                            <p:answer text="Не интересно" giveMarker="amazon_bad_1" goto="r4"/> <!-- отшивание -->
+                            <p:answer text="Почитай в книгах" giveMarker="amazon_nothing_1"
+                                      goto="r4"/> <!-- равнодушие -->
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>[Ваш ответ запомнился [Сирении|Арто] ]</p:mainText>
+                        <p:answers>
+                            <p:answer text="Вопрос..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" requireGender="male" imageId="{hero}">
+                        <p:mainText>Что с твоей рукой? Почему она... Механическая?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" requireGender="male">
+                        <p:mainText>Я плавала с Джими Сорокой, и картечью была ранена. Руку было не спасти - но с Джими
+                            Сорокой плавал кузнец. Он сделал мне идеальный протез - но это отпугивало многих...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Бедняжка..." giveMarker="amazon_flirt_2" goto="r9"/> <!-- флирт -->
+                            <p:answer text="Он ужасен" giveMarker="amazon_bad_2" goto="r9"/> <!-- отшивание -->
+                            <p:answer text="Ладно, хватит" giveMarker="amazon_nothing_2" goto="r9"/> <!-- равнодушие -->
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" requireGender="female" imageId="{hero}">
+                        <p:mainText>Почему ты стал пиратом? Для чего?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8" requireGender="female">
+                        <p:mainText>Я плавал с Джими Сорокой, кем мне было ещё стать? Я сохраняю верность Амазонии, но и
+                            романтика пиратов мне по душе. Разве я плохо выгляжу?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тебе идёт" giveMarker="amazon_flirt_2" goto="r9"/> <!-- флирт -->
+                            <p:answer text="Фу, пират" giveMarker="amazon_bad_2" goto="r9"/> <!-- отшивание -->
+                            <p:answer text="Ладно, хватит" giveMarker="amazon_nothing_2" goto="r9"/> <!-- равнодушие -->
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>[Ваш ответ запомнился [Сирении|Арто] ]</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r10">
+                        <p:mainText>Я буду сражаться с тобой, и буду приглядывать за нашей комнатой. Я всегда буду
+                            здесь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r10" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДОСКА ОБЪЯВЛЕНИЙ -->
+
+    <p:place id="pi_1o_bulletin_board" animType="EMPTY" imageId="99x134" name="Доска объявлений" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1"
+                               markerCondition="not pi_1o_quest_bulletin_board_kitty_01 and not pi_1o_quest_bulletin_board_kitty_02 and not pi_1o_quest_bulletin_board_firewood_01 and not pi_1o_quest_bulletin_board_firewood_02 and not pi_1o_quest_bulletin_board_burial_ground_01 and not pi_1o_quest_bulletin_board_burial_ground_02 and not pi_1o_quest_bulletin_board_rum_for_jack_01 and not pi_1o_quest_bulletin_board_rum_for_jack_02 and not pi_1o_quest_bulletin_board_bucket_of_water_01 and not pi_1o_quest_bulletin_board_bucket_of_water_02 and not pi_1o_quest_bulletin_board_blue_shrimp_01 and not pi_1o_quest_bulletin_board_blue_shrimp_02 and not pi_1o_quest_bulletin_board_steven_rats_01 and not pi_1o_quest_bulletin_board_steven_rats_02 and not pi_1o_quest_bulletin_board_steven_rats_03 and not pi_1o_quest_bulletin_board_steven_rats_04 and not pi_1o_quest_bulletin_board_gp_drunk_husband_01 and not pi_1o_quest_bulletin_board_gp_drunk_husband_02 and not pi_1o_quest_bulletin_board_lg_drunk_husband_01 and not pi_1o_quest_bulletin_board_lg_drunk_husband_02 and not pi_1o_quest_bulletin_board_mj_drunk_husband_01 and not pi_1o_quest_bulletin_board_mj_drunk_husband_02 and not pi_1o_quest_bulletin_board_love_letter_01 and not pi_1o_quest_bulletin_board_love_letter_02 and not pi_1o_quest_bulletin_board_bad_chiken_01 and not pi_1o_quest_bulletin_board_bad_chiken_02 and not pi_1o_quest_bulletin_board_tomb_raider_01 and not pi_1o_quest_bulletin_board_tomb_raider_02 and not pi_1o_quest_bulletin_board_sons_of_mara_01 and not pi_1o_quest_bulletin_board_sons_of_mara_02 and not pi_1o_quest_bulletin_board_washing_powder_01 and not pi_1o_quest_bulletin_board_washing_powder_02">
+                        <p:mainText>Хэй, искатель приключений! Меня зовут Стефан, и я заведую доской объявлений - жители
+                            города оставляют несложные заказы, и ты можешь их выполнить за небольшую оплату! Берёшься?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай!" gotoFromScript="random"/>
+                            <p:answer text="Нет, спасибо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2"
+                               markerCondition="pi_1o_quest_bulletin_board_kitty_01 or pi_1o_quest_bulletin_board_firewood_01 or pi_1o_quest_bulletin_board_burial_ground_01 or pi_1o_quest_bulletin_board_burial_ground_01_01 or pi_1o_quest_bulletin_board_rum_for_jack_01 or pi_1o_quest_bulletin_board_bucket_of_water_01 or pi_1o_quest_bulletin_board_blue_shrimp_01 or pi_1o_quest_bulletin_board_steven_rats_01 or pi_1o_quest_bulletin_board_steven_rats_02 or pi_1o_quest_bulletin_board_gp_drunk_husband_01 or pi_1o_quest_bulletin_board_lg_drunk_husband_01 or pi_1o_quest_bulletin_board_mj_drunk_husband_01 or pi_1o_quest_bulletin_board_love_letter_01 or pi_1o_quest_bulletin_board_bad_chiken_01 or pi_1o_quest_bulletin_board_tomb_raider_01 or pi_1o_quest_bulletin_board_sons_of_mara_01 or pi_1o_quest_bulletin_board_washing_powder_01">
+                        <p:mainText>У тебя уже есть работа, вначале выполни её, а потом уже я выдам тебе новый заказ!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    
+                    <!-- выдача награды Котёнок  -->
+                    <p:replica id="awards_for_player_01" ifMarker="pi_1o_quest_bulletin_board_kitty_02">
+                        <p:mainText>Вот какой шалопай, вечно этот котёнок убегает в мангровые джунгли! Видимо, природа
+                            зовёт его. Итак, котёнка я сам отнесу, а ты выбирай награду!
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_kitty_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_kitty"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_kitty_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_kitty"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды Вязанка дров для Хилого  -->
+                    <p:replica id="awards_for_player_02" ifMarker="pi_1o_quest_bulletin_board_firewood_02">
+                        <p:mainText>Хилый частенько заказывает дрова. Хотя мог бы один раз купить красную древесину...
+                            Но его дело. Итак, дрова я сам отнесу, а ты выбирай награду!
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_firewood_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_firewood"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_firewood_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_firewood"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды Могильная земля  -->
+                    <p:replica id="awards_for_player_03" ifMarker="pi_1o_quest_bulletin_board_burial_ground_02">
+                        <p:mainText>Маги-вуду часто проводят эксерименты с подобными вещами. Итак, могильную землю я сам
+                            отнесу, а ты выбирай награду!
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_burial_ground_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_burial_ground"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_burial_ground_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_burial_ground"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды Ром для Джека  -->
+                    <p:replica id="awards_for_player_04" ifMarker="pi_1o_quest_bulletin_board_rum_for_jack_02">
+                        <p:mainText>Ром доставлен? Отлично, это было несложно, правда? Выбирай награду!</p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_rum_for_jack_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_rum_for_jack"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_rum_for_jack_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_rum_for_jack"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды Ведро воды  -->
+                    <p:replica id="awards_for_player_05" ifMarker="pi_1o_quest_bulletin_board_bucket_of_water_02">
+                        <p:mainText>Ведро воды у тебя? Отлично, я сам ей отнесу его. Выбирай награду! Только в этот раз,
+                            вдова дала для оплаты не золотую руду, а аметисты.
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="SULFUR" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_bucket_of_water_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_bucket_of_water"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_bucket_of_water_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_bucket_of_water"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды Синяя креветка  -->
+                    <p:replica id="awards_for_player_06" ifMarker="pi_1o_quest_bulletin_board_blue_shrimp_02">
+                        <p:mainText>Синяя креветка у тебя? Я лично отнесу её Губернатору, а ты выбирай награду!
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_blue_shrimp_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_blue_shrimp"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_blue_shrimp_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_blue_shrimp"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды Крысы Стивена  -->
+                    <p:replica id="awards_for_player_07"
+                               markerCondition="pi_1o_quest_bulletin_board_steven_rats_03 and pi_1o_quest_bulletin_board_steven_rats_04">
+                        <p:mainText>Крыс больше нет? Ха, они снова появятся! Как будто специально. У Стивена нечем
+                            платить, как обычно... Так что сейчас - из моего кармана, выбирай награду!
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_steven_rats_03,pi_1o_quest_bulletin_board_steven_rats_04">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_steven_rats"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_steven_rats_03,pi_1o_quest_bulletin_board_steven_rats_04">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_steven_rats"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Муж загулял", кладбище пиратов  -->
+                    <p:replica id="awards_for_player_08" ifMarker="pi_1o_quest_bulletin_board_gp_drunk_husband_02">
+                        <p:mainText>Муж уважаемой дамы уже вернулся домой, а ты выбирай награду!</p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_gp_drunk_husband_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_gp_drunk_husband"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_gp_drunk_husband_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_gp_drunk_husband"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Муж загулял", грот левиафана  -->
+                    <p:replica id="awards_for_player_09" ifMarker="pi_1o_quest_bulletin_board_lg_drunk_husband_02">
+                        <p:mainText>Муж уважаемой дамы уже вернулся домой, а ты выбирай награду!</p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_lg_drunk_husband_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_lg_drunk_husband"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_lg_drunk_husband_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_lg_drunk_husband"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Муж загулял", мангровые джунгли  -->
+                    <p:replica id="awards_for_player_10" ifMarker="pi_1o_quest_bulletin_board_mj_drunk_husband_02">
+                        <p:mainText>Муж уважаемой дамы уже вернулся домой, а ты выбирай награду!</p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_mj_drunk_husband_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_mj_drunk_husband"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_mj_drunk_husband_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_mj_drunk_husband"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Любовное письмо"  -->
+                    <p:replica id="awards_for_player_11" ifMarker="pi_1o_quest_bulletin_board_love_letter_02">
+                        <p:mainText>Письмо передано, а ты выбирай награду!</p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_love_letter_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_love_letter"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_love_letter_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_love_letter"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Агрессивная курица"  -->
+                    <p:replica id="awards_for_player_12" ifMarker="pi_1o_quest_bulletin_board_bad_chiken_02">
+                        <p:mainText>Агрессивная курица повержена, а ты выбирай награду!</p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_bad_chiken_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_bad_chiken"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_bad_chiken_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_bad_chiken"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Сбежавший мародёр"  -->
+                    <p:replica id="awards_for_player_13" ifMarker="pi_1o_quest_bulletin_board_tomb_raider_02">
+                        <p:mainText>Мародёр пойман и доставлен в тюрьму снова, а ты выбирай награду!</p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_tomb_raider_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_tomb_raider"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_tomb_raider_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_tomb_raider"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Приватная встреча"  -->
+                    <p:replica id="awards_for_player_14" ifMarker="pi_1o_quest_bulletin_board_sons_of_mara_02">
+                        <p:mainText>Не расскажешь, что это была за встреча? Сыновья Мары? Никогда о таких не слышал...
+                            Главное, ты жи[в|ва]! Так что, выбирай награду!
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_sons_of_mara_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_sons_of_mara"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_sons_of_mara_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_sons_of_mara"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача награды "Стиральный порошок"  -->
+                    <p:replica id="awards_for_player_15" ifMarker="pi_1o_quest_bulletin_board_washing_powder_02">
+                        <p:mainText>Стиральный порошок у Мартины? Отлично! Она очень часто заказывает его - видимо,
+                            стирки у лесорубов очень много, ахаха! Выбирай награду!
+                        </p:mainText>
+                        <p:awardChoice>
+                            <p:left type="ORE_GOLD" explicitValue="1" complete="true" requestSpecialPlaces="true"
+                                    removeMarker="pi_1o_quest_bulletin_board_washing_powder_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_washing_powder"/>
+                            </p:left>
+                            <p:right type="MITHRIL" explicitValue="4" complete="true" requestSpecialPlaces="true"
+                                     removeMarker="pi_1o_quest_bulletin_board_washing_powder_02">
+                                <p:addTaskProgress id="pi_1o_quest_bulletin_board_washing_powder"/>
+                            </p:right>
+                        </p:awardChoice>
+                    </p:replica>
+
+                    <!-- выдача квеста  -->
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>У дочки трактирщика опять убежал котёнок, в сторону мангровых джунглей... Как
+                            найдёшь, возвращайся ко мне - я сам отнесу его, и заодно выдам награду!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_kitty_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_kitty" name="Убежавший котенок" count="1"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8">
+                        <p:mainText>Хилый заказал вязанку дров из деревни лесорубов - всё уже оплачено, нужно просто
+                            сходить к Виктору Оби и забрать дрова.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_firewood_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_firewood" name="Вязанка дров для Хилого"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8">
+                        <p:mainText>Маг-вуду Нестор заказал 5 кучек могильной земли с кладбища пиратов. Принеси их мне,
+                            дальше я сам разберусь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_burial_ground_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_burial_ground" name="Могильная земля"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.8">
+                        <p:mainText>Нужно доставить несколько бутылок рома для старины Джека, на маяк Джека. Сделаешь -
+                            сразу возвращайся за оплатой!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_rum_for_jack_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_rum_for_jack" name="Ром для Джека"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-5" probability="0.8">
+                        <p:mainText>Местная вдова, которой за 70 лет, попросила принести ей ведро воды - годы не те,
+                            тяжести нельзя носить. Принеси ведро воды из колодца здесь, в городе, мне, дальше я сам
+                            разберусь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_bucket_of_water_01"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_bucket_of_water" name="Ведро воды"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-6" probability="0.8">
+                        <p:mainText>Губернатор дал заказ на поиск синей креветки - их можно найти в небольших лужах, в
+                            гроте Левиафана. Жду тебя с синей креветкой!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_blue_shrimp_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_blue_shrimp" name="Синяя креветка"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-7" probability="0.8">
+                        <p:mainText>В который раз в доме Стивена появляются две крысы. Надо их снова прогнать - после
+                            возвращайся ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!"
+                                      giveMarker="pi_1o_quest_bulletin_board_steven_rats_01,pi_1o_quest_bulletin_board_steven_rats_02"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_steven_rats" name="Крысы Стивена" count="1"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-8" probability="0.8">
+                        <p:mainText>У одной уважаемой дамы муж слишком сильно загулял в таверне, и вчера ночью ушёл
+                            бродить в сторону кладбища пиратов. Найди его, верни его и возвращайся ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_gp_drunk_husband_01"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_gp_drunk_husband" name="Муж загулял"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-9" probability="0.8">
+                        <p:mainText>У одной уважаемой дамы муж слишком сильно загулял в таверне, и вчера ночью ушёл
+                            бродить в сторону грота Левиафана. Найди его, верни его и возвращайся ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_lg_drunk_husband_01"
+                                       requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_lg_drunk_husband" name="Муж загулял"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-10" probability="0.8">
+                        <p:mainText>У одной уважаемой дамы муж слишком сильно загулял в таверне, и вчера ночью ушёл
+                            бродить в сторону мангровых джунглей. Найди его, верни его и возвращайся ко мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_mj_drunk_husband_01"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_mj_drunk_husband" name="Муж загулял"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-11" probability="0.8">
+                        <p:mainText>Одна девушка, пожелавшая остаться анонимной - это официантка из таверны, к слову -
+                            попросила передать это письмо для Селезара в лагерь инквизиции. Можешь не читать - там
+                            ничего интересного, у них любовь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_love_letter_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_love_letter" name="Любовное письмо"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-12" probability="0.8">
+                        <p:mainText>На первый уровень золотой шахты дети снова запустили агрессивную курицу, прогони её!
+                            И возвращайся за наградой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_bad_chiken_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_bad_chiken" name="Агрессивная курица"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-13" probability="0.8">
+                        <p:mainText>Из тюрьмы опять сбежал Лар, мародёр, расхититель гробниц. Поймай его на кладбище
+                            пиратов и отправь в тюрьму - и возвращайся за наградой. Задание от самого Губернатора!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_tomb_raider_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_tomb_raider" name="Сбежавший мародер"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-14" ifMarker="pi_1o_sons_of_mara" probability="0.8">
+                        <p:mainText>Эй, а тут персонально для тебя задание... Тебя ждут в гроте Левиафана. Не знаю, что
+                            это, но будь осторожнее.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_sons_of_mara_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_sons_of_mara" name="Приватная встреча"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-15" probability="0.8">
+                        <p:mainText>Что тут у нас... "Больше черепов для трона черепов!" Ой, не то! "Больше стирального
+                            порошка для стирки"! Мартина, прачка из деревни лесорубов, ей нужно отнести ещё больше
+                            стирального порошка.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделаем!" giveMarker="pi_1o_quest_bulletin_board_washing_powder_01"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_bulletin_board_washing_powder" name="Стиральный порошок"
+                                              count="1" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

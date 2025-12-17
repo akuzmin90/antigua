@@ -1,0 +1,608 @@
+{
+	"textures": [
+		{
+			"image": "pi_1o_heroes_ob_fight_art",
+			"format": "RGBA8888",
+			"size": {
+				"w": 990,
+				"h": 462
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "pi_1o_Antigua_mj_weaver_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_eo_ore_martyr_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 1,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_eo_ore_newt_with_trident_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 1,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_eo_ore_panther_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 100,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_gm_goldeater_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 100,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_gp_ghost_in_chapel_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 100,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_lc_hundred_eyed_spirit_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 199,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_lg_child_leviathan_treasure_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 199,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_lj_gorgon_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 199,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_mj_living_dead_gorilla_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 298,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_mj_lost_criita_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 298,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_mj_scorpio_man_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 298,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_tot_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 397,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_wtda_boss_monday_2_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 397,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_Antigua_ob_wtda_boss_tuesday_1_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 397,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_hp_ancient_turtle_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 496,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_hp_nessi_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 496,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_hs_embodiment_of_chthon_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 496,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_mj_kc_kasumi_clons_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 595,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_mj_tnd_ghoul_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 595,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_mj_twb_first_scientist_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 595,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_pg_captain_obi_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 694,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_pg_chupacabra_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 793,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_pg_knight_artur_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 892,
+						"y": 1,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_pg_knight_artur_kitty_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 694,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_pg_moss_of_the_soul_01_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 694,
+						"y": 309,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_pg_spirit_of_sorrow_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 793,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				},
+				{
+					"filename": "pi_1o_ob_redhead_ghost_f",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 153
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 97,
+						"h": 152
+					},
+					"frame": {
+						"x": 892,
+						"y": 155,
+						"w": 97,
+						"h": 152
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:9344cfac418a333fd1732861566f1ac3:f9ffc57725d9e01b03a00bfc1a6a3ba0:ac11fd1ada3c4815387a9b3c3f873b2b$"
+	}
+}

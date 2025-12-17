@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- БОНЕС  -->
+
+    <p:place id="pi_1o_sp_bones" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_sp_bones" name="Бонес" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я занят! Не мешай мне отлынивать от работы!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="bones_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02 or pi_big_rat_voodoo_done_bones or pi_1o_frail_treasure_01 or pi_1o_quest_seraphim_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer markerCondition="pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02"
+                                      text="Огромная крыса" goto="r_bones_react1"/>
+                            <p:answer ifMarker="pi_big_rat_voodoo_done_bones" text="Крыса убита" goto="r_bones_react2"/>
+                            <p:answer ifMarker="pi_1o_frail_treasure_01" text="Хилый заходил?" goto="r_bones_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_seraphim_01" text="Серафим" goto="r_bones_react4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_bones_react1">
+                        <p:mainText>Чегооооо?! Точно?! Раздери меня каракатица, Огромная Крыса, там, в Пещере-складе?!
+                            Пожалуй, я тут побуду пока что.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_bones_react2">
+                        <p:mainText>Ох, спасибо тебе, надеюсь, второй такой там больше нет. Ещё и убирать её теперь...
+                            Эх, будет сегодня рагу! Заходи, если время будет, мясо жестковатое, но сочное!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не-не-не-не!" removeMarker="pi_big_rat_voodoo_done_bones" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_bones_react3">
+                        <p:mainText>Не видел вообще никогда, чтобы он сюда приходил. К чему такой вопрос?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Забудь" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_bones_react4">
+                        <p:mainText>Раздери меня сирена, ты тоже это видишь?! Все это видят, и никто ничего не
+                            делает!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я победю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Новый рекрут"   -->
+            <p:state ifMarker="pi_1o_new_recruit_01" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Ты предлагаешь мне стать рекрутом магов-вуду? А знаешь, была не была... Надоела мне
+                            эта Сахарная Плантация! Как раб на галере... А так, хоть в люди выбьюсь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно, давай" goto="r2_d"/>
+                            <p:answer text="Подожди" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Даже не знаю, радоваться ли... Слушай, пока что я останусь здесь, хорошо? Я могу к
+                            ним приходить ночью и учиться, чтобы никто не видел. Пусть это останется нашим секретом.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как скажешь" removeMarker="pi_1o_new_recruit_01"
+                                      giveMarker="pi_1o_new_recruit_02,pi_1o_new_recruit_02_bones,bones_magevoodoo" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

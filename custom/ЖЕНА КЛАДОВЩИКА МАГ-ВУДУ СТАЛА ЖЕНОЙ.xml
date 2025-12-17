@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕНА КЛАДОВЩИКА МАГ-ВУДУ СТАЛА ЖЕНОЙ -->
+
+    <p:place id="pi_1o_wifemagevoodoo_wife" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_wifemagevoodoo" name="Чака" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>{playerNick}! Я поверила тебе - и вака оказался честным. Йоси, конечно, не пропитан
+                            магией. Но я помогу ему в этом. Он будет соответствовать мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Счастья вам"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Внезапно для себя, я скажу тебе "Спасибо". Это высшая честь для ваки от мага-вуду. И
+                            вот небольшой подарок от меня. Вы же, вака, любите золото.
+                        </p:mainText>
+                        <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_1o_townAntigua_storeceeper_husband_2"
+                                      goto="completed" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="completed">
+                        <p:mainText>Йоси - хороший вака. И ради меня он станет магом-вуду в будущем.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

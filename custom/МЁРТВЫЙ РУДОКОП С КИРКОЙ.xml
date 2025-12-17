@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МЁРТВЫЙ РУДОКОП С КИРКОЙ -->
+
+    <p:place id="pi_1o_Antigua_gm_dead_miner" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gm_dead_miner"
+             name="Мёртвый рудокоп с киркой" mandatory="true" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+            <!-- квест Ночные стражники ищем кирку -->
+            <!--TODO ВАЖНО: в этом стейте генерируются монстры, аналогия – локация пещеры с собачкой -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" prerequisiteScript="contextHaveEnemies" closable="false" resetMeet="true">
+                        <p:mainText>
+                            Вы замечаете бедолагу, которого разодрали местные монстры... Но у него есть кирка! Просто
+                            взять её не получится — придётся сразить всех!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" closable="false">
+                        <p:mainText>
+                            Монстры повержены. Немного выдохнув, вы подходите к бедолаге и забираете его кирку.
+                            А также получаете +1 к общей репутации за то, что вы не побоялись монстров в золотой шахте!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Отлично!"
+                                      removeMarker="pi_new_guards_go_buy_pickaxe"
+                                      giveMarker="pi_1o_pickaxe_done">
+                                <p:restoreContext onlyToMain="false"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+        </p:states>
+    </p:place>
+</p:root>

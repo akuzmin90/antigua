@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Маг-вуду Ворон -->
+
+    <p:place id="pi_1o_mt_magevoodoo_npc_2" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_mt_magevoodoo_npc_2" name="Маг-вуду Ворон" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Вака так и лезут к нам..." delayMs="6000"/>
+                    <p:talk text="Я могу обратиться вороном" delayMs="16000"/>
+                    <p:talk text="Не делай резких движений" delayMs="21000"/>
+                    <p:talk text="Вака, вака, черепака... Ха!" delayMs="36000"/>
+                    <p:talk text="Ты чего-то хочешь..." delayMs="51000"/>
+                    <p:talk text="Магия - истинное знание" delayMs="66000"/>
+                    <p:talk text="Вчера попробовал безе" delayMs="81000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вака в последнее время зачастили... Но тамиби открыты для непосвящённых. Если зайдёшь в мой дом - ничего не трогай. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я подумаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

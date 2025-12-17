@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАНИЦА 05 -->
+
+    <p:place id="pi_1o_Antigua_lost_memories_05" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lost_memories_01" name="Страница 05"
+             minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="5" requireGenMode="PI_1O_MANGROVE_JUNGLE,PI_1O_PIRATES_GRAVEYARD">
+        <p:markerCondition condition="pi_1o_quest_lost_memories_04"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А вот и пятая страница, вырванная из дневника! Хм, прочитаем...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Естественно, я дал Эльзе свободу. Вдвоём, никому не нужные... Мы нашли себя друг в
+                            друге. Без крыши над головой, без денег... Мы выживали ради нашей любви! Она дала мне смысл,
+                            даже когда мир против тебя..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"Трактирщик устроил нас к себе на работу, дав комнату - хотя бы с жильём вопрос был
+                            решён. Но Эльза, моя милая Эльза, достойна лучшей жизни! Я крутился, как белка в колесе..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Похоже, что это лишь одна из нескольких страниц дневника некоего парня. Интересно,
+                            что же стало дальше?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_lost_memories_04"
+                                      giveMarker="pi_1o_quest_lost_memories_05,pi_1o_quest_lost_memories_hint_05"
+                                      complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

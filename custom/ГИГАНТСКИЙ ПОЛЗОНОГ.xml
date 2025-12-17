@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ГИГАНТСКИЙ ПОЛЗОНОГ  -->
+
+    <p:place id="pi_1o_Antigua_lj_giant_creep" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lj_giant_creep"
+             name="Гигантский Ползоног" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- появляется по квесту "Испытание куклы-вуду"  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Неужели это существо призвано магией вуду? Выглядит устрашающе... Надо не забыть
+                            применить куклу-вуду ярости в начале боя, иначе ЭТО будет неуязвимым!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_giant_creep" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Гигантский Ползоног, боевая иконка будет называться pi_1o_Antigua_lj_giant_creep_f, это босс --> <!--TODO Пока игрок не использует itemId="doll_carnage" в бою, этот босс вообще неуязвим, то есть применение этой куклы-вуду снимает неуязвимость с босса. ЕСЛИ игрок применил этот расходник в этом бою, нужно выдать ему маркер giveMarker="voodoo_magic_doll_power_used_giant_creep", то есть хоть при каждом поражении или при победе -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Сейчас он сильнее...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lj_giant_creep" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Гигантский Ползоног повержен - действительно, магия вуду может творить чудеса!
+                            Интереснее не то, что кукла-вуду даёт огромную мощь... Магия вуду может давать
+                            неуязвимость?! Надо вернуться к Нестору - заодно спросим.
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_quest_try_voodoo_doll_02"
+                                      giveMarker="pi_1o_quest_try_voodoo_doll_03,pi_1o_quest_try_voodoo_doll_04" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

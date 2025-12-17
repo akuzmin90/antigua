@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ПУТЕВОЙ ЗНАК -->
+
+    <p:place id="pi_1o_Antigua_sign_way_to_city_endless_road_lj_camp" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_sign_way_to_city" name="Путевой знак" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="2200" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Путевой знак... Он поможет вам мгновенно вернуться в деревню Лесорубов!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Применить" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp"/>
+                            </p:answer>
+                            <p:answer text="Не сейчас" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+        </p:states>
+
+    </p:place>
+
+</p:root>

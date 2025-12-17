@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Мусор  -->
+
+    <p:place id="pi_1o_mt_hotreaper_garbage" animType="EMPTY" imageId="169x172" name="Мусор" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" >
+                        <p:mainText>Куча мусора навалена весьма неэстетично. Среди хлама вы обнаруживаете скомканные записи... Прочитаем, что там? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да!" goto="r2" />
+                            <p:answer text="Нет" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" >
+                        <p:mainText>"День 2. Я слышу голос овощей! Вчера я думал, что мне показалось. Магический фронт не мог такое совершить. Но я снова и снова слышу голос овощей!" </p:mainText>
+                        <p:answers>
+                            <p:answer text="Чего?" goto="r3" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" >
+                        <p:mainText>"День 4. Кабачок пытается заставить меня сжечь идола при входе в наш лагерь. Сельдерей безостановочно шепчет о том, что я должен расправиться с тамиби..." </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм..." goto="r4" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" >
+                        <p:mainText>"День 7. Овощи - воины тьмы! Я слышу их страшный зов, они идут за мной! Щавель хочет отобрать мою магию. Но выход есть... Я снова и снова слышу голос овощей..." </p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет слов" goto="r5" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" >
+                        <p:mainText>"День 8. Я принёс огромный камень и придавил им овощи. Их зов пропал, мой разум чист. Но они ещё живы, тьма их поглотила. А хотел поглотить я на ужин. Главное, не трогать камень." </p:mainText>
+                        <p:answers>
+                            <p:answer text="Безудержное веселье!" goto="r6" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" >
+                        <p:mainText>Куча мусора. На этом достаточно, кто знает, что там ещё может быть... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r6" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

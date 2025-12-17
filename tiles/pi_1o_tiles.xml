@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.hitmakers.com/aof/tiles"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.hitmakers.com/aof/tiles ../xsd/tiles.xsd">
+
+    <tile id="pi_1o_townAntigua" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_town_burning" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_governor_palace_town_burning" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_tavern" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_strange_basement" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_home_frail" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_home_steven" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_sc_default" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_sc_pirate" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_sc_magevoodoo_home" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_sc_ugabuga_home" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_sc_ghost_home" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_governor_palace" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_my_room" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_townAntigua_governor_palace_compass" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_magevoodoo_town" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mt_road_house_of_the_reaper" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mt_road_house_of_the_raven" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mt_road_house_of_the_blashyrkh" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mt_road_house_of_the_mentor" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_inquisition_town" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_it_road_tent_head_of_inquisition" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_it_road_tent_dorian" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_it_road_tent_armory" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_it_road_tent_cannon_room" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_pg_deep_grave_road" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_pg_crypt_for_player_1" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_pg_crypt_for_player_2" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_pg_crypt_for_player_3" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_sugar_plantation" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_sugar_plantation_warehouse" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_golden_mine_1_lvl" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_golden_mine_2_lvl" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_hermit_pirate" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lighthouse_jack" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lg_maurizio_place" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lg_tot_place" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_druid_altar" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_bad_guys_factory" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_kinky_party" length="3014">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_hitmakers_team" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lumberjack_camp" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lumberjack_camp_tavern" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lumberjack_camp_martin_house" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lumberjack_camp_olaf_house" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lumberjack_camp_kilian_house" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lumberjack_camp_obi_house" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_lumberjack_camp_chapel" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mj_tomb_nameless_druid" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mj_tomb_kasumi_clons" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mj_kindergarten_inside" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_mj_tomb_with_book" length="1507">
+        <dots>
+            <group name="SMALL" />
+        </dots>
+    </tile>
+
+    <tile id="pi_1o_pirates_graveyard" length="1507">
+    <dots>
+        <group name="SMALL">
+            <dot x="190" y="26"/>
+            <dot x="202" y="325"/>
+            <dot x="207" y="377"/>
+            <dot x="190" y="429"/>
+            <dot x="173" y="481"/>
+            <dot x="190" y="529"/>
+            <dot x="416" y="429"/>
+            <dot x="432" y="387"/>
+            <dot x="416" y="351"/>
+            <dot x="440" y="78"/>
+            <dot x="432" y="765"/>
+            <dot x="422" y="817"/>
+            <dot x="456" y="1039"/>
+            <dot x="422" y="1079"/>
+            <dot x="432" y="1280"/>
+            <dot x="422" y="1326"/>
+            <dot x="474" y="1325"/>
+            <dot x="166" y="1481"/>
+            <dot x="173" y="1228"/>
+            <dot x="570" y="1341"/>
+            <dot x="17" y="1079"/>
+        </group>
+        <group name="GUARDED">
+            <dot x="101" y="351"/>
+            <dot x="536" y="315"/>
+            <dot x="449" y="206"/>
+            <dot x="190" y="206"/>
+            <dot x="151" y="637"/>
+            <dot x="523" y="690"/>
+            <dot x="449" y="530"/>
+            <dot x="65" y="493"/>
+            <dot x="116" y="1128"/>
+            <dot x="473" y="944"/>
+            <dot x="151" y="991"/>
+            <dot x="449" y="1176"/>
+            <dot x="486" y="1424"/>
+            <dot x="151" y="1352"/>
+        </group>
+        <group name="BIG"/>
+        <group name="WATER_SMALL"/>
+        <group name="WATER_BIG"/>
+        <group name="WATER_GUARDED"/>
+        <group name="WATER_SMALL_GUARDED"/>
+        <group name="WATER_BIG_GUARDED"/>
+    </dots>
+</tile>
+
+<tile id="pi_1o_mangrove_jungle" length="1507">
+    <dots>
+        <group name="SMALL">
+            <dot x="402" y="41"/>
+            <dot x="410" y="215"/>
+            <dot x="421" y="260"/>
+            <dot x="207" y="126"/>
+            <dot x="215" y="163"/>
+            <dot x="181" y="373"/>
+            <dot x="436" y="414"/>
+            <dot x="421" y="539"/>
+            <dot x="164" y="607"/>
+            <dot x="181" y="651"/>
+            <dot x="131" y="922"/>
+            <dot x="419" y="860"/>
+            <dot x="578" y="948"/>
+            <dot x="578" y="1000"/>
+            <dot x="421" y="1136"/>
+            <dot x="402" y="1181"/>
+            <dot x="164" y="1200"/>
+            <dot x="410" y="1226"/>
+            <dot x="164" y="1377"/>
+        </group>
+        <group name="GUARDED">
+            <dot x="486" y="985"/>
+            <dot x="114" y="784"/>
+            <dot x="114" y="1048"/>
+            <dot x="114" y="1289"/>
+            <dot x="436" y="1329"/>
+            <dot x="454" y="644"/>
+            <dot x="164" y="278"/>
+            <dot x="104" y="153"/>
+            <dot x="123" y="477"/>
+        </group>
+        <group name="BIG"/>
+        <group name="WATER_SMALL"/>
+        <group name="WATER_BIG"/>
+        <group name="WATER_GUARDED"/>
+        <group name="WATER_SMALL_GUARDED"/>
+        <group name="WATER_BIG_GUARDED"/>
+    </dots>
+</tile>
+
+<tile id="pi_1o_leviathan_grotto" length="1507">
+    <dots>
+        <group name="SMALL">
+            <dot x="206" y="31"/>
+            <dot x="454" y="31"/>
+            <dot x="509" y="46"/>
+            <dot x="407" y="223"/>
+            <dot x="388" y="265"/>
+            <dot x="192" y="208"/>
+            <dot x="209" y="249"/>
+            <dot x="201" y="291"/>
+            <dot x="442" y="500"/>
+            <dot x="421" y="697"/>
+            <dot x="538" y="698"/>
+            <dot x="442" y="875"/>
+            <dot x="184" y="861"/>
+            <dot x="184" y="823"/>
+            <dot x="192" y="913"/>
+            <dot x="106" y="1020"/>
+            <dot x="117" y="978"/>
+            <dot x="409" y="1096"/>
+            <dot x="455" y="1146"/>
+            <dot x="409" y="1180"/>
+            <dot x="167" y="1044"/>
+            <dot x="184" y="992"/>
+            <dot x="184" y="1217"/>
+            <dot x="403" y="1232"/>
+            <dot x="489" y="1481"/>
+            <dot x="436" y="1455"/>
+            <dot x="207" y="1481"/>
+            <dot x="207" y="1422"/>
+            <dot x="122" y="1422"/>
+        </group>
+        <group name="GUARDED">
+            <dot x="472" y="135"/>
+            <dot x="141" y="120"/>
+            <dot x="458" y="354"/>
+            <dot x="173" y="563"/>
+            <dot x="487" y="787"/>
+            <dot x="458" y="609"/>
+            <dot x="123" y="1146"/>
+            <dot x="458" y="994"/>
+            <dot x="509" y="1243"/>
+            <dot x="438" y="1350"/>
+            <dot x="173" y="1334"/>
+            <dot x="184" y="711"/>
+            <dot x="192" y="379"/>
+        </group>
+        <group name="BIG"/>
+        <group name="WATER_SMALL"/>
+        <group name="WATER_BIG"/>
+        <group name="WATER_GUARDED"/>
+        <group name="WATER_SMALL_GUARDED"/>
+        <group name="WATER_BIG_GUARDED"/>
+    </dots>
+</tile>
+
+<tile id="pi_1o_bad_guys_road" length="1507">
+    <dots>
+        <group name="SMALL">
+            <dot x="94" y="845"/>
+            <dot x="186" y="43"/>
+            <dot x="94" y="775"/>
+            <dot x="213" y="401"/>
+            <dot x="419" y="401"/>
+            <dot x="559" y="710"/>
+            <dot x="186" y="819"/>
+            <dot x="473" y="585"/>
+            <dot x="406" y="349"/>
+            <dot x="402" y="26"/>
+            <dot x="220" y="349"/>
+            <dot x="110" y="908"/>
+            <dot x="44" y="809"/>
+            <dot x="419" y="960"/>
+            <dot x="419" y="757"/>
+            <dot x="391" y="809"/>
+            <dot x="526" y="775"/>
+            <dot x="475" y="1168"/>
+            <dot x="435" y="1274"/>
+            <dot x="402" y="1341"/>
+            <dot x="220" y="1447"/>
+            <dot x="230" y="1220"/>
+            <dot x="229" y="861"/>
+            <dot x="229" y="80"/>
+            <dot x="229" y="152"/>
+            <dot x="77" y="375"/>
+            <dot x="60" y="1421"/>
+            <dot x="237" y="1403"/>
+            <dot x="492" y="1326"/>
+        </group>
+        <group name="GUARDED">
+            <dot x="423" y="659"/>
+            <dot x="470" y="106"/>
+            <dot x="196" y="687"/>
+            <dot x="203" y="523"/>
+            <dot x="77" y="659"/>
+            <dot x="475" y="872"/>
+            <dot x="436" y="1052"/>
+            <dot x="203" y="963"/>
+            <dot x="470" y="1430"/>
+            <dot x="203" y="1114"/>
+        </group>
+        <group name="BIG"/>
+        <group name="WATER_SMALL"/>
+        <group name="WATER_BIG"/>
+        <group name="WATER_GUARDED"/>
+        <group name="WATER_SMALL_GUARDED"/>
+        <group name="WATER_BIG_GUARDED"/>
+    </dots>
+</tile>
+
+<tile id="pi_1o_way_to_druid_altar" length="1507">
+    <dots>
+        <group name="SMALL">
+            <dot x="206" y="202"/>
+            <dot x="427" y="216"/>
+            <dot x="461" y="268"/>
+            <dot x="172" y="456"/>
+            <dot x="191" y="493"/>
+            <dot x="160" y="530"/>
+            <dot x="452" y="677"/>
+            <dot x="447" y="739"/>
+            <dot x="177" y="844"/>
+            <dot x="190" y="792"/>
+            <dot x="191" y="1035"/>
+            <dot x="419" y="1328"/>
+            <dot x="401" y="1276"/>
+            <dot x="205" y="1087"/>
+            <dot x="160" y="1481"/>
+            <dot x="110" y="1442"/>
+            <dot x="211" y="1453"/>
+        </group>
+        <group name="GUARDED">
+            <dot x="194" y="87"/>
+            <dot x="427" y="98"/>
+            <dot x="464" y="368"/>
+            <dot x="173" y="651"/>
+            <dot x="452" y="556"/>
+            <dot x="194" y="305"/>
+            <dot x="122" y="933"/>
+            <dot x="464" y="1098"/>
+            <dot x="157" y="1240"/>
+            <dot x="464" y="1417"/>
+        </group>
+        <group name="BIG"/>
+        <group name="WATER_SMALL"/>
+        <group name="WATER_BIG"/>
+        <group name="WATER_GUARDED"/>
+        <group name="WATER_SMALL_GUARDED"/>
+        <group name="WATER_BIG_GUARDED"/>
+    </dots>
+</tile>
+
+</root>

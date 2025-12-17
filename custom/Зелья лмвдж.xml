@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Зелья  -->
+
+    <p:place id="pi_1o_mt_hotreaper_potions" animType="EMPTY" imageId="60x82" name="Зелья" minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1" >
+                        <p:mainText>Вы видите несколько склянок с непонятными зельями, вот только одно из них вам знакомо... Да это же зелье кощея! А маг-вуду Жнец следит за вами... Но зелье кощея... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Взять!" gotoFromScript="random" />
+                            <p:answer text="Не трогать" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-1" probability="0.8" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_mt_magevoodoo_npc_1_inside_house" imageComment="Маг-вуду Жнец">
+                        <p:mainText>Вака, убери свои руки от моих зелий! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жадина" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_mt_magevoodoo_npc_1_inside_house" imageComment="Маг-вуду Жнец">
+                        <p:mainText>Вака, убери свои руки от моих зелий! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жадина" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_mt_magevoodoo_npc_1_inside_house" imageComment="Маг-вуду Жнец">
+                        <p:mainText>Вака, убери свои руки от моих зелий! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жадина" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.4">
+                        <p:mainText>Отлично! Маг-вуду Жнец не заметил ваших действий... Зелье кощея теперь принадлежит вам! </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="p7x_koschey_3" />
+                        <p:answers>
+                            <p:answer text="Ха!" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" >
+                        <p:mainText>Вы видите несколько склянок с непонятными зельями. Ничего интересного или понятного. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

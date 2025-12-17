@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ГРОБНИЦА С КНИГОЙ -->
+
+    <p:place id="pi_1o_Antigua_mj_door_to_tomb_with_book" atlasId="pi_1o_PLACES_road_6" imageId="pi_1o_Antigua_mj_door_to_tomb_with_book"
+             name="Гробница с книгой" minPlayerStair="40" meetProbability="10" minDistanceBetweenSame="5000" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+             <p:markerCondition condition="pi_1o_quest_book_from_tomb_02"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>А вот и та гробница, о которой говорила Касуми Оби! "Самый светлый ум Антигуа" -
+                            написано при входе. А внутри вы видите множество свитков.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зайдём!" out="true">
+                                <p:toRoad roadId="pi_1o_mj_tomb_with_book"/>
+                            </p:answer>
+                            <p:answer text="Не сейчас" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

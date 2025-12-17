@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ИВЕТТА ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_ivetta_obi" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_ivetta_obi" name="Иветта Оби"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Тихо молится*" delayMs="4000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я служу здесь, в нашей часовне. Приходи на утреннюю проповедь, с 7 до 8 утра!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"
+                                      giveMarker="lumberjack_ivetta_obi_for_quests"/>
+                            <p:answer text="О задании" markerCondition="pi_1o_quest_ghost_in_chapel_01" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_ghost_in_chapel_01" text="Призрак в часовне"
+                                      goto="r_lumberjack_ivetta_obi1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_ivetta_obi1">
+                        <p:mainText>Я слышала об этом от Рупрахта, но сама не видела. Если честно, жутко... Ты же
+                            прогонишь его?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Обязательно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

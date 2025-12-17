@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КЛАД СТАРОГО ПИРАТА -->
+
+    <p:place id="pi_1o_Antigua_old_pirate_treasure" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_tmd_treasure_picture_cross"
+             name="Клад старого пирата" minPlayerStair="40" spawnProbability="0.6" meetProbability="10" requireGenMode="PI_1O_PIRATES_GRAVEYARD,PI_1O_LEVIATHAN_GROTTO">
+            <p:markerCondition condition="pi_1o_hermit_treasure_02"/>
+        <p:blockingCreature probability="0"/>
+
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вот и то место, где Пират-отшельник зарыл свой клад! Проверим, что внутри?
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Естественно!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Куски золотой руды! Прекрасно, всегда пригодятся.</p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="28"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Каким-то невероятным образом, вы находите очки ордена Тени!</p:mainText>
+                        <p:award type="EVIL_POINTS" explicitValue="234"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Изумруды! Великолепно!</p:mainText>
+                        <p:award type="MITHRIL" explicitValue="200"/>
+                        <p:answers>
+                            <p:answer text="Это хорошо" removeMarker="pi_1o_hermit_treasure_02"
+                                      giveMarker="pi_1o_hermit_treasure_03" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

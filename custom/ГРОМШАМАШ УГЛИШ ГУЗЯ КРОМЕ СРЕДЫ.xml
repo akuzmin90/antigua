@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ГРОМШАМАШ УГ'ЛИШ ГУЗЯ понедельник, вторник, четверг, пятница, суббота, воскресенье (в среду он внезапно адекват и не похотливый) -->
+
+    <p:place id="pi_1o_Antigua_lc_gromshamash_uglish_guzya" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp"
+             imageId="pi_1o_Antigua_lc_gromshamash_uglish_guzya" name="Громшамаш Уг’лиш Гузя" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Моя - булочка?" delayMs="4000"/>
+                    <p:talk text="Барака Чавака Чпуньк!" delayMs="11000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1"
+                               markerCondition="not gromshamash_uglish_guzya_for_quests and not gromshamash_uglish_guzya_go_out_orc">
+                        <p:mainText>Громшамаш Уг’лиш Гузя просить прекрасный чужак говорить с Громшамаш Уг’лиш Гузя.
+                            Громшамаш Уг’лиш Гузя так одиноко, особенно в четверг... Пятницу, субботу, воскресенье,
+                            понедельник, вторник. Каждый раз.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рискнуть поговорить" goto="orc_want_you"/>
+                            <p:answer text="Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2"
+                               ifMarker="gromshamash_uglish_guzya_for_quests"> <!-- пока активен маркер, в мангровых джунглях иногда будем его встречать с подкатами. Можно прогнать его, он обидится, игрок потеряет кучу приколов, но орк больше приставать не будет  -->
+                        <p:mainText>Громшамаш Уг’лиш Гузя дарить свой улыбка прекрасный чужак! Прекрасный чужак нравится
+                            улыбка Громшамаш Уг’лиш Гузя? Я улыбка сам натянул! Натянул, гыыыыы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3"
+                               ifMarker="gromshamash_uglish_guzya_go_out_orc"> <!-- если в будущем прогнали похотливого орка  -->
+                        <p:mainText>Громшамаш Уг’лиш Гузя не хотеть дружить прекрасный чужак... Но Громшамаш Уг’лиш Гузя
+                            всегда думать о прекрасный чужак, особенно если никто не смотреть.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Зараза! Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="orc_want_you">
+                        <p:mainText>Это... П-п-прекрасный чужак говорит с Громшамаш Уг’лиш Гузя? Гыыыыы, Громшамаш
+                            Уг’лиш Гузя счастливый!!! Громшамаш Уг’лиш Гузя теперь любит прекрасный чужак!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что?! ЧТО?!" giveMarker="gromshamash_uglish_guzya_for_quests" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- первый диалог   -->
+            <p:state ifMarker="lumberjack_guard_for_quests" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_lumberjack_guard" imageComment="Лесоруб на страже">
+                        <p:mainText>СТОЙ! НЕ НАДО ГОВОРИТЬ С НИМ!!! ПРОШУ ТЕБЯ!!!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Чего?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Громшамаш Уг’лиш Гузя говорить "Привет!" прекрасному чужаку, гыыыыы. Чужак говорить с
+                            Громшамаш Уг’лиш Гузя, никто не говорить с Громшамаш Уг’лиш Гузя... Они звать меня "Гузя
+                            Булочка"... Не гыыыыы...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_lumberjack_guard" imageComment="Лесоруб на страже">
+                        <p:mainText>Я СЕРЬЁЗНО. У ОГРОВ СЕЙЧАС БРАЧНЫЙ ПЕРИОД, ПОНИМАЕШЬ?! ТЫ ОБРЕКАЕШЬ СЕБЯ НА ВЕЧНЫЙ
+                            ИНТЕРЕС ОТ НЕГО! Ну, пока палкой по голове не дашь. А брачный период у них странный - с
+                            четверга по вторник.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ужас какой"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Громшамаш Уг’лиш Гузя просить прекрасный чужак говорить с Громшамаш Уг’лиш Гузя.
+                            Громшамаш Уг’лиш Гузя так одиноко, особенно в четверг... Пятницу, субботу, воскресенье,
+                            понедельник, вторник. Каждый раз.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рискнуть поговорить" goto="r5"/>
+                            <p:answer text="Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Это... П-п-прекрасный чужак говорит с Громшамаш Уг’лиш Гузя? Гыыыыы, Громшамаш
+                            Уг’лиш Гузя счастливый!!! Громшамаш Уг’лиш Гузя теперь любить прекрасный чужак! Громшамаш
+                            Уг’лиш Гузя надо отойти, Громшамаш Уг’лиш Гузя вернётся.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Допустим" goto="r6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_lumberjack_guard" imageComment="Лесоруб на страже">
+                        <p:mainText>Я предупреждал... Мы же все через это прошли... Крепись, что ли. Спи спиной к
+                            стене.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Учту" giveMarker="gromshamash_uglish_guzya_for_quests" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит"   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_go_to_ogr" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Громшамша... Грошмара... Громыш... Да как тебя... Эй, огр! У меня есть к тебе
+                            вопрос!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Что хотеть прекрасный чужак от Громшамаш Уг’лиш Гузя? Вопрос к Громшамаш Уг’лиш
+                            Гузя? Ты хотеть знать, что Громшамаш Уг’лиш Гузя делать завтра вечер, чтобы делать свидание?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Ещё раз так скажешь, стукну палкой. Два раза. Скажи мне, ты работал у Корчмаря, мыл
+                            посуду, правильно? И он тебе платил? ТОЛЬКО ПОПРОБУЙ свои подкаты. Вот палка. Бью наотмашь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Злой, но прекрасный чужак... Да, я работать на сир Корчмарь, Громшамаш Уг’лиш Гузя
+                            мыть посуда, сир Корчмарь платить Громшамаш Уг’лиш Гузя 3 камешки из золота!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d">
+                        <p:mainText>Громшамаш Уг’лиш Гузя не знать, что такое камешки из золота! Громшамаш Уг’лиш Гузя
+                            их пробовать. Вкусно, хрустит! Няма-няма делать Громшамаш Уг’лиш Гузя!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6_d" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Боше зелены болване кушай злоте штуки???!!! Хоббите Экля буде палка голова йок боше
+                            зелены болване! Злоте штуки - иппо для хоббите! Болване, хош боше болване!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Именно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Как там тебя... Гузя Булочка, да. И ты начал воровать золотую руду у Корчмаря,
+                            верно? Чтобы... Эм... Есть её?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>БОШЕ ХРЕН БОЛВАНЕ!!! БОЛВАНЕ БУДЕ ЙОК ЕЖИ КУШАЙ ЗЛОТЕ ШТУКИ ЕЩЁ РАЗ!!!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Тише, тише. Милаха же"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>Громшамаш Уг’лиш Гузя брать камешки из золота, Громшамаш Уг’лиш Гузя никто не
+                            говорить что нельзя брать. Громшамаш Уг’лиш Гузя больше не делать так... Вот остатки
+                            камешков из золота, твоя отдать их сир Корчмарь.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="32"/>
+                        <p:answers>
+                            <p:answer text="Огр, что скажешь"
+                                      removeMarker="pi_1o_quest_someone_not_paying_02,pi_1o_quest_someone_not_paying_go_to_ogr"
+                                      giveMarker="pi_1o_quest_someone_not_paying_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КРАСНЫЙ КАМЕНЬ + ДЕТЁНЫШ ЛЕВИАФАНА -->
+
+    <p:place id="pi_1o_Antigua_lg_red_stone" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_red_stone" name="Красный камень"
+             minDistanceBetweenSame="4000" minPlayerStair="40" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_smuggler_treasure_02"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- только на локации Грот Левиафана  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Вот и красный камень, о котором говорил Джек. Интересно, почему его ещё никто не
+                            нашёл... А, ну да. Вот и причина... [Из-под камня вылезает детёныш Левиафана и нападает на
+                            вас!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lg_red_stone" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Детёнышем Левиафана, боевая иконка будет называться pi_1o_Antigua_lg_child_leviathan_treasure_f, это босс -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Видимо, это чудовище слишком любит свой красный камень... Если его не прогнать, то
+                            клад не достать!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lg_red_stone" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Детёныш Левиафана повержен - внезапно, он отскакивает назад и исчезает в провале,
+                            наполненном водой! Итак, пора осмотреть, что внутри клада!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Далее" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2">
+                        <p:mainText>Итак, золотая руда. Это полезно!</p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="30"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Немного изумрудов... Похоже, пиратам всё-таки важнее золото. Но и изумруды здесь в
+                            ходу!
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="150"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Странное зелье... Не просто же так оно здесь! [Действительно, вы выпили его - и ваше
+                            здоровье укрепилось!]
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Золото в чистом виде. Тоже приятно!</p:mainText>
+                        <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Аметисты? Интересно, как они тут оказались?</p:mainText>
+                        <p:award type="SULFUR" explicitValue="250"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Очки ордена Порядка? Внезапно...</p:mainText>
+                        <p:award type="GOOD_POINTS" explicitValue="250"/>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>А это что? Амулет, на котором нацарапано "Джек"... Похоже, это его. Надо бы
+                            вернуть.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>[Больше тут ничего нет. Кстати, ваши действия не остались незамеченными. Вы прогнали
+                            детёныша Левиафана! Это обезопасит данный грот для путешествий. +1 к общей репутации!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_smuggler_treasure_02"
+                                      giveMarker="pi_1o_smuggler_treasure_03" requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

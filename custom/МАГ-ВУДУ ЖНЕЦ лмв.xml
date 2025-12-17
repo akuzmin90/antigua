@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Маг-вуду Жнец -->
+
+    <p:place id="pi_1o_mt_magevoodoo_npc_1" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_mt_magevoodoo_npc_1" name="Маг-вуду Жнец" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Ещё один вака?" delayMs="11000"/>
+                    <p:talk text="Магия поглотит вас" delayMs="26000"/>
+                    <p:talk text="Тамиби открыли магический фронт" delayMs="41000"/>
+                    <p:talk text="Мы за добрую сторону" delayMs="66000"/>
+                    <p:talk text="Город слишком шумный..." delayMs="81000"/>
+                    <p:talk text="Ты хочешь знать тайны тамиби?" delayMs="106000"/>
+                    <p:talk text="Вака умеет жонглировать?" delayMs="131000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здравствуй, вака. Веди себя прилично - и мы будем вести себя так же. Если зайдёшь в мой дом - вытирай ноги. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я подумаю" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

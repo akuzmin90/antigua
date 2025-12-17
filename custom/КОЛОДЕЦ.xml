@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КОЛОДЕЦ -->
+
+    <p:place id="pi_1o_Antigua_well" animType="EMPTY" imageId="83x109" name="Колодец" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - колодец. Это факт, и с этим не поспоришь.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Точно" goto="r1" out="true"/>
+                            <p:answer text="Уйти" goto="r1" out="true"/>
+                            <p:answer text="Что там?" repeatable="false" probability="0.01">
+                                <p:toRoad roadId="pi_1o_hitmakers_team"/>
+                            </p:answer>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_well_react1"
+                                      repeatable="false"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?" goto="r_well_react2"
+                                      repeatable="false"/>
+                            <p:answer ifMarker="pi_1o_quest_bulletin_board_bucket_of_water_01" text="Набрать воды"
+                                      goto="r_well_react3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_well_react1">
+                        <p:mainText>[Эм... Тут его точно нет. Он у Губернатора. Но покричать ради забавного эха
+                            можно.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно" giveMarker="pi_gold_compass_hint9" requestSpecialPlaces="true" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_well_react2">
+                        <p:mainText>[Вы хотя бы попытались. В колодце нет желающих - там вообще нет никого.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Печально" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_well_react3">
+                        <p:mainText>[Вы набрали ведро воды. Пора вернуться к Стефану!]</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_bulletin_board_bucket_of_water_01"
+                                      giveMarker="pi_1o_quest_bulletin_board_bucket_of_water_02" requestSpecialPlaces="true" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

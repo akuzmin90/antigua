@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Работник слева Патлатый  -->
+
+    <p:place id="pi_1o_Antigua_sp_worker_man_1" animType="EMPTY" imageId="40x92" name="Работник" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Чего тебе, Каталина?" delayMs="39000"/>
+                    <p:talk text="А ты приглашаешь в таверну?" delayMs="49000"/>
+                    <p:talk text="За такую красотку- заплачу!" delayMs="59000"/>
+                    <p:talk text="Ты ж моя красотка!" delayMs="69000"/>
+                    <p:talk text="Договорились, хаха!" delayMs="74000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Мне повезло, что я научился читать в детстве, сейчас хоть физически не работаю! Моя задача - отвозить тростник Трактирщику. А тот знает, что с ним делать. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да мы все знаем" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

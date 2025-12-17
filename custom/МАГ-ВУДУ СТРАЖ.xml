@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАГ-ВУДУ СТРАЖ -->
+
+    <p:place id="pi_1o_mt_magevoodoo_guard" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_mt_magevoodoo_guard" name="Маг-вуду страж"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед тобой - лагерь магов-вуду. Уважай магию, и мы будем уважать тебя, вака. Веди
+                            себя прилично.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" requestSpecialPlaces="true" complete="true"
+                                      giveMarker="magevoodoo_guard_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02 or pi_1o_quest_lost_memories_magevoodoo_guard or pi_1o_quest_leyho_killers_long_way_02 or pi_1o_ruined_grave_02 or pi_1o_quest_pirates_ghosts_02 or pi_1o_quest_missionary_05 or pi_1o_quest_bleeding_wood_01 or pi_1o_quest_cure_for_snoring_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer markerCondition="pi_big_rat_voodoo_01 or pi_big_rat_voodoo_02"
+                                      text="Огромная крыса" goto="r_magevoodoo_guard_react1"/>
+                            <p:answer ifMarker="pi_1o_quest_lost_memories_magevoodoo_guard" text="Что случилось?"
+                                      goto="r_magevoodoo_guard_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_leyho_killers_long_way_02" text="Вызвать дух"
+                                      goto="r_magevoodoo_guard_react3"/>
+                            <p:answer ifMarker="pi_1o_ruined_grave_02" text="Могилу разорили"
+                                      goto="r_magevoodoo_guard_react4"/>
+                            <p:answer
+                                    markerCondition="pi_1o_quest_pirates_ghosts_02 or pi_1o_quest_pirates_ghosts_03 or pi_1o_quest_pirates_ghosts_04 or pi_1o_quest_pirates_ghosts_05 or pi_1o_quest_pirates_ghosts_06 or pi_1o_quest_pirates_ghosts_07 or pi_1o_quest_pirates_ghosts_08 or pi_1o_quest_pirates_ghosts_09 or pi_1o_quest_pirates_ghosts_10 or pi_1o_quest_pirates_ghosts_11 or pi_1o_quest_pirates_ghosts_12"
+                                    text="Призраки пиратов" goto="r_magevoodoo_guard_react5"/>
+                            <p:answer ifMarker="pi_1o_quest_missionary_05" text="Миссионера видел?"
+                                      goto="r_magevoodoo_guard_react6"/>
+                            <p:answer ifMarker="pi_1o_quest_bleeding_wood_01" text="Дерево и кровь"
+                                      goto="r_magevoodoo_guard_react7"/>
+                            <p:answer ifMarker="pi_1o_quest_cure_for_snoring_01" text="Лекарство от храпа"
+                                      goto="r_magevoodoo_guard_react8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react1">
+                        <p:mainText>Огромная Крыса всё ещё жива. Нужно избавиться от неё - зачем ты отвлекаешь меня,
+                            если работа не сделана?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react2">
+                        <p:mainText>Вака, убедись в силе нашей магии! У нас в гостях - последний представитель Амазонии!
+                            Если тебе повезёт, ты увидишь [её|его]! Наш гость редко появляется снаружи - но, может, тебе
+                            повезёт увидеть [её|его]!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react3">
+                        <p:mainText>Вака, не задавай таких простых вопросов. Иди к Верховному Шаману. Только он может
+                            призывать духов из мира мёртвых.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react4">
+                        <p:mainText>Вака, это не я. Спроси Верховного Шамана. Но это тоже не он. Мы не грабим могилы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сам вака!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react5">
+                        <p:mainText>Просто изгони эти 10 призраков-пиратов. Сделай это тихо, чтобы Губернатор не
+                            узнал.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react6">
+                        <p:mainText>Странный вака, говорящий о Богах-Близнецах? Он быстро прошёл мимо меня, дальше в
+                            лагерь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react7">
+                        <p:mainText>Я ни разу не видел, чтобы дерево кровоточило. Но если вака такое видел - сообщи
+                            верховному шаману.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_magevoodoo_guard_react8">
+                        <p:mainText>Я не занимаюсь изготовлением зелий, вака, хоть и обучаю этому. Спроси кого-нибудь
+                            другого.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- начало квеста "Эксперимент вуду"   -->
+            <p:state markerCondition="planter_for_quests and nestor_for_quests and magevoodoo_guard_for_quests"
+                     repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Вака, у меня есть для тебя работа. Не смей отказывать, для ваки - честь, что
+                            маг-вуду даёт задание.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ох... Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Недавно мы практиковали куклу-вуду призыва, но что-то пошло не так. Была призвана
+                            Огромная Крыса - но не там, где мы хотели. Сейчас она в Пещере-складе на Сахарной Плантации.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Убить её?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Вака понимает меня. Именно, убить. Я доверяю это задание тебе.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм, хорошо" giveMarker="pi_big_rat_voodoo_01" requestSpecialPlaces="true"
+                                      complete="true">
+                                <p:createTask id="pi_big_rat_voodoo" name="Эксперимент вуду" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Эксперимент вуду" конец  -->
+            <p:state ifMarker="pi_big_rat_voodoo_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Итак, тебе удалось разобраться с Огромной Крысой. На удивление, ты - стойк[ий|ая]
+                            вака. Итак, вот награда за твою работу.
+                        </p:mainText>
+                        <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>И немного кристаллов - наверное, они тебе пригодятся. Как видишь, наша магия
+                            способна на многое.
+                        </p:mainText>
+                        <p:award type="CRYSTAL"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>За вашу помощь с устранением Огромной Крысы, вы получаете +1 к репутации
+                            магов-вуду!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Отлично!" removeMarker="pi_big_rat_voodoo_03"
+                                      giveMarker="pi_big_rat_voodoo_congrats,pi_1o_quest_pirates_ghosts_01"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_big_rat_voodoo"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- начало квеста "Призраки пиратов"   -->
+            <p:state ifMarker="pi_1o_quest_pirates_ghosts_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Вака, как я вижу, я могу тебе доверять. Та крыса мертва, и никто не знает истинной
+                            сути. Сейчас мне снова нужна твоя помощь. Умеешь изгонять призраков?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Подробнее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Я даю тебе работу. Мы призвали 10 призраков-пиратов, чтобы усилить охрану нашего
+                            лагеря. Но даже после смерти, ваки-пираты дерзкие и своенравные. Они вернулись на Кладбище
+                            Пиратов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Теперь они бродят там, пугая всех не-тамиби. Изгони их, убей, прогони. И помни - об
+                            этой работе не должен знать никто.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Почему же?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Настырн[ый|ая] вака... Губернатор не одобряет нашу магическую практику. Если он
+                            узнает, что мы сделали, он может принять меры. Поэтому, эта работа - наш секрет.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм, хорошо" removeMarker="pi_1o_quest_pirates_ghosts_01"
+                                      giveMarker="pi_1o_quest_pirates_ghosts_02" requestSpecialPlaces="true"
+                                      complete="true">
+                                <p:createTask id="pi_1o_quest_pirates_ghosts" name="Изгнать 10 призраков-пиратов"
+                                              count="10" mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Призраки пиратов" если сдали Губернатору   -->
+            <!--TODO рядом с магом-вуду Стражем стоит Губернатор pi_1o_Antigua_gp_governor_mg. Игрок может кликнуть на люблю из них, диалог будет одинаковый. Но именно в данном случае, надо удалить объект pi_1o_Antigua_gp_governor_mg СРАЗУ после диалога, чтобы при его закрытии объект мгновенно исчез. У самого обхекта, что нужно удалить, удаление прописано. Но если игрок кликнет именно на мага-вуду стража, указанный плйес с губернатором надо удалить.  -->
+            <p:state ifMarker="pi_1o_quest_pirates_ghosts_fail" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Мы виноваты, вака" delayMs="5000"/>
+                    <p:talk text="Мы возместим неудобства" delayMs="13000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Вака, я чётко просил тебя ничего не говорить Губернатору.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4" imageId="pi_1o_Antigua_gp_governor">
+                        <p:mainText>"Вака" делает всё правильно! Я запретил вам приближаться к Кладбищу Пиратов! И ладно
+                            бы одного, двух... Куда вам 10 призраков?! Разводить будете?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Мы приносим извинения от имени магии. Утром мы принесём компенсацию. Вака, ты... Не
+                            могу тебя винить. [Вы провалили квест "Призраки пиратов" - не переживайте, впереди ещё
+                            столько интересного!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эээээх..." removeMarker="pi_1o_quest_pirates_ghosts_fail"
+                                      giveMarker="pi_1o_quest_pirates_ghosts_mages_pay" requestSpecialPlaces="true"
+                                      launchScriptId="dropMageVoodooGovernorPlace" complete="true">
+                                <p:failTask id="pi_1o_quest_pirates_ghosts"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Призраки пиратов" если убили или освободили 10 призраков пиратов   -->
+            <p:state ifMarker="pi_1o_quest_pirates_ghosts_13" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Вака, магия дала мне почувствовать, что работа сделана. Пираты-призраки покинули
+                            этот мир. Вот твоя награда.
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5"
+                               markerCondition="pi_1o_quest_pirates_ghosts_free_1 and pi_1o_quest_pirates_ghosts_free_2 and pi_1o_quest_pirates_ghosts_free_3 and pi_1o_quest_pirates_ghosts_free_4 and pi_1o_quest_pirates_ghosts_free_5">
+                        <p:mainText>Я знаю, что некоторые пираты-призраки были освобождены тобой без боя. Ты
+                            исправи[л|ла] нашу ошибку призыва. За это я дополнительно награжу тебя.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="30"/>
+                        <p:answers>
+                            <p:answer text="Далее">
+                                <p:addTaskProgress id="pi_1o_quest_pirates_ghosts_free_them" count="100"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4"
+                               markerCondition="not pi_1o_quest_pirates_ghosts_free_1 and not pi_1o_quest_pirates_ghosts_free_2 and not pi_1o_quest_pirates_ghosts_free_3 and not pi_1o_quest_pirates_ghosts_free_4 and and pi_1o_quest_pirates_ghosts_free_5">
+                        <p:mainText>Пятеро пиратов-призраков могли быть освобождены тобой без боя. Это была наша ошибка
+                            призыва... Но часть из них были сражены тобой. Пусть так.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эээээх...">
+                                <p:failTask id="pi_1o_quest_pirates_ghosts_free_them"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>[Работа сделана! Призраки-пираты больше никого не будут беспокоить. Ваши действия не
+                            остались незамеченными! +1 к репутации магов-вуду.]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Отлично!" removeMarker="pi_1o_quest_pirates_ghosts_13"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_pirates_ghosts" count="100"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Дед опять забыл выпить таблетки"  -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Вы, ваки, странные. Только что здесь был какой-то дед, просил выступить спонсорами
+                            его вечеринки. Безумный, как стадо буйволов, которых подожгли и отпустили. Убежал в сторону
+                            Лагеря инквизиции.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_kinky_party_04"
+                                      giveMarker="pi_1o_quest_kinky_party_05" requestSpecialPlaces="true"
+                                      complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Друид древних   -->
+            <p:state ifMarker="pi_1o_quest_ancient_druid_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Вака тоже пришёл посмеяться надо мной, как и все тамиби?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Что случилось?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Недавно был праздник чёрной луны. Тамиби Нестор принёс много рома из города... Ром
+                            был хороший. Я сел вон на тот камень, чтобы смотреть на звёздное небо и допить ром.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>Я впитывал магию звёзд, как вдруг ко мне подошёл гиббон. Здоровый такой, мохнатый.
+                            Сел рядом и тоже стал смотреть на звёзды. А потом он повернул голову в мою сторону...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ииииии?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>И потом он, не отводя от меня взгляда, указал на звёзды и сказал: "Красивое". А
+                            потом допил мой ром. И ушёл в сторону грота Левиафана.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Весело у вас" removeMarker="pi_1o_quest_ancient_druid_03"
+                                      giveMarker="pi_1o_quest_ancient_druid_04" requestSpecialPlaces="true"
+                                      complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Тумба -->
+
+    <p:place id="pi_1o_Antigua_lc_kh_tumba" animType="EMPTY" imageId="39x76" name="Тумба" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Небольшая тумба, в которой что-то есть. Проверим? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Конечно!" gotoFromScript="random" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>Так-так-так... Золото! Приятно находить полезные вещи. </p:mainText>
+                            <p:award type="GOLD" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8">
+                        <p:mainText>Так-так-так... Синие кристаллы! Приятно находить полезные вещи. </p:mainText>
+                            <p:award type="ELIXIR" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8">
+                        <p:mainText>Так-так-так... Красные кристаллы! Приятно находить полезные вещи. </p:mainText>
+                            <p:award type="CRYSTAL" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.8">
+                        <p:mainText>Так-так-так... Изумруды! Приятно находить полезные вещи. </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="26" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-5" probability="0.8">
+                        <p:mainText>Так-так-так... Изучение даёт вам опыт! Бесценно. </p:mainText>
+                            <p:award type="EXPERIENCE" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-6" probability="0.8">
+                        <p:mainText>Так-так-так... Кусочек золотой руды! Приятно находить полезные вещи. </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="1" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-7" probability="0.8">
+                        <p:mainText>Так-так-так... Аметисты! Приятно находить полезные вещи. </p:mainText>
+                            <p:award type="SULFUR" explicitValue="33" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-8" probability="0.8">
+                        <p:mainText>Так-так-так... Билеты в колесо фортуны! Приятно находить полезные вещи. </p:mainText>
+                            <p:award type="TICKETS" explicitValue="39" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В тумбе больше ничего интересного. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Тумба если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_kh_tumba_1" animType="EMPTY" imageId="39x76" name="Тумба" minPlayerStair="40"  meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1"> 
+                        <p:mainText>Кажется, лазить по тумбочке, когда в доме есть взрослые - не лучшая идея. Лучше их не злить, а извиниться и выйти наружу. Вдруг они забудут? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

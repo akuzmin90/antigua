@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МОЯ КОМНАТА СТУЛЬЯ -->
+
+    <p:place id="pi_1o_my_room_interior_chair_01" atlasId="pi_1o_PLACES_pi_1o_townAntigua_my_room" imageId="pi_1o_my_room_interior_chair_01" name="Стул"
+             minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                            <p:award type="GOLD" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <p:place id="pi_1o_my_room_interior_chair_02" atlasId="pi_1o_PLACES_pi_1o_townAntigua_my_room" imageId="pi_1o_my_room_interior_chair_02" name="Стул"
+             minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                            <p:award type="CRYSTAL" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <p:place id="pi_1o_my_room_interior_chair_03" atlasId="pi_1o_PLACES_pi_1o_townAntigua_my_room" imageId="pi_1o_my_room_interior_chair_03" name="Стул"
+             minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                            <p:award type="CRYSTAL" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <p:place id="pi_1o_my_room_interior_chair_04" atlasId="pi_1o_PLACES_pi_1o_townAntigua_my_room" imageId="pi_1o_my_room_interior_chair_04" name="Стул"
+             minPlayerStair="40" meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                            <p:award type="ELIXIR" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Стул - это всегда хорошо. Можно присесть, отдохнуть!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

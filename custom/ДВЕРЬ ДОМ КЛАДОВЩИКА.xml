@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ДОМ КЛАДОВЩИКА -->
+
+    <p:place id="pi_1o_Antigua_door_scoreceeper" animType="EMPTY" imageId="86x154" name="Дом кладовщика"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- если ещё не нашли жену кладовщику -->
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Перед вами - дом кладовщика. Хотите зайти внутрь?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да">
+                                <p:toRoad roadId="pi_1o_townAntigua_sc_default"/>
+                            </p:answer>
+                            <p:answer text="Нет" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- жена Амалия -->
+
+            <p:state ifMarker="pi_1o_townAntigua_sc_pirate">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Перед вами - дом кладовщика. Хотите зайти внутрь?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" out="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_sc_pirate"/>
+                            </p:answer>
+                            <p:answer text="Нет" goto="r1_d" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- жена Чака -->
+
+            <p:state ifMarker="pi_1o_townAntigua_sc_magevoodoo">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Перед вами - дом кладовщика. Хотите зайти внутрь?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" out="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_sc_magevoodoo_home"/>
+                            </p:answer>
+                            <p:answer text="Нет" goto="r1_d_2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- жена Мамуба -->
+
+            <p:state ifMarker="pi_1o_townAntigua_sc_ugabuga">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Перед вами - дом кладовщика. Хотите зайти внутрь?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" out="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_sc_ugabuga_home"/>
+                            </p:answer>
+                            <p:answer text="Нет" goto="r1_d_3" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- жена Моргана -->
+
+            <p:state ifMarker="pi_1o_townAntigua_sc_ghost">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Перед вами - дом кладовщика. Хотите зайти внутрь?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" out="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_sc_ghost_home"/>
+                            </p:answer>
+                            <p:answer text="Нет" goto="r1_d_4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

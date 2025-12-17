@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТОГЛАЗЫЙ ДУХ  -->
+
+    <p:place id="pi_1o_Antigua_lc_hundred_eyed_spirit" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_hundred_eyed_spirit"
+             name="Стоглазый Дух" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Древесина кровоточит"  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Шепчет на дерево*" delayMs="6000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Стоглазый дух стоит прямо перед вами! Вы видите, как он шепчет что-то на дерево, и
+                            ещё одно полено начинает кровоточить! Вот же мститель какой, не понравилось ему, что сразу
+                            полено не сгорело...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lc_hundred_eyed_spirit" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Стоглазый дух, боевая иконка будет называться pi_1o_Antigua_lc_hundred_eyed_spirit_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Стоглазый дух очень силён. Но нужно его победить!</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_Antigua_lc_hundred_eyed_spirit" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>Стоглазый Дух повержен! Нужно отчитаться Виктору Оби, когда он будет на работе -
+                            днём, у склада древесины. Кстати, на месте, где был этот дух, вы замечаете немного
+                            изумрудов!
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="35"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_bleeding_wood_kill_monster"
+                                      giveMarker="pi_1o_quest_bleeding_wood_kill_monster_done"
+                                      requestSpecialPlaces="true" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

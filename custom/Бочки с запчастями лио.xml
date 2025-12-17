@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочки с запчастями  -->
+
+    <p:place id="pi_1o_it_ta_barrels_with_spare_parts" animType="EMPTY" imageId="79x94" name="Бочки с запчастями" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В этих бочках много мелких запчастей для огнестрельного оружия - пружинки, курки, ещё много чего... В этой палатке и поживиться нечем... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это печально" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

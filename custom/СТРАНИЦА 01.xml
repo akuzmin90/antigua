@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СТРАНИЦА 01 -->
+
+    <p:place id="pi_1o_Antigua_lost_memories_01" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lost_memories_01" name="Страница 01"
+             minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="5" requireGenMode="PI_1O_LEVIATHAN_GROTTO,PI_1O_PIRATES_GRAVEYARD,PI_1O_BAD_GUYS_ROAD">
+        <p:markerCondition condition="arno_for_quests and planter_for_quests and magevoodoo_head_for_quests and head_of_inquisition_for_quests and main_miner_for_quests and bones_for_quests and steven_for_quests and threefingered_billy_for_quests and hobbit_talk_fun and pi_1o_start_lost_memories"/>
+        <p:blockingCreature probability="0"/>
+
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Что это? Вы находите страницу, вырванную из дневника. Хм, прочитаем...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>"Я обещал Эльзе, что решу все наши проблемы. Ах, если бы она знала, на какую
+                            авантюру я согласился... Моя бедная Эльза, я не хочу, чтобы ты когда-либо прочитала этот
+                            дневник..."
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>"Мы сыграем лучшую свадьбу на всём Антигуа, лучшую! Нужно лишь золото, много
+                            золота... Да, мы всегда были бедны. Но я нашёл способ, ради моей милой Эльзы! Я отдал
+                            торговцу картами всё - клад будем моим!"
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Похоже, что это лишь одна из нескольких страниц дневника некоего парня. Интересно,
+                            что же стало дальше?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" removeMarker="pi_1o_start_lost_memories"
+                                      giveMarker="pi_1o_quest_lost_memories_01,pi_1o_quest_lost_memories_hint_01"
+                                      complete="true" dropPlace="true">
+                                <p:createTask id="pi_1o_quest_lost_memories" name="Потерянные воспоминания" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

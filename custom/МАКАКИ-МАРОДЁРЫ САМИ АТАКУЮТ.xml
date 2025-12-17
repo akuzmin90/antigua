@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАКАКИ-МАРОДЁРЫ САМИ АТАКУЮТ -->
+
+    <p:place id="pi_1o_Antigua_mj_macaque_marauder_auto" animType="EMPTY" imageId="2x2" name="Макаки-мародёры"
+             minPlayerStair="40" mandatory="true" minDistanceBetweenSame="3248" meetProbability="18" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="start" closable="false">
+                <p:mainText>Вы слышите шорох среди листьев. Вы ощущаете, как за вами наблюдают. Вы оборачиваетесь... Да
+                    это же макаки-мародёры, они атакуют внезапно! Они хотят забрать ваши вещи!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Приготовитсья к бою!" gotoFromScript="random" />
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-1" probability="0.8" closable="false" >
+                <p:mainText>Макаки-мародёры уже близко... Они окружают вас...
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-2" probability="0.8" closable="false" >
+                <p:mainText>Макаки-мародёры уже близко... Они окружают вас...
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3,pi_1o_Antigua_mj_macaque_marauder_f4" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-3" probability="0.8" closable="false" >
+                <p:mainText>Макаки-мародёры уже близко... Они окружают вас...
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3,pi_1o_Antigua_mj_macaque_marauder_f4,pi_1o_Antigua_mj_macaque_marauder_f5" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="rand-4" probability="0.8" closable="false" >
+                <p:mainText>Макаки-мародёры уже близко... Они окружают вас...
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3,pi_1o_Antigua_mj_macaque_marauder_f4,pi_1o_Antigua_mj_macaque_marauder_f5,pi_1o_Antigua_mj_macaque_marauder_f6" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Макаки-мародёры одержали над вами сокрушительную победу. Макаки, к слову говоря... Вы
+                    осматриваете вещи. Да эти макаки-мародёры настоящие животные! Они украли 1 кусок золотой руды!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Нелюди!" complete="true">
+                        <p:pay ore_gold="1" ignoreIfNotEnough="true"/>
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>Макаки-мародёры повержены! В этот раз. Но их здесь - легион... Кто знает, когда они нападут
+                    снова. В любом случае, вы получаете бесценный опыт битвы с макакой.
+                </p:mainText>
+                <p:award type="EXPERIENCE"/>
+                <p:answers>
+                    <p:answer text="Понимаю" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

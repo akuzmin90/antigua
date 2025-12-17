@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ФЕЛИКС -->
+
+    <p:place id="pi_1o_Antigua_inquisitor_felix" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_inquisitor_felix"
+             name="Инквизитор Феликс" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я - инквизитор Феликс, верный слуга Короля Густава! Моя задача - искать новых
+                            рекрутов. Хочешь к нам?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет, спасибо" giveMarker="felix_for_quests" complete="true"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_03 or pi_1o_new_recruit_01 or pi_1o_quest_felix_clock_react_felix"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_felix_react1"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?" goto="r_felix_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_felix_clock_react_felix" text="Чего радостный?"
+                                      goto="r_felix_react3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_felix_react1">
+                        <p:mainText>Тише ты, тише! Не ори на всю округу. Нет, я не знаю, кого нанял глава инквизиции для
+                            этой миссии. У меня своя задача - не мешай.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ответственный" giveMarker="pi_gold_compass_hint5" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_felix_react2">
+                        <p:mainText>Тебе как такой вопрос в голову пришёл? Ты не видишь, кто я? С какой стати мне
+                            становиться магом-вуду? Я служу лишь Королю Густаву!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ответственный" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_felix_react3">
+                        <p:mainText>Часы, мои часы! Дориан передал их мне... Честь инквизиции! Часы снова у меня!
+                            Инквизиция своих не бросает Правда, Дориан просил их не показывать на людях... Надеюсь, он
+                            добыл их честно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Надейся" removeMarker="pi_1o_quest_felix_clock_react_felix" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Дед опять забыл выпить таблетки"   -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Ты ищешь Кинки? Давно пора. Он уже всем надоел, носится и орёт непонятные вещи. В
+                            последний раз я видел, как он забегал в дом Хилого. Посмотри там.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Посмотрю" removeMarker="pi_1o_quest_kinky_party_01"
+                                      giveMarker="pi_1o_quest_kinky_party_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Дед опять забыл выпить таблетки" после Хилого   -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Кинки убежал в сторону лагеря магов-вуду, посмотри там. Я не могу покинуть свой
+                            пост.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Посмотрю" removeMarker="pi_1o_quest_kinky_party_03"
+                                      giveMarker="pi_1o_quest_kinky_party_04" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Миссионер, после трактирщика   -->
+            <p:state ifMarker="pi_1o_quest_missionary_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Миссионера выкинули из Таверны за шкирку? Интересно, на что он надеялся, пытаясь
+                            отговорить пиратов пить ром... Я видел, как после Таверны миссионер отправился к
+                            Губернатору, в его дворец.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_missionary_02"
+                                      giveMarker="pi_1o_quest_missionary_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 1  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Моя зарплата? Ха, Дориан так и не слышит моих слов... Отнеси эти жалкие 500 золотых
+                            Трактирщику - сразу в счёт провизии. Жалование настолько мало, что всё уходит на еду и
+                            комнату.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_felix_salary_02"
+                                      giveMarker="pi_1o_quest_felix_salary_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 3  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Чего-чего-чего? Какие 200 золотых ещё, и это его называют честным?! Послушай, он
+                            обманывает, я уверен. Это же пираты! Скажи ему, что неправильно брать цены из головы!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_felix_salary_04"
+                                      giveMarker="pi_1o_quest_felix_salary_05" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 5  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Да как не обманывает-то? Если он говорит серьёзно, то обязан предоставить
+                            доказательства! Принеси мне их.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я теперь курьер :)" removeMarker="pi_1o_quest_felix_salary_06"
+                                      giveMarker="pi_1o_quest_felix_salary_07" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 7  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_08" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Трактирщик дал список? Давай посмотрим... Ох. Всё верно. Не надо было налегать на
+                            фисташки, стоят они как целый галеон...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай я оплачу?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Это было бы кстати, авантюрист! Инквизиция не забудет твоего деяния. Уверен, 200
+                            золотых для тебя - раз плюнуть!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как два пальца" removeMarker="pi_1o_quest_felix_salary_08"
+                                      giveMarker="pi_1o_quest_felix_salary_09" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 9  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_10" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Трактирщик хочет, чтобы именно я ему заплатил? Но у меня ни гроша... Видимо,
+                            остаётся один вариант - иначе я останусь без крыши над головой. Вот мои часы, подарок самого
+                            Короля Густава!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Золотые?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Именно. И с его гравировкой... Заложи мои часы Трактирщику, прошу тебя. Их точно
+                            хватит на несколько месяцев, даже он их оценит, хоть и не проявляет к нам симпатии.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_felix_salary_10"
+                                      giveMarker="pi_1o_quest_felix_salary_11" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 11  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_12" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>Жаль часы, если честно. Подарок Короля Густава... В любом случае, он их принял. Жить
+                            и питаться без ограничений... Надеюсь, часы будут жечь его алчный карман! Спасибо за помощь.
+                            Я повышу твою атаку, всё равно денег нет.
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="А у меня есть" removeMarker="pi_1o_quest_felix_salary_12"
+                                      giveMarker="pi_1o_quest_felix_salary_13" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

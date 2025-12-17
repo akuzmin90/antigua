@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДВЕРЬ ПРОХОД НА 2 УРОВЕНЬ ЗОЛОТОЙ ШАХТЫ -->
+
+    <p:place id="pi_1o_Antigua_gm_way_down" animType="EMPTY" imageId="292x233"
+             name="Проход на 2 уровень шахты" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Внизу много опасных монстров, шахтёры закрыли путь вниз, ради вашего же блага.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Ночные стражники если надо достать кирку по маркеру pi_new_guards_go_buy_pickaxe  -->
+            <p:state ifMarker="pi_new_guards_go_buy_pickaxe">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Там, внизу, на втором уровне шахты, много опасных монстров. Много рудокопов погибло.
+                            Наверняка там есть кирка! Им-то она не нужна. А вам нужна.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Войти">
+                                <p:toRoad roadId="pi_1o_golden_mine_2_lvl"/>
+                            </p:answer>
+                            <p:answer text="Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест квест Лицензия в золотую шахту по маркеру pi_1o_hermit_miner_02  -->
+            <p:state ifMarker="pi_1o_hermit_miner_02">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Там, внизу, на втором уровне шахты, много опасных монстров. Много рудокопов погибло.
+                            А ещё там сейчас Златоглот, от которого надо избавиться!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Войти">
+                                <p:toRoad roadId="pi_1o_golden_mine_2_lvl"/>
+                            </p:answer>
+                            <p:answer text="Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

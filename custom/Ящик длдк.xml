@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Ящик -->
+
+    <p:place id="pi_1o_Antigua_lc_kh_box" animType="EMPTY" imageId="56x59" name="Ящик" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В ящике лежат разные вещи - и, среди них, внезапно, зелье наги! Вам оно нужнее. </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="p7x_naga_3" />
+                        <p:answers>
+                            <p:answer text="Бесспорно" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В ящике лежат разные вещи. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+    <!-- Ящик если люди дома -->
+
+    <p:place id="pi_1o_Antigua_lc_kh_box_1" animType="EMPTY" imageId="56x59" name="Ящик" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1"> 
+                        <p:mainText>Копаться в вещах хозяев дома при них же - странное решение. Даже "Ну пожалуйста" не растопит недовольство... Очевидно, что вам указали на дверь. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я ж вернусь" goto="r1" out="true">
+                                <p:toRoad roadId="pi_1o_lumberjack_camp" />
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

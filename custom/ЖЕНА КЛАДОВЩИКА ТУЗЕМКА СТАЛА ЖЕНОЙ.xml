@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ЖЕНА КЛАДОВЩИКА ТУЗЕМКА СТАЛА ЖЕНОЙ -->
+
+    <p:place id="pi_1o_wifeugabuga_wife" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_wifeugabuga" name="Чака" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Коло буку Йоси бобо буку! Сча-стли-вая Ма-му-ба!</p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Счастья вам"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Коло буку Йоси бобо буку! Сча-стли-вая Ма-му-ба! {playerNick} чумба мачомба,
+                            хи-хи!
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Опять мачомба..." giveMarker="pi_1o_townAntigua_storeceeper_husband_3"
+                                      goto="completed" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="completed">
+                        <p:mainText>Коло буку Йоси бобо буку! Сча-стли-вая Ма-му-ба!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

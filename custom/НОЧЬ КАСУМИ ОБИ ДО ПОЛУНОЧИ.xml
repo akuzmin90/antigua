@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- НОЧЬ КАСУМИ ОБИ ДО ПОЛУНОЧИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_kasumi_obi_before_night" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_kasumi_obi_big"
+             name="Касуми Оби" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Медитирует*" delayMs="5000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1" imageId="{hero}" imageComment="{playerNick}" repeatable="false">
+                        <p:mainText>Почему ты здесь одна? Ведь все ещё отдыхают в таверне?</p:mainText>
+                        <p:answers> 
+                            <p:answer text="Далее" goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r1_1" ifMarker="pi_1o_kasumi_before_night_meditation">
+                        <p:mainText>Твоя медитация раскрыла новые грани сознания. Но это не делает нас близкими
+                            друзьями. Позволь мне дальше медитировать в одиночестве.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да, конечно" giveMarker="pi_1o_kasumi_before_night_meditation" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r1_2" ifMarker="pi_1o_kasumi_before_night_you_fool">
+                        <p:mainText>Я предпочитаю спокойствие и концентрацию. Слова лишь сотрясают воздух и отнимают
+                            внимание.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не отвлекаю" giveMarker="pi_1o_kasumi_before_night_you_fool" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" repeatable="false">
+                        <p:mainText>Хм. Это вопрос ради вопроса?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Честно, да" goto="r3"/>
+                            <p:answer text="Правда интересно" goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" repeatable="false">
+                        <p:mainText>Так и думала. Что ж, люди на Антигуа думают лишь о себе. Но спасибо за честный
+                            ответ.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как-то так" goto="r1_2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" repeatable="false">
+                        <p:mainText>Ты меня удивляешь. Здесь редко кому есть дело до других. Что я здесь делаю?
+                            Медитирую. Пока здесь тихо и спокойно. И нет, дети мне не мешают. Они очень уважительно ко
+                            мне относятся.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Медитируешь?" goto="r5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5" repeatable="false">
+                        <p:mainText>Да. Там, откуда я родом, это стандартная практика. В медитации ты познаёшь себя,
+                            открываешь новое внутри своего разума. Раз ты спрашиваешь... Медитируй со мной, и всё
+                            поймёшь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Медитировать" goto="r6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6" repeatable="false">
+                        <p:mainText>[Вы медитируете вместе с Касуми. Сквозь это состояние ваш разум понимает, как
+                            улучшить свою атаку! Странно, ведь никакой магии... Только спокойствие, тишина и познание
+                            себя...]
+                        </p:mainText>
+                        <p:award type="ATTACK_FOR_ALL" func="strongest07pct"/>
+                        <p:answers>
+                            <p:answer text="Это... Невероятно" goto="r1_1"/>
+                        </p:answers>
+                    </p:replica>                    
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Книга из гробницы"   -->
+            <p:state ifMarker="pi_1o_quest_book_from_tomb_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Ты хочешь принести книгу для Беллы? Это опасно. Даже я не рискнула спуститься в ту
+                            гробницу. Я видела там монстра, похожего на человека.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Где гробница?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>В мангровых джунглях. Её непросто найти. Но ты узнаешь её легко - там указано, что
+                            внутри покоится "Самый светлый ум Антигуа".
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_book_from_tomb_01"
+                                      giveMarker="pi_1o_quest_book_from_tomb_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_book_from_tomb" name="Книга из гробницы" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Книга из гробницы", получили книгу и ещё не сдали   -->
+            <p:state ifMarker="pi_1o_quest_book_from_tomb_kasumi_react" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Книга у тебя? Из той самой гробницы? Позволь мне взглянуть. [Касуми внимательно
+                            листает страницы] Ты говоришь, что это первый учёный, путешествует по времени и мирам. И
+                            книгу написала женщина. Верно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Он так сказал"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Посмотри внимательно. Автор - "Б.О.", и очень знакомая манера речи. Книга из другого
+                            времени... Которую написала Белла. Её инициалы. Её слова. Её манера речи. Она станет
+                            известным учёным.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Не говори ей. Это её судьба, пусть идёт к этому. Но я рада, что она добьётся своей
+                            цели. И ещё одно. Тобой сделана работа. У девочки нет денег, но я тебя отблагодарю за такой
+                            поступок.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="14"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_book_from_tomb_kasumi_react"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

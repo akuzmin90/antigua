@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Восставшая Нежить  -->
+
+    <p:place id="pi_1o_pg_cfp_3_boss" atlasId="pi_1o_PLACES_pi_1o_pirates_graveyard" imageId="pi_1o_pg_cfp_3_boss" name="Восставшая Нежить" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <p:state id="default" >
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Похоже, сегодня здесь вам повстречалась восставшая нежить! Что ж, будем упокаивать её!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="В бой!">
+                                <p:toBattle creatureId="pi_1o_pg_cfp_3_boss" onWinGoTo="win"
+                                            onLooseGoTo="loose"/> <!--TODO бой с Восставшая Нежить, боевая иконка будет называться pi_1o_pg_cfp_3_boss_f -->
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="loose" closable="false">
+                        <p:mainText>Если эта нежить такая сильная сейчас, какой же силой обладал этот пират при жизни...</p:mainText>
+                        <p:answers>
+                            <p:answer text="В атаку!">
+                                <p:toBattle creatureId="pi_1o_pg_cfp_3_boss" onWinGoTo="win" onLooseGoTo="loose"/>
+                            </p:answer>
+                            <p:answer text="Я вернусь" goto="loose" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="win" closable="false">
+                        <p:mainText>[Восставшая Нежить повержена! На её останках вы находите заслуженную награду!!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что там?" gotoFromScript="random" />
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="rand-1" probability="0.6">
+                        <p:mainText>Изумруды - всегда хорошо! </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="152"/>
+                        <p:answers>
+                            <p:answer text="Точно" complete="true" dropPlace="true">
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.7">
+                        <p:mainText>Золото - всегда хорошо! </p:mainText>
+                            <p:award type="GOLD"/>
+                        <p:answers>
+                            <p:answer text="Точно" complete="true" dropPlace="true">
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.6">
+                        <p:mainText>Золотая руда - всегда хорошо! </p:mainText>
+                            <p:award type="ORE_GOLD" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Точно" complete="true" dropPlace="true">
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.6">
+                        <p:mainText>Аметисты - всегда хорошо! </p:mainText>
+                            <p:award type="SULFUR" explicitValue="186"/>
+                        <p:answers>
+                            <p:answer text="Точно" complete="true" dropPlace="true">
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-5" probability="0.5">
+                        <p:mainText>Серебряный сундучок - всегда хорошо! </p:mainText>
+                            <p:award type="CUSTOM" customScript="giveSilverChest"/>
+                        <p:answers>
+                            <p:answer text="Точно" complete="true" dropPlace="true">
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-6" probability="0.7">
+                        <p:mainText>354 билетика в колесо фортуны - всегда хорошо! </p:mainText>
+                            <p:award type="TICKETS" explicitValue="354"/>
+                        <p:answers>
+                            <p:answer text="Точно" complete="true" dropPlace="true">
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ГИББОН  -->
+
+    <p:place id="pi_1o_Antigua_lg_gibbon_druid" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_gibbon_druid" name="Гиббон"
+             minPlayerStair="40" spawnProbability="0.4" minDistanceBetweenSame="4000" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_ancient_druid_04"/>
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false" >
+                <p:dialog>
+                    <p:replica id="r1" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Здравствуй, великий друид.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Грррррр арггггххх"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Гиббоны так не говорят.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>А как говорят гиббоны?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Хм… Ну вот так уже точно не говорят.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Гиб... Гибо... Гибоне гворе "Хоббите ходи до нас и кушай нас!" Хоббите хош любе
+                            гибоне кушай!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Гурманы"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ладно, ладно. Ты меня пойма[л|ла]. И я знаю, почему ты меня ищешь. Как? Всё просто -
+                            магия, это я. Друиды рождены магией, и мы знаем всё обо всём, ведь магия везде. Правда,
+                            Хранитель?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты знаешь меня?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Да, я знаю всех. Но ты ведь не за этим здесь... Послушай, магам-вуду не надо знать,
+                            что друиды не исчезли. Они ведь нам покоя не дадут, понимаешь? Скажи им, что разговорчивый
+                            гиббон - это чушь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Друиды... Кто вы?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Я же сказал, дети магии. Мы следим за балансом магического фронта. 900 лет назад...
+                            Мы были вынуждены скрыться. Однажды ты узнаешь про это. Но сейчас - прошу - забудь про нашу
+                            встречу. Ради Зазеркалья.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="О как... Хорошо" removeMarker="pi_1o_quest_ancient_druid_04"
+                                      giveMarker="pi_1o_quest_ancient_druid_05" complete="true" dropPlace="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

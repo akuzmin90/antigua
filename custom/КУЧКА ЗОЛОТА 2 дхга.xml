@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Кучка золота 2  -->
+
+    <p:place id="pi_1o_home_frail_gold_2" animType="EMPTY" imageId="121x89" name="Кучка золота" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Золото разбросано прямо по полу... Пожалуй, пропажу 1 монетки никто не заметит, верно?</p:mainText>
+                            <p:award type="GOLD" explicitValue="1" />
+                        <p:answers>
+                            <p:answer text="Верно!" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

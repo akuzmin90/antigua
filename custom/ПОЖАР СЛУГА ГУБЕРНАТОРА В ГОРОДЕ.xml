@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ПОЖАР СЛУГА ГУБЕРНАТОРА В ГОРОДЕ -->
+
+    <p:place id="pi_1o_Antigua_gp_governor_servant_fire_leader" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor_servant"
+             name="Слуга Губернатора" minPlayerStair="40" meetProbability="0" mandatory="true">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест "Город горит!" начало  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я координирую тушение пожара, по указу самого Губернатора! В дома сейчас не стоит
+                            заходить, даже не пытайся! Внутри опасно, там уже тушат пожары, а вот снаружи... К каждому
+                            зданию приставлено по человеку!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Помоги им - вот тут как раз нам и нужна твоя помощь!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Принято!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Город горит!" всем воду разнесли  -->
+            <p:state
+                    markerCondition="pi_1o_quest_antigua_town_burning_water_nestor_done_for_servant and pi_1o_quest_antigua_town_burning_water_storekeeper_done_for_servant and pi_1o_quest_antigua_town_burning_water_felix_done_for_servant and pi_1o_quest_antigua_town_burning_water_hermit_pirate_done_for_servant and pi_1o_quest_antigua_town_burning_water_victor_obi_done_for_servant and pi_1o_quest_antigua_town_burning_water_jack_done_for_servant"
+                    closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Огромное спасибо тебе за помощь! Теперь мы точно справимся с этим пожаром
+                            самостоятельно! Иди к Губернатору, я же обещал тебе награду.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо"
+                                      removeMarker="pi_1o_quest_antigua_town_burning_water_nestor_done_for_servant,pi_1o_quest_antigua_town_burning_water_storekeeper_done_for_servant,pi_1o_quest_antigua_town_burning_water_felix_done_for_servant,pi_1o_quest_antigua_town_burning_water_hermit_pirate_done_for_servant,pi_1o_quest_antigua_town_burning_water_victor_obi_done_for_servant,pi_1o_quest_antigua_town_burning_water_jack_done_for_servant"
+                                      requestSpecialPlaces="true" giveMarker="pi_1o_quest_antigua_town_burning_02"
+                                      complete="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_governor_palace_town_burning"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

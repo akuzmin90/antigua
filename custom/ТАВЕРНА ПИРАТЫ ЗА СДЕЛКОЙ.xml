@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА ПИРАТЫ ЗА СДЕЛКОЙ -->
+
+    <p:place id="pi_1o_tat_pirates_in_deal" animType="EMPTY" imageId="134x124" name="Пираты за сделкой"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Аванс не более половины!" delayMs="3000"/>
+                    <p:talk text="Сделка есть сделка!" delayMs="9000"/>
+                    <p:talk text="Все в плюсе" delayMs="17000"/>
+                    <p:talk text="Вот здесь подпиши" delayMs="24000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Дружище, мы тут обговариваем сделку! Пожалуйста, не мешай нам. У нас важные деловые
+                            переговоры, да, в таверне! А где ещё?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Действительно" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

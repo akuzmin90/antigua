@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Рудокоп лево  -->
+
+    <p:place id="pi_1o_Antigua_gm_miner_03" animType="EMPTY" imageId="56x82" name="Рудокоп" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Эта жила руды хитра..." delayMs="3000"/>
+                    <p:talk text="Скоро перерыв" delayMs="10000"/>
+                    <p:talk text="Ничего не трогай!" delayMs="14000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Раньше я был фермером, разводил бородавочников на мясо. Но потом понял - мне нужен настоящий труд. Тем более, мы обеспечиваем весь остров золотой рудой. Мы уважаемы, как Губернатор! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Моё почтение" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

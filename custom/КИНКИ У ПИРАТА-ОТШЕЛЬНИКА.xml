@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КИНКИ У ПИРАТА-ОТШЕЛЬНИКА -->
+
+    <p:place id="pi_1o_kinky_hermit" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_kinky" name="Кинки" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!--TODO квест "Дед опять забыл выпить таблетки" у пирата-отшельника   -->
+            <p:state ifMarker="pi_1o_quest_kinky_party_06" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Слушай, дружище, хватит за мной бегать. Я - ветеран среди пиратов, а затем и
+                            инквизиции. Прошёл семь морей и три океана. Я устал работать. Я хочу быть дедом, безумным
+                            старым дедом, отдыхать, веселиться.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Инквизиция меня таблетками пичкает! Давит на разум, и я шпионю. Помоги мне.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Надо им дать понять, чтобы отстали от меня. Дай мне денег, я устрою крутую
+                            вечеринку. Будут все. И этот Валеран должен понять, что я не хочу быть шпионом. Дай мне 1000
+                            золота!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм... Держи!" goto="r5"/>
+                            <p:answer text="Пей таблетки!" goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Во ты как, да... Ладно, ладно, никому не нужен весёлый безумный дед. Давай свои
+                            таблетки. Надеюсь, мы никогда больше не встретимся.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ух как сказал" removeMarker="pi_1o_quest_kinky_party_06"
+                                      giveMarker="pi_1o_quest_kinky_party_bad" complete="true" dropPlace="true"
+                                      requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Прекрасно! Отлично! Скоро ты обо мне услышишь, услышит весь остров Антигуа! Скорее
+                            сообщи Валерану, что Кинки свободен! [Вы дали Кинки 1000 золотых монет]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_kinky_party_06"
+                                      giveMarker="pi_1o_quest_kinky_party_good" complete="true" dropPlace="true"
+                                      requestSpecialPlaces="true">
+                                <p:pay gold="1000" ignoreIfNotEnough="true"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

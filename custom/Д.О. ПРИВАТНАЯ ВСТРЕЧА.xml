@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Д.О. ПРИВАТНАЯ ВСТРЕЧА -->
+
+    <!-- Квест с доски объявлений "Приватная встреча"  -->
+    <p:place id="pi_1o_Antigua_quest_sons_of_mara" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_quest_sons_of_mara"
+             name="Приватная встреча" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="30" requireGenMode="PI_1O_LEVIATHAN_GROTTO">
+             <p:markerCondition condition="pi_1o_quest_bulletin_board_sons_of_mara_01"/>
+        <p:blockingCreature probability="0"/>
+        <p:dialog>
+            <p:replica id="r1">
+                <p:mainText>А вот и ты, {playerNick}, эта встреча была неизбежна. Позволь представиться - Сыновья Мары.
+                    Ты преда[л|ла] нас - и пора понести своё заслуженное наказание!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В бой!">
+                        <p:toBattle creatureId="pi_1o_Antigua_quest_sons_of_mara" onWinGoTo="win"
+                                    onLooseGoTo="loose"/> <!--TODO бой с Сыновья Мары, от 1 до 3, боевая иконка будет называться pi_1o_Antigua_quest_sons_of_mara_f1...f3 -->
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="loose" closable="false">
+                <p:mainText>Вы проиграли сражение... Но не битву! Нужно показать этим выскочкам, Сыновьям Мары, силу
+                    Хранителя Зазеркалья!
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="В атаку!">
+                        <p:toBattle creatureId="pi_1o_Antigua_quest_sons_of_mara" onWinGoTo="win" onLooseGoTo="loose"/>
+                    </p:answer>
+                    <p:answer text="Я вернусь" goto="loose" out="true"/>
+                </p:answers>
+            </p:replica>
+
+            <p:replica id="win" closable="false">
+                <p:mainText>[Сыновья Мары повержены! Пора вернуться к Стефану!]
+                </p:mainText>
+                <p:answers>
+                    <p:answer text="Понимаю" removeMarker="pi_1o_quest_bulletin_board_sons_of_mara_01"
+                              giveMarker="pi_1o_quest_bulletin_board_sons_of_mara_02" complete="true"/>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+    </p:place>
+
+</p:root>

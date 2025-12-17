@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Статуя воинам друидов  -->
+
+    <p:place id="pi_1o_mt_magevoodoo_mt_statue_for_druids_warriors" animType="EMPTY" imageId="52x120" name="Статуя воинам друидов" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Эта статуя возведена слишком давно, это точно не работа магов-вуду. "В честь павших воинов друидов". Хм. Друиды? Кто это? [Пока вы размышляли, магия статуи одарила вас подарком] </p:mainText>
+                            <p:award type="SULFUR" explicitValue="154" />
+                        <p:answers>
+                            <p:answer text="Колдунство" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Эта статуя возведена слишком давно, это точно не работа магов-вуду. "В честь павших воинов друидов". Хм. Друиды? Кто это? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

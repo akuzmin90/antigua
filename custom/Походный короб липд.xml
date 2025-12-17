@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Походный короб  -->
+
+    <p:place id="pi_1o_it_td_camping_box" animType="EMPTY" imageId="124x242" name="Походный короб" minPlayerStair="40"
+             meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Это походный короб - по сути, большой ящик - с которым инквизитор Дориан отправился в эту экспедицию. Сам не зная того, Дориан поделился с вами золотом, что там лежит. </p:mainText>
+                            <p:award type="GOLD" />
+                        <p:answers>
+                            <p:answer text="Твори добро" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Это походный короб - по сути, большой ящик - с которым инквизитор Дориан отправился в эту экспедицию. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

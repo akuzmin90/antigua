@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Гости  -->
+    <!-- Гости  -->
+    <!-- Гости  -->
+    <!-- Гости  -->
+    <!-- Гости  -->
+    <!-- Гости  -->
+
+
+    <!-- Гость справа низ 1  -->
+    <p:place id="pi_1o_kp_guest_01" animType="EMPTY" imageId="42x64" name="Гость" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Ик" delayMs="13000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Отличная вечеринка! Уверен, её надо сделать ежегодной!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Оптимист" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Гость слева низ 1  -->
+    <p:place id="pi_1o_kp_guest_02" animType="EMPTY" imageId="43x67" name="Гость" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Я свой собственный сын" delayMs="120000"/>
+                    <p:talk text="Аве Цезарь!" delayMs="150000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Знаешь, чему я удивляюсь... Это место... На Антигуа разве есть такие длинные здания? А макаки? Их не позвали... Ведь они как ягуары, тоже плывут в никуда...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ром, видимо, хороший" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+    <!-- Гость справа низ 2  -->
+    <p:place id="pi_1o_kp_guest_03" animType="EMPTY" imageId="51x72" name="Гость" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Лучший день в жизни!" delayMs="10000"/>
+                    <p:talk text="*Плачет от счастья*" delayMs="20000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Искатель приключений, мне сказали, что это ты да[л|ла] Кинки деньги на вечеринку! Спасибо! Я так счастлив!!! Вот, мой подарок... Венский конвертик! Кусай скорее! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Лучше молчи" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>   
+
+        </p:states>
+    </p:place>
+
+</p:root>

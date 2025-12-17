@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- УПРАВЛЯЮЩИЙ ДВОРЦОМ -->
+
+    <p:place id="pi_1o_Antigua_gp_palace_manager" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_palace_manager" name="Управляющий дворцом" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1" repeatable="false">
+                        <p:mainText>Здравствуй, {playerNick}! Итак, Губернатор дал тебе свою комнату. Сейчас она пуста, но я
+                            помогу тебе её обставить! Итак, начнём?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Приступаем!" />
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r2">
+                        <p:mainText>Для начала, тебе нужна кровать. Из дорогих пород дерева, с палантином, мягкой периной и
+                            подушками - красота! Стоимость - 100S золота, установим со склада хоть сейчас!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r3" giveMarker="pi_1o_my_room_interior_bed_buy_it">
+                                <p:pay gold="100000000000"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r3">
+                        <p:mainText>Прекрасно, кровать уже доставили к тебе в комнату - можешь проверить! Далее, стол.
+                            Добротный, крепкий, из красной древесины, очень элитно! Стоимость - 300 золотой руды.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r4" giveMarker="pi_1o_my_room_interior_table_buy_it">
+                                <p:pay ore_gold="300"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r3" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r4">
+                        <p:mainText>Прекрасно, стол уже доставили к тебе в комнату - можешь проверить! Далее, 4 стула. Красивые,
+                            крепкие, достойные самого Губернатора! Стоимость - 800 изумрудов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r5" giveMarker="pi_1o_my_room_interior_chair_buy_it">
+                                <p:pay mithril="800"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r5">
+                        <p:mainText>Прекрасно, 4 стула уже доставили к тебе в комнату - можешь проверить! Далее, шкаф. Тебе и
+                            твоему спутнику нужно место для одежды, верно? Стоимость - 100S золота.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r6" giveMarker="pi_1o_my_room_interior_wardrobe_01_buy_it">
+                                <p:pay gold="1000000000000"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r5" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r6">
+                        <p:mainText>Прекрасно, шкаф уже доставили к тебе в комнату - можешь проверить! И ещё один шкаф, шкафов
+                            много не бывает! Стоимость - 400 золотой руды.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r7" giveMarker="pi_1o_my_room_interior_wardrobe_02_buy_it">
+                                <p:pay ore_gold="400"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r6" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r7">
+                        <p:mainText>Прекрасно, второй шкаф уже доставили к тебе в комнату - можешь проверить! Далее, нужно
+                            освещение. Да, солнце на Антигуа не заходит, но бывает пасмурно! Стоимость - 1000 изумрудов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r8" giveMarker="pi_1o_my_room_interior_lights_buy_it">
+                                <p:pay mithril="1000"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r7" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r8">
+                        <p:mainText>Прекрасно, освещение уже доставили к тебе в комнату - можешь проверить! Далее, комод. Много
+                            ящиков для всего! Стоимость - 100S золота.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r9" giveMarker="pi_1o_my_room_interior_chest_01_buy_it">
+                                <p:pay gold="10000000000"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r8" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r9">
+                        <p:mainText>Прекрасно, комод уже доставили к тебе в комнату - можешь проверить! И ещё один комод,
+                            комодов много не бывает! Стоимость - 500 золотой руды.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r10" giveMarker="pi_1o_my_room_interior_chest_02_buy_it">
+                                <p:pay ore_gold="500"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r9" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r10">
+                        <p:mainText>Прекрасно, второй комод уже доставили к тебе в комнату - можешь проверить! Далее, 2 кресла -
+                            чтобы ты и твой спутник могли сидеть, беседовать, книги читать... Стоимость - 1300 изумрудов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r11" giveMarker="pi_1o_my_room_interior_armchair_buy_it">
+                                <p:pay mithril="1300"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r10" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r11">
+                        <p:mainText>Прекрасно, 2 кресла уже доставили к тебе в комнату - можешь проверить! И финальный штрих -
+                            элементы декора! Флаг и картины. Стоимость - 600 золотой руды.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r12" giveMarker="pi_1o_my_room_interior_decor_buy_it">
+                                <p:pay ore_gold="600"/>
+                            </p:answer>
+                            <p:answer text="Пока что дороговато" goto="r11" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r12">
+                        <p:mainText>Прекрасно, флаг и картины уже доставили к тебе в комнату - можешь проверить! Поздравляю,
+                            теперь твоя комната достойна самих Губернатора и Главы Пиратов! Моя работа здесь окончена.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r13"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="r13">
+                        <p:mainText> [Управляющий дворцом занят своими делами]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r13" out="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

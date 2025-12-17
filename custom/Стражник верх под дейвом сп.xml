@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Стражник верх под дейвом -->
+
+    <p:place id="pi_1o_Antigua_sp_guard_npc_2" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_sp_guard_npc_2" name="Стражник" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Мой обед - только мой!" delayMs="36000"/>
+                    <p:talk text="Ладно, шучу, треску будешь?" delayMs="46000"/>
+                    <p:talk text="Делиться - это правильно!" delayMs="56000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Не нарушай законов и веди себя достойно - и тогда я буду дальше скучать здесь, а ты - не в темнице у Губернатора, ахаха! </p:mainText>
+                        <p:answers>
+                            <p:answer text="Доступно сказал" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

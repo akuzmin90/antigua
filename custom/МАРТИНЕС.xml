@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАРТИНЕС -->
+
+    <p:place id="pi_1o_Antigua_lc_martines" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_martines" name="Мартинес"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Бабочки, кис-кис-кис!" delayMs="11000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Меня назвали в честь мамы! Наши имена очень похожи! А ещё я ловлю бабочек, но я тебе
+                            не покажу свою коллекцию! Потому что я ещё ничего не поймал за всё время...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"  complete="true" giveMarker="lumberjack_martines_for_quests"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

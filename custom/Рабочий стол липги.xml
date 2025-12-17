@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Рабочий стол  -->
+
+    <p:place id="pi_1o_it_thoi_table_for_works" animType="EMPTY" imageId="206x86" name="Рабочий стол" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Хм, рабочий стол Главы Инквизиции... Надо осмотреть. Что же тут у нас? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Осмотреть" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Изумруды, это всегда приятно. Особенно, когда находишь спрятанное - чувствуешь себя добытчиком и охотником! </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="104" />
+                        <p:answers>
+                            <p:answer text="Да-да-да" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Зелье Кощея? Интересно, а инквизиции оно зачем? Именно, незачем. Забираем. </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="p7x_koschey_3" />
+                        <p:answers>
+                            <p:answer text="Да-да-да" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Кукла-вуду казни?! А Глава Инквизиции у нас что, нет-нет да и магией промышляет? Избавим его от лукавого, магия - по нашей части! Впрочем, больше полезного тут нет... </p:mainText>
+                            <p:award type="CONSUMABLE" itemId="doll_execution" />
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r5" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Рабочий стол Главы Инквизиции - ничего интересного для вас тут больше нет. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r5" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ДУБРОВСКИЙ -->
+
+    <p:place id="pi_1o_ht_dubrovskiy" animType="EMPTY" imageId="107x105" name="Дубровский" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Кому-то удалось попасть сюда О_о Я думал, это слишком сложно! Кстати, не знаю почему, но ненавижу Стивена. Вот не нравится он мне, вообще! А вот тебе я буду рад сделать подарок :) </p:mainText>
+                            <p:award type="CUSTOM" customAtlas="ap_19" customImage="tropics" customComment="Тропики" customScript="giveFreeTropicsPortal" giveCompositeMarker="c2_24k_done" />
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Кому-то удалось попасть сюда О_о Я думал, это слишком сложно! Кстати, не знаю почему, но ненавижу Стивена. Вот не нравится он мне, вообще! А вот Послушница и Хельга - ещё как ;) </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

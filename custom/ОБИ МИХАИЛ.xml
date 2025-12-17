@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МИХАИЛ ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_michael_obi" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_michael_obi" name="Михаил Оби" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireTime="08:00-11:59,13:00-18:59" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Изучает следы*" delayMs="16000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я - местный следопыт. Много чего знаю и изучаю про эту местность. В джунглях полно
+                            старых гробниц - но даже я боюсь туда соваться. Один раз, я встретил там призрака... Больше
+                            ни ногой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"
+                                      giveMarker="lumberjack_michael_obi_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_rare_herbs_01 or (pi_1o_quest_clear_love_02 and lumberjack_michael_obi_for_quests) or pi_1o_quest_scorpio_man_01 or pi_1o_quest_lost_criita_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_rare_herbs_01" text="Адамантовый репей"
+                                      goto="r_lumberjack_michael_obi1"/>
+                            <p:answer markerCondition="pi_1o_quest_clear_love_02 and lumberjack_michael_obi_for_quests"
+                                      text="Красный мак" goto="r_lumberjack_michael_obi2"/>
+                            <p:answer ifMarker="pi_1o_quest_scorpio_man_01" text="Человек-скорпион"
+                                      goto="r_lumberjack_michael_obi3"/>
+                            <p:answer ifMarker="pi_1o_quest_lost_criita_01" text="Заблудшая Криита"
+                                      goto="r_lumberjack_michael_obi4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_michael_obi1">
+                        <p:mainText>Адамантовый репей? Редкое растение. Его корни испускают особый сок, который очень
+                            любят кроты. Он для них как ром, ахаха! Они становятся агрессивными и боевыми после него,
+                            так как сок бродит на солнце.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Такова природа" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_michael_obi2">
+                        <p:mainText>Ты ищешь красный мак? Редкое растение, но тебе повезло - у меня есть как раз такой!
+                            Долорес просила принести ей... Но я могу найду ещё. Хочешь, продам его за 25 золотой руды?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Покупаю!" goto="r_lumberjack_michael_obi2_1"/>
+                            <p:answer text="Нет! Дорого!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_michael_obi2_1">
+                        <p:mainText>Отлично! Держи красный мак, и давай мою руду. Сделка есть сделка! [Вы отдали 25 золотой руды] </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но ты шельмец" removeMarker="pi_1o_quest_clear_love_02"
+                                      giveMarker="pi_1o_quest_clear_love_03" requestSpecialPlaces="true" complete="true">
+                                <p:pay ore_gold="25"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_michael_obi3">
+                        <p:mainText>Человек-скорпион очень осторожен. Я видел его следы. А после того, как он съел
+                            перекус Вероны - ещё и следы жизнедеятельности. Так что смотри под ноги.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Фу, Михаил!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_michael_obi4">
+                        <p:mainText>Крииты - это духи, появившиеся в тот момент, когда любая девушка из нашей деревни
+                            становятся половозрелой. Это воплощение её зрелости, её энергия. Крииты бродят по джунглям и
+                            кричат. Всё просто.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Обалдеть" giveMarker="what_a_story_mark" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+<!-- ПОЖАР ГУБЕРНАТОР -->
+
+<p:place id="pi_1o_Antigua_gp_governor_fire" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_gp_governor" name="Губернатор" minPlayerStair="40" meetProbability="0">  <p:blockingCreature probability="0"/>
+        <p:states>
+
+        	<!-- квест "Город горит!" конец  -->
+        <p:state id="default" closable="false" >            
+        <p:dialog>
+            <p:replica id="r1" >
+                <p:mainText>Город высоко ценит помощь каждого в борьбе с пожаром - подобной напасти не было уже несколько лет! Это всё Стивен, морской дьявол его побери, с его дома всё началось!  </p:mainText>
+                <p:answers>
+                    <p:answer text="Стивен вообще жуть" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r2" >
+                <p:mainText>Согласен. Итак, пожар почти потушен. Маги-вуду любезно согласились магией восстановить город в короткие сроки. Теперь о награде. Золотая руда никогда не помешает, верно? </p:mainText>
+                    <p:award type="ORE_GOLD" explicitValue="90" />
+                <p:answers>
+                    <p:answer text="Верно" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r3" >
+                <p:mainText>Вот тебе ещё карточка. Я не знаю, как её использовать, но ты же авантюрист - найдёшь ей применение! Спасибо ещё раз, я благодарю тебя от имени каждого жителя города Антигуа! </p:mainText>
+                    <p:award type="CUSTOM" customAtlas="" customImage="card-snake-small" customComment="Змейка" customScript="giveSnake" />
+                <p:answers>
+                    <p:answer text="Найду конечно!" />
+                </p:answers>
+            </p:replica>
+            <p:replica id="r4" >
+                <p:mainText>[Вы помогли с тушением огромного пожара в городе Антигуа! Ваши действия достойны восхищения! Все объединились перед общей бедой, и вы не остались в стороне. +3 к общей репутации!] </p:mainText>
+                    <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="3" />
+                <p:answers>
+                    <p:answer text="Добро - это прекрасно" >
+                        <p:addTaskProgress id="pi_1o_quest_antigua_town_burning" />
+                        <p:toRoad roadId="pi_1o_townAntigua" />
+                    </p:answer>
+                </p:answers>
+            </p:replica>
+        </p:dialog>
+        </p:state>
+
+    </p:states>
+    </p:place>
+
+    </p:root>

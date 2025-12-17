@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МАРТИНА -->
+
+    <p:place id="pi_1o_Antigua_lc_martina" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_martina" name="Мартина"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Так, ещё это постирать..." delayMs="7000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Я здесь прачка - кто-то ведь должен делать и эту работу, верно? Не всем искать
+                            приключения, как тебе. И смотри мне, не напугай моего ребёнка своими историями!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"  complete="true" giveMarker="lumberjack_martina_for_quests"/>
+                            <p:answer text="О задании" markerCondition="pi_1o_quest_bulletin_board_washing_powder_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_bulletin_board_washing_powder_01" text="Стиральный порошок"
+                                      goto="r_lumberjack_martina1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_martina1">
+                        <p:mainText>О, очередная поставка стирального порошка! Давай его сюда, спасибо большое!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не за что" removeMarker="pi_1o_quest_bulletin_board_washing_powder_01"
+                                      giveMarker="pi_1o_quest_bulletin_board_washing_powder_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

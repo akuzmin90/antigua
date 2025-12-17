@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Стражник низ -->
+
+    <p:place id="pi_1o_Antigua_sp_guard_npc" atlasId="pi_1o_PLACES_road_3" imageId="pi_1o_Antigua_sp_guard_npc" name="Стражник" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:talks onClick="IGNORE">
+                    <p:talk text="Веди себя прилично" delayMs="17000"/>
+                    <p:talk text="Веди себя прилично" delayMs="34000"/>
+                    <p:talk text="Веди себя прилично" delayMs="51000"/>
+                    <p:talk text="Веди себя прилично" delayMs="68000"/>
+                    <p:talk text="Веди себя прилично" delayMs="85000"/>
+                    <p:talk text="Веди себя прилично" delayMs="102000"/>
+                    <p:talk text="Веди себя прилично" delayMs="117000"/>
+                    <p:talk text="Веди себя прилично" delayMs="134000"/>
+                    <p:talk text="Принесы воды, что ли?" delayMs="151000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Когда-то и я был искателем приключений, но однажды мне так вломили, что я передумал. А это я ещё из дома не вышел! Ахаха, шутка! Я успел выйти за порог дома, но жена... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мне не понять" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

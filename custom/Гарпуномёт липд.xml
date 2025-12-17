@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Гарпуномёт  -->
+
+    <p:place id="pi_1o_it_td_harpoon_gun" animType="EMPTY" imageId="174x70" name="Гарпуномёт" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Рядом с необычным оружием лежит записка: "Гарпуномёт - образец 1. Для подводной охоты." Сам гарпуномёт огромен... </p:mainText>
+                        <p:answers>
+                            <p:answer text="На кита что ли?!" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

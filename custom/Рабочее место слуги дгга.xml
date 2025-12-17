@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Рабочее место слуги  -->
+
+    <p:place id="pi_1o_Antigua_gp_table_for_work_servant" animType="EMPTY" imageId="82x184" name="Рабочее место слуги" minPlayerStair="40" meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здесь, с комфортом, работает слуга Губернатора. Вы видите много отчётов, но среди них лежит магический свиток... Который вам нужнее, кстати. Незаметно вы его забираете. И получаете озарение! </p:mainText>
+                            <p:award type="CUSTOM" customAtlas="atlas_boost" customImage="complex_big" customComment="Бустер" customScript="giveComplexSmall" />
+                        <p:answers>
+                            <p:answer text="А почему нет?" goto="r2" out="true" requestSpecialPlaces="true" postLaunchScriptId="triggerRespawn"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Здесь, с комфортом, работает слуга Губернатора. Вы видите много отчётов, различных записей. Бюрократия. одним словом. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

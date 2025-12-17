@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТАВЕРНА РУПРАХТ ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_rupracht_obi_tavern" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_rupracht_obi_big"
+             name="Рупрахт Оби" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Ик*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Если хочешь, приходи на службу, с семи до восьми утра! А сейчас - позволь себе
+                            придаться сооблазну, наша вера это разрешает, если в меру и с устатку. Да только с устатку
+                            меры нет!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Догмат видимо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Кто-то не платит"   -->
+            <p:state ifMarker="pi_1o_quest_someone_not_paying_02" repeatable="false" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Ик*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Служители часовни, как я или Иветта Оби, не платят за себя в таверне, закон деревни.
+                            А если бы и платили, То духовность не позволила бы обманывать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Убедительно" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Призрак в часовне" начало  -->
+            <p:state ifMarker="lumberjack_rupracht_obi_for_quests" repeatable="false" closable="false" mandatory="true" probabilityPercentState="30">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Ик*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Искатель приключений, у меня есть работа, как раз для тебя! Дело вот в чём - пару
+                            раз мне приходилось быть в часовне ночью. И каждый раз, с пяти о шести утра, я видел
+                            призрака!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Прогнать его?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Да, это было бы прекрасно! Я заплачу за эту работу!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Принято!" giveMarker="pi_1o_quest_ghost_in_chapel_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_ghost_in_chapel" name="Призрак в часовне" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Призрак в часовне" конец  -->
+            <p:state ifMarker="pi_1o_quest_ghost_in_chapel_02" repeatable="false" closable="false" probabilityPercentState="30">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Ик*" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Призрака больше нет? Замечательные новости! Вот тебе за твою работу. Но я хочу
+                            наградить тебя не только материально!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="20"/>
+                        <p:answers>
+                            <p:answer text="Давай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Я немного знаю магию, поэтому я повышу твоё здоровье! Спасибо ещё раз, искатель
+                            приключений!
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Тебе спасибо!" removeMarker="pi_1o_quest_ghost_in_chapel_02"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_ghost_in_chapel"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

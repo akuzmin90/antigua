@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Бочка 07 -->
+
+    <p:place id="pi_1o_Antigua_sp_wh_barrel_07" animType="EMPTY" imageId="77x109" name="Бочка" minPlayerStair="40"
+             meetProbability="0" >
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>В этой бочке лежит всякий хлам. Но порыться можно... И не зря! Среди хлама вы находите изумруды - видимо, на Антигуа они не особо в ходу. Тем лучше, можно смело забирать. </p:mainText>
+                            <p:award type="MITHRIL" explicitValue="15" />
+                        <p:answers>
+                            <p:answer text="Я и не боюсь" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В этой бочке лежит всякий хлам. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

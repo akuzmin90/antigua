@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Осиное гнездо -->
+
+    <p:place id="pi_1o_mt_hotm_hornets_nest" animType="EMPTY" imageId="60x70" name="Осиное гнездо" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Внезапно. Осиное гнездо лежит прямо на бочке. Судя по звуку, осы внутри. Кстати, само гнездо заткнуто пробкой... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Вынуть пробку" goto="r2" />
+                            <p:answer text="Оставить пробку" goto="r1" out="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>В порыве странных эмоций, вы вынимаете пробку из осиного гнезда. Осы этого и ждали. Они дружно вылетают и начинают вас атаковать! А их много... Они очень скоординированны...</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ёшки-матрёшки!!!" goto="r3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3" atlasId="pi_1o_PLACES_road_4" imageId="pi_1o_mt_magevoodoo_mentor" imageComment="Маг-вуду Наставник">
+                        <p:mainText>ВАКА!!! Что ты делаешь?! Тебе не хватило мудрости оставить всё, как есть? [Рассерженный маг-вуду Наставник делает пару магических жестов, и осы улетают в гнездо, а он уходит.] </p:mainText>
+                        <p:answers>
+                            <p:answer text="То есть, всё хорошо" goto="r4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Осиное гнездо лежит прямо на бочке. Судя по звуку, осы внутри. Пусть там и будут. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Именно" goto="r4" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+
+        </p:states>
+    </p:place>
+
+</p:root>

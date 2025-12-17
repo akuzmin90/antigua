@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Хроники Залесья  -->
+
+    <p:place id="pi_1o_Antigua_lc_oh_chronicles_zalesye" animType="EMPTY" imageId="47x46" name="Хроники Залесья" minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Книга называется "Хроники Залесья" - так называется, как многие считают, выдуманная страна за Океаном Льда. Хотите прочитать? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да" goto="r2" />
+                            <p:answer text="Нет" goto="r1" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>...И наступила хворь великая на день седьмой, и поразила она скот и птицу. И возжелали скот и птица сотворить непотребство меж собою, оное известно аки "Кровавая баня животины"... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм..." goto="r3" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>...И курицы едят друг друга, и лошади бегут во океян и плывут во глубь, желая наказать рыбу всякую за эволюционные процессы. А человеки не могли противостоять хвори... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм..." goto="r4" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>...Стали человеки думать, пошто такая напасть, коли звери захворели, но не они. Решили общно и разуменно - вину ту положить на Матильду, что пришлая как два лета... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм..." goto="r5" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>...Матильда супротив мнения общного настроена была, ведь ежели так оно, то в мешке потопят, а коли не так оно, то может и не потопят в мешке. Тут как помыслы кажут... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм..." goto="r6" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>...Община стала пыту пытывать, а Матильда на своём стоить. Не смогла община Матильду убедить, что по ней вина хвори великой. На том и разошлись... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм..." goto="r7" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>...Обиду затаила Матильда великую, да призвала ящеров иноземских во общину, поклёп возвёдшую на деву невинную. И пришли ящеры, аки супостаты жестокие, и поработили человеков... </p:mainText>
+                        <p:answers>
+                            <p:answer text="Эм..." goto="r8" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>...И стала Матильда над ящерами владычицей, и стали ящеры ей яства носить да благодати воздавать. С тех пор в Заслесье ящеры, что человеки, род свой ведут да Матильду чтят... </p:mainText>
+                        <p:answers>
+                            <p:answer text="ЧТО это было?!" goto="r9" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r9">
+                        <p:mainText>Хотите прочитать историю ещё раз? </p:mainText>
+                        <p:answers>
+                            <p:answer text="Конечно!" goto="r2" />
+                            <p:answer text="Нет уж..." goto="r9" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

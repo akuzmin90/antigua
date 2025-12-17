@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ШИМА ОБИ  -->
+
+    <p:place id="pi_1o_Antigua_lc_shima_obi" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp_2" imageId="pi_1o_Antigua_lc_shima_obi" name="Шима Оби" requireTime="08:00-11:59,13:00-18:59" minPlayerStair="40" meetProbability="30" minDistanceBetweenSame="4000" requireGenMode="PI_1O_MANGROVE_JUNGLE">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="*Рубит по-лесорубски*" delayMs="7000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Что, нечасто видишь женщину-лесоруба? А ты не прохлаждайся в городе, среди этих
+                            ленивых людей. Только здесь, у нас, настоящий труд - тяжёлый, но все на Антигуа зависят от
+                            дров, что мы заготавливаем!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true" giveMarker="lumberjack_shima_obi_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_1o_quest_scorpio_man_01 or pi_1o_quest_cure_for_snoring_01 or pi_1o_quest_cure_for_snoring_02"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- реакции  -->
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_1o_quest_scorpio_man_01" text="Человек-скорпион"
+                                      goto="r_lumberjack_shima_obi1"/>
+                            <p:answer
+                                    markerCondition="pi_1o_quest_cure_for_snoring_01 or pi_1o_quest_cure_for_snoring_02"
+                                    text="Рупрахт храпит" goto="r_lumberjack_shima_obi2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_shima_obi1">
+                        <p:mainText>Буквально позавчера он очень быстро пробежал мимо меня! Я даже вначале не поняла,
+                            что это было. А потом как поняла! Рупрахт обещал молиться за мою безопасность.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Всё будет хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_lumberjack_shima_obi2">
+                        <p:mainText>Пожалуйста, достань мне это лекарство. Мы ходим в город почти никогда, а тем
+                            более я не хочу пересекаться с этими магами-вуду...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо-хорошо" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Лекарство от храпа", первый диалог   -->
+            <p:state ifMarker="lumberjack_shima_obi_for_quests" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Ты ведь искатель приключений, верно? Ходишь везде, везде бываешь? У меня есть к тебе
+                            одно дело, очень личное... Ты поможешь мне?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слушаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>Мой муж, Рупрахт Оби, очень сильно храпит. И всё бы ничего, но он любит спать,
+                            прижавшись к моей щеке... Ты же понимаешь, НАСКОЛЬКО громко его храп звучит в моей голове?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Хоть кто-то понимает... У магов-вуду точно есть лекарство от храпа! Я знаю!
+                            Пожалуйста, сходи к ним в лагерь, попробуй достать эту штуку, а я отблагодарю, ладно?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ладно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>И давай договоримся... Это личный вопрос, и обсуждать я его буду только здесь, в
+                            джунглях, чтобы никто не узнал. Мне стыдно и неловко...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" giveMarker="pi_1o_quest_cure_for_snoring_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_cure_for_snoring" name="Лекарство от храпа" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Лекарство от храпа", финал   -->
+            <p:state ifMarker="pi_1o_quest_cure_for_snoring_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Лекарство у тебя, правда? Хорошие новости, я очень рада. Так, а что с ним делать,
+                            как правильно пить? Или втирать? Или добавлять в еду?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Рассказать"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Просто выпить, и всё? Это просто, ради меня он выпьет без разговоров. И шесть лет
+                            спокойного сна... Спасибо, искатель приключений! Вот тебе за работу.
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="12"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_cure_for_snoring_03" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_cure_for_snoring"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

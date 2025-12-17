@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- Сундук  -->
+
+    <p:place id="pi_1o_pg_cfp_1_chest" animType="EMPTY" imageId="112x128" name="Сундук" minPlayerStair="40"
+             meetProbability="0" respawnPolicy="EVERYDAY">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Сундук находится здесь так давно, что дерево уже начало крошиться... Естественно, мародёры уже всё обчистили... Но кое-что осталось! Видимо, это зелье мародёры не знали и побоялись взять.</p:mainText>
+                            <p:award type="CONSUMABLE" itemId="p7x_koschey_3" />
+                        <p:answers>
+                            <p:answer text="Отлично!" goto="r2" out="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Сундук находится здесь так давно, что дерево уже начало крошиться... Естественно, мародёры уже всё обчистили, а вы забрали остатки. </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" goto="r2" out="true" />
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

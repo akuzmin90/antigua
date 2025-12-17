@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- СЛУГА ГУБЕРНАТОРА КВЕСТ КОМПАС ИНКВИЗИЦИИ -->
+
+    <p:place id="pi_1o_Antigua_gp_governor_servant_compass" atlasId="pi_1o_PLACES_road_1"
+             imageId="pi_1o_Antigua_gp_governor_servant" name="Слуга Губернатора" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест Компас инквизиции  -->
+            <p:state id="default" repeatable="true" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Здравствуйте, извините, но мы уже закрываемся для приёма граждан... А, вы же НЕ
+                            ГРАЖДАНИН. Но всё равно, Губернатор уже ушёл.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я знаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Эм... В... В смысле?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Так задумано"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Я... Я ж-же с-сейчас... С-с-стражу п-п-позов-в-ву... Не убивайте, пожалуйста!
+                            Грабьте, но не убивайте и не надругайтесь, пожалуйста! Я прилягу в угол и там и буду ничего
+                            не видеть, хорошо?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Так, погоди"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Чо таке "надругаться"? Чевек болване чо хоче?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_2" ifMarker="hobbit_talk_fun" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Эм... Это значит... Ну, не надо его сильно бить. Или ничего с ним не делать, если
+                            побьёшь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" imageId="{hero}" imageComment="{playerNick}">
+                        <p:mainText>Мне нужен золотой компас. И ничего больше, серьёзно.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>З-з-золотой к-к-комп-п-пас? Губернат-т-тор же уб-б-бьёт м-м-меня, если он
+                            п-п-пропадёт...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Даю 10 золотой руды" goto="r6"/>
+                            <p:answer text="Тогда бой!" goto="r7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6">
+                        <p:mainText>Ох... 10 кусков золотой руды, месячное жалование... А, была не была! Только не
+                            говори ничего Губернатору, прошу! [Вы получаете золотой компас за 10 кусков золотой руды от
+                            Селезара!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Отлично!" removeMarker="pi_gold_compass_04"
+                                      giveMarker="pi_gold_compass_05,pi_gold_compass_inside_you" complete="true"
+                                      dropPlace="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_tavern"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>[Только вы решили угрожать слуге губернатора битвой, как он заорал, словно дева, узревшая сколопендру на своей ноге! Прибежала стража и невежливо, но культурно, выпроводила вас на улицу.]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Было близко..." removeMarker="pi_gold_compass_04"
+                                      giveMarker="pi_gold_compass_fail_2,pi_gold_compass_fail_arno,pi_gold_compass_fail_governor"
+                                      complete="true" dropPlace="true">
+                                <p:toRoad roadId="pi_1o_townAntigua_tavern"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

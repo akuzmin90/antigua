@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- КЛАДОВЩИК -->
+
+    <p:place id="pi_1o_storekeeper" atlasId="pi_1o_PLACES_road_5" imageId="pi_1o_storekeeper" name="Кладовщик Йоси" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Мы рады видеть тебя на острове Антигуа! Веди себя достойно, и всё будет хорошо.
+                            Остров большой - приключения ждут тебя!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"  giveMarker="storekeeper_for_quests"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_gold_compass_03 or pi_1o_quest_lost_memories_storekeeper or pi_1o_new_recruit_01"
+                                      goto="r2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_gold_compass_03" text="Золотой компас" goto="r_storekeeper_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_lost_memories_storekeeper" text="Страница дневника"
+                                      goto="r_storekeeper_react3"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_storekeeper_react4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_storekeeper_react2">
+                        <p:mainText>Золотой компас? Хм, на складе такого не припомню... Надо пересмотреть записи...
+                            Так... Нет такого.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Очень жаль" giveMarker="pi_gold_compass_hint4" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_storekeeper_react3">
+                        <p:mainText>Хм, эту страницу тут уже ветром полдня носит... Клад Джима Сороки?! На нём же
+                            проклятье, это каждый знает! Ох, {playerNick}, не лезь в это дело...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм..." removeMarker="pi_1o_quest_lost_memories_storekeeper" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_storekeeper_react4">
+                        <p:mainText>Чего? Видимо, солнце Антигуа слишком палящее для тебя... Да ни за что, они...
+                            Странные. И вопросы у тебя странные. НЕТ - вот мой ответ!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- если у нас есть хоббит в команде   -->
+            <p:state ifMarker="hobbit_talk_fun" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Это кто с тобой?! Это... Это настоящий, живой хоббит?!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ага"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Чевек не виде хоббите до моя хоббите Экля?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Ну, я читал про вас... Вы же на острове Диалья живёте, как ты тут оказался?!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Хоббите боша корабь плавай с чевек убиваки, хоббите малый, чевек убиваки хоббите не
+                            виде, Экля делай боше путешестви!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ясно, спрятался на корабле с пиратами и приплыл сюда... Ну что ж, раз у тебя большое
+                            путешествие... Я не буду тебя учитывать. {playerNick},только следи за его вороватыми руками!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Не обещаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- игрок только приплыл на остров  -->
+            <p:state ifMarker="FIRST_TIME_TO_DLC" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Ого, какой прекрасный корабль! Давно к нам не заходили в гавань такие фрегаты. Скажи
+                            мне, кто ты? Я веду учёт всех прибывших кораблей и их капитанов.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="{playerNick}"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Отлично! Но где мои манеры - меня зовут Йоси, я местный кладовщик, а также веду
+                            учёт... Ну, ты в курсе. Что привело тебя на наш прекрасный остров Антигуа?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Приключения"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>Авантюрист? Понятно. Из самого Зазеркалья... Хотел бы я там побывать, но всё
+                            впереди. Итак, сейчас я введу тебя в курс дела. Как рассказать про наш остров?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кратко" goto="short_story"/>
+                            <p:answer text="Подробно" goto="long_story"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="short_story">
+                        <p:mainText>Сейчас ты в городе Антигуа. Здесь есть таверна - там можно встретить разных людей,
+                            послушать слухи у трактирщика, иногда - найти работу.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="short_story1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="short_story1">
+                        <p:mainText>Также ты можешь смело заходить в гости в разные дома - но помни, нужно вести себя
+                            прилично! Знакомься с людьми, помогай им - здесь всегда есть чем заняться!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="short_story2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="short_story2">
+                        <p:mainText>Ещё у нас есть рынок. Около меня - склад, но тебе туда нельзя. А во дворце, выше по
+                            дороге, живёт Губернатор. Кстати, интересный факт - в наших широтах солнце вообще не заходит
+                            за горизонт... Ночью светло, как днём!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="short_story3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="short_story3">
+                        <p:mainText>На самом острове есть: Сахарная плантация, Маяк, Золотая шахта, Лагеря гильдий, Грот
+                            Левиафана, Кладбище пиратов, и ещё много всего интересного. Говорят, тут полно закопанных
+                            кладов... Приключения есть везде!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="short_story4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="short_story4">
+                        <p:mainText>Мы - пираты, но живём по Кодексу! Благородные и честные. Другие гильдии: Маги-вуду и
+                            Инквизиция, чтоб им пусто было... Прости, мои манеры. Ну что, удачных приключений!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="short_story5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="short_story5">
+                        <p:mainText>Когда ты будешь кому-то помогать, выполнять работу или задания, будет расти твоя репутация - я дам тебе документ, посмотри у себя, там всё описано [Загляните во вкладку "Профиль"->"Репутация"]
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="FIRST_TIME_TO_DLC" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <p:replica id="long_story">
+                        <p:mainText>Наш город назван в честь самого острова - Антигуа. Здесь идеальное место для всех
+                            пиратов, кто чтит кодекс и законы нашего губернатора - его ты можешь найти во дворце выше по
+                            дороге.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="long_story1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story1">
+                        <p:mainText>У нас всё зависит от репутации! Здесь есть рынок, где можно купить всё необходимое - советую
+                            заглянуть! Кстати, порой там будут появляться новые товары, не забывай иногда проверять.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Репутации?" goto="long_story2"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story2">
+                        <p:mainText>Ага. Твои действия несут последствия - и ты становишься известнее! Каждая гильдия
+                            относится к тебе по-своему, исходя из репутации. Я дам тебе документ, там всё описано
+                            [Вкладка "Профиль"->"Репутация"]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Гильдии?" goto="long_story3"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story3">
+                        <p:mainText>Да, на Антигуа есть 3 гильдии - мы, пираты, маги-вуду (странные ребятишки), и
+                            инквизиция - но им здесь не рады. Ты всегда можешь им помочь, повысить репутацию, получить
+                            награды за их задания.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="long_story4"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story4">
+                        <p:mainText>Также в городе есть таверна - там всегда можно встретить кого-то интересного,
+                            послушать сплетни у трактирщика, получить работу. Но веди себя культурно! Мы не беззаконники
+                            какие.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="long_story5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story5">
+                        <p:mainText>Кстати, интересный факт - в наших широтах солнце вообще не заходит за горизонт...
+                            Ночью светло, как днём!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="long_story6"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story6">
+                        <p:mainText>Вообще, мы рады гостям! Можешь смело заходить в дома, знакомиться с людьми - может,
+                            и они подкинут тебе работу? Но помни - соблюдай этикет. Драки здесь запрещены!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="long_story7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story7">
+                        <p:mainText>На самом острове есть: Сахарная плантация, Маяк, Золотая шахта, Лагеря гильдий, Грот
+                            Левиафана, Кладбище пиратов, и ещё много всего интересного. Говорят, тут полно закопанных
+                            кладов... Приключения есть везде!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" goto="long_story8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story8">
+                        <p:mainText>В общем, тебе у нас понравится! Твой корабль под нашей охраной - смело изучай
+                            остров, с ним ничего не случится. Добро пожаловать, {playerNick}!
+                        </p:mainText>
+                        <p:award type="EXPERIENCE"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" goto="long_story9"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="long_story9">
+                        <p:mainText>За то, что вы выслушали полный рассказ Кладовщика Йоси об острове Антигуа, вы
+                            получаете +1 к репутации Пиратов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="FIRST_TIME_TO_DLC" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- Квест "Дела Амурные" -->
+
+            <p:state ifMarker="storekeeper_for_quests"  probabilityPercentState="20" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_storeceeper_quest_wife">
+                        <p:mainText>Послушай, {playerNick}, у меня к тебе есть просьба... Неловко-то как... Ладно, скажу
+                            прямо - я хочу найти себе жену. Но...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Но?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_storeceeper_quest_wife">
+                        <p:mainText>Я слишком молод, что ли... А ещё ну не пират я, а это здесь ценится - я ведь простой
+                            кладовщик, хотя моя работа важна! А ещё я не могу покинуть свой пост. Поможешь найти
+                            достойную девушку?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Где искать?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_storeceeper_quest_wife">
+                        <p:mainText>Ну, мест много... Можно здесь, в городе. А ещё можешь узнать в других гильдиях,
+                            вдруг там кто есть? Я не привередливый, честно! Но так хочется большой и чистой любви...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Я помогу" giveMarker="storeceeper_quest_wife_searching" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="wife_searching" name="Дела амурные" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- Квест "Дела Амурные" Жена пират -->
+
+            <p:state ifMarker="storeceeper_quest_wife_pirate" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Амалия? Сама Амалия согласилась выйти за меня замуж?! О, якорь мне в склад, это же
+                            самая красивая девушка на всём Антигуа! Вот только... Она же требовательная к роскоши...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это жизнь"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Согласен! Была не была! Буду больше работать! Она ни в чём не будет нуждаться,
+                            спасибо тебе большое! Позволь мне отблагодарить тебя!
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="25"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>За помощь в поиске жены кладовщику Йосе, вы получаете +1 к репутации пиратов! Не
+                            забудьте как-нибудь навестить молодожёнов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="storeceeper_quest_wife_pirate"
+                                      giveMarker="pi_1o_townAntigua_sc_pirate" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="wife_searching"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <p:state ifMarker="pi_1o_townAntigua_storeceeper_husband_1" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Ух, спасибо тебе ещё раз! Амалия, она... Она невероятна! Правда, очень
+                            требовательна... Но ничего, я уже научился спать в сутки 3 раза по 15 минут - и всё
+                            свободное время трачу на работу!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Оптимист"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Она достойна того, чтобы я работал, как морской дьявол!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Знакомо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Ваши действия не остались незамеченными для мира. Вы помогли найти жену кладовщику -
+                            вы получаете +1 к общей репутации!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_townAntigua_storeceeper_husband_1"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- Квест "Дела Амурные" Жена маг-вуду -->
+
+            <p:state ifMarker="storeceeper_quest_wife_magevoodoo" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5">
+                        <p:mainText>Чака? Маг-вуду?! Вот не ожидал такого выбора... Она такая... Такая красивая, а как
+                            она двигается, когда колдует! Поглоти меня пучина, она - невероятна!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Это хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Согласен! Конечно, жутковато, что она постоянно колдует, все эти ритуалы... Но я же
+                            не заставлю её прекратить, верно? Она... Я просто влюблён по уши! Позволь мне отблагодарить
+                            тебя!
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="25"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>За помощь в поиске жены кладовщику Йосе, вы получаете +1 к репутации магов-вуду! Не
+                            забудьте как-нибудь навестить молодожёнов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_MAGES" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="storeceeper_quest_wife_magevoodoo"
+                                      giveMarker="pi_1o_townAntigua_sc_magevoodoo" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="wife_searching"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <p:state ifMarker="pi_1o_townAntigua_storeceeper_husband_2" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Ух, спасибо тебе ещё раз! Чака, она... Она невероятна! Правда, уже намекает, что мне
+                            надо улучшить магию... А зачем?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты же вака"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Вот да, она сказала, что я без магии - вака. А ещё колдует постоянно... Немного
+                            жутко, честно. Взрослая, а с куклами носится...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>Ваши действия не остались незамеченными для мира. Вы помогли найти жену кладовщику -
+                            вы получаете +1 к общей репутации!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_townAntigua_storeceeper_husband_2"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- Квест "Дела Амурные" Жена туземка -->
+
+            <p:state ifMarker="storeceeper_quest_wife_800" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>Жена-туземка?! Ого, так экзотично... Говорят, туземки с острова Диалья невероятно
+                            красивы, а как они танцуют у костра! Конечно, я буду рад такой жене!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="800 изумрудов"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>А, вот такие условия за туземную красоту... Но у меня нет столько изумрудов, это
+                            огромная сумма... Здесь я могу надеяться только на тебя... Прости.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <p:state ifMarker="storeceeper_quest_wife_ugabuga_1" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Это же... Это же настоящая туземка! Моя, моя жена - туземка! Вот обзавидуются все в
+                            Антигуа! Даже губернатор о таком мечтать не мог! Какая же она красивая, моя Мамуба...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Есть такое"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>Я не встречал девушки прекраснее, она прекраснее Холодного моря, её красота - как
+                            ветер в штиль! Спасибо, спасибо огромное! Вот, держи, это амулет за помощь. Говорят, его
+                            привезли с Южных островов!
+                        </p:mainText>
+                        <p:award type="ARTIFACT" itemId="s_shadow_enforce_01"/>
+                        <p:answers>
+                            <p:answer text="ОГО!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_6">
+                        <p:mainText>За помощь в поиске жены кладовщику Йосе, вы получаете +1 к репутации туземцев! Не
+                            забудьте как-нибудь навестить молодожёнов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_UGABUGA" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="storeceeper_quest_wife_ugabuga_1"
+                                      giveMarker="pi_1o_townAntigua_sc_ugabuga" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="wife_searching"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <p:state ifMarker="pi_1o_townAntigua_storeceeper_husband_3" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>Да все в городе только и говорят обо мне! Жена-красавица-туземка, моя Мамуба! Как же я
+                            счастлив! А туземный стиль моего дома - это так красиво!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_9">
+                        <p:mainText>Ваши действия не остались незамеченными для мира. Вы помогли найти жену кладовщику -
+                            вы получаете +1 к общей репутации!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_townAntigua_storeceeper_husband_3"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- Квест "Дела Амурные" Жена призрак -->
+
+            <p:state ifMarker="storeceeper_quest_wife_ghost" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10">
+                        <p:mainText>Как твои поиски жены для меня? О, у тебя сюрприз! Даже интересно, что это за девушка
+                            такая!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ты удивишься"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_10">
+                        <p:mainText>Я вижу, что ты не обманываешь меня, и чувствую, что девушка меня достойна! Спасибо,
+                            возьми немного изумрудов в награду!
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="25"/>
+                        <p:answers>
+                            <p:answer text="Спасибо!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_7">
+                        <p:mainText>За помощь в поиске жены кладовщику Йосе, вы получаете +1 к репутации Мира мёртвых!
+                            Не забудьте как-нибудь навестить молодожёнов!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_DEADWORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="storeceeper_quest_wife_ghost"
+                                      giveMarker="pi_1o_townAntigua_sc_ghost" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="wife_searching"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <p:state ifMarker="pi_1o_townAntigua_storeceeper_husband_4" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_11">
+                        <p:mainText>ЭТО ЧТО БЫЛО ТАКОЕ?! ЖЕНА-ПРИЗРАК?! ТЫ ЭТО СЕРЬЁЗНО?!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Да"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_11">
+                        <p:mainText>Но... Она очень красивая... Холодная... Я тоже стал чувствовать холод внутри. Но мы
+                            будем вместе, и в жизни, и в смерти, вместе навеки... Так, бррр, что я говорю такое? Йоси,
+                            соберись!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Лучшая жена!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_8">
+                        <p:mainText>Ваши действия не остались незамеченными для мира. Вы помогли найти жену кладовщику -
+                            вы получаете +1 к общей репутации!
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_townAntigua_storeceeper_husband_4"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

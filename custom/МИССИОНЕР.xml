@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- МИССИОНЕР -->
+
+    <p:place id="pi_1o_Antigua_hp_missionary_man" atlasId="pi_1o_PLACES_road_1" imageId="pi_1o_Antigua_hp_missionary_man" name="Миссионер"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- квест Миссионер, нашли миссионера -->
+            <p:state ifMarker="pi_1o_quest_missionary_07" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Ооооо! Ик... Ещё одна зблудшая душа на этом острове... ик... ахаха! Да не боись...
+                            ИК... Не буду прповеди читать, ахаха! Я пзнал истину!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что познал?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Аааа вот стри, ик, тут вы все живёте по своим законам... Кодекс, итить его... И ведь
+                            хоршо живёте! Меня отвсюду, ик... Отвсюду мня гнали, пнимаешь? Ик... Твоё здоровье! [треть
+                            бутылки залпом]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Продолжай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Что прдлжать, ик... Меня отвсюду гонят, какой прдолжай, тыыыы... Аааааа, пгоди-ка.
+                            Прдолжать... ик... рассказывать? Секунду, ром выветривается, ахаха! Ик... [остаток бутылки
+                            залпом!]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Я... ик... понял истну. Живи по правде, а не по указу! Кроме, ик, указа
+                            Губрнатора... ик... Я остаюсь тут, пнятно! Это ж рай... ик... рай и ром! [достаёт новую
+                            бутылку]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мда... Алкоголь - зло!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Ик... Пговори мне тут, ром - это святое! Тперь... ик... Скажи инкфи... инкве... да
+                            как там... Скжи им, ик, я пзнал истину и буду ан-ти-гу-ня-ни-ном! Ик... Ой, мне надо в
+                            кустики, прррсти...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Мужики терпят!" removeMarker="pi_1o_quest_missionary_07"
+                                      giveMarker="pi_1o_quest_missionary_08" complete="true" dropPlace="true"
+                                      requestSpecialPlaces="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

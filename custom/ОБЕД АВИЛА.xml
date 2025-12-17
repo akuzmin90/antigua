@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ОБЕД АВИЛА  -->
+
+    <p:place id="pi_1o_Antigua_lc_avila_lunch" atlasId="pi_1o_PLACES_pi_1o_lumberjack_camp" imageId="pi_1o_Antigua_lc_avila" name="Авила"
+             minPlayerStair="40" meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная реплика  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Надо следить за фигурой" delayMs="6000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Мне приходится готовить с самого утра, до службы в часовне, на всю семью. Скорее бы
+                            выйти замуж и готовить только на своего мужа!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хозяйственная" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" отдаём красный мак   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_04" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Красный мак? Сигизмунд передал мне красный мак?! Как это романтично... Редкий и
+                            красивый цветок... Он правда меня любит! Но я не могу просто принять этот подарок...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А ты прими"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Не могу! Нужен ответный подарок, понимаешь? Я знаю какой! У мага-вуду Нестора есть
+                            обезьяний коготь - принеси мне его, я сделаю амулет и подарю моему Сига-зага-бубу-кисе!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Нет слов" removeMarker="pi_1o_quest_clear_love_04"
+                                      giveMarker="pi_1o_quest_clear_love_05" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_monkey_claw" name="Коготь обезьяны" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" отдаём коготь обезьяны   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_07" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Коготь обезьяны у тебя? Отлично! Дай мне его. [Очень ловко, буквально за секунды,
+                            она делает в нём отверстие и вдевает шнурок] Так, готово. Я даже отблагодарю тебя за работу!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="15"/>
+                        <p:answers>
+                            <p:answer text="Это приятно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d">
+                        <p:mainText>А теперь, пожалуйста, отнеси амулет моему Сигизмундушке. Да, мы не показываем
+                            отношения на людях, здесь так не принято.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Скромные какие" removeMarker="pi_1o_quest_clear_love_07"
+                                      giveMarker="pi_1o_quest_clear_love_08" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_monkey_claw"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Любовь?" финал   -->
+            <p:state ifMarker="pi_1o_quest_clear_love_12" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>ЧТО, Я НЕ ОСЛЫШАЛАСЬ?! Сига-зага-бубу-киса сделал запись о нашей свадьбе?! Значит,
+                            он и правда меня любит! Как я счастлива, ты не представляешь! Вот, держи, это тебе!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="15"/>
+                        <p:answers>
+                            <p:answer text="Это приятно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>И вот это, в подарок, я всё равно не знаю куда их девать! Искатель приключений, ты
+                            несёшь добрые вести и вершишь добрые дела!
+                        </p:mainText>
+                        <p:award type="CRYSTAL"/>
+                        <p:answers>
+                            <p:answer text="Это приятно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>[Вы сделали доброе дело, ваши деяния не остались незамеченными! +1 к репутации
+                            пиратов. ]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Красота" removeMarker="pi_1o_quest_clear_love_12" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_quest_clear_love"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Детский сАД" Айк пропал пока не вернули   -->
+            <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_03" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Верни моего брата!!!" delayMs="3000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Да как ты мо[г|гла]!!! Мой брат в смертельной опасности! Ненавижу тебя и твой
+                            поступок!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Простите" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>

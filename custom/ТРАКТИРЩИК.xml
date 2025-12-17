@@ -1,0 +1,1789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:root xmlns:p="http://www.hitmakers.com/aof/customPlaces"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
+
+    <!-- ТРАКТИРЩИК -->
+
+    <p:place id="pi_1o_innkeeper" animType="EMPTY" imageId="95x172" name="Трактирщик" minPlayerStair="40"
+             meetProbability="0">
+        <p:blockingCreature probability="0"/>
+        <p:states>
+
+            <!-- стандартная фраза  -->
+            <p:state id="default" closable="false">
+                <p:talks loop="true" onClick="IGNORE">
+                    <p:talk text="Откушай барабульку" delayMs="1000"/>
+                    <p:talk text="Корюшка - объеденье!" delayMs="9000"/>
+                    <p:talk text="Купи камбалу! И вторую купи" delayMs="15000"/>
+                    <p:talk text="Макака в собственном соку!" delayMs="20000"/>
+                    <p:talk text="Гром и Храбрость - налетай!" delayMs="26000"/>
+                </p:talks>
+                <p:dialog>
+                    <p:replica id="r1">
+                        <p:mainText>Добро пожаловать в "Летучего краба" - лучшую таверну на всём Антигуа! А других
+                            потому что нет здесь, ахаха! Чего желаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Слухи" gotoFromScript="random"/>
+                            <p:answer text="Меню" goto="r2"/>
+                            <p:answer text="О задании"
+                                      markerCondition="pi_sugar_for_tavern_inn_react or pi_1o_quest_lost_memories_innkeeper or pi_1o_quest_tell_to_elsa_01 or pi_1o_quest_tell_to_elsa_dead_inkeeper or pi_1o_sea_nut_01 or pi_1o_governor_present_02 or pi_1o_new_recruit_01 or pi_1o_quest_payment_for_provisions_selezar_quest or pi_1o_quest_tea_01 or pi_1o_quest_missionary_01 or pi_1o_quest_felix_clock_react_innkeaper"
+                                      goto="r6"/>
+                            <p:answer text="Уйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2">
+                        <p:mainText>Специально для тебя! Напиток "Храбрость", всего 10 золотых! Редкое зелье "Гром" с
+                            Южных островов, с самой морозной их части, чтобы враги трепетали, всего 10 изумрудов!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Храбрость?" goto="r3"/>
+                            <p:answer text="Гром?" goto="r4"/>
+                            <p:answer text="Я подумаю" goto="r1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3">
+                        <p:mainText>Да, его так пираты прозвали, "Храбрость". Выпьешь его - и сразу почувствуешь прилив
+                            слабоумия и отваги! На ближайшую битву. Хочешь? 10 золотых всего!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай" goto="r5"
+                                      launchScriptId="takeBravery">  <!-- игрок получает плюс 20% атаки и минус 100% защиты на ближайший бой, обязательно уведомляем его значок бафа с названием "Напиток "Храбрость""  -->
+                                <p:pay gold="10"/>
+                            </p:answer>
+                            <p:answer text="Не хочу" goto="r1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4">
+                        <p:mainText>Уникальное зелье, которое почему-то пьёшь ты, а слабеют враги. Магия с таинственных
+                            Южных островов! На ближайшую битву. Хочешь? 10 изумрудов всего!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Давай"
+                                      goto="r5" launchScriptId="takeThunder">  <!-- игрок получает эффект зелья из снежного мира, 1в1 на ближайший бой, обязательно уведомляем его значок бафа с названием "Напиток "Гром""  -->
+                                <p:pay mithril="10"/>
+                            </p:answer>
+                            <p:answer text="Не хочу" goto="r1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5">
+                        <p:mainText>Сделка!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" goto="r1"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- тут реакции  -->
+                    <p:replica id="r6">
+                        <p:mainText>Что вы хотите уточнить?</p:mainText>
+                        <p:answers>
+                            <p:answer ifMarker="pi_sugar_for_tavern_inn_react" text="Сахар и гоблины"
+                                      goto="r_innkeeper_react1" />
+                            <p:answer ifMarker="pi_1o_quest_lost_memories_innkeeper" text="Что случилось?"
+                                      goto="r_innkeeper_react2"/>
+                            <p:answer ifMarker="pi_1o_quest_tell_to_elsa_01" text="Позови Эльзу"
+                                      goto="r_innkeeper_react3"/>
+                            <p:answer ifMarker="pi_1o_quest_tell_to_elsa_dead_inkeeper" text="Эльза..."
+                                      goto="r_innkeeper_react4"/>
+                            <p:answer ifMarker="pi_1o_sea_nut_01" text="Морской орех?" goto="r_innkeeper_react5"/>
+                            <p:answer ifMarker="pi_1o_governor_present_02" text="Блюдо из ореха"
+                                      goto="r_innkeeper_react6"/>
+                            <p:answer ifMarker="pi_1o_new_recruit_01" text="Станешь магом-вуду?"
+                                      goto="r_innkeeper_react7" />
+                            <p:answer ifMarker="pi_1o_quest_tea_01" text="Хочу чай!" goto="r_innkeeper_react8"
+                                      />
+                            <p:answer ifMarker="pi_1o_quest_payment_for_provisions_selezar_quest" text="Есть работа?" goto="r_innkeeper_react9"
+                                      />
+                            <p:answer ifMarker="pi_1o_quest_missionary_01" text="Миссионера видел?"
+                                      goto="r_innkeeper_react10"/>
+                            <p:answer ifMarker="pi_1o_quest_felix_clock_react_innkeaper" text="Чего грустный?"
+                                      goto="r_innkeeper_react11"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react1">
+                        <p:mainText>Чего?! Гоблины захватили именно МОЮ партию сахара?! Слушай, разберись, прошу тебя!
+                            От этих стражников-бездельников нет никакого толку! Вот тебе ещё к авансу за беспокойство!
+                        </p:mainText>
+                        <p:award type="ELIXIR"/>
+                        <p:answers>
+                            <p:answer text="Другой разговор!" goto="r_innkeeper_react1_1"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react1_1">
+                        <p:mainText>И ещё момент... Раз Плантатор тебе уже верит, перстень я заберу обратно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю"
+                                      removeMarker="pi_sugar_for_tavern_inn_react,pi_sugar_for_tavern_have_ring"
+                                      giveMarker="pi_sugar_for_tavern_return_ring" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react2">
+                        <p:mainText>Я не могу не рассказать тебе! Говорят, что в лагере магов-вуду сейчас находится...
+                            Последний представитель Амазонии! Невероятно, они же исчезли 300 лет назад!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого..." removeMarker="pi_1o_quest_lost_memories_innkeeper"  requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react3">
+                        <p:mainText>Эльзу? Ну хорошо... [В сторону] ЭЭЭЭЭЭЭЛЬЗАААААА! Тут тебя спрашивает {playerNick},
+                            подойди, пожалуйста!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ого..." removeMarker="pi_1o_quest_tell_to_elsa_01"
+                                      giveMarker="pi_1o_quest_tell_to_elsa_02" requestSpecialPlaces="true" postLaunchScriptId="triggerRespawn" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react4">
+                        <p:mainText>Я знаю, что она сделала... Бедная девочка... Да смилостивится Холодное Море над её
+                            душой... [Трактирщик благодарен, что вы сообщили ему судьбу Эльзы. +1 к репутации пиратов.]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="..." removeMarker="pi_1o_quest_tell_to_elsa_dead_inkeeper" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react5">
+                        <p:mainText>Да-да, мне нужен морской орех! Редкая штука, иногда их выносит морем в грот
+                            Левиафана - поищи там! Но учти, его почему-то любят всякие чудища. Серьёзно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Посмотрим!" removeMarker="pi_1o_sea_nut_01" giveMarker="pi_1o_sea_nut_02"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react6">
+                        <p:mainText>Иди и отнеси это блюдо Губернатору! Оно же остынет, поспеши! Я вложил сюда всю душу!
+                            И кстати остатки редчайших специй тоже вложил.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ишь ты!" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react7">
+                        <p:mainText>Ахахахаха! Отличная шутка, авантюрист! А, это не шутка? Знаешь, в иной любой
+                            ситуации, я бы ответил "Нет". Впрочем, и сейчас отвечу. НЕТ.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жаль" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react8">
+                        <p:mainText>Чай? Это очень дорогой напиток! А ещё он только для элиты города или острова.
+                            Прости, закон Губернатора. Тебе я его не продам, ведь ты НЕ ГРАЖДАНИН.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Жаль" removeMarker="pi_1o_quest_tea_01" giveMarker="pi_1o_quest_tea_02"
+                                      requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react9">
+                        <p:mainText>Есть, как раз для тебя, искатель приключений! Иди в Лагерь инквизиции, забери у
+                            Селезара оплату за провиант, 10.000 золотых, принеси мне. И не думай смыться с деньгами -
+                            найду же. В ответ отблагодарю по совести.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_payment_for_provisions_selezar_quest" giveMarker="pi_1o_quest_payment_for_provisions_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_payment_for_provisions" name="Оплата за провиант"
+                                              count="1" mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react10">
+                        <p:mainText>Миссионер? Это тот странный человек, который говорил про каких-то богов и заставлял
+                            нас отказаться от рома? Ха, да мы его выгнали сразу! Спроси инквизитора Феликса, он всегда в
+                            городе.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю" removeMarker="pi_1o_quest_missionary_01"
+                                      giveMarker="pi_1o_quest_missionary_02" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r_innkeeper_react11">
+                        <p:mainText>Понимаешь, я не могу найти часы. Вот буквально только держал в руках, и всё, нет
+                            нигде. Вот растяпа... Они были прекрасны. И я уже обещал Феликсу бесплатное жильё и
+                            провиант... Эх, где же они?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да вообще" removeMarker="pi_1o_quest_felix_clock_react_innkeaper" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- слухи в таверне НЕ квестовые  -->
+                    <p:replica id="rand-1" probability="0.8">
+                        <p:mainText>Интересно, как Губернатор разрешил Инквизиции здесь построить свой лагерь?
+                            Инквизиция и пираты… Как кошки и крысы между собой, вот честно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true" />
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-2" probability="0.8">
+                        <p:mainText>Эти Маги-Вуду… Представь, они могут и обычную магию колдовать, и ещё и вуду
+                            использовать! Мы их тут побаиваемся… Но, впрочем, ребята мирные.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-3" probability="0.8">
+                        <p:mainText>Вообще, на острове Антигуа полно сокровищ. Есть даже зарытые клады! Если хочешь их
+                            поискать - не забудь купить лопату на рынке, иначе никак!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-4" probability="0.8">
+                        <p:mainText>Знаешь, почему Хилого прозвали Хилым? Потому что он… Хилый!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-5" probability="0.8">
+                        <p:mainText>Меня пугают истории с Южных Островов о том, что моряки иногда видят огромную тень
+                            под водой… Да, это очень далеко, но это… Настораживает.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-6" probability="0.8">
+                        <p:mainText>900 лет назад на Антигуа жили друиды - а потом пропали. Кто, куда, зачем, почему -
+                            никто не знает. А потом здесь поселились мы, хозяева морей - пираты!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-7" probability="0.8">
+                        <p:mainText>Хоббиты - мелкие заразы, хитрые, могут даже скрасть чего… Хорошо, что живут они на
+                            острове Диалья, с туземцами.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-8" probability="0.8">
+                        <p:mainText>Хоббиты… Старина Джек был однажды в их деревне - представь, глазом не моргнул, а уже
+                            обчистили до нитки!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-9" probability="0.8">
+                        <p:mainText>Кстати, о хоббитах… Береги карманы, если встретишь их. Надеюсь, что их не занесло на
+                            Антигуа. Очень надеюсь…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-10" probability="0.8">
+                        <p:mainText>На острове есть 3 поселения - наш город Антигуа, лагерь Магов-Вуду и лагерь
+                            Инквизиции. А ещё есть старый пират, ставший отшельником. Имя его никто не помнит.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-11" probability="0.8">
+                        <p:mainText>Маяк старины Джека - красивое место. Помню, сидели с ним, байки травили, на закат
+                            смотрели с утёса… Красота там, конечно, обязательно загляни!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-12" probability="0.8">
+                        <p:mainText>Однажды Джек рассказал мне, что раньше он был не просто пиратом - а был связан с
+                            контрабандой… Интересно, как его после такого поставили за маяком следить?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-13" probability="0.8">
+                        <p:mainText>Антигуа - лучшее место для жизни! Знаешь, есть ещё один остров в нашем море - там
+                            тоже живут пираты. Но это ужас… Беззаконие, власть силы, преступность.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-14" probability="0.8">
+                        <p:mainText>Быва[л|ла] уже в Гроте Левиафана? Такое ощущение, что он бесконечный… И пещер там
+                            полно, можно поживиться добром. Или навсегда сгинуть.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-15" probability="0.8">
+                        <p:mainText>Раньше морями правили Левиафаны - величественные существа, созданные древней магией.
+                            Хорошо, что они сгинули. Я надеюсь.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-16" probability="0.8">
+                        <p:mainText>Ты из Зазеркалья? Слышал-слышал, но никогда там не был. Хотя есть у меня знакомые
+                            оттуда - ведь и до тебя здесь были гости. Знаешь Хельгу, Мыша, Магни?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-17" probability="0.8">
+                        <p:mainText>Наша таверна - это уютное местечко! Драки запрещены. Даже в долг могу провиант
+                            отпустить. Веди себя достойно, и мы тебе всегда рады.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-18" probability="0.8">
+                        <p:mainText>Я слышал, что в Зазеркалье есть странные блюда… Пончики. Ужас… Тесто, сахар, дрожжи…
+                            Это же сколько рома можно было бы сделать! А вы… Эх вы…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-19" probability="0.8">
+                        <p:mainText>Виде[л|ла] уже Нестора и Феликса? Это официальные представители Магов-Вуду и
+                            Инквизиции в городе. Будь осторожнее, кто знает, какие у них планы.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-20" probability="0.8"
+                               markerCondition="not pi_1o_townAntigua_sc_pirate and not pi_1o_townAntigua_sc_magevoodoo and not pi_1o_townAntigua_sc_ugabuga and not pi_1o_townAntigua_sc_ghost">
+                        <p:mainText>Кладовщик в порту - забавный малый. 25 лет, а уже на такой должности. Губернатор ему
+                            доверяет. Жаль, что женщину всё найти не может.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-21" probability="0.8">
+                        <p:mainText>Да, у нас есть своё Кладбище Пиратов - за столько лет, столько достойных морских
+                            волков там лежит… Наверняка там есть и сокровища, что с ними зарыты, хаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-22" probability="0.8">
+                        <p:mainText>Хм… На острове появился дешёвый ром. Естественно. он хуже моего! Вот найти бы тех,
+                            кто его делает, я бы их под килем разок-другой пропустил!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-23" probability="0.8">
+                        <p:mainText>При дворе Губернатора базируется Глава Пиратов - но сейчас к нему нельзя, он слишком
+                            занят вопросом Левиаф… Вопросами, в общем.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-24" probability="0.8">
+                        <p:mainText>У тебя отличный фрегат! Когда мне всё надоест, пойду к тебе коком. Поверь, я такую
+                            камбалу под черничным соусом делаю, аж с костями съешь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-25" probability="0.8">
+                        <p:mainText>К официанткам не приставать. Пожалуйста.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-26" probability="0.8">
+                        <p:mainText>А вот интересно, пирату-отшельнику нравится одному? Ночами на побережье холодно и
+                            жутко, никого рядом… Ему здесь предлагали дом, но от отказался.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-27" probability="0.8">
+                        <p:mainText>Маги-Вуду… И чего им не сидится на их острове Хунганами? Ещё и вечно рекрутов
+                            ищут…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-28" probability="0.8">
+                        <p:mainText>Лагерь Инквизиции… Хм… Есть там нормальные ребята. Селезар, кладовщик, мы с ним
+                            приятели, типа того. Никогда золотом не обидит.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-29" probability="0.8">
+                        <p:mainText>В Лагере Инквизиции есть некто Дориан, заходил сюда… Просил говорить, что ищет того,
+                            кто хочет заработать и сделать для него пару заданий.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-30" probability="0.8">
+                        <p:mainText>На острове полно джунглей - но туда закрыты проходы, слишком опасно. Недавно стая
+                            макак-мародёров обокрала конвой Инквизиции! Вот смеху-то было!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-31" probability="0.8">
+                        <p:mainText>Говорят, что Инквизиция имеет самозарядные мушкеты. 5 выстрелов подряд, не надо даже
+                            порох подсыпать!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-32" probability="0.8">
+                        <p:mainText>Губернатор - достойный человек. Сам не из пиратов, но бывший капитан… А живёт по
+                            Кодексу! Честь такому человеку, йааарррр!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-33" probability="0.8">
+                        <p:mainText>Маги-Вуду… Они сделали великолепную штуку - куклы-вуду! Магия в виде фигурки… И
+                            доступна каждому! Они даже на рынке их продают, рекомендую!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-34" probability="0.8">
+                        <p:mainText>Древние друиды, жившие на Антигуа, пропали 900 лет назад. Но есть байка, что они
+                            оставили Легендарный Клад! Интересно, байка это, или правда?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-35" probability="0.8">
+                        <p:mainText>Хочу безе</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-36" probability="0.8">
+                        <p:mainText>Чтобы сыграть свадьбу на Антигуа, нужно благословение Губернатора. А ещё пир на весь
+                            город, подарки каждому жителю… Как ты понимаешь, свадьбы тут - редкое явление.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-37" probability="0.8">
+                        <p:mainText>Заходи почаще, я слышу многое, готов поделиться слухами!</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-38" probability="0.8">
+                        <p:mainText>Почему в городе нет детей? Как нет?! У нас есть новшества - мы называем это “Детский
+                            сад” и “Школа” - они там весь день, поэтому их и не видно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-39" probability="0.8">
+                        <p:mainText>У нас прекрасная Золотая Шахта! Но, без лицензии, добывать золотую руду запрещено
+                            законом острова. А ещё кирка - как без неё?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-40" probability="0.8">
+                        <p:mainText>На Антигуа - лучшая Сахарная Плантация во всём Холодном Море! Другие острова делают
+                            плохой тростник. Плохой, очень плохой.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-41" probability="0.8">
+                        <p:mainText>А ты знаешь, что наше море называется Холодным? И не только потому, что вода тёплая
+                            лишь у островов. Сколько достойных парней ушли в пучину… Море не знает жалости. Холодное,
+                            как сердце бывшей.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-42" probability="0.8">
+                        <p:mainText>Я сам был пиратом. А потом мне прострелили локоть.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-43" probability="0.8">
+                        <p:mainText>Выше сороковой параллели начинается Океан Льда… Опасное место. Лишь Глава Пиратов
+                            вернулся оттуда живым со своим экипажем. Остальные… Сгинули.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-44" probability="0.8">
+                        <p:mainText>Работник Сахарной Плантации, Бонес, вечно недоволен всем. Не любит он город, но
+                            деваться ему некуда, куда он пойдёт?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-45" probability="0.8">
+                        <p:mainText>Знаешь, на Кладбище Пиратов иногда можно встретить призраков! Но не бойся, многие из
+                            них - мирные. До сих пор по Кодексу живут.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-46" probability="0.8">
+                        <p:mainText>Не люблю макак. Вчера одна пролезла на мой склад и стащила кокосы! Вот зуб даю, это
+                            Маги-Вуду их натренировали! Хотя, зачем им мои кокосы, на острове их полно… Странные вещи
+                            творятся.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-47" probability="0.8">
+                        <p:mainText>Из Океана Льда недавно приплыл маленький айсберг… Теперь мы можем охлаждать напитки!
+                            Торопись, пока до вечера лёд не растаял!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-48" probability="0.8">
+                        <p:mainText>На острове запрещены азартные игры. И я полностью за! Лучше оставь деньги в таверне
+                            - мне доход, а вам радость!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-49" probability="0.8">
+                        <p:mainText>В Золотой Шахте 2 уровня, так вот, этот второй уровень… Однажды рудокопы пробили
+                            дыру в логово монстров. Поэтому второй уровень теперь закрыт. А там ведь тоже золотые жилы…
+                            Эх.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-50" probability="0.8">
+                        <p:mainText>Стивен, забавный малый, тут недалеко живёт. Один раз, после изрядной порции рома,
+                            сказал, что хочет стать губернатором острова… Ага, без гроша за душой, выше юнги не
+                            поднялся!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-51" probability="0.8"
+                               markerCondition="pi_1o_townAntigua_sc_pirate or pi_1o_townAntigua_sc_magevoodoo or pi_1o_townAntigua_sc_ugabuga or pi_1o_townAntigua_sc_ghost">
+                        <p:mainText>А ты виде[л|ла] новый интерьер дома Кладовщика? Ух, женушка-то ему всё обставила под
+                            свой стиль… Интересно, каково ему? А ты сходи, погляди, оригинально, я тебе скажу.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-52" probability="0.8">
+                        <p:mainText>Говорят, что Глава Пиратов расстроен тем, что пропала его любимая жена… Да, не
+                            поверишь, он примерный семьянин! Гроза морей, великий покоритель Океана Льда… А жена ему
+                            дороже моря.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-53" probability="0.8">
+                        <p:mainText>Знаешь, Маги-Вуду, весьма адекватные. Я очень рад, что они из вуду взяли только
+                            основу - суть магии, а не идею. Они не плохие. Поверь! Но пугают до жути. Но не плохие.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-54" probability="0.8">
+                        <p:mainText>Говорят, что у Инквизиции, но не той, что здесь, на Антигуа, есть новое изобретение
+                            - доспех, полностью защищающий от картечи и дроби наших мушкетов и пистолей!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-55" probability="0.8">
+                        <p:mainText>Наши музыканты - отличные ребята! Приплыли с Южных Островов, назвались группой
+                            “Империя”, и играют отличную музыку! Моя любимая песня - “За Междуречье”.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-56" probability="0.8">
+                        <p:mainText>Есть байка, что раньше в Гроте Левиафана жил настоящий Левиафан! Но его прогнали
+                            древние друиды. Видимо, древняя магия способна сразить величайших владык океанов и морей…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-57" probability="0.8">
+                        <p:mainText>Недавно к нам приплыли ребятишки… Театр, что ли… Показывали какую-то многосерийную
+                            постановку про предпринимателей. Ой, умора! Даже без рома смешно. Ждём их снова. Они лучшие.
+                            Люблю их.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-58" probability="0.8">
+                        <p:mainText>Хилый - интересный малый. Он вообще слабак, его однажды макака побила. НО! Он любые
+                            вопросы готов решать финансово - мы такое любим.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-59" probability="0.8">
+                        <p:mainText>На Сахарной Плантации есть Трёхпалый Билли. Почему трёхпалый? Он однажды на спор
+                            неприличные жесты показывал лошадке Губернатора. Ну, она в долгу не осталась. Одним укусом,
+                            правда!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-60" probability="0.8">
+                        <p:mainText>Моя жена вечно работает на кухне. Ей нравится, хотя я правда не спрашивал, но всё
+                            же.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-61" probability="0.8">
+                        <p:mainText>У вас, в Зазеркалье, нет пиратов?! А как вы живёте?! Что? Маги, чернокнижники? Хм…
+                            Погоди… У вас есть злодей… КРОЛИК?!? Укуси меня морской дьявол… Кролик… А чего не белочка?!
+                            Уф…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-62" probability="0.8">
+                        <p:mainText>Антигуа - это не какой-то сброд пиратов. Здесь честь на первом месте! Мы не
+                            разбойники. Хочешь увидеть пиратов без принципов? Тогда тебе нужен Остров Беззаконния.
+                            Название говорящее.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-63" probability="0.8">
+                        <p:mainText>Знаешь, иногда лучше синица в руке… Чем рука в синице.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-64" probability="0.8">
+                        <p:mainText>Однажды мне приснился сон, что весь наш мир - сильная магия мира извне, иллюзия… Что
+                            я говорю тебе то, что мне указали… Что даже ты идёшь туда, куда не ты хочешь, а тебя
+                            направят…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-65" probability="0.8">
+                        <p:mainText>Я не люблю магию. Учишься, учишься, стараешься… А потом тебя с мушкета бац - и
+                            всё.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-66" probability="0.8">
+                        <p:mainText>Вчера меня позвали рекрутом в Лагерь Магов-Вуду. Меня. МЕНЯ. Хотя, я тоже владею
+                            магией… Могу сделать из растения воду. Даже огненную воду!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-67" probability="0.8">
+                        <p:mainText>У вас нет рома?! А что есть? Кифир? Привези, попробуем. Если устроит, организуем
+                            поставки, 30% дохода твои.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-68" probability="0.8">
+                        <p:mainText>На острове много скрытого... Изучай, исследуй, тыкайся везде и во всё подряд -
+                            старания вознаградятся!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-69" probability="0.8">
+                        <p:mainText>Помни, поругаешься с трактирщиком - и жить на Антигуа нет смысла. Я - второй после
+                            Губернатора! Я был до него, буду и после. Так что дружи со мной, ага.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-70" probability="0.8">
+                        <p:mainText>Говорят, что Грот Левиафана настолько длинный, что нет ему конца и края… Магия? Или
+                            особенность острова? В любом случае, там полно интересного.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-71" probability="0.8">
+                        <p:mainText>А ты в курсе, что у нас на острове есть порталы в иные миры? Тропики там, Атлантида…
+                            А, ты в курсе про них? Точно знаю, они есть на Кладбище Пиратов и в Гроте Левиафана.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-72" probability="0.8">
+                        <p:mainText>Записывай! Вкуснейшая куриная грудка. Берёшь грудку, натираешь соевым соусом,
+                            майонезом, солишь. В фольгу на 40 минут мариноваться. Потом на 40 минут в духовку. Это
+                            эпически вкусно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-73" probability="0.8">
+                        <p:mainText>Мне вчера гиббон подмигнул и помахал лапой.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-74" probability="0.8">
+                        <p:mainText>Для дальних путешествий нужна хорошая команда. Но, пока что, здесь нет тех, кто
+                            готов пуститься в плавание. Может быть, позже?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-75" probability="0.8">
+                        <p:mainText>Есть такой пират, Мазур. Его ради шутки оставили на необитаемом острове в далях
+                            Холодного моря. Ему привозят провиант и доски, чтобы он латал хижину… Забавно же, ну, ахаха,
+                            йаааррррр!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-76" probability="0.8">
+                        <p:mainText>Хоть бы сувенир из Зазеркалья прив[ёз|езла], что ли…</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-77" probability="0.8">
+                        <p:mainText>Пока доступ на другие острова закрыт по приказу Губернатора. Почему… Хм… Не скажу.
+                            Но ожидаем скорое открытие торгового маршрута с Диальей, островом туземцев.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-78" probability="0.8">
+                        <p:mainText>Меня зовут Ингмар. Хотя кому какое дело… Обычно я отзываюсь на крик. Ведь крик
+                            подобен грому, дайте людям рому!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-79" probability="0.8">
+                        <p:mainText>Недавно книгу прочитал, “Закат Алых Тонов”. Сильная вещь, скажу тебе. Автор -
+                            великолепен. Правда, я ничего не понял из неё, там странный мир описан. Фантастика для наших
+                            островов, вот честно.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-80" probability="0.8">
+                        <p:mainText>Хочешь заработать? Да тут полно вариантов! В каждом лагере тебе дадут задания, да и
+                            вообще можно найти приключения, просто изучая остров! Разговаривай со всеми, находи секреты
+                            - приключения везде!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-81" probability="0.8">
+                        <p:mainText>На Сахарной Плантации есть особый вид тростника… Из него делают особый сахар. Мало,
+                            правда… Я придумал новый напиток! Лимонад! Можно даже детям!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-82" probability="0.8">
+                        <p:mainText>Говорят, туземцы с Острова Диалья делают свои напитки… Эх, мне бы их рецепты
+                            достать…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-83" probability="0.8">
+                        <p:mainText>В далях Холодного Моря есть Остров Тишины… Это место упокоения душ пиратов и
+                            моряков. И там живут люди! Скитальцы, так себя зовут… Их задача - сторожить души, провожать
+                            их, оберегать.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-84" probability="0.8">
+                        <p:mainText>Ты в курсе, что на острове Хунганами, там женщины живут в отдельной деревне?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-85" probability="0.8">
+                        <p:mainText>Я слышал, что Инквизиция базируется на Острове Эфир. Настоящая армия Короля Густава!
+                            Не люблю их, со своими законами лезут… Жили бы по Кодексу, эх…
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-86" probability="0.8">
+                        <p:mainText>В Холодном море - множество островов. И всё это - Архипелаг Песка. И правит им
+                            Король Густав. Мы, кстати, вне его указов - Губернатор добился нам независимости. Но торгуем
+                            мы на отлично!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-87" probability="0.8">
+                        <p:mainText>У меня есть диковинка - Чай. Был тут как-то человек по имени Минг… Подарил мне 3
+                            тюка. Дорогущий напиток, элитный! Я тебе не дам. Но вкусный, особенно с мёдом хорошо или
+                            вареньем из шишек.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-88" probability="0.8">
+                        <p:mainText>У нас красивый остров, правда? Представь только, как было бы здорово его увековечить
+                            в рисунках! Чтобы люди со всего мира могли побывать здесь, не выходя из дома! А, ну да,
+                            такое есть же.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-89" probability="0.8">
+                        <p:mainText>Не забудь купить лопату, если хочешь искать клады! Без неё, я даже не намекну тебе
+                            про них. Да и никто не скажет. Хочешь искать клады - купи лопату. Она окупит себя, поверь!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-90" probability="0.8">
+                        <p:mainText>Читал в одной книге, что в Зазеркалье есть тени… Как бы двойники древних героев…
+                            Интересно, есть тень даже ныне живущего героя вашего мира! Как там его… Дионисий… Доваки…
+                            не, не отсюда… Деметрио, точно!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-91" probability="0.8">
+                        <p:mainText>Южные Острова - практически не исследованы нами. Оттуда приплывают люди, но к ним…
+                            Там просто штормовые моря, никто не рискует отправиться через те воды.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-92" probability="0.8">
+                        <p:mainText>Помни, если что-то ползёт по ноге, а потом расправит крылья и полетит… Мерзость…
+                            Даже мужчине закричать - не урон его чести. Я орал слово дева, которая не влезла в любимое
+                            платье.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-93" probability="0.8">
+                        <p:mainText>Помни, что золотая руда - это не то золото, к которому все привыкли! Это другое.
+                            Вообще другое - но и без неё прожить можно. Хотя для некоторых здесь, золотая руда важнее
+                            золота.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-94" probability="0.8">
+                        <p:mainText>Знаешь, почему джунгли закрыты для посещения? Дело не только в макаках-мародёрах.
+                            Там ещё огромные мухи цеце. И не спрашивай, откуда они! Сами не знаем. Колдунство.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-95" probability="0.8">
+                        <p:mainText>Никогда не зли Мага-Вуду. Превратит тебя ещё в попугая…</p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-96" probability="0.8">
+                        <p:mainText>А что это за милая дева с тобой? Послушница? Ай, красотка! Не хочешь, дева, к нам
+                            устроиться? Нет? Жаль… Позволь хотя бы тебя зарисовать на память… Кто ж создал тебя, такую…
+                            Богиня во плоти...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-97" probability="0.8">
+                        <p:mainText>Слышал про рыжую пиратку Соню? Её корабль потопили, но она мужественно спаслась. Не
+                            смогла жить на суше, и отправилась искать приключения на Хунганами.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-98" probability="0.8">
+                        <p:mainText>Я видел, как Маг-Вуду Нестор оживил редиску! Она бегала такая, кричала слова
+                            странные, съела пару помидоров… И стала обычной. Зато, скажу тебе, редиска, фаршированная
+                            помидором - вкуснотища!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-99" probability="0.8">
+                        <p:mainText>Говорят, что Маги-Вуду поклоняются, в том числе, некоей Мудрой Сове… Она даёт
+                            знания, мудрость, и, скорее всего, силу земли.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-100" probability="0.8">
+                        <p:mainText>Я могу рассказывать слухи бесконечно! Извини, иногда работы много, я могу
+                            повторяться. Но у меня огромное количество новостей и интересных историй!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-101" probability="0.8">
+                        <p:mainText>Однажды Маг-Вуду Нестор, шутки ради, заколдовал метёлку… Она, представляешь, не
+                            собирала мусор, а разбрасывала! Ведьминское колдунство, натурально.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random"/>
+                            <p:answer text="Выйти" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+
+                    <!-- слухи в таверне квестовые  -->
+                    <p:replica id="rand-102" probability="0.1" repeatable="false">
+                        <p:mainText>Вы, искатели приключений, как корабли в гавани - пришли и ушли, многих видишь по
+                            разу всего.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random" giveMarker="pi_1o_start_lost_memories"/>
+                            <p:answer text="Выйти" giveMarker="pi_1o_start_lost_memories" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-103" probability="0.3" ifMarker="pi_1o_shovel_done" repeatable="false">
+                        <p:mainText>Забавно - по ночам Хилый уходит в сторону Сахарной Плантации. Наверняка у него там
+                            какая-то нычка!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random" giveMarker="pi_1o_frail_treasure_01">
+                                <p:createTask id="pi_1o_frail_treasure" name="Клад Хилого" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                            <p:answer text="Выйти" giveMarker="pi_1o_frail_treasure" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_frail_treasure" name="Клад Хилого" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-104" probability="0.3" ifMarker="pi_1o_shovel_done" repeatable="false">
+                        <p:mainText>На острове есть контрабандисты, это факт. И наверняка у них есть зарытый клад - об
+                            этом проговорился Джек, смотритель маяка.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random" giveMarker="pi_1o_smuggler_treasure_01">
+                                <p:createTask id="pi_1o_smuggler_treasure" name="Клад контрабандистов" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                            <p:answer text="Выйти" giveMarker="pi_1o_smuggler_treasure_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_smuggler_treasure" name="Клад контрабандистов" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-105" probability="0.3" ifMarker="pi_1o_shovel_done" repeatable="false">
+                        <p:mainText>Недавно слышал разговоры матросов - они считают, что Пират-Отшельник зарыл где-то
+                            свой клад!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random" giveMarker="pi_1o_hermit_treasure_01">
+                                <p:createTask id="pi_1o_hermit_treasure" name="Клад старого пирата" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                            <p:answer text="Выйти" giveMarker="pi_1o_hermit_treasure_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_hermit_treasure" name="Клад старого пирата" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-106" probability="0.3" repeatable="false">
+                        <p:mainText>Слушай, скоро у Губернатора день рождения… Хочется побаловать его изысканным
+                            подарком - блюдом из морского ореха! [Пожалуй, нужно обратиться к Трактирщику и уточнить про
+                            это задание].
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random" giveMarker="pi_1o_sea_nut_01">
+                                <p:createTask id="pi_1o_sea_nut" name="Морской орех" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                            <p:answer text="Выйти" giveMarker="pi_1o_sea_nut_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_sea_nut" name="Морской орех" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-107" probability="0.3" repeatable="false">
+                        <p:mainText>Поговаривают, что прошлой ночью на Кладбище Пиратов была разорена могила! Да не
+                            простого жителя, а самого брата Губернатора!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random" giveMarker="pi_1o_ruined_grave_01">
+                                <p:createTask id="pi_1o_ruined_grave" name="Разоренная могила" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                            <p:answer text="Выйти" giveMarker="pi_1o_ruined_grave_01" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_ruined_grave" name="Разоренная могила" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="rand-108" probability="0.3" ifMarker="pi_1o_quest_gold_goblet_01" repeatable="false">
+                        <p:mainText>Недавно заходил Пират-Отшельник, за провиантом… Так он всё плакался, что его золотой
+                            кубок хранится в Лагере Инквизиции, а это - его единственное сокровище.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее" gotoFromScript="random" removeMarker="pi_1o_quest_gold_goblet_01"
+                                      giveMarker="pi_1o_quest_gold_goblet_02">
+                                <p:createTask id="pi_1o_quest_gold_goblet" name="Кубок инквизитора" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                            <p:answer text="Выйти" removeMarker="pi_1o_quest_gold_goblet_01"
+                                      giveMarker="pi_1o_quest_gold_goblet_02" requestSpecialPlaces="true" complete="true">
+                                <p:createTask id="pi_1o_quest_gold_goblet" name="Кубок инквизитора" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Странный ключ после маяка Джека  -->
+            <p:state ifMarker="pi_strange_key_003" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d">
+                        <p:mainText>Тебя прислал старина Джек? Что, опять просит кого-то ром ему купить? А, ключ... Хм.
+                            У нас же 20 лет как серебряные ключи. Я ничего не подскажу, прости.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да как так-то..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Сребря хоббите не любе, сребря болване злоте хош-хош! Злоте клуч буде у хоббите Экля
+                            от мой доме!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d">
+                        <p:mainText>А, стой! Где моя любезность гостю, не буду оставлять тебя в безвыходной ситуации.
+                            Видишь там, за столом, сидит Арно? Мутный тип, точно тебе говорю! Поговори с ним.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" requestSpecialPlaces="true" complete="true" removeMarker="pi_strange_key_003"
+                                      giveMarker="pi_strange_key_004"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Сахар для трактира" начало  -->
+            <p:state ifMarker="planter_for_quests" probabilityPercentState="30" mandatory="true" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_2">
+                        <p:mainText>Эй, {playerNick}, подожди минутку! У меня для тебя есть лёгкая работа - за которую я
+                            хорошо заплачу. И не отказывай мне - ссориться с трактирщиком, это последнее дело!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Выкладывай"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_2">
+                        <p:mainText>Отлично - слушай, надо просто сходить к Плантатору, на Сахарную плантацию, и
+                            принести мне партию сахара. Он её уже на 3 часа задержал!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_2">
+                        <p:mainText>Обожаю деловых людей, ахаха! Вот тебе даже аванс - остальное после выполнения
+                            работы!
+                        </p:mainText>
+                        <p:award type="CRYSTAL"/>
+                        <p:answers>
+                            <p:answer text="Приятно" complete="true" giveMarker="pi_sugar_for_tavern_01">
+                                <p:createTask id="pi_sugar_for_tavern" name="Сахар для таверны" count="1" mithril="50"
+                                              type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Сахар для трактира" второй диалог с Трактирщиком  -->
+            <p:state ifMarker="pi_sugar_for_tavern_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_3">
+                        <p:mainText>Так-так-так... А я и не подумал, что надо дать тебе подтверждение какое-то... Хм...
+                            У меня и бумаги-то нет с чернилами... Впрочем, есть выход!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Какой?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_3">
+                        <p:mainText>Вот мой перстень - покажи ему, тогда он точно поверит. Он знает, как мне дорог этот
+                            кусок металла, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" complete="true" removeMarker="pi_sugar_for_tavern_02"
+                                      giveMarker="pi_sugar_for_tavern_03,pi_sugar_for_tavern_have_ring"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Сахар для трактира" выполнен  -->
+            <p:state ifMarker="pi_sugar_for_tavern_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_4">
+                        <p:mainText>Отлично, сахар у меня! Надеюсь, гоблины получили по заслугам, ахаха! Итак, работа
+                            оказалась немного труднее, чем я думал... Что ж, вознагражу тебя достойно!
+                        </p:mainText>
+                        <p:award type="MITHRIL" explicitValue="25"/>
+                        <p:answers>
+                            <p:answer
+                                    markerCondition="pi_sugar_for_tavern_have_ring and not pi_sugar_for_tavern_return_ring and not pi_sugar_for_tavern_ring_sold"
+                                    text="Спасибо!" goto="r2_d_4"/>
+                            <p:answer
+                                    markerCondition="pi_sugar_for_tavern_ring_sold and not pi_sugar_for_tavern_have_ring and not pi_sugar_for_tavern_return_ring"
+                                    text="Спасибо!" goto="r3_d_3"/>
+                            <p:answer
+                                    markerCondition="pi_sugar_for_tavern_return_ring and not pi_sugar_for_tavern_have_ring and not pi_sugar_for_tavern_ring_sold"
+                                    text="Спасибо!" goto="r8"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_4">
+                        <p:mainText>Кстати, я, пожалуй, заберу свой перстень. [За помощь, вы получаете +1 репутации
+                            пиратов!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Конечно" requestSpecialPlaces="true" complete="true"
+                                      removeMarker="pi_sugar_for_tavern_05,pi_sugar_for_tavern_have_ring">
+                                <p:addTaskProgress id="pi_sugar_for_tavern"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_3">
+                        <p:mainText>Кстати, я, пожалуй, заберу свой перстень.</p:mainText>
+                        <p:answers>
+                            <p:answer text="А его нет..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d">
+                        <p:mainText>Чего?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Ну вот так"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d" imageId="{hero}">
+                        <p:mainText>Его забрал Плантатор. Сказал, что или за новые поставки, или за беспокойство... Я не
+                            в курсе, если честно. Иначе сахар было не забрать, понимаешь?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6_d" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Хитре чевек {playerNick}, хитре как хоббите! Экля - велике преподавака для
+                            {playerNick}, хош-хош!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Тихо ты, тсссс"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7">
+                        <p:mainText>Ну что ж... Этот перстень был дорог для меня, подарок троюродной сестры двоюродной
+                            бабки по линии племянницы сводной сестры. [За помощь, вы получаете +1 репутации пиратов!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Упс..."
+                                      removeMarker="pi_sugar_for_tavern_05,pi_sugar_for_tavern_have_ring,pi_sugar_for_tavern_ring_sold"
+                                      giveMarker="pi_sugar_for_tavern_ring_liar" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_sugar_for_tavern"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r8">
+                        <p:mainText>[За помощь, вы получаете +1 репутации пиратов!]</p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_PIRATE" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Конечно" requestSpecialPlaces="true" complete="true"
+                                      removeMarker="pi_sugar_for_tavern_05,pi_sugar_for_tavern_return_ring">
+                                <p:addTaskProgress id="pi_sugar_for_tavern"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Найти убийц Лейхо", первый диалог   -->
+            <p:state ifMarker="pi_1o_quest_leyho_killers_07" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_5" imageId="{hero}">
+                        <p:mainText>Трактирщик, я веду официальное расследование от имени Губернатора. И у меня есть ряд
+                            вопросов. Что ты знаешь про Эльзу и Стивена? Когда здесь был Хилый в последний раз?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_5">
+                        <p:mainText>Раздери меня морской дьявол... Ну и вопросы... Если губернатор в курсе дела, я
+                            расскажу всё, что знаю. Даже потому, что твой вопрос про Эльзу, храни её душу Холодное море,
+                            ужасный!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Объяснись"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_4">
+                        <p:mainText>Давай с простого. Хилый не заходил ко мне уже как недели три. Он просто дал мне
+                            заказ, оплатил, и мы относим ему провиант домой. Да и здесь ему никто не рад, он это знает.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм... Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_2">
+                        <p:mainText>Эльза и Стивен... Да, мы закрывались на ремонт год назад, и комната, где она жила с
+                            Лейхо, тоже была на ремонте. Лейхо тогда устроился на Сахарную Плантацию, там ему позволили
+                            жить, чтобы больше работал.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм... Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r5_d_2">
+                        <p:mainText>Лейхо сам попросил Стивена, чтобы Эльза жила у него, так как у них не было дома.
+                            Друзья же! Через неделю, после этого, Эльза пришла в слезах... В общем, Стивен повёл себя
+                            очень некрасиво.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хм... Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r6_d_2">
+                        <p:mainText>Я сразу поселил Эльзу у своей сестры! Эльза мне - как дочь, и её честь для меня
+                            важна, как и честь моей жены!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Кольцо Д.С."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r7_d">
+                        <p:mainText>Кольцо? "Дорогому Стивену"?.. Чернила каракатицы мне в ром, это логично... Но я не
+                            могу и не хочу в это верить. Прости, вот всё, что я знаю.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Спасибо!" removeMarker="pi_1o_quest_leyho_killers_07"
+                                      giveMarker="pi_1o_quest_leyho_killers_08" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Морской орех", нашли орех  -->
+            <p:state ifMarker="pi_1o_sea_nut_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_6">
+                        <p:mainText>Морской орех! Я его из сотен узнаю, такой он уникальный! Так, вот тебе немного
+                            золотой руды за такое ПРОСТОЕ задание - сходи-принеси, да?
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="10"/>
+                        <p:answers>
+                            <p:answer text="Очень простое, да"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_6">
+                        <p:mainText>Слушай, у меня будет ещё одно задание. Дай мне минутку - и я в твоём распоряжении,
+                            нужно приготовить морской орех! И отнести его имениннику!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="За минутку?" complete="true" requestSpecialPlaces="true" removeMarker="pi_1o_sea_nut_03"
+                                      giveMarker="pi_1o_governor_present_01">
+                                <p:addTaskProgress id="pi_1o_sea_nut"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Подарок Губернатору"  -->
+            <p:state ifMarker="pi_1o_governor_present_01" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_7">
+                        <p:mainText>В этот раз никаких монстров или сырых пещер - просто отнеси блюдо из морского ореха
+                            Губернатору, с моими пожеланиями здоровья! Справишься?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сомневаешься?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_7">
+                        <p:mainText>Нет-нет, что ты! Вдруг опять детёныша Левиафана где найдёшь, под Губернатором,
+                            например...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А. ХА. ХА." complete="true" requestSpecialPlaces="true" removeMarker="pi_1o_governor_present_01"
+                                      giveMarker="pi_1o_governor_present_02">
+                                <p:createTask id="pi_1o_governor_present" name="Подарок Губернатору" count="1"
+                                              mithril="50" type="SINGLE"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Подарок Губернатору" вернулись  -->
+            <p:state ifMarker="pi_1o_governor_present_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_8">
+                        <p:mainText>Ну что, как мой подарок?! Ему понравилось?! Это же деликатес, такое блюдо стоит не
+                            меньше 70 кусков руды!!!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понравилось!" goto="r2_d_8"/>
+                            <p:answer text="У него аллергия" goto="r3_d_5"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_8">
+                        <p:mainText>Ох, я так счастлив! Надеюсь, он инвестирует ещё золота, и я построю конюшню! Теперь
+                            я его засыплю блюдами из орехов! Ах, да, твоя награда - обязательно, за такие новости!
+                        </p:mainText>
+                        <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>
+                        <p:answers>
+                            <p:answer text="Губернатор обрадуется" removeMarker="pi_1o_governor_present_03"
+                                      giveMarker="pi_1o_governor_present_bad" requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_governor_present"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_5">
+                        <p:mainText>Аллергия на орехи? Морской дьявол, я же не знал! Но он не разозлился, верно?
+                            Главное, что дорог не подарок, а дорого внимание!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="6" goto="r4_d_3"/>
+                        <p:answers>
+                            <p:answer text="Именно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_3">
+                        <p:mainText>[Вы поступили по совести, и ваша честность не осталась без внимания. +1 к общей
+                            репутации! Теперь все знают про аллергию Губернатора. Каждое утро, у порога, ему кто-то
+                            кладёт орехи. Безудержное веселье по-Антигуантски!]
+                        </p:mainText>
+                        <p:award type="REPUTATION" reputationType="REPUTATION_WORLD" explicitValue="1"/>
+                        <p:answers>
+                            <p:answer text="Чем бы ни тешились..." removeMarker="pi_1o_governor_present_03"
+                                      requestSpecialPlaces="true" complete="true">
+                                <p:addTaskProgress id="pi_1o_governor_present"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест "Оплата за провиант" концовка  -->
+            <p:state ifMarker="pi_1o_quest_payment_for_provisions_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_9">
+                        <p:mainText>Плата за провиант от инквизиции у тебя? 10.000 золотых монет, верно? Давай их сюда,
+                            и поскорее, ахаха!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Держи">
+                                <p:pay gold="10000"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_9">
+                        <p:mainText>Прекрасно! Вот твоя оплата за работу - 3 куска золотой руды! Не потрать все сразу,
+                            авантюрист!
+                        </p:mainText>
+                        <p:award type="ORE_GOLD" explicitValue="3"/>
+                        <p:answers>
+                            <p:answer text="Это ж так сложно" complete="true" requestSpecialPlaces="true"
+                                      removeMarker="pi_1o_quest_payment_for_provisions_02">
+                                <p:addTaskProgress id="pi_1o_quest_payment_for_provisions"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 2  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_03" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_10">
+                        <p:mainText>Говоришь, Феликс просил передать 500 золотых? Но этого мало! Инквизиция, итить её,
+                            всегда пытаются надуть меня, ахаха! Не хватает ещё 200 золотых. Так и передай ему! Или
+                            завтра выселю из комнаты, хехе.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Хорошо" removeMarker="pi_1o_quest_felix_salary_03"
+                                      giveMarker="pi_1o_quest_felix_salary_04" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="500"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 4  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_05" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_11">
+                        <p:mainText>Я? Я?! Я, обманываю Феликса?! Нет, не обманываю.</p:mainText>
+                        <p:answers>
+                            <p:answer text="Лаконично" removeMarker="pi_1o_quest_felix_salary_05"
+                                      giveMarker="pi_1o_quest_felix_salary_06" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 6  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_07" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_12">
+                        <p:mainText>Доказательства? А давай посчитаем, и ты ему список передашь, хорошо?</p:mainText>
+                        <p:answers>
+                            <p:answer text="Аж интересно"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_10">
+                        <p:mainText>Итак: 30 порций кофе; 10 порций рома; 15 порций ухи; 24 порции мидий с сыром в
+                            соусе; 17 сладких конфет; 5 порций фисташек; 11 порций фуагры; 60 порций запечёной
+                            картошки...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Фисташки... Мммм..."/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_6">
+                        <p:mainText>...90 порций шницеля; 3 целых курицы; 20 порций эля; 40 порций фирменных колбасок;
+                            17 кусков сыра; 11 кусков ветчины; 70 буханок хлеба; 19 порций икры; 25 лобстеров; 16 порций
+                            кальмара...
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Куда столько?!"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_1" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Чевек стока жрать, чевек хоче быве как велики кроль Арибачи? Велике кроль все
+                            хоббите Арибачи жрать как четыре хоббите!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Ага, как ваш кроль"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r4_d_4">
+                        <p:mainText>...9 томатов; 45 яблок; 23 банана; 10 порций бараньих рёбрышек в остром соусе; 4
+                            разбитых кружки. Ещё аренда комнаты. Вот и получается, 700 золотых. Держи список и покажи
+                            ему, всё честно! Но ест он как кабан, да.
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Как кабанище..." removeMarker="pi_1o_quest_felix_salary_07"
+                                      giveMarker="pi_1o_quest_felix_salary_08" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 8  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_09" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_13">
+                        <p:mainText>Ты хочешь заплатить за Феликса? Нет-нет-нет! Никаких поблажек инквизиции! И ты меня
+                            не проведёшь - я их монеты узнаю за милю, так что своё золото не предлагай. Сам наел - сам
+                            пусть платит!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="А как узнаешь-то?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_11">
+                        <p:mainText>Хе-хе, вся инквизиция в кошелях чеснок носит! Оберег такой. Так что, мой друг... Я
+                            узнаю их золото всегда. Тем более, деньги не пахнут, ахаха! Их, кстати, тоже не пахнут. Они
+                            смердят!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Да что ж такое..." removeMarker="pi_1o_quest_felix_salary_09"
+                                      giveMarker="pi_1o_quest_felix_salary_10" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Зарплата Феликса диалог 10  -->
+            <p:state ifMarker="pi_1o_quest_felix_salary_11" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_14">
+                        <p:mainText>Феликс предлагает часы? Серьёзно, ахахах! Так, погоди. Наградные? От евоного короля?
+                            Из золота? Хм, дай оценю... [Трактирщик скрывается в свою комнату, но вскоре возвращается,
+                            сияя от радости]
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Что такое?"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_12">
+                        <p:mainText>Ишь ты! Да такие часы, это ж... Кракен задери меня, плевать что они от инквизиции!
+                            Они стоят целое состояние! Скажи Феликсу, что может жить сколько угодно! Но питаться
+                            разумно, хехе!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Точно" removeMarker="pi_1o_quest_felix_salary_11"
+                                      giveMarker="pi_1o_quest_felix_salary_12" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Часы Феликса  -->
+            <p:state ifMarker="pi_1o_quest_felix_clock_02" repeatable="false" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_15" imageId="{hero}">
+                        <p:mainText>Трактирщик, послушай, я тут подума[л|ла]... А мне бы пригодились те часы от
+                            инквизитора Феликса. Мне же нужно время узнавать в странствиях... Продай?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Далее"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r2_d_13">
+                        <p:mainText>Ахаха, тоже цацка понравилась, да? НЕ продам, ахаха! Даже Хилый предлагал мне гору
+                            золотой руды - а я отказал, вот так! Часы мои, и я их никому не продам!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer ifNoMarker="hobbit_talk_fun" text="Жаль" removeMarker="pi_1o_quest_felix_clock_02"
+                                      giveMarker="pi_1o_quest_felix_clock_03" requestSpecialPlaces="true" complete="true"/>
+                            <p:answer ifMarker="hobbit_talk_fun" text="Жаль" goto="r3_d_7"/>
+                        </p:answers>
+                    </p:replica>
+                    <p:replica id="r3_d_7" ifMarker="hobbit_talk_fun" atlasId="pi_1o_PLACES_road_7" imageId="pi_hobbit_ekla" imageComment="Хоббит Экля">
+                        <p:mainText>Жадне, жадне болване чевек! Злоте штука хоббите тожи хоче, хоче быве как велике
+                            кроль всех хоббите Арибачи, весь в злоте штуки!
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Понимаю тебя" removeMarker="pi_1o_quest_felix_clock_02"
+                                      giveMarker="pi_1o_quest_felix_clock_03" requestSpecialPlaces="true" complete="true"/>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+            <!-- квест Моя первая кукла-вуду   -->
+            <p:state ifMarker="pi_1o_quest_my_first_voodoo_doll_06" closable="false">
+                <p:dialog>
+                    <p:replica id="r1_d_16">
+                        <p:mainText>По глазам вижу, что тебе нужна бутылочка свежего рома! За 15 золота я продам тебе
+                            её! Сделка?
+                        </p:mainText>
+                        <p:answers>
+                            <p:answer text="Сделка!" removeMarker="pi_1o_quest_my_first_voodoo_doll_06"
+                                      giveMarker="pi_1o_quest_my_first_voodoo_doll_07" requestSpecialPlaces="true" complete="true">
+                                <p:pay gold="15"/>
+                            </p:answer>
+                        </p:answers>
+                    </p:replica>
+                </p:dialog>
+            </p:state>
+
+        </p:states>
+    </p:place>
+
+</p:root>
