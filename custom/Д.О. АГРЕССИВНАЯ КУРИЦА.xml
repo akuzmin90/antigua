@@ -20,7 +20,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_quest_bad_chiken" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Агрессивная курица, боевая иконка будет называться pi_1o_Antigua_quest_bad_chiken_f -->
+                                    onLooseGoTo="loose"/> <!-- бой с Агрессивная курица, боевая иконка будет называться pi_1o_Antigua_quest_bad_chiken_f -->
                     </p:answer>
                 </p:answers>
             </p:replica>

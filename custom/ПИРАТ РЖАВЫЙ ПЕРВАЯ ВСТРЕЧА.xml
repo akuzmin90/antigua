@@ -29,7 +29,7 @@
                 <p:mainText>Так, тебя прислал Губернатор... Давай договоримся, сделка! Мы остаёмся, а взамен... Взамен я буду благодарен. В противном случае, без боя я не уйду! </p:mainText>
                 <p:answers>
                     <p:answer text="Бой!" > 
-                        <p:toBattle creatureId="pi_1o_Antigua_bgf_pirate_rusty" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Ржавый, боевая иконка будет называться pi_1o_Antigua_bgf_pirate_rusty_f, это босс -->
+                        <p:toBattle creatureId="pi_1o_Antigua_bgf_pirate_rusty" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Ржавый, боевая иконка будет называться pi_1o_Antigua_bgf_pirate_rusty_f, это босс -->
                     </p:answer>
                     <p:answer text="Сделка?" goto="r5" repeatable="false" />
                 </p:answers>
@@ -77,7 +77,7 @@
                 <p:mainText>Похоже, у нас не осталось выбора, да? Я старался быть добрым с тобой, портовая крыса! </p:mainText>
                 <p:answers>
                     <p:answer text="Бой!" > 
-                        <p:toBattle creatureId="pi_1o_Antigua_bgf_pirate_rusty" onWinGoTo="win" onLooseGoTo="loose" />  <!--TODO бой с Ржавый, боевая иконка будет называться pi_1o_Antigua_bgf_pirate_rusty_f, это босс -->
+                        <p:toBattle creatureId="pi_1o_Antigua_bgf_pirate_rusty" onWinGoTo="win" onLooseGoTo="loose" />  <!-- бой с Ржавый, боевая иконка будет называться pi_1o_Antigua_bgf_pirate_rusty_f, это босс -->
                     </p:answer>
                 </p:answers>
             </p:replica>

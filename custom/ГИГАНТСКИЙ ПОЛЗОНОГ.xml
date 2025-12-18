@@ -20,7 +20,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_lj_giant_creep" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Гигантский Ползоног, боевая иконка будет называться pi_1o_Antigua_lj_giant_creep_f, это босс --> <!--TODO Пока игрок не использует itemId="doll_carnage" в бою, этот босс вообще неуязвим, то есть применение этой куклы-вуду снимает неуязвимость с босса. ЕСЛИ игрок применил этот расходник в этом бою, нужно выдать ему маркер giveMarker="voodoo_magic_doll_power_used_giant_creep", то есть хоть при каждом поражении или при победе -->
+                                            onLooseGoTo="loose"/> <!-- бой с Гигантский Ползоног, боевая иконка будет называться pi_1o_Antigua_lj_giant_creep_f, это босс --> <!-- Пока игрок не использует itemId="doll_carnage" в бою, этот босс вообще неуязвим, то есть применение этой куклы-вуду снимает неуязвимость с босса. ЕСЛИ игрок применил этот расходник в этом бою, нужно выдать ему маркер giveMarker="voodoo_magic_doll_power_used_giant_creep", то есть хоть при каждом поражении или при победе -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

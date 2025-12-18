@@ -24,7 +24,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_captain_obi" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Призрак Капитана пиратов, боевая иконка будет называться pi_1o_pg_captain_obi_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Призрак Капитана пиратов, боевая иконка будет называться pi_1o_pg_captain_obi_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

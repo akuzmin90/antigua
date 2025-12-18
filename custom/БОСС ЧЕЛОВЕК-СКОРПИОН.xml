@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_scorpio_man" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Человек-скорпион, боевая иконка будет называться pi_1o_Antigua_mj_scorpio_man_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Человек-скорпион, боевая иконка будет называться pi_1o_Antigua_mj_scorpio_man_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

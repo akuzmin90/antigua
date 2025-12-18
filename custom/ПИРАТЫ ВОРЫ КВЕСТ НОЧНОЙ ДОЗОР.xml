@@ -17,7 +17,7 @@
                 <p:mainText>Ха, тогда посмотрим, кто кого сильнее!</p:mainText>
                 <p:answers>
                     <p:answer text="Давай" > 
-                    	<p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_1" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с пиратом-вором 1, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_1_f  -->
+                    	<p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_1" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с пиратом-вором 1, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_1_f  -->
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -60,7 +60,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_2" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с пиратом-вором 2, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_2_f  -->
+                                    onLooseGoTo="loose"/> <!-- бой с пиратом-вором 2, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_2_f  -->
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -98,7 +98,7 @@
                 <p:mainText>Д В А. И З У М Р У Д А. Или что, для тебя это мелочь?! Да я три дня могу в таверне в городе кутить на них! Ну, так меня ещё не оскорбляли!</p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" > 
-                    	<p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_3" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с пиратом-вором 3, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_3_f  -->
+                    	<p:toBattle creatureId="pi_1o_Antigua_sp_wh_pirate_thief_3" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с пиратом-вором 3, боевая иконка будет называться pi_1o_Antigua_sp_wh_pirate_thief_3_f  -->
                     </p:answer>
                     <p:answer text="Давай изюм" goto="r3" /> 
                 </p:answers>

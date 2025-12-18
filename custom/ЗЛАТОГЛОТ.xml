@@ -20,11 +20,11 @@
                         <p:answers>
                             <p:answer text="В бой!" ifNoMarker="hobbit_talk_fun">
                                 <p:toBattle creatureId="pi_1o_Antigua_gm_goldeater" onWinGoTo="win_0"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Златоглот, боевая иконка будет называться pi_1o_Antigua_gm_goldeater_f, это босс -->
+                                            onLooseGoTo="loose"/> <!-- бой с Златоглот, боевая иконка будет называться pi_1o_Antigua_gm_goldeater_f, это босс -->
                             </p:answer>
                             <p:answer text="В бой!" ifMarker="hobbit_talk_fun">
                                 <p:toBattle creatureId="pi_1o_Antigua_gm_goldeater" onWinGoTo="win_1"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Златоглот, боевая иконка будет называться pi_1o_Antigua_gm_goldeater_f, это босс -->
+                                            onLooseGoTo="loose"/> <!-- бой с Златоглот, боевая иконка будет называться pi_1o_Antigua_gm_goldeater_f, это босс -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

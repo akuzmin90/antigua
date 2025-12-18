@@ -20,7 +20,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_hp_man_eating_shark" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Акула-людоед, боевая иконка будет называться pi_1o_hp_man_eating_shark_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

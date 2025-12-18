@@ -17,7 +17,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_cfp_1_boss" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Восставшая Нежить, боевая иконка будет называться pi_1o_pg_cfp_1_boss_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

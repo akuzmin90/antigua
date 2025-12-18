@@ -49,7 +49,7 @@
                         <p:answers>
                             <p:answer text="Тогда в бой!">
                                 <p:toBattle creatureId="pi_1o_mj_twb_first_scientist" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Первый учёный, боевая иконка будет называться pi_1o_mj_twb_first_scientist_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Первый учёный, боевая иконка будет называться pi_1o_mj_twb_first_scientist_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

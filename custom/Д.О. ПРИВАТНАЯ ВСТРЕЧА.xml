@@ -18,7 +18,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_quest_sons_of_mara" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Сыновья Мары, от 1 до 3, боевая иконка будет называться pi_1o_Antigua_quest_sons_of_mara_f1...f3 -->
+                                    onLooseGoTo="loose"/> <!-- бой с Сыновья Мары, от 1 до 3, боевая иконка будет называться pi_1o_Antigua_quest_sons_of_mara_f1...f3 -->
                     </p:answer>
                 </p:answers>
             </p:replica>

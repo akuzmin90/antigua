@@ -24,7 +24,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_lost_criita" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Заблудшая Криита, боевая иконка будет называться pi_1o_Antigua_mj_lost_criita_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

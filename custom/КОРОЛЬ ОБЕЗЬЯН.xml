@@ -20,11 +20,11 @@
                         <p:answers>
                             <p:answer text="В бой!" ifMarker="hobbit_talk_fun">
                                 <p:toBattle creatureId="pi_1o_Antigua_wtda_boss_monday_1" onWinGoTo="win_1"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Королём обезьян, боевая иконка будет называться pi_1o_Antigua_wtda_boss_monday_1_f, это босс -->
+                                            onLooseGoTo="loose"/> <!-- бой с Королём обезьян, боевая иконка будет называться pi_1o_Antigua_wtda_boss_monday_1_f, это босс -->
                             </p:answer>
                             <p:answer text="В бой!" ifNoMarker="hobbit_talk_fun">
                                 <p:toBattle creatureId="pi_1o_Antigua_wtda_boss_monday_1" onWinGoTo="win_0"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Королём обезьян, боевая иконка будет называться pi_1o_Antigua_wtda_boss_monday_1_f, это босс -->
+                                            onLooseGoTo="loose"/> <!-- бой с Королём обезьян, боевая иконка будет называться pi_1o_Antigua_wtda_boss_monday_1_f, это босс -->
                             </p:answer>
                             <p:answer text="Нет" goto="r1" out="true"/>
                         </p:answers>

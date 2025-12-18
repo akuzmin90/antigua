@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_adamantine_burdock" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Агрессивный Крот, боевая иконка будет называться pi_1o_mj_aggressive_mole_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_lg_grey_alligator" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Серый Аллигатор, боевая иконка будет называться pi_1o_lg_grey_alligator_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Серый Аллигатор, боевая иконка будет называться pi_1o_lg_grey_alligator_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

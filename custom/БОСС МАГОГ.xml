@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_magog" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Магог, боевая иконка будет называться pi_1o_pg_magog_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Магог, боевая иконка будет называться pi_1o_pg_magog_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

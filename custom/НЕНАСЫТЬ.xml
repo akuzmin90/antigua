@@ -46,7 +46,7 @@
                             </p:answer>
                             <p:answer text="Нет уж... В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_insatiable" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Ненасыть, боевая иконка будет называться pi_1o_pg_insatiable_f, это босс -->
+                                            onLooseGoTo="loose"/> <!-- бой с Ненасыть, боевая иконка будет называться pi_1o_pg_insatiable_f, это босс -->
                             </p:answer>
                         </p:answers>
                     </p:replica>
@@ -55,7 +55,7 @@
                         <p:answers>
                             <p:answer text="Скотина... В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_insatiable" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Ненасыть, боевая иконка будет называться pi_1o_pg_insatiable_f, это босс -->
+                                            onLooseGoTo="loose"/> <!-- бой с Ненасыть, боевая иконка будет называться pi_1o_pg_insatiable_f, это босс -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

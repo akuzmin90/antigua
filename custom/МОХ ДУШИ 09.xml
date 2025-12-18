@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_moss_of_the_soul_09" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Мох Души 09, боевая иконка будет называться pi_1o_pg_moss_of_the_soul_09_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Мох Души 09, боевая иконка будет называться pi_1o_pg_moss_of_the_soul_09_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

@@ -23,7 +23,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_gp_ghost_in_chapel" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Призрак в часовне, боевая иконка будет называться pi_1o_Antigua_gp_ghost_in_chapel_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Призрак в часовне, боевая иконка будет называться pi_1o_Antigua_gp_ghost_in_chapel_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

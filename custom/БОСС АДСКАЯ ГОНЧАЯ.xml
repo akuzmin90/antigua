@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_hellhound" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Адская гончая, боевая иконка будет называться pi_1o_pg_hellhound_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_lg_steel_crab" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Стальной краб, боевая иконка будет называться pi_1o_lg_steel_crab_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Стальной краб, боевая иконка будет называться pi_1o_lg_steel_crab_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

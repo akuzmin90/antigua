@@ -117,7 +117,7 @@
                         <p:answers>
                             <p:answer text="Выбить дверь!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_kindergarten" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Дверь, боевая иконка будет называться pi_1o_Antigua_mj_kindergarten_door_f Наносить ей урон может лишь послушница, больше никто. Дверь НЕ атакует, НЕ отвечает, просто жирная конкретно по хп, защите и кощею.-->
+                                            onLooseGoTo="loose"/> <!-- бой с Дверь, боевая иконка будет называться pi_1o_Antigua_mj_kindergarten_door_f Наносить ей урон может лишь послушница, больше никто. Дверь НЕ атакует, НЕ отвечает, просто жирная конкретно по хп, защите и кощею.-->
                             </p:answer>
                         </p:answers>
                     </p:replica>

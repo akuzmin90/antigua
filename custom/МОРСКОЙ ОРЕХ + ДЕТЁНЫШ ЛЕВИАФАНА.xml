@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_lg_sea_nut" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Детёнышем Левиафана, боевая иконка будет называться pi_1o_Antigua_lg_child_leviathan_treasure_f, это босс -->
+                                            onLooseGoTo="loose"/> <!-- бой с Детёнышем Левиафана, боевая иконка будет называться pi_1o_Antigua_lg_child_leviathan_treasure_f, это босс -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

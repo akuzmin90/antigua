@@ -24,7 +24,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_lc_hundred_eyed_spirit" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Стоглазый дух, боевая иконка будет называться pi_1o_Antigua_lc_hundred_eyed_spirit_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Стоглазый дух, боевая иконка будет называться pi_1o_Antigua_lc_hundred_eyed_spirit_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

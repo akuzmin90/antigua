@@ -349,7 +349,7 @@
                 <p:mainText>А вот и ты!!! ТЫЫЫЫЫЫЫЫ!!! Я же сказал, что не отстану от тебя! Мне хватает сил, чтобы найти тебя в любом из миров! Готовься к битве!!! </p:mainText>
                 <p:answers>
                     <p:answer text="Мученик?! В бой!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_martyr" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Мученик, уже есть его боевая карточка -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_martyr" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Мученик, уже есть его боевая карточка -->
                     </p:answer>
                     <p:answer text="Да не, я пойду" goto="r1" out="true" />                    
                 </p:answers>
@@ -359,7 +359,7 @@
                 <p:mainText>Ахахаха, я буду наслаждаться этой победой вечно!!! Давай ещё, Хранитель, я жажду мести!</p:mainText>
                 <p:answers>
                     <p:answer text="Снова в бой!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_martyr" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Мученик, уже есть его боевая карточка -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_martyr" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Мученик, уже есть его боевая карточка -->
                     </p:answer>
                     <p:answer text="Давай потом" goto="r1" out="true" />
                 </p:answers>
@@ -444,7 +444,7 @@
                 <p:mainText>Похоже, вы слишком близко подошли к ягуару! Он встаёт в боевую позу. Но вы ещё можете отойти назад и избежать его нападения! </p:mainText>
                 <p:answers>
                     <p:answer text="Пусть нападает!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_jaguar" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Ягуар, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_jaguar_f -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_jaguar" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Ягуар, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_jaguar_f -->
                     </p:answer>
                     <p:answer text="Отойти назад" goto="r1" out="true" />
                 </p:answers>
@@ -500,7 +500,7 @@
                 <p:mainText>Пантера смотрит на вас, а вы на неё. Похоже, такой зрительный контакт не нравится большой кошке! Ещё немного, и она набросится на вас! </p:mainText>
                 <p:answers>
                     <p:answer text="Пусть нападает!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_panther" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пантера, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_panther_f -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_panther" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Пантера, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_panther_f -->
                     </p:answer>
                     <p:answer text="Отойти назад" goto="r1" out="true" />
                 </p:answers>
@@ -563,7 +563,7 @@
                 <p:mainText>Зомби на кладбище - вы не удивлены. Но разве должны зомби бродить по земле?! Давайте упокоим его? </p:mainText>
                 <p:answers>
                     <p:answer text="Упокоим!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_zombie" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Зомби, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_zombie_f -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_zombie" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Зомби, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_zombie_f -->
                     </p:answer> 
                     <p:answer text="Пусть бродит" goto="r1" out="true" />
                 </p:answers>
@@ -633,7 +633,7 @@
                 <p:mainText>Скелет восстал из своего ложа, чтобы бродить по кладбищу пиратов. Давайте упокоим его? </p:mainText>
                 <p:answers>
                     <p:answer text="Упокоим!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_skeleton" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Скелет, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_skeleton_f -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_skeleton" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Скелет, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_skeleton_f -->
                     </p:answer>
                     <p:answer text="Пусть бродит" goto="r1" out="true" />
                 </p:answers>
@@ -704,7 +704,7 @@
                 <p:mainText>Ого, какая огромная креветка! И она жаждет битвы! </p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_warlike_shrimp" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Воинственная креветка, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_warlike_shrimp_f1 -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_warlike_shrimp" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Воинственная креветка, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_warlike_shrimp_f1 -->
                     </p:answer>
                     <p:answer text="Не в этот раз" goto="r1" out="true" />
                 </p:answers>
@@ -767,7 +767,7 @@
                 <p:mainText>Тритон с трезубцем показывает вам неприличные жесты! Что будем делать? </p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_newt_with_trident" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Тритон с трезубцем, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_newt_with_trident_f -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_newt_with_trident" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Тритон с трезубцем, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_newt_with_trident_f -->
                     </p:answer>
                     <p:answer text="Просто уйти" goto="r1" out="true" />
                 </p:answers>
@@ -837,7 +837,7 @@
                 <p:mainText>Огромный термитус вылез прямо из-под земли и готовится напасть на вас!  </p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_termite" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Термитус, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_termite_f1...pi_1o_Antigua_eo_ore_termite_f3 -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_termite" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Термитус, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_termite_f1...pi_1o_Antigua_eo_ore_termite_f3 -->
                     </p:answer>
                     <p:answer text="Просто уйти" goto="r1" out="true" />
                 </p:answers>
@@ -900,7 +900,7 @@
                 <p:mainText>Питон ждёт добычу. И тут появляетесь вы! Проверим свои силы против змеи?  </p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_python" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Питон, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_python_f1...pi_1o_Antigua_eo_ore_python_f3 -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_python" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Питон, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_python_f1...pi_1o_Antigua_eo_ore_python_f3 -->
                     </p:answer>
                     <p:answer text="Просто уйти" goto="r1" out="true" />
                 </p:answers>
@@ -963,7 +963,7 @@
                 <p:mainText>Ахаха, мы приплыли на Антигуа с острова Беззаконния, чтобы грабить всех и вся! Итак, ты не пройдёшь дальше, пока не заплатишь мне! Кошелёк или жизнь, искатель приключений, а?  </p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" >
-                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_lawless_pirate" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пират-беззаконник, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_lawless_pirate_f1 -->
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_lawless_pirate" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Пират-беззаконник, от 1 до 3 противников в бою, боевая иконка будет называться pi_1o_Antigua_eo_ore_lawless_pirate_f1 -->
                     </p:answer>
                     <p:answer text="Просто уйти" goto="r1" out="true" />
                 </p:answers>

@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_lg_basilisk" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Василиск, боевая иконка будет называться pi_1o_lg_basilisk_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

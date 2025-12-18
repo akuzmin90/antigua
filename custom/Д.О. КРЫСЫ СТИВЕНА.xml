@@ -16,7 +16,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_quest_steven_rats_01" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Крыса, боевая иконка будет называться pi_1o_Antigua_quest_steven_rats_01_f -->
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -52,7 +52,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_quest_steven_rats_02" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Крыса, боевая иконка будет называться pi_1o_Antigua_quest_steven_rats_02_f -->
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>

@@ -15,7 +15,7 @@
                 <p:mainText>Так, а вот и ты. Давай без церемоний - бесят ваши кодексы и законы! Сейчас я тебе дам понять, что НЕ НАДО лезть в это дело с ключом. Понятно? </p:mainText>
                 <p:answers>
                     <p:answer text="Будет драка" removeMarker="pi_strange_key_hermit" giveMarker="pi_strange_key_005_hint" > 
-                    	<p:toBattle creatureId="pi_1o_Antigua_berserker_pirate" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пиратом-берсеркером, боевая иконка будет называться pi_1o_Antigua_berserker_pirate_f, это босс -->
+                    	<p:toBattle creatureId="pi_1o_Antigua_berserker_pirate" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Пиратом-берсеркером, боевая иконка будет называться pi_1o_Antigua_berserker_pirate_f, это босс -->
                     </p:answer>
                 </p:answers>
             </p:replica>

@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_red_poppy" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Муха Цеце, боевая иконка будет называться pi_1o_mj_tsetse_fly_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Муха Цеце, боевая иконка будет называться pi_1o_mj_tsetse_fly_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

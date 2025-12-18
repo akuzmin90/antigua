@@ -20,7 +20,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_sp_weevill" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с ДОЛГОНОСИК, боевая иконка будет называться pi_1o_sp_weevill_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с ДОЛГОНОСИК, боевая иконка будет называться pi_1o_sp_weevill_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

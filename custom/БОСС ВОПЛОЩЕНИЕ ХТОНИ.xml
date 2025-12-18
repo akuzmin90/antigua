@@ -23,7 +23,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_hs_embodiment_of_chthon" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Воплощение Хтони, боевая иконка будет называться pi_1o_hs_embodiment_of_chthon_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

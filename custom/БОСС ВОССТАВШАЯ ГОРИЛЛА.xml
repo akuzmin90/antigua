@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_living_dead_gorilla" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Восставшая горилла, боевая иконка будет называться pi_1o_Antigua_mj_living_dead_gorilla_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

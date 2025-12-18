@@ -19,7 +19,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_mj_tnd_ghoul" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Гуль, боевая иконка будет называться pi_1o_mj_tnd_ghoul_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Гуль, боевая иконка будет называться pi_1o_mj_tnd_ghoul_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

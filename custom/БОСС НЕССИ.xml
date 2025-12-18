@@ -19,7 +19,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_hp_nessi" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Несси, боевая иконка будет называться pi_1o_hp_nessi_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Несси, боевая иконка будет называться pi_1o_hp_nessi_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

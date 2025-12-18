@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_pg_blood_moth" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Кровавый Мотылёк, боевая иконка будет называться pi_1o_pg_blood_moth_f -->
+                                            onLooseGoTo="loose"/> <!-- бой с Кровавый Мотылёк, боевая иконка будет называться pi_1o_pg_blood_moth_f -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

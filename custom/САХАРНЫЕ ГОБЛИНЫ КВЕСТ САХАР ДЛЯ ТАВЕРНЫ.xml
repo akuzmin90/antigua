@@ -5,7 +5,7 @@
 
     <!-- САХАРНЫЕ ГОБЛИНЫ КВЕСТ САХАР ДЛЯ ТАВЕРНЫ -->
 
-    <!--TODO босс в 3 волны, по 1 гоблину в волне, каждый последующий жестче  -->
+    <!-- босс в 3 волны, по 1 гоблину в волне, каждый последующий жестче  -->
 
     <p:place id="pi_1o_sp_sugar_goblins" atlasId="pi_1o_PLACES_pi_1o_sugar_plantation_warehouse" imageId="pi_1o_sp_sugar_goblins" name="Сахарные гоблины"
              minPlayerStair="40" meetProbability="0">

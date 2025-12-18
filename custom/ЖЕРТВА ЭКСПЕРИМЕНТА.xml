@@ -98,7 +98,7 @@
                         <p:answers>
                             <p:answer text="В бой?">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_victim_of_experiment" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Жертва эксперимента, боевая иконка будет называться pi_1o_Antigua_mj_victim_of_experiment_f, несильный -->
+                                            onLooseGoTo="loose"/> <!-- бой с Жертва эксперимента, боевая иконка будет называться pi_1o_Antigua_mj_victim_of_experiment_f, несильный -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

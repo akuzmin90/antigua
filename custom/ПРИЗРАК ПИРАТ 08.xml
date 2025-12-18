@@ -17,7 +17,7 @@
                 <p:mainText>А вот и восьмой из пиратов-призраков! Что ж, пора вернуть его в царство мёртвых!</p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" >
-                    	<p:toBattle creatureId="pi_1o_pg_pirat_ghost_08" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Пиратом Призраком 08, боевая иконка будет называться pi_1o_pg_pirat_ghost_08_f -->
+                    	<p:toBattle creatureId="pi_1o_pg_pirat_ghost_08" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Пиратом Призраком 08, боевая иконка будет называться pi_1o_pg_pirat_ghost_08_f -->
                     </p:answer>
                         <p:answer text="Освободить" goto="r2" />
                 </p:answers>

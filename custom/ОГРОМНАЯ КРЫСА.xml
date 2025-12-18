@@ -16,7 +16,7 @@
                 <p:mainText>Это не просто Огромная Крыса. Это - ОГРОМНАЯ КРЫСА! Интересно, а зачем вообще такую призывать? Впрочем, работа есть работа.</p:mainText>
                 <p:answers>
                     <p:answer text="В бой!" >
-                    	<p:toBattle creatureId="pi_1o_sp_big_rat" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Огромной Крысой, боевая иконка будет называться pi_1o_sp_big_rat_f -->
+                    	<p:toBattle creatureId="pi_1o_sp_big_rat" onWinGoTo="win" onLooseGoTo="loose" /> <!-- бой с Огромной Крысой, боевая иконка будет называться pi_1o_sp_big_rat_f -->
                     </p:answer>
                 </p:answers>
             </p:replica>

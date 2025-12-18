@@ -21,7 +21,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_golden_parrot" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Золотой попугай, боевая иконка будет называться pi_1o_Antigua_mj_golden_parrot_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>
