@@ -24,7 +24,9 @@
                         </p:mainText>
                         <p:answers>
                             <p:answer text="В бой!">
-                                <p:toBattle creatureId="pi_1o_hs_warlock" onWinGoTo="win" onLooseGoTo="loose" /> <!--TODO бой с Чернокнижник, боевая иконка будет называться pi_1o_hs_warlock_f === Против босса ТОЛЬКО послушница -->
+                                <p:toBattle creatureId="pi_1o_hs_warlock" onWinGoTo="win" onLooseGoTo="loose">
+                                    <p:creatureFilter><p:identifier>acolyte</p:identifier></p:creatureFilter>
+                                </p:toBattle>
                             </p:answer>
                         </p:answers>
                     </p:replica>
@@ -33,7 +35,9 @@
                         <p:mainText>Чернокнижник сильный... Но Послушница должна его победить!</p:mainText>
                         <p:answers>
                             <p:answer text="В атаку!">
-                                <p:toBattle creatureId="pi_1o_hs_warlock" onWinGoTo="win" onLooseGoTo="loose"/>
+                                <p:toBattle creatureId="pi_1o_hs_warlock" onWinGoTo="win" onLooseGoTo="loose">
+                                    <p:creatureFilter><p:identifier>acolyte</p:identifier></p:creatureFilter>
+                                </p:toBattle>
                             </p:answer>
                             <p:answer text="Я вернусь" goto="loose" out="true"/>
                         </p:answers>

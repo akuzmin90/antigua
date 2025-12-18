@@ -36,7 +36,7 @@
                         <p:answers>
                             <p:answer text="В бой!">
                                 <p:toBattle creatureId="pi_1o_Antigua_mj_lost_criita" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Заблудшая Криита, боевая иконка будет называться pi_1o_Antigua_mj_lost_criita_f -->
+                                            onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>
@@ -45,7 +45,7 @@
                         <p:mainText>Заблудшая Криита очень сильна... И орёт знатно.</p:mainText>
                         <p:answers>
                             <p:answer text="В атаку!">
-                                <p:toBattle creatureId="1-beast-1" onWinGoTo="win" onLooseGoTo="loose"/>
+                                <p:toBattle creatureId="pi_1o_Antigua_mj_lost_criita" onWinGoTo="win" onLooseGoTo="loose"/>
                             </p:answer>
                             <p:answer text="Я вернусь" goto="loose" out="true"/>
                         </p:answers>

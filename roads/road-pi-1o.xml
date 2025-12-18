@@ -95,7 +95,7 @@
 
     <!-- город Антигуа, дворец губернатора после пожара готово -->
 
-    <branch id="pi_1o_townAntigua_governor_palace_town_burning" genMode="DEFAULT" probability="0" scenario="true" forceGenerateBackPlace="true" backOnlyToMain="true"
+    <branch id="pi_1o_townAntigua_governor_palace_town_burning" genMode="DEFAULT" probability="0" scenario="true" 
             minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="625" controlType="BW_FW" recreationPolicy="PERSISTENT_FOREVER">
         <turns>
             <road turnType="" pointerImage="" pointerComment=""/>
@@ -442,7 +442,7 @@
 
     <!-- город Антигуа, моя комната готово -->
     <branch id="pi_1o_townAntigua_my_room" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="280" knightOffsetTop="440" controlType="BW_FW"  recreationPolicy="PERSISTENT_FOREVER">
-        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" />
+        <customBack toRoad="pi_1o_townAntigua_governor_palace" name="Во Дворец" />
         <turns>
             <road turnType="" pointerImage="" pointerComment=""/>
         </turns>
@@ -460,7 +460,7 @@
             <place id="pi_1o_my_room_interior_chair_01" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="498" xPos="557" respawnPolicy="EVERYTIME"/> <!-- стул №1  -->
             <place id="pi_1o_my_room_interior_chair_02" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="550" xPos="437" respawnPolicy="EVERYTIME"/> <!-- стул №2  -->
             <place id="pi_1o_my_room_interior_chair_03" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="1123" xPos="542" respawnPolicy="EVERYTIME"/> <!-- стул №3  -->
-            <place id="pi_1o_my_room_interior_chair_04" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="439" xPos="140" respawnPolicy="EVERYTIME"/> <!-- стул №4  -->
+            <place id="pi_1o_my_room_interior_chair_04" ifMarker="pi_1o_my_room_interior_chair_buy_it" in="372" xPos="140" respawnPolicy="EVERYTIME"/> <!-- стул №4  -->
             <place id="pi_1o_my_room_interior_wardrobe_01" ifMarker="pi_1o_my_room_interior_wardrobe_01_buy_it"  in="849" xPos="493" respawnPolicy="EVERYTIME"/> <!-- Шкаф 01 -->
             <place id="pi_1o_my_room_interior_wardrobe_02" ifMarker="pi_1o_my_room_interior_wardrobe_02_buy_it"  in="498" xPos="83" respawnPolicy="EVERYTIME"/> <!-- Шкаф 02  -->
             <place id="pi_1o_my_room_interior_lights_01" ifMarker="pi_1o_my_room_interior_lights_buy_it" in="1211" xPos="219" respawnPolicy="EVERYTIME"/> <!-- освещение №1 у кровати  -->
@@ -1226,6 +1226,7 @@
     <!-- Дорога на завод контрабандистов готово -->
 
     <branch id="pi_1o_bad_guys_road" genMode="PI_1O_BAD_GUYS_ROAD" probability="0" scenario="true" minLength="999999999" maxLength="999999999" recreationPolicy="RECREATE_EVERYTIME">
+        <customBack toRoad="pi_1o_townAntigua" name="В Антигуа" pin="true" />
         <turns>
             <road turnType="" pointerImage="" pointerComment=""/>
         </turns>
@@ -1419,27 +1420,17 @@
             <place id="pi_1o_Antigua_lc_night_fury" in="1178" xPos="405" ifMarker="pi_1o_quest_night_fury_01" respawnPolicy="EVERYTIME" requireTimeFrom="01:00" requireTimeTo="02:59"/> <!-- Ночная фурия, босс  --> 
             <place id="pi_1o_Antigua_lc_gromshamash_uglish_guzya" in="874" xPos="194" requireWeekDay="MONDAY,TUESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY"/> <!-- орк Громшамаш Уг’лиш Гузя в деревне лесорубов, похотливый  --> 
             <place id="pi_1o_Antigua_lc_gromshamash_uglish_guzya_wednesday" in="874" xPos="194" requireWeekDay="WEDNESDAY"/> <!-- орк Громшамаш Уг’лиш Гузя в деревне лесорубов, адекватный  --> 
-            <place id="pi_1o_Antigua_lc_martin" in="693" xPos="441" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Мартин, у места рубки дров  --> 
-            <place id="pi_1o_Antigua_lc_martin" in="693" xPos="441" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Мартин, у места рубки дров  --> 
-            <place id="pi_1o_Antigua_lc_martina" in="386" xPos="227" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Мартина, жена Мартина, около тряпок что сушатся, прачка  --> 
-            <place id="pi_1o_Antigua_lc_martina" in="386" xPos="227" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Мартина, жена Мартина, около тряпок что сушатся, прачка  --> 
-            <place id="pi_1o_Antigua_lc_martines" in="476" xPos="197" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- ребёнок Мартинес, сын Мартина и Мартины, лет 10, в руках сачок для ловли бабочек  --> 
-            <place id="pi_1o_Antigua_lc_martines" in="476" xPos="197" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- ребёнок Мартинес, сын Мартина и Мартины, лет 10, в руках сачок для ловли бабочек  --> 
-            <place id="pi_1o_Antigua_lc_olaf" in="247" xPos="442" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Олаф, охотник, с луком и стрелами, в шкуры зверей одет  --> 
-            <place id="pi_1o_Antigua_lc_olaf" in="247" xPos="442" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Олаф, охотник, с луком и стрелами, в шкуры зверей одет  --> 
-            <place id="pi_1o_Antigua_lc_kilian" in="926" xPos="113" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Килиан, лесоруб без топора (типа получил травму и восстанавливается), стоит у своего дома  -->
-            <place id="pi_1o_Antigua_lc_dolores" in="997" xPos="220" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Долорес, жена Килиана, типа лекарь. В руках корзинка с травами, стоит у своего дома  --> 
-            <place id="pi_1o_Antigua_lc_dolores" in="997" xPos="220" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Долорес, жена Килиана, типа лекарь. В руках корзинка с травами, стоит у своего дома  --> 
-            <place id="pi_1o_Antigua_lc_aik" in="946" xPos="390" requireTimeFrom="08:00" requireTimeTo="11:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк, сын Килиана и Долорес, лет 5-7 ему  --> 
-            <place id="pi_1o_Antigua_lc_aik" in="946" xPos="390" requireTimeFrom="13:00" requireTimeTo="18:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк, сын Килиана и Долорес, лет 5-7 ему  --> 
-            <place id="pi_1o_Antigua_lc_avila" in="445" xPos="370" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Авила, дочь Килиана и Долорес, ей 16, девушка Сигизмунда Оби  --> 
-            <place id="pi_1o_Antigua_lc_avila" in="445" xPos="370" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Авила, дочь Килиана и Долорес, ей 16, девушка Сигизмунда Оби  --> 
-            <place id="pi_1o_Antigua_lc_victor_obi" in="1141" xPos="227" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби, у склада древесины стоит, в руках учётная книга, тоже лесоруб, его дочь - Белла Оби и жена - Иветта Оби  --> 
-            <place id="pi_1o_Antigua_lc_victor_obi" in="1141" xPos="227" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби, у склада древесины стоит, в руках учётная книга, тоже лесоруб, его дочь - Белла Оби и жена - Иветта Оби  --> 
-            <place id="pi_1o_Antigua_lc_bella_obi" in="719" xPos="213" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби, дочь Виктора Оби и Иветты Оби, лет 13, с книгой в руках  -->
-            <place id="pi_1o_Antigua_lc_bella_obi" in="719" xPos="213" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби, дочь Виктора Оби и Иветты Оби, лет 13, с книгой в руках  -->
-            <place id="pi_1o_Antigua_lc_sigizmund_obi" in="603" xPos="382" requireTimeFrom="08:00" requireTimeTo="11:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби, сын Рупрахта Оби и Шимы Оби, 16 лет, у места для рубки дров, парень Авилы  -->
-            <place id="pi_1o_Antigua_lc_sigizmund_obi" in="603" xPos="382" requireTimeFrom="13:00" requireTimeTo="18:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби, сын Рупрахта Оби и Шимы Оби, 16 лет, у места для рубки дров, парень Авилы  -->
+            <place id="pi_1o_Antigua_lc_martin" in="693" xPos="441" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Мартин, у места рубки дров  -->  
+            <place id="pi_1o_Antigua_lc_martina" in="386" xPos="227" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Мартина, жена Мартина, около тряпок что сушатся, прачка  --> 
+            <place id="pi_1o_Antigua_lc_martines" in="476" xPos="197" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- ребёнок Мартинес, сын Мартина и Мартины, лет 10, в руках сачок для ловли бабочек  --> 
+            <place id="pi_1o_Antigua_lc_olaf" in="247" xPos="442" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Олаф, охотник, с луком и стрелами, в шкуры зверей одет  --> 
+            <place id="pi_1o_Antigua_lc_kilian" in="926" xPos="113" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Килиан, лесоруб без топора (типа получил травму и восстанавливается), стоит у своего дома  --> 
+            <place id="pi_1o_Antigua_lc_dolores" in="997" xPos="220" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Долорес, жена Килиана, типа лекарь. В руках корзинка с травами, стоит у своего дома  --> 
+            <place id="pi_1o_Antigua_lc_aik" in="946" xPos="390" requireTime="08:00-11:59,13:00-18:59" ifNoMarker="pi_1o_quest_kindergarten_02" respawnPolicy="EVERYTIME"/> <!-- Айк, сын Килиана и Долорес, лет 5-7 ему  --> 
+            <place id="pi_1o_Antigua_lc_avila" in="445" xPos="370" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Авила, дочь Килиана и Долорес, ей 16, девушка Сигизмунда Оби  --> 
+            <place id="pi_1o_Antigua_lc_victor_obi" in="1141" xPos="227" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Виктор Оби, у склада древесины стоит, в руках учётная книга, тоже лесоруб, его дочь - Белла Оби и жена - Иветта Оби  --> 
+            <place id="pi_1o_Antigua_lc_bella_obi" in="719" xPos="213" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Белла Оби, дочь Виктора Оби и Иветты Оби, лет 13, с книгой в руках  -->
+            <place id="pi_1o_Antigua_lc_sigizmund_obi" in="603" xPos="382" requireTime="08:00-11:59,13:00-18:59" respawnPolicy="EVERYTIME"/> <!-- Сигизмунд Оби, сын Рупрахта Оби и Шимы Оби, 16 лет, у места для рубки дров, парень Авилы  -->
         </spawnPlaces>
     </branch>
 
@@ -1729,6 +1720,7 @@
     <!-- Мангровые джунгли готово -->
 
     <branch id="pi_1o_mangrove_jungle" genMode="PI_1O_MANGROVE_JUNGLE" probability="0" scenario="true" minLength="999999999" maxLength="999999999" recreationPolicy="RECREATE_EVERYTIME">
+        <customBack toRoad="pi_1o_lumberjack_camp" name="К лесорубам" pin="true" />
         <turns>
             <road turnType="" pointerImage="" pointerComment=""/>
         </turns>

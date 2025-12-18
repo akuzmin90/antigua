@@ -28,8 +28,7 @@
                         </p:mainText>
                         <p:answers>
                             <p:answer text="В бой!">
-                                <p:toBattle creatureId="pi_1o_mj_ki_witch,pi_1o_mj_ki_faience" onWinGoTo="win"
-                                            onLooseGoTo="loose"/> <!--TODO бой с Ведьма и Фаянсовый голем, боевая иконка будет называться pi_1o_mj_ki_witch_f и pi_1o_mj_ki_faience_golem_f -->
+                                <p:toBattle creatureId="pi_1o_mj_ki_witch,pi_1o_mj_ki_faience" onWinGoTo="win" onLooseGoTo="loose"/>
                             </p:answer>
                         </p:answers>
                     </p:replica>

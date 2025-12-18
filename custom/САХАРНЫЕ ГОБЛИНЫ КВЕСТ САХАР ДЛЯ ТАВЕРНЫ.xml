@@ -17,8 +17,8 @@
                 </p:mainText>
                 <p:answers>
                     <p:answer text="В бой!">
-                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 1 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_f  -->
+                        <p:toBattle creatureId="pi_1o_sp_sugar_goblins" onWinGoTo="win"
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -28,8 +28,8 @@
                 </p:mainText>
                 <p:answers>
                     <p:answer text="В атаку!">
-                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 1 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_f  -->
+                        <p:toBattle creatureId="pi_1o_sp_sugar_goblins" onWinGoTo="win"
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                     <p:answer text="Я вернусь" giveMarker="pi_sugar_for_tavern_goblins_heavy" goto="r1" out="true"/>
                 </p:answers>
@@ -40,8 +40,8 @@
                 </p:mainText>
                 <p:answers>
                     <p:answer text="И ты получишь!">
-                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win1"
-                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 2 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_1_f  -->
+                        <p:toBattle creatureId="pi_1o_sp_sugar_goblins_1_f" onWinGoTo="win1"
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -51,8 +51,8 @@
                 </p:mainText>
                 <p:answers>
                     <p:answer text="Сейчас получишь!">
-                        <p:toBattle creatureId="1-beast-1" onWinGoTo="r2"
-                                    onLooseGoTo="loose"/> <!--TODO бой с гоблинами, 3 волна, боевая иконка будет называться pi_1o_sp_sugar_goblins_2_f  -->
+                        <p:toBattle creatureId="pi_1o_sp_sugar_goblins_2_f" onWinGoTo="r2"
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>

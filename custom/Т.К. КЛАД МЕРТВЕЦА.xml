@@ -14,7 +14,7 @@
                 </p:mainText>
                 <p:answers>
                     <p:answer text="В бой!">
-                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win" onLooseGoTo="loose" /> 
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_skeleton" onWinGoTo="win" onLooseGoTo="loose" />
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -24,7 +24,7 @@
                 </p:mainText>
                 <p:answers>
                     <p:answer text="В атаку!">
-                        <p:toBattle creatureId="1-beast-1" onWinGoTo="win" onLooseGoTo="loose" />
+                        <p:toBattle creatureId="pi_1o_Antigua_eo_ore_skeleton" onWinGoTo="win" onLooseGoTo="loose" />
                     </p:answer>
                     <p:answer text="Я вернусь" goto="loose" out="true" />
                 </p:answers>

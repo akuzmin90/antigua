@@ -26,7 +26,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -37,7 +37,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3,pi_1o_Antigua_mj_macaque_marauder_f4" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -48,7 +48,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3,pi_1o_Antigua_mj_macaque_marauder_f4,pi_1o_Antigua_mj_macaque_marauder_f5" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>
@@ -59,7 +59,7 @@
                 <p:answers>
                     <p:answer text="В бой!">
                         <p:toBattle creatureId="pi_1o_Antigua_mj_macaque_marauder_f1,pi_1o_Antigua_mj_macaque_marauder_f2,pi_1o_Antigua_mj_macaque_marauder_f3,pi_1o_Antigua_mj_macaque_marauder_f4,pi_1o_Antigua_mj_macaque_marauder_f5,pi_1o_Antigua_mj_macaque_marauder_f6" onWinGoTo="win"
-                                    onLooseGoTo="loose"/> <!--TODO бой с Макаки-мародёры, от 3 до 6 противников в бою, боевая иконка будет называться pi_1o_Antigua_mj_macaque_marauder_f1...pi_1o_Antigua_mj_macaque_marauder_f6 -->
+                                    onLooseGoTo="loose"/>
                     </p:answer>
                 </p:answers>
             </p:replica>
