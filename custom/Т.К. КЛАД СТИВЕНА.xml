@@ -234,13 +234,12 @@
                     </p:answer>
                 </p:answers>
             </p:replica>
-            <p:replica id="randomC11" probability="0.05">
+            <p:replica id="randomC11" probability="0.05" atlasId="" imageId="b_battle-teapot-3" imageComment="Самовар-3000">
                 <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! А Стивен пусть завидует! Кстати, вы
                     видите, как он реально завидует. Приятно. [Клад теперь пуст. Сам иди в пучину, Стивен!]
                 </p:mainText>
-<!--                <p:award type="" itemId=""/> &lt;!&ndash;TODO выдать героя "Самовар-3000"  &ndash;&gt;-->
                 <p:answers>
-                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                    <p:answer text="Клады - хорошо" launchScriptId="battle-teapot-3" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
                     </p:answer>
                 </p:answers>
