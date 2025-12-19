@@ -99,13 +99,12 @@
             </p:replica>
 
             <!-- третья награда  -->
-            <p:replica id="randomC1" probability="0.79">
+            <p:replica id="randomC1" probability="0.79" atlasId="" imageId="ic_st_vio" imageComment="4000 личного опыта">
                 <p:mainText>Ого, да здесь личный опыт! Пригодится! [Клад теперь пуст. Но,
                     наверняка, мошенник снова будет прятать вещи!]
                 </p:mainText>
-                <p:award type="ARTIFACT" itemId="s_hed_01"/> <!--TODO выдать 4.000 личного опыта  -->
                 <p:answers>
-                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
+                    <p:answer text="Клады - хорошо" launchScriptId="personalExp4000" removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_liar_chest"/>
                     </p:answer>
                 </p:answers>
