@@ -977,7 +977,7 @@
             <place id="pi_1o_Antigua_sp_wh_red_reed" in="729" xPos="562" ifMarker="pi_1o_quest_rare_herbs_04" respawnPolicy="EVERYTIME"/> <!-- Красный тростник, впихнуть в маленький блок на карте  -->
             <place id="pi_1o_redhead_ghost" in="248" xPos="168" markerCondition="pi_fear_of_voodoo_stupido_01 or pi_fear_of_voodoo_stupido_try_to_kill or pi_fear_of_voodoo_stupido_try_to_kill_immortal or pi_fear_of_voodoo_stupido_kill_redhead_ghost" respawnPolicy="EVERYTIME"/> <!-- Красноволосая босс - поставить очень близко ко входу  --> 
             <place id="pi_1o_sp_big_rat" in="709" xPos="400" ifMarker="pi_big_rat_voodoo_02" respawnPolicy="EVERYTIME"/> <!-- Огромная Крыса босс, поставить высоко  --> 
-            <place id="pi_1o_sp_sugar_goblins" in="709" xPos="168" ifMarker="pi_sugar_for_tavern_04" respawnPolicy="EVERYTIME" /> <!-- босс в 3 волны Сахарные гоблины, поставить высоко. Сделать 3 боевые иконки гоблинов, обожравшихся сахара  --> <!-- TODO -->
+            <place id="pi_1o_sp_sugar_goblins" in="709" xPos="168" ifMarker="pi_sugar_for_tavern_04" respawnPolicy="EVERYTIME" /> <!-- босс в 3 волны Сахарные гоблины, поставить высоко. Сделать 3 боевые иконки гоблинов, обожравшихся сахара  -->
             <place id="pi_1o_sp_weevill" in="907" xPos="247" ifMarker="pi_1o_quest_jack_for_inquisition_weevill" respawnPolicy="EVERYTIME"/> <!-- Долгоносик босс -->
             <place id="pi_1o_Antigua_sp_wh_barrel_01" in="158" xPos="437" respawnPolicy="EVERYDAY"/> <!-- Бочка 01  -->
             <place id="pi_1o_Antigua_sp_wh_barrel_02" in="244" xPos="433"/> <!-- Бочка 02  -->
