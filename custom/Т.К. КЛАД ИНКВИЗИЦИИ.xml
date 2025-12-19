@@ -196,13 +196,12 @@
                     </p:right>
                 </p:awardChoice>
             </p:replica>
-            <p:replica id="randomC10" probability="0.05">
+            <p:replica id="randomC10" probability="0.05" atlasId="" imageId="b_hlw_1" imageComment="Тыковка!">
                 <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! [Клад теперь пуст. Но, наверняка,
                     инквизиция снова будет прятать вещи!]
                 </p:mainText>
-                <p:award type="" itemId=""/> <!--TODO выдать героя "Тыковка"  -->
                 <p:answers>
-                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_inquisition_chest_01" requestSpecialPlaces="true" complete="true">
+                    <p:answer text="Клады - хорошо" launchScriptId="hlw_1" removeMarker="pi_1o_quest_tmd_inquisition_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_inquisition_chest"/>
                     </p:answer>
                 </p:answers>

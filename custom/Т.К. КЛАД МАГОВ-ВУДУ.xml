@@ -194,13 +194,12 @@
                     </p:right>
                 </p:awardChoice>
             </p:replica>
-            <p:replica id="randomC10" probability="0.05">
+            <p:replica id="randomC10" probability="0.05" atlasId="" imageId="b_hlw_1" imageComment="Тыковка!">
                 <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! [Клад теперь пуст. Но, наверняка,
                     маги-вуду снова будут прятать вещи!]
                 </p:mainText>
-<!--    TODO            <p:award type="" itemId=""/> &lt;!&ndash;TODO выдать героя "Тыковка"  &ndash;&gt;-->
                 <p:answers>
-                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_magevoodoo_chest_01" requestSpecialPlaces="true" complete="true">
+                    <p:answer text="Клады - хорошо" launchScriptId="hlw_1" removeMarker="pi_1o_quest_tmd_magevoodoo_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_magevoodoo_chest"/>
                     </p:answer>
                 </p:answers>
