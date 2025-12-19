@@ -83,13 +83,33 @@
                 </p:answers>
             </p:replica>
 
-            
             <p:replica id="randomB1" probability="0.8">
-                <p:mainText>Неизвестная сила наполняет вас! Вы чувствуете, как ваши навыки улучшаются!</p:mainText>
-                <p:award type="DEFENCE_FOR_ALL" func="strongest07pct" /> <!--TODO выдать дар до 5 ранга, сказал поймёшь :) я хз что в тексте написать, честно  -->
-                <p:answers>
-                    <p:answer text="Далее" gotoFromScript="randomC" />
-                </p:answers>
+                <p:mainText>
+                    Неизвестная сила предлагает выбор! 500 изумрудов, или же +1 ранг случайному дару не выше 5 ранга.
+                </p:mainText>
+                <p:agitationText>Что же мы выберем?</p:agitationText>
+                <p:awardChoice>
+                    <p:left type="MITHRIL" explicitValue="500" />
+                    <p:right type="CUSTOM" gotoFromScript="soapReplica" customAtlas="atlas_prof" customImage="levelUp" customComment="+1 РАНГ" customScript="soapPicker" />
+                </p:awardChoice>
+            </p:replica>
+            <p:replica id="soapNoHeroes" ifMarker="unexisting">
+                <p:mainText>
+                    Упс! Для использования плюшки нужно минимум два героя хотя-бы с одним даром не выше 5. Вы можете вернуться позже, или получить 500 изумрудов сейчас.
+                </p:mainText>
+                <p:awardChoice>
+                    <p:left type="MITHRIL" explicitValue="500" />
+                    <p:right type="CUSTOM" gotoFromScript="soapReplica" customAtlas="atlas_prof" customImage="levelUp" customComment="+1 РАНГ" customScript="soapPicker" />
+                </p:awardChoice>
+            </p:replica>
+            <p:replica id="soapPickHero" ifMarker="unexisting" postProcessorId="soapPostProcessor">
+                <p:mainText>
+                    Кто же будет избранником, который получит +1 ранг случайному дару?
+                </p:mainText>
+                <p:awardChoice>
+                    <p:left type="CUSTOM_FOR_ONE" customAtlas="atlas_prof" customImage="levelUp" customComment="+1 РАНГ" customFilter="soapFilter" customScript="upSoapForce" gotoFromScript="randomC" />
+                    <p:right type="CUSTOM_FOR_ONE" customAtlas="atlas_prof" customImage="levelUp" customComment="+1 РАНГ" customFilter="soapFilter" customScript="upSoapForce" gotoFromScript="randomC" />
+                </p:awardChoice>
             </p:replica>
             <p:replica id="randomB2" probability="0.8">
                 <p:mainText>Амулет наги теперь у вас!</p:mainText>

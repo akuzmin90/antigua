@@ -15,7 +15,7 @@
                 <p:dialog>
                     <p:replica id="r1">
                         <p:mainText>Кому-то удалось попасть сюда О_о Я думал, это слишком сложно! Кстати, не знаю почему, но ненавижу Стивена. Вот не нравится он мне, вообще! А вот тебе я буду рад сделать подарок :) </p:mainText>
-                            <p:award type="CUSTOM" customAtlas="ap_19" customImage="tropics" customComment="Тропики" customScript="giveFreeTropicsPortal" giveCompositeMarker="c2_24k_done" />
+                            <p:award type="CUSTOM" customAtlas="ap_19" customImage="tropics" customComment="Тропики" customScript="giveFreeTropicsPortal" />
                         <p:answers>
                             <p:answer text="Спасибо!" goto="r2" out="true"/>
                         </p:answers>
