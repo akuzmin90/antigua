@@ -128,12 +128,11 @@
                     </p:answer>
                 </p:answers>
             </p:replica>
-            <p:replica id="randomC2" probability="0.73">
-                <p:mainText>Ого, да здесь слот под артефакт! Такое Стивену не надо... [Клад теперь пуст. Сам иди в пучину, Стивен!]
+            <p:replica id="randomC2" probability="0.73" valueParserScript="slotReceiver" prerequisiteScript="canOpenSlot">
+                <p:mainText>Ого, да здесь слот под артефакт для [value]! Такое Стивену не надо... (Клад теперь пуст. Сам иди в пучину, Стивен!)
                 </p:mainText>
-                <p:award type="ARTIFACT" itemId="rok_shield_01"/> <!--TODO выдать слот под артефакт  -->
                 <p:answers>
-                    <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
+                    <p:answer text="Клады - хорошо" launchScriptId="giveSlot" removeMarker="pi_1o_quest_tmd_steven_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_steven_chest"/>
                     </p:answer>
                 </p:answers>
