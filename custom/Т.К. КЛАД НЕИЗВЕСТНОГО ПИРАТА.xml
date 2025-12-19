@@ -78,11 +78,10 @@
                     <p:answer text="Далее" gotoFromScript="randomC"/>
                 </p:answers>
             </p:replica>
-            <p:replica id="randomB3" probability="0.8">
+            <p:replica id="randomB3" probability="0.8" atlasId="atlas_ic_100" imageId="ic_exp" imageComment="Опыт клану">
                 <p:mainText>Неизвестная сила наполняет вас, а затем переход в опыт вашего клана!</p:mainText>
-                <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/>  <!--TODO выдать опыт клану  -->
                 <p:answers>
-                    <p:answer text="Далее" gotoFromScript="randomC"/>
+                    <p:answer text="Далее" launchScriptId="clanExp1G" gotoFromScript="randomC"/>
                 </p:answers>
             </p:replica>
 
