@@ -103,7 +103,7 @@
                 <p:mainText>Амулет наги теперь у вас! А у Стивена -
                     нет, ахаха!
                 </p:mainText>
-                <p:award type="HEALTH_FOR_ALL" func="health_pct_1_5"/> <!--TODO выдать амулет наги  -->
+                <p:award type="ARTIFACT" itemId="s_poison_01" />
                 <p:answers>
                     <p:answer text="Далее" gotoFromScript="randomC"/>
                 </p:answers>
