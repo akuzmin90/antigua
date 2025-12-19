@@ -116,11 +116,11 @@
                     </p:answer>
                 </p:answers>
             </p:replica>
-            <p:replica id="randomC7" probability="0.1">
+            <p:replica id="randomC7" probability="0.1" atlasId="ap_19" imageId="azure_chest" imageComment="Лазурный сундук!">
                 <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Лазурный, между прочим! [Клад теперь пуст.
                     Но, наверняка, Хилый снова будет прятать вещи!]
                 </p:mainText>
-                <p:award type="CUSTOM" customScript="giveGoldChest"/> <!--TODO выдать лазурный сундучок  -->
+                <p:award type="CUSTOM" customAtlas="ap_19" customImage="azure_chest" customComment="Лазурный сундук!" customScript="giveAzureChest" />
                 <p:answers>
                     <p:answer text="Клады - хорошо" removeMarker="pi_1o_quest_tmd_frail_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_frail_chest"/>
