@@ -130,7 +130,6 @@
                         </p:answers>
                     </p:replica>
 
-                    <!-- todo-->
                     <p:replica id="loose">
                         <p:mainText>...</p:mainText>
                         <p:answers>

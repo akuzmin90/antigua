@@ -25,7 +25,7 @@
                         </p:answers>
                     </p:replica>
 
-                    <!--TODO реакции  -->
+                    <!-- реакции  -->
                     <p:replica id="r2">
                         <p:mainText>Что вы хотите уточнить?</p:mainText>
                         <p:answers>

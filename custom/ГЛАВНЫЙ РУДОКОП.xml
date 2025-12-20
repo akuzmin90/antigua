@@ -75,7 +75,7 @@
             </p:state>
 
             <!-- квест Новые стражники добываем золотую руду  -->
-            <!--TODO ВАЖНО игрок может купить лопату на рынке, задание в реплике 5 по маркеру pi_new_guards_go_buy_pickaxe, тогда при покупке ему выдаётся маркер pi_1o_pickaxe_done, а маркер pi_new_guards_go_buy_pickaxe забирается  -->
+            <!-- ВАЖНО игрок может купить лопату на рынке, задание в реплике 5 по маркеру pi_new_guards_go_buy_pickaxe, тогда при покупке ему выдаётся маркер pi_1o_pickaxe_done, а маркер pi_new_guards_go_buy_pickaxe забирается  -->
             <p:state ifMarker="pi_new_guards_governor_002" closable="false">
                 <p:dialog>
                     <p:replica id="r1_d">

@@ -469,7 +469,7 @@
                                       giveMarker="pi_1o_quest_buy_voodoo_doll_02" requestSpecialPlaces="true" complete="true">
                                 <p:createTask id="pi_1o_quest_buy_voodoo_doll" name="Купить куклу-вуду" count="1"
                                               mithril="50"
-                                              type="SINGLE"/> <!--TODO надо купить любую куклу-вуду на рынке pi_1o_marketplace в городе, при покупке выдать маркер  giveMarker="voodoo_magic_doll_buy_for_quest"  -->
+                                              type="SINGLE"/> <!-- надо купить любую куклу-вуду на рынке pi_1o_marketplace в городе, при покупке выдать маркер  giveMarker="voodoo_magic_doll_buy_for_quest"  -->
                             </p:answer>
                         </p:answers>
                     </p:replica>

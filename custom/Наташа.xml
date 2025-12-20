@@ -10,7 +10,7 @@
         <p:blockingCreature probability="0"/>
         <p:states>
 
-            <!--TODO стандартная фраза  -->
+            <!-- стандартная фраза  -->
             <p:state id="default">
                 <p:dialog>
                     <p:replica id="r1">

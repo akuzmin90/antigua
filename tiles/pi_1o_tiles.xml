@@ -198,6 +198,23 @@
     <tile id="pi_1o_golden_mine_2_lvl" length="1507">
         <dots>
             <group name="SMALL" />
+            <group name="GUARDED">
+                <dot x="23" y="366"/>
+                <dot x="58" y="253"/>
+                <dot x="128" y="336"/>
+                <dot x="466" y="343"/>
+                <dot x="428" y="549"/>
+                <dot x="129" y="476"/>
+                <dot x="143" y="642"/>
+                <dot x="47" y="908"/>
+                <dot x="97" y="819"/>
+                <dot x="493" y="841"/>
+                <dot x="420" y="793"/>
+                <dot x="463" y="709"/>
+                <dot x="424" y="232"/>
+                <dot x="135" y="203"/>
+                <dot x="144" y="105"/>
+            </group>
         </dots>
     </tile>
 

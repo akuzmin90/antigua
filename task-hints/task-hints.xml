@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <t:hints xmlns:t="http://www.hitmakers.com/aof/taskHints">
 
-    <!--TODO квест Ночной дозор  -->
+    <!-- квест Ночной дозор  -->
     <t:task taskId="pi_night_watch"> 
         <t:hint requireMarker="pi_night_watch_002"  >
             <t:block type="title">ТЕКУЩАЯ ЦЕЛЬ</t:block>
@@ -45,7 +45,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Новые стражники  -->
+    <!-- квест Новые стражники  -->
 
     <t:task taskId="pi_new_guards_governor"> 
         <t:hint requireMarker="pi_new_guards_governor_001"  >
@@ -98,7 +98,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Кошмары вуду  -->
+    <!-- квест Кошмары вуду  -->
 
     <t:task taskId="pi_fear_of_voodoo"> 
         <t:hint requireMarker="pi_fear_of_voodoo_01"  >
@@ -119,7 +119,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Красноволосая  -->
+    <!-- квест Красноволосая  -->
 
     <t:task taskId="pi_fear_of_voodoo_stupido"> 
         <t:hint requireMarker="pi_fear_of_voodoo_stupido_02"  >
@@ -148,7 +148,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Странный ключ  -->
+    <!-- квест Странный ключ  -->
 
     <t:task taskId="pi_strange_key"> 
         <t:hint requireMarker="pi_strange_key_001"  >
@@ -203,7 +203,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Контрабанда рома  -->
+    <!-- квест Контрабанда рома  -->
 
     <t:task taskId="pi_rum_smuggling"> 
         <t:hint requireMarker="pi_rum_smuggling_01"  >
@@ -225,7 +225,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Эксперимент вуду  -->
+    <!-- квест Эксперимент вуду  -->
 
     <t:task taskId="pi_big_rat_voodoo"> 
         <t:hint requireMarker="pi_big_rat_voodoo_01"  >
@@ -251,7 +251,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Сахар для трактира  -->
+    <!-- квест Сахар для трактира  -->
 
     <t:task taskId="pi_sugar_for_tavern"> 
         <t:hint requireMarker="pi_sugar_for_tavern_01"  >
@@ -295,7 +295,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Компас инквизиции  -->
+    <!-- квест Компас инквизиции  -->
 
     <t:task taskId="pi_gold_compass"> 
         <t:hint requireMarker="pi_gold_compass_01"  >
@@ -386,7 +386,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Потерянные воспоминания  -->
+    <!-- квест Потерянные воспоминания  -->
 
     <t:task taskId="pi_1o_quest_lost_memories"> 
         <t:hint markerCondition="pi_1o_quest_lost_memories_01 or pi_1o_quest_lost_memories_02 or pi_1o_quest_lost_memories_03 or pi_1o_quest_lost_memories_04 or pi_1o_quest_lost_memories_05 or pi_1o_quest_lost_memories_06 or pi_1o_quest_lost_memories_07 or pi_1o_quest_lost_memories_08 or pi_1o_quest_lost_memories_09 or pi_1o_quest_lost_memories_10 or pi_1o_quest_lost_memories_11 or pi_1o_quest_lost_memories_12 or pi_1o_quest_lost_memories_13 or pi_1o_quest_lost_memories_14"  >
@@ -425,7 +425,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Рассказать Эльзе правду  -->
+    <!-- квест Рассказать Эльзе правду  -->
 
     <t:task taskId="pi_1o_quest_tell_to_elsa"> 
         <t:hint requireMarker="pi_1o_quest_tell_to_elsa_01"  >
@@ -436,7 +436,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Найти убийц Лейхо  -->
+    <!-- квест Найти убийц Лейхо  -->
 
     <t:task taskId="pi_1o_quest_leyho_killers"> 
         <t:hint requireMarker="pi_1o_quest_leyho_killers_01"  >
@@ -548,7 +548,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Клад Хилого  -->
+    <!-- квест Клад Хилого  -->
 
     <t:task taskId="pi_1o_frail_treasure"> 
         <t:hint requireMarker="pi_1o_frail_treasure_01"  >
@@ -571,7 +571,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Клад контрабандистов  -->
+    <!-- квест Клад контрабандистов  -->
 
     <t:task taskId="pi_1o_smuggler_treasure"> 
         <t:hint requireMarker="pi_1o_smuggler_treasure_01"  >
@@ -596,7 +596,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Клад старого пирата  -->
+    <!-- квест Клад старого пирата  -->
 
     <t:task taskId="pi_1o_hermit_treasure"> 
         <t:hint requireMarker="pi_1o_hermit_treasure_01"  >
@@ -621,7 +621,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Морской орех  -->
+    <!-- квест Морской орех  -->
 
     <t:task taskId="pi_1o_sea_nut"> 
         <t:hint requireMarker="pi_1o_sea_nut_01"  >
@@ -644,7 +644,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Подарок Губернатору  -->
+    <!-- квест Подарок Губернатору  -->
 
     <t:task taskId="pi_1o_governor_present"> 
         <t:hint requireMarker="pi_1o_governor_present_01"  >
@@ -668,7 +668,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Разорённая могила  -->
+    <!-- квест Разорённая могила  -->
 
     <t:task taskId="pi_1o_ruined_grave"> 
         <t:hint requireMarker="pi_1o_ruined_grave_01"  >
@@ -704,7 +704,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Лицензия в Золотую Шахту  -->
+    <!-- квест Лицензия в Золотую Шахту  -->
 
     <t:task taskId="pi_1o_hermit_miner"> 
         <t:hint requireMarker="pi_1o_hermit_miner_01"  >
@@ -735,7 +735,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Новый рекрут  -->
+    <!-- квест Новый рекрут  -->
 
     <t:task taskId="pi_1o_new_recruit"> 
         <t:hint requireMarker="pi_1o_new_recruit_01"  >
@@ -756,7 +756,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест призраки пиратов  -->
+    <!-- квест призраки пиратов  -->
 
     <t:task taskId="pi_1o_quest_pirates_ghosts"> 
         <t:hint markerCondition="pi_1o_quest_pirates_ghosts_02 or pi_1o_quest_pirates_ghosts_03 or pi_1o_quest_pirates_ghosts_04 or pi_1o_quest_pirates_ghosts_05 or pi_1o_quest_pirates_ghosts_06 or pi_1o_quest_pirates_ghosts_07 or pi_1o_quest_pirates_ghosts_08 or pi_1o_quest_pirates_ghosts_09 or pi_1o_quest_pirates_ghosts_10 or pi_1o_quest_pirates_ghosts_11 or pi_1o_quest_pirates_ghosts_12"  >
@@ -781,7 +781,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Чай  -->
+    <!-- квест Чай  -->
 
     <t:task taskId="pi_1o_quest_tea"> 
         <t:hint requireMarker="pi_1o_quest_tea_01"  >
@@ -811,7 +811,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Оплата за провизию  -->
+    <!-- квест Оплата за провизию  -->
 
     <t:task taskId="pi_1o_quest_payment_for_provisions"> 
         <t:hint requireMarker="pi_1o_quest_payment_for_provisions_01"  >
@@ -829,7 +829,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Кубок инквизитора  -->
+    <!-- квест Кубок инквизитора  -->
 
     <t:task taskId="pi_1o_quest_gold_goblet"> 
         <t:hint requireMarker="pi_1o_quest_gold_goblet_02"  >
@@ -841,7 +841,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Окуляр инквизитора  -->
+    <!-- квест Окуляр инквизитора  -->
 
     <t:task taskId="pi_1o_quest_inquisitor_eyepiece"> 
         <t:hint requireMarker="pi_1o_quest_inquisitor_eyepiece_01"  >
@@ -891,7 +891,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Дела амурные  -->
+    <!-- квест Дела амурные  -->
 
     <t:task taskId="wife_searching"> 
         <t:hint requireMarker="storeceeper_quest_wife_searching"  >
@@ -930,7 +930,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Дед опять забыл выпить таблетки  -->
+    <!-- квест Дед опять забыл выпить таблетки  -->
 
     <t:task taskId="pi_1o_quest_kinky_party"> 
         <t:hint requireMarker="pi_1o_quest_kinky_party_01"  >
@@ -987,7 +987,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Миссионер  -->
+    <!-- квест Миссионер  -->
 
     <t:task taskId="pi_1o_quest_missionary"> 
         <t:hint requireMarker="pi_1o_quest_missionary_01"  >
@@ -1054,7 +1054,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Опасная дорога  -->
+    <!-- квест Опасная дорога  -->
 
     <t:task taskId="pi_1o_quest_danger_road"> 
         <t:hint requireMarker="pi_1o_quest_danger_road_02"  >
@@ -1071,7 +1071,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Это точно магия!  -->
+    <!-- квест Это точно магия!  -->
 
     <t:task taskId="pi_1o_quest_this_is_magik"> 
         <t:hint requireMarker="pi_1o_quest_this_is_magik_02"  >
@@ -1097,7 +1097,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест пропавший рекрут инквизиции  -->
+    <!-- квест пропавший рекрут инквизиции  -->
 
     <t:task taskId="pi_1o_quest_missing_recruit_inquisition"> 
         <t:hint requireMarker="pi_1o_quest_missing_recruit_inquisition_hints"  >
@@ -1113,7 +1113,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Зарплата Феликса  -->
+    <!-- квест Зарплата Феликса  -->
 
     <t:task taskId="pi_1o_quest_felix_salary"> 
         <t:hint requireMarker="pi_1o_quest_felix_salary_02"  >
@@ -1191,7 +1191,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Часы Феликса  -->
+    <!-- квест Часы Феликса  -->
 
     <t:task taskId="pi_1o_quest_felix_clock"> 
         <t:hint requireMarker="pi_1o_quest_felix_clock_02"  >
@@ -1234,7 +1234,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Джек-осведомитель  -->
+    <!-- квест Джек-осведомитель  -->
 
     <t:task taskId="pi_1o_quest_jack_for_inquisition"> 
         <t:hint requireMarker="pi_1o_quest_jack_for_inquisition_02"  >
@@ -1285,7 +1285,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Моя первая кукла-вуду  -->
+    <!-- квест Моя первая кукла-вуду  -->
 
     <t:task taskId="pi_1o_quest_my_first_voodoo_doll"> 
         <t:hint requireMarker="pi_1o_quest_my_first_voodoo_doll_02"  >
@@ -1326,7 +1326,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Испытание куклы-вуду  -->
+    <!-- квест Испытание куклы-вуду  -->
 
     <t:task taskId="pi_1o_quest_try_voodoo_doll"> 
         <t:hint requireMarker="pi_1o_quest_try_voodoo_doll_02"  >
@@ -1345,7 +1345,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Купить куклу-вуду  -->
+    <!-- квест Купить куклу-вуду  -->
 
     <t:task taskId="pi_1o_quest_buy_voodoo_doll"> 
         <t:hint requireMarker="pi_1o_quest_buy_voodoo_doll_02"  >
@@ -1358,7 +1358,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Друид древних  -->
+    <!-- квест Друид древних  -->
 
     <t:task taskId="pi_1o_quest_ancient_druid"> 
         <t:hint requireMarker="pi_1o_quest_ancient_druid_02"  >
@@ -1388,7 +1388,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Собрать Мох Души  -->
+    <!-- квест Собрать Мох Души  -->
 
     <t:task taskId="pi_1o_quest_moss_of_the_soul"> 
         <t:hint requireMarker="pi_1o_quest_moss_of_the_soul_hint"  >
@@ -1400,7 +1400,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Пророк  -->
+    <!-- квест Пророк  -->
 
     <t:task taskId="pi_1o_quest_prophet"> 
         <t:hint requireMarker="pi_1o_quest_prophet_02"  > 
@@ -1448,7 +1448,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Редкие травы  -->
+    <!-- квест Редкие травы  -->
 
     <t:task taskId="pi_1o_quest_rare_herbs"> 
         <t:hint requireMarker="pi_1o_quest_rare_herbs_01"  >
@@ -1483,7 +1483,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Любовь?  -->
+    <!-- квест Любовь?  -->
 
     <t:task taskId="pi_1o_quest_clear_love"> 
         <t:hint requireMarker="pi_1o_quest_clear_love_01"  >
@@ -1564,7 +1564,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Красный Мак  -->
+    <!-- квест Красный Мак  -->
 
     <t:task taskId="pi_1o_quest_clear_love_kill_tsetse_fly"> 
         <t:hint requireMarker="pi_1o_quest_clear_love_02"  >
@@ -1581,7 +1581,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Коготь обезьяны  -->
+    <!-- квест Коготь обезьяны  -->
 
     <t:task taskId="pi_1o_quest_monkey_claw"> 
         <t:hint requireMarker="pi_1o_quest_clear_love_05"  >
@@ -1605,7 +1605,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Семейные ценности  -->
+    <!-- квест Семейные ценности  -->
 
     <t:task taskId="pi_1o_quest_family_values"> 
         <t:hint requireMarker="pi_1o_quest_family_values_02"  >
@@ -1648,7 +1648,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Олаф боится гуля  -->
+    <!-- квест Олаф боится гуля  -->
 
     <t:task taskId="pi_1o_quest_olaf_ghoul"> 
         <t:hint requireMarker="pi_1o_quest_olaf_ghoul_02"  >
@@ -1665,7 +1665,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Красная древесина  -->
+    <!-- квест Красная древесина  -->
 
     <t:task taskId="pi_1o_quest_red_wood"> 
         <t:hint requireMarker="pi_1o_quest_red_wood_01"  >
@@ -1682,7 +1682,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Золотой Попугай  -->
+    <!-- квест Золотой Попугай  -->
 
     <t:task taskId="pi_1o_quest_golden_parrot"> 
         <t:hint requireMarker="pi_1o_quest_golden_parrot_01"  >
@@ -1699,7 +1699,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Кровавый Мотылёк  -->
+    <!-- квест Кровавый Мотылёк  -->
 
     <t:task taskId="pi_1o_quest_blood_moth"> 
         <t:hint requireMarker="pi_1o_quest_blood_moth_01"  >
@@ -1716,7 +1716,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Утопец  -->
+    <!-- квест Утопец  -->
 
     <t:task taskId="pi_1o_quest_drowned"> 
         <t:hint requireMarker="pi_1o_quest_drowned_01"  >
@@ -1733,7 +1733,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Древняя Черепаха  -->
+    <!-- квест Древняя Черепаха  -->
 
     <t:task taskId="pi_1o_quest_ancient_turtle"> 
         <t:hint requireMarker="pi_1o_quest_ancient_turtle_01"  >
@@ -1750,7 +1750,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Серый Аллигатор  -->
+    <!-- квест Серый Аллигатор  -->
 
     <t:task taskId="pi_1o_quest_grey_alligator"> 
         <t:hint requireMarker="pi_1o_quest_grey_alligator_01"  >
@@ -1767,7 +1767,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Крылатая обезьяна  -->
+    <!-- квест Крылатая обезьяна  -->
 
     <t:task taskId="pi_1o_quest_winged_monkey"> 
         <t:hint requireMarker="pi_1o_quest_winged_monkey_01"  >
@@ -1784,7 +1784,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Акула-людоед  -->
+    <!-- квест Акула-людоед  -->
 
     <t:task taskId="pi_1o_quest_man_eating_shark"> 
         <t:hint requireMarker="pi_1o_quest_man_eating_shark_01"  >
@@ -1801,7 +1801,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Человек-скорпион  -->
+    <!-- квест Человек-скорпион  -->
 
     <t:task taskId="pi_1o_quest_scorpio_man"> 
         <t:hint requireMarker="pi_1o_quest_scorpio_man_01"  >
@@ -1818,7 +1818,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Магог  -->
+    <!-- квест Магог  -->
 
     <t:task taskId="pi_1o_quest_magog"> 
         <t:hint requireMarker="pi_1o_quest_magog_01"  >
@@ -1835,7 +1835,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Несси  -->
+    <!-- квест Несси  -->
 
     <t:task taskId="pi_1o_quest_nessi"> 
         <t:hint requireMarker="pi_1o_quest_nessi_01"  >
@@ -1852,7 +1852,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Василиск  -->
+    <!-- квест Василиск  -->
 
     <t:task taskId="pi_1o_quest_basilisk"> 
         <t:hint requireMarker="pi_1o_quest_basilisk_01"  >
@@ -1869,7 +1869,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Ткачиха  -->
+    <!-- квест Ткачиха  -->
 
     <t:task taskId="pi_1o_quest_weaver"> 
         <t:hint requireMarker="pi_1o_quest_weaver_01"  >
@@ -1886,7 +1886,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Чупакабра  -->
+    <!-- квест Чупакабра  -->
 
     <t:task taskId="pi_1o_quest_chupacabra"> 
         <t:hint requireMarker="pi_1o_quest_chupacabra_01"  >
@@ -1903,7 +1903,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Сирена  -->
+    <!-- квест Сирена  -->
 
     <t:task taskId="pi_1o_quest_siren"> 
         <t:hint requireMarker="pi_1o_quest_siren_01"  >
@@ -1920,7 +1920,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Воплощение Хтони  -->
+    <!-- квест Воплощение Хтони  -->
 
     <t:task taskId="pi_1o_quest_embodiment_of_chthon"> 
         <t:hint requireMarker="pi_1o_quest_embodiment_of_chthon_01"  >
@@ -1937,7 +1937,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Адская гончая  -->
+    <!-- квест Адская гончая  -->
 
     <t:task taskId="pi_1o_quest_hellhound"> 
         <t:hint requireMarker="pi_1o_quest_hellhound_01"  >
@@ -1954,7 +1954,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Заблудшая Криита  -->
+    <!-- квест Заблудшая Криита  -->
 
     <t:task taskId="pi_1o_quest_lost_criita"> 
         <t:hint requireMarker="pi_1o_quest_lost_criita_01"  >
@@ -1971,7 +1971,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Стальной краб  -->
+    <!-- квест Стальной краб  -->
 
     <t:task taskId="pi_1o_quest_steel_crab"> 
         <t:hint requireMarker="pi_1o_quest_steel_crab_01"  >
@@ -1988,7 +1988,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Восставшая горилла  -->
+    <!-- квест Восставшая горилла  -->
 
     <t:task taskId="pi_1o_quest_living_dead_gorilla"> 
         <t:hint requireMarker="pi_1o_quest_living_dead_gorilla_01"  >
@@ -2005,7 +2005,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Призрак Капитана пиратов  -->
+    <!-- квест Призрак Капитана пиратов  -->
 
     <t:task taskId="pi_1o_quest_captain_obi"> 
         <t:hint requireMarker="pi_1o_quest_captain_obi_01"  >
@@ -2022,7 +2022,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Тростник для корчмаря  -->
+    <!-- квест Тростник для корчмаря  -->
 
     <t:task taskId="pi_1o_quest_reed_for_innkeeper"> 
         <t:hint requireMarker="pi_1o_quest_reed_for_innkeeper_01"  >
@@ -2039,7 +2039,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Кто-то не платит  -->
+    <!-- квест Кто-то не платит  -->
 
     <t:task taskId="pi_1o_quest_someone_not_paying"> 
         <t:hint requireMarker="pi_1o_quest_someone_not_paying_02"  >
@@ -2057,7 +2057,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Древесина кровоточит  -->
+    <!-- квест Древесина кровоточит  -->
 
     <t:task taskId="pi_1o_quest_bleeding_wood"> 
         <t:hint requireMarker="pi_1o_quest_bleeding_wood_01"  >
@@ -2105,7 +2105,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Детский сАД  -->
+    <!-- квест Детский сАД  -->
 
     <t:task taskId="pi_1o_quest_kindergarten"> 
         <t:hint requireMarker="pi_1o_quest_kindergarten_01"  >
@@ -2146,7 +2146,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Лекарство от храпа  -->
+    <!-- квест Лекарство от храпа  -->
 
     <t:task taskId="pi_1o_quest_cure_for_snoring"> 
         <t:hint requireMarker="pi_1o_quest_cure_for_snoring_01"  >
@@ -2169,7 +2169,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Книга из гробницы  -->
+    <!-- квест Книга из гробницы  -->
 
     <t:task taskId="pi_1o_quest_book_from_tomb"> 
         <t:hint requireMarker="pi_1o_quest_book_from_tomb_02"  >
@@ -2186,7 +2186,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Призрак в часовне  -->
+    <!-- квест Призрак в часовне  -->
 
     <t:task taskId="pi_1o_quest_ghost_in_chapel"> 
         <t:hint requireMarker="pi_1o_quest_ghost_in_chapel_01"  >
@@ -2203,7 +2203,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Горгоны на Антигуа?!  -->
+    <!-- квест Горгоны на Антигуа?!  -->
 
     <t:task taskId="pi_1o_quest_gorgons_in_antigua"> 
         <t:hint requireMarker="pi_1o_quest_gorgons_in_antigua_01"  >
@@ -2222,7 +2222,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Серафим  -->
+    <!-- квест Серафим  -->
 
     <t:task taskId="pi_1o_quest_seraphim"> 
         <t:hint requireMarker="pi_1o_quest_seraphim_01"  >
@@ -2241,7 +2241,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Титан в шахте  -->
+    <!-- квест Титан в шахте  -->
 
     <t:task taskId="pi_1o_quest_titan"> 
         <t:hint requireMarker="pi_1o_quest_titan_01"  >
@@ -2260,7 +2260,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Феникс  -->
+    <!-- квест Феникс  -->
 
     <t:task taskId="pi_1o_quest_phoenix"> 
         <t:hint requireMarker="pi_1o_quest_phoenix_01"  >
@@ -2279,7 +2279,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Чернокнижник  -->
+    <!-- квест Чернокнижник  -->
 
     <t:task taskId="pi_1o_quest_warlock"> 
         <t:hint requireMarker="pi_1o_quest_warlock_01"  >
@@ -2298,7 +2298,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Всадник  -->
+    <!-- квест Всадник  -->
 
     <t:task taskId="pi_1o_quest_rider"> 
         <t:hint requireMarker="pi_1o_quest_rider_01"  >
@@ -2317,7 +2317,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Тень  -->
+    <!-- квест Тень  -->
 
     <t:task taskId="pi_1o_quest_shadow"> 
         <t:hint requireMarker="pi_1o_quest_shadow_01"  >
@@ -2336,7 +2336,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Циклоп  -->
+    <!-- квест Циклоп  -->
 
     <t:task taskId="pi_1o_quest_cyclops"> 
         <t:hint requireMarker="pi_1o_quest_cyclops_01"  >
@@ -2355,7 +2355,7 @@
         </t:hint>
     </t:task>
 
-    <!--TODO квест Ночная фурия  -->
+    <!-- квест Ночная фурия  -->
 
     <t:task taskId="pi_1o_quest_night_fury"> 
         <t:hint requireMarker="pi_1o_quest_night_fury_01"  >

@@ -49,7 +49,7 @@
     </branch>
 
     <!-- город Антигуа горит готово -->
-    <!--TODO вставить фоновую музыку горящего костра или дерева там -->
+    <!-- вставить фоновую музыку горящего костра или дерева там -->
     <branch id="pi_1o_townAntigua_town_burning" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" 
             maxLength="2900" maxCoordinate="1507" knightOffsetBottom="130" knightOffsetTop="360" controlType="BW_FW"
             recreationPolicy="PERSISTENT_FOREVER">
@@ -973,7 +973,7 @@
             <place id="pi_1o_Antigua_sp_wh_pirate_thief_1" in="1062" xPos="190" ifMarker="pi_night_watch_002" respawnPolicy="EVERYTIME" /> <!-- Пират-Вор 1 босс средний  -->
             <place id="pi_1o_Antigua_sp_wh_pirate_thief_2" in="472" xPos="410" ifMarker="pi_night_watch_003" respawnPolicy="EVERYTIME"/> <!-- Пират-Вор 2 босс средний -->
             <place id="pi_1o_Antigua_sp_wh_pirate_thief_3" in="1061" xPos="155" ifMarker="pi_night_watch_004" respawnPolicy="EVERYTIME"/> <!-- Пират-Вор 3 босс средний -->
-            <place id="pi_hobbit_ekla" in="907" xPos="98" /> <!-- впихнуть в маленький блок на карте  --> <!-- TODO -->
+            <place id="pi_hobbit_ekla" in="907" xPos="98" /> <!-- впихнуть в маленький блок на карте  -->
             <place id="pi_1o_Antigua_sp_wh_red_reed" in="729" xPos="562" ifMarker="pi_1o_quest_rare_herbs_04" respawnPolicy="EVERYTIME"/> <!-- Красный тростник, впихнуть в маленький блок на карте  -->
             <place id="pi_1o_redhead_ghost" in="248" xPos="168" markerCondition="pi_fear_of_voodoo_stupido_01 or pi_fear_of_voodoo_stupido_try_to_kill or pi_fear_of_voodoo_stupido_try_to_kill_immortal or pi_fear_of_voodoo_stupido_kill_redhead_ghost" respawnPolicy="EVERYTIME"/> <!-- Красноволосая босс - поставить очень близко ко входу  --> 
             <place id="pi_1o_sp_big_rat" in="709" xPos="400" ifMarker="pi_big_rat_voodoo_02" respawnPolicy="EVERYTIME"/> <!-- Огромная Крыса босс, поставить высоко  --> 

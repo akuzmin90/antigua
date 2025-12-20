@@ -3,10 +3,10 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.hitmakers.com/aof/customPlaces ../../xsd/customPlaces.xsd">
 
-    <!-- Т.К. КЛАД МОШЕННИКА  -->
+    <!-- Т.К. КЛАД ПЛУТА  -->
 
     <p:place id="pi_1o_Antigua_lj_tmd_liar_chest" atlasId="pi_1o_PLACES_road_2" imageId="pi_1o_Antigua_lg_tmd_treasure_picture_cross"
-             name="Клад мошенника" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="10" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
+             name="Клад плута" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="10" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
         <p:markerCondition condition="pi_1o_quest_tmd_liar_chest_01"/>
         <p:blockingCreature probability="0"/>
         <!-- появляется по квесту "Клад мошенника"  -->
@@ -212,12 +212,12 @@
                 </p:mainText>
                 <p:awardChoice>
                     <p:left type="CUSTOM" customAtlas="ap_19" customImage="waterWorld" customComment="Водный мир"
-                            customScript="giveFreeWaterPortal" 
+                            customScript="giveFreeWaterPortal"
                             removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_liar_chest"/>
                     </p:left>
                     <p:right type="CUSTOM" customAtlas="ap_19" customImage="tropics" customComment="Тропики"
-                             customScript="giveFreeTropicsPortal" 
+                             customScript="giveFreeTropicsPortal"
                              removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_liar_chest"/>
                     </p:right>

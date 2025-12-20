@@ -11,7 +11,7 @@
         <p:blockingCreature probability="0"/>
         <p:states>
 
-            <!--TODO квест "Собрать Мох Души"  -->
+            <!-- квест "Собрать Мох Души"  -->
             <p:state id="default" closable="false">
                 <p:dialog>
                     <p:replica id="r1">

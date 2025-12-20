@@ -10,7 +10,7 @@
         <p:blockingCreature probability="0"/>
         <p:states>
 
-            <!--TODO квест "Дед опять забыл выпить таблетки" у пирата-отшельника   -->
+            <!-- квест "Дед опять забыл выпить таблетки" у пирата-отшельника   -->
             <p:state ifMarker="pi_1o_quest_kinky_party_06" repeatable="false" closable="false">
                 <p:dialog>
                     <p:replica id="r1">

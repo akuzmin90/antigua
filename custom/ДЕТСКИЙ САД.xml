@@ -154,7 +154,7 @@
                 </p:dialog>
             </p:state>
 
-            <!--TODO квест "Детский сАД" после спасения Айка   -->
+            <!-- квест "Детский сАД" после спасения Айка   -->
             <p:state ifMarker="pi_1o_quest_kindergarten_you_fool_05" repeatable="false" closable="false">
                 <p:dialog>
                     <p:replica id="r1_d_3">
