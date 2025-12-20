@@ -10,7 +10,7 @@
         <p:blockingCreature probability="0"/>
         <p:states>
             <!-- квест Ночные стражники ищем кирку -->
-            <!--TODO ВАЖНО: в этом стейте генерируются монстры, аналогия – локация пещеры с собачкой -->
+            <!-- ВАЖНО: в этом стейте генерируются монстры, аналогия – локация пещеры с собачкой -->
             <p:state id="default">
                 <p:dialog>
                     <p:replica id="r1" prerequisiteScript="contextHaveEnemies" closable="false" resetMeet="true">

@@ -1036,9 +1036,8 @@
     </branch>
 
     <!-- Золотая шахта, 2 уровень готово -->
-    <!--TODO Всегда расставлять сильных монстров, при наличии маркера pi_new_guards_go_buy_pickaxe  -->
-
-    <branch id="pi_1o_golden_mine_2_lvl" genMode="DEFAULT" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER"> 
+    <!-- Всегда расставляем сильных монстров, при наличии маркера pi_new_guards_go_buy_pickaxe  -->
+    <branch id="pi_1o_golden_mine_2_lvl" genMode="CAVE_30K" probability="0" scenario="true" minLength="2900" maxLength="2900" maxCoordinate="1507" knightOffsetBottom="150" knightOffsetTop="450" controlType="BW_FW" forceGenerateBackPlace="true" backOnlyToMain="false" recreationPolicy="PERSISTENT_FOREVER">
         <turns>
             <road turnType="" pointerImage="" pointerComment=""/>
         </turns>
