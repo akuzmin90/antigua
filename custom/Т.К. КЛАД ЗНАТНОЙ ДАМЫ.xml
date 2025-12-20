@@ -136,7 +136,7 @@
                     </p:answer>
                 </p:answers>
             </p:replica>
-            <p:replica id="randomC4" probability="0.4">
+            <p:replica id="randomC4" probability="0.4" atlasId="ap_19" imageId="silver_chest" imageComment="Серебряный сундук!">
                 <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Серебряный, между прочим! [Клад теперь пуст.
                     Но, наверняка, его хозяйка снова будет прятать вещи!]
                 </p:mainText>
