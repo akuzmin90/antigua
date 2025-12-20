@@ -9,10 +9,10 @@
              name="Клад плута" minPlayerStair="40" minDistanceBetweenSame="4000" meetProbability="10" requireGenMode="PI_1O_PIRATES_GRAVEYARD">
         <p:markerCondition condition="pi_1o_quest_tmd_liar_chest_01"/>
         <p:blockingCreature probability="0"/>
-        <!-- появляется по квесту "Клад мошенника"  -->
+        <!-- появляется по квесту "Клад плута"  -->
         <p:dialog closable="false">
             <p:replica id="r1">
-                <p:mainText>А вот и Клад мошенника! Вы находите метку на земле и откапываете небольшой сундук. Проверим,
+                <p:mainText>А вот и Клад плута! Вы находите метку на земле и откапываете небольшой сундук. Проверим,
                     что внутри?
                 </p:mainText>
                 <p:answers>
@@ -69,7 +69,7 @@
                 </p:mainText>
                 <p:award type="ORE_GOLD" explicitValue="160"/>
                 <p:answers>
-                    <p:answer text="Мошенник внутри сундука?" removeMarker="pi_1o_quest_tmd_liar_chest_01"
+                    <p:answer text="Плут внутри сундука?" removeMarker="pi_1o_quest_tmd_liar_chest_01"
                               complete="true">
                         <p:addTaskProgress id="pi_1o_quest_tmd_liar_chest"/>
                     </p:answer>
@@ -121,7 +121,7 @@
             <!-- третья награда  -->
             <p:replica id="randomC1" probability="0.79" atlasId="" imageId="ic_st_vio" imageComment="4000 личного опыта">
                 <p:mainText>Ого, да здесь личный опыт! Пригодится! [Клад теперь пуст. Но,
-                    наверняка, мошенник снова будет прятать вещи!]
+                    наверняка, плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:answers>
                     <p:answer text="Клады - хорошо" launchScriptId="personalExp4000" removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
@@ -131,7 +131,7 @@
             </p:replica>
             <p:replica id="randomC2" probability="0.73" valueParserScript="slotReceiver" prerequisiteScript="canOpenSlot">
                 <p:mainText>Ого, да здесь ещё слот под артефакт для [value]! Пригодится! (Клад теперь пуст. Но, наверняка,
-                    мошенник снова будет прятать вещи!)
+                    плут снова будет прятать вещи!)
                 </p:mainText>
                 <p:answers>
                     <p:answer text="Клады - хорошо" launchScriptId="giveSlot" removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
@@ -141,7 +141,7 @@
             </p:replica>
             <p:replica id="randomC3" probability="0.8">
                 <p:mainText>Так, да здесь ещё осталось мощное и полезное зелье! Надо поскорее забрать его. [Клад теперь
-                    пуст. Но, наверняка, мошенник снова будет прятать вещи!]
+                    пуст. Но, наверняка, плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:award type="CONSUMABLE" itemId="p7x_koschey_3"/>
                 <p:answers>
@@ -152,7 +152,7 @@
             </p:replica>
             <p:replica id="randomC4" probability="0.4">
                 <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Серебряный, между прочим! [Клад теперь пуст.
-                    Но, наверняка, мошенник снова будет прятать вещи!]
+                    Но, наверняка, плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:award type="CUSTOM" customScript="giveSilverChest"/>
                 <p:answers>
@@ -163,7 +163,7 @@
             </p:replica>
             <p:replica id="randomC5" probability="0.53">
                 <p:mainText>Так, что это у нас здесь? Бустер "Серебряный набор"! Интересно, как он вообще оказался в
-                    кладе? [Клад теперь пуст. Но, наверняка, мошенник снова будет прятать вещи!]
+                    кладе? [Клад теперь пуст. Но, наверняка, плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:award type="CUSTOM" customAtlas="atlas_boost" customImage="complex_big" customComment="Бустер"
                          customScript="giveComplexSmall"/>
@@ -174,8 +174,8 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC6" probability="0.6">
-                <p:mainText>1000 билетиков в колесо фортуны! Интересно, а мошенники любят его покрутить? [Клад теперь
-                    пуст. Но, наверняка, мошенник снова будет прятать вещи!]
+                <p:mainText>1000 билетиков в колесо фортуны! Интересно, а плути любят его покрутить? [Клад теперь
+                    пуст. Но, наверняка, плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:award type="TICKETS" explicitValue="1000"/>
                 <p:answers>
@@ -186,7 +186,7 @@
             </p:replica>
             <p:replica id="randomC7" probability="0.1" atlasId="ap_19" imageId="azure_chest" imageComment="Лазурный сундук!">
                 <p:mainText>Ха, внутри сундука вы находите ещё один сундук! Лазурный, между прочим! [Клад теперь пуст.
-                    Но, наверняка, мошенник снова будет прятать вещи!]
+                    Но, наверняка, плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:award type="CUSTOM" customAtlas="ap_19" customImage="azure_chest" customComment="Лазурный сундук!" customScript="giveAzureChest" />
                 <p:answers>
@@ -196,7 +196,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC8" probability="0.1">
-                <p:mainText>Амулет огня! Это хорошо, такое мы одобряем. [Клад теперь пуст. Но, наверняка, мошенник снова
+                <p:mainText>Амулет огня! Это хорошо, такое мы одобряем. [Клад теперь пуст. Но, наверняка, плут снова
                     будет прятать вещи!]
                 </p:mainText>
                 <p:award type="ARTIFACT" itemId="s_fire_01"/>
@@ -208,7 +208,7 @@
             </p:replica>
             <p:replica id="randomC9" probability="0.23">
                 <p:mainText>Пиратская сила! Магия этого клада даёт вам бесплатный вход в портал на ваш выбор! [Клад
-                    теперь пуст. Но, наверняка, мошенник снова будет прятать вещи!]
+                    теперь пуст. Но, наверняка, плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:awardChoice>
                     <p:left type="CUSTOM" customAtlas="ap_19" customImage="waterWorld" customComment="Водный мир"
@@ -225,7 +225,7 @@
             </p:replica>
             <p:replica id="randomC10" probability="0.05" atlasId="" imageId="b_hlw_1" imageComment="Тыковка!">
                 <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! [Клад теперь пуст. Но, наверняка,
-                    мошенник снова будет прятать вещи!]
+                    плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:answers>
                     <p:answer text="Клады - хорошо" launchScriptId="hlw_1" removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
@@ -235,7 +235,7 @@
             </p:replica>
             <p:replica id="randomC11" probability="0.05" atlasId="" imageId="b_battle-teapot-3" imageComment="Самовар-3000">
                 <p:mainText>Каким-то чудом, вы находите уникального и редкого героя! [Клад теперь пуст. Но, наверняка,
-                    мошенник снова будет прятать вещи!]
+                    плут снова будет прятать вещи!]
                 </p:mainText>
                 <p:answers>
                     <p:answer text="Клады - хорошо" launchScriptId="battle-teapot-3" removeMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
@@ -244,7 +244,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC12" probability="0.57">
-                <p:mainText>3500 изумрудов! Это прекрасно. [Клад теперь пуст. Но, наверняка, мошенник снова будет
+                <p:mainText>3500 изумрудов! Это прекрасно. [Клад теперь пуст. Но, наверняка, плут снова будет
                     прятать вещи!]
                 </p:mainText>
                 <p:award type="MITHRIL" explicitValue="3500"/>
@@ -255,7 +255,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC13" probability="0.59">
-                <p:mainText>1000 аметистов! Это прекрасно. [Клад теперь пуст. Но, наверняка, мошенник снова будет
+                <p:mainText>1000 аметистов! Это прекрасно. [Клад теперь пуст. Но, наверняка, плут снова будет
                     прятать вещи!]
                 </p:mainText>
                 <p:award type="SULFUR" explicitValue="1000"/>
@@ -266,7 +266,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC14" probability="0.59">
-                <p:mainText>250 кусков золотой руды! Это прекрасно. [Клад теперь пуст. Но, наверняка, мошенник снова
+                <p:mainText>250 кусков золотой руды! Это прекрасно. [Клад теперь пуст. Но, наверняка, плут снова
                     будет прятать вещи!]
                 </p:mainText>
                 <p:award type="ORE_GOLD" explicitValue="250"/>
@@ -277,7 +277,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC15" probability="0.16">
-                <p:mainText>Карта змейки! Великолепно! [Клад теперь пуст. Но, наверняка, мошенник снова будет прятать
+                <p:mainText>Карта змейки! Великолепно! [Клад теперь пуст. Но, наверняка, плут снова будет прятать
                     вещи!]
                 </p:mainText>
                 <p:award type="CUSTOM" customAtlas="" customImage="card-snake-small" customComment="Змейка"
@@ -289,7 +289,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC16" probability="0.24">
-                <p:mainText>Очки ордена Тени! Интересно, а мошеннику они зачем? [Клад теперь пуст. Но, наверняка, мошенник снова будет прятать
+                <p:mainText>Очки ордена Тени! Интересно, а плуту они зачем? [Клад теперь пуст. Но, наверняка, плут снова будет прятать
                     вещи!]
                 </p:mainText>
                 <p:award type="EVIL_POINTS" explicitValue="456" />
@@ -300,7 +300,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC17" probability="0.24">
-                <p:mainText>Очки ордена Порядка! Интересно, а мошеннику они зачем? [Клад теперь пуст. Но, наверняка, мошенник снова будет прятать
+                <p:mainText>Очки ордена Порядка! Интересно, а плуту они зачем? [Клад теперь пуст. Но, наверняка, плут снова будет прятать
                     вещи!]
                 </p:mainText>
                 <p:award type="GOOD_POINTS" explicitValue="456" />
@@ -311,7 +311,7 @@
                 </p:answers>
             </p:replica>
             <p:replica id="randomC18" probability="0.24">
-                <p:mainText>Кукла-вуду воскрешения! Точно пригодится, забираем! [Клад теперь пуст. Но, наверняка, мошенник снова будет прятать
+                <p:mainText>Кукла-вуду воскрешения! Точно пригодится, забираем! [Клад теперь пуст. Но, наверняка, плут снова будет прятать
                     вещи!]
                 </p:mainText>
                 <p:award type="CONSUMABLE" itemId="doll_resurrection" />

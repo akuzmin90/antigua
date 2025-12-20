@@ -80,7 +80,7 @@
                     </p:replica>
 
                     <p:replica id="rand-4" probability="0.8">
-                        <p:mainText>Прекрасно! Держи карту. Клад мошенника, что обманывал людей, на кладбище пиратов.
+                        <p:mainText>Прекрасно! Держи карту. Клад плута, что обманывал людей, на кладбище пиратов.
                             Даже они
                             зарывают клады, ха! Напомню, я не знаю, что внутри клада! Место отмечено на карте - и в
                             твоём дневнике
@@ -88,7 +88,7 @@
                         </p:mainText>
                         <p:answers>
                             <p:answer text="Благодарю" giveMarker="pi_1o_quest_tmd_liar_chest_01" requestSpecialPlaces="true" complete="true">
-                                <p:createTask id="pi_1o_quest_tmd_liar_chest" name="Клад мошенника" count="1"
+                                <p:createTask id="pi_1o_quest_tmd_liar_chest" name="Клад плута" count="1"
                                               mithril="20"
                                               type="SINGLE"/>
                             </p:answer>
